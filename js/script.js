@@ -6,6 +6,7 @@ import { setupCategoryToggles, showContent, setInnerHTML, addClickHandlers, gene
 
 let behaviorsData = null;
 let categoriesData = null;
+let isInitialized = false;
 
 document.addEventListener('DOMContentLoaded', async function() {
     try {
@@ -27,6 +28,23 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Show landing page by default (content is already in HTML)
         showContent('default');
+        
+        // Prevent any automatic category loading by ensuring we stay on landing page
+        // Only load specific content if there's a hash in the URL
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            // Handle hash navigation if needed
+            const behavior = findBehaviorById(behaviorsData, hash);
+            if (behavior) {
+                loadBehaviorContent(hash);
+            }
+        } else {
+            // Explicitly ensure we're showing the landing page
+            showContent('default');
+        }
+        
+        // Mark as initialized to prevent any automatic redirects
+        isInitialized = true;
     } catch (error) {
         console.error('Initialization error:', error);
         setInnerHTML('defaultContent', `
@@ -93,6 +111,11 @@ async function loadBehaviorContent(behaviorId) {
 }
 
 function loadCategoryBehaviors(category) {
+    // Prevent automatic category loading during initialization
+    if (!isInitialized) {
+        return;
+    }
+    
     try {
         const behaviors = getBehaviorsByCategory(behaviorsData, category);
         const categoryInfo = categoriesData[category];
