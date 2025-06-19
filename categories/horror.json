@@ -1,0 +1,572 @@
+{
+  "category": "Horror",
+  "description": "Behaviors for creating horror and supernatural game elements",
+  "behaviors": {
+    "crawler": {
+      "name": "Crawler",
+      "file": "horror/crawler.lua",
+      "description": "Creates a character that can walk, crawl, target players or objects, climb walls, and perform ceiling jumps or drops. Perfect for creating horror-style enemies that can navigate complex environments.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "",
+          "description": "Message shown when crawler appears. Leave empty for no message."
+        },
+        {
+          "name": "APPEARANCE_MODE",
+          "type": "dropdown",
+          "default": "Target Player",
+          "options": [
+            "Target Player",
+            "Target Object",
+            "Target Object + Climb",
+            "Ceiling Jump",
+            "Ceiling Drop + Target Object"
+          ],
+          "description": "How the crawler behaves. Target Player chases the player, Target Object modes focus on specific objects, and Ceiling modes handle vertical movement."
+        },
+        {
+          "name": "APPEARANCE_LEVEL",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Maximum transparency level (100 = fully visible, 1 = nearly invisible)"
+        },
+        {
+          "name": "APPEARANCE_SPEED",
+          "type": "number",
+          "range": "0-5",
+          "default": 1,
+          "description": "Speed of appearance transition. Higher values make the crawler appear faster."
+        },
+        {
+          "name": "DISAPPEARANCE_MODE",
+          "type": "dropdown",
+          "default": "Fade",
+          "options": [
+            "Fade",
+            "Instant"
+          ],
+          "description": "How the crawler disappears. Fade provides a smoother transition."
+        },
+        {
+          "name": "MOVEMENT_SPEED",
+          "type": "number",
+          "range": "1-5000",
+          "default": 5,
+          "description": "Base speed of movement. Note: Actual speed is divided by 10 in the script."
+        },
+        {
+          "name": "CLIMB_HEIGHT",
+          "type": "number",
+          "range": "0-500",
+          "default": 0,
+          "description": "Maximum climbing height. Set to 0 to disable climbing."
+        },
+        {
+          "name": "IDLE_ANIMATION",
+          "type": "string",
+          "default": "",
+          "description": "Animation when idle. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "MOVE_ANIMATION1",
+          "type": "string",
+          "default": "",
+          "description": "Primary movement animation. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "MOVE_ANIMATION2",
+          "type": "string",
+          "default": "",
+          "description": "Secondary movement animation. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "ANIMATED_MODEL",
+          "type": "dropdown",
+          "default": "Character Creator",
+          "options": [
+            "Character Creator",
+            "Legacy Character"
+          ],
+          "description": "Type of character model. Affects animation handling and speed modulation."
+        },
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of target object. Required for modes 2, 3, and 5. Leave empty for no target."
+        },
+        {
+          "name": "OBJECT_VISIBILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": [
+            "Visible",
+            "Hidden"
+          ],
+          "description": "Whether target object is visible. Hidden objects are automatically disabled for collision."
+        },
+        {
+          "name": "OBJECT_PROXIMITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 150,
+          "description": "Distance to target object endpoint. Determines how close the crawler needs to get to its target."
+        }
+      ],
+      "features": [
+        "Multiple movement modes with different targeting behaviors",
+        "Wall climbing capability with configurable height",
+        "Ceiling interactions including jumps and drops",
+        "Advanced target tracking with path finding",
+        "Flexible animation system supporting both Character Creator and Legacy models",
+        "Gradual transparency control for smooth appearances",
+        "Sound integration with appearance, movement, and death effects",
+        "Intelligent path finding for complex navigation"
+      ],
+      "keywords": ["horror", "enemy", "crawler", "climb", "ceiling", "chase", "target", "movement", "stealth", "apparition"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["phantom", "lurker", "jumpscare", "rise_and_fall"]
+    },
+    "jumpscare": {
+      "name": "Jump Scare",
+      "file": "horror/jumpscare.lua",
+      "description": "Creates a jump scare effect where an entity appears suddenly a set number of times with configurable intervals and random positioning. Perfect for creating startling horror moments.",
+      "properties": [
+        {
+          "name": "APPEARANCES",
+          "type": "number",
+          "range": "1-50",
+          "default": 1,
+          "description": "Number of times the entity will appear before being destroyed. Each appearance includes a random delay variation."
+        },
+        {
+          "name": "INTERVAL",
+          "type": "number",
+          "range": "1-100",
+          "default": 2,
+          "description": "Base time between appearances in tenths of seconds. Actual time varies randomly between 75% and 125% of this value."
+        },
+        {
+          "name": "RANDOM_X_MOVEMENT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 50,
+          "description": "Maximum random movement along X-axis from start location. Entity will move randomly between -X and +X units."
+        },
+        {
+          "name": "RANDOM_Z_MOVEMENT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 50,
+          "description": "Maximum random movement along Z-axis from start location. Entity will move randomly between -Z and +Z units."
+        }
+      ],
+      "features": [
+        "Multiple appearances with random timing variations",
+        "Random positioning after each appearance",
+        "Automatic rotation to face player",
+        "Sound integration with appearance",
+        "Automatic cleanup after final appearance",
+        "Collision disabled for smooth operation",
+        "Trigger-based activation",
+        "Memory-efficient timing system"
+      ],
+      "keywords": ["horror", "scare", "jump", "sudden", "appear", "random", "startle", "effect", "trigger"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["phantom", "lurker", "crawler", "rise_and_fall"]
+    },
+    "lurker": {
+      "name": "Lurker",
+      "file": "horror/lurker.lua",
+      "description": "Creates an entity that watches, follows, or attacks the player when not being looked at. Perfect for creating tension and psychological horror elements.",
+      "properties": [
+        {
+          "name": "REACTION_TEXT",
+          "type": "string",
+          "default": "What the..",
+          "description": "Text shown when the lurker is spotted by the player."
+        },
+        {
+          "name": "SENSE_RANGE",
+          "type": "number",
+          "range": "1-2000",
+          "default": 500,
+          "description": "Maximum distance at which the lurker can detect the player. The lurker becomes more aggressive at half this range."
+        },
+        {
+          "name": "SENSE_ANGLE",
+          "type": "number",
+          "range": "1-120",
+          "default": 70,
+          "description": "Angle of the lurker's detection cone. The lurker can only act when the player is not looking within this angle."
+        },
+        {
+          "name": "APPROACH_SPEED",
+          "type": "number",
+          "range": "1-500",
+          "default": 280,
+          "description": "Speed when approaching the player. Some modes use random speeds between 1 and this value."
+        },
+        {
+          "name": "ROTATION_SPEED",
+          "type": "number",
+          "range": "1-20",
+          "default": 8,
+          "description": "Speed of rotation when tracking the player. Higher values make the lurker turn faster."
+        },
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Follow only",
+          "options": [
+            "Follow only",
+            "Attack in range",
+            "Watch only",
+            "Move then Disappear",
+            "Move then Hide",
+            "Watch + Proximity Hide"
+          ],
+          "description": "Behavior mode of the lurker. Follow chases player, Attack damages when close, Watch stays in place, Move modes have limited movements before hiding."
+        },
+        {
+          "name": "ATTACK_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 100,
+          "description": "Distance at which the lurker can attack the player. Only used in Attack mode."
+        },
+        {
+          "name": "ATTACK_DELAY",
+          "type": "number",
+          "range": "1-2000",
+          "default": 500,
+          "description": "Delay between attacks in milliseconds. Only used in Attack mode."
+        },
+        {
+          "name": "ATTACK_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Damage dealt per attack. Only used in Attack mode."
+        },
+        {
+          "name": "TRANSPARENCY",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Visual transparency level (100 = fully visible, 0 = invisible)."
+        },
+        {
+          "name": "EMISSIVENESS",
+          "type": "number",
+          "range": "0-5000",
+          "default": 1,
+          "description": "Glow effect strength. Higher values make the lurker more visible in darkness."
+        },
+        {
+          "name": "IDLE_ANIMATION",
+          "type": "string",
+          "default": "",
+          "description": "Animation played when idle or spotted. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "ATTACK_ANIMATION",
+          "type": "string",
+          "default": "",
+          "description": "Animation played when attacking. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "HIDE_TIME",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Time in seconds before reappearing after hiding. Used in Move then Hide and Watch + Proximity Hide modes."
+        }
+      ],
+      "features": [
+        "Player detection with configurable range and angle",
+        "Multiple behavior modes for different horror scenarios",
+        "Attack system with damage and delay control",
+        "Visual customization with transparency and glow effects",
+        "Animation support for idle and attack states",
+        "Sound integration for movement, lurking, attacking, and disappearing",
+        "Automatic surface height adjustment",
+        "Flee behavior when damaged",
+        "Smart hiding and reappearing mechanics"
+      ],
+      "keywords": ["horror", "enemy", "lurker", "stalker", "attack", "follow", "watch", "hide", "psychological", "tension"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["phantom", "crawler", "jumpscare", "rise_and_fall"]
+    },
+    "phantom": {
+      "name": "Phantom",
+      "file": "horror/phantom.lua",
+      "description": "Creates a ghostly entity that can fade in, approach the player, and disappear in various ways. Perfect for creating supernatural horror elements and jump scares.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "What was that",
+          "description": "Message shown when the phantom appears. Leave empty for no message."
+        },
+        {
+          "name": "APPEARANCE_MODE",
+          "type": "dropdown",
+          "default": "Show-Fade/Disappear",
+          "options": [
+            "Show-Fade/Disappear",
+            "Show-Approach-Disappear",
+            "Show-Face-Approach-Disappear",
+            "Show-Move-Fade/Disappear",
+            "Character Move-Once-No Collision"
+          ],
+          "description": "How the phantom behaves. Different modes control appearance, movement, and disappearance patterns."
+        },
+        {
+          "name": "APPEARANCE_LEVEL",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Maximum transparency level (100 = fully visible, 1 = nearly invisible)."
+        },
+        {
+          "name": "APPEARANCE_AURA",
+          "type": "number",
+          "range": "0.0-50.0",
+          "default": 0.0,
+          "description": "Glow effect strength. Higher values create a more ethereal appearance."
+        },
+        {
+          "name": "APPEARANCE_SPEED",
+          "type": "number",
+          "range": "0-5",
+          "default": 0.02,
+          "description": "Speed of appearance transition. Higher values make the phantom appear faster."
+        },
+        {
+          "name": "APPEARANCE_TIME",
+          "type": "number",
+          "range": "0-10",
+          "default": 3.0,
+          "description": "Time in seconds before the phantom starts to disappear (in Show-Fade mode)."
+        },
+        {
+          "name": "DISAPPEARANCE_MODE",
+          "type": "dropdown",
+          "default": "Fade",
+          "options": [
+            "Fade",
+            "Instant"
+          ],
+          "description": "How the phantom disappears. Fade provides a smoother transition."
+        },
+        {
+          "name": "MOVEMENT_SPEED",
+          "type": "number",
+          "range": "0-500",
+          "default": 5,
+          "description": "Speed of movement. Note: Actual speed is divided by 100 for animated models."
+        },
+        {
+          "name": "MOVEMENT_X",
+          "type": "number",
+          "range": "-1000-1000",
+          "default": 0,
+          "description": "X-axis movement offset from current position."
+        },
+        {
+          "name": "MOVEMENT_Z",
+          "type": "number",
+          "range": "-1000-1000",
+          "default": 0,
+          "description": "Z-axis movement offset from current position."
+        },
+        {
+          "name": "IDLE_ANIMATION",
+          "type": "string",
+          "default": "",
+          "description": "Animation played when idle. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "MOVE_ANIMATION",
+          "type": "string",
+          "default": "",
+          "description": "Animation played when moving. Leave empty for no animation. Use AnimSetList index for specific animations."
+        },
+        {
+          "name": "ANIMATED_MODEL",
+          "type": "dropdown",
+          "default": "Non Animated",
+          "options": [
+            "Character Creator",
+            "Legacy Character",
+            "Non Animated"
+          ],
+          "description": "Type of model. Affects animation handling and speed modulation."
+        },
+        {
+          "name": "MIN_APPROACH_RANGE",
+          "type": "number",
+          "range": "1-300",
+          "default": 90,
+          "description": "Minimum distance to maintain from player before disappearing."
+        }
+      ],
+      "features": [
+        "Multiple appearance and movement modes",
+        "Gradual transparency control with glow effects",
+        "Path finding for intelligent movement",
+        "Animation support for different model types",
+        "Sound integration for appearance, movement, and disappearance",
+        "Automatic collision handling",
+        "Trigger-based activation",
+        "Vector-based movement calculations"
+      ],
+      "keywords": ["horror", "ghost", "phantom", "apparition", "fade", "approach", "supernatural", "ethereal", "glow"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["crawler", "lurker", "jumpscare", "rise_and_fall"]
+    },
+    "rise_and_fall": {
+      "name": "Rise and Fall",
+      "file": "horror/rise_and_fall.lua",
+      "description": "Creates an object that rises, floats, and then either falls with gravity or is thrown in various ways. Perfect for creating supernatural or physics-based horror effects.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "What is happening",
+          "description": "Message shown when the object starts rising."
+        },
+        {
+          "name": "RISE_HEIGHT",
+          "type": "number",
+          "range": "0-100",
+          "default": 30,
+          "description": "Maximum height the object will rise to."
+        },
+        {
+          "name": "RISE_SPEED",
+          "type": "number",
+          "range": "0-50",
+          "default": 5,
+          "description": "Speed at which the object rises."
+        },
+        {
+          "name": "HOVER_MODE",
+          "type": "dropdown",
+          "default": "Off",
+          "options": [
+            "Off",
+            "On"
+          ],
+          "description": "Whether the object hovers in place or bobs up and down while floating."
+        },
+        {
+          "name": "HOVER_HEIGHT",
+          "type": "number",
+          "range": "1-50",
+          "default": 5,
+          "description": "Height of hover bobbing motion. Limited to 1/3 of rise height."
+        },
+        {
+          "name": "ROTATE_SPEED",
+          "type": "number",
+          "range": "0-50",
+          "default": 6,
+          "description": "Speed of rotation and orbital movement."
+        },
+        {
+          "name": "ROTATE_X",
+          "type": "number",
+          "range": "0-1",
+          "default": 0,
+          "description": "Whether to rotate around X axis (1=Yes, 0=No)."
+        },
+        {
+          "name": "ROTATE_Y",
+          "type": "number",
+          "range": "0-1",
+          "default": 1,
+          "description": "Whether to rotate around Y axis (1=Yes, 0=No)."
+        },
+        {
+          "name": "ROTATE_Z",
+          "type": "number",
+          "range": "0-1",
+          "default": 0,
+          "description": "Whether to rotate around Z axis (1=Yes, 0=No)."
+        },
+        {
+          "name": "MAX_OFFSET_Z",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Maximum orbital movement radius from starting position."
+        },
+        {
+          "name": "RELEASE_MODE",
+          "type": "dropdown",
+          "default": "Gravity Fall",
+          "options": [
+            "Gravity Fall",
+            "Thrown Randomly",
+            "Thrown at Player"
+          ],
+          "description": "How the object behaves after the release delay. Gravity Fall drops naturally, Thrown modes apply force in different directions."
+        },
+        {
+          "name": "RELEASE_FORCE",
+          "type": "number",
+          "range": "0-2000",
+          "default": 18,
+          "description": "Force applied when throwing the object. Higher values result in more damage when hitting the player."
+        },
+        {
+          "name": "RELEASE_DELAY",
+          "type": "number",
+          "range": "0-30",
+          "default": 6,
+          "description": "Time in seconds before the object is released."
+        },
+        {
+          "name": "HIT_DAMAGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Base damage dealt to player when hit. Actual damage scales with release force."
+        }
+      ],
+      "features": [
+        "Configurable rise and hover behavior",
+        "Multiple rotation axes with independent control",
+        "Orbital movement around starting position",
+        "Three release modes with different behaviors",
+        "Scaling damage based on impact force",
+        "Sound integration for rising and falling",
+        "Automatic collision handling",
+        "Trigger-based activation"
+      ],
+      "keywords": ["horror", "physics", "float", "rise", "fall", "throw", "damage", "supernatural", "orbital"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["phantom", "crawler", "lurker", "jumpscare"]
+    }
+  }
+} 

@@ -1,0 +1,1005 @@
+{
+  "category": "HUDs",
+  "description": "Behaviors for managing game HUDs and user interface elements",
+  "behaviors": {
+    "activehud": {
+      "name": "Active HUD",
+      "file": "huds/activehud.lua",
+      "description": "Controls when the game HUD becomes visible based on specific conditions. The HUD will automatically hide after a set duration unless using the toggle mode.",
+      "properties": [
+        {
+          "name": "SHOW_CONDITION",
+          "type": "dropdown",
+          "default": "Home Key",
+          "options": [
+            "Home Key",
+            "Health Damage",
+            "Shooting",
+            "Gun Zoom",
+            "Scroll-Lock Toggle"
+          ],
+          "description": "Determines what triggers the HUD to become visible: Home Key (Home), Health Damage (when player takes damage), Shooting (when firing weapon), Gun Zoom (when zooming), or Scroll-Lock Toggle (F key)."
+        },
+        {
+          "name": "SHOW_TIME",
+          "type": "number",
+          "default": 8,
+          "min": 1,
+          "max": 30,
+          "description": "How long the HUD remains visible before automatically hiding (in seconds). Not used when SHOW_CONDITION is set to Scroll-Lock Toggle."
+        }
+      ],
+      "features": [
+        "Multiple trigger conditions",
+        "Automatic HUD hiding",
+        "Toggle mode with F key",
+        "Health-based activation",
+        "Weapon-based activation",
+        "Configurable display duration"
+      ],
+      "keywords": ["hud", "interface", "display", "toggle"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hud", "hud_health"]
+    },
+    "hot_key": {
+      "name": "Hot Key",
+      "file": "huds/hot_key.lua",
+      "description": "Displays an icon image on screen for a specified resource and activation key. Perfect for creating quick-use items like potions or power-ups.",
+      "properties": [
+        {
+          "name": "SCREEN_POSITION_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 2,
+          "description": "Horizontal position of the icon on screen (percentage)"
+        },
+        {
+          "name": "SCREEN_POSITION_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Vertical position of the icon on screen (percentage)"
+        },
+        {
+          "name": "SCREEN_SCALE",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Size of the icon on screen"
+        },
+        {
+          "name": "ICON1_IMAGEFILE",
+          "type": "string",
+          "default": "",
+          "description": "Image file for the inactive icon state"
+        },
+        {
+          "name": "ICON2_IMAGEFILE",
+          "type": "string",
+          "default": "",
+          "description": "Image file for the active icon state"
+        },
+        {
+          "name": "RESOURCE_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the collectable resource (e.g., 'Potion')"
+        },
+        {
+          "name": "RESOURCE_AMOUNT",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Amount to add when resource is used"
+        },
+        {
+          "name": "APPLIED_TO",
+          "type": "dropdown",
+          "default": "Health",
+          "options": [
+            "Health",
+            "User Global"
+          ],
+          "description": "What the resource affects when used"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the user global variable to affect (e.g., 'MyMana' or 'MyStaminaMax')"
+        },
+        {
+          "name": "ACTIVATION_KEY",
+          "type": "string",
+          "default": "Z",
+          "description": "Key to press to activate the resource"
+        }
+      ],
+      "features": [
+        "Customizable screen position and scale",
+        "Dual-state icon system (active/inactive)",
+        "Resource collection and usage tracking",
+        "Health or custom global variable modification",
+        "Configurable activation key",
+        "Visual feedback on activation",
+        "Sound integration for activation"
+      ],
+      "keywords": ["hud", "hotkey", "icon", "resource", "potion", "powerup", "collectable", "activation", "screen", "display"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["resource_counter", "health_bar", "mana_bar"]
+    },
+    "hud_interface": {
+      "name": "HUD Interface",
+      "file": "huds/hud_interface.lua",
+      "description": "Creates an interactive HUD interface with up to 5 customizable buttons that can trigger various actions like logic links, audio playback, object destruction, and more. Perfect for creating interactive terminals, control panels, or menu systems.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the interface can be activated. Set to 1 to allow control anytime the HUD is visible."
+        },
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "E to Use",
+          "description": "Text shown when player can interact with the interface"
+        },
+        {
+          "name": "HUD_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 9",
+          "description": "Name of the HUD screen to use for the interface"
+        },
+        {
+          "name": "HUD_BUTTON1",
+          "type": "string",
+          "default": "Activate Link",
+          "description": "Text for the first button"
+        },
+        {
+          "name": "HUD_ACTION1",
+          "type": "dropdown",
+          "default": "Link 0",
+          "options": [
+            "Link 0",
+            "Link 1",
+            "Link 2",
+            "Link 3",
+            "Link 4",
+            "Link 5",
+            "Link 6",
+            "Link 7",
+            "Link 8",
+            "Link 9",
+            "Play Audio",
+            "Destroy Object",
+            "Activate IfUsed",
+            "Exit Hud"
+          ],
+          "description": "Action for the first button"
+        },
+        {
+          "name": "HUD_ACTION1_TEXT",
+          "type": "string",
+          "default": "Link Activated",
+          "description": "Message shown when first button action is triggered"
+        },
+        {
+          "name": "HUD_BUTTON2",
+          "type": "string",
+          "default": "Play Audio",
+          "description": "Text for the second button"
+        },
+        {
+          "name": "HUD_ACTION2",
+          "type": "dropdown",
+          "default": "Play Audio",
+          "options": [
+            "Link 0",
+            "Link 1",
+            "Link 2",
+            "Link 3",
+            "Link 4",
+            "Link 5",
+            "Link 6",
+            "Link 7",
+            "Link 8",
+            "Link 9",
+            "Play Audio",
+            "Destroy Object",
+            "Activate IfUsed",
+            "Exit Hud"
+          ],
+          "description": "Action for the second button"
+        },
+        {
+          "name": "HUD_ACTION2_TEXT",
+          "type": "string",
+          "default": "Playing Audio",
+          "description": "Message shown when second button action is triggered"
+        },
+        {
+          "name": "HUD_BUTTON3",
+          "type": "string",
+          "default": "Destroy",
+          "description": "Text for the third button"
+        },
+        {
+          "name": "HUD_ACTION3",
+          "type": "dropdown",
+          "default": "Destroy Object",
+          "options": [
+            "Link 0",
+            "Link 1",
+            "Link 2",
+            "Link 3",
+            "Link 4",
+            "Link 5",
+            "Link 6",
+            "Link 7",
+            "Link 8",
+            "Link 9",
+            "Play Audio",
+            "Destroy Object",
+            "Activate IfUsed",
+            "Exit Hud"
+          ],
+          "description": "Action for the third button"
+        },
+        {
+          "name": "HUD_ACTION3_TEXT",
+          "type": "string",
+          "default": "Object Destroyed",
+          "description": "Message shown when third button action is triggered"
+        },
+        {
+          "name": "HUD_BUTTON4",
+          "type": "string",
+          "default": "Activate IfUsed",
+          "description": "Text for the fourth button"
+        },
+        {
+          "name": "HUD_ACTION4",
+          "type": "dropdown",
+          "default": "Activate IfUsed",
+          "options": [
+            "Link 0",
+            "Link 1",
+            "Link 2",
+            "Link 3",
+            "Link 4",
+            "Link 5",
+            "Link 6",
+            "Link 7",
+            "Link 8",
+            "Link 9",
+            "Play Audio",
+            "Destroy Object",
+            "Activate IfUsed",
+            "Exit Hud"
+          ],
+          "description": "Action for the fourth button"
+        },
+        {
+          "name": "HUD_ACTION4_TEXT",
+          "type": "string",
+          "default": "Activating",
+          "description": "Message shown when fourth button action is triggered"
+        },
+        {
+          "name": "HUD_BUTTON5",
+          "type": "string",
+          "default": "Exit",
+          "description": "Text for the fifth button"
+        },
+        {
+          "name": "HUD_ACTION5",
+          "type": "dropdown",
+          "default": "Exit Hud",
+          "options": [
+            "Link 0",
+            "Link 1",
+            "Link 2",
+            "Link 3",
+            "Link 4",
+            "Link 5",
+            "Link 6",
+            "Link 7",
+            "Link 8",
+            "Link 9",
+            "Play Audio",
+            "Destroy Object",
+            "Activate IfUsed",
+            "Exit Hud"
+          ],
+          "description": "Action for the fifth button"
+        },
+        {
+          "name": "HUD_ACTION5_TEXT",
+          "type": "string",
+          "default": "Exiting",
+          "description": "Message shown when fifth button action is triggered"
+        }
+      ],
+      "features": [
+        "Up to 5 customizable buttons",
+        "Multiple action types (logic links, audio, destruction, etc.)",
+        "Zone-based or proximity-based activation",
+        "Customizable interaction messages",
+        "Sound integration for activation and actions",
+        "Flexible HUD screen integration",
+        "Automatic cleanup on destruction"
+      ],
+      "keywords": ["hud", "interface", "menu", "terminal", "control", "panel", "button", "interaction", "screen", "display"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hot_key", "hudcontrol", "menu_hud"]
+    },
+    "hudcontrol": {
+      "name": "HUD Control",
+      "file": "huds/hudcontrol.lua",
+      "description": "Controls the visibility of in-game HUD elements through zone triggers or external activation. Perfect for creating cinematic moments or UI-free gameplay sections.",
+      "properties": [
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Show",
+          "options": [
+            "Show",
+            "Hide"
+          ],
+          "description": "Whether to show or hide the HUD when triggered"
+        },
+        {
+          "name": "MODE_TEXT",
+          "type": "string",
+          "default": "Hud disabled/enabled",
+          "description": "Message shown when HUD state changes"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 100,
+          "description": "Height of the trigger zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to activate the zone immediately on game start"
+        },
+        {
+          "name": "SpawnActivation",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to activate HUD mode immediately on external activation"
+        }
+      ],
+      "features": [
+        "Zone-based HUD control",
+        "External trigger support",
+        "Customizable activation messages",
+        "Configurable zone dimensions",
+        "Immediate or delayed activation options",
+        "Automatic zone cleanup after use"
+      ],
+      "keywords": ["hud", "interface", "visibility", "control", "zone", "trigger", "cinematic", "ui", "display", "toggle"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hot_key", "hud_interface", "cinematic_zone"]
+    },
+    "countdown": {
+      "name": "Countdown Timer",
+      "file": "objects/countdown.lua",
+      "description": "Creates a configurable countdown timer with multiple end-action options. Features customizable display, time extension through global variables, and various game state modifications when time expires.",
+      "properties": [
+        {
+          "name": "MAXIMUM_TIME",
+          "type": "number",
+          "default": 1.00,
+          "min": 0.25,
+          "max": 60.00,
+          "description": "Duration of countdown in minutes"
+        },
+        {
+          "name": "TIME_DISPLAY",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to show countdown on screen"
+        },
+        {
+          "name": "DISPLAY_TEXT",
+          "type": "string",
+          "default": "Time Left:",
+          "description": "Text to show before the countdown time"
+        },
+        {
+          "name": "DISPLAY_X",
+          "type": "number",
+          "default": 10,
+          "description": "X position of the countdown display (use 50 for center)"
+        },
+        {
+          "name": "DISPLAY_Y",
+          "type": "number",
+          "default": 10,
+          "description": "Y position of the countdown display"
+        },
+        {
+          "name": "DISPLAY_SIZE",
+          "type": "number",
+          "default": 3,
+          "min": 1,
+          "max": 5,
+          "description": "Size of the countdown text"
+        },
+        {
+          "name": "END_ACTION",
+          "type": "dropdown",
+          "default": "Terminate Player",
+          "options": [
+            "Terminate Player",
+            "Hurt Player",
+            "Activate Entities",
+            "Lose Game",
+            "Win Game",
+            "Display Hud Screen",
+            "Go to Level"
+          ],
+          "description": "What happens when the countdown reaches zero"
+        },
+        {
+          "name": "USER_GLOBAL_MODIFIER",
+          "type": "string",
+          "default": "",
+          "description": "Global variable name to extend time (adds seconds to countdown when variable is set)"
+        },
+        {
+          "name": "LAUNCH_WARNING",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to show Ready/Set/Go countdown"
+        },
+        {
+          "name": "END_HUD_SCREEN",
+          "type": "string",
+          "default": "",
+          "description": "HUD screen to show when countdown ends (if END_ACTION is Display Hud Screen)"
+        },
+        {
+          "name": "START_DISARMED",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether to disarm player weapons during countdown"
+        }
+      ],
+      "features": [
+        "Configurable countdown duration",
+        "Customizable display position and size",
+        "Multiple end actions",
+        "Time extension system",
+        "Launch countdown system",
+        "Sound effects",
+        "Player weapon control",
+        "HUD screen integration"
+      ],
+      "keywords": ["timer", "countdown", "hud", "display", "time"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hud", "hud_health"]
+    },
+    "healthbar": {
+      "name": "Health Bar",
+      "file": "objects/healthbar.lua",
+      "description": "Displays a health bar or text for viewed enemies within range. The health display can be shown as a bar, text, or both, and changes color based on health level.",
+      "properties": [
+        {
+          "name": "DISPLAY_RANGE",
+          "type": "number",
+          "default": 200,
+          "min": 100,
+          "max": 1000,
+          "description": "Maximum distance at which health is displayed"
+        },
+        {
+          "name": "DISPLAY_MODE",
+          "type": "dropdown",
+          "default": "Bar",
+          "options": ["Bar", "Text", "Text+Bar"],
+          "description": "How to display the health information"
+        },
+        {
+          "name": "Y_ADJUSTMENT",
+          "type": "number",
+          "default": 0,
+          "min": -50,
+          "max": 50,
+          "description": "Vertical offset for the health display"
+        },
+        {
+          "name": "HEALTH_COLOR_CHANGE",
+          "type": "number",
+          "default": 100,
+          "min": 1,
+          "max": 1000,
+          "description": "Health threshold at which the display changes color"
+        }
+      ],
+      "features": [
+        "Multiple display modes",
+        "Range-based visibility",
+        "Color change based on health",
+        "Vertical position adjustment",
+        "Automatic enemy detection",
+        "3D text display option",
+        "Health bar scaling"
+      ],
+      "keywords": ["health", "bar", "display", "enemy", "status"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hud", "hud_health"]
+    },
+    "helmet": {
+      "name": "Helmet HUD",
+      "file": "objects/helmet.lua",
+      "description": "Creates a helmet HUD system with zoom functionality, night vision, compass, and toxic protection. The helmet can be picked up, worn, and removed by the player.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup/Wear",
+          "description": "Text shown when player can pick up the helmet"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "default": 80,
+          "min": 1,
+          "max": 100,
+          "description": "Distance at which player can pick up the helmet"
+        },
+        {
+          "name": "USAGE_TEXT",
+          "type": "string",
+          "default": "Hold B + Wheel to zoom, N=Nightvision ON/OFF, H=Remove/Wear Helmet",
+          "description": "Instructions shown when wearing the helmet"
+        },
+        {
+          "name": "HELMET_MODE",
+          "type": "dropdown",
+          "default": "Pickup/Drop",
+          "options": ["Pickup/Drop", "Pickup/Retain", "Always On"],
+          "description": "How the helmet can be used"
+        },
+        {
+          "name": "MIN_ZOOM",
+          "type": "number",
+          "default": -10,
+          "min": -30,
+          "max": 1,
+          "description": "Minimum zoom level"
+        },
+        {
+          "name": "MAX_ZOOM",
+          "type": "number",
+          "default": 30,
+          "min": 1,
+          "max": 50,
+          "description": "Maximum zoom level"
+        },
+        {
+          "name": "ZOOM_SPEED",
+          "type": "number",
+          "default": 1,
+          "min": 1,
+          "max": 10,
+          "description": "Speed of zoom adjustment"
+        },
+        {
+          "name": "ZOOM_READOUT_X",
+          "type": "number",
+          "default": 50,
+          "min": 1,
+          "max": 100,
+          "description": "X position of zoom readout"
+        },
+        {
+          "name": "ZOOM_READOUT_Y",
+          "type": "number",
+          "default": 10,
+          "min": 1,
+          "max": 100,
+          "description": "Y position of zoom readout"
+        },
+        {
+          "name": "COMPASS",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether to show compass"
+        },
+        {
+          "name": "COMPASS_POSITION",
+          "type": "dropdown",
+          "default": "Bottom",
+          "options": ["Top", "Bottom"],
+          "description": "Position of compass on screen"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\helmethud1.png",
+          "description": "Path to helmet overlay image"
+        },
+        {
+          "name": "NIGHTVISION_COLOR",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to use custom night vision colors"
+        },
+        {
+          "name": "NIGHTVISION_AMBIENCE_R",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 255,
+          "description": "Red component of night vision ambience"
+        },
+        {
+          "name": "NIGHTVISION_AMBIENCE_G",
+          "type": "number",
+          "default": 180,
+          "min": 0,
+          "max": 255,
+          "description": "Green component of night vision ambience"
+        },
+        {
+          "name": "NIGHTVISION_AMBIENCE_B",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 255,
+          "description": "Blue component of night vision ambience"
+        },
+        {
+          "name": "NIGHTVISION_INTENSITY",
+          "type": "number",
+          "default": 120,
+          "min": 0,
+          "max": 255,
+          "description": "Intensity of night vision effect"
+        },
+        {
+          "name": "NIGHTVISION_FOG_R",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 255,
+          "description": "Red component of night vision fog"
+        },
+        {
+          "name": "NIGHTVISION_FOG_G",
+          "type": "number",
+          "default": 255,
+          "min": 0,
+          "max": 255,
+          "description": "Green component of night vision fog"
+        },
+        {
+          "name": "NIGHTVISION_FOG_B",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 255,
+          "description": "Blue component of night vision fog"
+        },
+        {
+          "name": "NIGHTVISION_FOG_NEAREST",
+          "type": "number",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "description": "Nearest distance for night vision fog"
+        },
+        {
+          "name": "NIGHTVISION_FOG_DISTANCE",
+          "type": "number",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "description": "Maximum distance for night vision fog"
+        },
+        {
+          "name": "TOXIC_PROTECTION",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether helmet protects against toxic/radiation zones"
+        },
+        {
+          "name": "HUD_OBJECT",
+          "type": "string",
+          "default": "",
+          "description": "Name of 3D helmet HUD object"
+        },
+        {
+          "name": "HUD_OBJECT_SCALE",
+          "type": "number",
+          "default": 100,
+          "min": 100,
+          "max": 300,
+          "description": "Scale adjustment for 3D helmet HUD object"
+        }
+      ],
+      "features": [
+        "Zoom functionality",
+        "Night vision mode",
+        "Compass display",
+        "Toxic protection",
+        "3D helmet model support",
+        "Customizable HUD overlay",
+        "Multiple usage modes",
+        "Sound effects"
+      ],
+      "keywords": ["helmet", "hud", "nightvision", "zoom", "compass", "protection"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hud", "hud_health"]
+    },
+    "killcount": {
+      "name": "Kill Count",
+      "file": "objects/killcount.lua",
+      "description": "Tracks and counts NPC kills in both level-specific and game-wide contexts. Perfect for creating kill counters, achievements, or mission objectives.",
+      "properties": [
+        {
+          "name": "LEVEL_COUNT_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User global variable name for level-specific kill count (e.g., 'MyLevelCounter')"
+        },
+        {
+          "name": "TOTAL_COUNT_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User global variable name for total game kill count (e.g., 'MyGameCounter')"
+        },
+        {
+          "name": "ENTITY_ALLEGIENCE",
+          "type": "dropdown",
+          "default": "Enemy",
+          "options": [
+            "Enemy",
+            "Ally",
+            "Neutral"
+          ],
+          "description": "Type of entities to count"
+        },
+        {
+          "name": "ENTITY_TYPE",
+          "type": "dropdown",
+          "default": "All",
+          "options": [
+            "All",
+            "Named Only"
+          ],
+          "description": "Whether to count all entities or only those with specific names"
+        },
+        {
+          "name": "ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of specific entity type to count (required if ENTITY_TYPE is 'Named Only')"
+        },
+        {
+          "name": "RESET_TOTAL_COUNT",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset the total counter to 0 on initialization"
+        }
+      ],
+      "features": [
+        "Level-specific kill counting",
+        "Game-wide kill tracking",
+        "Entity type filtering",
+        "Allegiance-based counting",
+        "Named entity tracking",
+        "Counter reset option",
+        "Automatic cleanup when counting is complete"
+      ],
+      "keywords": ["hud", "counter", "kill", "track", "count", "npc", "enemy", "ally", "neutral", "statistics"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hud_interface", "quest_switch", "resource_counter"]
+    },
+    "leaderboard": {
+      "name": "Leaderboard",
+      "file": "objects/leaderboard.lua",
+      "description": "Creates a leaderboard of highest scores using designated UserGlobal variables. Tracks and displays the top 5 scores, current game score, and total accrued score.",
+      "properties": [
+        {
+          "name": "CURRENT_SCORE_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for current game score (e.g., 'MyPoints')"
+        },
+        {
+          "name": "TOTAL_SCORE_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for total accrued game score (e.g., 'MyTotalPoints')"
+        },
+        {
+          "name": "HISCORE1_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for High Score 1"
+        },
+        {
+          "name": "HISCORE2_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for High Score 2"
+        },
+        {
+          "name": "HISCORE3_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for High Score 3"
+        },
+        {
+          "name": "HISCORE4_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for High Score 4"
+        },
+        {
+          "name": "HISCORE5_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global variable name for High Score 5"
+        },
+        {
+          "name": "LEADERBOARD_HUD",
+          "type": "string",
+          "default": "",
+          "description": "Name of HUD screen to display leaderboard (e.g., 'HUD Screen 3')"
+        },
+        {
+          "name": "DISPLAY_AT_START",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to display the HUD at startup"
+        },
+        {
+          "name": "RESET_TOTAL_SCORE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to reset the total accrued game score to 0"
+        }
+      ],
+      "features": [
+        "Top 5 high scores tracking",
+        "Current and total score tracking",
+        "Persistent score storage",
+        "HUD screen integration",
+        "Automatic startup display option",
+        "Score reset option"
+      ],
+      "keywords": ["leaderboard", "score", "highscore", "ranking", "points"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hud", "hud_interface", "score"]
+    },
+    "life": {
+      "name": "Life",
+      "file": "objects/life.lua",
+      "description": "Creates a collectible extra life object with customizable pickup behavior and display options. Features automatic or manual collection modes, visual highlighting, and logic connections.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text shown when player can collect the life"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "default": 90,
+          "min": 1,
+          "max": 200,
+          "description": "Distance at which life can be collected"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether life is collected automatically or requires button press"
+        },
+        {
+          "name": "COLLECTION_TEXT",
+          "type": "string",
+          "default": "Extra Life collected",
+          "description": "Text shown when life is collected"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to trigger logic connections on pickup"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight effect for the life object"
+        }
+      ],
+      "features": [
+        "Automatic or manual collection modes",
+        "Customizable pickup range",
+        "Local or screen-based prompts",
+        "Visual highlighting options",
+        "Logic connection support",
+        "Sound effect integration",
+        "Automatic cleanup after collection",
+        "Player lives system integration"
+      ],
+      "keywords": ["life", "extra life", "pickup", "collect", "powerup", "health", "player", "lives"],
+      "tutorial": {
+        "videoId": "0d46HhxrHBw",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a new object to serve as the life pickup",
+          "Set Physics to OFF",
+          "Set Always Active to ON",
+          "Attach the life behavior",
+          "Configure pickup text and range",
+          "Choose pickup style (automatic/manual)",
+          "Set up collection text",
+          "Configure prompt display mode",
+          "Add collection sound to Sound0",
+          "Test life collection and lives counter"
+        ]
+      },
+      "relatedBehaviors": ["healthbar", "hudcontrol", "activehud", "interface"]
+    }
+  }
+} 

@@ -1,0 +1,173 @@
+{
+  "category": "Animals",
+  "description": "Behaviors for creating realistic animal movements and interactions",
+  "behaviors": {
+    "bird": {
+      "name": "Bird",
+      "file": "animals/bird.lua",
+      "description": "Creates realistic bird behavior with perching, flying, walking, and fleeing mechanics. Birds will respond to player presence, sounds, and other environmental factors.",
+      "properties": [
+        {
+          "name": "No editable properties",
+          "type": "info",
+          "description": "This behavior is fully self-contained with no configurable properties."
+        }
+      ],
+      "features": [
+        "Realistic perching behavior",
+        "Multiple movement states (flying, walking, hopping)",
+        "Sound-based reactions",
+        "Player awareness and fleeing mechanics",
+        "Terrain height awareness",
+        "Animation state management",
+        "Hunger system with eating animations",
+        "Collision avoidance"
+      ],
+      "keywords": ["bird", "flying", "perch", "animal", "movement", "ai"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["flying_insect", "mammal_generic"]
+    },
+    "flying_insect": {
+      "name": "Flying Insect",
+      "file": "animals/flying_insect.lua",
+      "description": "Creates flying insect behavior with different types (butterfly, bee, wasp, dragonfly) and temperaments (benign, aggressive).",
+      "properties": [
+        {
+          "name": "INSECT_TYPE",
+          "type": "dropdown",
+          "default": "Butterfly",
+          "options": [
+            "Butterfly",
+            "Bee",
+            "Wasp",
+            "Dragonfly"
+          ],
+          "description": "Type of flying insect to simulate."
+        },
+        {
+          "name": "TEMPERAMENT",
+          "type": "dropdown",
+          "default": "Benign",
+          "options": [
+            "Benign",
+            "Aggressive"
+          ],
+          "description": "How the insect reacts to the player. Benign insects will flee, aggressive ones will attack."
+        },
+        {
+          "name": "BOUNDARY",
+          "type": "number",
+          "range": "1-2000",
+          "default": 500,
+          "description": "Maximum distance the insect will fly from its starting position."
+        }
+      ],
+      "features": [
+        "Four insect types with unique movement patterns",
+        "Two temperament types (benign/aggressive)",
+        "Boundary-based movement restrictions",
+        "Sound integration",
+        "Attack mechanics for aggressive insects",
+        "Death and respawn system",
+        "Terrain height awareness",
+        "Animation state management"
+      ],
+      "keywords": ["insect", "flying", "butterfly", "bee", "wasp", "dragonfly", "ai"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["bird", "crawling_insect"]
+    },
+    "mammal_generic": {
+      "name": "Mammal Generic",
+      "file": "animals/mammal_generic.lua",
+      "description": "Creates realistic mammal behavior with walking, running, and fleeing mechanics. Mammals will respond to player presence, sounds, and other threats.",
+      "properties": [
+        {
+          "name": "No editable properties",
+          "type": "info",
+          "description": "This behavior is fully self-contained with no configurable properties."
+        }
+      ],
+      "features": [
+        "Multiple movement states (walking, running, idle)",
+        "Species-specific behaviors",
+        "Sound-based reactions",
+        "Player awareness and fleeing mechanics",
+        "Terrain height awareness",
+        "Animation state management",
+        "Path finding and obstacle avoidance",
+        "Warning system between same species"
+      ],
+      "keywords": ["mammal", "movement", "ai"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["bird", "flying_insect"]
+    },
+    "fish": {
+      "name": "Fish",
+      "file": "animals/fish.lua",
+      "description": "Creates realistic fish behavior with swimming, schooling, and fleeing mechanics. Fish will respond to player presence and avoid obstacles.",
+      "properties": [
+        {
+          "name": "RANDOMSCALE",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Enable random size variation for each fish (40-112% of original size)."
+        }
+      ],
+      "features": [
+        "Realistic swimming patterns",
+        "Schooling behavior",
+        "Obstacle avoidance",
+        "Player awareness",
+        "Terrain height awareness",
+        "Animation state management",
+        "Sound-based reactions",
+        "Collision detection"
+      ],
+      "keywords": ["fish", "swimming", "movement", "ai"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["bird", "flying_insect"]
+    },
+    "crawling_insect": {
+      "name": "Crawling Insect",
+      "file": "animals/crawling_insect.lua",
+      "description": "Creates realistic crawling insect behavior with walking, running, eating, and fleeing mechanics. Insects will respond to player presence and sounds.",
+      "properties": [
+        {
+          "name": "No editable properties",
+          "type": "info",
+          "description": "This behavior is fully self-contained with no configurable properties."
+        }
+      ],
+      "features": [
+        "Multiple movement states (walking, running, idle)",
+        "Species-specific behaviors",
+        "Hunger system with eating animations",
+        "Sound-based reactions",
+        "Player awareness and fleeing mechanics",
+        "Terrain height awareness",
+        "Animation state management",
+        "Collision avoidance",
+        "Warning system between same species"
+      ],
+      "keywords": ["insect", "crawling", "movement", "ai"],
+      "tutorial": {
+        "videoId": "Jr3-XsVSRHA",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["flying_insect", "mammal_generic"]
+    }
+  }
+} 

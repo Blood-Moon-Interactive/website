@@ -1,0 +1,1995 @@
+{
+  "category": "Object Interaction",
+  "description": "Behaviors for object-to-object and player-to-object interactions",
+  "behaviors": {
+    "actionplate": {
+      "name": "Action Plate",
+      "file": "objects/actionplate.lua",
+      "description": "Creates an interactive pressure plate that can trigger events when stepped on. Features configurable movement, single or multi-use modes, and customizable activation messages.",
+      "properties": [
+        {
+          "name": "ACTIVATION_TEXT",
+          "type": "string",
+          "default": "You have activated a panel",
+          "description": "Message displayed when plate is activated"
+        },
+        {
+          "name": "ACTIVATION_TYPE",
+          "type": "dropdown",
+          "default": "Single Use",
+          "options": ["Single Use", "Multi Use"],
+          "description": "Whether plate can be used once or multiple times"
+        },
+        {
+          "name": "MOVEMENT",
+          "type": "number",
+          "range": "0-100",
+          "default": 3,
+          "description": "How far the plate moves down when activated"
+        }
+      ],
+      "features": [
+        "Pressure-sensitive activation",
+        "Configurable plate movement",
+        "Single or multi-use modes",
+        "Customizable messages",
+        "Sound effect support",
+        "Automatic reset for multi-use",
+        "Collision detection",
+        "Event trigger system",
+        "Physics integration",
+        "Surface height detection"
+      ],
+      "keywords": ["plate", "pressure", "trigger", "switch", "activate", "panel", "button", "floor"],
+      "tutorial": {
+        "videoId": "R0MX2w8fAWk",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["trigger_zone", "switch", "door_control", "elevator"]
+    },
+    "break_object": {
+      "name": "Break Object",
+      "file": "objects/break_object.lua",
+      "description": "Creates a breakable object that can be destroyed with configurable animations, particles, and fade effects. Perfect for creating destructible environment objects.",
+      "properties": [
+        {
+          "name": "BREAK_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play when object breaks"
+        },
+        {
+          "name": "FADE_DELAY",
+          "type": "number",
+          "range": "1-10",
+          "default": 2,
+          "description": "Seconds to wait before fading out broken object"
+        },
+        {
+          "name": "BREAK_PARTICLE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to show a particle effect when breaking"
+        },
+        {
+          "name": "PARTICLE_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of particle entity to show on break"
+        },
+        {
+          "name": "HIDE_OBJECT",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to hide object initially and show on break"
+        }
+      ],
+      "features": [
+        "Configurable break animation",
+        "Fade-out effect after breaking",
+        "Optional particle effects",
+        "Sound effect support",
+        "Health-based breaking",
+        "Trigger connections",
+        "Collision handling",
+        "Gravity control",
+        "Initial visibility options",
+        "Automatic cleanup"
+      ],
+      "keywords": ["break", "destroy", "damage", "particle", "animation", "fade", "destructible", "object"],
+      "tutorial": {
+        "videoId": "SrDYH_gnz5Q",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["damage_system", "particle_system", "object_health"]
+    },
+    "carry_object": {
+      "name": "Carry Object",
+      "file": "objects/carry_object.lua",
+      "description": "Creates an interactive object that can be picked up, carried, and thrown by the player. Features weight-based restrictions, throwing mechanics, and detailed object handling.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "Press Q or Hold LMB to carry, RMB to carry/throw",
+          "description": "Text shown when player can pick up object"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 80,
+          "description": "Distance at which object can be picked up"
+        },
+        {
+          "name": "MAX_PICKUP_WEIGHT",
+          "type": "number",
+          "range": "1-99",
+          "default": 99,
+          "description": "Maximum weight of objects that can be picked up"
+        },
+        {
+          "name": "MAX_PICKUP_SIZE",
+          "type": "number",
+          "range": "1-100",
+          "default": 40,
+          "description": "Maximum size of objects that can be picked up"
+        },
+        {
+          "name": "RELEASE_TEXT",
+          "type": "string",
+          "default": "R or LMB to drop, MMW Up/Down, Z to Rotate",
+          "description": "Text shown when carrying object"
+        },
+        {
+          "name": "THROW_TEXT",
+          "type": "string",
+          "default": "Shift to add force - Release RMB to throw",
+          "description": "Text shown when preparing to throw"
+        },
+        {
+          "name": "REARM_WEAPON",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rearm player's weapon after dropping object"
+        },
+        {
+          "name": "THROW_DAMAGE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether thrown objects can take damage on impact"
+        },
+        {
+          "name": "DIAGNOSTICS",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to show debug information"
+        },
+        {
+          "name": "ITEM_OUTLINE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to show outline on pickupable objects"
+        },
+        {
+          "name": "USE_PICKUP_ICON",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to show pickup icon"
+        },
+        {
+          "name": "ICON_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\HUD\\cursor.png",
+          "description": "Image file to use for pickup icon"
+        }
+      ],
+      "features": [
+        "Weight-based pickup restrictions",
+        "Size-based pickup restrictions",
+        "Throwing mechanics with force control",
+        "Object rotation control",
+        "Distance-based interaction",
+        "Weapon management",
+        "Impact damage system",
+        "Visual feedback (outlines/icons)",
+        "Customizable UI text",
+        "Physics-based handling",
+        "Collision detection",
+        "Multiple carry modes"
+      ],
+      "keywords": ["carry", "pickup", "throw", "physics", "interaction", "weight", "object", "force", "handle"],
+      "tutorial": {
+        "videoId": "zMaR75CP01c",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["break_object", "physics_object", "damage_system", "weight_system"]
+    },
+    "destroy_object": {
+      "name": "Destroy Object",
+      "file": "objects/destroy_object.lua",
+      "description": "Creates a system that can monitor and destroy named objects based on health or trigger conditions. Features particle effects, global variable manipulation, and customizable destruction messages.",
+      "properties": [
+        {
+          "name": "MESSAGE",
+          "type": "string",
+          "default": "Destroyed",
+          "description": "Message displayed when object is destroyed"
+        },
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the object to monitor/destroy"
+        },
+        {
+          "name": "PARTICLE_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of particle effect to show on destruction"
+        },
+        {
+          "name": "DESTROY_PARTICLE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to destroy the particle after effect completes"
+        },
+        {
+          "name": "HEALTH_MONITOR",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to monitor object health for destruction"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of global variable to modify on destruction"
+        },
+        {
+          "name": "AFFECT_TYPE",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "How to modify the global variable"
+        },
+        {
+          "name": "AFFECT_VALUE",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Amount to add/deduct from global variable"
+        }
+      ],
+      "features": [
+        "Health-based destruction",
+        "Trigger-based destruction",
+        "Particle effect system",
+        "Global variable manipulation",
+        "Customizable messages",
+        "Automatic cleanup",
+        "Collision handling",
+        "Multiple destruction modes",
+        "Event connections",
+        "Object state management"
+      ],
+      "keywords": ["destroy", "monitor", "health", "particle", "global", "trigger", "message", "effect"],
+      "tutorial": {
+        "videoId": "qcr5z-FBEzw",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["break_object", "global_monitor", "particle_system", "trigger_zone"]
+    },
+    "affected": {
+      "name": "Affected",
+      "file": "objects/affected.lua",
+      "description": "Creates an object that can apply various status effects to the player including drunk, poisoned, and shudder effects. Can also modify player health and user globals.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "You are affected",
+          "description": "Message displayed when effect is applied"
+        },
+        {
+          "name": "EFFECT_TYPE",
+          "type": "dropdown",
+          "default": "Drunk",
+          "options": ["Drunk", "Poisoned", "Shudder"],
+          "description": "Type of screen effect to apply"
+        },
+        {
+          "name": "EFFECT_TIME",
+          "type": "number",
+          "default": 5,
+          "description": "Duration of effect in seconds"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable to modify"
+        },
+        {
+          "name": "GLOBAL_AFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or subtract from global value"
+        },
+        {
+          "name": "AFFECT_AMOUNT",
+          "type": "number",
+          "range": "1-100",
+          "default": 0,
+          "description": "Amount to modify health/global by"
+        },
+        {
+          "name": "AFFECT_HEALTH",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to modify player health"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to trigger logic connections"
+        }
+      ],
+      "features": [
+        "Multiple effect types (Drunk, Poisoned, Shudder)",
+        "Screen shake trauma control",
+        "Screen shake period control",
+        "Health modification system",
+        "User global variable control",
+        "Effect duration timing",
+        "Gradual effect fade-out",
+        "Sound effect support",
+        "Logic connection triggers",
+        "Value clamping (0-100)"
+      ],
+      "keywords": ["effect", "status", "drunk", "poison", "shake", "health", "global", "trauma"],
+      "tutorial": {
+        "videoId": "7_4WZojGvjg",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["global_affected_object", "health_system", "screen_effects"]
+    },
+    "animated_object": {
+      "name": "Animated Object",
+      "file": "objects/animated_object.lua",
+      "description": "Controls the built-in animation of an object with configurable speed and variable-based modulation. Supports sound synchronization and global variable integration for dynamic animation control.",
+      "properties": [
+        {
+          "name": "RUN_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play from the object's animation set"
+        },
+        {
+          "name": "ANIMATION_SPEED",
+          "type": "number",
+          "range": "0.0-100.0",
+          "default": 1.0,
+          "description": "Speed multiplier for the animation playback"
+        },
+        {
+          "name": "VARIABLE_SWITCH_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of a user global variable to control animation speed (e.g. Variable_Switch1)"
+        }
+      ],
+      "features": [
+        "Built-in animation control",
+        "Variable animation speed",
+        "Dynamic speed modulation through global variables",
+        "Sound synchronization with animation",
+        "Automatic sound control based on speed",
+        "Loop animation support",
+        "State management system",
+        "Zero-speed handling"
+      ],
+      "keywords": ["animation", "speed", "control", "variable", "sound", "modulate", "dynamic"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Attach the animated_object behavior to an object with animations",
+          "Select the desired animation from the object's animation set",
+          "Set the base animation speed (default is 1.0)",
+          "Optionally link a global variable for dynamic speed control",
+          "Add animation sound to Sound0 if desired",
+          "Test the animation and adjust speed as needed"
+        ]
+      },
+      "relatedBehaviors": ["object_mover", "global_modifier", "variable_switch", "sound_object"]
+    },
+    "autoreload": {
+      "name": "Auto Reload",
+      "file": "objects/autoreload.lua",
+      "description": "Creates an automatic weapon reloading system that can reload weapons when their clip is empty. Features configurable modes including always-on, off, and user prompt options.",
+      "properties": [
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off", "Ask"],
+          "description": "How the auto-reload feature should behave"
+        },
+        {
+          "name": "PROMPT",
+          "type": "string",
+          "default": "Select Y or N for Weapon Auto-Reloading",
+          "description": "Message shown when asking player to enable/disable auto-reload"
+        }
+      ],
+      "features": [
+        "Automatic weapon reloading",
+        "Multiple operation modes",
+        "User preference prompting",
+        "Ammo count monitoring",
+        "Automatic key simulation",
+        "Global state management",
+        "Configurable user messages",
+        "Key buffer management",
+        "Always active operation",
+        "Instant reload triggering"
+      ],
+      "keywords": ["weapon", "reload", "automatic", "ammo", "clip", "gun", "prompt", "preference"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Attach the autoreload behavior to an object",
+          "Set Always Active to ON for the object",
+          "Choose the desired MODE (On, Off, or Ask)",
+          "Customize the PROMPT message if using Ask mode",
+          "If using Ask mode, players can press Y/N to set preference",
+          "Test with different weapons to ensure proper reloading"
+        ]
+      },
+      "relatedBehaviors": ["weapon_system", "ammo_pickup", "gun_control", "player_mode"]
+    },
+    "break_wall": {
+      "name": "Break Wall",
+      "file": "objects/break_wall.lua",
+      "description": "Creates an interactive wall that can be broken by the player when in range. Features configurable animations, fade-out effects, and automatic cleanup after destruction.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which player can interact with wall"
+        },
+        {
+          "name": "PROMPT",
+          "type": "string",
+          "default": "Press E to Break Wall",
+          "description": "Message shown when player is in range"
+        },
+        {
+          "name": "BREAK_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play when wall breaks"
+        },
+        {
+          "name": "CLEANUP_DELAY",
+          "type": "number",
+          "range": "0-10",
+          "default": 3,
+          "description": "Seconds to wait before fading out broken wall"
+        }
+      ],
+      "features": [
+        "Interactive wall destruction",
+        "Configurable interaction range",
+        "Custom break animations",
+        "Sound effect support",
+        "Automatic cleanup system",
+        "Fade-out effect",
+        "Collision handling",
+        "Entity management",
+        "Distance-based interaction",
+        "Transparency control"
+      ],
+      "keywords": ["wall", "break", "destroy", "interactive", "animation", "fade", "cleanup", "collision"],
+      "tutorial": {
+        "videoId": "SrDYH_gnz5Q",
+        "timestamp": "0:00",
+        "steps": [
+          "Attach the break_wall behavior to a wall object",
+          "Set Always Active to ON",
+          "Configure the interaction RANGE",
+          "Set up the BREAK_ANIMATION",
+          "Add a break sound to Sound0",
+          "Adjust CLEANUP_DELAY if needed",
+          "Test by approaching wall and pressing E"
+        ]
+      },
+      "relatedBehaviors": ["break_object", "destroy_object", "particle_system", "sound_object"]
+    },
+    "buy_object": {
+      "name": "Buy Object",
+      "file": "objects/buy_object.lua",
+      "description": "Creates a purchasable object that can be bought using a global currency variable. Features configurable costs, messages, and automatic cleanup after purchase. Perfect for creating in-game shops and purchasable items.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which player can interact with object"
+        },
+        {
+          "name": "BUY_TEXT",
+          "type": "string",
+          "default": "E to purchase",
+          "description": "Message shown when player can buy object"
+        },
+        {
+          "name": "BOUGHT_TEXT",
+          "type": "string",
+          "default": "Purchased",
+          "description": "Message shown after successful purchase"
+        },
+        {
+          "name": "INSUFFICIENT_TEXT",
+          "type": "string",
+          "default": "Insufficient funds",
+          "description": "Message shown when player lacks required funds"
+        },
+        {
+          "name": "TEXT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display interaction messages"
+        },
+        {
+          "name": "BUY_COST",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Cost to purchase the object"
+        },
+        {
+          "name": "DELETE_ON_BUY",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether to remove object after purchase"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Global variable name for currency (e.g. MyMoney)"
+        }
+      ],
+      "features": [
+        "Currency-based purchasing system",
+        "Configurable interaction range",
+        "Custom messages for all states",
+        "Local or screen-wide notifications",
+        "Sound effect support",
+        "Automatic cleanup option",
+        "Global variable integration",
+        "Logic connection triggers",
+        "Distance-based interaction",
+        "Purchase validation system"
+      ],
+      "keywords": ["buy", "purchase", "shop", "currency", "money", "store", "item", "transaction"],
+      "tutorial": {
+        "videoId": "3Pv7FS5aMCA",
+        "timestamp": "0:00",
+        "steps": [
+          "Attach the buy_object behavior to a purchasable item",
+          "Set up your currency global variable (e.g. MyMoney)",
+          "Configure the BUY_COST and USE_RANGE",
+          "Choose message display type (Local/Screen)",
+          "Add purchase sound to Sound0 if desired",
+          "Set DELETE_ON_BUY based on your needs",
+          "Create logic connections for purchase effects",
+          "Test by approaching with sufficient/insufficient funds"
+        ]
+      },
+      "relatedBehaviors": ["global_modifier", "inventory_system", "shop_system", "currency_manager"]
+    },
+    "destructible": {
+      "name": "Destructible",
+      "file": "objects/destructible.lua",
+      "description": "Creates a destructible object with animated fragments and navmesh blocking capabilities. Features health-based or trigger-based destruction, customizable animations, and automatic cleanup.",
+      "properties": [
+        {
+          "name": "SOLID_LIMB",
+          "type": "number",
+          "default": 2,
+          "description": "Limb number that represents the solid/intact state"
+        },
+        {
+          "name": "ANIMATION_NAME",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play during destruction"
+        },
+        {
+          "name": "ANIMATION_SPEED",
+          "type": "number",
+          "default": 50,
+          "description": "Speed of destruction animation"
+        },
+        {
+          "name": "COLLISION_OFF_TIME",
+          "type": "number",
+          "default": 250,
+          "description": "Time in milliseconds before collision is disabled"
+        },
+        {
+          "name": "DESTROY_AT_END",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to remove object after animation"
+        },
+        {
+          "name": "DESTROY_ANIM_TRIM",
+          "type": "number",
+          "default": 40,
+          "description": "Frame number to consider animation complete"
+        }
+      ],
+      "features": [
+        "Health-based destruction",
+        "Trigger-based destruction",
+        "Fragment animation system",
+        "NavMesh blocking",
+        "Collision management",
+        "Sound effect support",
+        "Logic connection triggers",
+        "Automatic cleanup",
+        "Animation speed control",
+        "Fragment visibility control",
+        "Multi-state management",
+        "Performance optimized"
+      ],
+      "keywords": ["destructible", "break", "fragment", "navmesh", "collision", "animation", "destroy", "interactive"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select an object with destruction fragments",
+          "Set IsImmobile to YES",
+          "Attach the destructible behavior",
+          "Configure SOLID_LIMB for intact state",
+          "Set up destruction animation if needed",
+          "Add destruction sound to Sound0",
+          "Set health or create trigger for destruction",
+          "Test destruction sequence and cleanup"
+        ]
+      },
+      "relatedBehaviors": ["break_wall", "buy_object", "damage_system", "physics_object"]
+    },
+    "document": {
+      "name": "Document",
+      "file": "objects/document.lua",
+      "description": "Creates an interactive document or image that can be viewed, zoomed, and scrolled by the player. Features customizable display options, screen locking, and narration support.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to look at document",
+          "description": "Message shown when player can interact with document"
+        },
+        {
+          "name": "SCREEN_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Horizontal position on screen (percentage)"
+        },
+        {
+          "name": "SCREEN_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Vertical position on screen (percentage)"
+        },
+        {
+          "name": "SPRITE_SIZE",
+          "type": "number",
+          "range": "1-100",
+          "default": 15,
+          "description": "Initial size of document as percentage of screen"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\documents\\default_doc.png",
+          "description": "Path to document image file"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-300",
+          "default": 80,
+          "description": "Distance at which player can interact"
+        },
+        {
+          "name": "USAGE_TEXT",
+          "type": "string",
+          "default": "MB to +-Zoom, MMW to scroll, Q to return document",
+          "description": "Instructions shown while viewing document"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to show interaction prompts"
+        },
+        {
+          "name": "LOCK_SCREEN",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to lock camera when viewing"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "How to highlight document when in range"
+        }
+      ],
+      "features": [
+        "Interactive document viewing",
+        "Mouse-based zoom control",
+        "Scroll functionality",
+        "Aspect ratio preservation",
+        "Screen position control",
+        "Camera lock option",
+        "Narration support",
+        "Highlight effects",
+        "Range-based interaction",
+        "Sound effect integration",
+        "Multiple display modes",
+        "Automatic cleanup"
+      ],
+      "keywords": ["document", "image", "view", "zoom", "scroll", "read", "narrate", "interactive"],
+      "tutorial": {
+        "videoId": "uYojoLKL6kc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select an object to be the document",
+          "Attach the document behavior",
+          "Set up your document image file",
+          "Configure display position and size",
+          "Set interaction range and prompts",
+          "Add pickup sound to Sound0 if desired",
+          "Add narration to Sound1 if needed",
+          "Add return sound to Sound2 if desired",
+          "Test document interaction and controls"
+        ]
+      },
+      "relatedBehaviors": ["carry_object", "pickup_object", "hud_display", "screen_text"]
+    },
+    "dynamite": {
+      "name": "Dynamite",
+      "file": "objects/dynamite.lua",
+      "description": "Creates a deployable explosive device that can be picked up, placed, and detonated in various ways. Features multiple detonation modes, safety distances, and enemy alert system.",
+      "properties": [
+        {
+          "name": "WEAPON_NAME",
+          "type": "string",
+          "default": "Dynamite",
+          "description": "Name of the explosive device"
+        },
+        {
+          "name": "PLACEMENT_TIME",
+          "type": "number",
+          "range": "1-3",
+          "default": 1,
+          "description": "Seconds needed to hold key before bomb is placed"
+        },
+        {
+          "name": "EXPLOSION_DELAY",
+          "type": "number",
+          "range": "1-50",
+          "default": 1,
+          "description": "Seconds before bomb explodes once triggered"
+        },
+        {
+          "name": "BOMB_TYPE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Manual", "Timer", "Remote", "Switch"],
+          "description": "How the explosive is detonated"
+        },
+        {
+          "name": "PLAYER_SAFE_DISTANCE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 220,
+          "description": "Minimum safe distance for remote detonation"
+        },
+        {
+          "name": "ENEMY_HEAR_DISTANCE",
+          "type": "number",
+          "range": "0-3000",
+          "default": 1000,
+          "description": "Distance at which enemies can hear explosion"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which player can collect explosive"
+        },
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Message shown when explosive can be picked up"
+        }
+      ],
+      "features": [
+        "Multiple detonation modes",
+        "Safety distance system",
+        "Enemy alert mechanism",
+        "Placement preview",
+        "Timer countdown display",
+        "Surface detection",
+        "Gravity physics",
+        "Sound effect support",
+        "State management",
+        "Transparency control"
+      ],
+      "keywords": ["dynamite", "explosive", "bomb", "detonate", "timer", "remote", "switch", "manual"],
+      "tutorial": {
+        "videoId": "IR5F35glKA0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an explosive object",
+          "Attach the dynamite behavior",
+          "Choose detonation mode",
+          "Configure safety distances",
+          "Set placement and explosion delays",
+          "Add pickup sound to Sound0",
+          "Add primed/armed sound to Sound1",
+          "Test all detonation modes"
+        ]
+      },
+      "relatedBehaviors": ["break_wall", "destroy_object", "particle_system", "switch"]
+    },
+    "income_generator": {
+      "name": "Income Generator",
+      "file": "objects/income_generator.lua",
+      "description": "Creates an object that generates income over time and adds it to a specified global variable. Features multiple collection modes, customizable income/upkeep rates, and visual feedback.",
+      "properties": [
+        {
+          "name": "COLLECTION_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which income can be collected"
+        },
+        {
+          "name": "COLLECTION_STYLE",
+          "type": "dropdown",
+          "default": "Ranged",
+          "options": ["Ranged", "Manual", "Automatic"],
+          "description": "How income is collected"
+        },
+        {
+          "name": "COLLECTION_PROMPT",
+          "type": "string",
+          "default": "E to Collect",
+          "description": "Text shown when income can be collected"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Income Collected",
+          "description": "Text shown when income is collected"
+        },
+        {
+          "name": "GENERATING_TEXT",
+          "type": "string",
+          "default": "Accumulating Income",
+          "description": "Text shown while income is generating"
+        },
+        {
+          "name": "INCOME",
+          "type": "number",
+          "range": "0-500",
+          "default": 10,
+          "description": "Amount of income generated per cycle"
+        },
+        {
+          "name": "UPKEEP",
+          "type": "number",
+          "range": "0-500",
+          "default": 10,
+          "description": "Maintenance cost deducted from income"
+        },
+        {
+          "name": "ELAPSE_TIME",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Seconds between income generation cycles"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Global variable to store income (e.g. MyMoney)"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to show prompt messages"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style for generator"
+        },
+        {
+          "name": "ACTIVE_AT_START",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether generator is active when created"
+        }
+      ],
+      "features": [
+        "Multiple collection modes",
+        "Configurable income rates",
+        "Upkeep cost system",
+        "Timed generation cycles",
+        "Global variable integration",
+        "Visual feedback system",
+        "Object highlighting",
+        "Sound effect support",
+        "Automatic state management",
+        "Range-based interaction",
+        "Custom message display",
+        "Switch/trigger activation"
+      ],
+      "keywords": ["income", "money", "generator", "economy", "resource", "collection", "upkeep", "automatic"],
+      "tutorial": {
+        "videoId": "dJOy8BJ3geI",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the income_generator behavior",
+          "Configure collection range and style",
+          "Set income and upkeep amounts",
+          "Adjust generation cycle time",
+          "Set up global variable name",
+          "Add collection sound to Sound0",
+          "Test different collection modes"
+        ]
+      },
+      "relatedBehaviors": ["money", "buy_object", "vendor", "global_modifier"]
+    },
+    "mines": {
+      "name": "Mines",
+      "file": "objects/mines.lua",
+      "description": "Creates an explosive mine that can be triggered by player proximity or other entities. Features configurable damage, blast radius, and various trigger modes with optional arming delay and visual indicators.",
+      "properties": [
+        {
+          "name": "TRIGGER_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which mine detects targets"
+        },
+        {
+          "name": "DAMAGE_RANGE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 200,
+          "description": "Radius of explosion damage"
+        },
+        {
+          "name": "DAMAGE_AMOUNT",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Amount of damage dealt by explosion"
+        },
+        {
+          "name": "ARMING_DELAY",
+          "type": "number",
+          "range": "0-10",
+          "default": 1.0,
+          "description": "Seconds before mine becomes active"
+        },
+        {
+          "name": "TRIGGER_MODE",
+          "type": "dropdown",
+          "default": "Player Only",
+          "options": ["Player Only", "Any Entity", "Enemies Only"],
+          "description": "What can trigger the mine"
+        },
+        {
+          "name": "VISUAL_INDICATOR",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show activation light"
+        },
+        {
+          "name": "DESTROY_ON_EXPLODE",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether mine is destroyed after explosion"
+        },
+        {
+          "name": "CHAIN_REACTION",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether explosion triggers nearby mines"
+        },
+        {
+          "name": "WARNING_TEXT",
+          "type": "string",
+          "default": "Mine Detected!",
+          "description": "Text shown when player detects mine"
+        }
+      ],
+      "features": [
+        "Proximity-based detection",
+        "Configurable damage system",
+        "Multiple trigger modes",
+        "Visual warning indicators",
+        "Chain reaction support",
+        "Arming delay system",
+        "Particle effect integration",
+        "Sound effect support",
+        "Entity damage handling",
+        "Explosion force physics"
+      ],
+      "keywords": ["mine", "explosive", "trap", "damage", "proximity", "trigger", "explosion", "hazard"],
+      "tutorial": {
+        "videoId": "IR5F35glKA0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a mine object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the mines behavior",
+          "Configure trigger and damage ranges",
+          "Set damage amount",
+          "Choose trigger mode",
+          "Add arming sound to Sound0",
+          "Add detection sound to Sound1",
+          "Add explosion sound to Sound2",
+          "Test mine activation and effects"
+        ]
+      },
+      "relatedBehaviors": ["exploder", "damage_zone", "trigger_zone", "particle_system"]
+    },
+    "money": {
+      "name": "Money",
+      "file": "objects/money.lua",
+      "description": "Creates a collectible money object that adds to a global currency variable when picked up. Features automatic or manual collection, visual effects, and customizable amounts.",
+      "properties": [
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 80,
+          "description": "Distance at which money can be collected"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether money is collected automatically or requires button press"
+        },
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to collect money",
+          "description": "Text shown when money can be collected"
+        },
+        {
+          "name": "COLLECTION_TEXT",
+          "type": "string",
+          "default": "Money collected",
+          "description": "Text shown when money is collected"
+        },
+        {
+          "name": "AMOUNT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 10,
+          "description": "Amount of money to add when collected"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Global variable to store money (e.g. MyMoney)"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to show prompt messages"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style for money object"
+        },
+        {
+          "name": "HOVER_EFFECT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether money object hovers in place"
+        },
+        {
+          "name": "SPIN_EFFECT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether money object spins in place"
+        }
+      ],
+      "features": [
+        "Automatic or manual collection",
+        "Configurable pickup range",
+        "Global variable integration",
+        "Visual feedback system",
+        "Object highlighting",
+        "Hover animation",
+        "Spin animation",
+        "Sound effect support",
+        "Custom message display",
+        "Range-based interaction",
+        "Automatic cleanup",
+        "Economy system integration"
+      ],
+      "keywords": ["money", "currency", "collect", "pickup", "economy", "cash", "coins", "wealth"],
+      "tutorial": {
+        "videoId": "vivZL3AjU_w",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select money object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the money behavior",
+          "Configure pickup range and style",
+          "Set money amount",
+          "Set up global variable name",
+          "Add collection sound to Sound0",
+          "Configure visual effects",
+          "Test collection mechanics"
+        ]
+      },
+      "relatedBehaviors": ["income_generator", "buy_object", "vendor", "global_modifier"]
+    },
+    "mouse_switch": {
+      "name": "Mouse Switch",
+      "file": "objects/mouse_switch.lua",
+      "description": "Creates an interactive object that responds to mouse clicks with configurable actions and visual feedback. Features multiple click modes, hover effects, and customizable trigger actions.",
+      "properties": [
+        {
+          "name": "CLICK_MODE",
+          "type": "dropdown",
+          "default": "Left Click",
+          "options": ["Left Click", "Right Click", "Middle Click", "Any Click"],
+          "description": "Which mouse button triggers the switch"
+        },
+        {
+          "name": "INTERACTION_RANGE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 200,
+          "description": "Maximum distance for mouse interaction"
+        },
+        {
+          "name": "HOVER_TEXT",
+          "type": "string",
+          "default": "Click to activate",
+          "description": "Text shown when hovering over object"
+        },
+        {
+          "name": "ACTIVATION_TEXT",
+          "type": "string",
+          "default": "Activated",
+          "description": "Text shown when switch is activated"
+        },
+        {
+          "name": "TOGGLE_MODE",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether switch toggles on/off or triggers once"
+        },
+        {
+          "name": "HIGHLIGHT_ON_HOVER",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to highlight object on mouse hover"
+        },
+        {
+          "name": "HIGHLIGHT_TYPE",
+          "type": "dropdown",
+          "default": "Outline",
+          "options": ["Outline", "Glow", "Color Change"],
+          "description": "Type of highlight effect to show"
+        },
+        {
+          "name": "COOLDOWN_TIME",
+          "type": "number",
+          "range": "0-10",
+          "default": 0.5,
+          "description": "Seconds before switch can be activated again"
+        },
+        {
+          "name": "REQUIRE_CURSOR",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to require cursor mode for interaction"
+        },
+        {
+          "name": "CURSOR_MODE_KEY",
+          "type": "string",
+          "default": "tab",
+          "description": "Key to toggle cursor mode if required"
+        }
+      ],
+      "features": [
+        "Multiple click modes",
+        "Range-based interaction",
+        "Toggle or trigger modes",
+        "Hover highlighting",
+        "Visual feedback system",
+        "Cooldown management",
+        "Cursor mode integration",
+        "Sound effect support",
+        "Logic connection triggers",
+        "State persistence"
+      ],
+      "keywords": ["mouse", "switch", "click", "interact", "hover", "cursor", "trigger", "button"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the mouse_switch behavior",
+          "Configure click mode and range",
+          "Set up hover and activation text",
+          "Choose highlight settings",
+          "Add activation sound to Sound0",
+          "Add hover sound to Sound1",
+          "Test mouse interaction modes"
+        ]
+      },
+      "relatedBehaviors": ["switch", "button", "trigger_zone", "interactive_object"]
+    },
+    "move_near": {
+      "name": "Move Near",
+      "file": "objects/move_near.lua",
+      "description": "Creates an object that moves when players or entities come within range. Features configurable movement patterns, trigger distances, and optional return-to-origin functionality.",
+      "properties": [
+        {
+          "name": "TRIGGER_RANGE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 200,
+          "description": "Distance at which object starts moving"
+        },
+        {
+          "name": "MOVEMENT_SPEED",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Speed of object movement"
+        },
+        {
+          "name": "MOVEMENT_TYPE",
+          "type": "dropdown",
+          "default": "Away From Player",
+          "options": ["Away From Player", "Toward Player", "Circle Player", "Random Direction"],
+          "description": "How the object moves when triggered"
+        },
+        {
+          "name": "TRIGGER_MODE",
+          "type": "dropdown",
+          "default": "Player Only",
+          "options": ["Player Only", "Any Entity", "Specific Entity"],
+          "description": "What can trigger the movement"
+        },
+        {
+          "name": "TARGET_ENTITY",
+          "type": "string",
+          "default": "",
+          "description": "Name of specific entity to react to (if mode 3)"
+        },
+        {
+          "name": "MAX_DISTANCE",
+          "type": "number",
+          "range": "0-5000",
+          "default": 1000,
+          "description": "Maximum distance object can move from start"
+        },
+        {
+          "name": "RETURN_TO_START",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether object returns to origin when trigger leaves range"
+        },
+        {
+          "name": "RETURN_SPEED",
+          "type": "number",
+          "range": "0-100",
+          "default": 5,
+          "description": "Speed of return movement"
+        },
+        {
+          "name": "SMOOTH_MOVEMENT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to use smooth acceleration/deceleration"
+        },
+        {
+          "name": "AVOID_OBSTACLES",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to detect and avoid obstacles"
+        }
+      ],
+      "features": [
+        "Proximity-based activation",
+        "Multiple movement patterns",
+        "Entity-specific targeting",
+        "Return-to-origin system",
+        "Obstacle avoidance",
+        "Smooth movement transitions",
+        "Distance limitations",
+        "Position tracking",
+        "Sound effect support",
+        "Collision handling"
+      ],
+      "keywords": ["move", "proximity", "trigger", "follow", "avoid", "return", "circle", "movement"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the move_near behavior",
+          "Configure trigger range and mode",
+          "Choose movement type and speed",
+          "Set maximum movement distance",
+          "Configure return behavior",
+          "Add movement sound to Sound0",
+          "Test proximity activation"
+        ]
+      },
+      "relatedBehaviors": ["follow_path", "object_mover", "trigger_zone", "proximity_trigger"]
+    },
+    "object_collider": {
+      "name": "Object Collider",
+      "file": "objects/object_collider.lua",
+      "description": "Creates an object with advanced collision response behaviors. Features include customizable collision events, physics reactions, and trigger-based interactions.",
+      "properties": [
+        {
+          "name": "COLLISION_TYPE",
+          "type": "dropdown",
+          "default": "Solid",
+          "options": ["Solid", "Trigger", "Bounce", "Push", "Custom"],
+          "description": "How the object responds to collisions"
+        },
+        {
+          "name": "COLLISION_SHAPE",
+          "type": "dropdown",
+          "default": "Box",
+          "options": ["Box", "Sphere", "Cylinder", "Custom"],
+          "description": "Shape of the collision volume"
+        },
+        {
+          "name": "COLLISION_SCALE",
+          "type": "string",
+          "default": "1,1,1",
+          "description": "Scale multiplier for collision volume (X,Y,Z)"
+        },
+        {
+          "name": "COLLISION_OFFSET",
+          "type": "string",
+          "default": "0,0,0",
+          "description": "Offset from object center (X,Y,Z)"
+        },
+        {
+          "name": "BOUNCE_FACTOR",
+          "type": "number",
+          "range": "0-1",
+          "default": 0.5,
+          "description": "How bouncy the object is (0-1)"
+        },
+        {
+          "name": "PUSH_FORCE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 100,
+          "description": "Force applied when pushing other objects"
+        },
+        {
+          "name": "TRIGGER_ONCE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether trigger activates only once"
+        },
+        {
+          "name": "COLLISION_SOUND",
+          "type": "string",
+          "default": "",
+          "description": "Sound to play on collision"
+        },
+        {
+          "name": "COLLISION_EFFECT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Particles", "Flash", "Custom"],
+          "description": "Visual effect on collision"
+        },
+        {
+          "name": "DAMAGE_ON_COLLISION",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Damage dealt on collision"
+        },
+        {
+          "name": "COLLISION_GROUPS",
+          "type": "string",
+          "default": "all",
+          "description": "Groups this object can collide with"
+        },
+        {
+          "name": "ON_COLLISION_SCRIPT",
+          "type": "string",
+          "default": "",
+          "description": "Custom script to run on collision"
+        }
+      ],
+      "features": [
+        "Multiple collision types",
+        "Customizable collision shapes",
+        "Physics-based responses",
+        "Trigger system",
+        "Sound effect integration",
+        "Visual feedback",
+        "Damage system",
+        "Custom script support",
+        "Collision grouping",
+        "Performance optimized"
+      ],
+      "keywords": ["collision", "physics", "trigger", "interaction", "bounce", "push", "damage", "object"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select target object",
+          "Add the object_collider behavior",
+          "Choose collision type",
+          "Configure collision shape",
+          "Set up collision responses",
+          "Add collision sounds",
+          "Configure visual effects",
+          "Set up collision groups",
+          "Add custom scripts if needed",
+          "Test collision behavior"
+        ]
+      },
+      "relatedBehaviors": ["physics_object", "trigger_zone", "damage_system"]
+    },
+    "object_mover": {
+      "name": "Object Mover",
+      "file": "objects/object_mover.lua",
+      "description": "Creates a system for moving objects along predefined paths or to specific positions with customizable speed, rotation, and movement patterns.",
+      "properties": [
+        {
+          "name": "MOVEMENT_TYPE",
+          "type": "dropdown",
+          "default": "Linear",
+          "options": ["Linear", "Circular", "Oscillating"],
+          "description": "Type of movement pattern for the object"
+        },
+        {
+          "name": "MOVE_SPEED",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Speed at which object moves"
+        },
+        {
+          "name": "ROTATION_ENABLED",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether object should rotate during movement"
+        },
+        {
+          "name": "ROTATION_SPEED",
+          "type": "number",
+          "range": "0-360",
+          "default": 45,
+          "description": "Speed of rotation in degrees per second"
+        },
+        {
+          "name": "MOVEMENT_RANGE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 100,
+          "description": "Distance or radius of movement"
+        },
+        {
+          "name": "PAUSE_TIME",
+          "type": "number",
+          "range": "0-60",
+          "default": 0,
+          "description": "Time to pause at movement endpoints"
+        },
+        {
+          "name": "TRIGGER_START",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether movement requires trigger to start"
+        }
+      ],
+      "features": [
+        "Multiple movement patterns",
+        "Adjustable movement speed",
+        "Optional rotation",
+        "Trigger-based activation",
+        "Pause functionality",
+        "Path following",
+        "Collision handling",
+        "Position tracking",
+        "Movement synchronization",
+        "Event system integration"
+      ],
+      "keywords": ["move", "transport", "rotate", "path", "position", "motion", "platform", "animation"],
+      "tutorial": {
+        "videoId": "RRyiy531bjw",
+        "timestamp": "0"
+      },
+      "relatedBehaviors": ["carry_object", "actionplate", "elevator_control", "path_follow"]
+    },
+    "object_randomiser": {
+      "name": "Object Randomiser",
+      "file": "objects/object_randomiser.lua",
+      "description": "Creates a system that can randomly modify object properties, positions, or states based on various triggers. Perfect for creating dynamic environments and unpredictable gameplay elements.",
+      "properties": [
+        {
+          "name": "RANDOMISE_MODE",
+          "type": "dropdown",
+          "default": "Position",
+          "options": ["Position", "Rotation", "Scale", "State", "Multiple"],
+          "description": "What aspect of the object to randomise"
+        },
+        {
+          "name": "TARGET_OBJECT",
+          "type": "string",
+          "default": "",
+          "description": "Name of object to randomise (empty for self)"
+        },
+        {
+          "name": "TRIGGER_TYPE",
+          "type": "dropdown",
+          "default": "On Start",
+          "options": ["On Start", "On Timer", "On Trigger", "On Proximity"],
+          "description": "When randomisation occurs"
+        },
+        {
+          "name": "TIMER_INTERVAL",
+          "type": "number",
+          "range": "0.1-60",
+          "default": 5.0,
+          "description": "Seconds between randomisation (if timer mode)"
+        },
+        {
+          "name": "POSITION_RANGE",
+          "type": "string",
+          "default": "100,0,100",
+          "description": "Maximum position offset (X,Y,Z)"
+        },
+        {
+          "name": "ROTATION_RANGE",
+          "type": "string",
+          "default": "360,360,360",
+          "description": "Maximum rotation angles (X,Y,Z)"
+        },
+        {
+          "name": "SCALE_RANGE",
+          "type": "string",
+          "default": "1,1,1",
+          "description": "Maximum scale multiplier (X,Y,Z)"
+        },
+        {
+          "name": "MAINTAIN_GROUND_CONTACT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to keep object on ground when moving"
+        },
+        {
+          "name": "SMOOTH_TRANSITION",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to smoothly transition between states"
+        },
+        {
+          "name": "TRANSITION_TIME",
+          "type": "number",
+          "range": "0-10",
+          "default": 1.0,
+          "description": "Seconds to complete transition if smooth"
+        }
+      ],
+      "features": [
+        "Multiple randomisation modes",
+        "Timer-based automation",
+        "Trigger system integration",
+        "Proximity detection",
+        "Ground contact maintenance",
+        "Smooth state transitions",
+        "Position constraints",
+        "Rotation control",
+        "Scale manipulation",
+        "Multi-object support"
+      ],
+      "keywords": ["random", "position", "rotation", "scale", "state", "dynamic", "trigger", "transform"],
+      "tutorial": {
+        "videoId": "",
+        "timestamp": "0",
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON if using position randomisation",
+          "Set Always Active to ON",
+          "Attach the object_randomiser behavior",
+          "Choose randomisation mode",
+          "Configure trigger settings",
+          "Set appropriate ranges",
+          "Add transition sound to Sound0 if desired",
+          "Test randomisation behavior"
+        ]
+      },
+      "relatedBehaviors": ["object_mover", "trigger_zone", "proximity_trigger", "state_manager"]
+    },
+    "object_switch": {
+      "name": "Object Switch",
+      "file": "objects/object_switch.lua",
+      "description": "Creates an interactive switch that can toggle object states, visibility, or trigger events. Features multiple activation methods, visual feedback, and customizable switch behaviors.",
+      "properties": [
+        {
+          "name": "ACTIVATION_TYPE",
+          "type": "dropdown",
+          "default": "Press E",
+          "options": ["Press E", "Mouse Click", "Proximity", "Collision"],
+          "description": "How the switch is activated"
+        },
+        {
+          "name": "INTERACTION_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which switch can be activated"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to toggle switch",
+          "description": "Message shown when switch can be activated"
+        },
+        {
+          "name": "ON_STATE_TEXT",
+          "type": "string",
+          "default": "Switch is ON",
+          "description": "Message shown when switch is turned on"
+        },
+        {
+          "name": "OFF_STATE_TEXT",
+          "type": "string",
+          "default": "Switch is OFF",
+          "description": "Message shown when switch is turned off"
+        },
+        {
+          "name": "TARGET_OBJECT",
+          "type": "string",
+          "default": "",
+          "description": "Name of object to control (empty for self)"
+        },
+        {
+          "name": "SWITCH_TYPE",
+          "type": "dropdown",
+          "default": "Toggle",
+          "options": ["Toggle", "Hold", "Timer", "One-Shot"],
+          "description": "How the switch behaves when activated"
+        },
+        {
+          "name": "HOLD_TIME",
+          "type": "number",
+          "range": "0.1-60",
+          "default": 2.0,
+          "description": "Seconds to hold for timer/hold modes"
+        },
+        {
+          "name": "VISUAL_FEEDBACK",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Animation", "Color", "Custom"],
+          "description": "Type of visual feedback when switched"
+        },
+        {
+          "name": "SWITCH_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play when switched"
+        },
+        {
+          "name": "REQUIRE_ITEM",
+          "type": "string",
+          "default": "",
+          "description": "Required item name to activate switch"
+        }
+      ],
+      "features": [
+        "Multiple activation methods",
+        "Range-based interaction",
+        "Visual state feedback",
+        "Animation support",
+        "Timer functionality",
+        "Hold-to-activate mode",
+        "One-shot switches",
+        "Item requirements",
+        "Sound effect integration",
+        "Event system triggers"
+      ],
+      "keywords": ["switch", "toggle", "interact", "button", "trigger", "activate", "control", "state"],
+      "tutorial": {
+        "videoId": "7hKK2lMqk6A",
+        "timestamp": "0",
+        "steps": [
+          "Create or select switch object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the object_switch behavior",
+          "Choose activation and switch types",
+          "Configure interaction range",
+          "Set up target object if needed",
+          "Add activation sound to Sound0",
+          "Add deactivation sound to Sound1",
+          "Test switch functionality"
+        ]
+      },
+      "relatedBehaviors": ["mouse_switch", "trigger_zone", "actionplate", "button"]
+    },    
+    "sit": {
+      "name": "Sit",
+      "file": "objects/sit.lua",
+      "description": "Creates an interactive sitting spot that allows players to sit on chairs, benches, or other furniture. Features customizable sitting positions, animations, and interaction controls.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to sit",
+          "description": "Text shown when player can sit"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 80,
+          "description": "Distance at which player can interact"
+        },
+        {
+          "name": "SIT_OFFSET_X",
+          "type": "number",
+          "range": "-100-100",
+          "default": 0,
+          "description": "Left/right position adjustment"
+        },
+        {
+          "name": "SIT_OFFSET_Y",
+          "type": "number",
+          "range": "-100-100",
+          "default": 0,
+          "description": "Up/down position adjustment"
+        },
+        {
+          "name": "SIT_OFFSET_Z",
+          "type": "number",
+          "range": "-100-100",
+          "default": 0,
+          "description": "Forward/back position adjustment"
+        },
+        {
+          "name": "ROTATION_OFFSET",
+          "type": "number",
+          "range": "0-360",
+          "default": 0,
+          "description": "Rotation adjustment in degrees"
+        },
+        {
+          "name": "SIT_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play while sitting"
+        },
+        {
+          "name": "STAND_KEY",
+          "type": "string",
+          "default": "E",
+          "description": "Key to press to stand up"
+        },
+        {
+          "name": "ALLOW_LOOK",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether player can look around while sitting"
+        },
+        {
+          "name": "DISABLE_WEAPONS",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to disable weapons while sitting"
+        }
+      ],
+      "features": [
+        "Customizable sitting positions",
+        "Position offset controls",
+        "Rotation adjustment",
+        "Animation integration",
+        "Interaction prompts",
+        "Weapon control",
+        "Look controls",
+        "Sound effect support",
+        "Multiple furniture types",
+        "Performance optimized"
+      ],
+      "keywords": ["sit", "chair", "furniture", "interaction", "position", "animation", "comfort", "rest"],
+      "tutorial": {
+        "videoId": "VhRUtM40JJM",
+        "timestamp": "0",
+        "steps": [
+          "Create or select furniture object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the sit behavior",
+          "Configure sitting position offsets",
+          "Set up interaction range",
+          "Add sit sound to Sound0",
+          "Add stand sound to Sound1",
+          "Configure animation settings",
+          "Test sitting interaction"
+        ]
+      },
+      "relatedBehaviors": ["player_control", "animation_system", "interaction_zone", "furniture_system"]
+    },
+    "sleep": {
+      "name": "Sleep",
+      "file": "objects/sleep.lua",
+      "description": "Creates an interactive sleeping spot that allows players to rest, pass time, and restore health. Features customizable sleep duration, health regeneration, and time progression controls.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to sleep",
+          "description": "Text shown when player can sleep"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 80,
+          "description": "Distance at which player can interact"
+        },
+        {
+          "name": "SLEEP_DURATION",
+          "type": "number",
+          "range": "1-24",
+          "default": 8,
+          "description": "Hours of in-game time that pass while sleeping"
+        },
+        {
+          "name": "HEALTH_RESTORE",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Percentage of health restored after sleeping"
+        },
+        {
+          "name": "SLEEP_POSITION",
+          "type": "string",
+          "default": "0,0,0",
+          "description": "Position offset for sleeping (X,Y,Z)"
+        },
+        {
+          "name": "SLEEP_ROTATION",
+          "type": "number",
+          "range": "0-360",
+          "default": 0,
+          "description": "Rotation offset for sleeping position"
+        },
+        {
+          "name": "REQUIRE_TIRED",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether player must be tired to sleep"
+        },
+        {
+          "name": "WAKE_ON_DAMAGE",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to wake player if damaged"
+        },
+        {
+          "name": "FADE_EFFECT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to use screen fade effect"
+        },
+        {
+          "name": "SAVE_ON_SLEEP",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to auto-save game after sleeping"
+        }
+      ],
+      "features": [
+        "Customizable sleep duration",
+        "Health regeneration system",
+        "Time progression control",
+        "Position and rotation adjustment",
+        "Tiredness requirement option",
+        "Damage interruption",
+        "Screen fade transitions",
+        "Auto-save functionality",
+        "Sound effect support",
+        "Multiple bed types"
+      ],
+      "keywords": ["sleep", "rest", "bed", "health", "time", "restore", "save", "regenerate"],
+      "tutorial": {
+        "videoId": "xIjVB4pcKyI",
+        "timestamp": "0",
+        "steps": [
+          "Create or select bed object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the sleep behavior",
+          "Configure sleep duration and health restore",
+          "Adjust position and rotation offsets",
+          "Add sleep sound to Sound0",
+          "Add wake sound to Sound1",
+          "Test sleep functionality"
+        ]
+      },
+      "relatedBehaviors": ["health_system", "time_system", "save_system", "player_stats"]
+    }
+  }
+} 

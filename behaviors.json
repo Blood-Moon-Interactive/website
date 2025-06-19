@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "categories": {
+    "Effects": {
+      "file": "categories/effects.json",
+      "description": "Behaviors that create visual, audio, and gameplay effects"
+    },
+    "Mechanical": {
+      "file": "categories/mechanical.json",
+      "description": "Mechanical and machinery-related behaviors"
+    },
+    "Object Interaction": {
+      "file": "categories/object_interaction.json",
+      "description": "Interactive object behaviors"
+    },
+    "Doors": {
+      "file": "categories/doors.json",
+      "description": "Door and portal behaviors"
+    },
+    "Misc": {
+      "file": "categories/misc.json",
+      "description": "Miscellaneous and utility behaviors"
+    },
+    "Movement": {
+      "file": "categories/movement.json",
+      "description": "Movement and locomotion behaviors"
+    },
+    "Proximity": {
+      "file": "categories/proximity.json",
+      "description": "Proximity and distance-based behaviors"
+    },
+    "UI": {
+      "file": "categories/ui.json",
+      "description": "User interface and menu behaviors"
+    },
+    "Global": {
+      "file": "categories/global.json",
+      "description": "Global game state and management behaviors"
+    },
+    "Animals": {
+      "file": "categories/animals.json",
+      "description": "Behaviors for creating realistic animal and creature AI"
+    },
+    "Horror": {
+      "file": "categories/horror.json", 
+      "description": "Behaviors for creating horror and supernatural game elements"
+    },
+    "HUDs": {
+      "file": "categories/huds.json",
+      "description": "Behaviors for creating and managing heads-up displays and user interface elements"
+    },
+    "People": {
+      "file": "categories/people.json",
+      "description": "Behaviors for controlling and managing human characters and NPCs"
+    }
+  },
+  "config": {
+    "behaviorPath": "behaviors/",
+    "defaultCategory": "Effects"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "category": "Proximity",
+  "description": "Behaviors that trigger based on player or object proximity",
+  "behaviors": {
+    "exploder": {
+      "name": "Exploder",
+      "file": "objects/exploder.lua",
+      "description": "Creates an object that self-destructs when the player enters its detection range, causing damage to both player and nearby entities.",
+      "properties": [
+        {
+          "name": "DETECTION_RANGE",
+          "type": "number",
+          "range": "1-2000",
+          "default": 500,
+          "description": "Distance at which the explosion is triggered"
+        },
+        {
+          "name": "DAMAGE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 100,
+          "description": "Amount of damage dealt to player and nearby entities"
+        }
+      ],
+      "features": [
+        "Proximity-based triggering",
+        "Player damage system",
+        "Entity damage system",
+        "Automatic self-destruction",
+        "Configurable detection range",
+        "Adjustable damage output",
+        "Switch activation support",
+        "Clean object removal"
+      ],
+      "keywords": ["explode", "destroy", "damage", "proximity", "trigger", "range", "trap"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to be used as the exploder",
+          "Set the object's Explode property to ON",
+          "Attach the exploder behavior",
+          "Configure detection range",
+          "Set damage amount",
+          "Test proximity triggering",
+          "Optional: Connect to switches/logic"
+        ]
+      },
+      "relatedBehaviors": ["trigger_zone", "damage_zone", "switch"]
+    },
+    "proximity_mine": {
+      "name": "Proximity Mine",
+      "file": "objects/proximity_mine.lua",
+      "description": "A landmine that detonates when a player or NPC is in range. Can be disarmed with the E key when close. Features customizable detection range and detonation countdown.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "0-500",
+          "default": 90,
+          "description": "Distance at which the mine will detect entities"
+        },
+        {
+          "name": "DETONATION_TIME",
+          "type": "number",
+          "range": "0-20000",
+          "default": 2500,
+          "description": "Milliseconds between detection and explosion"
+        }
+      ],
+      "features": [
+        "Proximity detection",
+        "Countdown timer",
+        "Disarmable with E key",
+        "Sound effect integration",
+        "Entity allegiance checking",
+        "Player and NPC detection",
+        "Visual feedback"
+      ],
+      "keywords": ["mine", "explosive", "trap", "proximity", "detection", "countdown", "disarm"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["explosion_system", "interaction_system"]
+    },
+    "proximity_sensor": {
+      "name": "Proximity Sensor",
+      "file": "objects/proximity_sensor.lua",
+      "description": "Creates a proximity range sensor that can detect NPCs and/or players to activate logic-linked entities or perform selected actions. Features customizable detection range, entity filtering, and multiple action types.",
+      "properties": [
+        {
+          "name": "SENSOR_RANGE",
+          "type": "number",
+          "range": "1-2000",
+          "default": 180,
+          "description": "Distance at which the sensor will detect entities"
+        },
+        {
+          "name": "SENSED_TEXT",
+          "type": "string",
+          "default": "Detected",
+          "description": "Text shown when an entity is detected"
+        },
+        {
+          "name": "SENSE_PLAYER",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to detect the player"
+        },
+        {
+          "name": "SENSE_NPC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to detect NPCs"
+        },
+        {
+          "name": "NPC_TYPE",
+          "type": "dropdown",
+          "default": "Enemy",
+          "options": [
+            "Enemy",
+            "Ally",
+            "Neutral",
+            "Object"
+          ],
+          "description": "Type of NPC to detect"
+        },
+        {
+          "name": "ACTION_TYPE",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Damage",
+            "Self Destruct",
+            "Object Repel"
+          ],
+          "description": "Action to perform when triggered"
+        },
+        {
+          "name": "ACTION_AMOUNT",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Amount to apply for the selected action"
+        },
+        {
+          "name": "ACTIVATED",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the sensor is active by default (if unchecked, requires switch/zone activation)"
+        }
+      ],
+      "features": [
+        "Player detection",
+        "NPC type filtering",
+        "Multiple action types",
+        "Logic connection support",
+        "Customizable detection range",
+        "Visual feedback",
+        "Sound effect integration",
+        "Switch/zone activation"
+      ],
+      "keywords": ["sensor", "proximity", "detection", "trigger", "npc", "player", "action", "logic"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["logic_system", "npc_control", "trigger_zone"]
+    }
+  }
+} 

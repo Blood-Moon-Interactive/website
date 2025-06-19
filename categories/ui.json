@@ -1,0 +1,94 @@
+{
+  "category": "UI",
+  "description": "Behaviors for UI elements and HUD objects",
+  "behaviors": {
+    "killcount": {
+      "name": "Kill Counter",
+      "file": "objects/killcount.lua",
+      "description": "Creates a dynamic kill counter display that tracks and shows the number of enemies defeated. Features customizable position, formatting, and optional goal tracking.",
+      "properties": [
+        {
+          "name": "DISPLAY_TEXT",
+          "type": "string",
+          "default": "Kills: %d",
+          "description": "Text format for kill counter (%d is replaced with count)"
+        },
+        {
+          "name": "POSITION_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 90,
+          "description": "Horizontal position on screen (percentage)"
+        },
+        {
+          "name": "POSITION_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 5,
+          "description": "Vertical position on screen (percentage)"
+        },
+        {
+          "name": "FONT_SIZE",
+          "type": "number",
+          "range": "8-72",
+          "default": 24,
+          "description": "Size of the counter text"
+        },
+        {
+          "name": "KILL_GOAL",
+          "type": "number",
+          "range": "-1-1000",
+          "default": -1,
+          "description": "Target number of kills (-1 for no goal)"
+        },
+        {
+          "name": "GOAL_REACHED_TEXT",
+          "type": "string",
+          "default": "Kill goal reached!",
+          "description": "Message shown when kill goal is met"
+        },
+        {
+          "name": "COUNT_SPECIFIC_ENEMY",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to count only specific enemy type"
+        },
+        {
+          "name": "ENEMY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of specific enemy type to count (if enabled)"
+        }
+      ],
+      "features": [
+        "Dynamic kill tracking",
+        "Customizable display position",
+        "Flexible text formatting",
+        "Goal-based progression",
+        "Enemy type filtering",
+        "Event system integration",
+        "Real-time updates",
+        "State persistence",
+        "Achievement triggers",
+        "Multiple display modes"
+      ],
+      "keywords": ["kills", "counter", "score", "ui", "hud", "display", "tracking", "enemies"],
+      "tutorial": {
+        "videoId": "-bGK_p_OtLA",
+        "timestamp": "0",
+        "steps": [
+          "Create a UI object for the counter",
+          "Set Always Active to ON",
+          "Attach the killcount behavior",
+          "Configure display position and format",
+          "Set optional kill goal if needed",
+          "Configure enemy type filtering if desired",
+          "Add count sound to Sound0 (optional)",
+          "Add goal reached sound to Sound1 (optional)",
+          "Test with different enemy types"
+        ]
+      },
+      "relatedBehaviors": ["score_display", "objective_tracker", "hud_interface", "enemy_manager"]
+    }
+  }
+} 

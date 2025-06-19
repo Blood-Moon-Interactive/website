@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Moon Interactive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blood Moon Interactive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchBehaviors" placeholder="Search behaviors...">
+                        <button class="btn btn-outline-light" type="button" id="searchButton">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky pt-2 mt-1 sidebar-content">
+                    <div class="sidebar-brand text-center mb-3">
+                        <img src="bm_logo.png" alt="Blood Moon Interactive Logo" class="sidebar-logo">
+                    </div>
+                    <!-- Sidebar Ad Space -->
+                    <div class="ad-container text-center mb-3">
+                        <div class="ad-placeholder">Ad Space</div>
+                    </div>
+                    <ul class="nav flex-column accordion" id="categoryAccordion">
+                        <!-- Categories will be dynamically populated here -->
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 pt-4">
+                
+                <!-- Top Content Ad Space -->
+                <div class="ad-container text-center mb-4">
+                    <div class="ad-placeholder">Ad Space</div>
+                </div>
+
+                <!-- Search Results Section -->
+                <div id="searchResults" style="display: none;">
+                    <!-- Search results will be displayed here -->
+                </div>
+
+                <!-- Default Content -->
+                <div id="defaultContent">
+                    <div class="landing-page">
+                        <div class="welcome-section mb-4">
+                            <h1>Welcome to Blood Moon Interactive</h1>
+                            <p class="lead">Your comprehensive resource for GameGuru MAX behaviors and tutorials.</p>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-8">
+                                <div class="intro-text">
+                                    <h3>Getting Started</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    
+                                    <h3 class="mt-4">Features</h3>
+                                    <ul class="feature-list">
+                                        <li>Comprehensive behavior documentation</li>
+                                        <li>Step-by-step tutorials</li>
+                                        <li>Video demonstrations</li>
+                                        <li>Easy-to-follow examples</li>
+                                    </ul>
+
+                                    <h3 class="mt-4">Latest Updates</h3>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="quick-links card">
+                                    <div class="card-header">
+                                        <h4>Quick Links</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="quick-link">Popular Behaviors</a></li>
+                                            <li><a href="#" class="quick-link">Recent Tutorials</a></li>
+                                            <li><a href="#" class="quick-link">Community Submissions</a></li>
+                                            <li><a href="#" class="quick-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header contact-modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">
+                        <i class="bi bi-envelope me-2"></i>Contact Us
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <form id="contactForm" action="mailto:bloodmooninteractive@gmail.com" method="post" enctype="text/plain">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactName" class="form-label">Name *</label>
+                                        <input type="text" class="form-control" id="contactName" name="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="contactEmail" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="contactEmail" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="contactSubject" name="subject" required>
+                                        <option value="">Choose a subject...</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Technical Support">Technical Support</option>                                                                              
+                                        <option value="Tutorial Request">Tutorial Request</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="contactMessage" name="message" rows="4" placeholder="Please describe your inquiry in detail..." required></textarea>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-send me-2"></i>Send Message
+                                    </button>
+                                    <small class="text-muted">* Required fields</small>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="contact-info">
+                                <h6><i class="bi bi-info-circle me-2"></i>Contact Information</h6>
+                                <div class="contact-item mb-3">
+                                    <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                    <a href="mailto:bloodmooninteractive@gmail.com" class="text-decoration-none">bloodmooninteractive@gmail.com</a>
+                                </div>
+                                <div class="contact-item mb-3">
+                                    <i class="bi bi-clock text-primary me-2"></i>
+                                    <span>Response within 24-72 hours</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="bi bi-geo-alt text-primary me-2"></i>
+                                    <span>Available worldwide</span>
+                                </div>
+                                
+                                <hr class="my-3">
+                                
+                                <h6><i class="bi bi-lightbulb me-2"></i>What we can help with:</h6>
+                                <ul class="list-unstyled small">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>GameGuru MAX questions</li>                                    
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tutorial requests</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Website feature suggestions</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Website issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <p class="text-light mb-0">Created by Blood Moon Interactive</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html> 

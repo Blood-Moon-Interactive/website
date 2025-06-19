@@ -1,0 +1,170 @@
+{
+  "category": "Movement",
+  "description": "Behaviors for object movement, physics, and motion control",
+  "behaviors": {
+    "add_movement": {
+      "name": "Add Movement",
+      "file": "objects/add_movement.lua",
+      "description": "Adds configurable movement effects to objects including translation along X, Y, Z axes with speed control, reset delays, and optional rotation.",
+      "properties": [
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the object to apply movement to"
+        },
+        {
+          "name": "MOVE_X",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Distance to move along X axis"
+        },
+        {
+          "name": "MOVE_Y",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Distance to move along Y axis"
+        },
+        {
+          "name": "MOVE_Z",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Distance to move along Z axis"
+        },
+        {
+          "name": "MOVE_SPEED",
+          "type": "number",
+          "range": "0.0-2.0",
+          "default": 0.5,
+          "description": "Speed of movement"
+        },
+        {
+          "name": "RESET_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Delay in seconds before resetting position"
+        },
+        {
+          "name": "RESET_ROTATION",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether object rotates when resetting position"
+        },
+        {
+          "name": "ActiveAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether movement is active when game starts"
+        }
+      ],
+      "features": [
+        "Configurable movement along X, Y, Z axes",
+        "Adjustable movement speed",
+        "Reset delay timing",
+        "Optional rotation on reset",
+        "Sound effects for movement and reset",
+        "Collision and gravity control",
+        "Switch/trigger activation support",
+        "Position and rotation tracking"
+      ],
+      "keywords": ["movement", "motion", "translation", "position", "rotation", "reset", "axis"],
+      "tutorial": {
+        "videoId": "f9y1bRd-RsM",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["object_mover", "object_switch", "proximity_sensor"]
+    },
+    "ladder": {
+      "name": "Ladder",
+      "file": "objects/ladder.lua",
+      "description": "Creates a climbable ladder with customizable climbing speed, grip adjustment, and weapon handling. Features smooth climbing mechanics, sound effects, and water compatibility.",
+      "properties": [
+        {
+          "name": "USE_PROMPT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show climbing instructions"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "W-up S-down, Spacebar-jump off",
+          "description": "Text shown when player can climb the ladder"
+        },
+        {
+          "name": "MOUNT_KEY",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to use E key for mounting"
+        },
+        {
+          "name": "MOUNT_PROMPT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text shown when E key mounting is enabled"
+        },
+        {
+          "name": "CLIMBING_SPEED",
+          "type": "number",
+          "range": "0.1-3.0",
+          "default": 0.7,
+          "description": "Speed at which player climbs the ladder"
+        },
+        {
+          "name": "GRIP_ADJUSTMENT",
+          "type": "number",
+          "range": "1-3",
+          "default": 1,
+          "description": "Adjustment to player's grip distance"
+        },
+        {
+          "name": "CLIMB_STYLE",
+          "type": "dropdown",
+          "default": "Hide Weapon",
+          "options": [
+            "With Weapon",
+            "Hide Weapon"
+          ],
+          "description": "Whether to show or hide weapon while climbing"
+        },
+        {
+          "name": "EXIT_FORCE",
+          "type": "number",
+          "range": "0.1-3.0",
+          "default": 0.5,
+          "description": "Force applied when jumping off ladder"
+        }
+      ],
+      "features": [
+        "Smooth climbing mechanics",
+        "Water compatibility",
+        "Weapon handling options",
+        "Sound effects",
+        "Customizable climbing speed",
+        "Grip distance adjustment",
+        "Mount key options",
+        "Exit force control",
+        "Automatic state management"
+      ],
+      "keywords": ["ladder", "climb", "movement", "vertical", "mount", "weapon", "water", "physics"],
+      "tutorial": {
+        "steps": [
+          "Create ladder object",
+          "Set Physics to ON",
+          "Set Collision to Box",
+          "Set IsImmobile to ON",
+          "Attach ladder behavior",
+          "Configure climbing settings",
+          "Add climbing sound to Sound0",
+          "Add exit sound to Sound1",
+          "Test climbing mechanics"
+        ]
+      },
+      "relatedBehaviors": ["climbable", "movement_control", "physics_object", "sound_object"]
+    }
+  }
+} 

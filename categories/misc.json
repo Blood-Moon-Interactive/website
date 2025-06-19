@@ -1,0 +1,1549 @@
+{
+  "category": "Misc",
+  "description": "Miscellaneous behaviors for various object types and functionalities",
+  "behaviors": {
+    "aircraft": {
+      "name": "Aircraft",
+      "file": "objects/aircraft.lua",
+      "description": "Creates a controllable aircraft system that supports planes, helicopters, and VTOL vehicles. Features realistic flight physics, weapon systems, and landing mechanics.",
+      "properties": [
+        {
+          "name": "VEHICLE_TYPE",
+          "type": "dropdown",
+          "default": "Plane",
+          "options": [
+            "Plane",
+            "Helicopter",
+            "VTOL-Vehicle"
+          ],
+          "description": "Type of aircraft to create"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which the aircraft can be entered"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Fly",
+          "description": "Text shown when aircraft can be entered"
+        },
+        {
+          "name": "USE_TEXT1",
+          "type": "string",
+          "default": "WASD=Control, Mouse=Pitch,Roll, Q=Exit craft",
+          "description": "Primary control instructions"
+        },
+        {
+          "name": "USE_TEXT2",
+          "type": "string",
+          "default": "Space=UP, Shift=DN",
+          "description": "Secondary control instructions"
+        },
+        {
+          "name": "LZ_TEXT",
+          "type": "string",
+          "default": "Landing Zone detected - Press X to commence Auto-landing",
+          "description": "Text shown when landing zone is detected"
+        },
+        {
+          "name": "DISPLAY_X",
+          "type": "number",
+          "default": 50,
+          "description": "X position of on-screen text"
+        },
+        {
+          "name": "DISPLAY_Y",
+          "type": "number",
+          "default": 88,
+          "description": "Y position of on-screen text"
+        },
+        {
+          "name": "PILOT_X",
+          "type": "number",
+          "range": "-500-500",
+          "default": 0,
+          "description": "X offset of pilot position"
+        },
+        {
+          "name": "PILOT_Y",
+          "type": "number",
+          "range": "-500-500",
+          "default": 30,
+          "description": "Y offset of pilot position"
+        },
+        {
+          "name": "PILOT_Z",
+          "type": "number",
+          "range": "-500-500",
+          "default": -15,
+          "description": "Z offset of pilot position"
+        },
+        {
+          "name": "MAX_SPEED",
+          "type": "number",
+          "range": "1-500",
+          "default": 30,
+          "description": "Maximum speed of the aircraft"
+        },
+        {
+          "name": "VELOCITY",
+          "type": "number",
+          "range": "1-20",
+          "default": 1,
+          "description": "Base velocity of the aircraft"
+        },
+        {
+          "name": "FX_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnimSetList"
+          ],
+          "description": "Animation set to use for effects"
+        },
+        {
+          "name": "FX_MODULATION",
+          "type": "number",
+          "range": "1-100",
+          "default": 60,
+          "description": "Modulation rate for effects"
+        },
+        {
+          "name": "SHOW_READOUTS",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show flight information"
+        },
+        {
+          "name": "PARTICLE_NO",
+          "type": "number",
+          "default": 0,
+          "description": "Particle effect to use"
+        },
+        {
+          "name": "CAN_BAILOUT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether player can exit the aircraft mid-flight"
+        },
+        {
+          "name": "WEAPON_NAME",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnyWeaponList"
+          ],
+          "description": "Weapon to mount on the aircraft"
+        },
+        {
+          "name": "WEAPON_AMMO",
+          "type": "number",
+          "range": "0-10000",
+          "default": 500,
+          "description": "Amount of ammunition for the weapon"
+        },
+        {
+          "name": "USE_WEAPON",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to enable weapon system"
+        },
+        {
+          "name": "CROSSHAIR_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\crosshairs\\crosshair.dds",
+          "description": "Path to crosshair image file"
+        }
+      ],
+      "features": [
+        "Multiple aircraft types",
+        "Realistic flight physics",
+        "Weapon system integration",
+        "Auto-landing system",
+        "Particle effects",
+        "Customizable controls",
+        "Pilot position adjustment",
+        "Crosshair system",
+        "Sound effects",
+        "Collision detection"
+      ],
+      "keywords": ["misc", "vehicle", "aircraft", "flight", "plane", "helicopter", "vtol", "transport", "weapon", "control"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["vehicle_controller", "weapon_system", "particle_effects"]
+    },
+    "boat": {
+      "name": "Boat",
+      "file": "objects/boat.lua",
+      "description": "Creates a fully functional boat that can be piloted by the player, featuring realistic water physics, buoyancy, and collision detection. Includes speed control, steering, and automatic water level adjustment.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to embark",
+          "description": "Message displayed when player can enter the boat"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 80,
+          "description": "Distance at which player can interact with boat"
+        },
+        {
+          "name": "MIN_SPEED",
+          "type": "number",
+          "range": "0-10",
+          "default": 2,
+          "description": "Minimum speed of the boat"
+        },
+        {
+          "name": "MAX_SPEED",
+          "type": "number",
+          "range": "0-100",
+          "default": 4,
+          "description": "Maximum speed of the boat"
+        },
+        {
+          "name": "TURN_SPEED",
+          "type": "number",
+          "range": "1-10",
+          "default": 2,
+          "description": "How quickly the boat can turn"
+        },
+        {
+          "name": "DRAG",
+          "type": "number",
+          "default": 5,
+          "description": "Water resistance affecting boat movement"
+        },
+        {
+          "name": "PLAYER_Z_POSITION",
+          "type": "number",
+          "range": "-100-100",
+          "default": 0,
+          "description": "Forward/back position of player on boat"
+        },
+        {
+          "name": "PLAYER_Y_POSITION",
+          "type": "number",
+          "range": "-100-100",
+          "default": 20,
+          "description": "Height of player on boat"
+        },
+        {
+          "name": "BOAT_ROTATION",
+          "type": "number",
+          "range": "0-180",
+          "default": 0,
+          "description": "Initial rotation of the boat"
+        },
+        {
+          "name": "BOAT_DRAFT",
+          "type": "number",
+          "default": 30,
+          "description": "How deep the boat sits in water"
+        },
+        {
+          "name": "BOAT_POWER",
+          "type": "number",
+          "range": "0-50",
+          "default": 5,
+          "description": "Acceleration power of the boat"
+        },
+        {
+          "name": "BOAT_BRAKE",
+          "type": "number",
+          "range": "0-50",
+          "default": 5,
+          "description": "Braking power of the boat"
+        },
+        {
+          "name": "BOAT_BUOYANCY",
+          "type": "number",
+          "range": "0-5",
+          "default": 1,
+          "description": "How much the boat bobs in water"
+        }
+      ],
+      "features": [
+        "Realistic water physics",
+        "Buoyancy system with bobbing effect",
+        "WASD controls for movement",
+        "Automatic water level adjustment",
+        "Collision detection and grounding",
+        "Water ripple effects",
+        "Sound effect integration",
+        "Player position management",
+        "Speed and drag physics",
+        "Terrain height detection",
+        "Easy entry/exit system",
+        "Multiple sound slots for different effects"
+      ],
+      "keywords": ["boat", "water", "vehicle", "physics", "buoyancy", "transport", "ripple", "float"],
+      "tutorial": {
+        "videoId": "MC-0WM1X4JQ",
+        "timestamp": "0:00",
+        "steps": [
+          "Attach the boat behavior to a boat model",
+          "Set Physics=ON, Gravity=OFF, IsImobile=YES on the object",
+          "Configure boat properties like speed and buoyancy",
+          "Add sound effects to Sound0 (Entry/Exit), Sound1 (Moving Loop), Sound2 (Run Aground)",
+          "Place the boat in water",
+          "Test controls: E to enter, WASD to move, Q to exit"
+        ]
+      },
+      "relatedBehaviors": ["vehicle_control", "water_effects", "physics_object", "sound_object"]
+    },
+    "border_maps": {
+      "name": "Border Maps",
+      "file": "objects/border_maps.lua",
+      "description": "Creates a system for managing map transitions when players reach map boundaries. Supports up to four connected maps with customizable spawn points and transition prompts.",
+      "properties": [
+        {
+          "name": "NOTIFICATION_TEXT",
+          "type": "string",
+          "default": "Press E if you wish to leave the area",
+          "description": "Text shown when player reaches a map border"
+        },
+        {
+          "name": "MAP1",
+          "type": "string",
+          "default": "",
+          "description": "Name of the map to load when leaving south border"
+        },
+        {
+          "name": "MAP2",
+          "type": "string",
+          "default": "",
+          "description": "Name of the map to load when leaving north border"
+        },
+        {
+          "name": "MAP3",
+          "type": "string",
+          "default": "",
+          "description": "Name of the map to load when leaving west border"
+        },
+        {
+          "name": "MAP4",
+          "type": "string",
+          "default": "",
+          "description": "Name of the map to load when leaving east border"
+        },
+        {
+          "name": "BORDER_DISTANCE",
+          "type": "number",
+          "range": "100-1000",
+          "default": 200,
+          "description": "Distance from map edge to trigger border detection"
+        },
+        {
+          "name": "LOAD_TYPE",
+          "type": "dropdown",
+          "default": "Ask",
+          "options": [
+            "Ask",
+            "Auto"
+          ],
+          "description": "Whether to prompt player before loading next map"
+        },
+        {
+          "name": "SPAWN_MARKER_USER_GLOBAL",
+          "type": "string",
+          "default": "MySpawnMarkers",
+          "description": "User global variable for spawn marker system"
+        },
+        {
+          "name": "SPAWN_MARKER_NAME1",
+          "type": "string",
+          "default": "",
+          "description": "Spawn marker name for south border transition"
+        },
+        {
+          "name": "SPAWN_MARKER_NAME2",
+          "type": "string",
+          "default": "",
+          "description": "Spawn marker name for north border transition"
+        },
+        {
+          "name": "SPAWN_MARKER_NAME3",
+          "type": "string",
+          "default": "",
+          "description": "Spawn marker name for west border transition"
+        },
+        {
+          "name": "SPAWN_MARKER_NAME4",
+          "type": "string",
+          "default": "",
+          "description": "Spawn marker name for east border transition"
+        }
+      ],
+      "features": [
+        "Four-directional map transitions",
+        "Customizable border detection",
+        "Optional transition prompts",
+        "Spawn point management",
+        "Automatic map loading",
+        "Border distance control",
+        "User global variable support",
+        "Seamless player transitions"
+      ],
+      "keywords": ["misc", "map", "border", "transition", "spawn", "teleport", "level", "world", "navigation"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["spawn_marker", "map_transition", "player_teleport"]
+    },
+    "forcewall": {
+      "name": "Force Wall",
+      "file": "objects/forcewall.lua",
+      "description": "Creates an invisible or visible force field barrier that can block, repel, or damage players. Features multiple force modes, trigger systems, and customizable effects.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "You cannot pass",
+          "description": "Text shown when player interacts with the force wall"
+        },
+        {
+          "name": "FORCE_MODE",
+          "type": "dropdown",
+          "default": "Static",
+          "options": [
+            "Static",
+            "Repel",
+            "Hurt",
+            "Kill"
+          ],
+          "description": "Type of force effect to apply"
+        },
+        {
+          "name": "STATE",
+          "type": "dropdown",
+          "default": "Active",
+          "options": [
+            "Active",
+            "Inactive"
+          ],
+          "description": "Whether the force wall is currently active"
+        },
+        {
+          "name": "TRIGGER",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Linked/IfUsed"
+          ],
+          "description": "Trigger system for the force wall"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Invisible",
+          "options": [
+            "Invisible",
+            "Visible"
+          ],
+          "description": "Whether the force wall is visible"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display the prompt text"
+        }
+      ],
+      "features": [
+        "Multiple force effects",
+        "Customizable visibility",
+        "Trigger system integration",
+        "Player interaction handling",
+        "Sound effects",
+        "Damage system integration",
+        "Force application",
+        "Prompt customization",
+        "State management"
+      ],
+      "keywords": ["misc", "force", "wall", "barrier", "shield", "protection", "defense", "block", "repel", "damage"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["trigger_system", "damage_system", "force_field"]
+    },
+    "glue_entity": {
+      "name": "Glue Entity",
+      "file": "objects/glue_entity.lua",
+      "description": "Creates a connection between objects that allows them to move together, with one object acting as the leader. Features automatic position and rotation synchronization, and support for multiple linked objects.",
+      "properties": [
+        {
+          "name": "BehaviorName",
+          "type": "string",
+          "default": "",
+          "description": "Name of the behavior script on the moving entity"
+        }
+      ],
+      "features": [
+        "Multi-object linking",
+        "Position synchronization",
+        "Rotation synchronization",
+        "Quaternion-based calculations",
+        "Collision handling",
+        "Offset preservation",
+        "Dynamic function wrapping",
+        "Error reporting",
+        "Multiple connection support",
+        "Automatic relationship detection"
+      ],
+      "keywords": ["glue", "attach", "link", "connect", "move", "synchronize", "follow"],
+      "tutorial": {
+        "videoId": "YOtEH0rkemo",
+        "timestamp": "0:00",
+        "steps": [
+          "Create base and follower objects",
+          "Attach the glue_entity behavior to follower",
+          "Set behavior name of moving object",
+          "Create logic connections",
+          "Position objects as desired",
+          "Test movement synchronization",
+          "Add additional followers if needed",
+          "Check collision handling",
+          "Verify rotation sync"
+        ]
+      },
+      "relatedBehaviors": ["parent_child", "object_link", "movement_sync", "follow_path"]
+    },
+    "hurt_npc": {
+      "name": "Hurt NPC",
+      "file": "objects/hurt_npc.lua",
+      "description": "Creates a system that damages NPCs within range of a specified entity. Features configurable damage amounts, timing intervals, and one-time or continuous damage options.",
+      "properties": [
+        {
+          "name": "ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of entity that will hurt nearby NPCs"
+        },
+        {
+          "name": "HURT_RANGE",
+          "type": "number",
+          "range": "0-3000",
+          "default": 500,
+          "description": "Range within which NPCs will be damaged"
+        },
+        {
+          "name": "HURT_AMOUNT",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Amount of damage to deal to NPCs"
+        },
+        {
+          "name": "HURT_TIME",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Seconds between damage intervals"
+        },
+        {
+          "name": "HurtOnceOnly",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to damage NPCs only once then disable"
+        }
+      ],
+      "features": [
+        "Configurable damage radius",
+        "Adjustable damage amounts",
+        "Timed damage intervals",
+        "Single or continuous damage modes",
+        "Entity-based targeting",
+        "Automatic NPC detection",
+        "Health system integration",
+        "Memory-efficient updates"
+      ],
+      "keywords": ["damage", "npc", "hurt", "area", "radius", "entity", "health", "timer"],
+      "tutorial": {
+        "videoId": "6Vn8f5s8R9Q",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select a target object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the hurt_npc behavior",
+          "Set ENTITY_NAME to target entity",
+          "Configure HURT_RANGE for damage radius",
+          "Set HURT_AMOUNT for damage dealt",
+          "Adjust HURT_TIME for damage frequency",
+          "Enable HurtOnceOnly if needed",
+          "Test with different NPC types"
+        ]
+      },
+      "relatedBehaviors": ["npc_control", "no_kill", "exploder", "global_modifier"]
+    },
+    "hud_interface": {
+      "name": "HUD Interface",
+      "file": "objects/hud_interface.lua",
+      "description": "Creates a dynamic interface system that allows objects to display and control custom HUD screens with multiple interactive buttons. Features configurable actions, text prompts, and activation modes including proximity and zone-based triggers.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which interface can be activated"
+        },
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "E to Use",
+          "description": "Text shown when player can activate interface"
+        },
+        {
+          "name": "HUD_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 9",
+          "description": "Name of HUD screen to display"
+        },
+        {
+          "name": "HUD_BUTTON1",
+          "type": "string",
+          "default": "Activate Link",
+          "description": "Text for first button"
+        },
+        {
+          "name": "HUD_ACTION1",
+          "type": "enum",
+          "default": 0,
+          "options": ["0=Link 0", "1=Link 1", "2=Link 2", "3=Link 3", "4=Link 4", "5=Link 5", "6=Link 6", "7=Link 7", "8=Link 8", "9=Link 9", "10=Play Audio", "11=Destroy Object", "12=Activate IfUsed", "13=Exit Hud"],
+          "description": "Action for first button"
+        },
+        {
+          "name": "HUD_ACTION1_TEXT",
+          "type": "string",
+          "default": "Link Activated",
+          "description": "Feedback text for first button"
+        },
+        {
+          "name": "HUD_BUTTON2",
+          "type": "string",
+          "default": "Play Audio",
+          "description": "Text for second button"
+        },
+        {
+          "name": "HUD_ACTION2",
+          "type": "enum",
+          "default": 10,
+          "options": ["0=Link 0", "1=Link 1", "2=Link 2", "3=Link 3", "4=Link 4", "5=Link 5", "6=Link 6", "7=Link 7", "8=Link 8", "9=Link 9", "10=Play Audio", "11=Destroy Object", "12=Activate IfUsed", "13=Exit Hud"],
+          "description": "Action for second button"
+        },
+        {
+          "name": "HUD_ACTION2_TEXT",
+          "type": "string",
+          "default": "Playing Audio",
+          "description": "Feedback text for second button"
+        },
+        {
+          "name": "HUD_BUTTON3",
+          "type": "string",
+          "default": "Destroy",
+          "description": "Text for third button"
+        },
+        {
+          "name": "HUD_ACTION3",
+          "type": "enum",
+          "default": 11,
+          "options": ["0=Link 0", "1=Link 1", "2=Link 2", "3=Link 3", "4=Link 4", "5=Link 5", "6=Link 6", "7=Link 7", "8=Link 8", "9=Link 9", "10=Play Audio", "11=Destroy Object", "12=Activate IfUsed", "13=Exit Hud"],
+          "description": "Action for third button"
+        },
+        {
+          "name": "HUD_ACTION3_TEXT",
+          "type": "string",
+          "default": "Object Destroyed",
+          "description": "Feedback text for third button"
+        },
+        {
+          "name": "HUD_BUTTON4",
+          "type": "string",
+          "default": "Activate IfUsed",
+          "description": "Text for fourth button"
+        },
+        {
+          "name": "HUD_ACTION4",
+          "type": "enum",
+          "default": 12,
+          "options": ["0=Link 0", "1=Link 1", "2=Link 2", "3=Link 3", "4=Link 4", "5=Link 5", "6=Link 6", "7=Link 7", "8=Link 8", "9=Link 9", "10=Play Audio", "11=Destroy Object", "12=Activate IfUsed", "13=Exit Hud"],
+          "description": "Action for fourth button"
+        },
+        {
+          "name": "HUD_ACTION4_TEXT",
+          "type": "string",
+          "default": "Activating",
+          "description": "Feedback text for fourth button"
+        },
+        {
+          "name": "HUD_BUTTON5",
+          "type": "string",
+          "default": "Exit",
+          "description": "Text for fifth button"
+        },
+        {
+          "name": "HUD_ACTION5",
+          "type": "enum",
+          "default": 13,
+          "options": ["0=Link 0", "1=Link 1", "2=Link 2", "3=Link 3", "4=Link 4", "5=Link 5", "6=Link 6", "7=Link 7", "8=Link 8", "9=Link 9", "10=Play Audio", "11=Destroy Object", "12=Activate IfUsed", "13=Exit Hud"],
+          "description": "Action for fifth button"
+        },
+        {
+          "name": "HUD_ACTION5_TEXT",
+          "type": "string",
+          "default": "Exiting",
+          "description": "Feedback text for fifth button"
+        }
+      ],
+      "features": [
+        "Interactive HUD screen system",
+        "Up to 5 configurable buttons",
+        "Multiple action types per button",
+        "Proximity-based activation",
+        "Zone-based triggering",
+        "Custom feedback messages",
+        "Sound effect support",
+        "Logic connection integration",
+        "Object state management",
+        "Automatic cleanup"
+      ],
+      "keywords": ["hud", "interface", "buttons", "menu", "screen", "interaction", "ui", "control"],
+      "tutorial": {
+        "videoId": "vYjPqC7AO64",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the hud_interface behavior",
+          "Configure USE_RANGE and USE_TEXT",
+          "Set up HUD_SCREEN name",
+          "Configure button texts and actions",
+          "Add activation sound to Sound0",
+          "Add action sound to Sound1",
+          "Create HUD screen with matching button names",
+          "Test interface activation and buttons"
+        ]
+      },
+      "relatedBehaviors": ["activehud", "hudcontrol", "hot_key", "interface"]
+    },
+    "life": {
+      "name": "Life",
+      "file": "objects/life.lua",
+      "description": "Creates a collectible extra life object with customizable pickup behavior and display options. Features automatic or manual collection modes, visual highlighting, and logic connections.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text shown when player can collect the life"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which life can be collected"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "enum",
+          "default": 1,
+          "options": ["1=Automatic", "2=Manual"],
+          "description": "Whether life is collected automatically or requires button press"
+        },
+        {
+          "name": "COLLECTION_TEXT",
+          "type": "string",
+          "default": "Extra Life collected",
+          "description": "Text shown when life is collected"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to trigger logic connections on pickup"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "enum",
+          "default": 1,
+          "options": ["1=Local", "2=Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "enum",
+          "default": 0,
+          "options": ["0=None", "1=Shape", "2=Outline"],
+          "description": "Visual highlight effect for the life object"
+        }
+      ],
+      "features": [
+        "Automatic or manual collection modes",
+        "Customizable pickup range",
+        "Local or screen-based prompts",
+        "Visual highlighting options",
+        "Logic connection support",
+        "Sound effect integration",
+        "Automatic cleanup after collection",
+        "Player lives system integration"
+      ],
+      "keywords": ["life", "extra life", "pickup", "collect", "powerup", "health", "player", "lives"],
+      "tutorial": {
+        "videoId": "0d46HhxrHBw",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a new object to serve as the life pickup",
+          "Set Physics to OFF",
+          "Set Always Active to ON",
+          "Attach the life behavior",
+          "Configure pickup text and range",
+          "Choose pickup style (automatic/manual)",
+          "Set up collection text",
+          "Configure prompt display mode",
+          "Add collection sound to Sound0",
+          "Test life collection and lives counter"
+        ]
+      },
+      "relatedBehaviors": ["healthbar", "hudcontrol", "activehud", "interface"]
+    },
+    "moon": {
+      "name": "Moon",
+      "file": "objects/moon.lua",
+      "description": "Creates a moon object that can rotate and orbit around another object. Features customizable orbital mechanics, player detection, and trigger systems for cutscenes and level transitions.",
+      "properties": [
+        {
+          "name": "MOON_ADJUST_X",
+          "type": "number",
+          "range": "-20000.0-20000.0",
+          "default": 0.0,
+          "description": "X-axis position adjustment"
+        },
+        {
+          "name": "MOON_ADJUST_Y",
+          "type": "number",
+          "range": "-20000.0-20000.0",
+          "default": 0.0,
+          "description": "Y-axis position adjustment"
+        },
+        {
+          "name": "MOON_ADJUST_Z",
+          "type": "number",
+          "range": "-20000.0-20000.0",
+          "default": 0.0,
+          "description": "Z-axis position adjustment"
+        },
+        {
+          "name": "MOON_ROTATION",
+          "type": "number",
+          "range": "0-100",
+          "default": 1,
+          "description": "Speed of moon's rotation"
+        },
+        {
+          "name": "ORBIT_PLANET_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the object to orbit around"
+        },
+        {
+          "name": "ORBIT_DISTANCE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 300,
+          "description": "Distance from the orbited object"
+        },
+        {
+          "name": "ORBIT_SPEED",
+          "type": "number",
+          "range": "0.0-100.0",
+          "default": 0.1,
+          "description": "Speed of orbital movement"
+        },
+        {
+          "name": "SENSE_RANGE",
+          "type": "number",
+          "default": 1000,
+          "description": "Range at which player detection occurs"
+        },
+        {
+          "name": "SENSE_TEXT",
+          "type": "string",
+          "default": "Detected in Range",
+          "description": "Text shown when player is detected"
+        },
+        {
+          "name": "SENSE_TRIGGER",
+          "type": "dropdown",
+          "default": "Linked",
+          "options": [
+            "Linked",
+            "Video+ChangeLevel",
+            "Video"
+          ],
+          "description": "Action to take when player is detected"
+        },
+        {
+          "name": "VIDEO_SKIP",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "description": "Whether video can be skipped"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": [
+            "Use Storyboard Logic",
+            "Go to Specific Level"
+          ],
+          "description": "How to handle level transitions"
+        },
+        {
+          "name": "ResetStates",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset states when entering new level"
+        }
+      ],
+      "features": [
+        "Orbital mechanics",
+        "Customizable rotation",
+        "Position adjustment",
+        "Player detection",
+        "Cutscene integration",
+        "Level transition system",
+        "Trigger system integration",
+        "Video playback control",
+        "State management"
+      ],
+      "keywords": ["misc", "moon", "orbit", "rotation", "celestial", "cutscene", "transition", "detection", "trigger"],
+      "tutorial": {
+        "videoId": "Lw77EWngRfg",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["trigger_system", "cutscene_manager", "level_transition"]
+    },
+    "navblocker": {
+      "name": "Navigation Blocker",
+      "file": "objects/navblocker.lua",
+      "description": "Creates a navigation mesh blocker for specified objects, preventing AI characters from moving through designated areas. Useful for creating dynamic barriers and restricted zones.",
+      "properties": [
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the object to create a navigation blocker for"
+        }
+      ],
+      "features": [
+        "Dynamic navigation blocking",
+        "Object-based barriers",
+        "Automatic collision detection",
+        "Mesh-based blocking",
+        "Physics integration",
+        "Real-time updates",
+        "Multiple object support",
+        "Angle-based blocking"
+      ],
+      "keywords": ["misc", "navigation", "blocker", "ai", "pathfinding", "mesh", "barrier", "restriction", "dynamic"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["ai_navigation", "physics_object", "collision_system"]
+    },
+    "planet": {
+      "name": "Planet",
+      "file": "objects/planet.lua",
+      "description": "Creates a complex planetary system using multiple spherical objects to represent the planet, clouds, atmosphere, and optional rings. Features customizable positioning, scaling, rotation speeds, and proximity-based triggers, with support for video playback and level transitions.",
+      "properties": [
+        { "name": "PLANET_ADJUST_X", "type": "number", "range": "-20000-20000", "default": 0, "description": "X-axis position adjustment for the planet system" },
+        { "name": "PLANET_ADJUST_Y", "type": "number", "range": "-20000-20000", "default": 0, "description": "Y-axis position adjustment for the planet system" },
+        { "name": "PLANET_ADJUST_Z", "type": "number", "range": "-20000-20000", "default": 0, "description": "Z-axis position adjustment for the planet system" },
+        { "name": "CLOUD_SPHERE", "type": "string", "default": "", "description": "Name of the cloud layer sphere object" },
+        { "name": "ATMOS_SPHERE", "type": "string", "default": "", "description": "Name of the atmosphere sphere object" },
+        { "name": "RINGS_CIRCLE", "type": "string", "default": "", "description": "Name of the planetary rings object" },
+        { "name": "CLOUD_SCALE", "type": "number", "range": "0-100", "default": 10, "description": "Additional scale percentage for cloud layer" },
+        { "name": "ATMOS_SCALE", "type": "number", "range": "0-100", "default": 15, "description": "Additional scale percentage for atmosphere" },
+        { "name": "RINGS_SCALE", "type": "number", "range": "0-100", "default": 25, "description": "Additional scale percentage for rings" },
+        { "name": "PLANET_ROTATION", "type": "number", "range": "0-100", "default": 1, "description": "Rotation speed of the planet core" },
+        { "name": "CLOUD_ROTATION", "type": "number", "range": "0-100", "default": 5, "description": "Rotation speed of the cloud layer" },
+        { "name": "RINGS_ROTATION", "type": "number", "range": "0-100", "default": 1, "description": "Rotation speed of the planetary rings" },
+        { "name": "SENSE_RANGE", "type": "number", "range": "0-10000", "default": 1000, "description": "Range for proximity detection" },
+        { "name": "SENSE_TEXT", "type": "string", "default": "Detected in Range", "description": "Message shown when player enters detection range" },
+        {
+          "name": "SENSE_TRIGGER",
+          "type": "dropdown",
+          "default": "Linked",
+          "options": [
+            "Linked",
+            "Video+ChangeLevel"
+          ],
+          "description": "Action to take when player enters range"
+        },
+        {
+          "name": "VIDEO_SKIP",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "description": "Whether video can be skipped"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": [
+            "Use Storyboard Logic",
+            "Go to Specific Level"
+          ],
+          "description": "Controls whether to load the next level in the Storyboard, or a specific level"
+        },
+        { "name": "RESETSTATES", "type": "boolean", "default": false, "description": "State reset value when entering the new level" }
+      ],
+      "features": [
+        "Multi-object planetary system",
+        "Independent layer and ring rotation",
+        "Customizable scaling and positioning",
+        "Proximity detection and triggers",
+        "Video playback integration",
+        "Level transition support",
+        "Logic connection triggers",
+        "Automatic gravity handling",
+        "Animation speed integration"
+      ],
+      "keywords": ["planet", "space", "atmosphere", "clouds", "rings", "rotation", "scale", "trigger"],
+      "tutorial": {
+        "videoId": "eXOmYslVO3g",
+        "timestamp": "0",
+        "steps": [
+          "Create main planet sphere object",
+          "Create cloud sphere with same size",
+          "Create atmosphere sphere with same size",
+          "Optionally create rings object",
+          "Set Physics to ON for all objects",
+          "Attach planet behavior to main sphere",
+          "Configure sphere names and scales",
+          "Set rotation speeds",
+          "Configure trigger settings",
+          "Test proximity and triggers"
+        ]
+      },
+      "relatedBehaviors": ["moon", "skybox", "light_source", "trigger_zone"]
+    },
+    "scenery": {
+      "name": "Scenery",
+      "file": "objects/scenery.lua",
+      "description": "Allows an object to be used as scenery beyond the game area with customizable positioning and scaling. Perfect for creating background elements and distant objects.",
+      "properties": [
+        {
+          "name": "SCENERY_SCALE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Additional scale percentage to apply to the object"
+        },
+        {
+          "name": "POSITION_AJUST_X",
+          "type": "number",
+          "range": "-20000-20000",
+          "default": 0,
+          "description": "X-axis position adjustment in world units"
+        },
+        {
+          "name": "POSITION_AJUST_Y",
+          "type": "number",
+          "range": "-20000-20000",
+          "default": 0,
+          "description": "Y-axis position adjustment in world units"
+        },
+        {
+          "name": "POSITION_AJUST_Z",
+          "type": "number",
+          "range": "-20000-20000",
+          "default": 0,
+          "description": "Z-axis position adjustment in world units"
+        }
+      ],
+      "features": [
+        "Automatic collision disabling",
+        "Gravity disabling",
+        "Position adjustment system",
+        "Scale customization",
+        "One-time setup",
+        "Memory efficient",
+        "Background object optimization",
+        "Distant scenery support"
+      ],
+      "keywords": ["scenery", "background", "position", "scale", "adjust", "static", "distant", "decoration"],
+      "tutorial": {
+        "steps": [
+          "Create or select scenery object",
+          "Set Physics to ON or OFF as needed",
+          "Set Always Active to ON",
+          "Attach the scenery behavior",
+          "Adjust position using POSITION_AJUST values",
+          "Set SCENERY_SCALE if size adjustment needed",
+          "Test visibility from intended viewing areas"
+        ]
+      },
+      "relatedBehaviors": ["object_mover", "scale_control", "transform_object", "position_marker"]
+    },
+    "secret": {
+      "name": "Secret Area",
+      "file": "objects/secret.lua",
+      "description": "Creates a hidden area or secret that can be discovered by players. Features customizable reveal conditions, visual/audio feedback, and progress tracking capabilities.",
+      "properties": [
+        {
+          "name": "REVEAL_TYPE",
+          "type": "dropdown",
+          "default": "Proximity",
+          "options": [
+            "Proximity",
+            "Interaction",
+            "Item Required",
+            "Puzzle Solved"
+          ],
+          "description": "How the secret is revealed"
+        },
+        {
+          "name": "DETECTION_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which secret can be detected"
+        },
+        {
+          "name": "REQUIRED_ITEM",
+          "type": "string",
+          "default": "",
+          "description": "Item needed to reveal secret (if applicable)"
+        },
+        {
+          "name": "HINT_TEXT",
+          "type": "string",
+          "default": "There's something hidden nearby...",
+          "description": "Message shown when secret is nearby"
+        },
+        {
+          "name": "REVEAL_TEXT",
+          "type": "string",
+          "default": "Secret Found!",
+          "description": "Message shown when secret is revealed"
+        },
+        {
+          "name": "DISPLAY_STYLE",
+          "type": "dropdown",
+          "default": "Screen",
+          "options": [
+            "Screen",
+            "Local",
+            "Both",
+            "None"
+          ],
+          "description": "How messages are displayed"
+        },
+        {
+          "name": "VISUAL_EFFECT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Glow",
+            "Sparkle",
+            "Custom"
+          ],
+          "description": "Effect when secret is revealed"
+        },
+        {
+          "name": "SAVE_PROGRESS",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to save discovery state"
+        },
+        {
+          "name": "SECRET_ID",
+          "type": "string",
+          "default": "",
+          "description": "Unique identifier for progress tracking"
+        },
+        {
+          "name": "HINT_FREQUENCY",
+          "type": "number",
+          "range": "0-60",
+          "default": 0,
+          "description": "Seconds between hint messages (0=off)"
+        }
+      ],
+      "features": [
+        "Multiple reveal conditions",
+        "Visual effect options",
+        "Progress tracking",
+        "Customizable messages",
+        "Item requirements",
+        "Range-based detection",
+        "Sound effect support",
+        "State persistence",
+        "Hint system",
+        "Achievement integration"
+      ],
+      "keywords": ["secret", "hidden", "discovery", "puzzle", "collectible", "achievement", "mystery", "reveal"],
+      "tutorial": {
+        "videoId": "i67gqISeD1Q",
+        "timestamp": "0",
+        "steps": [
+          "Create a secret area object",
+          "Set Physics to ON",
+          "Attach the secret behavior",
+          "Choose reveal condition",
+          "Configure detection settings",
+          "Set up messages and effects",
+          "Add discovery sound to Sound0",
+          "Add hint sound to Sound1",
+          "Configure progress tracking",
+          "Test secret mechanics"
+        ]
+      },
+      "relatedBehaviors": ["item_pickup", "puzzle_system", "achievement_tracker", "inventory_system"]
+    },
+    "shrink": {
+      "name": "Shrink",
+      "file": "objects/shrink.lua",
+      "description": "Creates a dynamic shrinking effect that can reduce the size of objects along specified axes. Features smooth scaling transitions, range-based activation, and collision handling.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "What the hell",
+          "description": "Text shown when shrinking is activated"
+        },
+        {
+          "name": "ACTIVATION_RANGE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Distance at which shrinking is triggered"
+        },
+        {
+          "name": "SHRINK_MODE",
+          "type": "dropdown",
+          "default": "XYZ All",
+          "options": [
+            "XYZ All",
+            "X Only",
+            "Y Only",
+            "Z Only"
+          ],
+          "description": "Which axes to apply shrinking to"
+        },
+        {
+          "name": "SHRINK_SPEED",
+          "type": "number",
+          "range": "0.0-10.0",
+          "default": 0.5,
+          "description": "Speed of the shrinking effect"
+        },
+        {
+          "name": "SHRINK_SCALE",
+          "type": "number",
+          "range": "1.0-100.0",
+          "default": 1.0,
+          "description": "Final scale percentage of the object"
+        }
+      ],
+      "features": [
+        "Multi-axis shrinking",
+        "Range-based activation",
+        "Smooth scaling transitions",
+        "Collision handling",
+        "Sound effect support",
+        "Customizable speed",
+        "Scale control",
+        "Visual feedback"
+      ],
+      "keywords": ["shrink", "scale", "size", "transform", "effect", "physics", "trigger", "transition"],
+      "tutorial": {
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON",
+          "Set Gravity to OFF",
+          "Set IsImmobile to ON",
+          "Set Always Active to ON",
+          "Attach the shrink behavior",
+          "Configure activation range",
+          "Choose shrink mode (XYZ/X/Y/Z)",
+          "Set shrink speed and scale",
+          "Add shrink sound to Sound0",
+          "Test shrinking functionality"
+        ]
+      },
+      "relatedBehaviors": ["scale_control", "physics_object", "trigger_zone", "effect_manager"]
+    },
+    "sound_object": {
+      "name": "Sound Object",
+      "file": "objects/sound_object.lua",
+      "description": "Creates an interactive sound emitter that plays a sound when activated by the player. Features customizable prompts, range-based activation, and logic connection support.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to activate",
+          "description": "Text shown when player can activate the sound"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which player can activate the sound"
+        },
+        {
+          "name": "ACTIVATED_TEXT",
+          "type": "string",
+          "default": "Activated",
+          "description": "Text shown when sound is activated"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display prompt messages"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Shape",
+            "Outline"
+          ],
+          "description": "Visual highlight style for the object"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to trigger logic connections when activated"
+        },
+        {
+          "name": "SINGLE_USE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the object becomes inactive after one use"
+        }
+      ],
+      "features": [
+        "Interactive sound playback",
+        "Range-based activation",
+        "Customizable prompts",
+        "Visual highlighting",
+        "Logic connection support",
+        "Single-use option",
+        "Local/screen text display",
+        "Sound effect integration"
+      ],
+      "keywords": ["sound", "audio", "interactive", "trigger", "activation", "prompt", "highlight"],
+      "tutorial": {
+        "steps": [
+          "Create or select target object",
+          "Attach the sound_object behavior",
+          "Add sound file to Sound0",
+          "Configure activation range",
+          "Set up prompt texts",
+          "Choose display style",
+          "Configure highlight effect",
+          "Set up logic connections if needed",
+          "Test sound activation"
+        ]
+      },
+      "relatedBehaviors": ["trigger_system", "logic_connector", "highlight_object", "interactive_object"]
+    },
+    "speeder": {
+      "name": "Speeder",
+      "file": "objects/speeder.lua",
+      "description": "Creates a mountable speeder vehicle that can be driven by the player. Features WASD controls, physics-based movement, collision detection, and customizable player positioning.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to mount speeder",
+          "description": "Message shown when player can enter the speeder"
+        },
+        {
+          "name": "ENTER_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 150,
+          "description": "Distance at which player can enter the speeder"
+        },
+        {
+          "name": "ENTER_ANGLE",
+          "type": "number",
+          "range": "1-360",
+          "default": 35,
+          "description": "Angle range for entering the speeder"
+        },
+        {
+          "name": "PLAYER_XZ_ADJUSTMENT",
+          "type": "number",
+          "range": "-100-100",
+          "default": -8,
+          "description": "Forward/back position offset of player on speeder"
+        },
+        {
+          "name": "PLAYER_Y_ADJUSTMENT",
+          "type": "number",
+          "range": "0-100",
+          "default": 40,
+          "description": "Height offset of player on speeder"
+        },
+        {
+          "name": "PLAYER_ANGLE_ADJUSTMENT",
+          "type": "number",
+          "range": "0-360",
+          "default": 0,
+          "description": "Rotation offset of player on speeder"
+        },
+        {
+          "name": "MAXIMUM_SPEED",
+          "type": "number",
+          "range": "1.00-100.00",
+          "default": 30.00,
+          "description": "Maximum forward speed of the speeder"
+        },
+        {
+          "name": "MINIMUM_SPEED",
+          "type": "number",
+          "range": "-100.00-100.00",
+          "default": -20.00,
+          "description": "Maximum reverse speed of the speeder"
+        },
+        {
+          "name": "TURN_SPEED",
+          "type": "number",
+          "range": "0.00-50.00",
+          "default": 5.00,
+          "description": "How quickly the speeder can turn"
+        },
+        {
+          "name": "ACCELERATION",
+          "type": "number",
+          "range": "0.0-10.0",
+          "default": 3.0,
+          "description": "How quickly the speeder gains speed"
+        },
+        {
+          "name": "DECCELERATION",
+          "type": "number",
+          "range": "0.0-10.0",
+          "default": 0.15,
+          "description": "How quickly the speeder loses speed"
+        },
+        {
+          "name": "IMPACT_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 150,
+          "description": "Range for collision detection"
+        },
+        {
+          "name": "IMPACT_ANGLE",
+          "type": "number",
+          "range": "1-360",
+          "default": 40,
+          "description": "Angle range for collision detection"
+        },
+        {
+          "name": "SPEEDER_HEALTH",
+          "type": "number",
+          "range": "100-1000",
+          "default": 1000,
+          "description": "Health points of the speeder"
+        },
+        {
+          "name": "MAXIMUM_SLOPE",
+          "type": "number",
+          "range": "1-100",
+          "default": 19,
+          "description": "Maximum slope angle the speeder can climb"
+        },
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "WASD-drive, SPACE-Brake, /-Radio",
+          "description": "Control instructions shown to player"
+        },
+        {
+          "name": "LOCK_PLAYER",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to lock player rotation to speeder"
+        }
+      ],
+      "features": [
+        "WASD driving controls",
+        "Spacebar brake system",
+        "Radio toggle with / key",
+        "Collision detection and damage",
+        "Health system",
+        "Slope limitations",
+        "Sound effects for movement",
+        "Player position customization",
+        "Automatic speed adjustment",
+        "Impact detection with NPCs",
+        "Terrain height awareness",
+        "Underwater detection"
+      ],
+      "keywords": ["vehicle", "speeder", "transport", "drive", "mount", "movement", "collision", "physics"],
+      "tutorial": {
+        "steps": [
+          "Create a vehicle model",
+          "Set Physics to ON",
+          "Set IsImmobile to YES",
+          "Attach the speeder behavior",
+          "Configure speed and handling",
+          "Set up player positioning",
+          "Add movement sound to Sound0",
+          "Add idle sound to Sound1",
+          "Add impact sound to Sound2",
+          "Add radio sound to Sound3",
+          "Test driving mechanics"
+        ]
+      },
+      "relatedBehaviors": ["vehicle_control", "aircraft", "boat", "physics_object"]
+    }
+  }
+} 

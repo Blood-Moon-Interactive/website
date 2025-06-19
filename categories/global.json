@@ -1,0 +1,428 @@
+{
+  "category": "Global",
+  "description": "Behaviors for managing global variables and game-wide states",
+  "behaviors": {
+    "global_activator": {
+      "name": "Global Activator",
+      "file": "objects/global_activator.lua",
+      "description": "An activator that triggers other logic-linked or IfUsed entities when a user-defined global variable reaches a specified value. Can be triggered by switch, zone, or range.",
+      "properties": [
+        {
+          "name": "ACTIVATION_STYLE",
+          "type": "dropdown",
+          "default": "Switch/Zone",
+          "options": [
+            "Switch/Zone",
+            "Ranged",
+            "Always On"
+          ],
+          "description": "How the activator is triggered"
+        },
+        {
+          "name": "ACTIVATION_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Distance at which ranged activation occurs"
+        },
+        {
+          "name": "USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to monitor (e.g. MyGlobal)"
+        },
+        {
+          "name": "TRIGGER_VALUE",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "Value that triggers the event"
+        },
+        {
+          "name": "TRIGGER_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Delay in seconds before triggered event"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Hide",
+          "options": [
+            "Hide",
+            "Show"
+          ],
+          "description": "Whether the activator object is visible"
+        },
+        {
+          "name": "TRIGGER_MONITOR",
+          "type": "dropdown",
+          "default": ">= trigger value",
+          "options": [
+            ">= trigger value",
+            "<= trigger value"
+          ],
+          "description": "How to compare global value with trigger value"
+        },
+        {
+          "name": "ACTIVATOR_TYPE",
+          "type": "dropdown",
+          "default": "Single Use",
+          "options": [
+            "Single Use",
+            "Multi Use"
+          ],
+          "description": "Whether activator can trigger multiple times"
+        }
+      ],
+      "features": [
+        "Multiple activation methods",
+        "Global variable monitoring",
+        "Customizable trigger values",
+        "Delayed activation support",
+        "Visibility control",
+        "Value comparison options",
+        "Single/Multi use modes",
+        "Sound effect support",
+        "Logic connection triggers",
+        "IfUsed event support"
+      ],
+      "keywords": ["global", "activator", "trigger", "monitor", "variable", "logic", "switch"],
+      "tutorial": {
+        "videoId": "cv2lXzcdHZY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an activator object",
+          "Attach the global_activator behavior",
+          "Set activation style",
+          "Configure global variable name",
+          "Set trigger value and monitor type",
+          "Add activation sound to Sound0",
+          "Choose single/multi use mode",
+          "Connect to target objects",
+          "Test with global variable changes"
+        ]
+      },
+      "relatedBehaviors": ["global_setter", "global_monitor", "switch", "logic_gate"]
+    },
+    "global_modifier": {
+      "name": "Global Modifier",
+      "file": "objects/global_modifier.lua",
+      "description": "Modifies a global variable when activated, with options for automatic pickup, manual pickup, or external triggering. Can also modify player health and control object visibility.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text shown when player is in range"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Collected modifier",
+          "description": "Text shown when modifier is collected"
+        },
+        {
+          "name": "MODIFIER_LEVEL",
+          "type": "number",
+          "range": "1-30",
+          "default": 10,
+          "description": "Amount to modify the global variable by"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 90,
+          "description": "Distance at which pickup is possible"
+        },
+        {
+          "name": "ACTIVATION_STYLE",
+          "type": "dropdown",
+          "default": "Automatic Pickup",
+          "options": [
+            "Automatic Pickup",
+            "Manual Pickup",
+            "External Triggered"
+          ],
+          "description": "How the modifier is activated"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to modify (e.g. MyGlobalModifier)"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": [
+            "Add",
+            "Deduct"
+          ],
+          "description": "Whether to add or subtract the modifier value"
+        },
+        {
+          "name": "HEALTH_MODIFIER",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount to modify player health by"
+        },
+        {
+          "name": "WHEN_ACTIVATED",
+          "type": "dropdown",
+          "default": "Do Nothing",
+          "options": [
+            "Do Nothing",
+            "Hide",
+            "Show",
+            "Destroy"
+          ],
+          "description": "What happens to the object when activated"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display the prompt text"
+        }
+      ],
+      "features": [
+        "Multiple activation styles",
+        "Global variable modification",
+        "Player health modification",
+        "Customizable prompts",
+        "Sound effect support",
+        "Logic connection triggers",
+        "Visibility control",
+        "Automatic destruction",
+        "Range-based activation",
+        "Screen/Local prompt options"
+      ],
+      "keywords": ["global", "modifier", "pickup", "variable", "health", "prompt", "trigger"],
+      "tutorial": {
+        "videoId": "cv2lXzcdHZY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a modifier object",
+          "Attach the global_modifier behavior",
+          "Set activation style",
+          "Configure global variable name",
+          "Set modifier level and effect",
+          "Add pickup sound to Sound0",
+          "Choose prompt display style",
+          "Set object behavior when activated",
+          "Test with player interaction"
+        ]
+      },
+      "relatedBehaviors": ["global_activator", "global_monitor", "global_setter", "switch"]
+    },
+    "global_indicator": {
+      "name": "Global Indicator",
+      "file": "objects/global_indicator.lua",
+      "description": "Displays and updates a screen image indicator based on a global value or player health. Supports up to five different indicator images with customizable thresholds.",
+      "properties": [
+        {
+          "name": "GLOBAL_TO_MONITOR",
+          "type": "dropdown",
+          "default": "Health",
+          "options": [
+            "Health",
+            "User Global"
+          ],
+          "description": "What value to monitor for the indicator"
+        },
+        {
+          "name": "USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to monitor (e.g. MyGlobal)"
+        },
+        {
+          "name": "SCREEN_POSITION_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 2,
+          "description": "Horizontal position of the indicator on screen"
+        },
+        {
+          "name": "SCREEN_POSITION_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Vertical position of the indicator on screen"
+        },
+        {
+          "name": "SCREEN_SCALE",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "Size of the indicator on screen"
+        },
+        {
+          "name": "FIRST_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\indicator\\indicator_1.png",
+          "description": "Path to the first indicator image"
+        },
+        {
+          "name": "FIRST_INDICATOR_VALUE",
+          "type": "number",
+          "default": 0,
+          "description": "Threshold value for first indicator"
+        },
+        {
+          "name": "SECOND_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\indicator\\indicator_2.png",
+          "description": "Path to the second indicator image"
+        },
+        {
+          "name": "SECOND_INDICATOR_VALUE",
+          "type": "number",
+          "default": 25,
+          "description": "Threshold value for second indicator"
+        },
+        {
+          "name": "THIRD_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\indicator\\indicator_3.png",
+          "description": "Path to the third indicator image"
+        },
+        {
+          "name": "THIRD_INDICATOR_VALUE",
+          "type": "number",
+          "default": 50,
+          "description": "Threshold value for third indicator"
+        },
+        {
+          "name": "FOURTH_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\indicator\\indicator_4.png",
+          "description": "Path to the fourth indicator image"
+        },
+        {
+          "name": "FOURTH_INDICATOR_VALUE",
+          "type": "number",
+          "default": 75,
+          "description": "Threshold value for fourth indicator"
+        },
+        {
+          "name": "FIFTH_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\indicator\\indicator_5.png",
+          "description": "Path to the fifth indicator image"
+        },
+        {
+          "name": "FIFTH_INDICATOR_VALUE",
+          "type": "number",
+          "default": 100,
+          "description": "Threshold value for fifth indicator"
+        }
+      ],
+      "features": [
+        "Health monitoring",
+        "Global variable monitoring",
+        "Customizable screen position",
+        "Adjustable indicator size",
+        "Up to five indicator states",
+        "Custom threshold values",
+        "Custom indicator images",
+        "Automatic aspect ratio handling",
+        "Always active monitoring",
+        "Real-time updates"
+      ],
+      "keywords": ["global", "indicator", "monitor", "health", "screen", "image", "threshold"],
+      "tutorial": {
+        "videoId": "cv2lXzcdHZY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an indicator object",
+          "Attach the global_indicator behavior",
+          "Choose what to monitor (health or global)",
+          "Set screen position and scale",
+          "Configure indicator images",
+          "Set threshold values",
+          "Test with value changes"
+        ]
+      },
+      "relatedBehaviors": ["global_monitor", "global_activator", "global_modifier", "health_indicator"]
+    },
+    "global_monitor": {
+      "name": "Global Monitor",
+      "file": "objects/global_monitor.lua",
+      "description": "Adds or deducts a value from a global variable either once or incrementally over time when activated. Can be triggered at start or by switch/zone.",
+      "properties": [
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to modify (e.g. MyGlobal)"
+        },
+        {
+          "name": "ADJUST_AMOUNT",
+          "type": "number",
+          "default": 1,
+          "description": "Amount to add or deduct from the global variable"
+        },
+        {
+          "name": "TIME_INTERVAL",
+          "type": "number",
+          "default": 30,
+          "description": "Time in seconds between adjustments (0 for one-time only)"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": [
+            "Add",
+            "Deduct"
+          ],
+          "description": "Whether to add or subtract the adjustment amount"
+        },
+        {
+          "name": "ACTIVATE_AT_START",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to start monitoring immediately"
+        }
+      ],
+      "features": [
+        "Global variable modification",
+        "One-time or incremental changes",
+        "Customizable adjustment amount",
+        "Configurable time intervals",
+        "Add or subtract values",
+        "Automatic start option",
+        "Switch/zone activation",
+        "Player death reset",
+        "Minimum value protection",
+        "Initial value preservation"
+      ],
+      "keywords": ["global", "monitor", "variable", "increment", "decrement", "timer", "adjust"],
+      "tutorial": {
+        "videoId": "cv2lXzcdHZY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a monitor object",
+          "Attach the global_monitor behavior",
+          "Set global variable name",
+          "Configure adjustment amount",
+          "Set time interval",
+          "Choose effect type",
+          "Set activation mode",
+          "Test with value changes"
+        ]
+      },
+      "relatedBehaviors": ["global_activator", "global_modifier", "global_indicator", "switch"]
+    }
+  }
+} 

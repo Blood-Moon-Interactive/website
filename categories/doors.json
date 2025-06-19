@@ -1,0 +1,680 @@
+{
+  "category": "Doors",
+  "description": "Behaviors for creating and controlling various types of doors including sliding, rotating, and animated doors",
+  "behaviors": {
+    "door": {
+      "name": "Door",
+      "file": "objects/door.lua",
+      "description": "Creates a basic door that can be opened and closed with configurable animations, collision handling, and auto-close functionality. Features key-based locking and switch operation modes.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "50-500",
+          "default": 70,
+          "description": "Maximum distance at which the player can interact with the door. The door becomes interactive when the player is within this range and looking at it."
+        },
+        {
+          "name": "DELAY",
+          "type": "number",
+          "range": "0-5000",
+          "default": 1000,
+          "description": "Time in milliseconds before collision is disabled after opening. This allows the door animation to complete before the player can pass through."
+        },
+        {
+          "name": "UNLOCKED",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the door starts unlocked. When false, the door requires a key or switch to open."
+        },
+        {
+          "name": "LOCKED_TEXT",
+          "type": "string",
+          "default": "Door locked. Find key",
+          "description": "Message displayed when the player attempts to open a locked door."
+        },
+        {
+          "name": "CANNOT_CLOSE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the door stays open permanently after being opened. When true, the door cannot be closed manually."
+        },
+        {
+          "name": "TO_OPEN_TEXT",
+          "type": "string",
+          "default": "to open door",
+          "description": "Message displayed when the player can interact with the door. This text is appended to the interaction prompt."
+        },
+        {
+          "name": "AUTO_CLOSE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the door automatically closes after being opened. Only works if CANNOT_CLOSE is false."
+        },
+        {
+          "name": "AUTO_CLOSE_DELAY",
+          "type": "number",
+          "range": "1000-30000",
+          "default": 5000,
+          "description": "Time in milliseconds before the door automatically closes. Only used if AUTO_CLOSE is enabled."
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Screen",
+          "options": ["Local", "Screen"],
+          "description": "Where to display interaction prompts. Local shows text at the door's position, Screen shows text in the center of the screen."
+        },
+        {
+          "name": "USE_SWITCH",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the door is operated by a switch instead of direct player interaction. When true, the door can only be opened by activating a connected switch."
+        },
+        {
+          "name": "SWITCH_TEXT",
+          "type": "string",
+          "default": "Door is operated by a switch",
+          "description": "Message displayed when the player looks at a switch-operated door. Only used if USE_SWITCH is enabled."
+        }
+      ],
+      "features": [
+        "Basic door system with open/close animations",
+        "Key-based locking mechanism with customizable messages",
+        "Switch operation support for remote control",
+        "Auto-close functionality with configurable delay",
+        "Collision management with animation synchronization",
+        "NavMesh integration for AI pathfinding",
+        "Sound effect support for opening and closing",
+        "Multiple display modes for interaction prompts",
+        "State management for door status tracking",
+        "Logic connection triggers for game events",
+        "Support for both manual and automatic operation",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["door", "basic", "lock", "switch", "auto", "close", "collision", "key", "interaction", "animation"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a door object with open/close animations",
+          "Attach the door behavior script",
+          "Configure interaction range and delay settings",
+          "Set lock state and customize messages",
+          "Configure auto-close settings if needed",
+          "Add opening sound to Sound0 slot",
+          "Add closing sound to Sound1 slot",
+          "Test door functionality in-game"
+        ]
+      },
+      "relatedBehaviors": ["door_rotate", "door_sliding", "door_rotate_multi", "switch"]
+    },
+    "door_rotate": {
+      "name": "Rotating Door",
+      "file": "objects/door_rotate.lua",
+      "description": "Creates a rotating door that swings open and closed with configurable angles and directions. Features automatic or manual operation with key-based locking.",
+      "properties": [
+        {
+          "name": "LockedText",
+          "type": "string",
+          "default": "Door is locked. Find a way to unlock it",
+          "description": "Message shown when door is locked"
+        },
+        {
+          "name": "IsUnlocked",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether door starts unlocked"
+        },
+        {
+          "name": "UnLockedText",
+          "type": "string",
+          "default": "Press E to open door",
+          "description": "Message shown when door can be opened"
+        },
+        {
+          "name": "CloseText",
+          "type": "string",
+          "default": "Press E to close door",
+          "description": "Message shown when door can be closed"
+        },
+        {
+          "name": "DOOR_TYPE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Auto", "Manual"],
+          "description": "How the door operates"
+        },
+        {
+          "name": "DOOR_RANGE",
+          "type": "number",
+          "range": "0-500",
+          "default": 100,
+          "description": "Distance at which player can interact"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Screen",
+          "options": ["Local", "Screen"],
+          "description": "Where to show interaction prompts"
+        },
+        {
+          "name": "OPENING_STYLE",
+          "type": "dropdown",
+          "default": "Push",
+          "options": ["Push", "Pull"],
+          "description": "Direction door opens"
+        }
+      ],
+      "features": [
+        "Key-based locking system",
+        "Automatic or manual operation",
+        "Configurable rotation direction",
+        "Custom interaction messages",
+        "Sound effect support",
+        "NavMesh blocking",
+        "Collision management",
+        "State tracking"
+      ],
+      "keywords": ["door", "rotate", "swing", "lock", "key", "interaction"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a door object",
+          "Attach the door_rotate behavior",
+          "Configure door type (Auto/Manual)",
+          "Set opening direction (Push/Pull)",
+          "Add opening sound to Sound0",
+          "Add closing sound to Sound1",
+          "Test door functionality"
+        ]
+      },
+      "relatedBehaviors": ["door", "door_rotate_multi", "door_sliding"]
+    },
+    "door_rotate_multi": {
+      "name": "Multi-Mode Rotating Door",
+      "file": "objects/door_rotate_multi.lua",
+      "description": "Creates a rotating door that can be operated by player interaction, switches, zones, or automatically. Features configurable rotation speeds and auto-close functionality.",
+      "properties": [
+        {
+          "name": "DOOR_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Manual", "Switch/Zone", "Auto"],
+          "description": "How the door is operated"
+        },
+        {
+          "name": "OPEN_PROMPT",
+          "type": "string",
+          "default": "Press E to open door",
+          "description": "Message shown when door can be opened"
+        },
+        {
+          "name": "CLOSE_PROMPT",
+          "type": "string",
+          "default": "Press E to close door",
+          "description": "Message shown when door can be closed"
+        },
+        {
+          "name": "ROTATION_STYLE",
+          "type": "dropdown",
+          "default": "Right",
+          "options": ["Right", "Left"],
+          "description": "Direction of rotation"
+        },
+        {
+          "name": "#ROTATION_SPEED",
+          "type": "number",
+          "range": "1.0-60.0",
+          "default": 3.0,
+          "description": "Seconds for full rotation"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-300",
+          "default": 80,
+          "description": "Distance at which player can interact"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Screen",
+          "options": ["Local", "Screen"],
+          "description": "Where to show interaction prompts"
+        },
+        {
+          "name": "AUTO_CLOSE_DELAY",
+          "type": "number",
+          "range": "0-10",
+          "default": 0,
+          "description": "Seconds before auto-close (0=Off)"
+        }
+      ],
+      "features": [
+        "Multiple operation modes",
+        "Configurable rotation speed",
+        "Left/right swing options",
+        "Auto-close functionality",
+        "Switch/zone integration",
+        "NavMesh blocking",
+        "Sound effect support",
+        "Multiple display modes",
+        "Collision management",
+        "State tracking"
+      ],
+      "keywords": ["door", "rotate", "multi", "switch", "zone", "auto", "swing", "hinge"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a door object",
+          "Attach the door_rotate_multi behavior",
+          "Choose operation mode (Manual/Switch/Auto)",
+          "Set rotation direction and speed",
+          "Configure auto-close if needed",
+          "Add opening sound to Sound0",
+          "Add closing sound to Sound1",
+          "Test all operation modes"
+        ]
+      },
+      "relatedBehaviors": ["door", "door_rotate", "door_sliding", "switch", "trigger_zone"]
+    },
+    "door_sliding": {
+      "name": "Sliding Door",
+      "file": "objects/door_sliding.lua",
+      "description": "Creates a door that slides open and closed with configurable movement angles, distances, and delays. Features automatic, manual, or switch-based operation with key-based locking.",
+      "properties": [
+        {
+          "name": "MOVE_ANGLE",
+          "type": "number",
+          "range": "0-360",
+          "default": 0,
+          "description": "Angle of movement"
+        },
+        {
+          "name": "MOVE_DISTANCE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 90,
+          "description": "Distance door moves"
+        },
+        {
+          "name": "MOVE_DELAY",
+          "type": "number",
+          "range": "0-5000",
+          "default": 90,
+          "description": "Delay before movement starts"
+        },
+        {
+          "name": "MOVE_PERIOD",
+          "type": "number",
+          "range": "0-5000",
+          "default": 1500,
+          "description": "Time for full movement"
+        },
+        {
+          "name": "LockedText",
+          "type": "string",
+          "default": "Door is locked. Find a way to unlock it",
+          "description": "Message shown when door is locked"
+        },
+        {
+          "name": "IsUnlocked",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether door starts unlocked"
+        },
+        {
+          "name": "UnLockedText",
+          "type": "string",
+          "default": "E to use door",
+          "description": "Message shown when door can be opened"
+        },
+        {
+          "name": "DOOR_TYPE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Auto", "Manual", "Switched"],
+          "description": "How the door operates"
+        },
+        {
+          "name": "DOOR_STYLE",
+          "type": "dropdown",
+          "default": "Slide",
+          "options": ["Slide", "Raise"],
+          "description": "How the door moves"
+        },
+        {
+          "name": "DOOR_RANGE",
+          "type": "number",
+          "range": "0-500",
+          "default": 100,
+          "description": "Distance at which player can interact"
+        },
+        {
+          "name": "CLOSE_DELAY",
+          "type": "number",
+          "range": "0-10000",
+          "default": 5.0,
+          "description": "Seconds before auto-close"
+        },
+        {
+          "name": "TRIGGER",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "On Open", "On Close", "Both"],
+          "description": "When to trigger logic connections"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Screen",
+          "options": ["Local", "Screen"],
+          "description": "Where to show interaction prompts"
+        }
+      ],
+      "features": [
+        "Multiple operation modes",
+        "Configurable movement angles",
+        "Adjustable movement speed",
+        "Key-based locking system",
+        "Auto-close functionality",
+        "Logic connection triggers",
+        "Sound effect support",
+        "NavMesh blocking",
+        "Collision management",
+        "State tracking"
+      ],
+      "keywords": ["door", "slide", "raise", "lock", "key", "automatic", "manual", "switch"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a door object",
+          "Attach the door_sliding behavior",
+          "Configure movement angle and distance",
+          "Set operation mode (Auto/Manual/Switched)",
+          "Add opening sound to Sound0",
+          "Add closing sound to Sound1",
+          "Test door functionality"
+        ]
+      },
+      "relatedBehaviors": ["door", "door_rotate", "door_rotate_multi"]
+    },
+    "elevator": {
+      "name": "Elevator",
+      "file": "objects/elevator.lua",
+      "description": "Creates a multi-level elevator system with configurable levels, heights, and movement speeds. Features direct level selection, switch calling, and sound effects for different states. Supports both manual control and automatic operation via call switches.",
+      "properties": [
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "E-Up Q-Down",
+          "description": "Instructions shown to player for elevator controls. E key moves up, Q key moves down, and middle mouse button allows direct level selection."
+        },
+        {
+          "name": "NUMBER_OF_LEVELS",
+          "type": "number",
+          "range": "1-50",
+          "default": 2,
+          "description": "Total number of floors the elevator can visit. The ground floor is level 0, and additional floors are numbered sequentially."
+        },
+        {
+          "name": "HEIGHT_BETWEEN_LEVELS",
+          "type": "number",
+          "range": "100-1000",
+          "default": 300,
+          "description": "Vertical distance in units between each floor level. This determines how high the elevator needs to move between floors."
+        },
+        {
+          "name": "MOVEMENT_SPEED",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Speed at which elevator moves between floors. Higher values make the elevator move faster. Note: Actual speed is divided by 10 in the script."
+        }
+      ],
+      "features": [
+        "Multi-level elevator system with configurable floors",
+        "Manual control via keyboard (E/Q) and mouse wheel",
+        "Direct level selection with middle mouse button",
+        "Switch-based calling system for remote operation",
+        "Smooth vertical movement with collision handling",
+        "Player position synchronization during movement",
+        "Multiple sound effects for different states",
+        "Visual feedback with level indicators",
+        "Automatic floor level tracking",
+        "Support for both manual and automatic operation",
+        "Physics and collision management",
+        "NavMesh integration for AI pathfinding"
+      ],
+      "keywords": ["elevator", "lift", "floors", "levels", "transport", "vertical", "movement", "multi-level", "switch", "interaction"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an elevator object with appropriate dimensions",
+          "Attach the elevator behavior script",
+          "Configure number of levels and height between floors",
+          "Set movement speed and control instructions",
+          "Add elevator music to Sound0 slot",
+          "Add elevator start sound to Sound1 slot",
+          "Add elevator running sound to Sound2 slot",
+          "Add elevator stop sound to Sound3 slot",
+          "Test elevator functionality in-game",
+          "Optionally add elevator call switches for remote operation"
+        ]
+      },
+      "relatedBehaviors": ["elevator_call_switch", "door", "switch", "trigger_zone"]
+    },
+    "elevator_call_switch": {
+      "name": "Elevator Call Switch",
+      "file": "objects/elevator_call_switch.lua",
+      "description": "Creates an interactive switch that can call an elevator to a specific floor level. Features proximity-based activation, customizable messages, and visual feedback. Supports animation states and sound effects.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Maximum distance at which the player can interact with the switch."
+        },
+        {
+          "name": "USE_MESSAGE",
+          "type": "string",
+          "default": "Press E to call Elevator",
+          "description": "Message shown when player can interact with the switch."
+        },
+        {
+          "name": "CALL_MESSAGE",
+          "type": "string",
+          "default": "Calling Elevator..",
+          "description": "Message shown when the elevator is being called."
+        },
+        {
+          "name": "ELEVATOR_LEVEL_NO",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Floor level to call the elevator to. Level 0 is the ground floor."
+        },
+        {
+          "name": "ELEVATOR_NAME",
+          "type": "string",
+          "default": "Elevator1",
+          "description": "Name of the elevator entity to control. Must match the name of the elevator object exactly."
+        },
+        {
+          "name": "TRIGGER_PROXIMITY",
+          "type": "number",
+          "range": "1-300",
+          "default": 120,
+          "description": "Distance at which the elevator triggers the switch state change. The switch will reset when the elevator gets within this range."
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight effect when player can interact with the switch. Shape uses emissive color, Outline creates a border effect."
+        }
+      ],
+      "features": [
+        "Interactive elevator calling system",
+        "Proximity-based activation",
+        "Customizable interaction messages",
+        "Visual feedback with highlight options",
+        "Animation states for on/off",
+        "Sound effect support",
+        "Automatic state reset",
+        "Logic connection triggers",
+        "Distance-based elevator detection",
+        "Case-insensitive elevator name matching"
+      ],
+      "keywords": ["elevator", "switch", "call", "button", "level", "floor", "interactive", "trigger", "proximity"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a switch object with on/off animations",
+          "Attach the elevator_call_switch behavior",
+          "Set the target elevator name",
+          "Configure interaction range and messages",
+          "Set the desired floor level",
+          "Add activation sound to Sound0",
+          "Configure highlight effect if desired",
+          "Connect switch to elevator logic",
+          "Test switch functionality in-game"
+        ]
+      },
+      "relatedBehaviors": ["elevator", "switch", "trigger_zone"]
+    },
+    "jumpgate": {
+      "name": "Jumpgate",
+      "file": "objects/jumpgate.lua",
+      "description": "Creates a teleportation system that can transport players to connected entities, different levels, or trigger game completion. Features configurable activation types, effects, and level requirements.",
+      "properties": [
+        {
+          "name": "JUMPGATE_RANGE",
+          "type": "number",
+          "range": "0-500",
+          "default": 100,
+          "description": "Maximum distance at which the player can activate the jumpgate."
+        },
+        {
+          "name": "JUMPGATE_TYPE",
+          "type": "dropdown",
+          "default": "Instant",
+          "options": ["Instant", "Delayed", "Delayed+Countdown"],
+          "description": "How the jumpgate activates. Instant teleports immediately, Delayed waits for a timer, Delayed+Countdown shows a countdown."
+        },
+        {
+          "name": "JUMPGATE_MODE",
+          "type": "dropdown",
+          "default": "Re-useable",
+          "options": ["Single-use", "Re-useable"],
+          "description": "Whether the jumpgate can be used multiple times. Single-use destroys the gate after use."
+        },
+        {
+          "name": "JUMPGATE_DELAY",
+          "type": "number",
+          "range": "1-5",
+          "default": 5,
+          "description": "Time in seconds before the jumpgate activates. Only used with Delayed types."
+        },
+        {
+          "name": "JUMPGATE_EFFECT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Video"],
+          "description": "Visual effect when teleporting. None uses just sound, Video plays a video effect."
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to use the jumpgate. Set to 0 for no requirement."
+        },
+        {
+          "name": "DESTINATION",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Level", "Win Game"],
+          "description": "Where the jumpgate transports to. Local teleports to a connected entity, Level loads a new level, Win Game completes the game."
+        }
+      ],
+      "features": [
+        "Multiple teleportation modes",
+        "Level requirement system",
+        "Configurable activation types",
+        "Video effect support",
+        "Sound effect integration",
+        "Countdown timer display",
+        "Single-use or reusable options",
+        "Logic connection triggers",
+        "Level transition support",
+        "Game completion trigger",
+        "Proximity-based activation",
+        "Player level checking"
+      ],
+      "keywords": ["teleport", "jumpgate", "portal", "transport", "level", "transition", "effect", "video", "sound", "requirement"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a jumpgate object",
+          "Attach the jumpgate behavior",
+          "Configure activation range and type",
+          "Set destination and effects",
+          "Add teleport sound to Sound2",
+          "Add video effect if using video mode",
+          "Connect to target entity if using local mode",
+          "Set level requirements if needed",
+          "Test jumpgate functionality"
+        ]
+      },
+      "relatedBehaviors": ["door", "switch", "trigger_zone"]
+    },
+    "oneway_door": {
+      "name": "One-Way Door",
+      "file": "objects/oneway_door.lua",
+      "description": "Creates a door that can only be opened once. After closing, it locks permanently. Features configurable close delay and sound effects.",
+      "properties": [
+        {
+          "name": "CLOSE_DELAY",
+          "type": "number",
+          "range": "0-30",
+          "default": 2,
+          "description": "Seconds before door closes and locks"
+        }
+      ],
+      "features": [
+        "Single-use operation",
+        "Automatic locking",
+        "Configurable close delay",
+        "Sound effect support",
+        "NavMesh blocking",
+        "Collision management",
+        "State tracking"
+      ],
+      "keywords": ["door", "oneway", "lock", "permanent", "single", "use"],
+      "tutorial": {
+        "videoId": "zjsXMyH9jf0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a door object",
+          "Attach the oneway_door behavior",
+          "Set close delay if needed",
+          "Add opening sound to Sound0",
+          "Add closing sound to Sound1",
+          "Test door functionality"
+        ]
+      },
+      "relatedBehaviors": ["door", "door_rotate", "door_sliding"]
+    }
+  }
+} 

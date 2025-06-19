@@ -1,0 +1,1144 @@
+{
+  "category": "People",
+  "description": "Behaviors for controlling and managing human characters and NPCs",
+  "behaviors": {
+    "corpse": {
+      "name": "Corpse",
+      "file": "people/corpse.lua",
+      "description": "Converts a character into a static corpse by setting their health to zero and removing active behaviors. Perfect for creating death scenes, crime scenes, or horror environments.",
+      "properties": [
+        {
+          "name": "No editable properties",
+          "type": "info",
+          "description": "This behavior is fully self-contained with no configurable properties."
+        }
+      ],
+      "features": [
+        "Instant character death",
+        "Removes active behaviors",
+        "Zero health state",
+        "Memory efficient",
+        "No animation requirements",
+        "Compatible with all character models"
+      ],
+      "keywords": ["corpse", "dead", "body", "death", "static", "npc", "character", "horror"],
+      "tutorial": {
+        "videoId": "tYCQhSxnvE0",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["rise_and_fall", "crawler", "phantom"]
+    },
+    "npc_control": {
+      "name": "NPC Control",
+      "file": "people/npc_control.lua",
+      "description": "A comprehensive NPC behavior system that provides full control over character actions, animations, and AI responses. Features include combat, roaming, fleeing, shooting, and complex state management.",
+      "properties": [
+        {
+          "name": "SENSE_TEXT",
+          "type": "string",
+          "default": "Who's that ..an intruder??",
+          "description": "Text displayed when NPC detects player"
+        },
+        {
+          "name": "SENSE_RANGE",
+          "type": "number",
+          "default": 500,
+          "min": 0,
+          "max": 2000,
+          "description": "Distance at which NPC can detect player"
+        },
+        {
+          "name": "NPC_CAN_FLEE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether NPC can run away when threatened"
+        },
+        {
+          "name": "IDLE_TIME",
+          "type": "number",
+          "default": 3000,
+          "min": 0,
+          "max": 20000,
+          "description": "Time in milliseconds NPC stays idle"
+        },
+        {
+          "name": "ATTACK_RANGE",
+          "type": "number",
+          "default": 100,
+          "min": 0,
+          "max": 1000,
+          "description": "Distance at which NPC can attack"
+        },
+        {
+          "name": "ATTACK_DAMAGE",
+          "type": "number",
+          "default": 10,
+          "min": 0,
+          "max": 100,
+          "description": "Damage dealt by NPC attacks"
+        },
+        {
+          "name": "RANDOM_DAMAGE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether damage is randomized"
+        },
+        {
+          "name": "NPC_CAN_ROAM",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether NPC can wander around"
+        },
+        {
+          "name": "ROAM_RANGE",
+          "type": "number",
+          "default": 500,
+          "min": 0,
+          "max": 3000,
+          "description": "Distance NPC can wander from start position"
+        },
+        {
+          "name": "NPC_ANIM_SPEED",
+          "type": "number",
+          "default": 0.8,
+          "min": 0.1,
+          "max": 5.0,
+          "description": "Animation playback speed multiplier"
+        },
+        {
+          "name": "NPC_MOVE_SPEED",
+          "type": "number",
+          "default": 100,
+          "min": 0,
+          "max": 1000,
+          "description": "Walking movement speed"
+        },
+        {
+          "name": "NPC_RUN_SPEED",
+          "type": "number",
+          "default": 110,
+          "min": 0,
+          "max": 1000,
+          "description": "Running movement speed"
+        },
+        {
+          "name": "NPC_TURN_SPEED",
+          "type": "number",
+          "default": 100,
+          "min": 0,
+          "max": 1000,
+          "description": "Rotation speed"
+        },
+        {
+          "name": "NPC_CAN_SHOOT",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No", "Yes-Weapon Hidden"],
+          "description": "Whether NPC can use ranged attacks"
+        },
+        {
+          "name": "IDLE1_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "First idle animation"
+        },
+        {
+          "name": "IDLE2_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Second idle animation"
+        },
+        {
+          "name": "WALK_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Walking animation"
+        },
+        {
+          "name": "RUN_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Running animation"
+        },
+        {
+          "name": "THREAT_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Threat display animation"
+        },
+        {
+          "name": "ATTACK1_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "First attack animation"
+        },
+        {
+          "name": "ATTACK1_HITFRAME",
+          "type": "number",
+          "default": 10,
+          "description": "Frame at which first attack deals damage"
+        },
+        {
+          "name": "ATTACK2_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Second attack animation"
+        },
+        {
+          "name": "ATTACK2_HITFRAME",
+          "type": "number",
+          "default": 10,
+          "description": "Frame at which second attack deals damage"
+        },
+        {
+          "name": "ATTACK3_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Third attack animation"
+        },
+        {
+          "name": "ATTACK3_HITFRAME",
+          "type": "number",
+          "default": 10,
+          "description": "Frame at which third attack deals damage"
+        },
+        {
+          "name": "SHOOT_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Shooting animation"
+        },
+        {
+          "name": "HURT_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Hurt reaction animation"
+        },
+        {
+          "name": "DEATH1_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "First death animation"
+        },
+        {
+          "name": "DEATH2_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Second death animation"
+        },
+        {
+          "name": "LASTFLAG_ANIMATION",
+          "type": "dropdown",
+          "default": "Default",
+          "options": ["AnimSetList", "Default"],
+          "description": "Final animation before death"
+        },
+        {
+          "name": "LASTFLAG_TIME",
+          "type": "number",
+          "default": 3000,
+          "min": 0,
+          "max": 20000,
+          "description": "Duration of final animation in milliseconds"
+        },
+        {
+          "name": "LASTFLAG_LOOP",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether final animation loops"
+        },
+        {
+          "name": "FORCE_MOVE",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether NPC is forced to move"
+        },
+        {
+          "name": "NPC_TILTING",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether NPC tilts when turning"
+        },
+        {
+          "name": "DIAGNOSTICS",
+          "type": "boolean",
+          "default": false,
+          "description": "Enable diagnostic information display"
+        }
+      ],
+      "features": [
+        "Full animation control system",
+        "Configurable AI behaviors",
+        "Combat and shooting mechanics",
+        "Roaming and patrolling",
+        "Player detection and response",
+        "Sound effect integration",
+        "Health and damage system",
+        "Movement and speed control",
+        "State-based behavior management",
+        "Diagnostic options"
+      ],
+      "keywords": ["npc", "ai", "control", "combat", "animation", "behavior", "character", "enemy"],
+      "tutorial": {
+        "videoId": "-25ucuGusa0",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hot_key", "hudcontrol", "interface"]
+    },
+    "npc_incover": {
+      "name": "NPC In Cover",
+      "file": "people/npc_incover.lua",
+      "description": "Allows an NPC to take cover and engage in tactical combat, popping in and out of cover to fire at the player. Features customizable cover positions, timing, and animations.",
+      "properties": [
+        {
+          "name": "COVER_STYLE",
+          "type": "dropdown",
+          "default": "Up/Down",
+          "options": [
+            "Up/Down",
+            "Left",
+            "Right"
+          ],
+          "description": "Type of cover movement the NPC will use"
+        },
+        {
+          "name": "ALERT_DISTANCE",
+          "type": "number",
+          "range": "1-5000",
+          "default": 2000,
+          "description": "Distance at which the NPC will detect and engage the player"
+        },
+        {
+          "name": "EXPOSURE_TIME",
+          "type": "number",
+          "range": "100-5000",
+          "default": 1500,
+          "description": "How long the NPC stays exposed while firing (in milliseconds)"
+        },
+        {
+          "name": "COVER_TIME",
+          "type": "number",
+          "range": "100-5000",
+          "default": 1200,
+          "description": "How long the NPC stays in cover (in milliseconds)"
+        },
+        {
+          "name": "STAND_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnimSetList"
+          ],
+          "description": "Animation to play when standing and firing"
+        },
+        {
+          "name": "DUCK_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnimSetList"
+          ],
+          "description": "Animation to play when ducking in cover"
+        },
+        {
+          "name": "LEFT_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnimSetList"
+          ],
+          "description": "Animation to play when peeking from left cover"
+        },
+        {
+          "name": "RIGHT_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnimSetList"
+          ],
+          "description": "Animation to play when peeking from right cover"
+        },
+        {
+          "name": "SHOOT_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "AnimSetList"
+          ],
+          "description": "Animation to play when shooting"
+        },
+        {
+          "name": "DEATH_TRIGGER",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to trigger logic connections when the NPC dies"
+        }
+      ],
+      "features": [
+        "Tactical cover system",
+        "Customizable cover positions",
+        "Timed exposure and cover periods",
+        "Weapon integration",
+        "Animation system",
+        "Player detection",
+        "Death triggers",
+        "Ammo management"
+      ],
+      "keywords": ["npc", "combat", "cover", "tactical", "shooting", "animation", "weapon", "ai"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_controller", "weapon_system", "animation_controller"]
+    },
+    "quest_giver": {
+      "name": "Quest Giver",
+      "file": "people/quest_giver.lua",
+      "description": "Creates an interactive NPC that can give quests to the player. When the player is within range, they can interact to view and accept quests from a quest list.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which the player can interact with the quest giver"
+        },
+        {
+          "name": "QUEST_PROMPT",
+          "type": "string",
+          "default": "Press E to Interact",
+          "description": "Text shown when player is in range"
+        },
+        {
+          "name": "QUEST_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 8",
+          "description": "Screen to show when quest is accepted"
+        },
+        {
+          "name": "QuestChoice",
+          "type": "dropdown",
+          "default": "QuestList",
+          "options": [
+            "QuestList"
+          ],
+          "description": "Quest to assign from the quest list"
+        },
+        {
+          "name": "SPEECH1",
+          "type": "string",
+          "default": "",
+          "description": "Speech to play when quest is given"
+        }
+      ],
+      "features": [
+        "Quest list integration",
+        "Customizable interaction range",
+        "Quest screen display",
+        "Speech playback",
+        "NPC interaction system"
+      ],
+      "keywords": ["quest", "npc", "interaction", "mission", "objective"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_interaction", "quest_system"]
+    },
+    "sniper": {
+      "name": "Sniper",
+      "file": "people/sniper.lua",
+      "description": "Creates a sniper character that will attack the player when within range. Features customizable attack range, delay, damage, and hit chance, along with animation support for different states.",
+      "properties": [
+        {
+          "name": "SNIPER_RANGE",
+          "type": "number",
+          "range": "0-10000",
+          "default": 2000,
+          "description": "Maximum range at which the sniper can attack"
+        },
+        {
+          "name": "SNIPER_DELAY",
+          "type": "number",
+          "range": "0-60",
+          "default": 4,
+          "description": "Seconds between shots"
+        },
+        {
+          "name": "HIT_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 3,
+          "description": "Damage dealt to player on hit"
+        },
+        {
+          "name": "HIT_CHANCE",
+          "type": "number",
+          "range": "0-100",
+          "default": 60,
+          "description": "Percentage chance to hit the player"
+        },
+        {
+          "name": "IDLE_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": [
+            "AnimSetList"
+          ],
+          "description": "Animation to play while idle"
+        },
+        {
+          "name": "AIM_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": [
+            "AnimSetList"
+          ],
+          "description": "Animation to play while aiming"
+        },
+        {
+          "name": "SHOOT_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": [
+            "AnimSetList"
+          ],
+          "description": "Animation to play while shooting"
+        },
+        {
+          "name": "FLINCH_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": [
+            "AnimSetList"
+          ],
+          "description": "Animation to play when hit"
+        }
+      ],
+      "features": [
+        "Long-range combat",
+        "Customizable attack parameters",
+        "Animation state system",
+        "Sound effect integration",
+        "Player visibility detection",
+        "Weapon integration",
+        "Health management",
+        "Death handling"
+      ],
+      "keywords": ["sniper", "combat", "enemy", "ranged", "attack", "weapon", "animation"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["weapon_system", "combat_system", "animation_system"]
+    },
+    "trader": {
+      "name": "Trader",
+      "file": "people/trader.lua",
+      "description": "Creates an interactive merchant NPC that allows players to buy and sell items through a customizable shop interface. Perfect for creating vendors, merchants, and economic gameplay elements.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "default": 100,
+          "description": "Distance at which player can interact with trader"
+        },
+        {
+          "name": "TRADE_PROMPT",
+          "type": "string",
+          "default": "Press E to trade",
+          "description": "Text shown when player is in range"
+        },
+        {
+          "name": "TRADE_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 5",
+          "description": "HUD screen to display shop interface"
+        },
+        {
+          "name": "SHOP_CONTAINER",
+          "type": "string",
+          "default": "",
+          "description": "Container entity that holds shop inventory"
+        },
+        {
+          "name": "SPEECH1",
+          "type": "string",
+          "default": "",
+          "description": "Voice line played when trading begins"
+        },
+        {
+          "name": "TRADE_SHOPNAME",
+          "type": "string",
+          "default": "The Shop",
+          "description": "Name displayed in shop interface"
+        }
+      ],
+      "features": [
+        "Interactive trading system",
+        "Customizable shop inventory",
+        "Buy and sell functionality",
+        "Shop name customization",
+        "Voice line integration",
+        "HUD interface support",
+        "Container-based inventory",
+        "Proximity detection",
+        "Simple interaction model",
+        "Memory efficient"
+      ],
+      "keywords": ["trader", "shop", "merchant", "vendor", "economy", "buy", "sell", "trade", "store"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["quest_giver", "hudcontrol", "interface"]
+    },
+    "no_kill": {
+      "name": "No Kill",
+      "file": "objects/no_kill.lua",
+      "description": "Global behavior that kills the player if they kill an NPC of the designated type. Attach to an object and set AlwaysActive=ON to monitor and enforce NPC protection.",
+      "properties": [
+        {
+          "name": "NPC_TYPE",
+          "type": "dropdown",
+          "default": "Ally",
+          "options": ["Enemy", "Ally", "Neutral", "Ally+Neutral"],
+          "description": "Type of NPC that should not be killed"
+        }
+      ],
+      "features": [
+        "Player death on protected NPC kill",
+        "Multiple NPC type protection",
+        "Global monitoring system",
+        "Real-time health checking",
+        "Automatic list management",
+        "Configurable protection rules"
+      ],
+      "keywords": ["protection", "kill", "death", "npc", "ally", "enemy", "neutral"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_control", "npc_incover"]
+    },
+    "npc_alerter": {
+      "name": "NPC Alerter",
+      "file": "objects/npc_alerter.lua",
+      "description": "A global behavior that allows a named NPC to alert other NPCs and can trigger events, lose game, or win game upon death. Attach to an object and set AlwaysActive=ON. Attach any logic links to this object and/or use ActivateIfUsed field.",
+      "properties": [
+        {
+          "name": "NPC_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the NPC that will be the alerter"
+        },
+        {
+          "name": "ALERT_ACTION",
+          "type": "dropdown",
+          "default": "Call Alert",
+          "options": ["Call Alert", "Event Trigger", "Call Alert+EventTrigger", "Lose Game", "Win Game", "None"],
+          "description": "Action to take when NPC sees the player"
+        },
+        {
+          "name": "ALERT_RANGE",
+          "type": "number",
+          "default": 3000,
+          "min": 1,
+          "max": 5000,
+          "description": "Range at which the alert can be heard by other NPCs"
+        },
+        {
+          "name": "DEATH_ACTION",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["Event Trigger", "Lose Game", "Win Game", "None"],
+          "description": "Action to take when the alerter NPC dies"
+        },
+        {
+          "name": "ALERTER_ACTIVE",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the alerter is active by default (if unchecked, use a switch or other trigger to activate/deactivate)"
+        }
+      ],
+      "features": [
+        "Named NPC monitoring",
+        "Multiple alert actions",
+        "Configurable alert range",
+        "Death event triggers",
+        "Game state control",
+        "Logic connection support",
+        "Sound effect integration",
+        "Activation control"
+      ],
+      "keywords": ["alerter", "npc", "alert", "trigger", "event", "death", "game state"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_control", "npc_incover"]
+    },
+    "npc_event": {
+      "name": "NPC Event",
+      "file": "objects/npc_event.lua",
+      "description": "Triggers npc animation event then removes or ragdolls npc after set duration. Attach to a character. Trigger by linked switch or zone or range. Zone is destroyed after event.",
+      "properties": [
+        {
+          "name": "EVENT_DURATION",
+          "type": "number",
+          "default": "10",
+          "min": 1,
+          "max": 100,
+          "description": "Duration of the event in seconds"
+        },
+        {
+          "name": "IDLE_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play while idle"
+        },
+        {
+          "name": "EVENT_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList", "Default"],
+          "description": "Animation to play during event"
+        },
+        {
+          "name": "END_TRIGGER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether to trigger connections when event ends"
+        },
+        {
+          "name": "FADE_SPEED",
+          "type": "number",
+          "default": "0.5",
+          "min": 0.01,
+          "max": 10.00,
+          "description": "Speed of fade out effect"
+        },
+        {
+          "name": "EVENT_TRIGGER",
+          "type": "dropdown",
+          "default": "Zone/Switch",
+          "options": ["Zone/Switch", "Range"],
+          "description": "How to trigger the event"
+        },
+        {
+          "name": "RANGE",
+          "type": "number",
+          "default": "500",
+          "min": 0,
+          "max": 3000,
+          "description": "Range to trigger event if using range trigger"
+        },
+        {
+          "name": "RAGDOLL",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to ragdoll the NPC after event"
+        }
+      ],
+      "features": [
+        "Animation event system",
+        "Configurable event duration",
+        "Idle and event animations",
+        "Fade out effect",
+        "Multiple trigger methods",
+        "Optional ragdoll effect",
+        "Sound support"
+      ],
+      "keywords": [
+        "npc",
+        "event",
+        "animation",
+        "trigger",
+        "fade",
+        "ragdoll"
+      ],
+      "tutorial": {
+        "videoId": "tYCQhSxnvE0",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_control", "npc_alerter", "corpse"]
+    },
+    "npc_flashlight": {
+      "name": "NPC Flashlight",
+      "file": "objects/npc_flashlight.lua",
+      "description": "Attaches a flashlight to an NPC that follows their movement and can be positioned on different parts of their body. The light will flicker when the NPC is damaged and turn off when they die.",
+      "properties": [
+        {
+          "name": "FLASHLIGHT_RANGE",
+          "type": "number",
+          "range": "1-10000",
+          "default": 3000,
+          "description": "Range of the flashlight beam in units"
+        },
+        {
+          "name": "NPC_OBJECT_NAME",
+          "type": "string",
+          "default": "Tony1",
+          "description": "Name of the NPC entity to attach the flashlight to"
+        },
+        {
+          "name": "FLASHLIGHT_POSITION",
+          "type": "dropdown",
+          "default": "Hand",
+          "options": [
+            "Hand",
+            "Shoulder",
+            "Head"
+          ],
+          "description": "Position on the NPC where the flashlight will be attached"
+        }
+      ],
+      "features": [
+        "Dynamic light attachment to NPCs",
+        "Multiple attachment positions",
+        "Damage-based flickering",
+        "Automatic shutdown on NPC death",
+        "Realistic light positioning",
+        "Smooth light movement"
+      ],
+      "keywords": ["npc", "light", "flashlight", "spotlight", "character", "illumination", "dynamic"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["module_lightcontrol", "npc_controller"]
+    },
+    "npc_monitor": {
+      "name": "NPC Monitor",
+      "file": "objects/npc_monitor.lua",
+      "description": "A global behavior that monitors an NPC's health and triggers events, game state changes, or level transitions upon their death. Can be used to create mission objectives, boss battles, or story progression triggers.",
+      "properties": [
+        {
+          "name": "NPC_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the NPC to monitor"
+        },
+        {
+          "name": "DEATH_ACTION",
+          "type": "dropdown",
+          "default": "Event Triggers",
+          "options": [
+            "Event Triggers",
+            "Lose Game",
+            "Win Game",
+            "Go To Level"
+          ],
+          "description": "Action to take when the monitored NPC dies"
+        },
+        {
+          "name": "DISPLAY_HEALTH",
+          "type": "dropdown",
+          "default": "No",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "description": "Whether to display the NPC's health"
+        },
+        {
+          "name": "MONITOR_ACTIVE",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "description": "Whether the monitor is active by default (No requires activation via zone or switch)"
+        },
+        {
+          "name": "ACTION_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 2,
+          "description": "Delay in seconds before activating the death action"
+        },
+        {
+          "name": "USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of a global variable to set when the NPC dies"
+        },
+        {
+          "name": "USER_GLOBAL_VALUE",
+          "type": "number",
+          "range": "1-100",
+          "default": 100,
+          "description": "Value to set in the global variable"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": [
+            "Use Storyboard Logic",
+            "Go to Specific Level"
+          ],
+          "description": "Controls whether to load the next level in the Storyboard or a specific level"
+        },
+        {
+          "name": "ResetStates",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset states when entering the new level"
+        }
+      ],
+      "features": [
+        "NPC health monitoring",
+        "Multiple death actions",
+        "Configurable delays",
+        "Global variable support",
+        "Level transition control",
+        "Health display option",
+        "External activation support",
+        "Logic connection triggers"
+      ],
+      "keywords": ["npc", "monitor", "health", "death", "trigger", "game state", "level", "mission"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_controller", "level_controller", "game_state"]
+    },
+    "player_mode": {
+      "name": "Player Mode",
+      "file": "objects/player_mode.lua",
+      "description": "Controls various player capabilities and restrictions. Can be used to create different gameplay modes, stealth sections, or puzzle areas by enabling/disabling specific player actions.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Player modes activated",
+          "description": "Message displayed when player modes are changed"
+        },
+        {
+          "name": "RUNNING",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the player can run"
+        },
+        {
+          "name": "JUMPING",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the player can jump"
+        },
+        {
+          "name": "FLASHLIGHT",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the player can use the flashlight"
+        },
+        {
+          "name": "WEAPONS",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the player can use weapons"
+        }
+      ],
+      "features": [
+        "Player capability control",
+        "Running toggle",
+        "Jumping toggle",
+        "Flashlight toggle",
+        "Weapon toggle",
+        "Custom prompt messages",
+        "Switch/zone activation",
+        "Immediate effect application"
+      ],
+      "keywords": ["player", "control", "mode", "restriction", "capability", "gameplay", "stealth", "puzzle"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["player_controller", "zone_trigger", "switch_controller"]
+    },
+    "player_peek": {
+      "name": "Player Peek",
+      "file": "objects/player_peek.lua",
+      "description": "Adds tactical peeking functionality to the player, allowing them to lean around corners and peek over cover. Features customizable peek angles, speeds, and control schemes.",
+      "properties": [
+        {
+          "name": "PROMPT",
+          "type": "string",
+          "default": "A=Peek Left, D=Peek Right, W=PeekOver -if crouched",
+          "description": "Instructions shown to the player for peeking controls"
+        },
+        {
+          "name": "PEEK_SIDE_AMOUNT",
+          "type": "number",
+          "range": "0-45",
+          "default": 30,
+          "description": "Maximum angle for side peeking in degrees"
+        },
+        {
+          "name": "PEEK_UP_AMOUNT",
+          "type": "number",
+          "range": "0-90",
+          "default": 10,
+          "description": "Maximum angle for peeking up in degrees"
+        },
+        {
+          "name": "PEEK_SPEED",
+          "type": "number",
+          "range": "0.1-20.0",
+          "default": 10.0,
+          "description": "Speed of peek movement"
+        },
+        {
+          "name": "PEEK_STYLE",
+          "type": "dropdown",
+          "default": "Toggle with key",
+          "options": [
+            "Toggle with key",
+            "Hold MMB"
+          ],
+          "description": "Control method for peeking"
+        },
+        {
+          "name": "PEEK_TOGGLE_KEY",
+          "type": "string",
+          "default": "Q",
+          "description": "Key used to toggle peeking mode (when using toggle style)"
+        },
+        {
+          "name": "AUTO_CROUCH",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to automatically crouch while peeking"
+        },
+        {
+          "name": "HIDE_WEAPON",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to hide the weapon while peeking"
+        }
+      ],
+      "features": [
+        "Side peeking (left/right)",
+        "Up peeking (when crouched)",
+        "Customizable peek angles",
+        "Adjustable peek speed",
+        "Multiple control schemes",
+        "Weapon visibility control",
+        "Auto-crouch option",
+        "Smooth peek transitions"
+      ],
+      "keywords": ["player", "peek", "lean", "cover", "tactical", "stealth", "camera", "control"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["player_controller", "camera_control", "weapon_system"]
+    },
+    "respawn_inplace": {
+      "name": "Respawn In-Place",
+      "file": "objects/respawn_inplace.lua",
+      "description": "Creates an in-place respawn marker when a player death occurs. The marker will be placed at the player's last position and can be used as a respawn point.",
+      "properties": [
+        {
+          "name": "SPAWN_MARKER_USER_GLOBAL",
+          "type": "string",
+          "default": "MySpawnMarkers",
+          "description": "User global variable required for using spawn markers"
+        },
+        {
+          "name": "SPAWN_MARKER_NAME",
+          "type": "string",
+          "default": "Player Respawn",
+          "description": "Name of spawn marker to dynamically respawn to"
+        }
+      ],
+      "features": [
+        "Automatic respawn marker creation",
+        "Player death detection",
+        "Position and rotation preservation",
+        "Spawn marker management",
+        "Global variable integration"
+      ],
+      "keywords": ["respawn", "spawn", "death", "player", "marker", "checkpoint"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["player_controller", "spawn_system"]
+    },
+    "sense_npc": {
+      "name": "Sense NPC",
+      "file": "objects/sense_npc.lua",
+      "description": "Allows an object to detect when a specific NPC is within range and trigger various actions like logic connections, game state changes, or level transitions. Perfect for creating proximity-based triggers and events.",
+      "properties": [
+        {
+          "name": "SENSE_RANGE",
+          "type": "number",
+          "range": "0-1000",
+          "default": 250,
+          "description": "Distance at which the NPC will be detected"
+        },
+        {
+          "name": "NPC_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the NPC to monitor"
+        },
+        {
+          "name": "IF_SENSED",
+          "type": "dropdown",
+          "default": "Activate Links",
+          "options": [
+            "Activate Links",
+            "Lose Game",
+            "Win Game"
+          ],
+          "description": "Action to take when the NPC is detected in range"
+        }
+      ],
+      "features": [
+        "NPC proximity detection",
+        "Configurable detection range",
+        "Multiple trigger actions",
+        "Logic connection support",
+        "Game state control",
+        "Flat distance calculation",
+        "One-time trigger system"
+      ],
+      "keywords": ["npc", "detection", "proximity", "trigger", "sensor", "range", "game state"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["npc_controller", "game_state", "logic_connector"]
+    }
+  }
+} 

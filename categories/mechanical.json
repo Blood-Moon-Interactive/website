@@ -1,0 +1,928 @@
+{
+  "category": "Mechanical",
+  "description": "Behaviors for creating mechanical and interactive systems",
+  "behaviors": {
+    "fuel": {
+      "name": "Fuel",
+      "file": "objects/fuel.lua",
+      "description": "Creates a collectable fuel resource that can be picked up by the player. Perfect for creating fuel canisters, power cells, or other energy resources.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Collect",
+          "description": "Text shown when player can collect the fuel"
+        },
+        {
+          "name": "AMOUNT",
+          "type": "number",
+          "range": "1-30",
+          "default": 5,
+          "description": "Amount of fuel to add when collected"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the fuel can be collected"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": [
+            "Automatic",
+            "Manual"
+          ],
+          "description": "How the fuel is collected (Automatic = immediate pickup, Manual = requires E key press)"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Collected Fuel",
+          "description": "Message shown when fuel is collected"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Shape",
+            "Outline"
+          ],
+          "description": "Visual highlight style when object is targeted"
+        }
+      ],
+      "features": [
+        "Configurable fuel amount",
+        "Automatic or manual pickup",
+        "Customizable interaction prompts",
+        "Visual highlighting options",
+        "Sound integration",
+        "Logic connection support",
+        "Single fuel canister limit",
+        "Automatic cleanup after collection"
+      ],
+      "keywords": ["mechanical", "fuel", "resource", "collect", "pickup", "energy", "power", "interaction", "inventory"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["generator", "battery", "resource_node"]
+    },
+    "generator": {
+      "name": "Generator",
+      "file": "objects/generator.lua",
+      "description": "Creates an interactive generator that requires fuel to operate. Can be started and stopped, perfect for creating power sources, emergency generators, or environmental puzzles.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text shown when player can interact with the generator"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the generator can be interacted with"
+        },
+        {
+          "name": "STATUS",
+          "type": "dropdown",
+          "default": "Empty",
+          "options": [
+            "Empty",
+            "Full"
+          ],
+          "description": "Initial state of the generator"
+        },
+        {
+          "name": "FUEL_REQUIRED",
+          "type": "number",
+          "range": "1-100",
+          "default": 20,
+          "description": "Amount of fuel needed to start the generator"
+        },
+        {
+          "name": "FAIL_TEXT",
+          "type": "string",
+          "default": "More fuel needed",
+          "description": "Message shown when trying to start without enough fuel"
+        },
+        {
+          "name": "RUNNING_TEXT",
+          "type": "string",
+          "default": "Generator Running, Q to stop",
+          "description": "Message shown when generator is running"
+        },
+        {
+          "name": "STOPPED_TEXT",
+          "type": "string",
+          "default": "Generator Stopped",
+          "description": "Message shown when generator is stopped"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        }
+      ],
+      "features": [
+        "Requires fuel to operate",
+        "Start/Stop functionality",
+        "Customizable interaction prompts",
+        "Multiple display modes",
+        "Sound integration",
+        "Logic connection support",
+        "Animation support",
+        "Resource management",
+        "Fuel level tracking"
+      ],
+      "keywords": ["mechanical", "generator", "power", "fuel", "energy", "switch", "puzzle", "interaction", "resource"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["fuel", "fusebox", "power_node"]
+    },
+    "fuse": {
+      "name": "Fuse",
+      "file": "objects/fuse.lua",
+      "description": "Creates a collectable fuse item that can be picked up by the player. Perfect for creating electrical fuses, circuit breakers, or other power-related items.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text shown when player can collect the fuse"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the fuse can be collected"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": [
+            "Automatic",
+            "Manual"
+          ],
+          "description": "How the fuse is collected (Automatic = immediate pickup, Manual = requires E key press)"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Collected a fuse",
+          "description": "Message shown when fuse is collected"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Shape",
+            "Outline"
+          ],
+          "description": "Visual highlight style when object is targeted"
+        }
+      ],
+      "features": [
+        "Automatic or manual pickup",
+        "Customizable interaction prompts",
+        "Visual highlighting options",
+        "Sound integration",
+        "Logic connection support",
+        "Single fuse limit",
+        "Automatic cleanup after collection"
+      ],
+      "keywords": ["mechanical", "fuse", "electrical", "circuit", "collect", "pickup", "power", "interaction", "inventory"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["generator", "battery", "power_node"]
+    },
+    "fusebox": {
+      "name": "FuseBox",
+      "file": "objects/fusebox.lua",
+      "description": "Creates an interactive fusebox that requires a fuse to be installed before it can be activated. Perfect for creating power control systems, circuit breakers, or electrical puzzles.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text shown when player can interact with the fusebox"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the fusebox can be interacted with"
+        },
+        {
+          "name": "FAIL_TEXT",
+          "type": "string",
+          "default": "Fuse Needed",
+          "description": "Message shown when trying to use without a fuse"
+        },
+        {
+          "name": "SUCCESS_TEXT",
+          "type": "string",
+          "default": "Power Flow Enabled",
+          "description": "Message shown when successfully activating the fusebox"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        }
+      ],
+      "features": [
+        "Requires fuse item to activate",
+        "Customizable interaction prompts",
+        "Multiple display modes",
+        "Sound integration",
+        "Logic connection support",
+        "Animation support",
+        "Resource management",
+        "Automatic cleanup after use"
+      ],
+      "keywords": ["mechanical", "fusebox", "electrical", "circuit", "power", "switch", "puzzle", "interaction", "fuse"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["fuse", "generator", "power_node"]
+    },
+    "radio": {
+      "name": "Radio",
+      "file": "objects/radio.lua",
+      "description": "Creates an interactive radio that can play different audio channels. Perfect for creating ambient sound sources, music players, or narrative devices.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Use",
+          "description": "Text shown when player can interact with the radio"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the radio can be interacted with"
+        },
+        {
+          "name": "ALREADY_ON",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the radio starts playing automatically"
+        }
+      ],
+      "features": [
+        "Multiple audio channels",
+        "Channel switching",
+        "Volume based on distance",
+        "On/Off functionality",
+        "Tuning sound effects",
+        "Looping audio support",
+        "Interactive prompts",
+        "Automatic cleanup"
+      ],
+      "keywords": ["mechanical", "radio", "audio", "sound", "music", "ambient", "interaction", "media", "channel"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["generator", "power_node", "audio_source"]
+    },
+    "searchbeam": {
+      "name": "Search Beam",
+      "file": "objects/searchbeam.lua",
+      "description": "Creates a dynamic searchlight beam that can be attached to objects. Perfect for creating security lights, spotlights, or dramatic lighting effects.",
+      "properties": [
+        {
+          "name": "BEAM_RANGE",
+          "type": "number",
+          "range": "1-5000",
+          "default": 5000,
+          "description": "Maximum range of the searchlight beam"
+        },
+        {
+          "name": "BEAM_OBJECT_NAME",
+          "type": "string",
+          "default": "searchlight1",
+          "description": "Name of the object to attach the beam to"
+        }
+      ],
+      "features": [
+        "Dynamic beam positioning",
+        "Object attachment system",
+        "Damage-based flickering",
+        "Automatic cleanup on destruction",
+        "Light control integration",
+        "Angle-based positioning",
+        "Range customization",
+        "Health-based effects"
+      ],
+      "keywords": ["mechanical", "searchlight", "light", "beam", "spotlight", "security", "lighting", "dynamic", "effect"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["light_control", "dynamic_light", "spotlight"]
+    },
+    "searchlight": {
+      "name": "Searchlight",
+      "file": "objects/searchlight.lua",
+      "description": "Creates an automated searchlight that scans for players and triggers alarms. Perfect for creating security systems, guard towers, or stealth gameplay mechanics.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Security alert was started",
+          "description": "Message shown when player is detected"
+        },
+        {
+          "name": "SCAN_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 1000,
+          "description": "Maximum distance at which the searchlight can detect players"
+        },
+        {
+          "name": "SCAN_RADIUS",
+          "type": "number",
+          "range": "1-360",
+          "default": 136,
+          "description": "Angle range in degrees that the searchlight can rotate through"
+        },
+        {
+          "name": "SCAN_SPEED",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Speed at which the searchlight rotates"
+        },
+        {
+          "name": "ALARM",
+          "type": "dropdown",
+          "default": "On",
+          "options": [
+            "Off",
+            "On"
+          ],
+          "description": "Whether the searchlight triggers alarms when detecting players"
+        },
+        {
+          "name": "ALARM_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 2000,
+          "description": "Distance at which the alarm can be heard by AI"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": [
+            "Visible",
+            "Invisible"
+          ],
+          "description": "Whether the searchlight model is visible"
+        }
+      ],
+      "features": [
+        "Automated scanning behavior",
+        "Player detection system",
+        "Alarm triggering",
+        "AI alert system",
+        "Sound integration",
+        "Damage handling",
+        "Logic connection support",
+        "Customizable scan patterns"
+      ],
+      "keywords": ["mechanical", "searchlight", "security", "detection", "alarm", "stealth", "guard", "tower", "scan"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["searchbeam", "security_system", "guard_tower"]
+    },
+    "seccam": {
+      "name": "Security Camera",
+      "file": "objects/seccam.lua",
+      "description": "Creates an automated security camera that scans for players and triggers alarms. Perfect for creating surveillance systems, security networks, or stealth gameplay mechanics.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Security alert was started",
+          "description": "Message shown when player is detected"
+        },
+        {
+          "name": "SCAN_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 500,
+          "description": "Maximum distance at which the camera can detect players"
+        },
+        {
+          "name": "SCAN_RADIUS",
+          "type": "number",
+          "range": "1-360",
+          "default": 136,
+          "description": "Angle range in degrees that the camera can rotate through"
+        },
+        {
+          "name": "SCAN_SPEED",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Speed at which the camera rotates"
+        },
+        {
+          "name": "ALARM",
+          "type": "dropdown",
+          "default": "On",
+          "options": [
+            "Off",
+            "On"
+          ],
+          "description": "Whether the camera triggers alarms when detecting players"
+        },
+        {
+          "name": "ALARM_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 500,
+          "description": "Distance at which the alarm can be heard by AI"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": [
+            "Visible",
+            "Invisible"
+          ],
+          "description": "Whether the camera model is visible"
+        },
+        {
+          "name": "ACTIVE",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the camera starts active or requires activation"
+        }
+      ],
+      "features": [
+        "Automated scanning behavior",
+        "Player detection system",
+        "Alarm triggering",
+        "AI alert system",
+        "Sound integration",
+        "Damage handling",
+        "Logic connection support",
+        "Customizable scan patterns",
+        "Distance-based volume"
+      ],
+      "keywords": ["mechanical", "security", "camera", "surveillance", "detection", "alarm", "stealth", "monitor", "scan"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["searchlight", "security_system", "monitor"]
+    },
+    "secmon": {
+      "name": "Security Monitor",
+      "file": "objects/secmon.lua",
+      "description": "Creates an interactive security camera monitor that allows players to view camera feeds. Perfect for creating surveillance systems, security rooms, or stealth gameplay mechanics.",
+      "properties": [
+        {
+          "name": "MONITOR_MODE",
+          "type": "dropdown",
+          "default": "Static",
+          "options": [
+            "Static",
+            "Mobile"
+          ],
+          "description": "Whether the monitor is fixed in place or can be moved"
+        },
+        {
+          "name": "ATTACHED_TO",
+          "type": "string",
+          "default": "",
+          "description": "Name of the entity to attach the monitor to (for mobile mode)"
+        },
+        {
+          "name": "ACTIVATION_TEXT",
+          "type": "string",
+          "default": "Press E to use camera monitor",
+          "description": "Text shown when player can use the monitor"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Press Q to exit, MouseWheel to Zoom",
+          "description": "Text shown while using the monitor"
+        },
+        {
+          "name": "USEAGE_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 50,
+          "description": "Distance at which the monitor can be used"
+        },
+        {
+          "name": "CAMERA_HUD",
+          "type": "dropdown",
+          "default": "In-built",
+          "options": [
+            "In-built",
+            "Custom Image",
+            "Hud Screen",
+            "None"
+          ],
+          "description": "Type of HUD overlay to display"
+        },
+        {
+          "name": "HUD_SCREEN",
+          "type": "string",
+          "default": "HUD Screen ?",
+          "description": "Name of the HUD screen to use (for HUD Screen mode)"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\camerahud01.png",
+          "description": "Path to custom HUD image (for Custom Image mode)"
+        },
+        {
+          "name": "CAMERA_FEED_ANGLE",
+          "type": "dropdown",
+          "default": "Forward",
+          "options": [
+            "Forward",
+            "15-Degrees Down",
+            "45-Degrees Down",
+            "90-Degrees Down",
+            "90-Degrees Up",
+            "Backward"
+          ],
+          "description": "Viewing angle of the camera feed"
+        },
+        {
+          "name": "ANGLE_CYCLE_KEY",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether R key can cycle through camera angles"
+        },
+        {
+          "name": "CAMERA_FEED_Y",
+          "type": "number",
+          "range": "-1000-1000",
+          "default": 20,
+          "description": "Vertical offset of the camera feed"
+        },
+        {
+          "name": "CAMERA_NAME",
+          "type": "string",
+          "default": "Security Camera",
+          "description": "Name of the camera to connect to"
+        },
+        {
+          "name": "CAMERA_TARGET_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the entity to focus the camera on"
+        },
+        {
+          "name": "CAMERA_TARGET_Z",
+          "type": "number",
+          "range": "-1000-1000",
+          "default": 0,
+          "description": "Z-axis offset when targeting an entity"
+        }
+      ],
+      "features": [
+        "Multiple monitor modes",
+        "Camera feed viewing",
+        "Custom HUD overlays",
+        "Angle cycling",
+        "Target tracking",
+        "Zoom functionality",
+        "Sound integration",
+        "Mobile monitor support",
+        "Multiple camera angles"
+      ],
+      "keywords": ["mechanical", "security", "monitor", "camera", "surveillance", "feed", "view", "screen", "hud"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["seccam", "security_system", "camera_feed"]
+    },
+    "sentry": {
+      "name": "Security Sentry",
+      "file": "objects/sentry.lua",
+      "description": "Creates an automated security turret that can scan for and engage targets. Features configurable scanning patterns, target detection, and combat capabilities.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Security alert was started",
+          "description": "Text shown when sentry is activated"
+        },
+        {
+          "name": "SCAN_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 1000,
+          "description": "Maximum distance at which the sentry can detect targets"
+        },
+        {
+          "name": "SCAN_RADIUS",
+          "type": "number",
+          "range": "1-360",
+          "default": 136,
+          "description": "Width of the sentry's scanning arc in degrees"
+        },
+        {
+          "name": "SCAN_SPEED",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Speed at which the sentry rotates while scanning"
+        },
+        {
+          "name": "ALARM",
+          "type": "dropdown",
+          "default": "On",
+          "options": [
+            "Off",
+            "On"
+          ],
+          "description": "Whether the sentry triggers alarms when detecting targets"
+        },
+        {
+          "name": "ALARM_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 500,
+          "description": "Range at which alarms can be triggered"
+        },
+        {
+          "name": "SENTRY_DAMAGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 60,
+          "description": "Damage dealt to targets when firing"
+        },
+        {
+          "name": "MUZZLE_FLASH_NAME",
+          "type": "string",
+          "default": "sentry muzzleflash",
+          "description": "Name of the muzzle flash effect entity"
+        },
+        {
+          "name": "MUZZLE_Y",
+          "type": "number",
+          "range": "1-100",
+          "default": 46,
+          "description": "Vertical offset of the muzzle flash effect"
+        },
+        {
+          "name": "MUZZLE_Z",
+          "type": "number",
+          "range": "1-100",
+          "default": 47,
+          "description": "Forward offset of the muzzle flash effect"
+        },
+        {
+          "name": "ALLEGIANCE",
+          "type": "dropdown",
+          "default": "Enemy",
+          "options": [
+            "Enemy",
+            "Ally",
+            "Neutral"
+          ],
+          "description": "The sentry's team allegiance"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": [
+            "Visible",
+            "Invisible"
+          ],
+          "description": "Whether the sentry is visible to players"
+        }
+      ],
+      "features": [
+        "Automated target detection",
+        "Configurable scanning patterns",
+        "Combat capabilities",
+        "Alarm system integration",
+        "Team allegiance system",
+        "Muzzle flash effects",
+        "Hackable behavior",
+        "Sound effects",
+        "Visibility control"
+      ],
+      "keywords": ["mechanical", "security", "sentry", "turret", "combat", "defense", "automated", "weapon", "detection"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["seccam", "secmon", "security_system", "alarm_system"]
+    },
+    "pipevalve": {
+      "name": "Pipe Valve",
+      "file": "objects/pipevalve.lua",
+      "description": "Creates a valve that can be turned on and off, with customizable rotation, sound effects, and logic connections. Features smooth animation, state tracking, and visual feedback.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text shown when player can interact with the valve"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-150",
+          "default": 80,
+          "description": "Distance at which player can interact with the valve"
+        },
+        {
+          "name": "UNUSED_TEXT",
+          "type": "string",
+          "default": "Valve wheel required",
+          "description": "Text shown when player needs a valve wheel"
+        },
+        {
+          "name": "USED_TEXT",
+          "type": "string",
+          "default": "Valve opened",
+          "description": "Text shown after valve is used"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "description": "Where to display interaction prompts"
+        }
+      ],
+      "features": [
+        "Smooth valve rotation",
+        "Sound effect integration",
+        "Logic connection support",
+        "State tracking",
+        "Visual feedback",
+        "Customizable rotation speed",
+        "Multiple sound slots",
+        "Automatic cleanup"
+      ],
+      "keywords": ["valve", "pipe", "rotate", "turn", "mechanical", "interactive", "sound", "logic"],
+      "tutorial": {
+        "videoId": "gNyEM9jYyOc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create valve object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach pipevalve behavior",
+          "Configure rotation settings",
+          "Add valve sound to Sound0",
+          "Add activation sound to Sound1",
+          "Set up logic connections",
+          "Test valve operation"
+        ]
+      },
+      "relatedBehaviors": ["valve", "trigger_system", "item_system", "animation_controller"]
+    },
+    "valve": {
+      "name": "Valve Wheel",
+      "file": "objects/valve.lua",
+      "description": "Creates a collectible valve wheel that can be used with pipe valves. Features automatic or manual pickup modes, customizable prompts, and visual highlighting options.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text shown when player can collect the valve wheel"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance within which player can collect the wheel"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": [
+            "Automatic",
+            "Manual"
+          ],
+          "description": "How the valve wheel is collected"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Valve Wheel collected",
+          "description": "Text shown when wheel is collected"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display prompt messages"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Shape",
+            "Outline"
+          ],
+          "description": "Visual highlight style for the wheel"
+        }
+      ],
+      "features": [
+        "Automatic/manual collection",
+        "Visual highlighting",
+        "Sound effect support",
+        "Resource system integration",
+        "Logic connection triggers",
+        "Local/screen prompts",
+        "Collectable item support",
+        "Object state management"
+      ],
+      "keywords": ["valve", "wheel", "collect", "pickup", "item", "resource", "highlight", "interactive"],
+      "tutorial": {
+        "steps": [
+          "Create valve wheel object",
+          "Attach valve behavior",
+          "Configure pickup style",
+          "Set collection range",
+          "Configure prompt texts",
+          "Add highlight effect (optional)",
+          "Add pickup sound to Sound0",
+          "Test wheel collection"
+        ]
+      },
+      "relatedBehaviors": ["pipevalve", "collectable", "resource", "pickup"]
+    }
+  }
+} 
