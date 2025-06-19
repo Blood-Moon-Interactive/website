@@ -1,16 +1,29 @@
 // Article management utilities for AI-generated content
 
 export async function fetchArticles() {
-    try {
-        const response = await fetch('../articles/articles.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+    const possiblePaths = [
+        'articles/articles.json',
+        '../articles/articles.json',
+        '../../articles/articles.json',
+        '/articles/articles.json',
+        '/bloodmooninteractive-dev/articles/articles.json'
+    ];
+    
+    for (const path of possiblePaths) {
+        try {
+            console.log(`Trying to fetch articles from: ${path}`);
+            const response = await fetch(path);
+            if (response.ok) {
+                console.log(`Successfully fetched articles from: ${path}`);
+                return await response.json();
+            }
+        } catch (error) {
+            console.log(`Failed to fetch from ${path}:`, error.message);
+            continue;
         }
-        return await response.json();
-    } catch (error) {
-        console.error('Error fetching articles:', error);
-        throw error;
     }
+    
+    throw new Error('Could not fetch articles from any of the attempted paths');
 }
 
 export function getFeaturedArticle(articles) {

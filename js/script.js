@@ -28,18 +28,74 @@ document.addEventListener('DOMContentLoaded', async function() {
         setupEventListeners();
         
         // Load and display featured article
+        console.log('Starting article loading process...');
         try {
+            console.log('Attempting to load articles...');
             const articlesData = await fetchArticles();
+            console.log('Articles data loaded:', articlesData);
             const featuredArticle = getFeaturedArticle(articlesData.articles);
             if (featuredArticle) {
+                console.log('Featured article found:', featuredArticle.title);
                 const articlePreviewHtml = renderArticlePreview(featuredArticle);
                 const articleContainer = document.getElementById('featuredArticleContainer');
                 if (articleContainer) {
                     articleContainer.innerHTML = articlePreviewHtml;
+                } else {
+                    console.error('Featured article container not found');
+                }
+            } else {
+                console.warn('No featured article found');
+                const articleContainer = document.getElementById('featuredArticleContainer');
+                if (articleContainer) {
+                    articleContainer.innerHTML = `
+                        <div class="article-card card">
+                            <div class="card-body">
+                                <h4 class="card-title">Getting Started with GameGuru MAX Behaviors</h4>
+                                <p class="card-text text-muted">
+                                    <small><i class="bi bi-calendar3 me-2"></i>December 2024</small>
+                                    <small class="ms-3"><i class="bi bi-person me-2"></i>Blood Moon Interactive</small>
+                                </p>
+                                <p class="card-text">
+                                    GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems...
+                                </p>
+                                <div class="article-tags mb-3">
+                                    <span class="badge bg-secondary me-1">beginner</span>
+                                    <span class="badge bg-secondary me-1">tutorial</span>
+                                    <span class="badge bg-secondary me-1">behaviors</span>
+                                    <span class="badge bg-secondary me-1">gameguru</span>
+                                </div>
+                                <a href="articles/getting-started-guide.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    `;
                 }
             }
         } catch (error) {
-            console.warn('Could not load featured article:', error);
+            console.error('Could not load featured article:', error);
+            const articleContainer = document.getElementById('featuredArticleContainer');
+            if (articleContainer) {
+                articleContainer.innerHTML = `
+                    <div class="article-card card">
+                        <div class="card-body">
+                            <h4 class="card-title">Getting Started with GameGuru MAX Behaviors</h4>
+                            <p class="card-text text-muted">
+                                <small><i class="bi bi-calendar3 me-2"></i>December 2024</small>
+                                <small class="ms-3"><i class="bi bi-person me-2"></i>Blood Moon Interactive</small>
+                            </p>
+                            <p class="card-text">
+                                GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems...
+                            </p>
+                            <div class="article-tags mb-3">
+                                <span class="badge bg-secondary me-1">beginner</span>
+                                <span class="badge bg-secondary me-1">tutorial</span>
+                                <span class="badge bg-secondary me-1">behaviors</span>
+                                <span class="badge bg-secondary me-1">gameguru</span>
+                            </div>
+                            <a href="articles/getting-started-guide.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                `;
+            }
         }
         
         // Show landing page by default (content is already in HTML)
