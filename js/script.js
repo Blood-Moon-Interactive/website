@@ -9,6 +9,9 @@ let categoriesData = null;
 
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Initialize EmailJS
+        emailjs.init("9iWDbIq3IAJUhZP-l");
+        
         // Initialize behaviors data
         const data = await fetchBehaviors();
         behaviorsData = data.behaviors;
@@ -47,6 +50,12 @@ function setupEventListeners() {
             performSearch();
         }
     });
+
+    // Contact form functionality
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactFormSubmit);
+    }
 
     // Category links
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -143,4 +152,89 @@ function performSearch() {
             </div>
         `);
     }
+}
+
+function handleContactFormSubmit(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    
+    // Get form data
+    const formData = new FormData(form);
+    const name = formData.get('user_name').trim();
+    const email = formData.get('user_email').trim();
+    const subject = formData.get('subject');
+    const message = formData.get('message').trim();
+    
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+        showContactMessage('Please fill in all required fields.', 'error');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        showContactMessage('Please enter a valid email address.', 'error');
+        return;
+    }
+    
+    // Show loading state
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
+    
+    // Submit to EmailJS
+    emailjs.send('service_t1r4avk', 'template_s8og17x', {
+        user_name: name,
+        user_email: email,
+        subject: subject,
+        message: message
+    })
+    .then(response => {
+        if (response.status === 200) {
+            showContactMessage('Thank you for your message! We\'ll get back to you within 24-72 hours.', 'success');
+            form.reset();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    })
+    .catch(error => {
+        console.error('Contact form error:', error);
+        showContactMessage('Sorry, there was an error sending your message. Please try again or email us directly at bloodmooninteractive@gmail.com', 'error');
+    })
+    .finally(() => {
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
+    });
+}
+
+function showContactMessage(message, type) {
+    const form = document.getElementById('contactForm');
+    const existingMessage = form.querySelector('.contact-message');
+    
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `contact-message ${type}`;
+    messageDiv.innerHTML = `
+        <i class="bi ${type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2"></i>
+        ${message}
+    `;
+    
+    form.insertBefore(messageDiv, form.firstChild);
+    
+    // Auto-remove message after 5 seconds
+    setTimeout(() => {
+        if (messageDiv.parentNode) {
+            messageDiv.remove();
+        }
+    }, 5000);
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 } 
