@@ -22,8 +22,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         setupCategoryToggles();
         setupEventListeners();
         
-        // Show landing page by default (content is already in HTML)
-        showContent('default');
+        // Load initial content
+        const firstCategory = Object.keys(categoriesData)[0] || 'Effects';
+        loadCategoryBehaviors(firstCategory);
     } catch (error) {
         console.error('Initialization error:', error);
         setInnerHTML('defaultContent', `
@@ -47,48 +48,13 @@ function setupEventListeners() {
         }
     });
 
-    // Contact form functionality
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactFormSubmit);
-    }
-
-    // Modal functionality
-    const contactModal = document.getElementById('contactModal');
-    if (contactModal) {
-        // Reset form when modal is hidden
-        contactModal.addEventListener('hidden.bs.modal', function () {
-            const form = document.getElementById('contactForm');
-            if (form) {
-                form.reset();
-                // Remove any existing messages
-                const existingMessage = form.querySelector('.contact-message');
-                if (existingMessage) {
-                    existingMessage.remove();
-                }
-            }
-        });
-    }
-
-    // Use event delegation for category and behavior links
-    document.addEventListener('click', function(e) {
-        // Category headers - load category view
-        if (e.target.closest('.category-toggle')) {
+    // Category links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const categoryToggle = e.target.closest('.category-toggle');
-            const category = categoryToggle.getAttribute('data-category');
-            if (category) {
-                loadCategoryBehaviors(category);
-            }
-        }
-        
-        // Behavior links - load behavior detail
-        if (e.target.closest('.sub-nav .nav-link')) {
-            e.preventDefault();
-            const link = e.target.closest('.sub-nav .nav-link');
-            const behaviorId = link.getAttribute('href').substring(1);
+            const behaviorId = this.getAttribute('href').substring(1);
             loadBehaviorContent(behaviorId);
-        }
+        });
     });
 }
 
@@ -177,91 +143,4 @@ function performSearch() {
             </div>
         `);
     }
-}
-
-function handleContactFormSubmit(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.innerHTML;
-    
-    // Get form data
-    const formData = new FormData(form);
-    const name = formData.get('name').trim();
-    const email = formData.get('email').trim();
-    const subject = formData.get('subject');
-    const message = formData.get('message').trim();
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-        showContactMessage('Please fill in all required fields.', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        showContactMessage('Please enter a valid email address.', 'error');
-        return;
-    }
-    
-    // Show loading state
-    submitButton.disabled = true;
-    submitButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
-    
-    // Prepare email content
-    const emailBody = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`;
-    const emailSubject = `Contact Form: ${subject}`;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:bloodmooninteractive@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Try to open default email client
-    try {
-        window.location.href = mailtoLink;
-        
-        // Show success message
-        setTimeout(() => {
-            showContactMessage('Thank you for your message! Your email client should have opened. If it didn\'t, please email us directly at bloodmooninteractive@gmail.com', 'success');
-            form.reset();
-        }, 1000);
-        
-    } catch (error) {
-        showContactMessage('Unable to open email client. Please email us directly at bloodmooninteractive@gmail.com', 'error');
-    }
-    
-    // Reset button
-    setTimeout(() => {
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalButtonText;
-    }, 2000);
-}
-
-function showContactMessage(message, type) {
-    const form = document.getElementById('contactForm');
-    const existingMessage = form.querySelector('.contact-message');
-    
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `contact-message ${type}`;
-    messageDiv.innerHTML = `
-        <i class="bi ${type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2"></i>
-        ${message}
-    `;
-    
-    form.insertBefore(messageDiv, form.firstChild);
-    
-    // Auto-remove message after 5 seconds
-    setTimeout(() => {
-        if (messageDiv.parentNode) {
-            messageDiv.remove();
-        }
-    }, 5000);
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
 } 
