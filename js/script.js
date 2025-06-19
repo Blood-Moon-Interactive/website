@@ -25,9 +25,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         setupCategoryToggles();
         setupEventListeners();
         
-        // Load initial content
-        const firstCategory = Object.keys(categoriesData)[0] || 'Effects';
-        loadCategoryBehaviors(firstCategory);
+        // Show landing page by default (content is already in HTML)
+        showContent('default');
     } catch (error) {
         console.error('Initialization error:', error);
         setInnerHTML('defaultContent', `
