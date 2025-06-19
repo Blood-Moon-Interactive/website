@@ -3,6 +3,7 @@ import { renderSearchResults } from './templates/searchResults.js';
 import { renderCategoryView } from './templates/categoryView.js';
 import { fetchBehaviors, findBehaviorById, searchBehaviors, getBehaviorsByCategory } from './utils/api.js';
 import { setupCategoryToggles, showContent, setInnerHTML, addClickHandlers, generateCategorySidebar } from './utils/dom.js';
+import { fetchArticles, getFeaturedArticle, renderArticlePreview } from './utils/articles.js';
 
 let behaviorsData = null;
 let categoriesData = null;
@@ -25,6 +26,21 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Setup UI
         setupCategoryToggles();
         setupEventListeners();
+        
+        // Load and display featured article
+        try {
+            const articlesData = await fetchArticles();
+            const featuredArticle = getFeaturedArticle(articlesData.articles);
+            if (featuredArticle) {
+                const articlePreviewHtml = renderArticlePreview(featuredArticle);
+                const articleContainer = document.getElementById('featuredArticleContainer');
+                if (articleContainer) {
+                    articleContainer.innerHTML = articlePreviewHtml;
+                }
+            }
+        } catch (error) {
+            console.warn('Could not load featured article:', error);
+        }
         
         // Show landing page by default (content is already in HTML)
         showContent('default');
@@ -206,6 +222,7 @@ function handleContactFormSubmit(e) {
     submitButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
     
     // Submit to EmailJS
+    // Note: If you switch to a different email service, update this service ID
     emailjs.send('service_t1r4avk', 'template_s8og17x', {
         user_name: name,
         user_email: email,
@@ -213,6 +230,7 @@ function handleContactFormSubmit(e) {
         message: message
     })
     .then(response => {
+        console.log('EmailJS Success:', response);
         if (response.status === 200) {
             showContactMessage('Thank you for your message! We\'ll get back to you within 24-72 hours.', 'success');
             form.reset();
@@ -221,7 +239,10 @@ function handleContactFormSubmit(e) {
         }
     })
     .catch(error => {
-        console.error('Contact form error:', error);
+        console.error('Contact form error details:', error);
+        console.error('Error type:', typeof error);
+        console.error('Error message:', error.message);
+        console.error('Error status:', error.status);
         showContactMessage('Sorry, there was an error sending your message. Please try again or email us directly at bloodmooninteractive@gmail.com', 'error');
     })
     .finally(() => {
