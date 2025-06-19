@@ -5,6 +5,22 @@ import { fetchBehaviors, findBehaviorById, searchBehaviors, getBehaviorsByCatego
 import { setupCategoryToggles, showContent, setInnerHTML, addClickHandlers, generateCategorySidebar } from './utils/dom.js';
 import { fetchArticles, getFeaturedArticle, renderArticlePreview } from './utils/articles.js';
 
+// Fallback article data in case fetch fails
+const fallbackArticleData = {
+    articles: [
+        {
+            id: "getting-started-guide",
+            title: "Getting Started with GameGuru MAX Behaviors",
+            preview: "GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems...",
+            date: "2024-12-01",
+            author: "Blood Moon Interactive",
+            category: "Tutorials",
+            tags: ["beginner", "tutorial", "behaviors", "gameguru"],
+            featured: true
+        }
+    ]
+};
+
 let behaviorsData = null;
 let categoriesData = null;
 let isInitialized = false;
@@ -29,10 +45,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Load and display featured article
         console.log('Starting article loading process...');
+        let articlesData = null;
+        
         try {
             console.log('Attempting to load articles...');
-            const articlesData = await fetchArticles();
+            articlesData = await fetchArticles();
             console.log('Articles data loaded:', articlesData);
+        } catch (error) {
+            console.error('Could not fetch articles, using fallback data:', error);
+            articlesData = fallbackArticleData;
+        }
+        
+        try {
             const featuredArticle = getFeaturedArticle(articlesData.articles);
             if (featuredArticle) {
                 console.log('Featured article found:', featuredArticle.title);
@@ -71,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             }
         } catch (error) {
-            console.error('Could not load featured article:', error);
+            console.error('Error rendering featured article:', error);
             const articleContainer = document.getElementById('featuredArticleContainer');
             if (articleContainer) {
                 articleContainer.innerHTML = `

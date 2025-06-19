@@ -1,12 +1,16 @@
 // Article management utilities for AI-generated content
 
 export async function fetchArticles() {
+    // Log current location to help debug
+    console.log('Current location:', window.location.href);
+    console.log('Current pathname:', window.location.pathname);
+    console.log('Current origin:', window.location.origin);
+    
     const possiblePaths = [
+        './articles/articles.json',
         'articles/articles.json',
         '../articles/articles.json',
-        '../../articles/articles.json',
-        '/articles/articles.json',
-        '/bloodmooninteractive-dev/articles/articles.json'
+        '../../articles/articles.json'
     ];
     
     for (const path of possiblePaths) {
@@ -16,6 +20,8 @@ export async function fetchArticles() {
             if (response.ok) {
                 console.log(`Successfully fetched articles from: ${path}`);
                 return await response.json();
+            } else {
+                console.log(`HTTP ${response.status} for ${path}`);
             }
         } catch (error) {
             console.log(`Failed to fetch from ${path}:`, error.message);
