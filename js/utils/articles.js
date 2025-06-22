@@ -6,30 +6,33 @@ export async function fetchArticles() {
     console.log('Current pathname:', window.location.pathname);
     console.log('Current origin:', window.location.origin);
     
-    const possiblePaths = [
-        './articles/articles.json',
-        'articles/articles.json',
-        '../articles/articles.json',
-        '../../articles/articles.json'
-    ];
+    // Try the most likely path first
+    const path = 'articles/articles.json';
     
-    for (const path of possiblePaths) {
-        try {
-            console.log(`Trying to fetch articles from: ${path}`);
-            const response = await fetch(path);
-            if (response.ok) {
-                console.log(`Successfully fetched articles from: ${path}`);
-                return await response.json();
-            } else {
-                console.log(`HTTP ${response.status} for ${path}`);
+    try {
+        console.log(`Trying to fetch articles from: ${path}`);
+        const response = await fetch(path, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
-        } catch (error) {
-            console.log(`Failed to fetch from ${path}:`, error.message);
-            continue;
+        });
+        
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+        
+        if (response.ok) {
+            console.log(`Successfully fetched articles from: ${path}`);
+            return await response.json();
+        } else {
+            console.log(`HTTP ${response.status} for ${path}`);
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
+    } catch (error) {
+        console.log(`Failed to fetch from ${path}:`, error.message);
+        throw error;
     }
-    
-    throw new Error('Could not fetch articles from any of the attempted paths');
 }
 
 export function getFeaturedArticle(articles) {

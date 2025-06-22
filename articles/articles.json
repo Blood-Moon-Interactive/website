@@ -1,0 +1,84 @@
+{
+  "articles": [
+    {
+      "id": "getting-started-guide",
+      "title": "Getting Started with GameGuru MAX Behaviors",
+      "preview": "GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems...",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Tutorials",
+      "tags": ["beginner", "tutorial", "behaviors", "gameguru"],
+      "featured": true,
+      "content": {
+        "lead": "GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this comprehensive guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems.",
+        "sections": [
+          {
+            "title": "Understanding Behaviors",
+            "content": "Behaviors in GameGuru MAX are pre-built scripts that you can attach to objects to give them specific functionality. Think of them as \"plug-and-play\" components that handle common game mechanics like doors, switches, AI, and more."
+          },
+          {
+            "title": "Basic Behavior Implementation",
+            "content": "To get started with behaviors:",
+            "list": [
+              "Select an object in your scene",
+              "Open the Properties panel and go to the Behaviors tab",
+              "Choose a behavior from our comprehensive library",
+              "Configure the properties to match your needs",
+              "Test in-game to see the behavior in action"
+            ],
+            "listType": "ordered"
+          },
+          {
+            "title": "Popular Behavior Categories",
+            "content": "Our behavior library is organized into several categories to help you find what you need:",
+            "list": [
+              "Doors & Interaction: Create interactive doors, switches, and objects",
+              "AI & NPCs: Add intelligent characters and creatures",
+              "Effects & Atmosphere: Enhance your game's visual and audio experience",
+              "Game Mechanics: Implement core gameplay systems"
+            ],
+            "listType": "unordered"
+          },
+          {
+            "title": "Best Practices",
+            "content": "When working with behaviors, keep these tips in mind:",
+            "list": [
+              "Always test behaviors in a controlled environment first",
+              "Read the documentation for each behavior thoroughly",
+              "Start with simple behaviors and gradually add complexity",
+              "Use the search function to find specific behaviors quickly"
+            ],
+            "listType": "unordered"
+          },
+          {
+            "title": "Next Steps",
+            "content": "Now that you understand the basics, explore our behavior library to find the perfect components for your game. Each behavior includes detailed documentation, property explanations, and step-by-step tutorials to help you succeed."
+          }
+        ],
+        "tip": {
+          "title": "Pro Tip",
+          "content": "Use the search function in the navigation bar to quickly find behaviors by name, category, or functionality. You can also browse by category using the sidebar navigation."
+        },
+        "relatedArticles": [
+          {
+            "title": "Advanced Behavior Techniques",
+            "url": "#"
+          },
+          {
+            "title": "Creating Custom Interactions",
+            "url": "#"
+          },
+          {
+            "title": "Optimizing Performance",
+            "url": "#"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "articlesPerPage": 5,
+    "defaultCategory": "Tutorials",
+    "sortBy": "date"
+  }
+} 

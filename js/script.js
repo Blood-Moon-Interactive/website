@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.log('Starting article loading process...');
         let articlesData = null;
         
+        // Check if we're in development or production
+        const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        console.log('Environment:', isDevelopment ? 'Development' : 'Production');
+        console.log('Hostname:', window.location.hostname);
+        
         try {
             console.log('Attempting to load articles...');
             articlesData = await fetchArticles();
