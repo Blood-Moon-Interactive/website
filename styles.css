@@ -22,6 +22,12 @@ body {
 .navbar-brand {
     font-weight: 600;
     font-size: 1.4rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--accent-color) !important;
 }
 
 @media (max-width: 576px) {
@@ -48,6 +54,16 @@ body {
 
 .sidebar-brand {
     padding: 0 0.5rem;
+}
+
+.sidebar-brand a {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-brand a:hover {
+    transform: scale(1.05);
 }
 
 .sidebar-logo {

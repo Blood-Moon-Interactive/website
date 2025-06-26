@@ -175,19 +175,76 @@ function setupEventListeners() {
         contactForm.addEventListener('submit', handleContactFormSubmit);
     }
 
-    // Category links
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const behaviorId = this.getAttribute('href').substring(1);
-            loadBehaviorContent(behaviorId);
-        });
+    // Use event delegation for navigation - this will work for all current and future links
+    document.addEventListener('click', function(e) {
+        console.log('Click detected on:', e.target);
+        console.log('Click target classes:', e.target.className);
+        
+        // Check if the clicked element is a navigation link, navbar brand, or logo link
+        const link = e.target.closest('.nav-link, .navbar-brand, .sidebar-brand a');
+        
+        console.log('Closest link found:', link);
+        
+        if (link) {
+            const href = link.getAttribute('href');
+            
+            console.log('Navigation link clicked:', href);
+            console.log('Link element:', link);
+            console.log('Link classes:', link.className);
+            console.log('Is category toggle:', link.classList.contains('category-toggle'));
+            
+            // Only handle internal links (but not category toggles)
+            if (href && href.startsWith('#') && !link.classList.contains('category-toggle')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                
+                console.log('Target ID:', targetId);
+                console.log('Target ID length:', targetId.length);
+                
+                // Skip empty target IDs (href="#")
+                if (!targetId) {
+                    console.log('Skipping empty target ID');
+                    return;
+                }
+                
+                // Handle home link
+                if (targetId === 'home') {
+                    console.log('Returning to home page');
+                    returnToHomePage();
+                    return;
+                }
+                
+                // Check if this is a category link (starts with category-)
+                if (href.startsWith('#category-')) {
+                    const category = targetId.replace('category-', '').replace(/-/g, ' ');
+                    // Convert back to proper category name (capitalize first letter of each word)
+                    const categoryName = category.split(' ').map(word => 
+                        word.charAt(0).toUpperCase() + word.slice(1)
+                    ).join(' ');
+                    console.log('Loading category:', categoryName);
+                    loadCategoryBehaviors(categoryName);
+                } else {
+                    // This is a behavior link
+                    console.log('Loading behavior:', targetId);
+                    loadBehaviorContent(targetId);
+                }
+            } else {
+                console.log('Link ignored - not a valid navigation link');
+            }
+        } else {
+            console.log('No navigation link found for this click');
+        }
     });
 }
 
 async function loadBehaviorContent(behaviorId) {
     try {
+        console.log('Trying to load behavior with ID:', behaviorId);
+        console.log('Available behaviors:', Object.keys(behaviorsData));
+        
         const behavior = findBehaviorById(behaviorsData, behaviorId);
+        console.log('Found behavior:', behavior);
+        
         if (!behavior) {
             throw new Error('Behavior not found');
         }
@@ -195,12 +252,7 @@ async function loadBehaviorContent(behaviorId) {
         showContent('default');
         setInnerHTML('defaultContent', renderBehaviorDetail(behavior));
         
-        // Add click handlers to related behavior links
-        addClickHandlers('a[href^="#"]', function(e) {
-            e.preventDefault();
-            const relatedId = this.getAttribute('href').substring(1);
-            loadBehaviorContent(relatedId);
-        });
+        // Event delegation handles all navigation links, no need for individual handlers
     } catch (error) {
         console.error('Error loading behavior:', error);
         setInnerHTML('defaultContent', `
@@ -224,12 +276,7 @@ function loadCategoryBehaviors(category) {
         showContent('default');
         setInnerHTML('defaultContent', renderCategoryView(category, behaviors, categoryInfo));
         
-        // Add click handlers to behavior cards
-        addClickHandlers('.card-footer a', function(e) {
-            e.preventDefault();
-            const behaviorId = this.getAttribute('href').substring(1);
-            loadBehaviorContent(behaviorId);
-        });
+        // Event delegation handles all navigation links, no need for individual handlers
     } catch (error) {
         console.error('Error loading category:', error);
         setInnerHTML('defaultContent', `
@@ -258,12 +305,7 @@ function performSearch() {
         // Clear the search box
         searchInput.value = '';
         
-        // Add click handlers to search result cards
-        addClickHandlers('.card-footer a', function(e) {
-            e.preventDefault();
-            const behaviorId = this.getAttribute('href').substring(1);
-            loadBehaviorContent(behaviorId);
-        });
+        // Event delegation handles all navigation links, no need for individual handlers
     } catch (error) {
         console.error('Search error:', error);
         setInnerHTML('searchResults', `
@@ -365,4 +407,90 @@ function showContactMessage(message, type) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+function returnToHomePage() {
+    // Show default content area
+    showContent('default');
+    
+    // Reset the default content to the original landing page HTML
+    const defaultContent = document.getElementById('defaultContent');
+    defaultContent.innerHTML = `
+        <div class="landing-page">
+            <div class="welcome-section mb-4">
+                <h1>Welcome to Blood Moon Interactive</h1>
+                <p class="lead">Your comprehensive resource for GameGuru MAX behaviors and tutorials.</p>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-9">
+                    <div class="intro-text">
+                        <h3>Getting Started</h3>
+                        <p>Welcome to Blood Moon Interactive's comprehensive GameGuru MAX behavior library. Whether you're a beginner looking to understand the basics or an experienced developer seeking advanced techniques, you'll find detailed documentation, step-by-step tutorials, and practical examples for every behavior in our collection.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="quick-links card">
+                        <div class="card-header">
+                            <h4>Quick Links</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="quick-link">Popular Behaviors</a></li>
+                                <li><a href="#" class="quick-link">Recent Tutorials</a></li>
+                                <li><a href="#" class="quick-link">Community Submissions</a></li>
+                                <li><a href="#" class="quick-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="article-section">
+                        <h3>Latest Article</h3>
+                        <div id="featuredArticleContainer">
+                            <!-- Featured article will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- Bottom Right Ad Space - aligned with article and extending to footer -->
+                    <div class="ad-container ad-sidebar text-center">
+                        <div class="ad-placeholder">Ad Space</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Reload the featured article
+    loadFeaturedArticle();
+}
+
+async function loadFeaturedArticle() {
+    try {
+        console.log('Loading featured article...');
+        let articlesData = null;
+        
+        try {
+            articlesData = await fetchArticles();
+        } catch (error) {
+            console.error('Could not fetch articles, using fallback data:', error);
+            articlesData = fallbackArticleData;
+        }
+        
+        const featuredArticle = getFeaturedArticle(articlesData.articles);
+        if (featuredArticle) {
+            console.log('Featured article found:', featuredArticle.title);
+            const articlePreviewHtml = renderArticlePreview(featuredArticle);
+            const articleContainer = document.getElementById('featuredArticleContainer');
+            if (articleContainer) {
+                articleContainer.innerHTML = articlePreviewHtml;
+            }
+        }
+    } catch (error) {
+        console.error('Error loading featured article:', error);
+    }
 } 

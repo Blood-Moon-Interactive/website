@@ -67,7 +67,7 @@ export function generateCategorySidebar(categories, behaviors) {
         
         return `
             <li class="nav-item category-header">
-                <a href="#" class="category-toggle" data-bs-toggle="collapse" data-bs-target="#${categoryId}Collapse" aria-expanded="false" data-category="${category}">
+                <a href="#" class="category-toggle" data-bs-toggle="collapse" data-bs-target="#${categoryId}Collapse" aria-expanded="false" aria-controls="${categoryId}Collapse">
                     <h5>
                         <i class="bi ${iconClass}"></i>
                         ${category}
