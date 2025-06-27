@@ -172,6 +172,365 @@
       },
       "relatedBehaviors": ["lightcontrol", "pulsecontrol", "glow", "ambience"]
     },
+    "game_monitor": {
+      "name": "Game Monitor",
+      "file": "effects/game_monitor.lua",
+      "description": "Monitors a User Global Value and launches designated game actions when the value reaches a specified threshold. Can trigger win game, lose game, or level transitions based on global variable values.",
+      "properties": [
+        {
+          "name": "USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User Global used to monitor (e.g., MyPoints)"
+        },
+        {
+          "name": "TRIGGER_VALUE",
+          "type": "number",
+          "default": 0,
+          "description": "Value to trigger action"
+        },
+        {
+          "name": "TRIGGER_ACTION",
+          "type": "dropdown",
+          "default": "Win Game",
+          "options": ["Win Game", "Lose Game", "Go To Level"],
+          "description": "Action to take when trigger value is reached"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "Controls whether to load the next level in the Storyboard, or a specific level"
+        }
+      ],
+      "features": [
+        "User global variable monitoring",
+        "Configurable trigger thresholds",
+        "Win game action",
+        "Lose game action",
+        "Level transition support",
+        "Automatic monitoring",
+        "Storyboard logic integration",
+        "Specific level loading",
+        "Real-time value checking",
+        "Always active operation"
+      ],
+      "keywords": ["game", "monitor", "global", "variable", "trigger", "win", "lose", "level", "transition"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["global_monitor", "global_activator", "event_manager", "game_clock"]
+    },
+    "pulsecontrol": {
+      "name": "Pulse Control",
+      "file": "effects/pulsecontrol.lua",
+      "description": "Modifies the emissiveness of an object when activated by zone, switch, or set to ON. Features three modes: increase emission, decrease emission, and pulse emission with customizable colors and speeds.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Strange lights",
+          "description": "Text shown when pulse control is activated"
+        },
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Increase Emission",
+          "options": ["Increase Emission", "Decrease Emission", "Pulse Emission"],
+          "description": "How the emission should behave"
+        },
+        {
+          "name": "LEVEL",
+          "type": "number",
+          "range": "1-1500",
+          "default": 500,
+          "description": "Target emission level"
+        },
+        {
+          "name": "SPEED",
+          "type": "number",
+          "range": "0-50",
+          "default": 5.50,
+          "description": "Speed of emission change"
+        },
+        {
+          "name": "SET",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Initial state of the pulse control"
+        },
+        {
+          "name": "COLOR_CHANGE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to change emission color during pulsing"
+        },
+        {
+          "name": "COLOR_R",
+          "type": "number",
+          "range": "0-255",
+          "default": 0,
+          "description": "Red component of emission color"
+        },
+        {
+          "name": "COLOR_G",
+          "type": "number",
+          "range": "0-255",
+          "default": 0,
+          "description": "Green component of emission color"
+        },
+        {
+          "name": "COLOR_B",
+          "type": "number",
+          "range": "0-255",
+          "default": 0,
+          "description": "Blue component of emission color"
+        }
+      ],
+      "features": [
+        "Three emission modes",
+        "Configurable emission levels",
+        "Adjustable change speed",
+        "Color change support",
+        "Pulse emission with sound",
+        "Switch/zone activation",
+        "Automatic state management",
+        "Sound effect integration",
+        "Original state preservation",
+        "Smooth emission transitions"
+      ],
+      "keywords": ["pulse", "emission", "light", "color", "control", "effect", "glow", "animation"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["emission_control", "lightcontrol", "glow", "ambience"]
+    },
+    "random_sound": {
+      "name": "Random Sound",
+      "file": "effects/random_sound.lua",
+      "description": "Plays one of four random sound resources when the player enters a zone. Features configurable zone height detection and automatic sound selection from multiple audio slots.",
+      "properties": [
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "How far above the zone the player can be before the zone is not triggered"
+        }
+      ],
+      "features": [
+        "Random sound selection",
+        "Zone-based activation",
+        "Configurable zone height",
+        "Four sound slot support",
+        "Automatic sound selection",
+        "Player position detection",
+        "One-time trigger per zone entry",
+        "Logic connection support",
+        "IfUsed activation support",
+        "Height-based zone detection"
+      ],
+      "keywords": ["random", "sound", "audio", "zone", "trigger", "ambient", "effect"],
+      "tutorial": {
+        "videoId": "0bgmxAApp-8",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["fadeinsound", "fadeoutsound", "loop3dsound", "soundinzone"]
+    },
+    "shake": {
+      "name": "Shake",
+      "file": "effects/shake.lua",
+      "description": "Creates camera shake effects with six predefined styles and manual customization options. Can be triggered by zones or switches with configurable intensity, period, and fade settings.",
+      "properties": [
+        {
+          "name": "STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Tremble", "Tremor", "Earthquake", "Explosion", "Drunkard", "Manual"],
+          "description": "Predefined shake style or manual mode"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "",
+          "description": "Text shown when shake is activated"
+        },
+        {
+          "name": "TRAUMA",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Shake trauma intensity (for manual mode)"
+        },
+        {
+          "name": "PERIOD",
+          "type": "number",
+          "range": "1-2000",
+          "default": 0,
+          "description": "Shake period in milliseconds (for manual mode)"
+        },
+        {
+          "name": "FADE",
+          "type": "number",
+          "range": "0-10",
+          "default": 0,
+          "description": "Shake fade rate (for manual mode)"
+        },
+        {
+          "name": "BACKGROUND_TRAUMA",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Background shake trauma (for manual mode)"
+        },
+        {
+          "name": "BACKGROUND_PERIOD",
+          "type": "number",
+          "range": "1-2000",
+          "default": 0,
+          "description": "Background shake period (for manual mode)"
+        },
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Once Only",
+          "options": ["Once Only", "Continuous"],
+          "description": "Whether shake happens once or continuously"
+        }
+      ],
+      "features": [
+        "Six predefined shake styles",
+        "Manual customization mode",
+        "Configurable intensity and timing",
+        "Background shake support",
+        "Continuous or one-time modes",
+        "Sound effect integration",
+        "Zone/switch activation",
+        "Automatic shake reset",
+        "Compatibility checking",
+        "Prompt text support"
+      ],
+      "keywords": ["shake", "camera", "effect", "trauma", "period", "fade", "impact", "explosion"],
+      "tutorial": {
+        "videoId": "DNxowN-VOvI",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["camera_control", "impact_effect", "explosion", "screen_effect"]
+    },
+    "timed_event": {
+      "name": "Timed Event",
+      "file": "effects/timed_event.lua",
+      "description": "Activates timed delayed linked events with configurable delays and event counts. Perfect for creating sequences, countdowns, and multi-stage triggers with sound effects and visual feedback.",
+      "properties": [
+        {
+          "name": "EVENT_TEXT",
+          "type": "string",
+          "default": "Event Underway",
+          "description": "Text to display when event is activated"
+        },
+        {
+          "name": "EVENT_COUNT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 1,
+          "description": "Number of events to trigger"
+        },
+        {
+          "name": "EVENT_DELAY",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Delay between events in seconds"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Show",
+          "options": ["Hide", "Show"],
+          "description": "Whether to hide or show the object during events"
+        }
+      ],
+      "features": [
+        "Configurable event count",
+        "Adjustable delay timing",
+        "Multiple event sequences",
+        "Sound effect per event",
+        "Visual feedback messages",
+        "Object visibility control",
+        "Logic connection support",
+        "Zone/switch activation",
+        "Automatic event counting",
+        "State management"
+      ],
+      "keywords": ["timed", "event", "delay", "sequence", "trigger", "countdown", "scheduled"],
+      "tutorial": {
+        "videoId": "N81CcQNBpKs",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["trigger_zone", "switch", "global_monitor", "event_manager"]
+    },
+    "underwater": {
+      "name": "Underwater",
+      "file": "effects/underwater.lua",
+      "description": "Changes the LUT (Look-Up Table) and water color when the player is submerged underwater. Automatically detects underwater state and applies visual effects for immersive underwater environments.",
+      "properties": [
+        {
+          "name": "LUT_GROUP",
+          "type": "string",
+          "default": "editors\\lut\\crispwintertable",
+          "description": "LUT group to change to when underwater (without .png extension)"
+        },
+        {
+          "name": "CHANGE_COLOR",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to change water color when underwater"
+        },
+        {
+          "name": "WATER_COLOR_R",
+          "type": "number",
+          "range": "0-255",
+          "default": 0,
+          "description": "Red component of underwater water color"
+        },
+        {
+          "name": "WATER_COLOR_G",
+          "type": "number",
+          "range": "0-255",
+          "default": 0,
+          "description": "Green component of underwater water color"
+        },
+        {
+          "name": "WATER_COLOR_B",
+          "type": "number",
+          "range": "0-255",
+          "default": 0,
+          "description": "Blue component of underwater water color"
+        }
+      ],
+      "features": [
+        "Automatic underwater detection",
+        "LUT table switching",
+        "Customizable water colors",
+        "State preservation",
+        "Automatic restoration",
+        "Real-time visual effects",
+        "Immersive underwater experience",
+        "Color customization",
+        "Default state memory",
+        "Seamless transitions"
+      ],
+      "keywords": ["underwater", "lut", "color", "water", "submerged", "visual", "effect", "environment"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["ambience", "lightcontrol", "fog", "environment_control"]
+    },
     "arcade_mode": {
       "name": "Arcade Mode",
       "file": "effects/arcade_mode.lua",
@@ -719,7 +1078,7 @@
       ],
       "keywords": ["event", "sequence", "timer", "random", "trigger", "chain", "coordination", "global"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "96yJ9vMbhwE",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["timed_event", "trigger_zone", "switch", "global_monitor"]
@@ -814,7 +1173,7 @@
       ],
       "keywords": ["gibs", "blood", "physics", "debris", "splatter", "death", "character", "destruction"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "GXJYBy567gk",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["npc_control", "character_health", "physics_object", "blood_effect"]
@@ -863,7 +1222,7 @@
       ],
       "keywords": ["glow", "emissive", "pulse", "light", "effect", "dynamic", "transition", "sound"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "4YIPCp_uxcg",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["emission_control", "lightcontrol", "live_emitter", "add_fx"]
@@ -1372,7 +1731,7 @@
       ],
       "keywords": ["decal", "face", "camera", "rotation", "visual", "dynamic", "automatic"],
       "tutorial": {
-        "videoId": "cv2lXzcdHZY",
+        "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
           "Create or select a decal object",
@@ -1624,7 +1983,7 @@
       ],
       "keywords": ["fade", "transparency", "visibility", "trigger", "effect", "transition", "alpha"],
       "tutorial": {
-        "videoId": "cv2lXzcdHZY",
+        "videoId": "IYQXGFp4Bxc",
         "timestamp": "0:00",
         "steps": [
           "Create or select an object",
@@ -1696,7 +2055,7 @@
       ],
       "keywords": ["grow", "scale", "transform", "size", "effect", "visual", "expansion"],
       "tutorial": {
-        "videoId": "cv2lXzcdHZY",
+        "videoId": "4YIPCp_uxcg",
         "timestamp": "0:00",
         "steps": [
           "Create or select an object",
@@ -1755,7 +2114,7 @@
       ],
       "keywords": ["hide", "visibility", "collision", "navmesh", "global", "control", "dynamic"],
       "tutorial": {
-        "videoId": "cv2lXzcdHZY",
+        "videoId": "3G-Yqxc6S10",
         "timestamp": "0:00",
         "steps": [
           "Create or select an object to control hiding",
@@ -1820,7 +2179,7 @@
       ],
       "keywords": ["hide", "show", "fade", "visibility", "transition", "trigger", "effect", "sound"],
       "tutorial": {
-        "videoId": "cv2lXzcdHZY",
+        "videoId": "8LiD-OCMW8Q",
         "timestamp": "0:00",
         "steps": [
           "Create or select an object to hide/show",
@@ -2697,7 +3056,7 @@
       ],
       "keywords": ["atlas", "texture", "image", "cycle", "loop", "display", "emissive", "visual"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "FDUZuuvBpoY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["texture_control", "emission_control", "trigger_system"]
