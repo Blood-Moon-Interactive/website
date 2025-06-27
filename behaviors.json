@@ -9,13 +9,9 @@
       "file": "categories/mechanical.json",
       "description": "Mechanical and machinery-related behaviors"
     },
-    "Object Interaction": {
-      "file": "categories/object_interaction.json",
-      "description": "Interactive object behaviors"
-    },
-    "Doors": {
-      "file": "categories/doors.json",
-      "description": "Door and portal behaviors"
+    "Markers": {
+      "file": "categories/markers.json",
+      "description": "Zone-based behaviors that create interactive areas, triggers, and environmental effects in the game world"
     },
     "Misc": {
       "file": "categories/misc.json",
@@ -24,6 +20,10 @@
     "Movement": {
       "file": "categories/movement.json",
       "description": "Movement and locomotion behaviors"
+    },
+    "Object Interaction": {
+      "file": "categories/object_interaction.json",
+      "description": "Interactive object behaviors"
     },
     "Proximity": {
       "file": "categories/proximity.json",
@@ -40,6 +40,10 @@
     "Animals": {
       "file": "categories/animals.json",
       "description": "Behaviors for creating realistic animal and creature AI"
+    },
+    "Doors": {
+      "file": "categories/doors.json",
+      "description": "Door and portal behaviors"
     },
     "Horror": {
       "file": "categories/horror.json", 

@@ -98,6 +98,7 @@ function getCategoryIcon(category) {
         'Effects': 'bi-stars',
         'FX': 'bi-magic',
         'Mechanical': 'bi-gear',
+        'Markers': 'bi-geo-alt',
         'Object Interaction': 'bi-hand-index-thumb',
         'Doors': 'bi-door-open',
         'Misc': 'bi-puzzle',

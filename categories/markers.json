@@ -1,0 +1,800 @@
+{
+  "category": "Markers",
+  "description": "Zone-based behaviors that create interactive areas, triggers, and environmental effects in the game world",
+  "behaviors": {
+    "alertzone": {
+      "name": "Alert Zone",
+      "file": "markers/alertzone.lua",
+      "description": "Creates a zone that alerts nearby enemies when the player enters it. Can be configured for single or multiple use with customizable alert range and zone height detection.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "In Alert Zone",
+          "description": "Text displayed when player enters the alert zone"
+        },
+        {
+          "name": "ALERT_RANGE",
+          "type": "number",
+          "range": "1-5000",
+          "default": 1000,
+          "description": "Range at which enemies will be alerted when player enters the zone"
+        },
+        {
+          "name": "ALERT_MODE",
+          "type": "dropdown",
+          "default": "Multiple Use",
+          "options": ["Multiple Use", "Single Use"],
+          "description": "Whether the zone can be triggered multiple times or only once"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 100,
+          "description": "How far above the zone the player can be before the zone is not triggered"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start. If unchecked, requires a switch or other trigger to spawn"
+        }
+      ],
+      "features": [
+        "Enemy alerting system",
+        "Configurable alert range",
+        "Single or multiple use modes",
+        "Zone height detection",
+        "Sound effect integration",
+        "Automatic enemy notification",
+        "Trigger-based activation",
+        "State management"
+      ],
+      "keywords": ["alert", "zone", "enemy", "notification", "trigger", "sound", "detection"],
+      "tutorial": {
+        "videoId": "XoqrqlcBmeg",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["stealthzone", "hostile_zone", "soundinzone", "trigger_zone"]
+    },
+    "teleport": {
+      "name": "Teleport",
+      "file": "markers/teleport.lua",
+      "description": "Creates a teleportation zone that can transport players to connected locations or other levels. Features multiple teleport effects, level requirements, and spawn marker support.",
+      "properties": [
+        {
+          "name": "TELEPORT_ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the teleport zone"
+        },
+        {
+          "name": "TELEPORT_TYPE",
+          "type": "dropdown",
+          "default": "Instant",
+          "options": ["Instant", "Delayed", "Delayed + Countdown"],
+          "description": "Type of teleportation effect"
+        },
+        {
+          "name": "TELEPORT_MODE",
+          "type": "dropdown",
+          "default": "Re-useable",
+          "options": ["Single-use", "Re-useable"],
+          "description": "Whether the teleport can be used multiple times"
+        },
+        {
+          "name": "TELEPORT_DELAY",
+          "type": "number",
+          "range": "1-5",
+          "default": 5,
+          "description": "Delay before teleportation occurs"
+        },
+        {
+          "name": "TELEPORT_EFFECT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Warp", "Particle"],
+          "description": "Visual effect during teleportation"
+        },
+        {
+          "name": "TELEPORT_EXIT_ANGLE",
+          "type": "number",
+          "range": "1-360",
+          "default": 1,
+          "description": "Player exit angle upon teleport"
+        },
+        {
+          "name": "PARTICLE_NAME",
+          "type": "string",
+          "default": "TeleportParticle",
+          "description": "Name of particle effect to use for teleportation"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Player level required to use this teleport"
+        },
+        {
+          "name": "DESTINATION",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Level"],
+          "description": "Whether to teleport to a local location or another level"
+        },
+        {
+          "name": "SPAWN_MARKER_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User global required for using inter-level spawn markers (e.g., MySpawnMarkers)"
+        },
+        {
+          "name": "SPAWN_MARKER_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of spawn marker for optional spawning"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the teleport at start"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "Controls whether to load the next level in the Storyboard or a specific level"
+        },
+        {
+          "name": "ResetStates",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset states when entering the next level"
+        }
+      ],
+      "features": [
+        "Local and level teleportation",
+        "Multiple teleport effects",
+        "Level requirement system",
+        "Spawn marker integration",
+        "Configurable delays and angles",
+        "Particle effect support",
+        "Storyboard logic integration",
+        "State reset options",
+        "Sound effect integration"
+      ],
+      "keywords": ["teleport", "transport", "level", "spawn", "marker", "effect", "particle", "warp"],
+      "tutorial": {
+        "videoId": "81j6gbw_aQU",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["spawn_locator", "level_zone", "winzone", "trigger_zone"]
+    },
+    "collect_zone": {
+      "name": "Collect Zone",
+      "file": "markers/collect_zone.lua",
+      "description": "Creates a zone that automatically collects and destroys objects that enter it. Can increment or deduct user global values based on object weight or fixed values.",
+      "properties": [
+        {
+          "name": "NOTIFICATION",
+          "type": "string",
+          "default": "Entity collected",
+          "description": "Message displayed when an entity is collected"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 50,
+          "description": "How far above the zone the entity can be before the zone is not triggered"
+        },
+        {
+          "name": "COUNT_STYLE",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the user global"
+        },
+        {
+          "name": "COUNT_TYPE",
+          "type": "dropdown",
+          "default": "Fixed Value",
+          "options": ["Fixed Value", "By Weight"],
+          "description": "How to calculate the value to add/deduct"
+        },
+        {
+          "name": "FIXED_VALUE",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Fixed value to increment/deduct the user global by"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "User global that will be affected (e.g., MyPoints)"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to activate logic connections when an entity is collected"
+        }
+      ],
+      "features": [
+        "Automatic entity collection",
+        "User global value modification",
+        "Weight-based or fixed value calculation",
+        "Logic connection activation",
+        "Sound effect integration",
+        "Zone height detection",
+        "Entity destruction",
+        "Notification system"
+      ],
+      "keywords": ["collect", "zone", "entity", "global", "value", "weight", "destroy", "notification"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["drop_zone", "remover_zone", "global_affected_zone", "trigger_zone"]
+    },
+    "stealthzone": {
+      "name": "Stealth Zone",
+      "file": "markers/stealthzone.lua",
+      "description": "Creates a zone that affects player stealth mechanics when entered. Can modify player visibility, sound levels, and AI detection ranges.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Stealth Zone",
+          "description": "Text displayed when player enters the stealth zone"
+        },
+        {
+          "name": "STEALTH_MODE",
+          "type": "dropdown",
+          "default": "Enhanced Stealth",
+          "options": ["Enhanced Stealth", "Reduced Stealth", "Toggle Stealth"],
+          "description": "How the stealth zone affects player stealth"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the stealth zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Player stealth modification",
+        "Multiple stealth modes",
+        "Zone height detection",
+        "AI detection range adjustment",
+        "Sound level modification",
+        "Visual feedback system",
+        "State management"
+      ],
+      "keywords": ["stealth", "zone", "visibility", "detection", "sound", "ai", "player"],
+      "tutorial": {
+        "videoId": "9zr2kJ2bX6g",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["alertzone", "hostile_zone", "soundinzone", "trigger_zone"]
+    },
+    "hurt": {
+      "name": "Hurt Zone",
+      "file": "markers/hurt.lua",
+      "description": "Creates a zone that damages the player when entered. Features configurable damage amounts, damage types, and visual effects.",
+      "properties": [
+        {
+          "name": "DAMAGE_AMOUNT",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of damage dealt to the player"
+        },
+        {
+          "name": "DAMAGE_TYPE",
+          "type": "dropdown",
+          "default": "Physical",
+          "options": ["Physical", "Fire", "Electric", "Poison", "Radiation"],
+          "description": "Type of damage dealt"
+        },
+        {
+          "name": "DAMAGE_INTERVAL",
+          "type": "number",
+          "range": "1-60",
+          "default": 1,
+          "description": "Time between damage ticks in seconds"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the hurt zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Player damage system",
+        "Multiple damage types",
+        "Configurable damage intervals",
+        "Zone height detection",
+        "Visual damage effects",
+        "Sound effect integration",
+        "Health monitoring"
+      ],
+      "keywords": ["hurt", "damage", "zone", "player", "health", "effect", "interval"],
+      "tutorial": {
+        "videoId": "xf7B0eBnupo",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["heal", "toxiczone", "electrocute", "trigger_zone"]
+    },
+    "heal": {
+      "name": "Heal Zone",
+      "file": "markers/heal.lua",
+      "description": "Creates a zone that heals the player when entered. Features configurable healing amounts, healing rates, and visual effects.",
+      "properties": [
+        {
+          "name": "HEAL_AMOUNT",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of health restored to the player"
+        },
+        {
+          "name": "HEAL_INTERVAL",
+          "type": "number",
+          "range": "1-60",
+          "default": 1,
+          "description": "Time between healing ticks in seconds"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the heal zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Player healing system",
+        "Configurable healing intervals",
+        "Zone height detection",
+        "Visual healing effects",
+        "Sound effect integration",
+        "Health monitoring",
+        "State management"
+      ],
+      "keywords": ["heal", "health", "zone", "player", "restore", "effect", "interval"],
+      "tutorial": {
+        "videoId": "vWj4JyHy8xg",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["hurt", "toxiczone", "trigger_zone", "healthbar"]
+    },
+    "spawn_locator": {
+      "name": "Spawn Locator",
+      "file": "markers/spawn_locator.lua",
+      "description": "Creates a spawn point that can be used by teleports and level transitions. Supports custom spawn markers and player positioning.",
+      "properties": [
+        {
+          "name": "SPAWN_NAME",
+          "type": "string",
+          "default": "SpawnPoint",
+          "description": "Name of this spawn locator"
+        },
+        {
+          "name": "SPAWN_ANGLE",
+          "type": "number",
+          "range": "0-360",
+          "default": 0,
+          "description": "Angle the player will face when spawning"
+        },
+        {
+          "name": "SPAWN_HEIGHT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Height offset for player spawn position"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to activate the spawn locator at start"
+        }
+      ],
+      "features": [
+        "Player spawn positioning",
+        "Custom spawn angles",
+        "Height offset control",
+        "Spawn marker system",
+        "Level transition support",
+        "Teleport integration"
+      ],
+      "keywords": ["spawn", "locator", "player", "position", "angle", "marker", "teleport"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["teleport", "level_zone", "winzone", "trigger_zone"]
+    },
+    "level_zone": {
+      "name": "Level Zone",
+      "file": "markers/level_zone.lua",
+      "description": "Creates a zone that triggers level transitions when the player enters. Supports storyboard logic and specific level loading.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Entering new area",
+          "description": "Text displayed when player enters the level zone"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the level zone"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "Controls whether to load the next level in the Storyboard or a specific level"
+        },
+        {
+          "name": "ResetStates",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset states when entering the new level"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Level transition system",
+        "Storyboard logic integration",
+        "State reset options",
+        "Zone height detection",
+        "Visual feedback system",
+        "Sound effect integration"
+      ],
+      "keywords": ["level", "zone", "transition", "storyboard", "spawn", "reset"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["teleport", "winzone", "spawn_locator", "trigger_zone"]
+    },
+    "winzone": {
+      "name": "Win Zone",
+      "file": "markers/winzone.lua",
+      "description": "Creates a zone that triggers a win condition when the player enters. Can be configured for different win scenarios and level transitions.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Level Complete!",
+          "description": "Text displayed when player wins"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the win zone"
+        },
+        {
+          "name": "WIN_ACTION",
+          "type": "dropdown",
+          "default": "Win Game",
+          "options": ["Win Game", "Go to Next Level", "Show Credits"],
+          "description": "Action to take when player wins"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Win condition system",
+        "Multiple win actions",
+        "Level transition support",
+        "Zone height detection",
+        "Visual feedback system",
+        "Sound effect integration",
+        "Game state management"
+      ],
+      "keywords": ["win", "zone", "victory", "level", "complete", "game", "state"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["level_zone", "teleport", "game_monitor", "trigger_zone"]
+    },
+    "ambienceinzone": {
+      "name": "Ambience in Zone",
+      "file": "markers/ambienceinzone.lua",
+      "description": "Creates a zone that changes the ambient lighting and atmosphere when the player enters. Features RGB color control and exposure adjustment.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Ambience changing",
+          "description": "Text displayed when ambience changes"
+        },
+        {
+          "name": "AMBIENCE_R",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Red component of ambient light"
+        },
+        {
+          "name": "AMBIENCE_G",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Green component of ambient light"
+        },
+        {
+          "name": "AMBIENCE_B",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Blue component of ambient light"
+        },
+        {
+          "name": "EXPOSURE",
+          "type": "number",
+          "range": "0.01-1.00",
+          "default": 1.00,
+          "description": "Exposure level for the ambient lighting"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the ambience zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Dynamic ambient lighting",
+        "RGB color control",
+        "Exposure adjustment",
+        "Zone height detection",
+        "State preservation",
+        "Visual feedback system",
+        "Atmosphere control"
+      ],
+      "keywords": ["ambience", "lighting", "zone", "color", "exposure", "atmosphere", "rgb"],
+      "tutorial": {
+        "videoId": "0bgmxAApp-8",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["ambience", "fog", "lightcontrol", "trigger_zone"]
+    },
+    "soundinzone": {
+      "name": "Sound in Zone",
+      "file": "markers/soundinzone.lua",
+      "description": "Creates a zone that plays specific sounds when the player enters. Features configurable sound selection and zone height detection.",
+      "properties": [
+        {
+          "name": "SOUND_MODE",
+          "type": "dropdown",
+          "default": "Play Once",
+          "options": ["Play Once", "Loop", "Random"],
+          "description": "How the sound should be played"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the sound zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Zone-based sound triggering",
+        "Multiple sound modes",
+        "Zone height detection",
+        "Sound effect integration",
+        "State management",
+        "Audio control"
+      ],
+      "keywords": ["sound", "zone", "audio", "trigger", "play", "loop", "random"],
+      "tutorial": {
+        "videoId": "0bgmxAApp-8",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["ambienceinzone", "random_sound", "loop3dsound", "trigger_zone"]
+    },
+    "textinzone": {
+      "name": "Text in Zone",
+      "file": "markers/textinzone.lua",
+      "description": "Creates a zone that displays text messages when the player enters. Features configurable text content and display timing.",
+      "properties": [
+        {
+          "name": "TEXT_CONTENT",
+          "type": "string",
+          "default": "Welcome to this area",
+          "description": "Text to display when player enters the zone"
+        },
+        {
+          "name": "DISPLAY_TIME",
+          "type": "number",
+          "range": "1-60",
+          "default": 5,
+          "description": "How long to display the text in seconds"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the text zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Zone-based text display",
+        "Configurable display timing",
+        "Zone height detection",
+        "Text content customization",
+        "State management",
+        "UI integration"
+      ],
+      "keywords": ["text", "zone", "display", "message", "ui", "prompt", "content"],
+      "tutorial": {
+        "videoId": "0460ivjWFyE",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["ambienceinzone", "soundinzone", "trigger_zone", "hud_zone"]
+    },
+    "videoinzone": {
+      "name": "Video in Zone",
+      "file": "markers/videoinzone.lua",
+      "description": "Creates a zone that plays video content when the player enters. Features configurable video files and playback options.",
+      "properties": [
+        {
+          "name": "VIDEO_FILE",
+          "type": "string",
+          "default": "",
+          "description": "Path to the video file to play"
+        },
+        {
+          "name": "PLAYBACK_MODE",
+          "type": "dropdown",
+          "default": "Play Once",
+          "options": ["Play Once", "Loop", "Stop on Exit"],
+          "description": "How the video should be played"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the video zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "Zone-based video playback",
+        "Multiple playback modes",
+        "Zone height detection",
+        "Video file support",
+        "State management",
+        "Media integration"
+      ],
+      "keywords": ["video", "zone", "playback", "media", "file", "loop", "trigger"],
+      "tutorial": {
+        "videoId": "fLI4FhASNzM",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["textinzone", "soundinzone", "trigger_zone", "hud_zone"]
+    },
+    "hud_zone": {
+      "name": "HUD Zone",
+      "file": "markers/hud_zone.lua",
+      "description": "Creates a zone that shows or hides HUD elements when the player enters. Features configurable HUD visibility and zone height detection.",
+      "properties": [
+        {
+          "name": "HUD_ACTION",
+          "type": "dropdown",
+          "default": "Show HUD",
+          "options": ["Show HUD", "Hide HUD", "Toggle HUD"],
+          "description": "Action to take with HUD elements"
+        },
+        {
+          "name": "HUD_ELEMENTS",
+          "type": "string",
+          "default": "all",
+          "description": "Specific HUD elements to affect (or 'all' for all elements)"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height of the HUD zone"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spawn the zone at start"
+        }
+      ],
+      "features": [
+        "HUD visibility control",
+        "Selective element targeting",
+        "Zone height detection",
+        "State management",
+        "UI integration",
+        "Visual feedback system"
+      ],
+      "keywords": ["hud", "zone", "ui", "visibility", "show", "hide", "toggle"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["textinzone", "videoinzone", "trigger_zone", "hud_interface"]
+    }
+  }
+} 
