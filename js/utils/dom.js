@@ -98,7 +98,6 @@ function getCategoryIcon(category) {
         'Effects': 'bi-stars',
         'FX': 'bi-magic',
         'Mechanical': 'bi-gear',
-        'Markers': 'bi-geo-alt',
         'Object Interaction': 'bi-hand-index-thumb',
         'Doors': 'bi-door-open',
         'Misc': 'bi-puzzle',
@@ -110,7 +109,8 @@ function getCategoryIcon(category) {
         'Animals': 'bi-bug',
         'Horror': 'bi-emoji-dizzy',
         'HUDs': 'bi-display',
-        'People': 'bi-person'
+        'People': 'bi-person',
+        'Markers': 'bi-geo-alt'
     };
     return iconMap[category] || 'bi-circle';
 }
