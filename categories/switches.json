@@ -1,0 +1,1021 @@
+{
+  "category": "Switches",
+  "description": "Behaviors for creating interactive switches, buttons, and trigger mechanisms",
+  "behaviors": {
+    "switch": {
+      "name": "Switch",
+      "file": "objects/switch.lua",
+      "description": "A versatile switch object that can be toggled on and off by the player. Features customizable text prompts, level requirements, and multiple activation types.",
+      "properties": [
+        {
+          "name": "SWITCHEDON",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["Off", "On"],
+          "description": "Initial state of the switch"
+        },
+        {
+          "name": "ONTEXT",
+          "type": "string",
+          "default": "E To Turn Switch ON",
+          "description": "Text displayed when switch is off and can be turned on"
+        },
+        {
+          "name": "OFFTEXT",
+          "type": "string",
+          "default": "E To Turn Switch OFF",
+          "description": "Text displayed when switch is on and can be turned off"
+        },
+        {
+          "name": "USERANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the switch can be used"
+        },
+        {
+          "name": "PLAYERLEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to use the switch"
+        },
+        {
+          "name": "SWITCHTYPE",
+          "type": "dropdown",
+          "default": "Multi-Use",
+          "options": ["Multi-Use", "Single-Use"],
+          "description": "Whether the switch can be used multiple times"
+        },
+        {
+          "name": "NPC_TRIGGER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether NPCs can trigger the switch"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Highlight type for the switch object"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display the prompt text"
+        },
+        {
+          "name": "ON_ANIMATION",
+          "type": "number",
+          "range": "0-10",
+          "default": 1,
+          "description": "Animation set for ON state (0 = AnimSetList)"
+        },
+        {
+          "name": "OFF_ANIMATION",
+          "type": "number",
+          "range": "0-10",
+          "default": 2,
+          "description": "Animation set for OFF state (0 = AnimSetList)"
+        }
+      ],
+      "features": [
+        "Toggle on/off functionality",
+        "Customizable text prompts",
+        "Level requirement system",
+        "Multiple switch types (multi-use/single-use)",
+        "NPC triggering capability",
+        "Item highlighting options",
+        "Prompt display customization",
+        "Animation control system",
+        "Sound effect integration",
+        "Logic connection support",
+        "VR and controller support",
+        "State preservation"
+      ],
+      "keywords": ["switch", "toggle", "interactive", "prompt", "level", "npc", "animation", "logic"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["button_switch", "logic_connector", "level_system"]
+    },
+    "teleswitch": {
+      "name": "TeleSwitch",
+      "file": "objects/teleswitch.lua",
+      "description": "A switch that teleports the player to a linked object when activated. Features level requirements, customizable exit angles, and visual highlighting. Perfect for creating teleportation systems and fast travel points.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "to Teleport",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 90,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "PlayerLevel",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to use this switch"
+        },
+        {
+          "name": "TELEPORT_EXIT_ANGLE",
+          "type": "number",
+          "range": "1-360",
+          "default": 1,
+          "description": "Player's exit angle upon teleportation"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the teleport target"
+        }
+      ],
+      "features": [
+        "Player teleportation system",
+        "Level requirement checking",
+        "Customizable interaction range",
+        "Exit angle control",
+        "Visual target highlighting",
+        "Animation support",
+        "Sound effect integration",
+        "Logic connection triggers",
+        "VR controller support",
+        "Head tracker compatibility",
+        "Automatic target detection",
+        "Player control management"
+      ],
+      "keywords": ["teleport", "switch", "transport", "level", "requirement", "angle", "highlight", "fast travel"],
+      "tutorial": {
+        "videoId": "ZNtlu_gXGeE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a teleport switch object",
+          "Set AlwaysActive to ON",
+          "Attach the teleswitch behavior",
+          "Configure interaction range and prompt text",
+          "Set player level requirement if needed",
+          "Configure exit angle for teleportation",
+          "Set up visual highlighting for target",
+          "Link to target object using entity string",
+          "Add collision sound to Sound0",
+          "Test teleportation functionality",
+          "Verify level requirements and animations"
+        ]
+      },
+      "relatedBehaviors": ["switch", "teleport", "level_system", "interaction_system", "transport_system"]
+    },
+    "variable_switch": {
+      "name": "Variable Switch",
+      "file": "objects/variable_switch.lua",
+      "description": "A variable control switch that allows players to increase or decrease a value using + and - keys. Features customizable ranges, global variable storage, and real-time value display. Perfect for creating adjustable settings, volume controls, and variable-based game mechanics.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "+ to increase, - to decrease",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display the prompt text"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "STARTER_VALUE",
+          "type": "number",
+          "range": "0.0-100.0",
+          "default": 0.0,
+          "description": "Base starting value for the variable"
+        },
+        {
+          "name": "MINIMUM_VALUE",
+          "type": "number",
+          "range": "0.0-100.0",
+          "default": 0.0,
+          "description": "Minimum value the variable can reach"
+        },
+        {
+          "name": "MAXIMUM_VALUE",
+          "type": "number",
+          "range": "1.0-1000.0",
+          "default": 100.0,
+          "description": "Maximum value the variable can reach"
+        },
+        {
+          "name": "VARIABLE_SWITCH_USER_GLOBAL",
+          "type": "string",
+          "default": "Variable_Switch#1",
+          "description": "Unique user global variable name for storing the switch value"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the switch object"
+        }
+      ],
+      "features": [
+        "Variable value control system",
+        "Incremental adjustment with + and - keys",
+        "Customizable value ranges",
+        "Global variable storage",
+        "Real-time value display",
+        "Animation support for value changes",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Automatic value clamping",
+        "User global variable integration",
+        "Precise decimal value control"
+      ],
+      "keywords": ["variable", "switch", "control", "adjust", "increment", "decrement", "range", "global", "value"],
+      "tutorial": {
+        "videoId": "zToL9uYHtFc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a variable switch object",
+          "Set AlwaysActive to ON",
+          "Attach the variable_switch behavior",
+          "Configure interaction range and prompt text",
+          "Set up value ranges (minimum, maximum, starter)",
+          "Configure global variable name for storage",
+          "Set up visual highlighting if needed",
+          "Add collision sound to Sound0",
+          "Test + and - key functionality",
+          "Verify value changes and global storage",
+          "Check animation and sound effects"
+        ]
+      },
+      "relatedBehaviors": ["switch", "global_variable", "control_system", "interaction_system", "value_control"]
+    },
+    "winswitch": {
+      "name": "Win Switch",
+      "file": "objects/winswitch.lua",
+      "description": "A switch that ends the current level when activated by the player. Features customizable prompts, level transition control, and state reset options. Perfect for creating level completion triggers and game progression points.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "to End Level",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the switch object"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "How to handle level transitions (Use Storyboard Logic = next level in storyboard, Go to Specific Level = specific level)"
+        },
+        {
+          "name": "ResetStates",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to reset states when entering the new level"
+        }
+      ],
+      "features": [
+        "Level completion system",
+        "Customizable interaction prompts",
+        "Level transition control",
+        "Storyboard logic integration",
+        "State reset options",
+        "Animation support",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "VR controller support",
+        "Head tracker compatibility",
+        "Logic connection triggers",
+        "Automatic level progression"
+      ],
+      "keywords": ["win", "switch", "level", "complete", "end", "transition", "progression", "storyboard"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a win switch object",
+          "Set AlwaysActive to ON",
+          "Attach the winswitch behavior",
+          "Configure interaction range and prompt text",
+          "Set up level transition mode",
+          "Configure state reset options",
+          "Set up visual highlighting if needed",
+          "Add collision sound to Sound0",
+          "Test level completion functionality",
+          "Verify level transitions and animations"
+        ]
+      },
+      "relatedBehaviors": ["switch", "level_transition", "storyboard_controller", "progression_system", "completion_trigger"]
+    },
+    "code_switch": {
+      "name": "Code Switch",
+      "file": "puzzle/code_switch.lua",
+      "description": "A secure code entry switch that requires a specific 3-digit code to activate. Features interactive keypad interface, customizable messages, alarm system, and visual feedback. Perfect for creating secure access points, puzzle elements, and locked areas.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "to enter code",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 70,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "SWITCH_CODE",
+          "type": "number",
+          "range": "001-999",
+          "default": 123,
+          "description": "3-digit code required to unlock the switch"
+        },
+        {
+          "name": "READOUT_X",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "X position of the code display on screen"
+        },
+        {
+          "name": "READOUT_Y",
+          "type": "number",
+          "range": "1-100",
+          "default": 15,
+          "description": "Y position of the code display on screen"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Q-Select, Z-Change or enter Numbers, X-Submit",
+          "description": "Instructions displayed during code entry"
+        },
+        {
+          "name": "INCORRECT_TEXT",
+          "type": "string",
+          "default": "Code is Incorrect",
+          "description": "Message displayed when wrong code is entered"
+        },
+        {
+          "name": "CORRECT_TEXT",
+          "type": "string",
+          "default": "Access Granted",
+          "description": "Message displayed when correct code is entered"
+        },
+        {
+          "name": "STATUS",
+          "type": "dropdown",
+          "default": "Locked",
+          "options": ["Locked", "Unlocked"],
+          "description": "Initial state of the code switch"
+        },
+        {
+          "name": "FAIL_ALARM",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Three Attempts"],
+          "description": "Alarm system for failed attempts"
+        },
+        {
+          "name": "ALARM_RANGE",
+          "type": "number",
+          "range": "0-2000",
+          "default": 500,
+          "description": "Range for alarm sound to attract AI"
+        }
+      ],
+      "features": [
+        "3-digit code entry system",
+        "Interactive keypad interface",
+        "Visual code display with highlighting",
+        "Customizable success/failure messages",
+        "Alarm system for failed attempts",
+        "AI attraction on alarm trigger",
+        "Multiple sound effects",
+        "Animation support",
+        "VR controller support",
+        "Head tracker compatibility",
+        "Logic connection triggers",
+        "Screen position customization",
+        "Attempt tracking system",
+        "Automatic reset after alarm"
+      ],
+      "keywords": ["code", "switch", "keypad", "security", "puzzle", "access", "alarm", "3-digit", "entry"],
+      "tutorial": {
+        "videoId": "t2z-nz_iICQ",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a code switch object",
+          "Set AlwaysActive to ON",
+          "Attach the code_switch behavior",
+          "Configure interaction range and prompt text",
+          "Set the required 3-digit code",
+          "Configure screen display position",
+          "Customize usage and message text",
+          "Set up alarm system if needed",
+          "Add sound effects (Sound0-3)",
+          "Test code entry functionality",
+          "Verify alarm and AI attraction",
+          "Check animations and logic connections"
+        ]
+      },
+      "relatedBehaviors": ["switch", "security_system", "puzzle_element", "alarm_system", "access_control"]
+    },
+    "kill_switch": {
+      "name": "Kill Switch",
+      "file": "puzzle/kill_switch.lua",
+      "description": "A mission-based switch that activates when all enemies in a specified area are eliminated. Features enemy counting, customizable messages, global variable integration, and automatic cleanup. Perfect for creating elimination missions, area clear objectives, and dynamic combat scenarios.",
+      "properties": [
+        {
+          "name": "EVENT_TEXT",
+          "type": "string",
+          "default": "Kill all Targets in Area",
+          "description": "Text displayed when the event starts"
+        },
+        {
+          "name": "ENEMY_RANGE",
+          "type": "number",
+          "range": "100-3000",
+          "default": 1000,
+          "description": "Range to detect enemies around the switch"
+        },
+        {
+          "name": "ENEMY_COUNTER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to display enemy count during the event"
+        },
+        {
+          "name": "COUNTER_TEXT",
+          "type": "string",
+          "default": "Targets in Area Remaining",
+          "description": "Text displayed with enemy count"
+        },
+        {
+          "name": "END_TEXT",
+          "type": "string",
+          "default": "All Targets in Area Eliminated",
+          "description": "Text displayed when all enemies are killed"
+        },
+        {
+          "name": "END_TEXT_DURATION",
+          "type": "number",
+          "range": "0-10",
+          "default": 2,
+          "description": "Duration in seconds to display the end message"
+        },
+        {
+          "name": "HIDE_OBJECT",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to hide/destroy the switch object after completion"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable to increment (e.g., 'MyMoney')"
+        },
+        {
+          "name": "GLOBAL_AFFECTED_VALUE",
+          "type": "number",
+          "range": "1-100",
+          "default": 100,
+          "description": "Amount to increment the user global variable"
+        }
+      ],
+      "features": [
+        "Enemy elimination tracking",
+        "Configurable detection range",
+        "Real-time enemy counter display",
+        "Customizable event messages",
+        "Global variable integration",
+        "Automatic object cleanup",
+        "Sound effect integration",
+        "Logic connection triggers",
+        "Mission completion system",
+        "Area-based enemy detection",
+        "Health-based enemy validation",
+        "Automatic activation system",
+        "Duration-controlled messaging",
+        "Entity allegiance checking"
+      ],
+      "keywords": ["kill", "switch", "mission", "enemy", "elimination", "area", "counter", "objective", "combat"],
+      "tutorial": {
+        "videoId": "1u04S6QoLE4",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a kill switch object",
+          "Set AlwaysActive to ON",
+          "Attach the kill_switch behavior",
+          "Configure enemy detection range",
+          "Set up event and counter text",
+          "Configure end message and duration",
+          "Set up global variable integration if needed",
+          "Configure object hiding options",
+          "Add sound effects (Sound0-1)",
+          "Test enemy elimination tracking",
+          "Verify mission completion triggers",
+          "Check global variable updates"
+        ]
+      },
+      "relatedBehaviors": ["switch", "mission_system", "enemy_tracker", "area_clear", "objective_system"]
+    },
+    "switch_combo": {
+      "name": "Switch Combo",
+      "file": "puzzle/switch_combo.lua",
+      "description": "A combo-value switch that contributes to a global counter system. Multiple switches can work together to reach a target value of 100, triggering activation when the total is reached. Features deferred logic connections, customizable switch values, and level requirements. Perfect for creating multi-switch puzzles and cooperative activation systems.",
+      "properties": [
+        {
+          "name": "UseRange",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "SwitchedOn",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["Off", "On"],
+          "description": "Initial state of the switch"
+        },
+        {
+          "name": "OnText",
+          "type": "string",
+          "default": "To Turn Switch ON",
+          "description": "Text displayed when switch is off and can be turned on"
+        },
+        {
+          "name": "OffText",
+          "type": "string",
+          "default": "To Turn Switch OFF",
+          "description": "Text displayed when switch is on and can be turned off"
+        },
+        {
+          "name": "PlayerLevel",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to use the switch"
+        },
+        {
+          "name": "SwitchType",
+          "type": "dropdown",
+          "default": "Multi-Use",
+          "options": ["Multi-Use", "Single-Use"],
+          "description": "Whether the switch can be used multiple times"
+        },
+        {
+          "name": "SwitchValue",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Value this switch contributes to the global combo counter"
+        },
+        {
+          "name": "DeferLinks",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to defer logic connections until combo value is reached"
+        },
+        {
+          "name": "DeferLinksValue",
+          "type": "number",
+          "range": "1-99",
+          "default": 50,
+          "description": "Value at which deferred logic connections are triggered"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the switch object"
+        }
+      ],
+      "features": [
+        "Global combo counter system",
+        "Multiple switch coordination",
+        "Configurable switch values",
+        "Deferred logic connections",
+        "Level requirement system",
+        "Multi-use and single-use modes",
+        "Animation support",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "VR controller support",
+        "Head tracker compatibility",
+        "Automatic counter reset",
+        "Value clamping system",
+        "Cooperative activation triggers"
+      ],
+      "keywords": ["combo", "switch", "puzzle", "cooperative", "counter", "multi-switch", "activation", "deferred"],
+      "tutorial": {
+        "videoId": "lYcn3coZaUg",
+        "timestamp": "0:00",
+        "steps": [
+          "Create multiple switch combo objects",
+          "Set AlwaysActive to ON for each switch",
+          "Attach the switch_combo behavior to each",
+          "Configure interaction range and text prompts",
+          "Set individual switch values (total should reach 100)",
+          "Configure deferred logic settings if needed",
+          "Set up level requirements if needed",
+          "Add sound effects (Sound0-1)",
+          "Test individual switch functionality",
+          "Verify combo counter accumulation",
+          "Check activation when total reaches 100",
+          "Test deferred logic connections"
+        ]
+      },
+      "relatedBehaviors": ["switch", "puzzle_system", "combo_system", "multi_activation", "cooperative_puzzle"]
+    },
+    "switch_count": {
+      "name": "Switch Count",
+      "file": "puzzle/switch_count.lua",
+      "description": "A counting switch that tracks how many switches have been activated in a series. When all required switches are activated, it triggers completion actions like level ending or object activation. Features progress display, customizable completion actions, and visual feedback. Perfect for creating sequential switch puzzles and multi-step activation systems.",
+      "properties": [
+        {
+          "name": "SWITCHES",
+          "type": "number",
+          "range": "1-10",
+          "default": 4,
+          "description": "Total number of switches that need to be activated"
+        },
+        {
+          "name": "SWITCH_STATE",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Initial state of the switch"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 60,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "MESSAGE_DURATION",
+          "type": "number",
+          "range": "1-5",
+          "default": 2,
+          "description": "Duration in seconds to display progress messages"
+        },
+        {
+          "name": "COMPLETION",
+          "type": "dropdown",
+          "default": "End Level",
+          "options": ["End Level", "Activate if Used"],
+          "description": "Action to perform when all switches are activated"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the switch object"
+        }
+      ],
+      "features": [
+        "Switch counting system",
+        "Progress tracking display",
+        "Configurable switch requirements",
+        "Multiple completion actions",
+        "Visual feedback system",
+        "Animation support",
+        "Sound effect integration",
+        "Logic connection triggers",
+        "Progress message display",
+        "Automatic counter reset",
+        "Level transition support",
+        "Object activation system",
+        "Visual highlighting options",
+        "Sequential puzzle support"
+      ],
+      "keywords": ["count", "switch", "series", "progression", "puzzle", "sequential", "activation", "tracking"],
+      "tutorial": {
+        "videoId": "1fcb4eLrYAU",
+        "timestamp": "0:00",
+        "steps": [
+          "Create multiple switch count objects",
+          "Set AlwaysActive to ON for each switch",
+          "Attach the switch_count behavior to each",
+          "Configure total number of switches required",
+          "Set up interaction range and prompt text",
+          "Configure message duration for progress display",
+          "Set completion action (End Level or Activate if Used)",
+          "Add sound effects (Sound0-1)",
+          "Test individual switch activation",
+          "Verify progress counter display",
+          "Check completion triggers when all switches are activated",
+          "Test level transitions or object activation"
+        ]
+      },
+      "relatedBehaviors": ["switch", "puzzle_system", "progression_system", "sequential_activation", "completion_trigger"]
+    },
+    "switch_sequence": {
+      "name": "Switch Sequence",
+      "file": "puzzle/switch_sequence.lua",
+      "description": "A sequence-based switch that must be activated in the correct order. Switches reset after a timeout if the sequence is not completed, requiring players to activate them in the proper sequence. Features automatic reset timing, order validation, and completion triggers. Perfect for creating memory puzzles and sequential activation challenges.",
+      "properties": [
+        {
+          "name": "TOTAL_SWITCHES",
+          "type": "number",
+          "range": "1-5",
+          "default": 1,
+          "description": "Total number of switches in the sequence group"
+        },
+        {
+          "name": "SWITCH_NUMBER",
+          "type": "number",
+          "range": "1-5",
+          "default": 1,
+          "description": "Position of this switch in the sequence (1st, 2nd, 3rd, etc.)"
+        },
+        {
+          "name": "SWITCH_RESET",
+          "type": "number",
+          "range": "1-20",
+          "default": 5,
+          "description": "Seconds before switches reset if sequence is not completed"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 60,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the switch object"
+        }
+      ],
+      "features": [
+        "Sequential activation system",
+        "Order validation",
+        "Automatic reset timing",
+        "Progress tracking",
+        "Visual feedback system",
+        "Animation support",
+        "Sound effect integration",
+        "Logic connection triggers",
+        "Timeout-based reset",
+        "Completion detection",
+        "Object activation system",
+        "Visual highlighting options",
+        "Memory puzzle support",
+        "Sequence validation"
+      ],
+      "keywords": ["sequence", "switch", "order", "memory", "puzzle", "timing", "reset", "validation"],
+      "tutorial": {
+        "videoId": "TERmfwWd-os",
+        "timestamp": "0:00",
+        "steps": [
+          "Create multiple switch sequence objects",
+          "Set AlwaysActive to ON for each switch",
+          "Attach the switch_sequence behavior to each",
+          "Configure total number of switches in sequence",
+          "Set individual switch numbers (1, 2, 3, etc.)",
+          "Configure reset timing for failed attempts",
+          "Set up interaction range and prompt text",
+          "Add sound effects (Sound0-1)",
+          "Test sequence order validation",
+          "Verify reset functionality on timeout",
+          "Check completion triggers when sequence is correct",
+          "Test object activation on successful completion"
+        ]
+      },
+      "relatedBehaviors": ["switch", "puzzle_system", "sequence_system", "memory_puzzle", "timing_system"]
+    },
+    "switch_timed": {
+      "name": "Switch Timed",
+      "file": "puzzle/switch_timed.lua",
+      "description": "A timed switch that automatically resets after a specified delay. Features configurable reset timing, customizable prompts, and visual feedback. Perfect for creating temporary activations, timed doors, and temporary power sources that require periodic reactivation.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 60,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display the prompt text"
+        },
+        {
+          "name": "RESET_DELAY",
+          "type": "number",
+          "range": "0.0-60.0",
+          "default": 5.0,
+          "description": "Seconds before the switch automatically resets to off"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the switch object"
+        }
+      ],
+      "features": [
+        "Automatic reset timing",
+        "Configurable delay periods",
+        "Visual feedback system",
+        "Animation support",
+        "Sound effect integration",
+        "Logic connection triggers",
+        "Prompt display customization",
+        "Visual highlighting options",
+        "Temporary activation system",
+        "Timed power management",
+        "Automatic deactivation",
+        "User interaction tracking"
+      ],
+      "keywords": ["timed", "switch", "reset", "delay", "temporary", "activation", "automatic"],
+      "tutorial": {
+        "videoId": "-AaaxRluaVQ",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a timed switch object",
+          "Set AlwaysActive to ON",
+          "Attach the switch_timed behavior",
+          "Configure interaction range and prompt text",
+          "Set up reset delay timing",
+          "Configure prompt display location",
+          "Add collision sound to Sound0",
+          "Test switch activation",
+          "Verify automatic reset functionality",
+          "Check logic connections and animations"
+        ]
+      },
+      "relatedBehaviors": ["switch", "timing_system", "auto_reset", "temporary_activation", "power_management"]
+    },
+    "weight_switch": {
+      "name": "Weight Switch",
+      "file": "puzzle/weight_switch.lua",
+      "description": "A physics-based switch that activates when sufficient weight is placed on it. Features configurable weight requirements, player weight contribution, visual movement, and global variable integration. Perfect for creating pressure plates, weight-based puzzles, and physics-driven activation systems.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Weight needed to activate",
+          "description": "Text displayed when weight requirement is not met"
+        },
+        {
+          "name": "ACTIVATION_TEXT",
+          "type": "string",
+          "default": "You have activated the switch",
+          "description": "Text displayed when switch is successfully activated"
+        },
+        {
+          "name": "ACTIVATION_WEIGHT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 300,
+          "description": "Total weight required to activate the switch"
+        },
+        {
+          "name": "PLAYER_WEIGHT",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Weight contribution from the player standing on the switch"
+        },
+        {
+          "name": "MOVEMENT",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Amount of vertical movement when switch is activated"
+        },
+        {
+          "name": "RESET_SWITCH",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to reset the switch after activation"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable to affect with weight value"
+        },
+        {
+          "name": "PROCESS_AFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct weight from the global variable"
+        }
+      ],
+      "features": [
+        "Physics-based weight detection",
+        "Configurable weight requirements",
+        "Player weight contribution",
+        "Visual movement system",
+        "Global variable integration",
+        "Object stacking detection",
+        "Automatic reset options",
+        "Sound effect integration",
+        "Logic connection triggers",
+        "Real-time weight calculation",
+        "Physics collision handling",
+        "Dynamic object positioning",
+        "Weight accumulation system",
+        "Multi-object support"
+      ],
+      "keywords": ["weight", "switch", "physics", "pressure", "plate", "activation", "movement", "stacking"],
+      "tutorial": {
+        "videoId": "DSvxBQni3kM",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a weight switch object",
+          "Set Physics=ON, Collision=BOX, IsImobile=ON",
+          "Attach the weight_switch behavior",
+          "Configure weight requirements and player contribution",
+          "Set up movement amount and reset options",
+          "Configure global variable integration if needed",
+          "Add collision sound to Sound0",
+          "Test weight detection with objects",
+          "Verify player weight contribution",
+          "Check visual movement and activation",
+          "Test object stacking and weight accumulation"
+        ]
+      },
+      "relatedBehaviors": ["switch", "physics_system", "pressure_plate", "weight_detection", "movement_system"]
+    }
+  }
+} 

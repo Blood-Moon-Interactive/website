@@ -1,0 +1,505 @@
+{
+  "category": "Traps",
+  "description": "Behaviors for creating various types of traps, hazards, and defensive mechanisms",
+  "behaviors": {
+    "arrowtrap": {
+      "name": "Arrow Trap",
+      "file": "puzzle/arrowtrap.lua",
+      "description": "Creates a trap that fires arrows when triggered. Can be configured for different firing patterns, damage amounts, and activation methods. The arrow will shoot when the player is in range or activated by a switch/zone.",
+      "properties": [
+        {
+          "name": "TRAP_RANGE",
+          "type": "number",
+          "range": "10-500",
+          "default": 50,
+          "description": "Distance at which the arrow trap is triggered"
+        },
+        {
+          "name": "TRAP_SPEED",
+          "type": "number",
+          "range": "1-10",
+          "default": 2,
+          "description": "Speed of the arrow projectile"
+        },
+        {
+          "name": "TRAP_DAMAGE",
+          "type": "number",
+          "range": "0-500",
+          "default": 3,
+          "description": "Amount of damage dealt by the arrow"
+        },
+        {
+          "name": "TRAP_MODE",
+          "type": "dropdown",
+          "default": "Repeating",
+          "options": ["One shot", "Repeating"],
+          "description": "Firing mode (One shot = single use, Repeating = resets and fires again)"
+        },
+        {
+          "name": "HIT_DISTANCE",
+          "type": "number",
+          "range": "1-50",
+          "default": 30,
+          "description": "Distance at which the arrow can hit the player"
+        },
+        {
+          "name": "RESET_DISTANCE",
+          "type": "number",
+          "range": "1-500",
+          "default": 200,
+          "description": "Distance the arrow travels before resetting (for repeating mode)"
+        }
+      ],
+      "features": [
+        "Proximity-based triggering",
+        "Switch/zone activation support",
+        "Configurable firing range",
+        "Adjustable arrow speed",
+        "Customizable damage output",
+        "Two firing modes (one-shot and repeating)",
+        "Automatic reset system",
+        "Sound effect integration",
+        "Visual feedback",
+        "Player damage system",
+        "Distance-based hit detection"
+      ],
+      "keywords": ["trap", "arrow", "damage", "firing", "proximity", "trigger", "hazard", "defense", "projectile"],
+      "tutorial": {
+        "videoId": "QTRf7KVRBlE",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["proximity_mine", "exploder", "damage_zone"]
+    },
+    "collapsing_floor": {
+      "name": "Collapsing Floor",
+      "file": "puzzle/collapsing_floor.lua",
+      "description": "Creates a floor area that collapses when walked on, causing the player to fall and take damage. Features two collapse types and configurable damage settings.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Floor is collapsing",
+          "description": "Text displayed when the floor begins to collapse"
+        },
+        {
+          "name": "COLLAPSE_TYPE",
+          "type": "dropdown",
+          "default": "Collapsing",
+          "options": ["Collapsing", "Fading"],
+          "description": "Type of collapse (Collapsing = gravity fall, Fading = disappear)"
+        },
+        {
+          "name": "ACTIVE_TIME",
+          "type": "number",
+          "range": "1-3000",
+          "default": 2000,
+          "description": "Delay in milliseconds before floor collapses"
+        },
+        {
+          "name": "ACTIVE_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 40,
+          "description": "Range at which the floor becomes active"
+        },
+        {
+          "name": "DAMAGE_TYPE",
+          "type": "dropdown",
+          "default": "Fixed Fall",
+          "options": ["Fixed Fall", "Natural Fall"],
+          "description": "Damage type (Fixed Fall = set damage, Natural Fall = natural fall damage)"
+        },
+        {
+          "name": "DAMAGE_HEIGHT",
+          "type": "number",
+          "range": "1-200",
+          "default": 100,
+          "description": "Height at which fall damage begins"
+        },
+        {
+          "name": "COLLISION_SCALE",
+          "type": "number",
+          "range": "0.75-1.00",
+          "default": 0.95,
+          "description": "Scale of the collision area"
+        }
+      ],
+      "features": [
+        "Player detection on floor",
+        "Two collapse types (gravity and fading)",
+        "Configurable collapse delay",
+        "Custom prompt text display",
+        "Fall damage system",
+        "Sound effect integration",
+        "Visual feedback",
+        "Collision scaling",
+        "Height-based damage triggering",
+        "Automatic state management"
+      ],
+      "keywords": ["floor", "collapse", "fall", "damage", "trap", "hazard", "gravity", "fading"],
+      "tutorial": {
+        "videoId": "zGloMzwsp50",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["pit_trap", "damage_zone", "fall_damage"]
+    },
+    "crusher": {
+      "name": "Crusher",
+      "file": "puzzle/crusher.lua",
+      "description": "Creates a deadly crusher that moves up and down, crushing anything in its path. Can be triggered by player proximity or variable switches, with configurable damage and movement speed.",
+      "properties": [
+        {
+          "name": "TRIGGER_RANGE",
+          "type": "number",
+          "range": "50-2000",
+          "default": 500,
+          "description": "Distance at which the crusher is triggered"
+        },
+        {
+          "name": "MOVE_SPEED",
+          "type": "number",
+          "range": "1-500",
+          "default": 60,
+          "description": "Speed of the crusher's movement"
+        },
+        {
+          "name": "DAMAGE_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 80,
+          "description": "Range at which the crusher can damage entities"
+        },
+        {
+          "name": "DAMAGE_AMOUNT",
+          "type": "number",
+          "range": "0-500",
+          "default": 50,
+          "description": "Amount of damage dealt (0 = instant kill)"
+        },
+        {
+          "name": "USE_VARIABLE_SWITCH",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to use a variable switch for control"
+        },
+        {
+          "name": "VARIABLE_SWITCH_USER_GLOBAL",
+          "type": "string",
+          "default": "Variable_Switch1",
+          "description": "Name of the user global variable for switch control"
+        }
+      ],
+      "features": [
+        "Proximity-based triggering",
+        "Variable switch integration",
+        "Configurable movement speed",
+        "Adjustable damage range and amount",
+        "Instant kill option (0 damage)",
+        "Entity detection and crushing",
+        "Automatic reset cycle",
+        "Multiple sound effects",
+        "Collision management",
+        "Surface height detection",
+        "Player and NPC damage system"
+      ],
+      "keywords": ["crusher", "crush", "damage", "movement", "trap", "hazard", "variable", "switch", "kill"],
+      "tutorial": {
+        "videoId": "PQi7MeZEaw0",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["collapsing_floor", "damage_zone", "variable_switch"]
+    },
+    "rockfall": {
+      "name": "Rockfall",
+      "file": "puzzle/rockfall.lua",
+      "description": "Creates a rockfall trap that drops rocks from above when triggered. Features configurable damage, radius, and optional ground shake effects.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Rock Fall",
+          "description": "Text displayed when the rockfall is triggered"
+        },
+        {
+          "name": "ACTIVATION_RANGE",
+          "type": "number",
+          "range": "1-2000",
+          "default": 800,
+          "description": "Distance at which the rockfall is triggered"
+        },
+        {
+          "name": "EVENT_DURATION",
+          "type": "number",
+          "range": "1-10",
+          "default": 6,
+          "description": "Duration of the rockfall event in seconds"
+        },
+        {
+          "name": "HIT_DAMAGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Amount of damage dealt by the falling rocks"
+        },
+        {
+          "name": "HIT_RADIUS",
+          "type": "number",
+          "range": "1-500",
+          "default": 50,
+          "description": "Radius within which the rocks can damage the player"
+        },
+        {
+          "name": "START_HEIGHT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 10,
+          "description": "Height above the ground where rocks start falling"
+        },
+        {
+          "name": "GROUND_SHAKE",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to enable ground shake effects during rockfall"
+        },
+        {
+          "name": "HIDE_ROCK",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to hide the rock before activation"
+        }
+      ],
+      "features": [
+        "Proximity-based triggering",
+        "Configurable activation range",
+        "Event duration control",
+        "Damage radius system",
+        "Customizable start height",
+        "Ground shake effects",
+        "Rock visibility control",
+        "Sound effect integration",
+        "Physics-based falling",
+        "Player force effects",
+        "Timer-based event management"
+      ],
+      "keywords": ["rockfall", "rocks", "falling", "damage", "trap", "hazard", "shake", "physics"],
+      "tutorial": {
+        "videoId": "wEWztctBaY4",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["collapsing_floor", "damage_zone", "physics_trap"]
+    },
+    "spiketrap": {
+      "name": "Spike Trap",
+      "file": "puzzle/spiketrap.lua",
+      "description": "Creates a deadly spike trap that extends spikes when triggered. Features configurable damage, timing, and animation controls for both player and NPC targeting.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "10-200",
+          "default": 80,
+          "description": "Distance at which the spike trap is triggered"
+        },
+        {
+          "name": "TRAP_DELAY",
+          "type": "number",
+          "range": "1-50",
+          "default": 10,
+          "description": "Delay in milliseconds before trap activates"
+        },
+        {
+          "name": "TRAP_DAMAGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 25,
+          "description": "Amount of damage dealt (0 = instant kill)"
+        },
+        {
+          "name": "TRAP_MODE",
+          "type": "dropdown",
+          "default": "Once only",
+          "options": ["Once only", "Multiple"],
+          "description": "Trap mode (Once only = single use, Multiple = resets and reuses)"
+        },
+        {
+          "name": "TRAP_RESET",
+          "type": "number",
+          "range": "1-1000",
+          "default": 50,
+          "description": "Time in milliseconds before trap resets"
+        },
+        {
+          "name": "TRAP_SPEED",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Speed of the spike animation"
+        },
+        {
+          "name": "ACTIVE_ANIMATION",
+          "type": "number",
+          "range": "0-10",
+          "default": 0,
+          "description": "Animation set for active state (0 = AnimSetList, check object's animation set for available options)"
+        },
+        {
+          "name": "INACTIVE_ANIMATION",
+          "type": "number",
+          "range": "0-10",
+          "default": 0,
+          "description": "Animation set for inactive state (0 = AnimSetList, check object's animation set for available options)"
+        },
+        {
+          "name": "VISABILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": ["Visible", "Invisible"],
+          "description": "Whether the trap is visible before activation"
+        },
+        {
+          "name": "TRAP_ACTIVE",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether trap is active by default (No = requires switch/zone activation)"
+        },
+        {
+          "name": "HURT_NPC",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to damage NPCs when triggered"
+        },
+        {
+          "name": "HURT_PLAYER",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to damage the player when triggered"
+        }
+      ],
+      "features": [
+        "Proximity-based triggering",
+        "Configurable activation delay",
+        "Adjustable damage output",
+        "Two trap modes (once-only and multiple)",
+        "Animation control system",
+        "Visibility options",
+        "Switch/zone activation support",
+        "NPC and player targeting",
+        "Instant kill option (0 damage)",
+        "Sound effect integration",
+        "Timer-based reset system",
+        "Entity detection and tracking"
+      ],
+      "keywords": ["spike", "trap", "damage", "animation", "trigger", "hazard", "deadly", "npc", "player"],
+      "tutorial": {
+        "videoId": "7vp6luZqjFg",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["arrowtrap", "damage_zone", "animation_trap"]
+    },
+    "trapdoor": {
+      "name": "Trapdoor",
+      "file": "puzzle/trapdoor.lua",
+      "description": "Creates a trapdoor that opens when a player stands on it, causing them to fall through. Features configurable timing and visibility options for disguised floor traps.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "30-100",
+          "default": 60,
+          "description": "Distance at which the trapdoor is triggered"
+        },
+        {
+          "name": "OPEN_DELAY",
+          "type": "number",
+          "range": "0-20",
+          "default": 0,
+          "description": "Delay in seconds before trapdoor opens"
+        },
+        {
+          "name": "CLOSE_DELAY",
+          "type": "number",
+          "range": "1-20",
+          "default": 3,
+          "description": "Delay in seconds before trapdoor closes"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": ["Visible", "Invisible"],
+          "description": "Whether the trapdoor is visible (use floor texture to disguise)"
+        }
+      ],
+      "features": [
+        "Player detection on trapdoor",
+        "Configurable open and close delays",
+        "Animation-based door movement",
+        "Collision management system",
+        "Sound effect integration",
+        "Visibility control options",
+        "Automatic reset cycle",
+        "Floor disguise capability",
+        "Timer-based operation",
+        "Intersection detection"
+      ],
+      "keywords": ["trapdoor", "door", "fall", "trap", "hazard", "animation", "floor", "disguise"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["collapsing_floor", "door_animation", "fall_trap"]
+    },
+    "trapdoor_rotate": {
+      "name": "Trapdoor Rotate",
+      "file": "puzzle/trapdoor_rotate.lua",
+      "description": "Creates a rotating trapdoor for non-animated doors that opens when a player stands on it. Uses rotation-based movement instead of animations.",
+      "properties": [
+        {
+          "name": "CLOSE_DELAY",
+          "type": "number",
+          "range": "1.0-10.0",
+          "default": 2.0,
+          "description": "Delay in seconds before trapdoor closes"
+        },
+        {
+          "name": "VISIBLE",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether the trapdoor is visible (use floor texture to disguise)"
+        },
+        {
+          "name": "DOOR_TYPE",
+          "type": "dropdown",
+          "default": "Auto",
+          "options": ["Auto"],
+          "description": "Type of door behavior (currently only Auto is supported)"
+        }
+      ],
+      "features": [
+        "Player detection on trapdoor",
+        "Rotation-based door movement",
+        "90-degree rotation system",
+        "Configurable close delay",
+        "Quaternion-based rotation",
+        "Collision management system",
+        "Sound effect integration",
+        "Visibility control options",
+        "Navmesh blocking system",
+        "Automatic reset cycle",
+        "Floor disguise capability",
+        "Smooth rotation animation"
+      ],
+      "keywords": ["trapdoor", "rotate", "rotation", "door", "fall", "trap", "hazard", "quaternion", "floor", "disguise"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["trapdoor", "collapsing_floor", "rotation_trap", "fall_trap"]
+    }
+  }
+} 

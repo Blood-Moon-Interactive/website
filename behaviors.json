@@ -29,9 +29,17 @@
       "file": "categories/proximity.json",
       "description": "Proximity and distance-based behaviors"
     },
-    "UI": {
-      "file": "categories/ui.json",
-      "description": "User interface and menu behaviors"
+    "RPG": {
+      "file": "categories/rpg.json",
+      "description": "Behaviors for creating role-playing game mechanics, character progression, and RPG systems"
+    },
+    "Switches": {
+      "file": "categories/switches.json",
+      "description": "Behaviors for creating interactive switches, buttons, and trigger mechanisms"
+    },
+    "Traps": {
+      "file": "categories/traps.json",
+      "description": "Behaviors for creating various types of traps, hazards, and defensive mechanisms"
     },
     "Global": {
       "file": "categories/global.json",

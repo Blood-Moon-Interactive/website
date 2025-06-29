@@ -1,0 +1,1305 @@
+{
+  "category": "RPG",
+  "description": "Behaviors for creating role-playing game mechanics, character progression, and RPG systems",
+  "behaviors": {    
+    "campfire": {
+      "name": "Campfire",
+      "file": "rpg/campfire.lua",
+      "description": "A deployable campfire system with realistic fire mechanics. Features stow/deploy functionality, resource requirements, heat effects, lighting, particle effects, and health restoration. Perfect for creating survival mechanics, rest areas, and atmospheric lighting in RPG games.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "50-200",
+          "default": 120,
+          "description": "Distance at which the player can interact with the campfire"
+        },
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "Press PGUP to pack up the campfire",
+          "description": "Text displayed when picking up the campfire"
+        },
+        {
+          "name": "DEPLOY_TEXT",
+          "type": "string",
+          "default": "Press PGDN to deploy the campfire",
+          "description": "Text displayed when deploying the campfire"
+        },
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "Press E to start or Q to put-out campfire",
+          "description": "Text displayed when using the campfire"
+        },
+        {
+          "name": "RESOURCE_REQUIRED",
+          "type": "string",
+          "default": "",
+          "description": "Resource item required to light the campfire (e.g., 'Wood')"
+        },
+        {
+          "name": "HEAT_RANGE",
+          "type": "number",
+          "range": "50-500",
+          "default": 200,
+          "description": "Range at which the campfire provides heat effects"
+        },
+        {
+          "name": "HEAT_DELAY",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Seconds between heat effect applications"
+        },
+        {
+          "name": "PARTICLE_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of particle effect object (e.g., 'Particle1')"
+        },
+        {
+          "name": "LIGHT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of light object (e.g., 'Light1')"
+        },
+        {
+          "name": "GLOW_EFFECT",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to enable emissive glow effect"
+        },
+        {
+          "name": "IS_DEPLOYED",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether campfire starts deployed or carried"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable to affect (e.g., 'MyBodyTemp')"
+        },
+        {
+          "name": "AFFECT_TYPE",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the global variable"
+        },
+        {
+          "name": "AFFECT_AMOUNT",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Amount to affect the global variable per heat delay"
+        },
+        {
+          "name": "AFFECT_HEALTH",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to affect player health by affect amount"
+        },
+        {
+          "name": "BURN_LIFE",
+          "type": "number",
+          "range": "0-300",
+          "default": 30,
+          "description": "Seconds the campfire burns (0 = continuous)"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "Shape",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the campfire object"
+        }
+      ],
+      "features": [
+        "Stow and deploy system",
+        "Resource requirement system",
+        "Heat effect mechanics",
+        "Dynamic lighting system",
+        "Particle effect integration",
+        "Health restoration system",
+        "Global variable integration",
+        "Realistic fire behavior",
+        "Sound effect integration",
+        "Emissive glow effects",
+        "Burn life management",
+        "Player proximity detection",
+        "Automatic positioning",
+        "Resource consumption"
+      ],
+      "keywords": ["campfire", "fire", "heat", "lighting", "survival", "rpg", "deploy", "resource", "restoration"],
+      "tutorial": {
+        "videoId": "YAc8173wJ1A",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a campfire object",
+          "Set AlwaysActive to ON",
+          "Attach the campfire behavior",
+          "Configure interaction range and text prompts",
+          "Set up resource requirements if needed",
+          "Configure heat range and delay settings",
+          "Set up particle and light object names",
+          "Configure global variable integration",
+          "Set up health effects if needed",
+          "Add sound effects (Sound0-2)",
+          "Test deploy and stow functionality",
+          "Verify heat effects and lighting",
+          "Check resource consumption and burn life"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "survival_mechanics", "lighting_system", "resource_system", "health_system"]
+    },
+    "chest": {
+      "name": "Chest",
+      "file": "rpg/chest.lua",
+      "description": "A storage chest system that opens to display an inventory screen. Features customizable containers, HUD screen integration, animation support, and persistent storage. Perfect for creating loot containers, storage systems, and inventory management in RPG games.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "50-200",
+          "default": 100,
+          "description": "Distance at which the player can interact with the chest"
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "Press E to open",
+          "description": "Text displayed in the interaction prompt"
+        },
+        {
+          "name": "CHEST_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 6",
+          "description": "Name of the HUD screen to display when chest is opened"
+        },
+        {
+          "name": "CHEST_CONTAINER",
+          "type": "string",
+          "default": "chestunique",
+          "description": "Name of the container for storing items (unique per chest if 'chestunique')"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display the prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the chest object"
+        }
+      ],
+      "features": [
+        "Storage container system",
+        "HUD screen integration",
+        "Animation support",
+        "Sound effect integration",
+        "Persistent storage",
+        "Unique container per chest",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Inventory management",
+        "Loot container functionality",
+        "Screen transition system",
+        "Object interaction tracking"
+      ],
+      "keywords": ["chest", "storage", "inventory", "loot", "container", "rpg", "items", "screen"],
+      "tutorial": {
+        "videoId": "IYvxLMYM8aA",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a chest object",
+          "Set AlwaysActive to ON",
+          "Attach the chest behavior",
+          "Configure interaction range and prompt text",
+          "Set up HUD screen name for inventory display",
+          "Configure container name for item storage",
+          "Set up prompt display location",
+          "Add sound effects (Sound0-1)",
+          "Test chest opening and closing",
+          "Verify HUD screen integration",
+          "Check container storage functionality",
+          "Test item persistence between sessions"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "inventory_system", "storage_system", "loot_system", "hud_system"]
+    },
+    "chest_portable": {
+      "name": "Chest Portable",
+      "file": "rpg/chest_portable.lua",
+      "description": "A portable chest that can be picked up and carried by the player. Features automatic and manual pickup styles, customizable access keys, HUD screen integration, and persistent storage. Perfect for creating portable storage solutions, backpack systems, and mobile inventory management in RPG games.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when picking up the portable chest"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can pick up the chest"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether chest is picked up automatically or requires key press"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Press Y to access",
+          "description": "Text displayed when chest is in inventory"
+        },
+        {
+          "name": "USEAGE_KEY",
+          "type": "string",
+          "default": "Y",
+          "description": "Key to press to access the portable chest"
+        },
+        {
+          "name": "CHEST_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 7",
+          "description": "Name of the HUD screen to display when chest is accessed"
+        },
+        {
+          "name": "CHEST_CONTAINER",
+          "type": "string",
+          "default": "chestportable",
+          "description": "Name of the container for storing items"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display the prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the chest object"
+        }
+      ],
+      "features": [
+        "Portable storage system",
+        "Automatic and manual pickup",
+        "Customizable access keys",
+        "HUD screen integration",
+        "Persistent storage",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Inventory integration",
+        "Mobile storage solution",
+        "Screen transition system",
+        "Object collection tracking",
+        "Position management"
+      ],
+      "keywords": ["portable", "chest", "storage", "inventory", "backpack", "mobile", "rpg", "items"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a portable chest object",
+          "Set object as Collectable",
+          "Set AlwaysActive to ON",
+          "Attach the chest_portable behavior",
+          "Configure pickup range and text",
+          "Set up pickup style (automatic or manual)",
+          "Configure access key and usage text",
+          "Set up HUD screen name for inventory display",
+          "Configure container name for item storage",
+          "Set up prompt display location",
+          "Add pickup sound to Sound0",
+          "Test pickup functionality",
+          "Verify HUD screen integration",
+          "Check portable storage functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "inventory_system", "portable_storage", "backpack_system", "hud_system"]
+    },
+    "compass": {
+      "name": "Compass",
+      "file": "rpg/compass.lua",
+      "description": "A navigation compass system with digital and magnetic display modes. Features pickup mechanics, toggle controls, customizable positioning, and real-time directional display. Perfect for creating navigation aids, exploration tools, and directional guidance in RPG games.",
+      "properties": [
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 100,
+          "description": "Distance at which the player can pick up the compass"
+        },
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to pickup",
+          "description": "Text displayed when picking up the compass"
+        },
+        {
+          "name": "COMPASS_TYPE",
+          "type": "dropdown",
+          "default": "Digital",
+          "options": ["Digital", "Magnetic"],
+          "description": "Type of compass display (Digital = text-based, Magnetic = image-based)"
+        },
+        {
+          "name": "COMPASS_MODE",
+          "type": "dropdown",
+          "default": "Pickup",
+          "options": ["Pickup", "Always On"],
+          "description": "Whether compass requires pickup or is always available"
+        },
+        {
+          "name": "POSITION_X",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "X position of the compass on screen"
+        },
+        {
+          "name": "POSITION_Y",
+          "type": "number",
+          "range": "1-100",
+          "default": 85,
+          "description": "Y position of the compass on screen"
+        },
+        {
+          "name": "RADIAL_SIZE",
+          "type": "number",
+          "range": "5-50",
+          "default": 10,
+          "description": "Size of the magnetic compass display"
+        },
+        {
+          "name": "BASE_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\compass\\compass_base.png",
+          "description": "Path to the base compass image file"
+        },
+        {
+          "name": "SPIN_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\compass\\compass_spin.png",
+          "description": "Path to the spinning compass needle image file"
+        },
+        {
+          "name": "TOP_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\compass\\compass_top.png",
+          "description": "Path to the top compass overlay image file"
+        }
+      ],
+      "features": [
+        "Navigation compass system",
+        "Digital and magnetic display modes",
+        "Pickup and always-on modes",
+        "Real-time directional display",
+        "Customizable screen positioning",
+        "Toggle controls for activation",
+        "Image-based magnetic compass",
+        "Text-based digital compass",
+        "Aspect ratio correction",
+        "Bearing calculation",
+        "Visual compass elements",
+        "Sound effect integration"
+      ],
+      "keywords": ["compass", "navigation", "direction", "bearing", "exploration", "rpg", "magnetic", "digital"],
+      "tutorial": {
+        "videoId": "oeeefhwdQ78",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a compass object",
+          "Set AlwaysActive to ON",
+          "Attach the compass behavior",
+          "Configure pickup range and text",
+          "Set up compass type (digital or magnetic)",
+          "Configure compass mode (pickup or always on)",
+          "Set screen position for compass display",
+          "Configure radial size for magnetic compass",
+          "Set up image file paths for magnetic mode",
+          "Add pickup sound to Sound0",
+          "Test pickup functionality",
+          "Verify compass display and navigation",
+          "Test toggle controls (> and < keys)",
+          "Check directional accuracy"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "navigation_system", "exploration_tools", "hud_system", "direction_system"]
+    },
+    "area_damage_spell": {
+      "name": "Area Damage Spell",
+      "file": "rpg/area_damage_spell.lua",
+      "description": "A collectible spell that creates an area damage effect when cast, damaging all enemies within a radius around the player. Features mana cost system, level requirements, particle effects, and visual scaling animation. Perfect for creating offensive magic spells in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Area Damage Spell",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Area Damage Inflicted",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 500,
+          "description": "Amount of damage dealt to enemies in the area"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "Radius of the area damage effect"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Area damage effect",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Enemy detection and targeting",
+        "Right-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Damage radius scaling",
+        "Spell timeout system",
+        "Player level validation"
+      ],
+      "keywords": ["spell", "area", "damage", "magic", "rpg", "mana", "particle", "cast", "radius", "enemy"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the area_damage_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure damage amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection and casting",
+          "Verify area damage and particle effects",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "rpg_progression"]
+    },
+    "direct_damage_spell": {
+      "name": "Direct Damage Spell",
+      "file": "rpg/direct_damage_spell.lua",
+      "description": "A collectible spell that deals direct damage to a targeted enemy with splash damage to nearby enemies. Features targeting system (T key or right-click), mana cost, level requirements, and particle effects. Perfect for creating single-target offensive magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Direct Damage Spell, T or RMB to target",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Direct Damage Inflicted",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 500,
+          "description": "Amount of damage dealt to the targeted enemy"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Radius of splash damage effect around the target"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Targeting system (T key or right-click)",
+        "Enemy targeting with outline highlighting",
+        "Direct damage to target",
+        "Splash damage to nearby enemies",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Target validation system",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Damage radius scaling",
+        "Spell timeout system",
+        "Player level validation"
+      ],
+      "keywords": ["spell", "direct", "damage", "target", "magic", "rpg", "mana", "particle", "cast", "radius", "enemy", "splash"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the direct_damage_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure damage amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection",
+          "Use T key or right-click to target enemies",
+          "Left-click to cast at targeted enemy",
+          "Verify direct damage and splash effects",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "targeting_system", "rpg_progression"]
+    },
+    "fireball_spell": {
+      "name": "Fireball Spell",
+      "file": "rpg/fireball_spell.lua",
+      "description": "A collectible fireball spell that creates a projectile-like effect targeting enemies. Features targeting system (T key or right-click), mana cost, level requirements, and animated particle effects that fall from above the target. Perfect for creating classic fireball magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Fireball Spell, T or RMB to target",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Fireball damage inflicted",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 500,
+          "description": "Amount of damage dealt to the targeted enemy"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Radius of splash damage effect around the target"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Targeting system (T key or right-click)",
+        "Enemy targeting with outline highlighting",
+        "Projectile-like fireball effect",
+        "Particles fall from above target",
+        "Direct damage to target",
+        "Splash damage to nearby enemies",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Animated particle scaling",
+        "Target validation system",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Damage radius scaling",
+        "Spell timeout system",
+        "Player level validation",
+        "Random particle positioning"
+      ],
+      "keywords": ["spell", "fireball", "projectile", "target", "magic", "rpg", "mana", "particle", "cast", "radius", "enemy", "splash", "fire"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the fireball_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure damage amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection",
+          "Use T key or right-click to target enemies",
+          "Left-click to cast fireball at targeted enemy",
+          "Verify projectile effect and splash damage",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "targeting_system", "projectile_system", "rpg_progression"]
+    },
+    "freeze_spell": {
+      "name": "Freeze Spell",
+      "file": "rpg/freeze_spell.lua",
+      "description": "A collectible freeze spell that immobilizes and damages a targeted enemy for a duration. Features targeting system (T key or right-click), mana cost, level requirements, and particle effects. Perfect for creating crowd control magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Freeze Spell, T or RMB to target",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "You cast a Freeze spell",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 25,
+          "description": "Amount of damage dealt to the targeted enemy"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Radius of the freeze effect area"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Targeting system (T key or right-click)",
+        "Enemy targeting with outline highlighting",
+        "Freeze immobilization effect",
+        "Duration-based crowd control",
+        "Direct damage to target",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Target validation system",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Freeze duration timer",
+        "Speed modulation control",
+        "Spell timeout system",
+        "Player level validation"
+      ],
+      "keywords": ["spell", "freeze", "immobilize", "target", "magic", "rpg", "mana", "particle", "cast", "crowd control", "enemy", "duration"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the freeze_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure damage amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection",
+          "Use T key or right-click to target enemies",
+          "Left-click to cast freeze at targeted enemy",
+          "Verify immobilization and damage effects",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "targeting_system", "crowd_control", "rpg_progression"]
+    },
+    "lifetap_spell": {
+      "name": "Lifetap Spell",
+      "file": "rpg/lifetap_spell.lua",
+      "description": "A collectible lifetap spell that drains health from a targeted enemy and transfers it to the player. Features targeting system (T key or right-click), mana cost, level requirements, and particle effects. Perfect for creating life-stealing magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Lifetap Spell, T or RMB to target",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "You cast Lifetap and gained some health",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 25,
+          "description": "Amount of health drained from target and given to player"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Radius of the lifetap effect area"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Targeting system (T key or right-click)",
+        "Enemy targeting with outline highlighting",
+        "Health drain from target",
+        "Health transfer to player",
+        "Life-stealing mechanics",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Target validation system",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Health cap protection",
+        "Spell timeout system",
+        "Player level validation"
+      ],
+      "keywords": ["spell", "lifetap", "drain", "health", "target", "magic", "rpg", "mana", "particle", "cast", "life steal", "enemy", "heal"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the lifetap_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure health drain amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection",
+          "Use T key or right-click to target enemies",
+          "Left-click to cast lifetap at targeted enemy",
+          "Verify health drain and player healing",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "targeting_system", "healing_system", "rpg_progression"]
+    },
+    "poison_spell": {
+      "name": "Poison Spell",
+      "file": "rpg/poison_spell.lua",
+      "description": "A collectible poison spell that applies damage over time to a targeted enemy with splash damage to nearby enemies. Features targeting system (T key or right-click), mana cost, level requirements, and particle effects. Perfect for creating damage-over-time magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Poison Spell, T or RMB to target",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "You cast Poison spell",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 25,
+          "description": "Total amount of damage dealt over the poison duration"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Radius of splash damage effect around the target"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Targeting system (T key or right-click)",
+        "Enemy targeting with outline highlighting",
+        "Damage over time effect",
+        "Splash damage to nearby enemies",
+        "Poison duration timer",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Target validation system",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Progressive damage calculation",
+        "Spell timeout system",
+        "Player level validation"
+      ],
+      "keywords": ["spell", "poison", "damage over time", "target", "magic", "rpg", "mana", "particle", "cast", "radius", "enemy", "splash", "dot"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the poison_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure damage amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection",
+          "Use T key or right-click to target enemies",
+          "Left-click to cast poison at targeted enemy",
+          "Verify damage over time and splash effects",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "targeting_system", "dot_system", "rpg_progression"]
+    },
+    "heal_spell": {
+      "name": "Heal Spell",
+      "file": "rpg/heal_spell.lua",
+      "description": "A collectible healing spell that restores health to the player and nearby allies. Features area healing effect, mana cost, level requirements, and particle effects. Perfect for creating supportive healing magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect Healing Spell",
+          "description": "Text displayed when collecting the spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "You gain some health",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_VALUE",
+          "type": "number",
+          "range": "1-100",
+          "default": 500,
+          "description": "Amount of health restored to the player"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "Radius of the area healing effect"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the spell object"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Area healing effect",
+        "Player health restoration",
+        "Ally healing in range",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Health cap protection",
+        "Spell timeout system",
+        "Player level validation",
+        "One-time healing trigger"
+      ],
+      "keywords": ["spell", "heal", "health", "restore", "magic", "rpg", "mana", "particle", "cast", "radius", "ally", "support"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the heal_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure healing amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Configure item highlighting",
+          "Test spell collection",
+          "Left-click to cast healing spell",
+          "Verify player and ally healing",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "healing_system", "particle_system", "support_system", "rpg_progression"]
+    }
+  }
+} 
