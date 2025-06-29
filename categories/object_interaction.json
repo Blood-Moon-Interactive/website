@@ -2308,6 +2308,1415 @@
         ]
       },
       "relatedBehaviors": ["transport", "moving_object", "anchor_system", "cable_system", "travel_system"]
+    },
+    "hack": {
+      "name": "Hack System",
+      "file": "puzzle/hack.lua",
+      "description": "A comprehensive hacking system that allows players to interact with and hack electronic devices. Features timed hacking mechanics, success/failure states, alarm systems, visual progress bars, and integration with logic connections and global variables.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the hackable object"
+        },
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "E to Hack",
+          "description": "Text displayed when player is in range to hack"
+        },
+        {
+          "name": "HACK_TIME",
+          "type": "number",
+          "range": "1-30",
+          "default": 8,
+          "description": "Time in seconds required to complete the hack"
+        },
+        {
+          "name": "HACK_TEXT",
+          "type": "string",
+          "default": "Working...",
+          "description": "Text displayed during the hacking process"
+        },
+        {
+          "name": "SUCCESS_TEXT",
+          "type": "string",
+          "default": "Success..",
+          "description": "Text displayed when hack is successful"
+        },
+        {
+          "name": "FAILURE_TEXT",
+          "type": "string",
+          "default": "Failed..",
+          "description": "Text displayed when hack fails"
+        },
+        {
+          "name": "FAILURE_COUNT",
+          "type": "number",
+          "range": "1-20",
+          "default": 3,
+          "description": "Number of failures before alarm is triggered"
+        },
+        {
+          "name": "FAILURE_ALARM",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to trigger alarm after maximum failures"
+        },
+        {
+          "name": "ALARM_RESET",
+          "type": "number",
+          "range": "1-60",
+          "default": 5,
+          "description": "Time in seconds before alarm resets and hacking can resume"
+        },
+        {
+          "name": "NOISE_RANGE",
+          "type": "number",
+          "range": "0-5000",
+          "default": 500,
+          "description": "Range at which hacking noise can be heard by AI"
+        },
+        {
+          "name": "HACK_TRIGGER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to trigger logic connections and ActivateIfUsed when hack succeeds"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\search-bar.png",
+          "description": "Image file for the hacking progress bar"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of global variable to modify on successful hack (e.g., MyGlobal)"
+        },
+        {
+          "name": "AFFECT_VALUE",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Value to add to the global variable on successful hack"
+        },
+        {
+          "name": "NO_FAILURES",
+          "type": "boolean",
+          "default": false,
+          "description": "If enabled, hack will always succeed (no random failure chance)"
+        }
+      ],
+      "features": [
+        "Timed hacking mechanics with visual progress bar",
+        "Success and failure states with animations",
+        "Configurable failure limits and alarm systems",
+        "AI noise generation during hacking",
+        "Global variable integration for game progression",
+        "Logic connection and ActivateIfUsed triggers",
+        "Customizable interaction ranges and prompts",
+        "Visual progress bar with custom images",
+        "Sound effects for hacking, success, failure, and alarms",
+        "Automatic object destruction after successful hack",
+        "Alarm reset system with configurable timing",
+        "Random success/failure chance (can be disabled)",
+        "Animation state management (on/off states)",
+        "Memory efficient state tracking",
+        "VR-compatible interaction system"
+      ],
+      "keywords": ["hack", "electronic", "security", "timer", "progress", "alarm", "noise", "trigger", "global", "variable", "animation", "sound"],
+      "tutorial": {
+        "videoId": "N_B_XqHP4t4",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the hackable device",
+          "Set AlwaysActive to ON for the object",
+          "Attach the hack behavior",
+          "Configure USE_RANGE for interaction distance",
+          "Set USE_TEXT for interaction prompt",
+          "Configure HACK_TIME for hacking duration",
+          "Set HACK_TEXT for progress message",
+          "Configure SUCCESS_TEXT and FAILURE_TEXT",
+          "Set FAILURE_COUNT for failure limit",
+          "Choose FAILURE_ALARM setting",
+          "Configure ALARM_RESET timing",
+          "Set NOISE_RANGE for AI detection",
+          "Choose HACK_TRIGGER for logic connections",
+          "Set IMAGEFILE for progress bar image",
+          "Configure USER_GLOBAL_AFFECTED if using global variables",
+          "Set AFFECT_VALUE for global variable modification",
+          "Enable NO_FAILURES if guaranteed success is desired",
+          "Add sound effects to Sound0 (hacking), Sound1 (success), Sound2 (failure), Sound3 (alarm)",
+          "Test interaction range and prompts",
+          "Verify hacking progress bar displays correctly",
+          "Test success and failure scenarios",
+          "Check alarm system functionality",
+          "Verify logic connections trigger correctly",
+          "Test global variable updates",
+          "Check AI noise generation",
+          "Verify object destruction after success"
+        ]
+      },
+      "relatedBehaviors": ["security_system", "electronic_device", "timer_system", "alarm_system", "global_variables", "logic_connector"]
+    },
+    "search_object": {
+      "name": "Search Object",
+      "file": "puzzle/search_object.lua",
+      "description": "A comprehensive search system that allows players to search containers, objects, and areas for various rewards. Features timed searching mechanics, multiple content types (ammo, health, named items, nothing), visual progress bars, and integration with logic connections.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Search",
+          "description": "Text displayed when player is in range to search"
+        },
+        {
+          "name": "CONTENT",
+          "type": "dropdown",
+          "default": "Health",
+          "options": ["Ammo", "Health", "Named Item", "Nothing"],
+          "description": "Type of content that will be found when searching"
+        },
+        {
+          "name": "NAMED_ITEM",
+          "type": "string",
+          "default": "",
+          "description": "Unique entity name for named item content (will be auto-hidden until found)"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-50",
+          "default": 8,
+          "description": "Amount of ammo or health to give, or quantity of named items"
+        },
+        {
+          "name": "SEARCH_TIME",
+          "type": "number",
+          "range": "1-30",
+          "default": 8,
+          "description": "Time in seconds required to complete the search"
+        },
+        {
+          "name": "SEARCH_TEXT",
+          "type": "string",
+          "default": "Searching...",
+          "description": "Text displayed during the search process"
+        },
+        {
+          "name": "RESULT_TEXT",
+          "type": "string",
+          "default": "Found..",
+          "description": "Text displayed when search is completed successfully"
+        },
+        {
+          "name": "NOISE_RANGE",
+          "type": "number",
+          "range": "1-5000",
+          "default": 500,
+          "description": "Range at which search noise can be heard by AI"
+        },
+        {
+          "name": "SEARCH_TRIGGER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to trigger logic connections when search is completed"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 90,
+          "description": "Distance at which the player can interact with the searchable object"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\search-bar.png",
+          "description": "Image file for the search progress bar"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the searchable object"
+        }
+      ],
+      "features": [
+        "Timed searching mechanics with visual progress bar",
+        "Multiple content types (ammo, health, named items, nothing)",
+        "Automatic item hiding and revealing for named items",
+        "Configurable search duration and interaction ranges",
+        "AI noise generation during searching",
+        "Logic connection and ActivateIfUsed triggers",
+        "Customizable interaction prompts and result messages",
+        "Visual progress bar with custom images",
+        "Sound effects for searching and finding items",
+        "Animation state management (sealed/opened/searched)",
+        "Item highlighting and selection system",
+        "Automatic ammo distribution to all weapon slots",
+        "Health restoration with maximum health limits",
+        "Entity name matching for named item content",
+        "Memory efficient state tracking and management"
+      ],
+      "keywords": ["search", "container", "loot", "ammo", "health", "item", "progress", "timer", "noise", "trigger", "animation", "sound"],
+      "tutorial": {
+        "videoId": "n3Bn55KmTLo",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the searchable container",
+          "Set AlwaysActive to ON for the object",
+          "Attach the search_object behavior",
+          "Configure PROMPT_TEXT for interaction message",
+          "Choose CONTENT type (Ammo, Health, Named Item, Nothing)",
+          "Set NAMED_ITEM if using named item content",
+          "Configure QUANTITY for reward amount",
+          "Set SEARCH_TIME for search duration",
+          "Configure SEARCH_TEXT for progress message",
+          "Set RESULT_TEXT for completion message",
+          "Configure NOISE_RANGE for AI detection",
+          "Choose SEARCH_TRIGGER for logic connections",
+          "Set USE_RANGE for interaction distance",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set IMAGEFILE for progress bar image",
+          "Choose ITEM_HIGHLIGHT style if desired",
+          "Add sound effects to Sound0 (searching) and Sound1 (found)",
+          "For named items, create the item entity with exact name match",
+          "Set item AlwaysActive to ON and hide it initially",
+          "Test interaction range and prompts",
+          "Verify search progress bar displays correctly",
+          "Test different content types and quantities",
+          "Check AI noise generation during searching",
+          "Verify logic connections trigger correctly",
+          "Test named item hiding and revealing",
+          "Check ammo distribution to weapon slots",
+          "Verify health restoration with limits",
+          "Test animation state changes"
+        ]
+      },
+      "relatedBehaviors": ["loot_system", "container_system", "health_system", "ammo_system", "item_system", "logic_connector", "animation_controller"]
+    },
+    "task_object": {
+      "name": "Task Object",
+      "file": "puzzle/task_object.lua",
+      "description": "A tool-based interaction system that requires specific tools to activate objects and trigger game events. Features tool requirement checking, customizable prompts, switch value integration, and logic connection triggers for creating puzzle mechanics and progression systems.",
+      "properties": [
+        {
+          "name": "TASK_TEXT",
+          "type": "string",
+          "default": "Tool is required to use",
+          "description": "Text displayed when player doesn't have the required tool"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the task object"
+        },
+        {
+          "name": "TOOL_REQUIRED",
+          "type": "dropdown",
+          "default": "Crowbar",
+          "options": ["Crowbar", "Screwdriver", "Spanner", "Cutter", "Named Tool"],
+          "description": "Type of tool required to complete the task"
+        },
+        {
+          "name": "TOOL_NAME",
+          "type": "string",
+          "default": "Named Tool",
+          "description": "Name of the tool when using 'Named Tool' option"
+        },
+        {
+          "name": "TASK_USE_TEXT",
+          "type": "string",
+          "default": "E to use the tool to activate",
+          "description": "Text displayed when player has the correct tool"
+        },
+        {
+          "name": "TASK_DONE_TEXT",
+          "type": "string",
+          "default": "Task Completed",
+          "description": "Text displayed when task is completed"
+        },
+        {
+          "name": "VISIBLE",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether the task object is visible and has collision"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "SWITCH_VALUE",
+          "type": "number",
+          "range": "1-99",
+          "default": 1,
+          "description": "Success result value for use with combo switches"
+        }
+      ],
+      "features": [
+        "Tool requirement checking system",
+        "Multiple tool types (Crowbar, Screwdriver, Spanner, Cutter, Named Tool)",
+        "Customizable interaction prompts and messages",
+        "Switch value integration for combo systems",
+        "Logic connection and ActivateIfUsed triggers",
+        "Animation state management (on/off states)",
+        "Sound effects for tool use and task completion",
+        "Visibility and collision control",
+        "Global tool state management",
+        "Automatic tool reset after use",
+        "Configurable interaction ranges",
+        "Prompt display location options",
+        "Memory efficient state tracking",
+        "Multiplayer compatibility with SetActivatedWithMP",
+        "Task completion persistence"
+      ],
+      "keywords": ["task", "tool", "puzzle", "interaction", "requirement", "switch", "combo", "activation", "animation", "sound"],
+      "tutorial": {
+        "videoId": "DK0OmIWOMd8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the task object",
+          "Set AlwaysActive to ON for the object",
+          "Attach the task_object behavior",
+          "Configure TASK_TEXT for missing tool message",
+          "Set USE_RANGE for interaction distance",
+          "Choose TOOL_REQUIRED type",
+          "Set TOOL_NAME if using 'Named Tool' option",
+          "Configure TASK_USE_TEXT for correct tool message",
+          "Set TASK_DONE_TEXT for completion message",
+          "Choose VISIBLE setting for object visibility",
+          "Set PROMPT_DISPLAY location preference",
+          "Configure SWITCH_VALUE for combo system integration",
+          "Add sound effects to Sound0 (tool use) and Sound1 (completion)",
+          "Create tool objects with appropriate names",
+          "Set tool AlwaysActive to ON",
+          "Test interaction without required tool",
+          "Verify correct prompt displays",
+          "Test interaction with correct tool",
+          "Check animation state changes",
+          "Verify logic connections trigger correctly",
+          "Test switch value integration",
+          "Check sound effects play correctly",
+          "Verify task completion persistence",
+          "Test multiplayer compatibility if needed"
+        ]
+      },
+      "relatedBehaviors": ["tool_system", "puzzle_system", "switch_system", "combo_system", "logic_connector", "animation_controller", "interaction_system"]
+    },
+    "task_tool": {
+      "name": "Task Tool",
+      "file": "puzzle/task_tool.lua",
+      "description": "A tool collection system that provides players with specific tools needed for task objects. Features automatic and manual pickup styles, multiple tool types, global tool state management, and integration with the task object system for creating puzzle progression mechanics.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when player is in range to collect the tool"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the tool"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Collection style. Automatic = immediate pickup, Manual = requires E key press"
+        },
+        {
+          "name": "TOOL_TYPE",
+          "type": "dropdown",
+          "default": "Crowbar",
+          "options": ["Crowbar", "Screwdriver", "Spanner", "Cutter", "Named Tool"],
+          "description": "Type of tool that will be collected"
+        },
+        {
+          "name": "TOOL_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the tool when using 'Named Tool' option"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the tool object"
+        }
+      ],
+      "features": [
+        "Tool collection system with multiple tool types",
+        "Automatic and manual pickup styles",
+        "Global tool state management (g_tasktool, g_tasktoolname)",
+        "Integration with task_object system",
+        "Logic connection triggers on collection",
+        "Sound effects for tool pickup",
+        "Item highlighting and selection system",
+        "Configurable interaction ranges and prompts",
+        "Automatic object destruction after collection",
+        "Collectable entity support",
+        "Memory efficient state tracking",
+        "Tool type validation and assignment",
+        "Prompt display location options",
+        "Entity collection state management"
+      ],
+      "keywords": ["tool", "collection", "pickup", "task", "puzzle", "interaction", "automatic", "manual", "sound", "highlight"],
+      "tutorial": {
+        "videoId": "DK0OmIWOMd8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the tool",
+          "Set AlwaysActive to ON for the object",
+          "Attach the task_tool behavior",
+          "Configure PROMPT_TEXT for collection message",
+          "Set PICKUP_RANGE for interaction distance",
+          "Choose PICKUP_STYLE (Automatic or Manual)",
+          "Select TOOL_TYPE from available options",
+          "Set TOOL_NAME if using 'Named Tool' option",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Add sound effect to Sound0 slot",
+          "Test automatic pickup if using automatic style",
+          "Test manual pickup with E key if using manual style",
+          "Verify tool is added to global state",
+          "Check logic connections trigger correctly",
+          "Test with task_object to verify integration",
+          "Verify object destruction after collection",
+          "Test different tool types and names",
+          "Check prompt display and highlighting",
+          "Verify sound effects play correctly"
+        ]
+      },
+      "relatedBehaviors": ["task_object", "tool_system", "pickup_system", "collection_system", "logic_connector", "interaction_system"]
+    },
+    "winobject": {
+      "name": "Win Object",
+      "file": "puzzle/winobject.lua",
+      "description": "A level completion system that allows players to collect an object and then use it to win the level. Features two-stage interaction (pickup then use), configurable prompts, level transition control, and integration with storyboard logic for creating mission objectives and win conditions.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to pickup",
+          "description": "Text displayed when player is in range to pickup the win object"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "X to use",
+          "description": "Text displayed after pickup, indicating how to use the object"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the player can pickup the win object"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the win object"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "Controls whether to load the next level in the Storyboard or a specific level"
+        },
+        {
+          "name": "ResetStates",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset states when entering the new level"
+        }
+      ],
+      "features": [
+        "Two-stage interaction system (pickup then use)",
+        "Level completion and transition control",
+        "Storyboard logic integration",
+        "Logic connection and ActivateIfUsed triggers",
+        "Sound effects for pickup and use",
+        "Item highlighting and selection system",
+        "Configurable interaction ranges and prompts",
+        "Automatic object hiding after pickup",
+        "Memory efficient state tracking",
+        "Level state reset options",
+        "Prompt display location options",
+        "Entity visibility and collision management",
+        "Mission objective integration",
+        "Win condition system"
+      ],
+      "keywords": ["win", "level", "completion", "objective", "mission", "pickup", "use", "transition", "storyboard", "trigger"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the win object",
+          "Set AlwaysActive to ON for the object",
+          "Attach the winobject behavior",
+          "Configure PROMPT_TEXT for pickup message",
+          "Set USEAGE_TEXT for usage instructions",
+          "Configure PICKUP_RANGE for interaction distance",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Choose GoToLevelMode for level progression",
+          "Enable ResetStates if state reset is needed",
+          "Add sound effects to Sound0 (pickup) and Sound1 (use)",
+          "Test pickup interaction within range",
+          "Verify object hides after pickup",
+          "Test usage with U key",
+          "Check level transition behavior",
+          "Verify logic connections trigger correctly",
+          "Test sound effects play correctly",
+          "Check storyboard progression if enabled",
+          "Verify state reset functionality if enabled",
+          "Test with different prompt display settings"
+        ]
+      },
+      "relatedBehaviors": ["level_control", "mission_system", "objective_system", "pickup_system", "logic_connector", "storyboard_system"]
+    },
+    "binoculars": {
+      "name": "Binoculars",
+      "file": "rpg/binoculars.lua",
+      "description": "A binocular system that provides players with long-range observation capabilities. Features configurable zoom levels, mouse wheel zoom control, weapon switching, visual overlay, and customizable pickup mechanics for creating reconnaissance and exploration gameplay.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when player is in range to pickup the binoculars"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can pickup the binoculars"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Hold B to use",
+          "description": "Text displayed after pickup, indicating how to use the binoculars"
+        },
+        {
+          "name": "MIN_ZOOM",
+          "type": "number",
+          "range": "-20-1",
+          "default": -20,
+          "description": "Minimum zoom level (negative values = wider field of view)"
+        },
+        {
+          "name": "MAX_ZOOM",
+          "type": "number",
+          "range": "1-30",
+          "default": 60,
+          "description": "Maximum zoom level (positive values = narrower field of view)"
+        },
+        {
+          "name": "ZOOM_SPEED",
+          "type": "number",
+          "range": "1-5",
+          "default": 1,
+          "description": "Speed of zoom changes when using mouse wheel"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\binocs.png",
+          "description": "Image file for the binocular overlay screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the binocular object"
+        }
+      ],
+      "features": [
+        "Configurable zoom range with mouse wheel control",
+        "Automatic weapon switching when using binoculars",
+        "Visual overlay screen with custom images",
+        "Real-time magnification factor display",
+        "Smooth zoom transitions with speed control",
+        "Automatic field of view restoration",
+        "Item highlighting and selection system",
+        "Sound effects for pickup and usage",
+        "Memory efficient state tracking",
+        "Weapon state preservation and restoration",
+        "Configurable interaction ranges and prompts",
+        "Automatic object hiding after pickup",
+        "Field of view management system",
+        "Reconnaissance and exploration support"
+      ],
+      "keywords": ["binoculars", "zoom", "reconnaissance", "observation", "weapon", "switch", "overlay", "field of view", "mouse wheel", "pickup"],
+      "tutorial": {
+        "videoId": "rnbjf0QFhUM",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the binoculars",
+          "Set AlwaysActive to ON for the object",
+          "Attach the binoculars behavior",
+          "Configure PICKUP_TEXT for pickup message",
+          "Set PICKUP_RANGE for interaction distance",
+          "Configure USEAGE_TEXT for usage instructions",
+          "Set MIN_ZOOM for minimum zoom level",
+          "Configure MAX_ZOOM for maximum zoom level",
+          "Set ZOOM_SPEED for zoom sensitivity",
+          "Configure IMAGEFILE for overlay image",
+          "Choose ITEM_HIGHLIGHT style if desired",
+          "Add sound effect to Sound0 slot",
+          "Test pickup interaction within range",
+          "Verify object hides after pickup",
+          "Test binocular usage with B key",
+          "Check mouse wheel zoom functionality",
+          "Verify weapon switching behavior",
+          "Test zoom range limits",
+          "Check magnification factor display",
+          "Verify field of view restoration",
+          "Test overlay image display",
+          "Check sound effects play correctly"
+        ]
+      },
+      "relatedBehaviors": ["weapon_system", "camera_control", "pickup_system", "overlay_system", "interaction_system", "reconnaissance_system"]
+    },
+    "break_open": {
+      "name": "Break Open",
+      "file": "rpg/break_open.lua",
+      "description": "A destructible container system that rewards players for breaking open objects. Features multiple content types (ammo, health, named items, nothing, random), health-based destruction, animation support, AI noise generation, and automatic cleanup with fade effects.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Break open",
+          "description": "Text displayed when player is in range of the breakable object"
+        },
+        {
+          "name": "PROMPT_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 80,
+          "description": "Distance at which the prompt is displayed"
+        },
+        {
+          "name": "CONTENT",
+          "type": "dropdown",
+          "default": "Health",
+          "options": ["Ammo", "Health", "Named Item", "Nothing", "Random"],
+          "description": "Type of content that will be found when breaking the object"
+        },
+        {
+          "name": "NAMED_ITEM",
+          "type": "string",
+          "default": "",
+          "description": "Name of the specific item to spawn (for Named Item content)"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-5",
+          "default": 2,
+          "description": "Amount of ammo, health, or items to give"
+        },
+        {
+          "name": "NOISE_RANGE",
+          "type": "number",
+          "range": "0-5000",
+          "default": 500,
+          "description": "Range at which breaking noise can be heard by AI"
+        },
+        {
+          "name": "BREAK_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play when object is broken"
+        },
+        {
+          "name": "OPEN_TRIGGER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to trigger logic connections when object is broken"
+        },
+        {
+          "name": "COLLECT_TEXT",
+          "type": "string",
+          "default": "Found..",
+          "description": "Text displayed when items are found"
+        },
+        {
+          "name": "FADE_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Time in seconds before object starts fading out"
+        },
+        {
+          "name": "RANDOM_ITEMS",
+          "type": "string",
+          "default": "",
+          "description": "Comma-separated list of entity names for random content"
+        },
+        {
+          "name": "RANDOM_MIN",
+          "type": "number",
+          "range": "1-50",
+          "default": 1,
+          "description": "Minimum quantity for random items"
+        },
+        {
+          "name": "RANDOM_MAX",
+          "type": "number",
+          "range": "1-50",
+          "default": 50,
+          "description": "Maximum quantity for random items"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        }
+      ],
+      "features": [
+        "Health-based destruction system",
+        "Multiple content types (ammo, health, named items, nothing, random)",
+        "Automatic ammo distribution to all weapon slots",
+        "Health restoration with maximum health limits",
+        "Named item spawning and positioning",
+        "Random item selection with quantity ranges",
+        "Animation support for breaking effects",
+        "AI noise generation during destruction",
+        "Logic connection and ActivateIfUsed triggers",
+        "Automatic cleanup with fade effects",
+        "Sound effects for breaking and finding items",
+        "Item highlighting and selection system",
+        "Configurable interaction ranges and prompts",
+        "Memory efficient state tracking",
+        "Entity name matching for items"
+      ],
+      "keywords": ["break", "destructible", "container", "loot", "ammo", "health", "item", "random", "animation", "noise", "fade"],
+      "tutorial": {
+        "videoId": "92b3olSjFhw",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the breakable container",
+          "Set AlwaysActive to ON for the object",
+          "Attach the break_open behavior",
+          "Configure PROMPT_TEXT for interaction message",
+          "Set PROMPT_RANGE for display distance",
+          "Choose CONTENT type (Ammo, Health, Named Item, Nothing, Random)",
+          "Set NAMED_ITEM if using named item content",
+          "Configure QUANTITY for reward amount",
+          "Set NOISE_RANGE for AI detection",
+          "Choose BREAK_ANIMATION if desired",
+          "Set OPEN_TRIGGER for logic connections",
+          "Configure COLLECT_TEXT for success message",
+          "Set FADE_DELAY for cleanup timing",
+          "Configure RANDOM_ITEMS list if using random content",
+          "Set RANDOM_MIN and RANDOM_MAX for random quantities",
+          "Choose PROMPT_DISPLAY location preference",
+          "Add sound effects to Sound0 (breaking) and Sound1 (found)",
+          "For named items, create the item entity with exact name match",
+          "Set object health to desired break threshold",
+          "Test object destruction by reducing health",
+          "Verify animation plays correctly",
+          "Check content distribution and quantities",
+          "Test AI noise generation",
+          "Verify logic connections trigger correctly",
+          "Check fade out and cleanup effects",
+          "Test random item selection if enabled"
+        ]
+      },
+      "relatedBehaviors": ["destructible_system", "loot_system", "health_system", "ammo_system", "item_system", "animation_controller", "logic_connector"]
+    },
+    "collect_object": {
+      "name": "Collect Object",
+      "file": "rpg/collect_object.lua",
+      "description": "A simple collection system for objects that are set to 'Collectable'. Features automatic and manual pickup styles, configurable interaction ranges, logic connection triggers, and integration with GameGuru's built-in collection system.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when player is in range to collect the object"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the object"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Automatic", "Manual"],
+          "description": "Collection style. Automatic = immediate pickup, Manual = requires E key press"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Item collected",
+          "description": "Text displayed when object is successfully collected"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the collectable object"
+        }
+      ],
+      "features": [
+        "Integration with GameGuru's built-in collection system",
+        "Automatic and manual pickup styles",
+        "Logic connection triggers on collection",
+        "Sound effects for collection feedback",
+        "Item highlighting and selection system",
+        "Configurable interaction ranges and prompts",
+        "Global collection state tracking",
+        "Support for both collectable types (1 and 2)",
+        "Memory efficient state management",
+        "Entity visibility and collision checking",
+        "Prompt display location options",
+        "Collection state validation"
+      ],
+      "keywords": ["collect", "pickup", "item", "automatic", "manual", "interaction", "range", "highlight", "sound"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the collectable item",
+          "Set AlwaysActive to ON for the object",
+          "Set the object's Collectable property to 1 or 2",
+          "Attach the collect_object behavior",
+          "Configure PICKUP_TEXT for interaction message",
+          "Set PICKUP_RANGE for interaction distance",
+          "Choose PICKUP_STYLE (Automatic or Manual)",
+          "Set COLLECTED_TEXT for success message",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Add sound effect to Sound0 slot",
+          "Test automatic pickup if using automatic style",
+          "Test manual pickup with E key if using manual style",
+          "Verify collection state is set correctly",
+          "Check logic connections trigger correctly",
+          "Test with different collectable settings",
+          "Verify prompt display and highlighting",
+          "Check sound effects play correctly",
+          "Test collection state validation"
+        ]
+      },
+      "relatedBehaviors": ["pickup_system", "collection_system", "interaction_system", "logic_connector", "item_system"]
+    },
+    "collection_control": {
+      "name": "Collection Control",
+      "file": "puzzle/collection_control.lua",
+      "description": "A mission control system that manages collection objectives with time limits. Features configurable collection targets, countdown timers, on-screen progress display, and multiple completion/failure actions for creating time-based collection missions and challenges.",
+      "properties": [
+        {
+          "name": "OBJECTIVES",
+          "type": "number",
+          "range": "1-100",
+          "default": 6,
+          "description": "Number of items to collect to complete the mission"
+        },
+        {
+          "name": "COLLECTION_TIME",
+          "type": "number",
+          "range": "10-500",
+          "default": 60,
+          "description": "Time limit in seconds (500 = unlimited time)"
+        },
+        {
+          "name": "ON_COMPLETION",
+          "type": "dropdown",
+          "default": "Next Level",
+          "options": ["Next Level", "Activate Logic Links", "Activate IfUsed", "Win Game"],
+          "description": "Action to take when all objectives are collected"
+        },
+        {
+          "name": "ON_FAILURE",
+          "type": "dropdown",
+          "default": "Lose Game",
+          "options": ["Nothing", "Lose Game"],
+          "description": "Action to take when time limit expires"
+        },
+        {
+          "name": "DISPLAY_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Horizontal position of the progress display (percentage of screen width)"
+        },
+        {
+          "name": "DISPLAY_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Vertical position of the progress display (percentage of screen height)"
+        },
+        {
+          "name": "DISPLAY_SIZE",
+          "type": "number",
+          "range": "1-5",
+          "default": 3,
+          "description": "Text size of the progress display"
+        },
+        {
+          "name": "DISPLAY_MODE",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to display the progress counter on screen"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "Controls whether to load the next level in the Storyboard or a specific level"
+        }
+      ],
+      "features": [
+        "Configurable collection objectives with progress tracking",
+        "Time limit system with countdown display",
+        "On-screen progress counter with customizable position and size",
+        "Multiple completion actions (next level, logic links, win game)",
+        "Failure handling with game over options",
+        "Global collection state management",
+        "Sound effects for mission completion",
+        "Unlimited time option (500 seconds)",
+        "Real-time progress display updates",
+        "Timer-based mission control",
+        "Storyboard and specific level support",
+        "Memory efficient state tracking",
+        "Mission objective integration"
+      ],
+      "keywords": ["collection", "mission", "timer", "objective", "progress", "display", "completion", "failure", "countdown", "challenge"],
+      "tutorial": {
+        "videoId": "OftivWxEcA8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the collection controller",
+          "Set AlwaysActive to ON for the object",
+          "Attach the collection_control behavior",
+          "Configure OBJECTIVES for number of items to collect",
+          "Set COLLECTION_TIME for time limit (500 = unlimited)",
+          "Choose ON_COMPLETION action for successful completion",
+          "Set ON_FAILURE action for time limit failure",
+          "Configure DISPLAY_X and DISPLAY_Y for progress position",
+          "Set DISPLAY_SIZE for text size",
+          "Choose DISPLAY_MODE for visibility",
+          "Select GoToLevelMode for level progression",
+          "Add sound effect to Sound0 slot for completion",
+          "Create collectable objects with collection_count behavior",
+          "Test collection progress tracking",
+          "Verify on-screen display updates correctly",
+          "Check countdown timer functionality",
+          "Test completion actions when objectives met",
+          "Verify failure actions when time expires",
+          "Test unlimited time mode if using 500 seconds",
+          "Check sound effects play correctly",
+          "Verify logic connections trigger properly"
+        ]
+      },
+      "relatedBehaviors": ["collection_count", "mission_system", "timer_system", "health_system", "global_variables", "reward_system", "logic_connector"]
+    },
+    "collection_count": {
+      "name": "Collection Count",
+      "file": "puzzle/collection_count.lua",
+      "description": "A collection item system that increments mission counters and provides various bonuses/penalties. Features time bonuses/penalties, health restoration/damage, global variable modification, and integration with collection_control for creating complex mission objectives with rewards and consequences.",
+      "properties": [
+        {
+          "name": "OBJECTIVES",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Legacy property - number of objectives (use collection_control instead)"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Distance at which the item can be collected (minimum 50)"
+        },
+        {
+          "name": "PROMPT_DURATION",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Duration in seconds to display progress prompt (legacy)"
+        },
+        {
+          "name": "TIME_BONUS",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Time bonus in seconds to add to collection timer"
+        },
+        {
+          "name": "TIME_PENALTY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Time penalty in seconds to subtract from collection timer"
+        },
+        {
+          "name": "HEALTH_BONUS",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Health bonus to restore to player"
+        },
+        {
+          "name": "HEALTH_PENALTY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Health penalty to damage player"
+        },
+        {
+          "name": "GLOBAL_BONUS",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Value to add to the specified global variable"
+        },
+        {
+          "name": "GLOBAL_PENALTY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Value to subtract from the specified global variable"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to modify (e.g., 'MyPoints')"
+        }
+      ],
+      "features": [
+        "Mission counter increment system",
+        "Time bonus/penalty system for collection timers",
+        "Health restoration/damage on collection",
+        "Global variable modification with bonuses/penalties",
+        "Integration with collection_control system",
+        "Logic connection triggers on collection",
+        "Sound effects for collection feedback",
+        "Automatic object destruction after collection",
+        "Progress display with prompt duration",
+        "Legacy objective system support",
+        "Memory efficient state tracking",
+        "Global variable validation and management",
+        "Health limit enforcement",
+        "Collection range validation"
+      ],
+      "keywords": ["collection", "count", "bonus", "penalty", "time", "health", "global", "variable", "mission", "objective", "reward"],
+      "tutorial": {
+        "videoId": "OftivWxEcA8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the collection item",
+          "Set AlwaysActive to ON for the object",
+          "Attach the collection_count behavior",
+          "Configure PICKUP_RANGE for interaction distance",
+          "Set TIME_BONUS for time rewards",
+          "Configure TIME_PENALTY for time penalties",
+          "Set HEALTH_BONUS for health restoration",
+          "Configure HEALTH_PENALTY for health damage",
+          "Set GLOBAL_BONUS for variable rewards",
+          "Configure GLOBAL_PENALTY for variable penalties",
+          "Set USER_GLOBAL_AFFECTED with global variable name",
+          "Add sound effect to Sound0 slot",
+          "Create collection_control object for mission management",
+          "Test collection within pickup range",
+          "Verify counter increments correctly",
+          "Check time bonus/penalty effects",
+          "Test health restoration/damage",
+          "Verify global variable modifications",
+          "Check logic connections trigger correctly",
+          "Test sound effects play correctly",
+          "Verify object destruction after collection"
+        ]
+      },
+      "relatedBehaviors": ["collection_control", "mission_system", "timer_system", "health_system", "global_variables", "reward_system", "logic_connector"]
+    },
+    "examine": {
+      "name": "Examine",
+      "file": "rpg/examine.lua",
+      "description": "An interactive examination system that allows players to closely inspect objects in 3D space. Features mouse and keyboard controls for rotation, zoom, and positioning, camera override, weapon switching, and detailed object manipulation for creating immersive inspection mechanics.",
+      "properties": [
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Distance at which the player can examine the object"
+        },
+        {
+          "name": "PICKUP_MESSAGE",
+          "type": "string",
+          "default": "E to Examine object",
+          "description": "Text displayed when player is in range to examine"
+        },
+        {
+          "name": "EXAMINE_MESSAGE",
+          "type": "string",
+          "default": "Hmmm...",
+          "description": "Text displayed during examination mode"
+        },
+        {
+          "name": "EXAMINE_SPEED",
+          "type": "number",
+          "range": "1-100",
+          "default": 50,
+          "description": "Speed of object rotation during examination"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the examinable object"
+        }
+      ],
+      "features": [
+        "Interactive 3D object examination system",
+        "Mouse and keyboard controls for object manipulation",
+        "Camera override for focused examination view",
+        "Automatic weapon switching during examination",
+        "Object positioning and rotation controls",
+        "Mouse wheel zoom functionality",
+        "Position and rotation memory for object restoration",
+        "Collision and gravity management",
+        "Item highlighting and selection system",
+        "Configurable interaction ranges and prompts",
+        "Real-time object manipulation feedback",
+        "Memory efficient state tracking",
+        "Object bounding box calculation",
+        "Smooth rotation and movement controls"
+      ],
+      "keywords": ["examine", "inspect", "3d", "rotation", "zoom", "camera", "mouse", "keyboard", "manipulation", "interaction"],
+      "tutorial": {
+        "videoId": "FAx4F6caW8g",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the examinable item",
+          "Set AlwaysActive to ON for the object",
+          "Attach the examine behavior",
+          "Configure PICKUP_RANGE for interaction distance",
+          "Set PICKUP_MESSAGE for examination prompt",
+          "Configure EXAMINE_MESSAGE for examination mode text",
+          "Set EXAMINE_SPEED for rotation sensitivity",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Test examination activation with E key",
+          "Verify camera override switches correctly",
+          "Test WASD keys for object rotation",
+          "Check mouse click and drag functionality",
+          "Test mouse wheel for zoom controls",
+          "Verify Q key exits examination mode",
+          "Check object returns to original position",
+          "Test weapon switching behavior",
+          "Verify collision and gravity restoration",
+          "Test different examine speeds",
+          "Check prompt display and highlighting"
+        ]
+      },
+      "relatedBehaviors": ["camera_control", "interaction_system", "weapon_system", "object_manipulation", "3d_viewer", "inspection_system"]
+    },
+    "investigate": {
+      "name": "Investigate",
+      "file": "rpg/investigate.lua",
+      "description": "An investigation system that provides detailed information about objects through multiple presentation styles. Features text, sound, and image combinations, screen freeze options, customizable positioning, and automatic exit when player moves too far away.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to investigate",
+          "description": "Text displayed when player is in range to investigate"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can investigate the object"
+        },
+        {
+          "name": "INVESTIGATION_STYLE",
+          "type": "dropdown",
+          "default": "Text",
+          "options": ["Text", "Text+Sound", "Image+Sound", "Text+Image+Sound"],
+          "description": "Presentation style for investigation information"
+        },
+        {
+          "name": "INVESTIGATION_TEXT",
+          "type": "string",
+          "default": "Evidence",
+          "description": "Text to display during investigation"
+        },
+        {
+          "name": "TEXT_POSITION_Y",
+          "type": "number",
+          "range": "1-100",
+          "default": 90,
+          "description": "Vertical position of text on screen (percentage)"
+        },
+        {
+          "name": "FREEZE_SCREEN",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to freeze the screen during investigation"
+        },
+        {
+          "name": "EXIT_TEXT",
+          "type": "string",
+          "default": "Q to exit",
+          "description": "Text displayed during investigation to indicate exit key"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\investigate_01.png",
+          "description": "Image file to display during investigation"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the investigable object"
+        },
+        {
+          "name": "IMAGE_SIZE",
+          "type": "number",
+          "range": "0-100",
+          "default": 8,
+          "description": "Size of the investigation image on screen"
+        }
+      ],
+      "features": [
+        "Multiple investigation presentation styles",
+        "Text, sound, and image combinations",
+        "Screen freeze option for focused investigation",
+        "Automatic exit when player moves too far",
+        "Customizable text positioning and image sizing",
+        "Item highlighting and selection system",
+        "Sound effects for investigation narration",
+        "Image aspect ratio preservation",
+        "Configurable interaction ranges and prompts",
+        "Memory efficient state tracking",
+        "Camera override integration",
+        "Sprite management for images",
+        "Distance-based auto-exit system"
+      ],
+      "keywords": ["investigate", "evidence", "information", "text", "sound", "image", "narration", "presentation", "interaction"],
+      "tutorial": {
+        "videoId": "AlqWOfRQsYo",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the investigable item",
+          "Set AlwaysActive to ON for the object",
+          "Attach the investigate behavior",
+          "Configure PROMPT_TEXT for interaction message",
+          "Set USE_RANGE for interaction distance",
+          "Choose INVESTIGATION_STYLE for presentation type",
+          "Set INVESTIGATION_TEXT for information display",
+          "Configure TEXT_POSITION_Y for text placement",
+          "Choose FREEZE_SCREEN setting for camera control",
+          "Set EXIT_TEXT for exit instructions",
+          "Configure IMAGEFILE if using image styles",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Configure IMAGE_SIZE for image display",
+          "Add sound effect to Sound0 slot if using sound",
+          "Test investigation activation with E key",
+          "Verify presentation style displays correctly",
+          "Check text positioning and image sizing",
+          "Test screen freeze functionality if enabled",
+          "Verify Q key exits investigation mode",
+          "Test auto-exit when moving too far away",
+          "Check sound effects play correctly"
+        ]
+      },
+      "relatedBehaviors": ["examine", "evidence_system", "narration_system", "presentation_system", "interaction_system", "camera_control"]
     }
   }
 } 

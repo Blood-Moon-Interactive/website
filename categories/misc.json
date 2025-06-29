@@ -175,7 +175,7 @@
       ],
       "keywords": ["misc", "vehicle", "aircraft", "flight", "plane", "helicopter", "vtol", "transport", "weapon", "control"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "rzrLng7lq0U",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["vehicle_controller", "weapon_system", "particle_effects"]
@@ -1545,168 +1545,1179 @@
       },
       "relatedBehaviors": ["vehicle_control", "aircraft", "boat", "physics_object"]
     },
-    "navblocker": {
-      "name": "Navblocker",
-      "file": "objects/navblocker.lua",
-      "description": "Creates navigation mesh blockers for named objects in the game. Automatically calculates collision boundaries and prevents AI pathfinding through specified objects. Objects must be set to dynamic physics for proper functionality.",
+    "clone_entity": {
+      "name": "Clone Entity",
+      "file": "rpg/clone_entity.lua",
+      "description": "A powerful entity cloning system that creates multiple copies of a named entity with configurable positioning, lifespan, health, and respawn cycles. Perfect for creating enemy spawners, object duplication, and dynamic entity generation.",
       "properties": [
         {
-          "name": "OBJECT_NAME",
+          "name": "CLONE_QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Number of entities to clone (1 to 100)"
+        },
+        {
+          "name": "CLONE_RANGE",
+          "type": "number",
+          "range": "25-1000",
+          "default": 100,
+          "description": "Range around the original entity for random positioning"
+        },
+        {
+          "name": "CLONE_LIFESPAN",
+          "type": "number",
+          "range": "1-1000",
+          "default": 3,
+          "description": "Lifespan of cloned entities in minutes (1000 = eternal)"
+        },
+        {
+          "name": "CLONE_HEALTH",
+          "type": "dropdown",
+          "default": "Cloned",
+          "options": ["Cloned", "Random"],
+          "description": "Health setting for cloned entities. Cloned = same as original, Random = random health"
+        },
+        {
+          "name": "RESPAWN_CYCLE",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to respawn entities after they die or expire"
+        },
+        {
+          "name": "RESPAWN_EVENTS",
+          "type": "number",
+          "range": "1-10",
+          "default": 1,
+          "description": "Number of respawn cycles allowed (1 to 10)"
+        },
+        {
+          "name": "RESPAWN_INTERVAL",
+          "type": "number",
+          "range": "5-100",
+          "default": 10,
+          "description": "Time between respawns in seconds (5 to 100)"
+        },
+        {
+          "name": "ENTITY_NAME",
           "type": "string",
-          "default": "",
-          "description": "Name of the object to create a navmesh blocker for. Must match the exact name of the target object in the scene."
+          "default": "Rabbit",
+          "description": "Name of the entity to clone (must match entity name exactly)"
+        },
+        {
+          "name": "FORMATION",
+          "type": "dropdown",
+          "default": "Random",
+          "options": ["Random", "Rows"],
+          "description": "Positioning formation for cloned entities"
+        },
+        {
+          "name": "NUMBER_PER_ROW",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Number of entities per row when using row formation"
         }
       ],
       "features": [
-        "Automatic navmesh blocking for named objects",
-        "Dynamic collision box calculation",
-        "Position and rotation-aware blocking",
-        "Scale-based boundary detection",
-        "Automatic initialization on game start",
-        "Case-insensitive object name matching",
-        "Real-time navmesh updates",
-        "Compatible with dynamic physics objects",
-        "Prevents AI pathfinding through blocked areas",
-        "No manual configuration required after setup"
+        "Entity cloning with configurable quantity",
+        "Random and row-based positioning systems",
+        "Configurable entity lifespan and health",
+        "Respawn cycle system with event limits",
+        "Automatic entity discovery by name",
+        "Surface height detection for proper positioning",
+        "Gravity and collision management",
+        "Logic connection triggers on completion",
+        "Memory efficient entity tracking",
+        "Player proximity activation",
+        "Automatic cleanup of expired entities",
+        "Formation-based positioning options",
+        "Health randomization system",
+        "Respawn interval control",
+        "Entity rotation preservation"
       ],
-      "keywords": ["navmesh", "blocker", "navigation", "ai", "pathfinding", "collision", "dynamic", "physics"],
+      "keywords": ["clone", "entity", "spawn", "duplicate", "respawn", "formation", "lifespan", "health", "positioning", "generation"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "EWR9N6ZVQrc",
         "timestamp": "0:00",
         "steps": [
-          "Create the object you want to block navigation for",
-          "Set the object's Physics to ON",
-          "Set the object's IsImmobile to ON",
-          "Note the exact name of the object",
-          "Create a navblocker object",
-          "Attach the navblocker behavior",
-          "Set OBJECT_NAME to match your target object",
-          "Test AI pathfinding around the blocked object"
+          "Create an entity to serve as the template for cloning",
+          "Give the template entity a specific name",
+          "Create an object to attach the clone_entity behavior to",
+          "Set AlwaysActive to ON for the cloning object",
+          "Attach the clone_entity behavior to the object",
+          "Configure ENTITY_NAME to match the template entity name",
+          "Set CLONE_QUANTITY for desired number of copies",
+          "Configure CLONE_RANGE for positioning area",
+          "Set CLONE_LIFESPAN for entity duration",
+          "Choose CLONE_HEALTH setting (Cloned or Random)",
+          "Configure FORMATION for positioning style",
+          "Set RESPAWN_CYCLE and related respawn options",
+          "Test cloning by triggering the behavior",
+          "Verify entity positioning and lifespan",
+          "Test respawn functionality if enabled",
+          "Adjust settings for optimal gameplay"
         ]
       },
-      "relatedBehaviors": ["physics_object", "collision_detector", "ai_controller", "dynamic_object"]
+      "relatedBehaviors": ["spawn_system", "entity_manager", "respawn_system", "formation_controller", "entity_generator"]
     },
-    "vendor": {
-      "name": "Vendor",
-      "file": "objects/vendor.lua",
-      "description": "Creates a vending machine system that dispenses items to players. Features cost-based purchasing, quantity limits, item lifespan management, and multiple empty-state behaviors. Perfect for creating shops, item dispensers, and commerce systems.",
+    "stealthshield": {
+      "name": "Stealth Shield",
+      "file": "rpg/stealthshield.lua",
+      "description": "A comprehensive stealth system that provides temporary invisibility to enemies within a configurable radius. Features pickup mechanics, timed activation, weapon disabling options, and visual feedback with customizable HUD elements.",
+      "properties": [
+        {
+          "name": "STYLE",
+          "type": "dropdown",
+          "default": "Pickup",
+          "options": ["Pickup", "Collected"],
+          "description": "Behavior style. Pickup = visible object to collect, Collected = already in inventory"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 80,
+          "description": "Distance at which the player can pick up the stealth shield"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when player is in range to pick up the shield"
+        },
+        {
+          "name": "USE_TEXT",
+          "type": "string",
+          "default": "+ Shield On, - Shield Off",
+          "description": "Text displayed after pickup showing how to use the shield"
+        },
+        {
+          "name": "ON_TEXT",
+          "type": "string",
+          "default": "Stealth Shield ON",
+          "description": "Text displayed when shield is activated"
+        },
+        {
+          "name": "OFF_TEXT",
+          "type": "string",
+          "default": "Stealth Shield OFF",
+          "description": "Text displayed when shield is deactivated"
+        },
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Timed",
+          "options": ["Timed", "Random"],
+          "description": "Duration mode. Timed = fixed duration, Random = random duration"
+        },
+        {
+          "name": "DURATION",
+          "type": "number",
+          "range": "1-60",
+          "default": 30,
+          "description": "Duration of stealth shield in seconds (1 to 60)"
+        },
+        {
+          "name": "DISCOVERY_RANGE",
+          "type": "number",
+          "range": "50-2000",
+          "default": 50,
+          "description": "Minimum distance enemies must be to be affected by stealth"
+        },
+        {
+          "name": "SHIELD_RADIUS",
+          "type": "number",
+          "range": "50-2000",
+          "default": 800,
+          "description": "Maximum distance enemies can be affected by stealth shield"
+        },
+        {
+          "name": "NO_OF_USES",
+          "type": "number",
+          "range": "1-3",
+          "default": 1,
+          "description": "Number of times the stealth shield can be used (1 to 3)"
+        },
+        {
+          "name": "ICON_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\stealthshield_icon.png",
+          "description": "Path to the stealth shield icon image"
+        },
+        {
+          "name": "ICON_POSITION_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Horizontal position of shield icon on screen (0 to 100, percentage)"
+        },
+        {
+          "name": "ICON_POSITION_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 90,
+          "description": "Vertical position of shield icon on screen (0 to 100, percentage)"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the stealth shield object"
+        },
+        {
+          "name": "DISABLE_WEAPON",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to disable player weapons while stealth shield is active"
+        }
+      ],
+      "features": [
+        "Interactive pickup system with proximity detection",
+        "Temporary stealth activation with configurable duration",
+        "Enemy allegiance manipulation for stealth effect",
+        "Configurable stealth radius and discovery range",
+        "Multiple use system with usage tracking",
+        "Visual HUD icon with fade-out effect",
+        "Real-time shield timer display",
+        "Weapon disabling option during stealth",
+        "Sound effects for pickup and activation",
+        "Configurable prompt display locations",
+        "Item highlighting and selection system",
+        "Logic connection support for game events",
+        "Memory efficient entity tracking",
+        "Automatic cleanup after uses exhausted",
+        "Random duration mode for unpredictable gameplay"
+      ],
+      "keywords": ["stealth", "shield", "invisibility", "pickup", "duration", "enemy", "allegiance", "hud", "timer", "weapon", "activation"],
+      "tutorial": {
+        "videoId": "9zr2kJ2bX6g",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the stealth shield",
+          "Set AlwaysActive to ON for the object",
+          "Attach the stealthshield behavior",
+          "Configure STYLE (Pickup or Collected)",
+          "Set PICKUP_RANGE for interaction distance",
+          "Configure PROMPT_TEXT and USE_TEXT",
+          "Set DURATION and MODE for shield timing",
+          "Configure DISCOVERY_RANGE and SHIELD_RADIUS",
+          "Set NO_OF_USES for multiple activations",
+          "Configure ICON settings for HUD display",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Enable DISABLE_WEAPON if needed",
+          "Add sound effects to Sound0 slot",
+          "Test pickup functionality within range",
+          "Verify shield activation with +/- keys",
+          "Test enemy stealth effect within radius",
+          "Verify HUD timer and icon display",
+          "Test weapon disabling if enabled",
+          "Verify multiple uses and cleanup"
+        ]
+      },
+      "relatedBehaviors": ["stealth_system", "pickup_system", "hud_interface", "enemy_control", "weapon_system"]
+    },
+    "xp": {
+      "name": "Experience Points",
+      "file": "rpg/xp.lua",
+      "description": "A flexible experience points system that allows players to gain or lose XP through interactive objects. Features configurable pickup styles, automatic/manual collection, global variable integration, and sound effects for RPG progression systems.",
       "properties": [
         {
           "name": "PROMPT_TEXT",
           "type": "string",
-          "default": "E to dispense item",
-          "description": "Text displayed when player can interact with the vendor"
+          "default": "E to consume",
+          "description": "Text displayed when player is in range to use the XP object"
         },
         {
-          "name": "PROMPT_RANGE",
-          "type": "number",
-          "range": "0-100",
-          "default": 90,
-          "description": "Distance at which the player can interact with the vendor"
-        },
-        {
-          "name": "NOISE_RANGE",
-          "type": "number",
-          "range": "0-5000",
-          "default": 500,
-          "description": "Range at which AI can hear the vendor being used"
-        },
-        {
-          "name": "VENDOR_ANIMATION",
-          "type": "dropdown",
-          "default": "None",
-          "options": ["None", "AnimSetList"],
-          "description": "Animation to play when vendor is activated"
-        },
-        {
-          "name": "VENDORED_MAX_QUANTITY",
-          "type": "number",
-          "range": "1-50",
-          "default": 1,
-          "description": "Maximum number of items the vendor can dispense"
-        },
-        {
-          "name": "VENDORED_ENTITY_COST",
-          "type": "number",
-          "range": "0-100",
-          "default": 0,
-          "description": "Cost of each item in the specified currency"
-        },
-        {
-          "name": "VENDORED_ENTITY_LIFESPAN",
-          "type": "number",
-          "range": "0-100",
-          "default": 1,
-          "description": "Lifespan of dispensed items in minutes (0 = Eternal)"
-        },
-        {
-          "name": "VENDORED_ENTITY_NAME",
+          "name": "PROMPT_IF_COLLECTABLE",
           "type": "string",
-          "default": "",
-          "description": "Name of the entity to dispense (must exist in scene)"
+          "default": "E to collect",
+          "description": "Text displayed when the object is collectable"
+        },
+        {
+          "name": "USAGE_TEXT",
+          "type": "string",
+          "default": "XP consumed",
+          "description": "Text displayed when XP is successfully consumed"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of XP to add or deduct (1 to 100)"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the XP object"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Collection style. Automatic = immediate pickup, Manual = requires E key press"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "XP effect. Add = increase player XP, Deduct = decrease player XP"
         },
         {
           "name": "USER_GLOBAL_AFFECTED",
           "type": "string",
           "default": "",
-          "description": "Name of the user global variable for payment (e.g., MyMoney)"
+          "description": "Name of the global variable to store XP (e.g., MyXP)"
         },
         {
-          "name": "WHEN_EMPTY",
+          "name": "PROMPT_DISPLAY",
           "type": "dropdown",
-          "default": "Nothing",
-          "options": ["Nothing", "Destroy Vendor", "Event Triggers", "Lose Game", "Win Game"],
-          "description": "Action to perform when vendor runs out of items"
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
         },
         {
-          "name": "VENDING_DELAY",
-          "type": "number",
-          "range": "0-100",
-          "default": 0,
-          "description": "Delay in seconds before item is dispensed"
-        },
-        {
-          "name": "VENDING_FORCE",
-          "type": "number",
-          "range": "0-100",
-          "default": 0,
-          "description": "Force applied to dispensed items in the vendor's facing direction"
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the XP object"
         }
       ],
       "features": [
-        "Cost-based item purchasing system",
-        "Configurable quantity limits",
-        "Item lifespan management with eternal option",
-        "Multiple empty-state behaviors",
-        "Vending delay and force mechanics",
-        "AI sound detection system",
-        "Animation support for vendor activation",
-        "Global variable currency integration",
-        "Automatic item cleanup",
-        "Logic connection triggers",
-        "Sound effects for activation, vending, and empty states",
-        "Entity cloning and positioning system"
+        "Flexible XP gain and loss system",
+        "Automatic and manual pickup styles",
+        "Global variable integration for XP storage",
+        "Configurable XP quantity and effects",
+        "Collectable object support",
+        "Sound effects for usage and collection",
+        "Configurable prompt display locations",
+        "Item highlighting and selection system",
+        "Logic connection triggers on XP gain/loss",
+        "Resource depletion system integration",
+        "Proximity-based interaction",
+        "Memory efficient variable management",
+        "Automatic object cleanup after use",
+        "Support for both positive and negative XP",
+        "RPG progression system integration"
       ],
-      "keywords": ["vendor", "vending", "machine", "dispense", "item", "purchase", "cost", "currency", "shop", "commerce", "inventory"],
+      "keywords": ["xp", "experience", "points", "rpg", "progression", "pickup", "global", "variable", "gain", "loss", "leveling"],
       "tutorial": {
-        "videoId": "6cFGFb_98fc",
+        "videoId": "jLDd2dqnzuc",
         "timestamp": "0:00",
         "steps": [
-          "Create the item entity you want to vend",
-          "Create a vendor object",
-          "Set AlwaysActive to ON, IsImmobile to YES",
-          "Attach the vendor behavior",
-          "Set VENDORED_ENTITY_NAME to match your item",
-          "Configure cost and quantity settings",
-          "Set up currency global variable",
-          "Configure empty-state behavior",
-          "Add activation sound to Sound0",
-          "Add vending sound to Sound1",
-          "Add empty sound to Sound2",
-          "Test vendor functionality and purchasing"
+          "Create an object to represent the XP pickup",
+          "Set AlwaysActive to ON for the object",
+          "Attach the xp behavior to the object",
+          "Configure PROMPT_TEXT for interaction message",
+          "Set QUANTITY for desired XP amount",
+          "Configure PICKUP_RANGE for interaction distance",
+          "Choose PICKUP_STYLE (Automatic or Manual)",
+          "Set EFFECT (Add or Deduct) for XP direction",
+          "Configure USER_GLOBAL_AFFECTED with global variable name",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Add sound effects to Sound0 (usage) and Sound1 (collection)",
+          "Test automatic pickup if using automatic style",
+          "Test manual pickup with E key if using manual style",
+          "Verify XP is added/deducted from global variable",
+          "Test collectable object functionality",
+          "Verify logic connections trigger correctly",
+          "Test resource depletion system",
+          "Adjust settings for optimal gameplay balance"
         ]
       },
-      "relatedBehaviors": ["buy_object", "money", "inventory_system", "commerce_system", "item_dispenser"]
+      "relatedBehaviors": ["rpg_system", "global_variables", "pickup_system", "progression_system", "resource_system"]
+    },
+    "mousecontrol": {
+      "name": "Mouse Control",
+      "file": "puzzle/mousecontrol.lua",
+      "description": "A comprehensive mouse interaction system that allows players to interact with objects using mouse clicks. Features configurable click controls, visual cursor feedback, object detection, and automatic weapon management for immersive point-and-click gameplay.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "1-300",
+          "default": 100,
+          "description": "Maximum range for mouse interaction with objects"
+        },
+        {
+          "name": "TIMER_ADJUST",
+          "type": "number",
+          "range": "1-5000",
+          "default": 500,
+          "description": "Delay in milliseconds before allowing another click action"
+        },
+        {
+          "name": "ACTION_CONTROL",
+          "type": "dropdown",
+          "default": "Left Button",
+          "options": ["Left Button", "Right Button", "Left or Right Button", "Left and Right Buttons"],
+          "description": "Which mouse buttons trigger the interaction"
+        },
+        {
+          "name": "POINTER",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off", "Crosshair", "Mouse", "Adaptive"],
+          "description": "Visual cursor style. On = text pointer, Off = no pointer, Crosshair = + symbol, Mouse = graphic cursor, Adaptive = context-sensitive cursors"
+        }
+      ],
+      "features": [
+        "Mouse click interaction system",
+        "Configurable click controls (left, right, or both buttons)",
+        "Visual cursor feedback with multiple styles",
+        "Object detection and targeting system",
+        "Automatic weapon management during interactions",
+        "Context-sensitive cursor changes based on object type",
+        "Allegiance-based cursor adaptation",
+        "Collectable object detection and highlighting",
+        "NPC interaction cursors (speak, fight)",
+        "Action-specific cursors (carry, hand)",
+        "Click timing and cooldown system",
+        "Sound effect integration for mouse clicks",
+        "Ray casting for accurate object selection",
+        "Camera-based interaction targeting",
+        "Memory efficient sprite management"
+      ],
+      "keywords": ["mouse", "control", "interaction", "click", "cursor", "pointer", "targeting", "object", "detection", "allegiance"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the mousecontrol behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the mousecontrol behavior",
+          "Configure RANGE for interaction distance",
+          "Set TIMER_ADJUST for click cooldown timing",
+          "Choose ACTION_CONTROL for desired mouse button(s)",
+          "Select POINTER style for visual feedback",
+          "Add sound effects to Sound0 slot for click sounds",
+          "Test mouse interaction with objects in range",
+          "Verify cursor changes based on object allegiance",
+          "Test different pointer styles and their effects",
+          "Verify click timing and cooldown system",
+          "Test weapon management during interactions",
+          "Check context-sensitive cursor changes",
+          "Verify object detection and targeting accuracy",
+          "Test with different object types and allegiances",
+          "Adjust settings for optimal gameplay experience"
+        ]
+      },
+      "relatedBehaviors": ["interaction_system", "cursor_control", "object_detection", "weapon_system", "allegiance_system"]
+    },
+    "bottled_item": {
+      "name": "Bottled Item",
+      "file": "rpg/bottled_item.lua",
+      "description": "A consumable item system that provides health restoration or damage effects when consumed. Features configurable health effects, poisoning mechanics, global variable integration, and visual feedback for potions, elixirs, and other bottled consumables.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to consume",
+          "description": "Text displayed when player is in range to consume the bottled item"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-40",
+          "default": 10,
+          "description": "Amount of health to add or deduct when consumed (1 to 40)"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the bottled item"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Health effect. Add = restore health, Deduct = damage player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyHealth",
+          "description": "Name of the global variable to track health (e.g., MyHealth)"
+        },
+        {
+          "name": "POISONING_EFFECT",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the item causes poisoning effects when consumed"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the bottled item"
+        }
+      ],
+      "features": [
+        "Health restoration and damage system",
+        "Configurable health quantity and effects",
+        "Poisoning mechanics with visual feedback",
+        "Global variable integration for health tracking",
+        "Proximity-based interaction system",
+        "Sound effects for consumption and poisoning",
+        "Configurable prompt display locations",
+        "Item highlighting and selection system",
+        "Health cap enforcement (cannot exceed max health)",
+        "Poisoning duration and screen shake effects",
+        "Automatic object cleanup after consumption",
+        "Memory efficient variable management",
+        "Logic connection support for game events",
+        "Support for both beneficial and harmful items",
+        "RPG consumable system integration"
+      ],
+      "keywords": ["bottle", "consumable", "health", "potion", "elixir", "poison", "restoration", "damage", "rpg", "item"],
+      "tutorial": {
+        "videoId": "vWj4JyHy8xg",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the bottled item",
+          "Set AlwaysActive to ON for the object",
+          "Attach the bottled_item behavior",
+          "Configure PROMPT_TEXT for interaction message",
+          "Set QUANTITY for desired health effect amount",
+          "Configure PICKUP_RANGE for interaction distance",
+          "Choose EFFECT (Add or Deduct) for health direction",
+          "Set USER_GLOBAL_AFFECTED with global variable name",
+          "Enable POISONING_EFFECT if desired",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Add sound effects to Sound0 (consumption) and Sound1 (poisoning)",
+          "Test interaction within pickup range",
+          "Verify health is added/deducted correctly",
+          "Test health cap enforcement (max health limit)",
+          "Verify global variable updates correctly",
+          "Test poisoning effects if enabled",
+          "Check screen shake and visual feedback",
+          "Verify object cleanup after consumption",
+          "Test with different quantity and effect settings"
+        ]
+      },
+      "relatedBehaviors": ["health_system", "consumable_system", "poison_system", "global_variables", "rpg_system"]
+    },
+    "message": {
+      "name": "Message Display",
+      "file": "puzzle/message.lua",
+      "description": "A sophisticated text display system that shows messages with typewriter effects, configurable colors, positioning, and timing. Features multi-line support, letter-by-letter typing animation, and optional player camera lock for immersive storytelling and mission briefings.",
+      "properties": [
+        {
+          "name": "TEXT1",
+          "type": "string",
+          "default": "MISSION DEBRIEF: Operation X5s",
+          "description": "First line of text to display"
+        },
+        {
+          "name": "TEXT2",
+          "type": "string",
+          "default": "Cpt. Hughes - Infiltration Unit 6",
+          "description": "Second line of text to display"
+        },
+        {
+          "name": "TEXT3",
+          "type": "string",
+          "default": "Deploy and infiltrate Maersk Operations Complex",
+          "description": "Third line of text to display"
+        },
+        {
+          "name": "TEXT4",
+          "type": "string",
+          "default": "Seek and destroy valid targets and recover",
+          "description": "Fourth line of text to display"
+        },
+        {
+          "name": "TEXT5",
+          "type": "string",
+          "default": "classified documents from Dr. Gebchev",
+          "description": "Fifth line of text to display"
+        },
+        {
+          "name": "X",
+          "type": "number",
+          "default": 10,
+          "description": "Horizontal position of text on screen"
+        },
+        {
+          "name": "Y",
+          "type": "number",
+          "default": 10,
+          "description": "Vertical position of text on screen"
+        },
+        {
+          "name": "COLOUR",
+          "type": "dropdown",
+          "default": "White",
+          "options": ["White", "Green", "Blue", "Yellow", "Orange", "Red"],
+          "description": "Color of the displayed text"
+        },
+        {
+          "name": "SIZE",
+          "type": "number",
+          "range": "1-5",
+          "default": 3,
+          "description": "Font size of the text (1 to 5)"
+        },
+        {
+          "name": "STYLE",
+          "type": "dropdown",
+          "default": "Left",
+          "options": ["Left", "Center"],
+          "description": "Text alignment style"
+        },
+        {
+          "name": "LINES_SHOWN",
+          "type": "number",
+          "range": "1-5",
+          "default": 5,
+          "description": "Number of text lines visible at once (1 to 5)"
+        },
+        {
+          "name": "LETTER_DELAY",
+          "type": "number",
+          "default": 0.05,
+          "description": "Delay between each letter appearing (in seconds)"
+        },
+        {
+          "name": "LINES_DELAY",
+          "type": "number",
+          "default": 0.8,
+          "description": "Delay between lines appearing (in seconds)"
+        },
+        {
+          "name": "DISPLAY_TIME",
+          "type": "number",
+          "range": "1-10",
+          "default": 5,
+          "description": "Additional display time for the final line (1 to 10 seconds)"
+        },
+        {
+          "name": "LOCK_PLAYER",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to lock player camera during message display"
+        }
+      ],
+      "features": [
+        "Typewriter text animation system",
+        "Multi-line message support (up to 5 lines)",
+        "Configurable text colors and positioning",
+        "Letter-by-letter typing effect with sound",
+        "Line-by-line progression with delays",
+        "Optional player camera lock during display",
+        "Text alignment options (left or center)",
+        "Configurable font sizes and display timing",
+        "Sound effects for letter typing",
+        "Automatic text scrolling for long messages",
+        "Memory efficient text management",
+        "Zone and switch trigger integration",
+        "Immersive storytelling capabilities",
+        "Mission briefing and tutorial support",
+        "Camera override control system"
+      ],
+      "keywords": ["message", "text", "display", "typewriter", "story", "briefing", "tutorial", "animation", "color", "position"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the message behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the message behavior",
+          "Configure TEXT1 through TEXT5 with your message content",
+          "Set X and Y for text positioning on screen",
+          "Choose COLOUR for desired text appearance",
+          "Configure SIZE for font size (1-5)",
+          "Select STYLE for text alignment (Left or Center)",
+          "Set LINES_SHOWN for visible line count",
+          "Configure LETTER_DELAY for typing speed",
+          "Set LINES_DELAY for line progression timing",
+          "Configure DISPLAY_TIME for final line duration",
+          "Enable LOCK_PLAYER if camera lock is desired",
+          "Add sound effects to Sound0 for letter typing",
+          "Link the object to a zone or switch for triggering",
+          "Test message display and timing",
+          "Verify text positioning and alignment",
+          "Check camera lock functionality if enabled",
+          "Adjust timing settings for optimal readability",
+          "Test with different message lengths and content"
+        ]
+      },
+      "relatedBehaviors": ["text_system", "camera_control", "story_system", "tutorial_system", "ui_system"]
+    },
+    "ring_counter": {
+      "name": "Ring Counter",
+      "file": "puzzle/ring_counter.lua",
+      "description": "A dynamic ring system that players can pass through with configurable effects. Features static and alternating ring types, visual effects, health restoration, global variable integration, and multiple trigger options for creating interactive gameplay elements.",
+      "properties": [
+        {
+          "name": "RING_RANGE",
+          "type": "number",
+          "range": "0-500",
+          "default": 80,
+          "description": "Distance at which the ring activates when player passes through"
+        },
+        {
+          "name": "RING_TYPE",
+          "type": "dropdown",
+          "default": "Static Color",
+          "options": ["Static Color", "Alternate Color"],
+          "description": "Ring behavior type. Static = always active, Alternate = cycles between safe/unsafe states"
+        },
+        {
+          "name": "ALTERNATING_TIME",
+          "type": "number",
+          "range": "1-30",
+          "default": 5,
+          "description": "Time in seconds for alternating ring state changes"
+        },
+        {
+          "name": "TRIGGER_TYPE",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Lose Game", "Win Game", "Linked/IfUsed"],
+          "description": "Action to take when ring is triggered"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to affect (e.g., MyPoints)"
+        },
+        {
+          "name": "AFFECT_AMOUNT",
+          "type": "number",
+          "range": "1-10",
+          "default": 1,
+          "description": "Amount to add or deduct from global variable or health"
+        },
+        {
+          "name": "PULSE_EFFECT",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether to enable pulsing emissive effect"
+        },
+        {
+          "name": "PULSE_STRENGTH",
+          "type": "number",
+          "range": "1-2000",
+          "default": 1000,
+          "description": "Maximum strength of the pulse effect"
+        },
+        {
+          "name": "PULSE_SPEED",
+          "type": "number",
+          "range": "1-100",
+          "default": 20,
+          "description": "Speed of the pulse effect"
+        },
+        {
+          "name": "SPIN_EFFECT",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["On", "Off"],
+          "description": "Whether to enable spinning effect"
+        },
+        {
+          "name": "SPINSPEED",
+          "type": "number",
+          "range": "1-500",
+          "default": 5,
+          "description": "Speed of the spinning effect"
+        },
+        {
+          "name": "SPIN_X",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to spin on X axis"
+        },
+        {
+          "name": "SPIN_Y",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to spin on Y axis"
+        },
+        {
+          "name": "SPIN_Z",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to spin on Z axis"
+        },
+        {
+          "name": "SPIN_DIRECTION",
+          "type": "dropdown",
+          "default": "Clockwise",
+          "options": ["Clockwise", "Anti-Clockwise"],
+          "description": "Direction of the spinning effect"
+        },
+        {
+          "name": "AUGMENTS",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Health", "Health+Repair"],
+          "description": "Health effects. None = no health effect, Health = restore player health, Health+Repair = restore player and nearby entity health"
+        }
+      ],
+      "features": [
+        "Static and alternating ring types",
+        "Configurable activation range and timing",
+        "Visual effects with pulsing and spinning",
+        "Health restoration and repair capabilities",
+        "Global variable integration for scoring",
+        "Multiple trigger actions (win/lose/linked)",
+        "Emissive color changes for state indication",
+        "Automatic ring destruction after use",
+        "Sound effects for success and failure",
+        "Logic connection support for game events",
+        "Proximity-based activation system",
+        "Memory efficient state management",
+        "Entity health repair for nearby objects",
+        "Configurable visual feedback systems",
+        "Game state control integration"
+      ],
+      "keywords": ["ring", "counter", "trigger", "health", "repair", "pulse", "spin", "alternating", "static", "proximity"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the ring",
+          "Set AlwaysActive to ON for the object",
+          "Attach the ring_counter behavior",
+          "Configure RING_RANGE for activation distance",
+          "Choose RING_TYPE (Static or Alternate)",
+          "Set ALTERNATING_TIME if using alternate type",
+          "Choose TRIGGER_TYPE for desired action",
+          "Configure USER_GLOBAL_AFFECTED if using global variables",
+          "Set AFFECT_AMOUNT for effect strength",
+          "Enable PULSE_EFFECT and configure pulse settings",
+          "Enable SPIN_EFFECT and configure spin settings",
+          "Set SPIN axes (X, Y, Z) and direction",
+          "Choose AUGMENTS for health effects",
+          "Add sound effects to Sound0 (success) and Sound1 (failure)",
+          "Test ring activation by passing through",
+          "Verify visual effects and state changes",
+          "Test alternating ring timing if enabled",
+          "Verify health restoration and repair",
+          "Check global variable updates",
+          "Test trigger actions and logic connections",
+          "Adjust settings for optimal gameplay"
+        ]
+      },
+      "relatedBehaviors": ["trigger_system", "health_system", "visual_effects", "global_variables", "game_state"]
+    },
+    "winkill": {
+      "name": "Win Kill",
+      "file": "puzzle/winkill.lua",
+      "description": "A level completion system that monitors enemy elimination and triggers level progression when all enemies are defeated. Features enemy counter display, configurable completion messages, delay timing, and automatic level transitions for mission-based gameplay.",
+      "properties": [
+        {
+          "name": "ENEMY_COUNTER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to display the enemy counter on screen"
+        },
+        {
+          "name": "COUNTER_TEXT",
+          "type": "string",
+          "default": "Targets Remaining",
+          "description": "Text displayed with the enemy counter"
+        },
+        {
+          "name": "END_TEXT",
+          "type": "string",
+          "default": "All Targets Eliminated",
+          "description": "Text displayed when all enemies are eliminated"
+        },
+        {
+          "name": "END_DELAY",
+          "type": "number",
+          "range": "1-60",
+          "default": 1,
+          "description": "Delay in seconds before level transition (1 to 60)"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "Controls whether to load the next level in the Storyboard or a specific level"
+        },
+        {
+          "name": "ResetStates",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to reset states when entering the new level"
+        }
+      ],
+      "features": [
+        "Automatic enemy monitoring and counting",
+        "Real-time enemy counter display",
+        "Configurable completion messages",
+        "Level transition with delay timing",
+        "Storyboard and specific level support",
+        "State reset options for new levels",
+        "Logic connection triggers on completion",
+        "Sound effects for level completion",
+        "Allegiance-based enemy detection",
+        "Health-based enemy validation",
+        "Memory efficient entity tracking",
+        "Automatic level progression system",
+        "Mission completion integration",
+        "Game state management",
+        "Visual feedback for player progress"
+      ],
+      "keywords": ["win", "kill", "enemy", "counter", "level", "completion", "transition", "mission", "elimination", "progression"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the winkill behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the winkill behavior",
+          "Enable ENEMY_COUNTER if you want on-screen counter",
+          "Configure COUNTER_TEXT for counter display",
+          "Set END_TEXT for completion message",
+          "Configure END_DELAY for transition timing",
+          "Choose GoToLevelMode for level progression",
+          "Enable ResetStates if state reset is needed",
+          "Add sound effects to Sound0 for completion",
+          "Ensure enemies have allegiance set to 0 (enemy)",
+          "Test enemy elimination and counter updates",
+          "Verify completion message appears",
+          "Check level transition timing and behavior",
+          "Test logic connections if linked",
+          "Verify sound effects play correctly",
+          "Test with different enemy counts",
+          "Check storyboard progression if enabled",
+          "Verify state reset functionality if enabled",
+          "Adjust settings for optimal gameplay flow"
+        ]
+      },
+      "relatedBehaviors": ["enemy_system", "level_control", "mission_system", "game_state", "progression_system"]
+    },
+    "oxygen": {
+      "name": "Oxygen Supply",
+      "file": "rpg/oxygen.lua",
+      "description": "A dual-purpose pickup system that provides both health restoration and oxygen supply extension. Features automatic and manual pickup styles, configurable quantities, and integration with the game's drowning system for underwater or space-based survival gameplay.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed when player is in range to use the oxygen supply"
+        },
+        {
+          "name": "HEALTH_QUANTITY",
+          "type": "number",
+          "range": "1-40",
+          "default": 10,
+          "description": "Amount of health to restore when collected (1 to 40)"
+        },
+        {
+          "name": "OXYGEN_QUANTITY",
+          "type": "number",
+          "range": "1-80",
+          "default": 10,
+          "description": "Amount of oxygen time to add when collected (1 to 80)"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the oxygen supply"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Collection style. Automatic = immediate pickup, Manual = requires E key press"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Collected oxygen supply",
+          "description": "Text displayed when oxygen supply is successfully collected"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the oxygen supply object"
+        }
+      ],
+      "features": [
+        "Dual restoration system (health and oxygen)",
+        "Automatic and manual pickup styles",
+        "Configurable health and oxygen quantities",
+        "Integration with game drowning system",
+        "Proximity-based interaction system",
+        "Sound effects for collection",
+        "Configurable prompt display locations",
+        "Item highlighting and selection system",
+        "Logic connection triggers on collection",
+        "Automatic object cleanup after use",
+        "Oxygen time extension calculation",
+        "Health restoration with quantity limits",
+        "Memory efficient variable management",
+        "Survival gameplay integration",
+        "Underwater and space environment support"
+      ],
+      "keywords": ["oxygen", "health", "supply", "pickup", "survival", "drowning", "underwater", "restoration", "breathing"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the oxygen supply",
+          "Set AlwaysActive to ON for the object",
+          "Attach the oxygen behavior",
+          "Configure PROMPT_TEXT for interaction message",
+          "Set HEALTH_QUANTITY for health restoration amount",
+          "Set OXYGEN_QUANTITY for oxygen time extension",
+          "Configure PICKUP_RANGE for interaction distance",
+          "Choose PICKUP_STYLE (Automatic or Manual)",
+          "Set COLLECTED_TEXT for success message",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Add sound effects to Sound0 slot",
+          "Test automatic pickup if using automatic style",
+          "Test manual pickup with E key if using manual style",
+          "Verify health is restored correctly",
+          "Test oxygen time extension in drowning scenarios",
+          "Verify logic connections trigger correctly",
+          "Test with different quantity settings",
+          "Check prompt display and highlighting",
+          "Verify object cleanup after collection"
+        ]
+      },
+      "relatedBehaviors": ["health_system", "survival_system", "pickup_system", "drowning_system", "environmental_hazard"]
+    },
+    "shop": {
+      "name": "Shop System",
+      "file": "rpg/shop.lua",
+      "description": "A comprehensive shop system that allows players to trade goods through an interactive interface. Features configurable shop containers, level-based inventory, HUD screen integration, and dynamic shop naming for creating merchants, vendors, and trading systems.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "default": 100,
+          "description": "Distance at which the player can interact with the shop"
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "Press E to shop",
+          "description": "Text displayed when player is in range to access the shop"
+        },
+        {
+          "name": "SHOP_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 5",
+          "description": "HUD screen to display when shop is opened"
+        },
+        {
+          "name": "SHOP_CONTAINER",
+          "type": "string",
+          "default": "shop",
+          "description": "Container entity that holds the shop inventory (e.g., 'shop')"
+        },
+        {
+          "name": "SHOP_NAME",
+          "type": "string",
+          "default": "The Shop",
+          "description": "Name displayed for the shop in the interface"
+        },
+        {
+          "name": "LEVEL_BIAS",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rename shop container based on player level (e.g., 'shop' becomes 'shop5' for level 5)"
+        }
+      ],
+      "features": [
+        "Interactive shop interface system",
+        "Configurable interaction range and prompts",
+        "HUD screen integration for shop display",
+        "Container-based inventory management",
+        "Dynamic shop naming and identification",
+        "Level-based inventory system",
+        "Sound effects for shop interaction",
+        "Proximity-based activation system",
+        "Global variable integration for shop data",
+        "Automatic container name generation",
+        "Screen toggle functionality",
+        "Memory efficient shop management",
+        "Merchant and vendor system support",
+        "Trading and economy integration",
+        "Player level progression support"
+      ],
+      "keywords": ["shop", "merchant", "vendor", "trade", "inventory", "container", "economy", "buy", "sell", "interface"],
+      "tutorial": {
+        "videoId": "CgKyusdZmzY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the shop",
+          "Set AlwaysActive to ON for the object",
+          "Attach the shop behavior",
+          "Configure USE_RANGE for interaction distance",
+          "Set USE_PROMPT for interaction message",
+          "Configure SHOP_SCREEN for HUD display",
+          "Set SHOP_CONTAINER with inventory container name",
+          "Configure SHOP_NAME for shop identification",
+          "Enable LEVEL_BIAS if level-based inventory is desired",
+          "Add sound effects to Sound0 slot",
+          "Create a container entity with the specified SHOP_CONTAINER name",
+          "Populate the container with items for sale",
+          "Test shop interaction within range",
+          "Verify HUD screen opens correctly",
+          "Check shop name display in interface",
+          "Test level-based container naming if enabled",
+          "Verify sound effects play correctly",
+          "Test with different container configurations",
+          "Check global variable integration",
+          "Verify shop interface functionality"
+        ]
+      },
+      "relatedBehaviors": ["inventory_system", "hud_interface", "container_system", "economy_system", "merchant_system"]
     }
   }
 } 

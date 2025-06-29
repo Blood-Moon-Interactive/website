@@ -46,7 +46,7 @@
       ],
       "keywords": ["sound", "3d", "audio", "loop", "distance", "volume", "positional", "ambient"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "0bgmxAApp-8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["fadeinsound", "fadeoutsound", "soundcontrol", "ambience"]
@@ -688,7 +688,7 @@
       ],
       "keywords": ["sound", "fade", "audio", "volume", "distance", "ambient", "proximity", "dynamic"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "0bgmxAApp-8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["fadeoutsound", "loop3dsound", "soundinzone", "random_sound"]
@@ -732,7 +732,7 @@
       ],
       "keywords": ["sound", "fade", "audio", "volume", "distance", "ambient", "proximity", "dynamic"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "0bgmxAApp-8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["fadeinsound", "loop3dsound", "soundinzone", "random_sound"]
@@ -1301,7 +1301,7 @@
       ],
       "keywords": ["light", "mover", "attachment", "offset", "flash", "rotate", "spotlight", "dynamic"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "m0h9gAvRRg8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["lightcontrol", "particle_mover", "searchbeam", "npc_flashlight"]
@@ -1538,7 +1538,7 @@
       ],
       "keywords": ["atlas", "animation", "texture", "cycle", "frame", "display", "effect", "visual"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "FDUZuuvBpoY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["atlas_changer", "add_fx", "emission_control", "texture_control"]
@@ -2779,7 +2779,7 @@
       ],
       "keywords": ["scroller", "texture", "scroll", "direction", "startup", "running", "stopping", "shudder", "teleportation"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "FDUZuuvBpoY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["light_mover", "change_texture", "emission_control"]
@@ -3349,6 +3349,254 @@
         ]
       },
       "relatedBehaviors": ["swap", "hideshow", "spawn_system", "navblocker", "interactive_object"]
-    }
+    },
+    "corpse_fader": {
+      "name": "Corpse Fader",
+      "file": "objects/corpse_fader.lua",
+      "description": "Automatically fades out entity corpses after a set delay and removes them from the scene. Perfect for cleaning up dead NPCs, enemies, or any entities that should disappear after death. Features configurable fade delay and fade duration.",
+      "properties": [
+        {
+          "name": "FADE_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 5,
+          "description": "Seconds to wait after entity death before starting fade effect"
+        },
+        {
+          "name": "FADE_TIME",
+          "type": "number",
+          "range": "0-100",
+          "default": 5,
+          "description": "Duration in seconds for the fade out effect to complete"
+        }
+      ],
+      "features": [
+        "Automatic corpse detection and management",
+        "Configurable fade delay timing",
+        "Smooth transparency fade out effect",
+        "Automatic entity cleanup and destruction",
+        "Works with all entity types (NPCs, enemies, etc.)",
+        "Memory efficient corpse removal",
+        "Always active global system",
+        "Preserves original entity alpha values",
+        "Prevents duplicate destruction calls",
+        "Compatible with all GameGuru MAX entities"
+      ],
+      "keywords": ["corpse", "fade", "death", "cleanup", "transparency", "entity", "removal", "alpha", "timer", "destruction"],
+      "tutorial": {
+        "videoId": "KNMeUaDIatk",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the corpse_fader behavior",
+          "Configure FADE_DELAY (seconds before fade starts)",
+          "Configure FADE_TIME (duration of fade effect)",
+          "Test with entities that can die",
+          "Verify corpses fade out and disappear",
+          "Adjust timing values as needed for your game"
+        ]
+      },
+      "relatedBehaviors": ["corpse", "npc_control", "death_system", "cleanup_system"]
+    },
+    "day_night": {
+      "name": "Day/Night Cycle",
+      "file": "rpg/day_night.lua",
+      "description": "A comprehensive day/night time cycling system that creates realistic lighting transitions, automatic light control, and time-based event triggers. Features configurable time dilation, ambient lighting control, and automatic light management for immersive day/night cycles.",
+      "properties": [
+        {
+          "name": "START_ANGLE",
+          "type": "number",
+          "range": "-180-180",
+          "default": -95,
+          "description": "Starting angle for the sun/moon position (-180 to 180 degrees)"
+        },
+        {
+          "name": "TIME_DILATION",
+          "type": "number",
+          "range": "1-1000",
+          "default": 1,
+          "description": "Time speed multiplier. Higher values make time pass faster"
+        },
+        {
+          "name": "DIAGNOSTICS",
+          "type": "boolean",
+          "default": true,
+          "description": "Display diagnostic information on screen for debugging"
+        },
+        {
+          "name": "MIN_AMBIENCE_R",
+          "type": "number",
+          "range": "1-255",
+          "default": 10,
+          "description": "Minimum red ambient lighting value during night"
+        },
+        {
+          "name": "MIN_AMBIENCE_G",
+          "type": "number",
+          "range": "1-255",
+          "default": 25,
+          "description": "Minimum green ambient lighting value during night"
+        },
+        {
+          "name": "MIN_AMBIENCE_B",
+          "type": "number",
+          "range": "1-255",
+          "default": 75,
+          "description": "Minimum blue ambient lighting value during night"
+        },
+        {
+          "name": "MIN_EXPOSURE",
+          "type": "number",
+          "range": "0.01-1.00",
+          "default": 0.20,
+          "description": "Minimum exposure value during night (0.01 to 1.00)"
+        },
+        {
+          "name": "SUN_ROLL",
+          "type": "number",
+          "range": "-180-180",
+          "default": -95,
+          "description": "Sun roll angle for positioning (-180 to 180 degrees)"
+        },
+        {
+          "name": "SUN_PITCH",
+          "type": "number",
+          "range": "-180-180",
+          "default": 70,
+          "description": "Sun pitch angle for positioning (-180 to 180 degrees)"
+        },
+        {
+          "name": "SUN_YAW",
+          "type": "number",
+          "range": "-180-180",
+          "default": 0,
+          "description": "Sun yaw angle for positioning (-180 to 180 degrees)"
+        },
+        {
+          "name": "MIN_INTENSITY",
+          "type": "number",
+          "range": "0.01-50.00",
+          "default": 3.45,
+          "description": "Minimum sun intensity during night (0.01 to 50.00)"
+        },
+        {
+          "name": "MAX_AMBIENCE_R",
+          "type": "number",
+          "range": "1-255",
+          "default": 255,
+          "description": "Maximum red ambient lighting value during day"
+        },
+        {
+          "name": "MAX_AMBIENCE_G",
+          "type": "number",
+          "range": "1-255",
+          "default": 255,
+          "description": "Maximum green ambient lighting value during day"
+        },
+        {
+          "name": "MAX_AMBIENCE_B",
+          "type": "number",
+          "range": "1-255",
+          "default": 255,
+          "description": "Maximum blue ambient lighting value during day"
+        },
+        {
+          "name": "MAX_EXPOSURE",
+          "type": "number",
+          "range": "0.01-1.00",
+          "default": 1.00,
+          "description": "Maximum exposure value during day (0.01 to 1.00)"
+        },
+        {
+          "name": "MAX_INTENSITY",
+          "type": "number",
+          "range": "0.01-50.00",
+          "default": 7.40,
+          "description": "Maximum sun intensity during day (0.01 to 50.00)"
+        },
+        {
+          "name": "TRIGGER_EVENT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am", "12am",
+            "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm", "12pm",
+            "7 Days", "28 Days", "None"
+          ],
+          "description": "Time-based event trigger for logic connections"
+        },
+        {
+          "name": "START_DAY",
+          "type": "dropdown",
+          "default": "Sunday",
+          "options": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "description": "Starting day of the week for the cycle"
+        },
+        {
+          "name": "READOUT_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "User global variable name for displaying current day and time"
+        },
+        {
+          "name": "LIGHT_CONTROL",
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic light control based on day/night cycle"
+        },
+        {
+          "name": "LIGHT_NAME",
+          "type": "string",
+          "default": "Light",
+          "description": "Name of light entities to control automatically"
+        },
+        {
+          "name": "LIGHT_RANGE",
+          "type": "number",
+          "range": "1-5000",
+          "default": 300,
+          "description": "Light range/strength when lights are active during night"
+        }
+      ],
+      "features": [
+        "Realistic day/night lighting transitions",
+        "Configurable time dilation for gameplay pacing",
+        "Automatic ambient lighting control",
+        "Dynamic sun positioning and intensity",
+        "Time-based event triggers (hourly, weekly, monthly)",
+        "Automatic light management (on/off based on time)",
+        "Day of week tracking and display",
+        "User global variable integration for time display",
+        "Comprehensive diagnostic information",
+        "Smooth dawn, ambient, dusk, and dark state transitions",
+        "Configurable lighting values for day and night",
+        "Automatic light entity discovery and control",
+        "Real-time sun direction updates",
+        "Memory efficient time tracking system"
+      ],
+      "keywords": ["day", "night", "cycle", "time", "lighting", "ambient", "sun", "moon", "dawn", "dusk", "light", "automatic", "transition", "event", "trigger"],
+      "tutorial": {
+        "videoId": "Onsb0pCyMxU",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the day_night behavior",
+          "Configure START_ANGLE for initial sun position",
+          "Set TIME_DILATION for desired time speed",
+          "Configure ambient lighting values (MIN/MAX)",
+          "Set up sun positioning (ROLL, PITCH, YAW)",
+          "Configure exposure and intensity values",
+          "Set up time-based event triggers if needed",
+          "Configure automatic light control if desired",
+          "Set READOUT_USER_GLOBAL for time display",
+          "Test day/night transitions",
+          "Verify lighting changes and light control",
+          "Adjust values for desired atmosphere"
+        ]
+      },
+      "relatedBehaviors": ["light_control", "ambient_lighting", "time_system", "event_trigger", "sun_control"]
+    }  
   }
 } 

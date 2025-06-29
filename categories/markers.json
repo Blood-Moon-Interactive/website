@@ -473,7 +473,7 @@
       ],
       "keywords": ["spawn", "locator", "player", "relocation", "marker", "global", "position"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "llQSChQbhaA",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["teleport", "level_zone", "winzone", "trigger_zone"]

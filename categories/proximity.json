@@ -79,7 +79,7 @@
       ],
       "keywords": ["mine", "explosive", "trap", "proximity", "detection", "countdown", "disarm"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "IR5F35glKA0",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["explosion_system", "interaction_system"]

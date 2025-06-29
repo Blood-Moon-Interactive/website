@@ -340,7 +340,7 @@
       ],
       "keywords": ["hud", "interface", "menu", "terminal", "control", "panel", "button", "interaction", "screen", "display"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "vYjPqC7AO64",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["hot_key", "hudcontrol", "menu_hud"]
@@ -914,7 +914,7 @@
       ],
       "keywords": ["leaderboard", "score", "highscore", "ranking", "points"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "5tCHxcdrxmQ",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["hud", "hud_interface", "score"]
@@ -1001,78 +1001,575 @@
       },
       "relatedBehaviors": ["healthbar", "hudcontrol", "activehud", "interface"]
     },
-    "stop_watch": {
-      "name": "Stop Watch",
-      "file": "objects/stop_watch.lua",
-      "description": "Creates a time counter that displays elapsed time in a user global variable. Features start/stop functionality, multiple end actions, launch warnings, and various time format options. Perfect for creating timers, countdowns, and time-based challenges.",
+    "radar": {
+      "name": "Radar System",
+      "file": "rpg/radar.lua",
+      "description": "A comprehensive radar system that displays enemies, allies, and objectives on a customizable radar interface. Features configurable radar size, range, position, and multiple blip styles with automatic enemy detection and objective tracking.",
       "properties": [
         {
-          "name": "DISPLAY_USER_GLOBAL",
+          "name": "RADAR_SIZE",
+          "type": "number",
+          "range": "5-80",
+          "default": 20,
+          "description": "Size of the radar display on screen (5 to 80 units)"
+        },
+        {
+          "name": "RADAR_RANGE",
+          "type": "number",
+          "range": "1000-5000",
+          "default": 4000,
+          "description": "Detection range of the radar in units (1000 to 5000)"
+        },
+        {
+          "name": "RADAR_SCREEN_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 85,
+          "description": "Horizontal position of radar on screen (0 to 100, percentage)"
+        },
+        {
+          "name": "RADAR_SCREEN_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 20,
+          "description": "Vertical position of radar on screen (0 to 100, percentage)"
+        },
+        {
+          "name": "RADAR_BLIPS",
+          "type": "dropdown",
+          "default": "Standard",
+          "options": ["Standard", "Detailed"],
+          "description": "Blip style for radar markers. Standard = simple dots, Detailed = specific enemy/objective icons"
+        },
+        {
+          "name": "RADAR_STYLE",
+          "type": "dropdown",
+          "default": "Rotating",
+          "options": ["Rotating", "Fixed"],
+          "description": "Radar rotation style. Rotating = radar rotates with player, Fixed = radar stays oriented north"
+        },
+        {
+          "name": "IMAGEFILE",
           "type": "string",
-          "default": "",
-          "description": "Name of the user global variable to display the time in (e.g., MyTime). The time will be formatted according to the READOUT setting."
-        },
-        {
-          "name": "END_ACTION",
-          "type": "dropdown",
-          "default": "None",
-          "options": ["None", "Terminate Player", "Hurt Player", "Activate Entities", "Lose Game", "Win Game", "Display Hud Screen"],
-          "description": "Action to perform when the stopwatch is stopped. None = no action, Terminate Player = kill player, Hurt Player = damage player, Activate Entities = trigger logic connections, Lose Game = end game in defeat, Win Game = end game in victory, Display Hud Screen = show specified HUD screen."
-        },
-        {
-          "name": "LAUNCH_WARNING",
-          "type": "dropdown",
-          "default": "Off",
-          "options": ["Off", "On"],
-          "description": "Whether to show a countdown warning before starting the timer. On = displays READY/SET/GO countdown, Off = starts immediately."
-        },
-        {
-          "name": "END_SCREEN",
-          "type": "string",
-          "default": "",
-          "description": "Name of the HUD screen to display when END_ACTION is set to Display Hud Screen (e.g., HUD Screen #)."
-        },
-        {
-          "name": "READOUT",
-          "type": "dropdown",
-          "default": "Mins:Secs:MilliSecs",
-          "options": ["Mins:Secs:MilliSecs", "Mins:Secs:Tenths", "Hrs:Mins:Secs:MilliSecs", "Hrs:Min:Sec:Tenths:MilliSecs"],
-          "description": "Time format for display. Mins:Secs:MilliSecs = MM:SS:MS, Mins:Secs:Tenths = MM:SS:T, Hrs:Mins:Secs:MilliSecs = HH:MM:SS:MS, Hrs:Min:Sec:Tenths:MilliSecs = HH:MM:SS:T:MS."
+          "default": "imagebank\\misc\\testimages\\radar\\radar1.png",
+          "description": "Path to the radar background image file"
         }
       ],
       "features": [
-        "High-precision time counter with millisecond accuracy",
-        "Start/Stop functionality triggered by zones or switches",
-        "Multiple end action options for game events",
-        "Launch warning countdown system",
-        "Four different time format display options",
-        "User global variable integration for HUD display",
-        "Sound effects for start and end events",
-        "Logic connection triggers for game events",
-        "Automatic timer management and cleanup",
-        "Compatible with both keyboard and gamepad controls",
-        "Always active monitoring when enabled",
-        "State management for running/stopped conditions"
+        "Real-time enemy and ally detection",
+        "Automatic blip color coding (red=enemy, green=ally)",
+        "Objective marker support with multiple colors",
+        "Configurable radar size and screen position",
+        "Adjustable detection range",
+        "Rotating and fixed radar styles",
+        "Aspect ratio correction for different screen sizes",
+        "Automatic sprite management and cleanup",
+        "Performance optimized with update throttling",
+        "Multiple blip styles (standard and detailed)",
+        "Objective integration with radar_objective.lua",
+        "Distance-based blip positioning",
+        "Player-relative coordinate system",
+        "Memory efficient sprite handling"
       ],
-      "keywords": ["stopwatch", "timer", "countdown", "time", "clock", "hud", "display", "global", "variable", "format", "warning"],
+      "keywords": ["radar", "hud", "minimap", "enemy", "detection", "blip", "objective", "tracking", "position", "screen", "interface"],
       "tutorial": {
         "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
-          "Create a stopwatch object",
-          "Set Always Active to ON",
-          "Attach the stop_watch behavior",
-          "Configure the display user global variable name",
-          "Set the desired end action",
-          "Choose launch warning preference",
-          "Select time format for display",
-          "Add commence sound to Sound0",
-          "Add end sound to Sound1",
-          "Set up trigger zones or switches for start/stop",
-          "Test timer functionality and end actions"
+          "Create an object to attach the radar behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the radar behavior",
+          "Configure RADAR_SIZE for desired display size",
+          "Set RADAR_RANGE for detection distance",
+          "Position radar with RADAR_SCREEN_X and Y",
+          "Choose RADAR_BLIPS style (Standard or Detailed)",
+          "Select RADAR_STYLE (Rotating or Fixed)",
+          "Set IMAGEFILE path for radar background",
+          "Test with enemies and allies in range",
+          "Add radar_objective.lua to entities for objectives",
+          "Verify blip colors and positioning",
+          "Adjust settings for optimal gameplay"
         ]
       },
-      "relatedBehaviors": ["hud_interface", "countdown", "timer", "global_monitor", "trigger_zone"]
-    }
+      "relatedBehaviors": ["radar_objective", "hud_interface", "enemy_detection", "objective_system", "minimap"]
+    },
+    "radar_objective": {
+      "name": "Radar Objective",
+      "file": "rpg/radar_objective.lua",
+      "description": "Adds objective markers to the radar system with configurable colors and completion behavior. Attach to entities to create radar objectives that can be tracked, completed, and optionally hidden or destroyed upon player interaction.",
+      "properties": [
+        {
+          "name": "Colour",
+          "type": "dropdown",
+          "default": "Red",
+          "options": ["Red", "Blue", "Green", "Yellow", "White", "Purple", "Orange"],
+          "description": "Color of the objective marker on the radar display"
+        },
+        {
+          "name": "Hide",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to hide the objective marker after completion"
+        },
+        {
+          "name": "Destroy",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to destroy the entity after objective completion"
+        }
+      ],
+      "features": [
+        "Radar marker integration with main radar system",
+        "Seven color options for objective differentiation",
+        "Proximity-based objective completion detection",
+        "Configurable completion behavior (hide or destroy)",
+        "Automatic objective name tracking",
+        "Player notification system with sound effects",
+        "High health entity protection (30000 HP)",
+        "Memory efficient objective management",
+        "Real-time objective status tracking",
+        "Seamless integration with radar.lua system",
+        "Objective completion state persistence",
+        "Automatic cleanup of completed objectives"
+      ],
+      "keywords": ["radar", "objective", "marker", "tracking", "mission", "quest", "target", "color", "completion", "proximity"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Ensure radar.lua is active in your scene",
+          "Create an entity to serve as the objective",
+          "Attach the radar_objective behavior to the entity",
+          "Configure Colour for desired marker appearance",
+          "Set Hide option if you want markers to disappear after completion",
+          "Set Destroy option if you want entities destroyed after completion",
+          "Test player proximity to objective (150 unit range)",
+          "Verify radar marker appears with correct color",
+          "Test objective completion and notification system",
+          "Check that completion behavior works as configured",
+          "Add multiple objectives with different colors",
+          "Verify all objectives track independently"
+        ]
+      },
+      "relatedBehaviors": ["radar", "objective_system", "quest_system", "proximity_detection", "notification_system"]
+    },
+    "crosshair": {
+      "name": "Adaptive Crosshair",
+      "file": "rpg/crosshair.lua",
+      "description": "An adaptive crosshair and hitmarker system that changes color based on target allegiance and provides visual feedback when firing. Features configurable view range, weapon activation, and highlighting options for enhanced gameplay feedback.",
+      "properties": [
+        {
+          "name": "VIEW_RANGE",
+          "type": "number",
+          "range": "0-3000",
+          "default": 1000,
+          "description": "Maximum range for crosshair highlighting and target detection"
+        },
+        {
+          "name": "CROSSHAIR_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\crosshairs\\crosshair.dds",
+          "description": "Path to the crosshair image file (DDS format recommended)"
+        },
+        {
+          "name": "HITMARKER_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\crosshairs\\hitmarker.dds",
+          "description": "Path to the hitmarker image file (DDS format recommended)"
+        },
+        {
+          "name": "HIGHLIGHTER",
+          "type": "boolean",
+          "default": false,
+          "description": "Enable active highlighting that changes crosshair color based on target allegiance"
+        },
+        {
+          "name": "WEAPON_ACTIVE",
+          "type": "boolean",
+          "default": false,
+          "description": "Only show crosshair when player has a weapon equipped"
+        }
+      ],
+      "features": [
+        "Adaptive crosshair color system based on target allegiance",
+        "Real-time hitmarker feedback with fade effect",
+        "Configurable view range for target detection",
+        "Weapon-based crosshair visibility control",
+        "Allegiance-based color coding (red=enemy, green=ally, cyan=neutral)",
+        "Automatic sprite positioning and sizing",
+        "Performance optimized with update throttling",
+        "Customizable crosshair and hitmarker images",
+        "Fade-out hitmarker animation system",
+        "Player weapon state integration",
+        "Distance-based target detection",
+        "Memory efficient sprite management",
+        "Automatic entity filtering and tracking",
+        "Smooth visual feedback system"
+      ],
+      "keywords": ["crosshair", "hitmarker", "hud", "targeting", "weapon", "allegiance", "feedback", "visual", "aiming", "firing"],
+      "tutorial": {
+        "videoId": "C5IfgavDVhw",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the crosshair behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the crosshair behavior",
+          "Configure VIEW_RANGE for target detection distance",
+          "Set CROSSHAIR_IMAGEFILE path to your crosshair image",
+          "Set HITMARKER_IMAGEFILE path to your hitmarker image",
+          "Enable HIGHLIGHTER for adaptive color changes",
+          "Enable WEAPON_ACTIVE if you want weapon-only display",
+          "Test crosshair appearance and positioning",
+          "Verify color changes based on target allegiance",
+          "Test hitmarker feedback when firing",
+          "Adjust view range and settings as needed",
+          "Ensure proper image file paths and formats"
+        ]
+      },
+      "relatedBehaviors": ["weapon_system", "hud_interface", "targeting_system", "visual_feedback", "allegiance_system"]
+    },
+    "gasmask": {
+      "name": "Gas Mask",
+      "file": "rpg/gasmask.lua",
+      "description": "A comprehensive gas mask system that provides protection against toxic environments. Features pickup mechanics, wearable functionality, screen overlay effects, and integration with toxic zones for immersive survival gameplay.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when player is in range to pick up the gas mask"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 80,
+          "description": "Distance at which the player can pick up the gas mask"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "G to wear, Q to remove",
+          "description": "Text displayed after pickup showing how to use the gas mask"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\gasmask.png",
+          "description": "Path to the gas mask screen overlay image"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts. Local = near object, Screen = center screen"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting style for the gas mask object"
+        }
+      ],
+      "features": [
+        "Interactive pickup system with proximity detection",
+        "Wearable gas mask with toggle functionality (G to wear, Q to remove)",
+        "Screen overlay effect when gas mask is worn",
+        "Toxic zone protection integration",
+        "Health preservation system in toxic environments",
+        "Sound effects for pickup, wear, and breathing",
+        "Configurable prompt display locations",
+        "Item highlighting and selection system",
+        "Logic connection support for game events",
+        "Collectible item integration",
+        "Automatic health restoration in toxic zones",
+        "Breathing sound loop when mask is worn",
+        "Memory efficient sprite management",
+        "Player health state monitoring"
+      ],
+      "keywords": ["gasmask", "protection", "toxic", "survival", "pickup", "wearable", "overlay", "health", "breathing", "environment"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to represent the gas mask",
+          "Set AlwaysActive to ON for the object",
+          "Attach the gasmask behavior",
+          "Configure PICKUP_TEXT and PICKUP_RANGE",
+          "Set USEAGE_TEXT for player instructions",
+          "Configure IMAGEFILE path for screen overlay",
+          "Choose PROMPT_DISPLAY location preference",
+          "Set ITEM_HIGHLIGHT style if desired",
+          "Add sound effects to Sound0 and Sound1 slots",
+          "Test pickup functionality within range",
+          "Verify gas mask wear/remove controls (G/Q)",
+          "Test screen overlay when mask is worn",
+          "Create toxic zones to test protection",
+          "Verify health preservation in toxic areas"
+        ]
+      },
+      "relatedBehaviors": ["toxic_zone", "health_system", "pickup_system", "survival_system", "environmental_hazard"]
+    },
+    "navbar": {
+      "name": "Navigation Bar",
+      "file": "rpg/navbar.lua",
+      "description": "A comprehensive navigation bar system that displays objectives, compass directions, and quest information. Features configurable positioning, compass display, objective tracking, and integration with quest systems for enhanced navigation gameplay.",
+      "properties": [
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\navbar\\navbar.png",
+          "description": "Path to the navigation bar background image"
+        },
+        {
+          "name": "VIEWRANGE",
+          "type": "number",
+          "default": 6000,
+          "description": "Maximum range for displaying objectives on the navigation bar"
+        },
+        {
+          "name": "WIDTH",
+          "type": "number",
+          "range": "1-100",
+          "default": 15,
+          "description": "Width of the navigation bar on screen (1 to 100 units)"
+        },
+        {
+          "name": "HEIGHT",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Height of the navigation bar on screen (1 to 100 units)"
+        },
+        {
+          "name": "POSITION_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Horizontal position of navigation bar on screen (0 to 100, percentage)"
+        },
+        {
+          "name": "POSITION_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 15,
+          "description": "Vertical position of navigation bar on screen (0 to 100, percentage)"
+        },
+        {
+          "name": "ICON_WIDTH",
+          "type": "number",
+          "range": "0.1-100.0",
+          "default": 1.0,
+          "description": "Width of objective icons on the navigation bar"
+        },
+        {
+          "name": "ICON_HEIGHT",
+          "type": "number",
+          "range": "0.1-100.0",
+          "default": 3.0,
+          "description": "Height of objective icons on the navigation bar"
+        },
+        {
+          "name": "ICON_POSITION_Y",
+          "type": "number",
+          "range": "-5.0-5.0",
+          "default": -0.5,
+          "description": "Vertical offset for objective icons on the navigation bar"
+        },
+        {
+          "name": "COMPASS_MODE",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Enable or disable compass display on the navigation bar"
+        },
+        {
+          "name": "COMPASS_Y",
+          "type": "number",
+          "range": "-2.0-2.0",
+          "default": 0.0,
+          "description": "Vertical offset for compass text on the navigation bar"
+        },
+        {
+          "name": "COMPASS_VIEW",
+          "type": "number",
+          "range": "91-182",
+          "default": 91,
+          "description": "Width of compass view in degrees (91 to 182)"
+        },
+        {
+          "name": "COMPASS_R",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Red color value for compass text (0 to 255)"
+        },
+        {
+          "name": "COMPASS_G",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Green color value for compass text (0 to 255)"
+        },
+        {
+          "name": "COMPASS_B",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Blue color value for compass text (0 to 255)"
+        },
+        {
+          "name": "COMPASS_FONT_SIZE",
+          "type": "number",
+          "range": "1-5",
+          "default": 2,
+          "description": "Font size for compass text (1 to 5)"
+        },
+        {
+          "name": "OBJECTIVE_DATA",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Enable or disable objective information display"
+        },
+        {
+          "name": "COMPASS_SPACER",
+          "type": "string",
+          "default": ".",
+          "description": "Character used as spacer in compass display"
+        }
+      ],
+      "features": [
+        "Comprehensive navigation bar with compass display",
+        "Objective tracking and positioning system",
+        "Quest integration with automatic quest marker display",
+        "Configurable bar size, position, and appearance",
+        "Dynamic icon scaling based on distance",
+        "Compass with customizable colors and font size",
+        "Objective information display with distance and elevation",
+        "HUD visibility control integration",
+        "Automatic objective addition and removal",
+        "Player-relative positioning system",
+        "Memory efficient sprite management",
+        "Performance optimized with update throttling",
+        "Integration with navbar_objective.lua system",
+        "Quest system integration with global variables"
+      ],
+      "keywords": ["navbar", "navigation", "compass", "objective", "quest", "hud", "direction", "tracking", "position", "interface"],
+      "tutorial": {
+        "videoId": "KIi3SfFbn6w",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to attach the navbar behavior to",
+          "Set AlwaysActive to ON for the object",
+          "Attach the navbar behavior",
+          "Configure IMAGEFILE path for navigation bar background",
+          "Set WIDTH and HEIGHT for desired bar size",
+          "Position bar with POSITION_X and POSITION_Y",
+          "Configure ICON settings for objective markers",
+          "Enable COMPASS_MODE and adjust compass settings",
+          "Set OBJECTIVE_DATA to On for information display",
+          "Add navbar_objective.lua to entities for objectives",
+          "Test compass functionality and direction display",
+          "Verify objective markers appear and track correctly",
+          "Test quest integration with global variables",
+          "Adjust settings for optimal navigation experience"
+        ]
+      },
+      "relatedBehaviors": ["navbar_objective", "quest_system", "compass_system", "hud_interface", "objective_tracking"]
+    },
+    "navbar_objective": {
+      "name": "Navigation Bar Objective",
+      "file": "rpg/navbar_objective.lua",
+      "description": "Adds objective markers to the navigation bar system with configurable icons, proximity behavior, and entity tracking. Attach to entities to create navigation objectives that can be tracked, triggered, and optionally removed or destroyed upon player interaction.",
+      "properties": [
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\navbar\\objective.png",
+          "description": "Path to the objective icon image for the navigation bar"
+        },
+        {
+          "name": "FIXEDSIZE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to use fixed size icons (true) or scale with distance (false)"
+        },
+        {
+          "name": "IGNORERANGE",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to show the objective even when out of navigation bar range"
+        },
+        {
+          "name": "PROXIMITY_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which proximity actions are triggered"
+        },
+        {
+          "name": "WHEN_IN_PROXIMITY",
+          "type": "dropdown",
+          "default": "Do Nothing",
+          "options": ["Do Nothing", "Remove Marker", "Trigger + Remove Marker", "Destroy Entity"],
+          "description": "Action to take when player enters proximity range"
+        },
+        {
+          "name": "ENTITY_TYPE",
+          "type": "dropdown",
+          "default": "This Entity",
+          "options": ["This Entity", "Named Entity"],
+          "description": "Whether to track this entity or a named entity"
+        },
+        {
+          "name": "ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the entity to track (only used when ENTITY_TYPE is Named Entity)"
+        }
+      ],
+      "features": [
+        "Navigation bar marker integration with main navbar system",
+        "Configurable objective icons with custom images",
+        "Proximity-based trigger system with multiple actions",
+        "Flexible entity tracking (self or named entities)",
+        "Distance-based icon scaling (optional)",
+        "Range-independent display option",
+        "Logic connection support for proximity triggers",
+        "Automatic marker removal and cleanup",
+        "Entity health monitoring and automatic removal",
+        "Seamless integration with navbar.lua system",
+        "Memory efficient sprite management",
+        "Real-time entity tracking and positioning",
+        "Automatic entity discovery for named entities",
+        "Performance optimized with update throttling"
+      ],
+      "keywords": ["navbar", "objective", "navigation", "marker", "proximity", "tracking", "trigger", "entity", "icon", "distance"],
+      "tutorial": {
+        "videoId": "KIi3SfFbn6w",
+        "timestamp": "0:00",
+        "steps": [
+          "Ensure navbar.lua is active in your scene",
+          "Create an entity to serve as the objective",
+          "Attach the navbar_objective behavior to the entity",
+          "Configure IMAGEFILE path for objective icon",
+          "Set FIXEDSIZE for desired icon scaling behavior",
+          "Configure IGNORERANGE if you want out-of-range display",
+          "Set PROXIMITY_RANGE for trigger distance",
+          "Choose WHEN_IN_PROXIMITY action preference",
+          "Select ENTITY_TYPE (This Entity or Named Entity)",
+          "Set ENTITY_NAME if using Named Entity type",
+          "Test navigation bar marker appearance",
+          "Verify proximity triggers work correctly",
+          "Test entity tracking and positioning",
+          "Verify automatic cleanup and removal",
+          "Add multiple objectives with different settings"
+        ]
+      },
+      "relatedBehaviors": ["navbar", "objective_system", "proximity_detection", "entity_tracking", "navigation_system"]
+    } 
   }
 } 
