@@ -3060,6 +3060,295 @@
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["texture_control", "emission_control", "trigger_system"]
+    },
+    "spin": {
+      "name": "Spin",
+      "file": "objects/spin.lua",
+      "description": "Creates continuous rotation for objects on selected axes with configurable speed and direction. Features variable switch integration for dynamic speed control and collision management during rotation.",
+      "properties": [
+        {
+          "name": "SpinSpeed",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Speed of rotation. Higher values create faster spinning motion."
+        },
+        {
+          "name": "AntiClockwise",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rotate counterclockwise. When false, rotates clockwise."
+        },
+        {
+          "name": "x_axis",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rotate around the X axis (pitch)."
+        },
+        {
+          "name": "y_axis",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to rotate around the Y axis (yaw)."
+        },
+        {
+          "name": "z_axis",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rotate around the Z axis (roll)."
+        },
+        {
+          "name": "USE_VARIABLE_SWITCH",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to use a variable switch for dynamic speed control. Yes = speed controlled by global variable, No = uses fixed SpinSpeed value."
+        },
+        {
+          "name": "VARIABLE_SWITCH_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the user global variable to control spin speed (e.g., Variable_Switch1). Only used when USE_VARIABLE_SWITCH is set to Yes."
+        }
+      ],
+      "features": [
+        "Continuous rotation on multiple axes",
+        "Configurable rotation speed and direction",
+        "Variable switch integration for dynamic speed control",
+        "Collision management during rotation",
+        "Multiple axis selection (X, Y, Z)",
+        "Clockwise and counterclockwise rotation",
+        "Real-time speed adjustment via global variables",
+        "Smooth animation integration",
+        "Always active rotation system",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["spin", "rotate", "rotation", "axis", "speed", "clockwise", "counterclockwise", "animation", "motion", "dynamic"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to spin",
+          "Attach the spin behavior",
+          "Configure rotation speed and direction",
+          "Select which axes to rotate around",
+          "Set up variable switch if needed",
+          "Configure global variable for dynamic speed",
+          "Test rotation functionality",
+          "Adjust speed and direction as needed"
+        ]
+      },
+      "relatedBehaviors": ["rotate", "animation_controller", "motion_control", "variable_switch"]
+    },
+    "spinner": {
+      "name": "Spinner",
+      "file": "objects/spinner.lua",
+      "description": "Creates an activatable spinning object with acceleration and deceleration. Features configurable speed, direction, axis selection, and damage capabilities when spinning at high speeds. Perfect for creating dangerous rotating machinery or puzzle elements.",
+      "properties": [
+        {
+          "name": "Acceleration",
+          "type": "number",
+          "range": "0.01-5.00",
+          "default": 0.01,
+          "description": "Rate at which the spinner accelerates to maximum speed. Higher values create faster acceleration."
+        },
+        {
+          "name": "MaxSpinSpeed",
+          "type": "number",
+          "range": "1-1000",
+          "default": 10,
+          "description": "Maximum rotation speed when fully activated. Higher values create faster spinning motion."
+        },
+        {
+          "name": "AntiClockwise",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rotate counterclockwise. When false, rotates clockwise."
+        },
+        {
+          "name": "x_axis",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rotate around the X axis (pitch)."
+        },
+        {
+          "name": "y_axis",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to rotate around the Y axis (yaw)."
+        },
+        {
+          "name": "z_axis",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to rotate around the Z axis (roll)."
+        },
+        {
+          "name": "DamageRange",
+          "type": "number",
+          "range": "1-1000",
+          "default": 1,
+          "description": "Distance at which the spinning object can damage the player. Only causes damage when spinning at half speed or higher."
+        }
+      ],
+      "features": [
+        "Activatable spinning with acceleration and deceleration",
+        "Configurable maximum speed and acceleration rate",
+        "Multiple axis selection (X, Y, Z)",
+        "Clockwise and counterclockwise rotation",
+        "Player damage system when spinning at high speeds",
+        "Smooth acceleration and deceleration curves",
+        "Collision management during rotation",
+        "Switch or zone activation system",
+        "Physics-based rotation with gravity support",
+        "Damage range configuration for safety zones",
+        "Automatic deceleration when deactivated",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["spinner", "rotate", "acceleration", "deceleration", "damage", "machinery", "puzzle", "activation", "speed", "axis"],
+      "tutorial": {
+        "videoId": "BKeDIElV2mc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spinner object",
+          "Set Physics to ON, Gravity to ON, IsImmobile to YES",
+          "Attach the spinner behavior",
+          "Configure acceleration and maximum speed",
+          "Select rotation direction and axes",
+          "Set damage range for player safety",
+          "Connect to switch or zone for activation",
+          "Test acceleration and deceleration",
+          "Verify damage system functionality"
+        ]
+      },
+      "relatedBehaviors": ["spin", "rotate", "damage_zone", "activation_switch", "machinery"]
+    },
+    "swap": {
+      "name": "Swap",
+      "file": "objects/swap.lua",
+      "description": "Creates a system that swaps objects in and out of the game world. Hides all objects with one name and replaces them with objects of another name, maintaining position and rotation. Features navmesh blocking and NPC handling.",
+      "properties": [
+        {
+          "name": "OBJECT_NAME1",
+          "type": "string",
+          "default": "",
+          "description": "Name of the objects to swap out (hide). All objects with this exact name will be hidden when activated."
+        },
+        {
+          "name": "OBJECT_NAME2",
+          "type": "string",
+          "default": "",
+          "description": "Name of the objects to swap in (show). All objects with this exact name will be spawned and shown when activated."
+        },
+        {
+          "name": "NAVMESH_BLOCK",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to create navmesh blockers for swapped objects. Enables AI pathfinding around the swapped objects."
+        }
+      ],
+      "features": [
+        "Object swapping system with position and rotation preservation",
+        "Bidirectional swapping (can swap back and forth)",
+        "Navmesh blocking for AI pathfinding",
+        "NPC handling with single-swap limitation",
+        "Sound effect integration for swap events",
+        "Collision management during swaps",
+        "Switch or zone activation system",
+        "Automatic position and rotation transfer",
+        "Health-based object filtering",
+        "Case-insensitive object name matching",
+        "Logic connection triggers for game events",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["swap", "exchange", "replace", "hide", "show", "spawn", "object", "navmesh", "npc", "activation"],
+      "tutorial": {
+        "videoId": "jOE6gm1egAQ",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a swap controller object",
+          "Set Physics to ON",
+          "Attach the swap behavior",
+          "Set OBJECT_NAME1 to the objects to hide",
+          "Set OBJECT_NAME2 to the objects to show",
+          "Configure navmesh blocking if needed",
+          "Add swap sound to Sound0",
+          "Connect to switch or zone for activation",
+          "Test object swapping functionality",
+          "Verify position and rotation preservation"
+        ]
+      },
+      "relatedBehaviors": ["hideshow", "spawn_system", "navblocker", "activation_switch", "object_manager"]
+    },
+    "swapper": {
+      "name": "Swapper",
+      "file": "objects/swapper.lua",
+      "description": "Creates a one-time use object swapper that exchanges objects when activated by key press. Hides and destroys objects with one name and spawns objects with another name. Features interaction prompts and navmesh blocking.",
+      "properties": [
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 80,
+          "description": "Distance at which the player can interact with the swapper object."
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "X to Use",
+          "description": "Text displayed when player can interact with the swapper. Shows the key to press for activation."
+        },
+        {
+          "name": "OBJECT_NAME1",
+          "type": "string",
+          "default": "",
+          "description": "Name of the objects to swap out (hide and destroy). All objects with this exact name will be removed when activated."
+        },
+        {
+          "name": "OBJECT_NAME2",
+          "type": "string",
+          "default": "",
+          "description": "Name of the objects to swap in (spawn and show). All objects with this exact name will be created when activated."
+        },
+        {
+          "name": "NAVMESH_BLOCK",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to create navmesh blockers for swapped objects. Enables AI pathfinding around the new objects."
+        }
+      ],
+      "features": [
+        "One-time use object swapping system",
+        "Key-based activation with interaction prompts",
+        "Object destruction and spawning",
+        "Navmesh blocking for AI pathfinding",
+        "Sound effect integration for swap events",
+        "Collision management during swaps",
+        "Logic connection triggers for game events",
+        "Automatic self-destruction after use",
+        "Case-insensitive object name matching",
+        "Player proximity detection",
+        "Line-of-sight interaction requirement",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["swapper", "one-time", "exchange", "replace", "destroy", "spawn", "object", "navmesh", "interaction", "key"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a swapper object",
+          "Set Physics to ON",
+          "Attach the swapper behavior",
+          "Configure interaction range and prompt",
+          "Set OBJECT_NAME1 to the objects to remove",
+          "Set OBJECT_NAME2 to the objects to spawn",
+          "Configure navmesh blocking if needed",
+          "Add swap sound to Sound0",
+          "Test interaction and swapping functionality",
+          "Verify object destruction and spawning"
+        ]
+      },
+      "relatedBehaviors": ["swap", "hideshow", "spawn_system", "navblocker", "interactive_object"]
     }
   }
 } 

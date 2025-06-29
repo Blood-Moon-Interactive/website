@@ -1990,6 +1990,324 @@
         ]
       },
       "relatedBehaviors": ["health_system", "time_system", "save_system", "player_stats"]
+    },
+    "target": {
+      "name": "Target",
+      "file": "objects/target.lua",
+      "description": "Creates interactive shooting targets with multiple types and behaviors. Features stationary, moving, spinning, flying, breakable, and scenery targets with configurable scoring, reset times, and trigger actions. Perfect for shooting ranges and combat training scenarios.",
+      "properties": [
+        {
+          "name": "HIT_TEXT",
+          "type": "string",
+          "default": "Target Hit",
+          "description": "Text displayed when the target is hit by the player."
+        },
+        {
+          "name": "TARGET_TYPE",
+          "type": "dropdown",
+          "default": "Stationary",
+          "options": ["Stationary", "Moving", "Spinning", "Random Flying", "Breakable", "Scenery"],
+          "description": "Type of target behavior. Stationary = static target, Moving = travels along path, Spinning = rotates continuously, Random Flying = flies randomly, Breakable = breaks when hit, Scenery = decorative target."
+        },
+        {
+          "name": "TARGET_MOVE_X",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Distance the target moves along the X axis. Only used for Moving targets."
+        },
+        {
+          "name": "TARGET_MOVE_Y",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Distance the target moves along the Y axis. Only used for Moving targets."
+        },
+        {
+          "name": "TARGET_MOVE_Z",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Distance the target moves along the Z axis. Only used for Moving targets."
+        },
+        {
+          "name": "TARGET_MOVE_SPEED",
+          "type": "number",
+          "range": "0.0-2.0",
+          "default": 0.50,
+          "description": "Speed at which the target moves. Higher values create faster movement."
+        },
+        {
+          "name": "TARGET_RESET",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Time in seconds before the target resets after being hit. Set to 0 for no reset."
+        },
+        {
+          "name": "TARGET_TRIGGER",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No", "Lose Game", "Win Game"],
+          "description": "Action to perform when target is hit. Yes = trigger logic connections, No = no action, Lose Game = end game in defeat, Win Game = end game in victory."
+        },
+        {
+          "name": "TARGET_POINTS",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Number of points awarded or deducted when target is hit."
+        },
+        {
+          "name": "POINTS_ISSUANCE",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct points when target is hit."
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyPointTally",
+          "description": "Name of the user global variable to modify with points (e.g., MyPointTally)."
+        },
+        {
+          "name": "TARGET_MOVE_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Delay in seconds before moving targets start moving."
+        },
+        {
+          "name": "TARGET_FACING",
+          "type": "dropdown",
+          "default": "Fixed",
+          "options": ["Fixed", "Random"],
+          "description": "How the target faces when reset. Fixed = same direction, Random = random direction."
+        },
+        {
+          "name": "TARGET_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "AnimSetList"],
+          "description": "Animation to play when target is hit. Only used for Breakable targets."
+        },
+        {
+          "name": "SENSE_RANGE",
+          "type": "number",
+          "range": "0-200",
+          "default": 80,
+          "description": "Range at which the target can detect nearby entities. Set to 0 to disable. When entities enter range, target automatically triggers."
+        }
+      ],
+      "features": [
+        "Six different target types with unique behaviors",
+        "Configurable movement patterns and speeds",
+        "Point scoring system with global variable integration",
+        "Automatic reset timers with customizable delays",
+        "Multiple trigger actions including game win/lose",
+        "Sound effects for hit, reset, moving, and trigger events",
+        "Random facing options for increased challenge",
+        "Entity detection and automatic triggering",
+        "Animation support for breakable targets",
+        "Collision and physics management",
+        "Logic connection triggers for game events",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["target", "shooting", "range", "points", "scoring", "moving", "spinning", "flying", "breakable", "reset", "trigger"],
+      "tutorial": {
+        "videoId": "4WlZcWdS_C0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a target object",
+          "Set AlwaysActive to ON, IsImmobile to YES",
+          "Attach the target behavior",
+          "Choose target type and configure movement",
+          "Set up scoring system and global variables",
+          "Configure reset times and trigger actions",
+          "Add hit sound to Sound0",
+          "Add reset sound to Sound1",
+          "Add moving sound to Sound2",
+          "Add trigger sound to Sound3",
+          "Test target functionality and scoring"
+        ]
+      },
+      "relatedBehaviors": ["shooting_range", "scoring_system", "moving_object", "breakable_object", "trigger_zone"]
+    },
+    "target_dummy": {
+      "name": "Target Dummy",
+      "file": "objects/target_dummy.lua",
+      "description": "Creates a target dummy that responds to being shot with various movement and rotation behaviors. Features flip, rotate, side movement, and vertical movement with hide options. Perfect for shooting practice and combat training scenarios.",
+      "properties": [
+        {
+          "name": "HIT_TEXT",
+          "type": "string",
+          "default": "Target Hit",
+          "description": "Text displayed when the target dummy is hit by the player."
+        },
+        {
+          "name": "TARGET_TYPE",
+          "type": "dropdown",
+          "default": "Flip",
+          "options": ["Flip", "Rotate", "Side Move+Flip", "Vertical Move+Hide"],
+          "description": "Type of target dummy behavior. Flip = rotates 90 degrees, Rotate = rotates -90 degrees, Side Move+Flip = moves sideways then flips, Vertical Move+Hide = moves up then hides."
+        },
+        {
+          "name": "TARGET_MOVE_DISTANCE",
+          "type": "number",
+          "range": "0-500",
+          "default": 250,
+          "description": "Distance the target dummy moves when using movement types. Higher values create longer movement paths."
+        },
+        {
+          "name": "TARGET_MOVE_SPEED",
+          "type": "number",
+          "range": "0.0-2.0",
+          "default": 0.50,
+          "description": "Speed at which the target dummy moves. Higher values create faster movement."
+        },
+        {
+          "name": "TARGET_RESET",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Time in seconds before the target dummy resets after being hit. Set to 0 for no reset."
+        },
+        {
+          "name": "TARGET_TRIGGER",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to trigger logic connections when the target dummy is hit. Yes = trigger connections, No = no action."
+        }
+      ],
+      "features": [
+        "Four different target dummy behaviors with unique responses",
+        "Configurable movement distances and speeds",
+        "Automatic reset timers with customizable delays",
+        "Logic connection triggers for game events",
+        "Sound effects for hit, reset, and moving events",
+        "Collision management during movement",
+        "Position and rotation preservation for accurate resets",
+        "Health-based hit detection system",
+        "Smooth movement animations",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["target", "dummy", "shooting", "practice", "flip", "rotate", "move", "hide", "reset", "training"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a target dummy object",
+          "Set AlwaysActive to ON, IsImmobile to YES",
+          "Attach the target_dummy behavior",
+          "Choose target type and configure movement",
+          "Set up movement distance and speed",
+          "Configure reset times and trigger actions",
+          "Add hit sound to Sound0",
+          "Add reset sound to Sound1",
+          "Add moving sound to Sound2",
+          "Test target dummy functionality and responses"
+        ]
+      },
+      "relatedBehaviors": ["target", "shooting_range", "moving_object", "trigger_zone", "training_dummy"]
+    },
+    "zipline": {
+      "name": "Zipline",
+      "file": "objects/zipline.lua",
+      "description": "Creates a zipline system between two anchor points. Features configurable travel types, speeds, release mechanisms, and visual zipline objects. Perfect for creating transportation systems and traversal mechanics.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed when player can interact with the zipline anchor."
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-300",
+          "default": 100,
+          "description": "Distance at which the player can interact with the zipline anchor."
+        },
+        {
+          "name": "ZIP_TYPE",
+          "type": "dropdown",
+          "default": "Two Way Travel",
+          "options": ["High to Low Travel", "Two Way Travel"],
+          "description": "Type of zipline travel. High to Low = only travel from higher to lower anchor, Two Way = travel in both directions."
+        },
+        {
+          "name": "ZIP_SPEED",
+          "type": "number",
+          "range": "0.01-2.00",
+          "default": 0.10,
+          "description": "Speed at which the player travels along the zipline. Higher values create faster travel."
+        },
+        {
+          "name": "ZIP_RELEASE",
+          "type": "dropdown",
+          "default": "Auto Release",
+          "options": ["Manual Release", "Auto Release"],
+          "description": "How the player releases from the zipline. Manual Release = press Q to release, Auto Release = automatic release at destination."
+        },
+        {
+          "name": "ZIP_RELEASE_TEXT",
+          "type": "string",
+          "default": "Q to release",
+          "description": "Text displayed during manual release mode. Shows the key to press for release."
+        },
+        {
+          "name": "ZIPLINE_OBJECT",
+          "type": "string",
+          "default": "",
+          "description": "Name of the zipline visual object (e.g., zipline). This object will be scaled and positioned to create the visible zipline line."
+        },
+        {
+          "name": "ANCHOR_STATE",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": ["Visible", "Invisible"],
+          "description": "Whether the zipline anchors are visible. Invisible anchors are hidden but still functional."
+        },
+        {
+          "name": "RELEASE_ADJUSTMENT",
+          "type": "number",
+          "range": "0.10-3.00",
+          "default": 0.10,
+          "description": "Adjustment factor for automatic release distance. Higher values release the player further from the destination."
+        }
+      ],
+      "features": [
+        "Dual anchor zipline system with automatic connection",
+        "Configurable travel types and speeds",
+        "Manual and automatic release mechanisms",
+        "Visual zipline object scaling and positioning",
+        "Smooth player transportation along zipline",
+        "Height-based travel restrictions",
+        "Sound effects for zipline travel",
+        "Anchor visibility control",
+        "Automatic zipline line creation",
+        "Collision management during travel",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["zipline", "transport", "travel", "anchor", "cable", "transportation", "traversal", "movement", "speed"],
+      "tutorial": {
+        "videoId": "81j6gbw_aQU",
+        "timestamp": "0:00",
+        "steps": [
+          "Create two zipline anchor objects with the same name",
+          "Set both anchors to Physics=ON, IsImmobile=YES, AlwaysActive=ON",
+          "Create a zipline visual object with a unique name",
+          "Attach the zipline behavior to both anchors",
+          "Configure travel type and speed settings",
+          "Set up release mechanism preferences",
+          "Enter the zipline object name in the behavior",
+          "Add zipline travel sound to Sound0",
+          "Test zipline functionality between anchors"
+        ]
+      },
+      "relatedBehaviors": ["transport", "moving_object", "anchor_system", "cable_system", "travel_system"]
     }
   }
 } 

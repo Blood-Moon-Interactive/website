@@ -25,7 +25,7 @@
       ],
       "keywords": ["bird", "flying", "perch", "animal", "movement", "ai"],
       "tutorial": {
-        "videoId": "Jr3-XsVSRHA",
+        "videoId": "AolLBdwZZ24",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["flying_insect", "mammal_generic"]
@@ -77,7 +77,7 @@
       ],
       "keywords": ["insect", "flying", "butterfly", "bee", "wasp", "dragonfly", "ai"],
       "tutorial": {
-        "videoId": "Jr3-XsVSRHA",
+        "videoId": "AolLBdwZZ24",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["bird", "crawling_insect"]
@@ -105,7 +105,7 @@
       ],
       "keywords": ["mammal", "movement", "ai"],
       "tutorial": {
-        "videoId": "Jr3-XsVSRHA",
+        "videoId": "AolLBdwZZ24",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["bird", "flying_insect"]
@@ -135,7 +135,7 @@
       ],
       "keywords": ["fish", "swimming", "movement", "ai"],
       "tutorial": {
-        "videoId": "Jr3-XsVSRHA",
+        "videoId": "AolLBdwZZ24",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["bird", "flying_insect"]
@@ -164,7 +164,7 @@
       ],
       "keywords": ["insect", "crawling", "movement", "ai"],
       "tutorial": {
-        "videoId": "Jr3-XsVSRHA",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["flying_insect", "mammal_generic"]

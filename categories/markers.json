@@ -2318,6 +2318,175 @@
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["envirozone", "fadezone", "gravity_zone", "toxiczone", "hostile_zone"]
+    },
+    "videoscene": {
+      "name": "Video Scene",
+      "file": "objects/videoscene.lua",
+      "description": "Triggers video playback from trigger zones or switches. Features skip control, HUD management, and automatic cleanup. Perfect for creating cutscenes, tutorials, and interactive video content in games.",
+      "properties": [
+        {
+          "name": "ALLOW_SKIP",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether players can skip the video. Yes = allows skipping, No = video must be watched completely."
+        }
+      ],
+      "features": [
+        "Trigger-based video playback",
+        "Configurable skip functionality",
+        "Automatic HUD hiding during playback",
+        "Radar sprite management",
+        "Logic connection triggers after completion",
+        "Automatic cleanup and reset",
+        "Video slot integration",
+        "Seamless transition handling",
+        "Activation state management",
+        "Compatible with trigger zones and switches"
+      ],
+      "keywords": ["video", "scene", "cutscene", "playback", "trigger", "skip", "hud", "radar", "tutorial", "cinematic"],
+      "tutorial": {
+        "videoId": "fLI4FhASNzM",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a video scene object",
+          "Attach the videoscene behavior",
+          "Configure skip settings",
+          "Set up video slot with your video file",
+          "Connect to trigger zone or switch",
+          "Configure logic connections for post-video actions",
+          "Test video playback and skip functionality",
+          "Verify HUD and radar behavior during playback"
+        ]
+      },
+      "relatedBehaviors": ["trigger_zone", "switch_system", "video_player", "cutscene_controller", "hud_manager"]
+    },
+    "imagepanel": {
+      "name": "Image Panel",
+      "file": "puzzle/imagepanel.lua",
+      "description": "Creates an interactive image display system with multiple overlays and timed animations. Features configurable image sets, overlay sequences, timing controls, and multiple activation methods. Perfect for storytelling, tutorials, cutscenes, and interactive displays.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "0 to 100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the image panel"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed when player can interact with the image panel"
+        },
+        {
+          "name": "POSITION_X",
+          "type": "number",
+          "range": "0 to 100",
+          "default": 50,
+          "description": "X position of the image panel on screen"
+        },
+        {
+          "name": "POSITION_Y",
+          "type": "number",
+          "range": "0 to 100",
+          "default": 50,
+          "description": "Y position of the image panel on screen"
+        },
+        {
+          "name": "SCALE",
+          "type": "number",
+          "range": "1 to 100",
+          "default": 50,
+          "description": "Scale/size of the image panel display"
+        },
+        {
+          "name": "ASPECT_RATIO",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to maintain aspect ratio (On = preserve ratio, Off = stretch to fit)"
+        },
+        {
+          "name": "OVERLAYS",
+          "type": "number",
+          "range": "1 to 8",
+          "default": 3,
+          "description": "Number of overlay images to display in sequence"
+        },
+        {
+          "name": "OVERLAY_TIME",
+          "type": "number",
+          "range": "0.1 to 10.0",
+          "default": 2.0,
+          "description": "Time in seconds between each overlay appearance"
+        },
+        {
+          "name": "DISPLAY_TIME",
+          "type": "number",
+          "range": "0.1 to 100.0",
+          "default": 5.0,
+          "description": "Total time in seconds the image panel is displayed"
+        },
+        {
+          "name": "IMAGE_BASE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\",
+          "description": "Base path for image files"
+        },
+        {
+          "name": "IMAGE_SET",
+          "type": "string",
+          "default": "set1",
+          "description": "Name of the image set folder containing panel and overlay images"
+        },
+        {
+          "name": "REVIEWABLE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the image panel can be reviewed/replayed (Yes = can be replayed, No = one-time display)"
+        }
+      ],
+      "features": [
+        "Multi-overlay image display system",
+        "Timed overlay sequence animations",
+        "Configurable image positioning and scaling",
+        "Aspect ratio preservation options",
+        "Multiple activation methods (E key, trigger zones, switches)",
+        "Sound effects for overlays and voice-overs",
+        "Automatic sprite cleanup after display",
+        "Reviewable/replayable functionality",
+        "Customizable image sets and paths",
+        "Timer-based overlay progression",
+        "Visual prompt system",
+        "Depth-based sprite layering",
+        "Automatic image loading and management",
+        "Flexible display timing controls",
+        "Integration with logic connections"
+      ],
+      "keywords": ["image", "panel", "overlay", "display", "animation", "timing", "cutscene", "tutorial", "storytelling", "visual"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an image panel object",
+          "Set AlwaysActive to ON",
+          "Attach the imagepanel behavior",
+          "Configure use range and prompt text",
+          "Set up image positioning and scaling",
+          "Configure overlay count and timing",
+          "Set up image base path and set name",
+          "Create image files (panel.png, overlay1.png, etc.)",
+          "Configure reviewable option if needed",
+          "Add overlay sound to Sound0",
+          "Add voice-over sound to Sound1",
+          "Test image panel activation",
+          "Verify overlay sequence timing",
+          "Test reviewable functionality if enabled"
+        ]
+      },
+      "relatedBehaviors": ["cutscene", "tutorial_system", "image_display", "animation_controller", "interactive_display"]
     }
   }
 } 

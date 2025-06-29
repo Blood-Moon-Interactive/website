@@ -1000,6 +1000,79 @@
         ]
       },
       "relatedBehaviors": ["healthbar", "hudcontrol", "activehud", "interface"]
+    },
+    "stop_watch": {
+      "name": "Stop Watch",
+      "file": "objects/stop_watch.lua",
+      "description": "Creates a time counter that displays elapsed time in a user global variable. Features start/stop functionality, multiple end actions, launch warnings, and various time format options. Perfect for creating timers, countdowns, and time-based challenges.",
+      "properties": [
+        {
+          "name": "DISPLAY_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the user global variable to display the time in (e.g., MyTime). The time will be formatted according to the READOUT setting."
+        },
+        {
+          "name": "END_ACTION",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Terminate Player", "Hurt Player", "Activate Entities", "Lose Game", "Win Game", "Display Hud Screen"],
+          "description": "Action to perform when the stopwatch is stopped. None = no action, Terminate Player = kill player, Hurt Player = damage player, Activate Entities = trigger logic connections, Lose Game = end game in defeat, Win Game = end game in victory, Display Hud Screen = show specified HUD screen."
+        },
+        {
+          "name": "LAUNCH_WARNING",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to show a countdown warning before starting the timer. On = displays READY/SET/GO countdown, Off = starts immediately."
+        },
+        {
+          "name": "END_SCREEN",
+          "type": "string",
+          "default": "",
+          "description": "Name of the HUD screen to display when END_ACTION is set to Display Hud Screen (e.g., HUD Screen #)."
+        },
+        {
+          "name": "READOUT",
+          "type": "dropdown",
+          "default": "Mins:Secs:MilliSecs",
+          "options": ["Mins:Secs:MilliSecs", "Mins:Secs:Tenths", "Hrs:Mins:Secs:MilliSecs", "Hrs:Min:Sec:Tenths:MilliSecs"],
+          "description": "Time format for display. Mins:Secs:MilliSecs = MM:SS:MS, Mins:Secs:Tenths = MM:SS:T, Hrs:Mins:Secs:MilliSecs = HH:MM:SS:MS, Hrs:Min:Sec:Tenths:MilliSecs = HH:MM:SS:T:MS."
+        }
+      ],
+      "features": [
+        "High-precision time counter with millisecond accuracy",
+        "Start/Stop functionality triggered by zones or switches",
+        "Multiple end action options for game events",
+        "Launch warning countdown system",
+        "Four different time format display options",
+        "User global variable integration for HUD display",
+        "Sound effects for start and end events",
+        "Logic connection triggers for game events",
+        "Automatic timer management and cleanup",
+        "Compatible with both keyboard and gamepad controls",
+        "Always active monitoring when enabled",
+        "State management for running/stopped conditions"
+      ],
+      "keywords": ["stopwatch", "timer", "countdown", "time", "clock", "hud", "display", "global", "variable", "format", "warning"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a stopwatch object",
+          "Set Always Active to ON",
+          "Attach the stop_watch behavior",
+          "Configure the display user global variable name",
+          "Set the desired end action",
+          "Choose launch warning preference",
+          "Select time format for display",
+          "Add commence sound to Sound0",
+          "Add end sound to Sound1",
+          "Set up trigger zones or switches for start/stop",
+          "Test timer functionality and end actions"
+        ]
+      },
+      "relatedBehaviors": ["hud_interface", "countdown", "timer", "global_monitor", "trigger_zone"]
     }
   }
 } 

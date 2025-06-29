@@ -77,7 +77,7 @@
       ],
       "keywords": ["mechanical", "fuel", "resource", "collect", "pickup", "energy", "power", "interaction", "inventory"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "h0KbzrjvOj8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["generator", "battery", "resource_node"]
@@ -159,7 +159,7 @@
       ],
       "keywords": ["mechanical", "generator", "power", "fuel", "energy", "switch", "puzzle", "interaction", "resource"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "h0KbzrjvOj8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["fuel", "fusebox", "power_node"]
@@ -231,7 +231,7 @@
       ],
       "keywords": ["mechanical", "fuse", "electrical", "circuit", "collect", "pickup", "power", "interaction", "inventory"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "O-ja0D3CmiY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["generator", "battery", "power_node"]
@@ -289,7 +289,7 @@
       ],
       "keywords": ["mechanical", "fusebox", "electrical", "circuit", "power", "switch", "puzzle", "interaction", "fuse"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "O-ja0D3CmiY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["fuse", "generator", "power_node"]
@@ -331,7 +331,7 @@
       ],
       "keywords": ["mechanical", "radio", "audio", "sound", "music", "ambient", "interaction", "media", "channel"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "5rI2koFTuDY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["generator", "power_node", "audio_source"]
@@ -375,79 +375,90 @@
     "searchlight": {
       "name": "Searchlight",
       "file": "objects/searchlight.lua",
-      "description": "Creates an automated searchlight that scans for players and triggers alarms. Perfect for creating security systems, guard towers, or stealth gameplay mechanics.",
+      "description": "Creates a rotating searchlight that scans for players and triggers alarms when detected. Features configurable scan patterns, alarm systems, and AI alerting capabilities. Perfect for security systems and stealth gameplay.",
       "properties": [
         {
           "name": "PROMPT_TEXT",
           "type": "string",
           "default": "Security alert was started",
-          "description": "Message shown when player is detected"
+          "description": "Text displayed when the searchlight detects the player and triggers an alarm."
         },
         {
           "name": "SCAN_RANGE",
           "type": "number",
           "range": "1-3000",
           "default": 1000,
-          "description": "Maximum distance at which the searchlight can detect players"
+          "description": "Maximum distance at which the searchlight can detect the player."
         },
         {
           "name": "SCAN_RADIUS",
           "type": "number",
           "range": "1-360",
           "default": 136,
-          "description": "Angle range in degrees that the searchlight can rotate through"
+          "description": "Angle range in degrees that the searchlight scans. Controls the width of the detection arc."
         },
         {
           "name": "SCAN_SPEED",
           "type": "number",
           "range": "1-10",
           "default": 3,
-          "description": "Speed at which the searchlight rotates"
+          "description": "Speed at which the searchlight rotates during scanning. Higher values create faster rotation."
         },
         {
           "name": "ALARM",
           "type": "dropdown",
           "default": "On",
-          "options": [
-            "Off",
-            "On"
-          ],
-          "description": "Whether the searchlight triggers alarms when detecting players"
+          "options": ["Off", "On"],
+          "description": "Whether the searchlight triggers alarms when detecting the player. Off = no alarm, On = triggers alarm system."
         },
         {
           "name": "ALARM_RANGE",
           "type": "number",
           "range": "1-3000",
           "default": 2000,
-          "description": "Distance at which the alarm can be heard by AI"
+          "description": "Distance at which the alarm sound can be heard by AI and other entities."
         },
         {
           "name": "VISIBILITY",
           "type": "dropdown",
           "default": "Visible",
-          "options": [
-            "Visible",
-            "Invisible"
-          ],
-          "description": "Whether the searchlight model is visible"
+          "options": ["Visible", "Invisible"],
+          "description": "Whether the searchlight object is visible to players. Invisible searchlights are hidden but still functional."
         }
       ],
       "features": [
-        "Automated scanning behavior",
-        "Player detection system",
-        "Alarm triggering",
-        "AI alert system",
-        "Sound integration",
-        "Damage handling",
-        "Logic connection support",
-        "Customizable scan patterns"
+        "Rotating searchlight with configurable scan patterns",
+        "Player detection and tracking system",
+        "Automatic alarm triggering when player detected",
+        "AI alerting system with sound propagation",
+        "Configurable scan range and radius",
+        "Adjustable rotation speed",
+        "Health system with destruction capability",
+        "Logic connection triggers for game events",
+        "Multiple sound effect slots for scanning and alarms",
+        "Visibility control for stealth gameplay",
+        "Automatic rotation when no player detected",
+        "Player tracking when in detection range",
+        "Compatible with both keyboard and gamepad controls"
       ],
-      "keywords": ["mechanical", "searchlight", "security", "detection", "alarm", "stealth", "guard", "tower", "scan"],
+      "keywords": ["searchlight", "security", "detection", "alarm", "scanning", "rotation", "stealth", "ai", "surveillance", "mechanical"],
       "tutorial": {
         "videoId": "coming-soon",
-        "timestamp": "0:00"
+        "timestamp": "0:00",
+        "steps": [
+          "Create a searchlight object with rotation capability",
+          "Set Static Mode to No, Physics to On, Explodable to Yes, IsImmobile to Yes",
+          "Attach the searchlight behavior",
+          "Configure scan range and radius settings",
+          "Set alarm system preferences",
+          "Add scanning loop sound to Sound0",
+          "Add alarm loop sound to Sound1",
+          "Add damaged sound to Sound2",
+          "Set up logic connections for alarm events",
+          "Test searchlight detection and alarm system"
+        ]
       },
-      "relatedBehaviors": ["searchbeam", "security_system", "guard_tower"]
+      "relatedBehaviors": ["seccam", "secmon", "sentry", "alarm_system", "security_system", "detection_zone"]
     },
     "seccam": {
       "name": "Security Camera",
@@ -528,7 +539,7 @@
       ],
       "keywords": ["mechanical", "security", "camera", "surveillance", "detection", "alarm", "stealth", "monitor", "scan"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "f_VpjjLA4_Y",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["searchlight", "security_system", "monitor"]
@@ -657,7 +668,7 @@
       ],
       "keywords": ["mechanical", "security", "monitor", "camera", "surveillance", "feed", "view", "screen", "hud"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "f_VpjjLA4_Y",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["seccam", "security_system", "camera_feed"]
@@ -773,7 +784,7 @@
       ],
       "keywords": ["mechanical", "security", "sentry", "turret", "combat", "defense", "automated", "weapon", "detection"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "k5aE5iSAK1s",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["seccam", "secmon", "security_system", "alarm_system"]
@@ -923,6 +934,705 @@
         ]
       },
       "relatedBehaviors": ["pipevalve", "collectable", "resource", "pickup"]
+    },
+    "turret": {
+      "name": "Turret",
+      "file": "objects/turret.lua",
+      "description": "Creates a gun turret system that allows players to control mounted weapons with restricted movement and view angles. Features weapon assignment, ammo management, crosshair support, and view limitations for realistic turret operation.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the turret"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Use, Q to Release",
+          "description": "Text displayed when player can interact with the turret"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display interaction prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "HORIZONTAL_VIEW_LIMIT",
+          "type": "number",
+          "range": "1-180",
+          "default": 45,
+          "description": "Maximum horizontal view angle range limit in degrees"
+        },
+        {
+          "name": "VERTICAL_VIEW_LIMIT",
+          "type": "number",
+          "range": "1-90",
+          "default": 45,
+          "description": "Maximum vertical view angle range limit in degrees"
+        },
+        {
+          "name": "WEAPON_NAME",
+          "type": "dropdown",
+          "default": "AnyWeaponList",
+          "options": ["AnyWeaponList"],
+          "description": "The weapon to use with the turret (0 = AnyWeaponList)"
+        },
+        {
+          "name": "WEAPON_AMMO",
+          "type": "number",
+          "range": "0-1000",
+          "default": 500,
+          "description": "Amount of ammo provided to the turret weapon"
+        },
+        {
+          "name": "USE_CROSSHAIR",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to display a custom crosshair when using the turret"
+        },
+        {
+          "name": "CROSSHAIR_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\crosshairs\\crosshair.dds",
+          "description": "Path to the crosshair image file"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style when targeting the turret"
+        }
+      ],
+      "features": [
+        "Player-controlled gun turret system",
+        "Configurable view angle limitations",
+        "Weapon assignment and ammo management",
+        "Custom crosshair support",
+        "Position freezing during turret use",
+        "Automatic weapon switching",
+        "Sound effects for attach/release",
+        "Visual highlighting options",
+        "Logic connection triggers",
+        "Smooth camera control",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["turret", "gun", "weapon", "mounted", "camera", "view", "angle", "restriction", "crosshair", "ammo", "control"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a turret object",
+          "Set AlwaysActive to ON, IsImmobile to YES",
+          "Attach the turret behavior",
+          "Configure view angle limitations",
+          "Set up weapon assignment and ammo",
+          "Configure interaction range and prompts",
+          "Add turret attach sound to Sound0",
+          "Add turret release sound to Sound1",
+          "Set up crosshair image (optional)",
+          "Test turret functionality and controls"
+        ]
+      },
+      "relatedBehaviors": ["weapon_system", "camera_control", "mounted_weapon", "view_restriction", "crosshair_system"]
+    },
+    "battery": {
+      "name": "Battery",
+      "file": "rpg/battery.lua",
+      "description": "Creates a collectible battery that provides energy resources to the player. Features configurable energy levels, pickup styles, and global variable integration. Perfect for creating power sources, energy management systems, and resource collection mechanics.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when player can collect the battery"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Battery collected",
+          "description": "Text displayed when battery is collected"
+        },
+        {
+          "name": "ENERGY_LEVEL",
+          "type": "number",
+          "range": "1-30",
+          "default": 10,
+          "description": "Amount of energy the battery provides when collected"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 90,
+          "description": "Distance at which the player can collect the battery"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "How the battery is collected (Automatic = immediate pickup, Manual = requires E key press)"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyBatteryEnergy",
+          "description": "Name of the user global variable to store battery energy (e.g., MyBatteryEnergy)"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style when object is targeted"
+        }
+      ],
+      "features": [
+        "Configurable energy level system",
+        "Automatic and manual pickup modes",
+        "Global variable energy storage",
+        "Visual highlighting options",
+        "Sound effects for collection",
+        "Logic connection triggers",
+        "Local and screen prompt display",
+        "Automatic cleanup after collection",
+        "Energy accumulation system",
+        "Compatible with resource management systems",
+        "Single battery collection limit",
+        "Collision and visibility management"
+      ],
+      "keywords": ["battery", "energy", "resource", "collect", "pickup", "power", "management", "global", "variable"],
+      "tutorial": {
+        "videoId": "bJq9k8eP-Eg",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a battery object",
+          "Set AlwaysActive to ON",
+          "Attach the battery behavior",
+          "Configure energy level and pickup settings",
+          "Set up global variable for energy storage",
+          "Configure prompt display and highlighting",
+          "Add collection sound to Sound0",
+          "Set up logic connections if needed",
+          "Test battery collection and energy system",
+          "Verify global variable integration"
+        ]
+      },
+      "relatedBehaviors": ["fuel", "generator", "resource_node", "energy_system", "collectable"]
+    },
+    "flashlight": {
+      "name": "Flashlight",
+      "file": "rpg/flashlight.lua",
+      "description": "Creates a flashlight system with battery management, configurable light properties, and special modes. Features battery drain/recharge, ultraviolet mode for detecting transparent enemies, and light-based combat mechanics. Perfect for horror games, exploration, and tactical scenarios.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to pickup",
+          "description": "Text displayed when player can collect the flashlight"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 100,
+          "description": "Distance at which the player can collect the flashlight"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual", "Already Carrying"],
+          "description": "How the flashlight is collected (Automatic = immediate pickup, Manual = requires E key, Already Carrying = player already has it)"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "F to use flashlight",
+          "description": "Text displayed when flashlight can be used"
+        },
+        {
+          "name": "FLASHLIGHT_RANGE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 350,
+          "description": "Range of the flashlight beam"
+        },
+        {
+          "name": "FLASHLIGHT_RADIUS",
+          "type": "number",
+          "range": "1-80",
+          "default": 40,
+          "description": "Radius of the flashlight beam"
+        },
+        {
+          "name": "FLASHLIGHT_R",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Red component of flashlight color"
+        },
+        {
+          "name": "FLASHLIGHT_G",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Green component of flashlight color"
+        },
+        {
+          "name": "FLASHLIGHT_B",
+          "type": "number",
+          "range": "0-255",
+          "default": 255,
+          "description": "Blue component of flashlight color"
+        },
+        {
+          "name": "FLASHLIGHT_SHADOWS",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the flashlight casts shadows"
+        },
+        {
+          "name": "BATTERY_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Initial battery level percentage"
+        },
+        {
+          "name": "BATTERY_DRAIN",
+          "type": "number",
+          "range": "0.00-5.00",
+          "default": 0.01,
+          "description": "Rate at which battery drains when flashlight is on"
+        },
+        {
+          "name": "BATTERY_RECHARGE",
+          "type": "number",
+          "range": "0.00-1.00",
+          "default": 0.01,
+          "description": "Rate at which battery recharges when flashlight is off"
+        },
+        {
+          "name": "BATTERY_INDICATOR",
+          "type": "dropdown",
+          "default": "Bottom",
+          "options": ["Bottom", "Top", "None"],
+          "description": "Position of battery level indicator on screen"
+        },
+        {
+          "name": "INDICATOR_TEXT",
+          "type": "string",
+          "default": "BATTERY LEVEL:",
+          "description": "Text displayed with battery level indicator"
+        },
+        {
+          "name": "LIGHT_ACTIVATION",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On Pickup"],
+          "description": "When flashlight activates (Off = manual activation, On Pickup = automatic activation)"
+        },
+        {
+          "name": "PICKUP_TRIGGER",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to trigger logic connections when picked up"
+        },
+        {
+          "name": "DEPLETION_TRIGGER",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "ActivateIfUsed", "Lose Game"],
+          "description": "Action when battery is depleted"
+        },
+        {
+          "name": "UltraVioletMode",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to highlight transparent enemies with ultraviolet light"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the user global variable to store battery level (e.g., MyBatteryEnergy)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style when object is targeted"
+        },
+        {
+          "name": "LightRangeKill",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to kill entities within flashlight range and radius"
+        }
+      ],
+      "features": [
+        "Configurable flashlight range and radius",
+        "Customizable light color (RGB values)",
+        "Battery management system with drain and recharge",
+        "Battery level indicator with customizable position",
+        "Ultraviolet mode for detecting transparent enemies",
+        "Light-based combat mechanics (LightRangeKill)",
+        "Multiple pickup styles (Automatic, Manual, Already Carrying)",
+        "Automatic and manual light activation",
+        "Battery depletion triggers and consequences",
+        "Global variable integration for battery level",
+        "Sound effects for pickup, switching, and low battery",
+        "Shadow casting options",
+        "Flickering effects when battery is low",
+        "Compatible with battery energy systems",
+        "Logic connection triggers"
+      ],
+      "keywords": ["flashlight", "light", "battery", "ultraviolet", "detection", "horror", "exploration", "combat", "energy", "illumination"],
+      "tutorial": {
+        "videoId": "bJq9k8eP-Eg",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a flashlight object",
+          "Set AlwaysActive to ON",
+          "Attach the flashlight behavior",
+          "Configure light range, radius, and color",
+          "Set up battery management settings",
+          "Configure pickup style and activation",
+          "Set up special modes (Ultraviolet, LightRangeKill)",
+          "Configure battery indicator and depletion triggers",
+          "Set up global variable for battery level",
+          "Add pickup sound to Sound0",
+          "Add switch sound to Sound1",
+          "Add low battery sound to Sound2",
+          "Test flashlight functionality and battery system",
+          "Verify special modes and combat mechanics"
+        ]
+      },
+      "relatedBehaviors": ["battery", "light_system", "energy_management", "combat_system", "detection_system"]
+    },
+    "nightvision": {
+      "name": "Nightvision",
+      "file": "rpg/nightvision.lua",
+      "description": "Creates a nightvision goggles system with zoom capabilities, compass navigation, and visual effects. Features configurable zoom range, nightvision overlay, compass display, and ambient lighting control. Perfect for stealth games, military scenarios, and low-light exploration.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when player can collect the nightvision goggles"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Hold B + Wheel to zoom, N=Nightvision ON/OFF",
+          "description": "Text displayed when nightvision is active"
+        },
+        {
+          "name": "MIN_ZOOM",
+          "type": "number",
+          "range": "-20 to 1",
+          "default": -10,
+          "description": "Minimum zoom level (negative values = wider field of view)"
+        },
+        {
+          "name": "MAX_ZOOM",
+          "type": "number",
+          "range": "1 to 30",
+          "default": 30,
+          "description": "Maximum zoom level (positive values = narrower field of view)"
+        },
+        {
+          "name": "ZOOM_SPEED",
+          "type": "number",
+          "range": "1 to 10",
+          "default": 1,
+          "description": "Speed of zoom adjustment when using mouse wheel"
+        },
+        {
+          "name": "READOUT_X",
+          "type": "number",
+          "range": "1 to 100",
+          "default": 50,
+          "description": "X position of zoom readout text on screen"
+        },
+        {
+          "name": "READOUT_Y",
+          "type": "number",
+          "range": "1 to 100",
+          "default": 10,
+          "description": "Y position of zoom readout text on screen"
+        },
+        {
+          "name": "COMPASS",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to display navigation compass when nightvision is active"
+        },
+        {
+          "name": "COMPASS_POSITION",
+          "type": "dropdown",
+          "default": "Top",
+          "options": ["Top", "Bottom"],
+          "description": "Position of compass display on screen"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\nvgoggles.png",
+          "description": "Path to the nightvision overlay image file"
+        },
+        {
+          "name": "EXPOSURE",
+          "type": "number",
+          "range": "1.0 to 5.0",
+          "default": 2.95,
+          "description": "Exposure level for nightvision effect (higher values = brighter image)"
+        }
+      ],
+      "features": [
+        "Configurable zoom system with mouse wheel control",
+        "Nightvision visual effects with green tint",
+        "Navigation compass with bearing display",
+        "Customizable overlay image",
+        "Ambient lighting control for nightvision mode",
+        "Fog effects for atmospheric nightvision",
+        "Zoom readout display with magnification factor",
+        "Sound effects for pickup and switching",
+        "Automatic ambient lighting restoration",
+        "Compass positioning options (top/bottom)",
+        "Exposure control for brightness adjustment",
+        "Field of view manipulation",
+        "Real-time zoom feedback",
+        "Compatible with stealth and military scenarios",
+        "Automatic object hiding after pickup"
+      ],
+      "keywords": ["nightvision", "zoom", "compass", "stealth", "military", "low-light", "overlay", "magnification", "navigation", "visual-effects"],
+      "tutorial": {
+        "videoId": "f2QKCx4giPc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a nightvision goggles object",
+          "Set AlwaysActive to ON",
+          "Attach the nightvision behavior",
+          "Configure pickup and usage text",
+          "Set up zoom range and speed settings",
+          "Configure compass display options",
+          "Set up overlay image path",
+          "Adjust exposure and visual effects",
+          "Add pickup sound to Sound0",
+          "Add switching sound to Sound1",
+          "Test nightvision pickup and activation",
+          "Test zoom functionality with mouse wheel",
+          "Verify compass navigation display",
+          "Test nightvision visual effects and ambient lighting"
+        ]
+      },
+      "relatedBehaviors": ["flashlight", "zoom_system", "compass", "stealth_system", "visual_effects"]
+    },
+    "scuba": {
+      "name": "Scuba",
+      "file": "rpg/scuba.lua",
+      "description": "Creates a scuba diving system with oxygen management, mask overlay, and underwater navigation. Features configurable dive time, oxygen level display, compass navigation, and automatic underwater activation. Perfect for underwater exploration, diving games, and aquatic environments.",
+      "properties": [
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1 to 100",
+          "default": 80,
+          "description": "Distance at which the player can collect the scuba gear"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to pickup",
+          "description": "Text displayed when player can collect the scuba gear"
+        },
+        {
+          "name": "DIVE_TIME",
+          "type": "number",
+          "range": "1 to 15",
+          "default": 1,
+          "description": "Dive time in minutes before oxygen runs out"
+        },
+        {
+          "name": "COMPASS_DISPLAY",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to display navigation compass when underwater"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\scuba\\mask.png",
+          "description": "Path to the scuba mask overlay image file"
+        },
+        {
+          "name": "SCUBA_MASK",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to display the scuba mask overlay when underwater"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style when object is targeted"
+        }
+      ],
+      "features": [
+        "Automatic underwater activation",
+        "Oxygen level management system",
+        "Real-time oxygen bar display",
+        "Scuba mask overlay when underwater",
+        "Navigation compass with bearing display",
+        "Configurable dive time limits",
+        "Oxygen level color coding (blue = good, red = low)",
+        "Automatic gear disposal when oxygen depleted",
+        "Underwater state detection",
+        "Oxygen bar scaling for different screen resolutions",
+        "Compass positioning and display options",
+        "Sound effects for pickup",
+        "Visual highlighting options",
+        "Local and screen prompt display",
+        "Automatic object hiding after pickup"
+      ],
+      "keywords": ["scuba", "diving", "underwater", "oxygen", "mask", "compass", "navigation", "aquatic", "exploration", "oxygen-bar"],
+      "tutorial": {
+        "videoId": "r3env7wLLvA",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a scuba gear object",
+          "Set AlwaysActive to ON",
+          "Attach the scuba behavior",
+          "Configure pickup range and text",
+          "Set up dive time and oxygen limits",
+          "Configure compass display options",
+          "Set up mask overlay image path",
+          "Adjust prompt display and highlighting",
+          "Add pickup sound to Sound0",
+          "Test scuba gear pickup",
+          "Enter water to test underwater activation",
+          "Verify oxygen bar display and color changes",
+          "Test compass navigation underwater",
+          "Monitor oxygen depletion and gear disposal"
+        ]
+      },
+      "relatedBehaviors": ["nightvision", "compass", "oxygen_system", "underwater_system", "mask_overlay"]
+    },
+    "radsuit": {
+      "name": "Radiation Suit",
+      "file": "rpg/radsuit.lua",
+      "description": "Creates a radiation protection suit system with wearable functionality and health protection. Features configurable pickup and usage controls, visual overlay when worn, breathing sound effects, and automatic health preservation in radiation zones. Perfect for post-apocalyptic games, nuclear environments, and hazardous area exploration.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when player can collect the radiation suit"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1 to 200",
+          "default": 80,
+          "description": "Distance at which the player can collect the radiation suit"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "K to wear, Q to remove",
+          "description": "Text displayed when radiation suit can be worn or removed"
+        },
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\misc\\testimages\\radsuit.png",
+          "description": "Path to the radiation suit overlay image file"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style when object is targeted"
+        }
+      ],
+      "features": [
+        "Wearable radiation protection system",
+        "Visual overlay when suit is worn",
+        "Health preservation in radiation zones",
+        "Breathing sound effects when worn",
+        "Manual wear/remove controls (K/Q keys)",
+        "Automatic health monitoring",
+        "Radiation zone detection and protection",
+        "Visual highlighting options",
+        "Local and screen prompt display",
+        "Sound effects for wearing and removing",
+        "Automatic object hiding after pickup",
+        "Logic connection triggers",
+        "Collectable item integration",
+        "Health-based suit removal",
+        "Global radiation suit state tracking"
+      ],
+      "keywords": ["radiation", "suit", "protection", "wearable", "health", "hazard", "post-apocalyptic", "nuclear", "overlay", "breathing"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a radiation suit object",
+          "Set AlwaysActive to ON",
+          "Attach the radsuit behavior",
+          "Configure pickup range and text",
+          "Set up usage text for wear/remove controls",
+          "Configure overlay image path",
+          "Adjust prompt display and highlighting",
+          "Add wear/remove sound to Sound0",
+          "Add breathing sound to Sound1",
+          "Test radiation suit pickup",
+          "Test wearing and removing the suit (K/Q keys)",
+          "Verify visual overlay when worn",
+          "Test radiation zone protection",
+          "Monitor health preservation functionality"
+        ]
+      },
+      "relatedBehaviors": ["scuba", "nightvision", "health_system", "protection_system", "wearable_gear"]
     }
   }
 } 

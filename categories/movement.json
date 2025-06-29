@@ -165,6 +165,633 @@
         ]
       },
       "relatedBehaviors": ["climbable", "movement_control", "physics_object", "sound_object"]
+    },
+    "platform": {
+      "name": "Platform",
+      "file": "puzzle/platform.lua",
+      "description": "Creates a moving platform system with configurable movement patterns, player riding mechanics, and multiple operation modes. Features manual and automatic operation, position locking, and respawn functionality. Perfect for creating elevators, moving walkways, and transportation systems.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to start",
+          "description": "Text displayed when player can activate the platform"
+        },
+        {
+          "name": "DIRECTION_X",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether platform moves along the X axis"
+        },
+        {
+          "name": "DIRECTION_Y",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether platform moves along the Y axis"
+        },
+        {
+          "name": "DIRECTION_Z",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether platform moves along the Z axis"
+        },
+        {
+          "name": "DISTANCE_X",
+          "type": "number",
+          "range": "0-3000",
+          "default": 0,
+          "description": "Distance to travel along X axis"
+        },
+        {
+          "name": "DISTANCE_Y",
+          "type": "number",
+          "range": "0-3000",
+          "default": 0,
+          "description": "Distance to travel along Y axis"
+        },
+        {
+          "name": "DISTANCE_Z",
+          "type": "number",
+          "range": "0-3000",
+          "default": 500,
+          "description": "Distance to travel along Z axis"
+        },
+        {
+          "name": "SPEED_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Speed of movement along X axis"
+        },
+        {
+          "name": "SPEED_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Speed of movement along Y axis"
+        },
+        {
+          "name": "SPEED_Z",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Speed of movement along Z axis"
+        },
+        {
+          "name": "LOCK_X_POSITION",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to lock X position during movement"
+        },
+        {
+          "name": "LOCK_Y_POSITION",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to lock Y position during movement"
+        },
+        {
+          "name": "LOCK_Z_POSITION",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to lock Z position during movement"
+        },
+        {
+          "name": "LOCK_X_ROTATION",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to lock X rotation during movement"
+        },
+        {
+          "name": "LOCK_Y_ROTATION",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to lock Y rotation during movement"
+        },
+        {
+          "name": "LOCK_Z_ROTATION",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to lock Z rotation during movement"
+        },
+        {
+          "name": "AUTO_EJECT",
+          "type": "dropdown",
+          "default": "On",
+          "options": ["On", "Off"],
+          "description": "Whether to automatically eject player at destination"
+        },
+        {
+          "name": "VISIBILITY",
+          "type": "dropdown",
+          "default": "Visible",
+          "options": ["Visible", "Invisible"],
+          "description": "Whether the platform is visible"
+        },
+        {
+          "name": "RIDING",
+          "type": "dropdown",
+          "default": "Locked",
+          "options": ["Locked", "Unlocked"],
+          "description": "Whether player is locked to platform during movement"
+        },
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Manual", "Auto"],
+          "description": "Operation mode (Manual = requires player activation, Auto = automatic movement)"
+        },
+        {
+          "name": "EXTENDED",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether platform starts at extended position"
+        },
+        {
+          "name": "RESPAWN_ON_PLATFORM",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether player respawns on platform after death"
+        }
+      ],
+      "features": [
+        "Multi-axis movement system (X, Y, Z)",
+        "Configurable movement distances and speeds",
+        "Manual and automatic operation modes",
+        "Player riding mechanics with position locking",
+        "Position and rotation locking options",
+        "Automatic ejection at destinations",
+        "Visibility control",
+        "Respawn functionality",
+        "Extended position starting option",
+        "Sound effects for start, running, and stop",
+        "Collision and gravity management",
+        "Smooth movement transitions",
+        "Player detection and interaction",
+        "Automatic direction reversal"
+      ],
+      "keywords": ["platform", "movement", "elevator", "transport", "riding", "multi-axis", "manual", "auto", "lock", "eject"],
+      "tutorial": {
+        "videoId": "Y1b14LxvnV8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create platform object",
+          "Set Physics to ON, Gravity to OFF, Weight and Friction to 0, IsImmobile to ON",
+          "Attach the platform behavior",
+          "Configure movement direction and distances",
+          "Set up movement speeds for each axis",
+          "Configure position and rotation locks",
+          "Set operation mode (Manual/Auto)",
+          "Configure riding and ejection settings",
+          "Add platform start sound to Sound0",
+          "Add platform running sound to Sound1",
+          "Add platform stop sound to Sound2",
+          "Test platform movement and player interaction"
+        ]
+      },
+      "relatedBehaviors": ["add_movement", "object_mover", "elevator", "transport_system", "physics_object"]
+    },
+    "conveyor": {
+      "name": "Conveyor",
+      "file": "puzzle/conveyor.lua",
+      "description": "Creates a conveyor belt system that propels the player in the conveyor's direction. Features configurable speed, visibility control, variable switch integration, and automatic player detection. Perfect for creating moving walkways, transport systems, and puzzle elements.",
+      "properties": [
+        {
+          "name": "MOVESPEED",
+          "type": "number",
+          "range": "1-200",
+          "default": 5,
+          "description": "Speed at which the conveyor moves the player"
+        },
+        {
+          "name": "SHOW_CONVEYOR",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to show or hide the conveyor object visually"
+        },
+        {
+          "name": "USE_VARIABLE_SWITCH",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to use a variable switch for dynamic speed control"
+        },
+        {
+          "name": "VARIABLE_SWITCH_USER_GLOBAL",
+          "type": "string",
+          "default": "Variable_Switch1",
+          "description": "Name of the user global variable to control conveyor speed (e.g., Variable_Switch1)"
+        }
+      ],
+      "features": [
+        "Automatic player detection and movement",
+        "Configurable movement speed (1-200)",
+        "Visibility control for conveyor objects",
+        "Variable switch integration for dynamic speed",
+        "Automatic sound looping during movement",
+        "Player intersection detection",
+        "Smooth force application to player",
+        "Automatic state management",
+        "Transparency control for invisible conveyors",
+        "Real-time speed adjustment via global variables",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["conveyor", "belt", "movement", "transport", "propel", "speed", "variable", "switch", "invisible", "force"],
+      "tutorial": {
+        "videoId": "81j6gbw_aQU",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a conveyor object",
+          "Set Physics to ON, IsImmobile to YES",
+          "Attach the conveyor behavior",
+          "Configure movement speed and visibility",
+          "Set up variable switch if needed",
+          "Configure global variable for dynamic speed",
+          "Add conveyor sound to Sound0",
+          "Position conveyor in desired direction",
+          "Test player movement on conveyor",
+          "Adjust speed and settings as needed"
+        ]
+      },
+      "relatedBehaviors": ["platform", "add_movement", "object_mover", "transport_system", "variable_switch"]
+    },
+    "climber": {
+      "name": "Climber",
+      "file": "puzzle/climber.lua",
+      "description": "Creates a climbable surface that allows players to climb up and down with customizable speed, grip adjustment, and weapon handling. Features smooth climbing mechanics, water compatibility, and automatic positioning. Perfect for creating ladders, ropes, and vertical climbing surfaces.",
+      "properties": [
+        {
+          "name": "USE_PROMPT",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to show climbing instructions to the player"
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "W-up S-down, Spacebar-jump off",
+          "description": "Text displayed when player can climb"
+        },
+        {
+          "name": "MOUNT_KEY",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to use E key for mounting (Yes = E key, No = automatic)"
+        },
+        {
+          "name": "MOUNT_PROMPT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed when E key mounting is enabled"
+        },
+        {
+          "name": "CLIMBING_SPEED",
+          "type": "dropdown",
+          "default": "Slow",
+          "options": ["Slow", "Medium", "Quick", "Fast"],
+          "description": "Speed at which the player climbs"
+        },
+        {
+          "name": "GRIP_ADJUSTMENT",
+          "type": "number",
+          "range": "1-3",
+          "default": 1,
+          "description": "Adjustment to player's grip distance from the climbing surface"
+        },
+        {
+          "name": "CLIMB_STYLE",
+          "type": "dropdown",
+          "default": "Hide Weapon",
+          "options": ["With Weapon", "Hide Weapon"],
+          "description": "Whether to show or hide weapon while climbing"
+        },
+        {
+          "name": "EXIT_FORCE",
+          "type": "number",
+          "range": "0.1-3.0",
+          "default": 0.5,
+          "description": "Force applied when jumping off the climber"
+        },
+        {
+          "name": "EDITOR_MARKER",
+          "type": "dropdown",
+          "default": "Hide",
+          "options": ["Hide", "Show"],
+          "description": "Whether to show the climber object in the editor"
+        }
+      ],
+      "features": [
+        "Smooth climbing mechanics with W/S controls",
+        "Water compatibility for underwater climbing",
+        "Weapon handling options during climbing",
+        "Configurable climbing speed (Slow, Medium, Quick, Fast)",
+        "Grip distance adjustment for different surfaces",
+        "Mount key options (automatic or E key)",
+        "Exit force control for jumping off",
+        "Automatic positioning and collision detection",
+        "Sound effects for climbing and exit",
+        "Editor visibility control",
+        "Automatic weapon restoration after climbing",
+        "Forward positioning when reaching the top",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["climber", "climb", "ladder", "rope", "vertical", "movement", "mount", "weapon", "water", "grip"],
+      "tutorial": {
+        "videoId": "81j6gbw_aQU",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a climber object",
+          "Set Physics to ON, Collision to Box, IsImmobile to ON",
+          "Attach the climber behavior",
+          "Configure climbing speed and grip settings",
+          "Set up prompt text and mount options",
+          "Configure weapon handling preferences",
+          "Set editor marker visibility",
+          "Add climbing loop sound to Sound0",
+          "Add exit sound to Sound1",
+          "Test climbing mechanics and controls",
+          "Adjust grip and speed settings as needed"
+        ]
+      },
+      "relatedBehaviors": ["ladder", "climbable", "movement_control", "weapon_system", "physics_object"]
+    },
+    "slider": {
+      "name": "Slider",
+      "file": "puzzle/slider.lua",
+      "description": "Creates a sliding object system that moves in 90-degree directions, ideal for crawler or grid-style games. Features multiple slide types, activation modes, and damage mechanics. Perfect for creating doors, barriers, moving platforms, and puzzle elements.",
+      "properties": [
+        {
+          "name": "PROMPT",
+          "type": "string",
+          "default": "Press E to Activate",
+          "description": "Text displayed when player can activate the slider"
+        },
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 80,
+          "description": "Distance at which the player can interact with the slider"
+        },
+        {
+          "name": "SLIDE_MODE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Manual", "Switch/Zone"],
+          "description": "Activation method (Manual = player interaction, Switch/Zone = trigger activation)"
+        },
+        {
+          "name": "SLIDE_TYPE",
+          "type": "dropdown",
+          "default": "Open/Close",
+          "options": ["Open/Close", "Lock Open", "Continuous"],
+          "description": "Behavior type (Open/Close = opens then closes, Lock Open = stays open, Continuous = cycles continuously)"
+        },
+        {
+          "name": "SLIDE_DIRECTION",
+          "type": "dropdown",
+          "default": "Left",
+          "options": ["Left", "Right", "Up", "Down", "Forward", "Backward"],
+          "description": "Direction the slider moves when activated"
+        },
+        {
+          "name": "SLIDE_CLOSE_DELAY",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Delay in seconds before slider closes (0 = no delay)"
+        },
+        {
+          "name": "SLIDE_AMOUNT",
+          "type": "number",
+          "range": "1-2000",
+          "default": 400,
+          "description": "Distance the slider moves in units"
+        },
+        {
+          "name": "SLIDE_SPEED",
+          "type": "number",
+          "range": "1-20",
+          "default": 3,
+          "description": "Speed at which the slider moves"
+        },
+        {
+          "name": "DAMAGE_AMOUNT",
+          "type": "number",
+          "range": "0-1000",
+          "default": 0,
+          "description": "Damage dealt to player if in range and slider speed is 5 or faster"
+        }
+      ],
+      "features": [
+        "Six-direction sliding movement (Left, Right, Up, Down, Forward, Backward)",
+        "Three slide types (Open/Close, Lock Open, Continuous)",
+        "Manual and automatic activation modes",
+        "Configurable slide distance and speed",
+        "Automatic close delay timing",
+        "Player damage mechanics for fast-moving sliders",
+        "Sound effects for start, movement, and end",
+        "Dynamic sound volume based on player distance",
+        "Collision and gravity management during movement",
+        "Grid-style movement ideal for crawler games",
+        "Switch and zone trigger compatibility",
+        "Smooth movement transitions",
+        "Automatic state management"
+      ],
+      "keywords": ["slider", "slide", "movement", "door", "barrier", "grid", "crawler", "puzzle", "activation", "damage"],
+      "tutorial": {
+        "videoId": "H_MtqJJB-0w",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a slider object",
+          "Set Physics to ON, IsImmobile to ON, AlwaysActive to ON",
+          "Attach the slider behavior",
+          "Configure slide direction and type",
+          "Set up activation mode and range",
+          "Configure slide amount and speed",
+          "Set close delay timing",
+          "Configure damage settings if needed",
+          "Add start sound to Sound0",
+          "Add movement loop sound to Sound1",
+          "Add end sound to Sound2",
+          "Test slider movement and activation",
+          "Adjust settings for desired behavior"
+        ]
+      },
+      "relatedBehaviors": ["platform", "add_movement", "object_mover", "trigger_system", "damage_system"]
+    },
+    "parachute": {
+      "name": "Parachute",
+      "file": "rpg/parachute.lua",
+      "description": "Creates a parachute system that allows players to safely descend from heights. Features realistic flight physics, height-based deployment, and configurable flight controls. Perfect for creating skydiving mechanics, emergency escapes, and aerial transportation systems.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to collect parachute",
+          "description": "Text displayed when player can collect the parachute"
+        },
+        {
+          "name": "DEPLOY_TEXT",
+          "type": "string",
+          "default": "Q to deploy parachute",
+          "description": "Text displayed when player can deploy the parachute"
+        },
+        {
+          "name": "FLIGHT_TEXT",
+          "type": "string",
+          "default": "E to dismount parachute",
+          "description": "Text displayed during parachute flight"
+        },
+        {
+          "name": "MOUNT_Z_ADJUSTMENT",
+          "type": "number",
+          "range": "-30-30",
+          "default": 0,
+          "description": "Forward/backward position adjustment of player on parachute"
+        },
+        {
+          "name": "MOUNT_Y_ADJUSTMENT",
+          "type": "number",
+          "range": "-30-30",
+          "default": 18,
+          "description": "Up/down position adjustment of player on parachute"
+        },
+        {
+          "name": "MIN_DEPLOY_HEIGHT",
+          "type": "number",
+          "range": "0-2000",
+          "default": 1000,
+          "description": "Minimum height required to deploy the parachute"
+        },
+        {
+          "name": "DROP_SPEED",
+          "type": "number",
+          "range": "1-20",
+          "default": 5,
+          "description": "Speed at which the parachute descends"
+        },
+        {
+          "name": "MAX_SPEED",
+          "type": "number",
+          "range": "1-20",
+          "default": 3,
+          "description": "Maximum forward speed of the parachute"
+        },
+        {
+          "name": "MIN_SPEED",
+          "type": "number",
+          "range": "1-5",
+          "default": 1,
+          "description": "Minimum reverse speed of the parachute"
+        },
+        {
+          "name": "ACCELERATION",
+          "type": "number",
+          "range": "1-5",
+          "default": 3,
+          "description": "How quickly the parachute gains speed"
+        },
+        {
+          "name": "DECELERATION",
+          "type": "number",
+          "range": "0-50",
+          "default": 8,
+          "description": "How quickly the parachute slows down when not accelerating"
+        },
+        {
+          "name": "TURN_SPEED",
+          "type": "number",
+          "range": "0-100",
+          "default": 18,
+          "description": "How quickly the parachute turns left and right"
+        },
+        {
+          "name": "PARACHUTE_HEALTH",
+          "type": "number",
+          "range": "1-1000",
+          "default": 300,
+          "description": "Health given to player while using the parachute"
+        },
+        {
+          "name": "PARACHUTE_NAME",
+          "type": "string",
+          "default": "parachute",
+          "description": "Name of the parachute object in the scene"
+        },
+        {
+          "name": "HEIGHT_DISPLAY",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to display current height during flight"
+        },
+        {
+          "name": "TEST_DEPLOY",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to allow deployment from any height (for testing)"
+        },
+        {
+          "name": "MODE",
+          "type": "dropdown",
+          "default": "Use Once",
+          "options": ["Use Once", "Re-useable"],
+          "description": "Whether the parachute can be used multiple times"
+        }
+      ],
+      "features": [
+        "Realistic parachute flight physics",
+        "Height-based deployment system",
+        "WASD flight controls (W=forward, S=reverse, A/D=turn)",
+        "Configurable flight speeds and acceleration",
+        "Player position adjustment on parachute",
+        "Height display during flight",
+        "Test deployment mode for development",
+        "Single-use and reusable modes",
+        "Automatic landing detection",
+        "Sound effects for deployment, flight, and landing",
+        "Health management during parachute use",
+        "Emergency dismount functionality",
+        "Terrain height awareness",
+        "Collision detection and landing mechanics"
+      ],
+      "keywords": ["parachute", "skydiving", "flight", "aerial", "descent", "height", "deployment", "physics", "movement"],
+      "tutorial": {
+        "videoId": "81j6gbw_aQU",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a parachute backpack object",
+          "Set Physics to OFF, Collision to None, Gravity to OFF",
+          "Create a parachute object with matching name",
+          "Attach the parachute behavior to backpack",
+          "Configure deployment height and flight settings",
+          "Set up player position adjustments",
+          "Configure flight controls and speeds",
+          "Set parachute mode (single-use or reusable)",
+          "Add deployment sound to Sound0",
+          "Add flight sound to Sound1",
+          "Add landing sound to Sound2",
+          "Test parachute collection and deployment",
+          "Test flight controls and landing mechanics"
+        ]
+      },
+      "relatedBehaviors": ["aircraft", "flight_system", "physics_object", "height_system", "movement_control"]
     }
   }
 } 

@@ -675,6 +675,208 @@
         ]
       },
       "relatedBehaviors": ["door", "door_rotate", "door_sliding"]
+    },
+    "airlock": {
+      "name": "Airlock",
+      "file": "objects/airlock.lua",
+      "description": "Creates an airlock system that controls two doors with pressurization/depressurization cycles. Supports both air and water airlock types with configurable timing, water levels, and NPC drowning mechanics.",
+      "properties": [
+        {
+          "name": "AIRLOCK_TYPE",
+          "type": "dropdown",
+          "default": "Air",
+          "options": ["Air", "Water"],
+          "description": "Type of airlock: 1=Air airlock, 2=Water airlock"
+        },
+        {
+          "name": "AIR_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 100,
+          "description": "Air level percentage for air airlock type. Controls player damage when depressurizing."
+        },
+        {
+          "name": "WATER_LEVEL",
+          "type": "number",
+          "range": "0-1000",
+          "default": 300,
+          "description": "Maximum water level height for water airlock type."
+        },
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to begin",
+          "description": "Base text shown when player can interact with the airlock switch."
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Maximum distance at which the player can interact with the airlock switch."
+        },
+        {
+          "name": "DEPRESSURISE_TEXT",
+          "type": "string",
+          "default": "Depressurisation in",
+          "description": "Text shown during depressurization countdown."
+        },
+        {
+          "name": "PRESSURISE_TEXT",
+          "type": "string",
+          "default": "Pressurisation in",
+          "description": "Text shown during pressurization countdown."
+        },
+        {
+          "name": "DOOR1_NAME",
+          "type": "string",
+          "default": "Inner Door",
+          "description": "Name of the inner door entity that the airlock controls."
+        },
+        {
+          "name": "DOOR2_NAME",
+          "type": "string",
+          "default": "Outer Door",
+          "description": "Name of the outer door entity that the airlock controls."
+        },
+        {
+          "name": "DELAY",
+          "type": "number",
+          "range": "1-100",
+          "default": 8,
+          "description": "Time in seconds for the pressurization/depressurization cycle to complete."
+        },
+        {
+          "name": "NPC_DROWNING",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether NPCs will drown when water level rises in water airlock mode."
+        }
+      ],
+      "features": [
+        "Dual-door airlock system with inner and outer doors",
+        "Air and water airlock type support",
+        "Configurable pressurization/depressurization cycles",
+        "Automatic door sequencing and timing",
+        "Water level control for water airlocks",
+        "NPC drowning mechanics for water airlocks",
+        "Player damage system for air airlocks",
+        "Countdown timer display during cycles",
+        "Sound effect integration for activation and processing",
+        "Animation states for switch operation",
+        "Logic connection triggers for game events",
+        "Proximity-based interaction system",
+        "State management for airlock status tracking",
+        "Compatible with both keyboard and gamepad controls"
+      ],
+      "keywords": ["airlock", "door", "pressure", "water", "air", "depressurize", "pressurize", "cycle", "switch", "drowning", "timing"],
+      "tutorial": {
+        "videoId": "qay7w2h_KUk",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an airlock switch object with on/off animations",
+          "Create two door objects named 'Inner Door' and 'Outer Door'",
+          "Attach the airlock behavior to the switch",
+          "Configure airlock type (Air or Water)",
+          "Set door names to match your door entities",
+          "Configure timing and level settings",
+          "Add activation sound to Sound0 slot",
+          "Add processing sound to Sound1 slot",
+          "Test airlock functionality in-game"
+        ]
+      },
+      "relatedBehaviors": ["door", "door_rotate", "door_sliding", "watercontrol", "switch"]
+    },
+    "key": {
+      "name": "Key",
+      "file": "rpg/key.lua",
+      "description": "Creates a key object that can be collected and used to unlock doors. Features configurable pickup styles, logic connections, and automatic door association. Perfect for creating locked door puzzles and key-based progression systems.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "Collect Key",
+          "description": "Text displayed when player can collect the key"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1 to 100",
+          "default": 80,
+          "description": "Distance at which the player can collect the key"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "How the key is collected (Automatic = immediate pickup, Manual = requires E key press)"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Key collected",
+          "description": "Text displayed when key is collected"
+        },
+        {
+          "name": "LOGIC_TRIGGER",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "On Pickup"],
+          "description": "Whether to trigger logic connections when key is collected"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompts (Local = above object, Screen = center of screen)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlight style when object is targeted"
+        }
+      ],
+      "features": [
+        "Automatic door association system",
+        "Configurable pickup styles (Automatic/Manual)",
+        "Logic connection triggers on collection",
+        "Visual highlighting options",
+        "Sound effects for collection",
+        "Local and screen prompt display",
+        "Automatic object cleanup after collection",
+        "Collectable item integration",
+        "Xbox controller support (Y button)",
+        "VR headset support (Trigger)",
+        "Keyboard support (E key)",
+        "Automatic door unlocking capability",
+        "Entity collection state management",
+        "Compatible with door locking systems",
+        "Integration with logic connections"
+      ],
+      "keywords": ["key", "door", "unlock", "collect", "pickup", "lock", "puzzle", "progression", "interaction"],
+      "tutorial": {
+        "videoId": "X8Q34VpRGiY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a key object",
+          "Set AlwaysActive to ON",
+          "Attach the key behavior",
+          "Configure pickup range and text",
+          "Set up pickup style (Automatic/Manual)",
+          "Configure logic trigger if needed",
+          "Set up prompt display and highlighting",
+          "Add collection sound to Sound0",
+          "Create doors that can be unlocked by this key",
+          "Test key collection and door unlocking",
+          "Verify logic connections if enabled",
+          "Test different pickup styles"
+        ]
+      },
+      "relatedBehaviors": ["door", "door_rotate", "door_sliding", "lock_system", "collectable"]
     }
   }
 } 

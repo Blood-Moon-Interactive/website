@@ -1544,6 +1544,169 @@
         ]
       },
       "relatedBehaviors": ["vehicle_control", "aircraft", "boat", "physics_object"]
+    },
+    "navblocker": {
+      "name": "Navblocker",
+      "file": "objects/navblocker.lua",
+      "description": "Creates navigation mesh blockers for named objects in the game. Automatically calculates collision boundaries and prevents AI pathfinding through specified objects. Objects must be set to dynamic physics for proper functionality.",
+      "properties": [
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the object to create a navmesh blocker for. Must match the exact name of the target object in the scene."
+        }
+      ],
+      "features": [
+        "Automatic navmesh blocking for named objects",
+        "Dynamic collision box calculation",
+        "Position and rotation-aware blocking",
+        "Scale-based boundary detection",
+        "Automatic initialization on game start",
+        "Case-insensitive object name matching",
+        "Real-time navmesh updates",
+        "Compatible with dynamic physics objects",
+        "Prevents AI pathfinding through blocked areas",
+        "No manual configuration required after setup"
+      ],
+      "keywords": ["navmesh", "blocker", "navigation", "ai", "pathfinding", "collision", "dynamic", "physics"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create the object you want to block navigation for",
+          "Set the object's Physics to ON",
+          "Set the object's IsImmobile to ON",
+          "Note the exact name of the object",
+          "Create a navblocker object",
+          "Attach the navblocker behavior",
+          "Set OBJECT_NAME to match your target object",
+          "Test AI pathfinding around the blocked object"
+        ]
+      },
+      "relatedBehaviors": ["physics_object", "collision_detector", "ai_controller", "dynamic_object"]
+    },
+    "vendor": {
+      "name": "Vendor",
+      "file": "objects/vendor.lua",
+      "description": "Creates a vending machine system that dispenses items to players. Features cost-based purchasing, quantity limits, item lifespan management, and multiple empty-state behaviors. Perfect for creating shops, item dispensers, and commerce systems.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to dispense item",
+          "description": "Text displayed when player can interact with the vendor"
+        },
+        {
+          "name": "PROMPT_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 90,
+          "description": "Distance at which the player can interact with the vendor"
+        },
+        {
+          "name": "NOISE_RANGE",
+          "type": "number",
+          "range": "0-5000",
+          "default": 500,
+          "description": "Range at which AI can hear the vendor being used"
+        },
+        {
+          "name": "VENDOR_ANIMATION",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "AnimSetList"],
+          "description": "Animation to play when vendor is activated"
+        },
+        {
+          "name": "VENDORED_MAX_QUANTITY",
+          "type": "number",
+          "range": "1-50",
+          "default": 1,
+          "description": "Maximum number of items the vendor can dispense"
+        },
+        {
+          "name": "VENDORED_ENTITY_COST",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Cost of each item in the specified currency"
+        },
+        {
+          "name": "VENDORED_ENTITY_LIFESPAN",
+          "type": "number",
+          "range": "0-100",
+          "default": 1,
+          "description": "Lifespan of dispensed items in minutes (0 = Eternal)"
+        },
+        {
+          "name": "VENDORED_ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the entity to dispense (must exist in scene)"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the user global variable for payment (e.g., MyMoney)"
+        },
+        {
+          "name": "WHEN_EMPTY",
+          "type": "dropdown",
+          "default": "Nothing",
+          "options": ["Nothing", "Destroy Vendor", "Event Triggers", "Lose Game", "Win Game"],
+          "description": "Action to perform when vendor runs out of items"
+        },
+        {
+          "name": "VENDING_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Delay in seconds before item is dispensed"
+        },
+        {
+          "name": "VENDING_FORCE",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Force applied to dispensed items in the vendor's facing direction"
+        }
+      ],
+      "features": [
+        "Cost-based item purchasing system",
+        "Configurable quantity limits",
+        "Item lifespan management with eternal option",
+        "Multiple empty-state behaviors",
+        "Vending delay and force mechanics",
+        "AI sound detection system",
+        "Animation support for vendor activation",
+        "Global variable currency integration",
+        "Automatic item cleanup",
+        "Logic connection triggers",
+        "Sound effects for activation, vending, and empty states",
+        "Entity cloning and positioning system"
+      ],
+      "keywords": ["vendor", "vending", "machine", "dispense", "item", "purchase", "cost", "currency", "shop", "commerce", "inventory"],
+      "tutorial": {
+        "videoId": "6cFGFb_98fc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create the item entity you want to vend",
+          "Create a vendor object",
+          "Set AlwaysActive to ON, IsImmobile to YES",
+          "Attach the vendor behavior",
+          "Set VENDORED_ENTITY_NAME to match your item",
+          "Configure cost and quantity settings",
+          "Set up currency global variable",
+          "Configure empty-state behavior",
+          "Add activation sound to Sound0",
+          "Add vending sound to Sound1",
+          "Add empty sound to Sound2",
+          "Test vendor functionality and purchasing"
+        ]
+      },
+      "relatedBehaviors": ["buy_object", "money", "inventory_system", "commerce_system", "item_dispenser"]
     }
   }
 } 

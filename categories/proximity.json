@@ -168,6 +168,180 @@
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["logic_system", "npc_control", "trigger_zone"]
+    },
+    "proximity_sensor": {
+      "name": "Proximity Sensor",
+      "file": "objects/proximity_sensor.lua",
+      "description": "Creates a proximity range sensor that detects NPCs and/or players within a specified range. Features configurable detection types, action responses, and logic connections. Perfect for creating security systems, automatic doors, and reactive environments.",
+      "properties": [
+        {
+          "name": "SENSOR_RANGE",
+          "type": "number",
+          "range": "1-2000",
+          "default": 180,
+          "description": "Detection range of the proximity sensor in units"
+        },
+        {
+          "name": "SENSED_TEXT",
+          "type": "string",
+          "default": "Detected",
+          "description": "Text displayed when the sensor detects a target"
+        },
+        {
+          "name": "SENSE_PLAYER",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether to detect the player within sensor range"
+        },
+        {
+          "name": "SENSE_NPC",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to detect NPCs within sensor range"
+        },
+        {
+          "name": "NPC_TYPE",
+          "type": "dropdown",
+          "default": "Enemy",
+          "options": ["Enemy", "Ally", "Neutral", "Object"],
+          "description": "Type of NPC to detect (Enemy = hostile, Ally = friendly, Neutral = neutral, Object = any object)"
+        },
+        {
+          "name": "ACTION_TYPE",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Damage", "Self Destruct", "Object Repel"],
+          "description": "Action to perform when target is detected (None = no action, Damage = damage target, Self Destruct = destroy sensor, Object Repel = push target away)"
+        },
+        {
+          "name": "ACTION_AMOUNT",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Amount of damage or force to apply when action is triggered"
+        },
+        {
+          "name": "ACTIVATED",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether sensor is always active (No = requires switch or zone activation)"
+        }
+      ],
+      "features": [
+        "Configurable detection range up to 2000 units",
+        "Player and NPC detection options",
+        "Multiple NPC type filtering (Enemy, Ally, Neutral, Object)",
+        "Four action types (None, Damage, Self Destruct, Object Repel)",
+        "Logic connection triggers on detection",
+        "Activation state control",
+        "Sound effects for object detection",
+        "Flat distance calculation for accurate detection",
+        "Health-based target validation",
+        "Automatic reset after detection",
+        "Compatible with trigger zones and switches",
+        "Real-time detection monitoring"
+      ],
+      "keywords": ["proximity", "sensor", "detection", "range", "npc", "player", "security", "trigger", "damage", "repel", "destruct"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a proximity sensor object",
+          "Set AlwaysActive to ON",
+          "Attach the proximity_sensor behavior",
+          "Configure detection range and target types",
+          "Set up action type and amount",
+          "Configure activation requirements",
+          "Add collision sound to Sound0",
+          "Set up logic connections for detected events",
+          "Test sensor detection and responses",
+          "Adjust range and action settings as needed"
+        ]
+      },
+      "relatedBehaviors": ["trigger_zone", "security_system", "detection_system", "damage_system", "logic_connector"]
+    },
+    "range_sensor": {
+      "name": "Range Sensor",
+      "file": "puzzle/range_sensor.lua",
+      "description": "Creates a range sensor that detects when the player enters a specified area. Features two trigger modes for logic connections or video playback with level changes. Perfect for creating level transitions, cutscenes, and area-based triggers.",
+      "properties": [
+        {
+          "name": "SENSOR_RANGE",
+          "type": "number",
+          "range": "1-10000",
+          "default": 180,
+          "description": "Detection range of the sensor in units"
+        },
+        {
+          "name": "SENSED_TEXT",
+          "type": "string",
+          "default": "Detected",
+          "description": "Text displayed when the sensor detects the player"
+        },
+        {
+          "name": "TRIGGER_MODE",
+          "type": "dropdown",
+          "default": "Linked",
+          "options": ["Linked", "Video+ChangeLevel"],
+          "description": "Action to perform when player is detected (Linked = trigger logic connections, Video+ChangeLevel = play video then change level)"
+        },
+        {
+          "name": "VIDEO_SKIP",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether players can skip the video (only used in Video+ChangeLevel mode)"
+        },
+        {
+          "name": "GoToLevelMode",
+          "type": "dropdown",
+          "default": "Use Storyboard Logic",
+          "options": ["Use Storyboard Logic", "Go to Specific Level"],
+          "description": "How to handle level changes (Use Storyboard Logic = next level in storyboard, Go to Specific Level = specific level)"
+        },
+        {
+          "name": "ResetStates",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["Yes", "No"],
+          "description": "Whether to reset states when entering the new level"
+        }
+      ],
+      "features": [
+        "Configurable detection range up to 10000 units",
+        "Two trigger modes for different use cases",
+        "Video playback with skip control",
+        "Level transition system",
+        "Storyboard logic integration",
+        "State reset options",
+        "Logic connection triggers",
+        "Automatic reset when player leaves range",
+        "Video slot integration",
+        "Seamless level transitions",
+        "Player distance monitoring",
+        "Compatible with storyboard progression"
+      ],
+      "keywords": ["range", "sensor", "detection", "player", "trigger", "video", "level", "transition", "cutscene", "storyboard"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a range sensor object",
+          "Set AlwaysActive to ON",
+          "Attach the range_sensor behavior",
+          "Configure detection range and trigger mode",
+          "Set up video settings if using Video+ChangeLevel mode",
+          "Configure level transition settings",
+          "Set up video slot with your video file",
+          "Configure logic connections for Linked mode",
+          "Test sensor detection and responses",
+          "Verify level transitions and video playback"
+        ]
+      },
+      "relatedBehaviors": ["proximity_sensor", "videoscene", "level_transition", "trigger_zone", "storyboard_controller"]
     }
   }
 } 

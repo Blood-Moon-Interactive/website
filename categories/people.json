@@ -1139,6 +1139,62 @@
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["npc_controller", "game_state", "logic_connector"]
+    },
+    "npc_itemdrop": {
+      "name": "NPC Item Drop",
+      "file": "rpg/npc_itemdrop.lua",
+      "description": "Creates a system where NPCs can carry items and drop them when they die. Features named NPC and item linking, automatic item positioning, and death-triggered item drops. Perfect for loot systems, enemy drops, and item distribution mechanics.",
+      "properties": [
+        {
+          "name": "NPC_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the NPC that will carry the item (must match entity name exactly)"
+        },
+        {
+          "name": "ITEM_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the item that will be carried and dropped (must match entity name exactly)"
+        }
+      ],
+      "features": [
+        "Named NPC and item linking system",
+        "Automatic item carrying by NPCs",
+        "Death-triggered item drops",
+        "Item positioning relative to NPC location",
+        "Automatic item hiding while carried",
+        "Physics and collision management",
+        "Gravity control for dropped items",
+        "Entity name matching system",
+        "Automatic entity discovery",
+        "Item positioning offset controls",
+        "Death detection and response",
+        "Item visibility management",
+        "Collision state management",
+        "Gravity state management",
+        "Entity health monitoring"
+      ],
+      "keywords": ["npc", "item", "drop", "loot", "carry", "death", "enemy", "inventory", "positioning", "physics"],
+      "tutorial": {
+        "videoId": "3AD8db7fu_o",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an NPC entity with a specific name",
+          "Create an item entity with a specific name",
+          "Set item AlwaysActive to ON",
+          "Set item Physics to ON",
+          "Set item Gravity to ON",
+          "Attach the npc_itemdrop behavior to the item",
+          "Configure NPC_NAME to match the NPC entity name",
+          "Configure ITEM_NAME to match the item entity name",
+          "Test NPC carrying the item",
+          "Kill the NPC to test item drop",
+          "Verify item positioning and physics",
+          "Check item visibility and collision states"
+        ]
+      },
+      "relatedBehaviors": ["npc_system", "item_system", "loot_system", "death_system", "physics_system"]
     }
   }
 } 
