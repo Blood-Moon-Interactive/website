@@ -1300,6 +1300,1809 @@
         ]
       },
       "relatedBehaviors": ["mana_system", "spell_system", "healing_system", "particle_system", "support_system", "rpg_progression"]
+    },
+    "armour": {
+      "name": "Armour",
+      "file": "rpg/armour.lua",
+      "description": "A consumable armour item that provides armour boost or deduction to the player. Features automatic and manual pickup styles, global variable integration, quantity management, and sound effects. Perfect for creating armour items, protective gear, and defensive equipment in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to consume",
+          "description": "Text displayed when using the armour item"
+        },
+        {
+          "name": "PROMPT_IF_COLLECTABLE",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when collecting the armour item"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Armour applied",
+          "description": "Text displayed when the armour effect is applied"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of armour to add or deduct from the player"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the armour"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether armour is picked up automatically or requires key press"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct armour from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyArmour",
+          "description": "Name of the global variable for armour (e.g., 'MyArmour')"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the armour object"
+        }
+      ],
+      "features": [
+        "Consumable armour system",
+        "Automatic and manual pickup styles",
+        "Global variable integration",
+        "Quantity management system",
+        "Add or deduct armour effects",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Resource depletion system",
+        "Player proximity detection",
+        "Object collection tracking",
+        "Armour value modification"
+      ],
+      "keywords": ["armour", "protection", "defense", "consumable", "rpg", "equipment", "gear", "boost", "deduct", "global"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an armour object",
+          "Set AlwaysActive to ON",
+          "Attach the armour behavior",
+          "Configure pickup range and text prompts",
+          "Set up armour quantity and effect type",
+          "Configure global variable for armour tracking",
+          "Set up pickup style (automatic or manual)",
+          "Configure prompt display location",
+          "Add sound effects (Sound0 for use, Sound1 for collection)",
+          "Test armour pickup and consumption",
+          "Verify global variable integration",
+          "Check armour value modification"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "consumable_system", "global_variable", "pickup_system", "equipment_system"]
+    },
+    "crafting_kit": {
+      "name": "Crafting Kit",
+      "file": "rpg/crafting_kit.lua",
+      "description": "A portable crafting kit that allows players to access a crafting interface from anywhere. Features multiple pickup styles, customizable access keys, HUD screen integration, and persistent crafting container. Perfect for creating portable crafting systems, mobile workbenches, and on-the-go item creation in RPG games.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to Pickup",
+          "description": "Text displayed when picking up the crafting kit"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can pick up the crafting kit"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Automatic", "Manual", "Already Carrying"],
+          "description": "Pickup behavior: Automatic = auto-pickup, Manual = requires key press, Already Carrying = starts in inventory"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Press U to begin crafting",
+          "description": "Text displayed when the crafting kit is available for use"
+        },
+        {
+          "name": "USEAGE_KEY",
+          "type": "string",
+          "default": "U",
+          "description": "Key to press to access the crafting interface"
+        },
+        {
+          "name": "CRAFT_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 7",
+          "description": "Name of the HUD screen to display when crafting is activated"
+        },
+        {
+          "name": "CRAFT_CONTAINER",
+          "type": "string",
+          "default": "chest",
+          "description": "Name of the container for storing crafted items"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the crafting kit object"
+        }
+      ],
+      "features": [
+        "Portable crafting system",
+        "Multiple pickup styles (automatic, manual, already carrying)",
+        "Customizable access keys",
+        "HUD screen integration",
+        "Persistent crafting container",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Inventory integration",
+        "Screen transition system",
+        "Position management",
+        "Crafting station status tracking"
+      ],
+      "keywords": ["crafting", "kit", "portable", "craft", "rpg", "inventory", "screen", "container", "workbench", "mobile"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a crafting kit object",
+          "Set object as Collectable",
+          "Set AlwaysActive to ON",
+          "Attach the crafting_kit behavior",
+          "Configure pickup range and text",
+          "Set up pickup style (automatic, manual, or already carrying)",
+          "Configure access key and usage text",
+          "Set up HUD screen name for crafting interface",
+          "Configure container name for crafted items",
+          "Set up prompt display location",
+          "Add pickup sound to Sound0",
+          "Test pickup functionality",
+          "Verify HUD screen integration",
+          "Check crafting container functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "inventory_system", "crafting_system", "hud_system", "container_system"]
+    },
+    "crafting_table": {
+      "name": "Crafting Table",
+      "file": "rpg/crafting_table.lua",
+      "description": "A stationary crafting table that provides access to a crafting interface when the player is within range. Features level requirements, crafting class restrictions, HUD screen integration, and persistent crafting container. Perfect for creating fixed crafting stations, workbenches, and specialized crafting areas in RPG games.",
+      "properties": [
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which the player can interact with the crafting table"
+        },
+        {
+          "name": "USE_PROMPT",
+          "type": "string",
+          "default": "Press E to begin crafting",
+          "description": "Text displayed when the player can use the crafting table"
+        },
+        {
+          "name": "CRAFT_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 7",
+          "description": "Name of the HUD screen to display when crafting is activated"
+        },
+        {
+          "name": "CRAFT_CONTAINER",
+          "type": "string",
+          "default": "chest",
+          "description": "Name of the container for storing crafted items"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the crafting table object"
+        },
+        {
+          "name": "CRAFTING_CLASS",
+          "type": "string",
+          "default": "",
+          "description": "Crafting class restriction (e.g., 'potion', 'weapon'). Only allows recipes with matching class to be crafted"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to use the crafting table"
+        }
+      ],
+      "features": [
+        "Stationary crafting system",
+        "Level requirement system",
+        "Crafting class restrictions",
+        "HUD screen integration",
+        "Persistent crafting container",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Player proximity detection",
+        "Screen transition system",
+        "Level validation system",
+        "Crafting class filtering"
+      ],
+      "keywords": ["crafting", "table", "stationary", "workbench", "rpg", "level", "class", "screen", "container", "fixed", "station"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a crafting table object",
+          "Set AlwaysActive to ON",
+          "Attach the crafting_table behavior",
+          "Configure use range and prompt text",
+          "Set up HUD screen name for crafting interface",
+          "Configure container name for crafted items",
+          "Set up prompt display location",
+          "Configure crafting class restriction if needed",
+          "Set player level requirement if needed",
+          "Add crafting sound to Sound0",
+          "Test interaction range and prompts",
+          "Verify HUD screen integration",
+          "Check level requirement functionality",
+          "Test crafting class restrictions"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "crafting_system", "level_system", "hud_system", "container_system", "crafting_kit"]
+    },
+    "drink": {
+      "name": "Drink",
+      "file": "rpg/drink.lua",
+      "description": "A drinking system that allows players to consume liquids from objects like fountains, providing health boosts or reductions. Features timed drinking intervals, camera effects, global variable integration, and health cap management. Perfect for creating drinking fountains, potions, and consumable liquid items in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to Drink",
+          "description": "Text displayed when the player can drink from the object"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-40",
+          "default": 10,
+          "description": "Amount of health to add or deduct when drinking"
+        },
+        {
+          "name": "DRINK_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can drink from the object"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct health from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyHealth",
+          "description": "Name of the global variable to affect (e.g., 'MyHealth')"
+        }
+      ],
+      "features": [
+        "Drinking system with timed intervals",
+        "Health boost or reduction effects",
+        "Global variable integration",
+        "Camera movement effects",
+        "Health cap management",
+        "Sound effect integration",
+        "Player proximity detection",
+        "Looking direction validation",
+        "Timed drinking cooldown",
+        "Automatic health restoration",
+        "Global variable cap protection",
+        "Visual feedback system"
+      ],
+      "keywords": ["drink", "fountain", "health", "consumable", "rpg", "liquid", "boost", "deduct", "camera", "effect"],
+      "tutorial": {
+        "videoId": "7sfKELGyEXE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a drinkable object (e.g., fountain)",
+          "Set AlwaysActive to ON",
+          "Attach the drink behavior",
+          "Configure prompt text and drink range",
+          "Set up health quantity and effect type",
+          "Configure global variable for health tracking",
+          "Add drinking sound to Sound0",
+          "Test drinking functionality",
+          "Verify health effects and global variable integration",
+          "Check camera movement effects",
+          "Test timed drinking intervals"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "health_system", "consumable_system", "global_variable", "camera_system"]
+    },
+    "drink_from_water": {
+      "name": "Drink From Water",
+      "file": "rpg/drink_from_water.lua",
+      "description": "A specialized drinking system that allows players to drink from water planes within a set range. Features water height detection, timed drinking intervals, camera effects, and health restoration. Perfect for creating natural water sources, lakes, rivers, and environmental drinking mechanics in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to Drink",
+          "description": "Text displayed when the player can drink from the water"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-40",
+          "default": 10,
+          "description": "Amount of health to add or deduct when drinking from water"
+        },
+        {
+          "name": "WATER_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 65,
+          "description": "Distance from water surface at which the player can drink"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct health from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyHealth",
+          "description": "Name of the global variable to affect (e.g., 'MyHealth')"
+        }
+      ],
+      "features": [
+        "Water plane drinking system",
+        "Water height detection",
+        "Health boost or reduction effects",
+        "Global variable integration",
+        "Camera movement effects",
+        "Health cap management",
+        "Sound effect integration",
+        "Timed drinking cooldown",
+        "Automatic health restoration",
+        "Global variable cap protection",
+        "Environmental interaction",
+        "Natural water source mechanics"
+      ],
+      "keywords": ["drink", "water", "plane", "lake", "river", "health", "environmental", "rpg", "natural", "source", "camera"],
+      "tutorial": {
+        "videoId": "7sfKELGyEXE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a water plane object",
+          "Set AlwaysActive to ON",
+          "Attach the drink_from_water behavior",
+          "Configure prompt text and water range",
+          "Set up health quantity and effect type",
+          "Configure global variable for health tracking",
+          "Add drinking sound to Sound0",
+          "Test drinking from water functionality",
+          "Verify water height detection",
+          "Check health effects and global variable integration",
+          "Test camera movement effects",
+          "Verify timed drinking intervals"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "health_system", "environmental_system", "global_variable", "camera_system", "drink"]
+    },
+    "eat": {
+      "name": "Eat",
+      "file": "rpg/eat.lua",
+      "description": "A comprehensive eating system that allows players to consume food items for health effects. Features poisoning mechanics, respawning system, global variable integration, and visual feedback. Perfect for creating food items, consumables, and survival mechanics in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Press E to eat",
+          "description": "Text displayed when the player can consume the food item"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-40",
+          "default": 10,
+          "description": "Amount of health to add or deduct when consuming the food"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the food item"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct health from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyGlobal",
+          "description": "Name of the global variable to affect (e.g., 'MyGlobal')"
+        },
+        {
+          "name": "POISONING_EFFECT",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the food item has poisoning effects when consumed"
+        },
+        {
+          "name": "RESPAWNING",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the food item respawns after being consumed"
+        },
+        {
+          "name": "RESPAWN_TIME",
+          "type": "number",
+          "range": "1-60",
+          "default": 10,
+          "description": "Time in minutes before the food item respawns"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the food object"
+        }
+      ],
+      "features": [
+        "Food consumption system",
+        "Health boost or reduction effects",
+        "Poisoning mechanics with visual feedback",
+        "Respawn system with configurable timing",
+        "Global variable integration",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Player proximity detection",
+        "Camera shake effects for poisoning",
+        "Health cap management",
+        "Global variable cap protection",
+        "Object visibility management"
+      ],
+      "keywords": ["eat", "food", "consumable", "health", "poison", "respawn", "rpg", "survival", "nutrition", "effect"],
+      "tutorial": {
+        "videoId": "mUhzpqvSx8Q",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a food object",
+          "Set AlwaysActive to ON",
+          "Attach the eat behavior",
+          "Configure prompt text and pickup range",
+          "Set up health quantity and effect type",
+          "Configure global variable for health tracking",
+          "Set up poisoning effects if needed",
+          "Configure respawn system and timing",
+          "Set up prompt display location",
+          "Add consumption sound to Sound0",
+          "Add poisoning sound to Sound1",
+          "Test food consumption functionality",
+          "Verify health effects and global variable integration",
+          "Test poisoning mechanics and visual feedback",
+          "Check respawn system functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "health_system", "consumable_system", "global_variable", "poison_system", "respawn_system"]
+    },
+    "food": {
+      "name": "Food",
+      "file": "rpg/food.lua",
+      "description": "A food consumption system that provides health effects when consumed. Features automatic and manual pickup styles, global variable integration, and multiple sound effects. Perfect for creating food items, consumables, and health restoration mechanics in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Use",
+          "description": "Text displayed when using the food item"
+        },
+        {
+          "name": "PROMPT_IF_COLLECTABLE",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when collecting the food item"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "food consumed",
+          "description": "Text displayed when the food is consumed"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of health to add or deduct when consuming the food"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the food"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether food is consumed automatically or requires key press"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct health from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable to affect (e.g., 'MyMana')"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the food object"
+        }
+      ],
+      "features": [
+        "Food consumption system",
+        "Automatic and manual pickup styles",
+        "Health boost or reduction effects",
+        "Global variable integration",
+        "Multiple sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Player proximity detection",
+        "Health cap management",
+        "Global variable cap protection",
+        "Resource depletion system",
+        "Logic connection support"
+      ],
+      "keywords": ["food", "consumable", "health", "rpg", "nutrition", "boost", "deduct", "global", "pickup"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a food object",
+          "Set AlwaysActive to ON",
+          "Attach the food behavior",
+          "Configure prompt text and pickup range",
+          "Set up health quantity and effect type",
+          "Configure global variable for health tracking",
+          "Set up pickup style (automatic or manual)",
+          "Configure prompt display location",
+          "Add usage sound to Sound0",
+          "Add collection sound to Sound1",
+          "Add poisoning sound to Sound2",
+          "Test food consumption functionality",
+          "Verify health effects and global variable integration",
+          "Check pickup style functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "health_system", "consumable_system", "global_variable", "pickup_system"]
+    },
+    "health": {
+      "name": "Health",
+      "file": "rpg/health.lua",
+      "description": "A health restoration and damage system that allows players to consume health items for healing or take damage. Features automatic and manual pickup styles, global variable integration, and resource system compatibility. Perfect for creating health potions, medical items, and damage sources in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Use",
+          "description": "Text displayed when using the health item"
+        },
+        {
+          "name": "PROMPT_IF_COLLECTABLE",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when collecting the health item"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Health applied",
+          "description": "Text displayed when the health effect is applied"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of health to add or deduct when using the item"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the health item"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether health item is consumed automatically or requires key press"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct health from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyGlobal",
+          "description": "Name of the global variable to affect (e.g., 'MyGlobal')"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the health object"
+        }
+      ],
+      "features": [
+        "Health restoration and damage system",
+        "Automatic and manual pickup styles",
+        "Global variable integration",
+        "Resource system compatibility",
+        "Multiple sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Player proximity detection",
+        "Health cap management",
+        "Logic connection support",
+        "Collection system integration",
+        "Non-3D sound effects"
+      ],
+      "keywords": ["health", "healing", "damage", "potion", "medical", "rpg", "restoration", "boost", "deduct", "global"],
+      "tutorial": {
+        "videoId": "vWj4JyHy8xg",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a health item object",
+          "Set AlwaysActive to ON",
+          "Attach the health behavior",
+          "Configure prompt text and pickup range",
+          "Set up health quantity and effect type",
+          "Configure global variable for health tracking",
+          "Set up pickup style (automatic or manual)",
+          "Configure prompt display location",
+          "Add usage sound to Sound0",
+          "Add collection sound to Sound1",
+          "Test health item functionality",
+          "Verify health effects and global variable integration",
+          "Check pickup style functionality",
+          "Test resource system compatibility"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "health_system", "consumable_system", "global_variable", "pickup_system", "resource_system"]
+    },
+    "recipe": {
+      "name": "Recipe",
+      "file": "rpg/recipe.lua",
+      "description": "A recipe collection system that allows players to collect crafting recipes. Features automatic and manual pickup styles, logic connections, and collection tracking. Perfect for creating recipe items, crafting knowledge, and skill progression in RPG games.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when the player can collect the recipe"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Crafting Recipe collected",
+          "description": "Text displayed when the recipe is successfully collected"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-5",
+          "default": 1,
+          "description": "Number of recipe copies to collect"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can collect the recipe"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Manual",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether recipe is collected automatically or requires key press"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the recipe object"
+        }
+      ],
+      "features": [
+        "Recipe collection system",
+        "Automatic and manual pickup styles",
+        "Logic connection support",
+        "Collection tracking system",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Player proximity detection",
+        "Entity collection management",
+        "Recipe quantity management",
+        "Crafting knowledge progression"
+      ],
+      "keywords": ["recipe", "crafting", "collection", "knowledge", "rpg", "skill", "progression", "pickup", "manual"],
+      "tutorial": {
+        "videoId": "51oPrYWk5CQ",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a recipe object",
+          "Set object as Collectable",
+          "Set AlwaysActive to ON",
+          "Attach the recipe behavior",
+          "Configure pickup text and range",
+          "Set up collection text and quantity",
+          "Configure pickup style (automatic or manual)",
+          "Set up prompt display location",
+          "Add collection sound to Sound0",
+          "Test recipe collection functionality",
+          "Verify logic connections",
+          "Check collection tracking system",
+          "Test pickup style functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "crafting_system", "collection_system", "logic_connections", "pickup_system", "crafting_kit", "crafting_table"]
+    },
+    "root_spell": {
+      "name": "Root Spell",
+      "file": "rpg/root_spell.lua",
+      "description": "A collectible root spell that immobilizes a targeted enemy for a duration while dealing damage over time. Features targeting system (T key or right-click), mana cost, level requirements, particle effects, and speed modulation. Perfect for creating crowd control magic in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Collect",
+          "description": "Text displayed when collecting the root spell"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "You cast a Root spell",
+          "description": "Text displayed when the spell is successfully cast"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 90,
+          "description": "Distance at which the player can collect the spell"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable for mana (e.g., 'MyMana')"
+        },
+        {
+          "name": "MANA_COST",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of mana required to cast the spell"
+        },
+        {
+          "name": "CAST_DAMAGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 25,
+          "description": "Amount of damage dealt to the targeted enemy over time"
+        },
+        {
+          "name": "CAST_RADIUS",
+          "type": "number",
+          "range": "1-100",
+          "default": 5,
+          "description": "Radius of the root effect area"
+        },
+        {
+          "name": "PLAYER_LEVEL",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minimum player level required to cast the spell"
+        },
+        {
+          "name": "PARTICLE1_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of first particle effect object (e.g., 'SpellParticle1')"
+        },
+        {
+          "name": "PARTICLE2_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of second particle effect object (e.g., 'SpellParticle2')"
+        }
+      ],
+      "features": [
+        "Collectible spell system",
+        "Targeting system (T key or right-click)",
+        "Enemy targeting with outline highlighting",
+        "Root immobilization effect",
+        "Duration-based crowd control",
+        "Damage over time mechanics",
+        "Mana cost mechanics",
+        "Level requirement system",
+        "Particle effect integration",
+        "Visual scaling animation",
+        "Speed modulation control",
+        "Target validation system",
+        "Left-click casting",
+        "Sound effect integration",
+        "Global variable integration",
+        "Automatic particle positioning",
+        "Spell timeout system",
+        "Player level validation"
+      ],
+      "keywords": ["spell", "root", "immobilize", "target", "magic", "rpg", "mana", "particle", "cast", "crowd control", "enemy", "duration", "damage over time"],
+      "tutorial": {
+        "videoId": "dQi6ixaXlSE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a spell object",
+          "Set AlwaysActive to ON",
+          "Attach the root_spell behavior",
+          "Configure pickup range and prompt text",
+          "Set up mana cost and global variable",
+          "Configure damage amount and radius",
+          "Set player level requirement if needed",
+          "Add particle effect objects if desired",
+          "Set up sound effects (Sound0 for success, Sound1 for failure)",
+          "Test spell collection",
+          "Use T key or right-click to target enemies",
+          "Left-click to cast root at targeted enemy",
+          "Verify immobilization and damage over time effects",
+          "Check mana consumption and level requirements"
+        ]
+      },
+      "relatedBehaviors": ["mana_system", "spell_system", "damage_system", "particle_system", "targeting_system", "crowd_control", "rpg_progression"]
+    },
+    "rpg_player_state": {
+      "name": "RPG Player State",
+      "file": "rpg/rpg_player_state.lua",
+      "description": "A comprehensive player state management system that incrementally modifies up to 4 global variables over time with configurable intervals, effects, and damage thresholds. Features automatic activation, damage level monitoring, and global variable restoration on player death. Perfect for creating hunger, thirst, stamina, and other persistent player state systems in RPG games.",
+      "properties": [
+        {
+          "name": "USER_GLOBAL_AFFECTED1",
+          "type": "string",
+          "default": "MyGlobal#1",
+          "description": "Name of the first global variable to affect (e.g., 'MyHealth', 'MyHunger')"
+        },
+        {
+          "name": "AMOUNT1",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount to add or deduct from the first global variable per time interval"
+        },
+        {
+          "name": "TIME_INTERVAL1",
+          "type": "number",
+          "range": "0-3600",
+          "default": 0,
+          "description": "Time interval in seconds for the first global variable effect (0 = disabled)"
+        },
+        {
+          "name": "EFFECT1",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the first global variable"
+        },
+        {
+          "name": "DAMAGE_LEVEL1",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Threshold level above/below which damage is applied for the first global variable"
+        },
+        {
+          "name": "DAMAGE_AMOUNT1",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount of damage to apply when first global variable exceeds damage level"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED2",
+          "type": "string",
+          "default": "MyGlobal#2",
+          "description": "Name of the second global variable to affect (e.g., 'MyMana', 'MyThirst')"
+        },
+        {
+          "name": "AMOUNT2",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount to add or deduct from the second global variable per time interval"
+        },
+        {
+          "name": "TIME_INTERVAL2",
+          "type": "number",
+          "range": "0-3600",
+          "default": 0,
+          "description": "Time interval in seconds for the second global variable effect (0 = disabled)"
+        },
+        {
+          "name": "EFFECT2",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the second global variable"
+        },
+        {
+          "name": "DAMAGE_LEVEL2",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Threshold level above/below which damage is applied for the second global variable"
+        },
+        {
+          "name": "DAMAGE_AMOUNT2",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount of damage to apply when second global variable exceeds damage level"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED3",
+          "type": "string",
+          "default": "MyGlobal#3",
+          "description": "Name of the third global variable to affect (e.g., 'MyStamina', 'MyTemperature')"
+        },
+        {
+          "name": "AMOUNT3",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount to add or deduct from the third global variable per time interval"
+        },
+        {
+          "name": "TIME_INTERVAL3",
+          "type": "number",
+          "range": "0-3600",
+          "default": 0,
+          "description": "Time interval in seconds for the third global variable effect (0 = disabled)"
+        },
+        {
+          "name": "EFFECT3",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the third global variable"
+        },
+        {
+          "name": "DAMAGE_LEVEL3",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Threshold level above/below which damage is applied for the third global variable"
+        },
+        {
+          "name": "DAMAGE_AMOUNT3",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount of damage to apply when third global variable exceeds damage level"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED4",
+          "type": "string",
+          "default": "MyGlobal#4",
+          "description": "Name of the fourth global variable to affect (e.g., 'MyEnergy', 'MySanity')"
+        },
+        {
+          "name": "AMOUNT4",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount to add or deduct from the fourth global variable per time interval"
+        },
+        {
+          "name": "TIME_INTERVAL4",
+          "type": "number",
+          "range": "0-3600",
+          "default": 0,
+          "description": "Time interval in seconds for the fourth global variable effect (0 = disabled)"
+        },
+        {
+          "name": "EFFECT4",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the fourth global variable"
+        },
+        {
+          "name": "DAMAGE_LEVEL4",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Threshold level above/below which damage is applied for the fourth global variable"
+        },
+        {
+          "name": "DAMAGE_AMOUNT4",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Amount of damage to apply when fourth global variable exceeds damage level"
+        },
+        {
+          "name": "ActivateAtStart",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether to activate the system at start (Yes) or require manual activation via switch/zone (No)"
+        }
+      ],
+      "features": [
+        "Multi-variable state management system",
+        "Up to 4 independent global variables",
+        "Configurable time intervals for each variable",
+        "Add or deduct effects for each variable",
+        "Damage threshold monitoring system",
+        "Automatic damage application based on thresholds",
+        "Global variable cap management (0-100 range)",
+        "Automatic activation system",
+        "Manual activation via switch/zone support",
+        "Player death state detection",
+        "Global variable restoration on player death",
+        "Initial value preservation system",
+        "Real-time state monitoring",
+        "Persistent state tracking",
+        "Survival mechanics integration",
+        "RPG progression system support"
+      ],
+      "keywords": ["player", "state", "management", "global", "variable", "time", "interval", "damage", "threshold", "rpg", "survival", "hunger", "thirst", "stamina", "temperature", "sanity", "energy", "progression"],
+      "tutorial": {
+        "videoId": "rrOZQLpfo6w",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a state management object",
+          "Set AlwaysActive to ON",
+          "Attach the rpg_player_state behavior",
+          "Configure global variables to affect (up to 4)",
+          "Set up time intervals for each variable effect",
+          "Configure amounts to add or deduct per interval",
+          "Set up damage thresholds and amounts if needed",
+          "Choose activation method (automatic or manual)",
+          "Test state management functionality",
+          "Verify global variable changes over time",
+          "Check damage application at thresholds",
+          "Test player death and variable restoration",
+          "Configure additional variables as needed"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "global_variable", "damage_system", "survival_system", "state_management", "progression_system"]
+    },
+    "stamina": {
+      "name": "Stamina",
+      "file": "rpg/stamina.lua",
+      "description": "A consumable stamina item that provides stamina boost or deduction to the player. Features automatic and manual pickup styles, global variable integration, quantity management, and sound effects. Perfect for creating stamina potions, energy drinks, and consumable stamina items in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to consume",
+          "description": "Text displayed when using the stamina item"
+        },
+        {
+          "name": "PROMPT_IF_COLLECTABLE",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when collecting the stamina item"
+        },
+        {
+          "name": "USAGE_TEXT",
+          "type": "string",
+          "default": "Stamina consumed",
+          "description": "Text displayed when the stamina effect is applied"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount of stamina to add or deduct from the player"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the stamina item"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether stamina item is consumed automatically or requires key press"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct stamina from the player"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyStaminaMax",
+          "description": "Name of the global variable for stamina (e.g., 'MyStaminaMax')"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the stamina object"
+        }
+      ],
+      "features": [
+        "Consumable stamina system",
+        "Automatic and manual pickup styles",
+        "Global variable integration",
+        "Quantity management system",
+        "Add or deduct stamina effects",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Resource depletion system",
+        "Player proximity detection",
+        "Object collection tracking",
+        "Logic connection support",
+        "Stamina value modification",
+        "Resource quantity management"
+      ],
+      "keywords": ["stamina", "energy", "consumable", "boost", "deduct", "rpg", "potion", "drink", "global", "pickup"],
+      "tutorial": {
+        "videoId": "vWj4JyHy8xg",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a stamina item object",
+          "Set AlwaysActive to ON",
+          "Attach the stamina behavior",
+          "Configure prompt text and pickup range",
+          "Set up stamina quantity and effect type",
+          "Configure global variable for stamina tracking",
+          "Set up pickup style (automatic or manual)",
+          "Configure prompt display location",
+          "Add usage sound to Sound0",
+          "Add collection sound to Sound1",
+          "Test stamina item pickup and consumption",
+          "Verify global variable integration",
+          "Check stamina value modification"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "consumable_system", "global_variable", "pickup_system", "energy_system"]
+    },
+    "potion": {
+      "name": "Potion",
+      "file": "rpg/potion.lua",
+      "description": "A consumable potion system that provides boost or deduction to any global variable when consumed. Features automatic and manual pickup styles, global variable integration, quantity management, and sound effects. Perfect for creating health potions, mana potions, and any consumable item that affects player stats in RPG games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to Use",
+          "description": "Text displayed when using the potion"
+        },
+        {
+          "name": "PROMPT_IF_COLLECTABLE",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text displayed when collecting the potion"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Potion consumed",
+          "description": "Text displayed when the potion effect is applied"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Amount to add or deduct from the global variable"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the potion"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether potion is consumed automatically or requires key press"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the global variable"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "MyMana",
+          "description": "Name of the global variable to affect (e.g., 'MyMana', 'MyHealth', 'MyStamina')"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the potion object"
+        }
+      ],
+      "features": [
+        "Consumable potion system",
+        "Automatic and manual pickup styles",
+        "Global variable integration",
+        "Quantity management system",
+        "Add or deduct effects",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Resource depletion system",
+        "Player proximity detection",
+        "Object collection tracking",
+        "Logic connection support",
+        "Variable value modification",
+        "Resource quantity management",
+        "Flexible global variable targeting"
+      ],
+      "keywords": ["potion", "consumable", "boost", "deduct", "rpg", "health", "mana", "stamina", "global", "pickup", "drink"],
+      "tutorial": {
+        "videoId": "okVzrIfLjQ0",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a potion object",
+          "Set AlwaysActive to ON",
+          "Attach the potion behavior",
+          "Configure prompt text and pickup range",
+          "Set up quantity and effect type",
+          "Configure global variable to affect",
+          "Set up pickup style (automatic or manual)",
+          "Configure prompt display location",
+          "Add usage sound to Sound0",
+          "Add collection sound to Sound1",
+          "Test potion pickup and consumption",
+          "Verify global variable integration",
+          "Check variable value modification"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "consumable_system", "global_variable", "pickup_system", "health_system", "mana_system"]
+    },
+    "quest_poster": {
+      "name": "Quest Poster",
+      "file": "rpg/quest_poster.lua",
+      "description": "A comprehensive quest system that displays quest information and tracks multiple quest types including activate, collect, destroy, and deliver quests. Features HUD screen integration, quest progress tracking, automatic rewards, and quest completion mechanics. Perfect for creating quest boards, mission systems, and RPG progression in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "50-500",
+          "default": 100,
+          "description": "Distance at which the player can interact with the quest poster"
+        },
+        {
+          "name": "QUEST_PROMPT",
+          "type": "string",
+          "default": "Press E to view this quest",
+          "description": "Text displayed when the player can interact with the quest poster"
+        },
+        {
+          "name": "QUEST_SCREEN",
+          "type": "string",
+          "default": "HUD Screen 8",
+          "description": "Name of the HUD screen to display when viewing quest details"
+        },
+        {
+          "name": "QuestChoice",
+          "type": "number",
+          "range": "0-100",
+          "default": 1,
+          "description": "Quest number to display (0 = QuestList, 1+ = specific quest number)"
+        }
+      ],
+      "features": [
+        "Comprehensive quest system",
+        "Multiple quest types (activate, collect, destroy, deliver)",
+        "HUD screen integration",
+        "Quest progress tracking",
+        "Automatic reward system (money and XP)",
+        "Quest completion mechanics",
+        "Object activation on completion",
+        "Quest status management",
+        "Collection quantity tracking",
+        "Delivery quest mechanics",
+        "Destroy quest monitoring",
+        "Activate quest system",
+        "Sound effect integration",
+        "Visual feedback system",
+        "Quest poster visibility management",
+        "Logic connection support",
+        "Global variable integration"
+      ],
+      "keywords": ["quest", "poster", "mission", "rpg", "collection", "delivery", "destroy", "activate", "reward", "xp", "money", "progress", "tracking"],
+      "tutorial": {
+        "videoId": "E2qor07gR6k",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a quest poster object",
+          "Set AlwaysActive to ON",
+          "Attach the quest_poster behavior",
+          "Configure interaction range and prompt text",
+          "Set up HUD screen for quest display",
+          "Configure quest choice number",
+          "Set up quest collection system",
+          "Add viewing sound to Sound0",
+          "Add completion sound to Sound1",
+          "Test quest poster interaction",
+          "Verify HUD screen integration",
+          "Test different quest types",
+          "Check quest completion and rewards",
+          "Verify quest status management"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "quest_system", "hud_system", "collection_system", "reward_system", "progression_system"]
+    },
+    "quest_sequencer": {
+      "name": "Quest Sequencer",
+      "file": "rpg/quest_sequencer.lua",
+      "description": "A sophisticated quest sequencing system that automatically progresses through a series of quests in order. Features automatic quest activation, sequential progression, quest completion tracking, and automatic rewards. Perfect for creating linear quest chains, story progression, and automated mission sequences in RPG games.",
+      "properties": [
+        {
+          "name": "QUEST_START_TEXT",
+          "type": "string",
+          "default": "Quest Activated",
+          "description": "Text displayed when a quest sequence is activated"
+        },
+        {
+          "name": "QUEST_END_TEXT",
+          "type": "string",
+          "default": "Quest Completed",
+          "description": "Text displayed when a quest is completed"
+        },
+        {
+          "name": "QUEST_READOUT",
+          "type": "dropdown",
+          "default": "Title",
+          "options": ["Title", "Description1"],
+          "description": "What information to store in the readout global variable"
+        },
+        {
+          "name": "READOUT_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of global variable to store quest information (e.g., 'MyReadout')"
+        },
+        {
+          "name": "QuestChoice",
+          "type": "number",
+          "range": "1-100",
+          "default": 1,
+          "description": "Starting quest number in the sequence"
+        },
+        {
+          "name": "HIDE_OBJECT",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to hide the sequencer object during operation"
+        }
+      ],
+      "features": [
+        "Automatic quest sequencing system",
+        "Sequential quest progression",
+        "Multiple quest types support (activate, collect, destroy, deliver)",
+        "Automatic quest activation",
+        "Quest completion tracking",
+        "Automatic reward system (money and XP)",
+        "Quest status management",
+        "Global variable integration",
+        "Object activation on completion",
+        "Sequence termination control",
+        "Quest readout system",
+        "Sound effect integration",
+        "Visual feedback system",
+        "Logic connection support",
+        "Automatic object hiding",
+        "Quest chain management",
+        "Story progression system"
+      ],
+      "keywords": ["quest", "sequencer", "sequence", "chain", "progression", "rpg", "story", "mission", "linear", "automatic", "reward", "xp", "money"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a quest sequencer object",
+          "Set AlwaysActive to ON",
+          "Attach the quest_sequencer behavior",
+          "Configure quest start and end text",
+          "Set up quest readout system if needed",
+          "Configure starting quest number",
+          "Set up object hiding preference",
+          "Add completion sound to Sound1",
+          "Test quest sequence activation",
+          "Verify automatic quest progression",
+          "Check quest completion and rewards",
+          "Test sequence termination",
+          "Verify quest chain functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "quest_system", "progression_system", "reward_system", "story_system", "quest_poster"]
+    },
+    "resource": {
+      "name": "Resource",
+      "file": "rpg/resource.lua",
+      "description": "A resource harvesting system that provides crafting resources to the player. Features automatic and manual pickup styles, quantity management, and resource collection mechanics. Perfect for creating harvestable resources, crafting materials, and collectible items in RPG games.",
+      "properties": [
+        {
+          "name": "PICKUP_TEXT",
+          "type": "string",
+          "default": "E to harvest",
+          "description": "Text displayed when the player can harvest the resource"
+        },
+        {
+          "name": "COLLECTED_TEXT",
+          "type": "string",
+          "default": "Resource harvested",
+          "description": "Text displayed when the resource is successfully harvested"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-5",
+          "default": 1,
+          "description": "Amount of resource to give to the player when harvested"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the player can harvest the resource"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Manual"],
+          "description": "Whether resource is harvested automatically or requires key press"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the resource object"
+        }
+      ],
+      "features": [
+        "Resource harvesting system",
+        "Automatic and manual pickup styles",
+        "Quantity management system",
+        "Resource collection mechanics",
+        "Sound effect integration",
+        "Visual highlighting options",
+        "Prompt display customization",
+        "Player proximity detection",
+        "Logic connection support",
+        "Resource quantity tracking",
+        "Crafting material system",
+        "Harvestable resource mechanics"
+      ],
+      "keywords": ["resource", "harvest", "crafting", "material", "collect", "rpg", "gather", "pickup", "quantity"],
+      "tutorial": {
+        "videoId": "hriSRCQpHUo",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a resource object",
+          "Set object as Collectable and Resource",
+          "Set AlwaysActive to ON",
+          "Attach the resource behavior",
+          "Configure pickup text and range",
+          "Set up resource quantity",
+          "Configure pickup style (automatic or manual)",
+          "Set up prompt display location",
+          "Add harvesting sound to Sound0",
+          "Test resource harvesting functionality",
+          "Verify quantity management",
+          "Check pickup style functionality"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "crafting_system", "collection_system", "pickup_system", "resource_system"]
+    },
+    "resource_node": {
+      "name": "Resource Node",
+      "file": "rpg/resource_node.lua",
+      "description": "A sophisticated resource node system that spawns resources over time with configurable growth and extraction modes. Features automatic resource spawning, tool requirements, respawn mechanics, and resource quantity management. Perfect for creating renewable resource nodes, mining sites, and sustainable resource gathering in RPG games.",
+      "properties": [
+        {
+          "name": "NODE_TYPE",
+          "type": "dropdown",
+          "default": "Growth",
+          "options": ["Growth", "Extraction"],
+          "description": "Type of resource node: Growth = automatic spawning, Extraction = requires tool/weapon"
+        },
+        {
+          "name": "NODE_TOOL_NAME",
+          "type": "dropdown",
+          "default": "Any",
+          "options": ["Any", "Specific Weapon/Tool"],
+          "description": "Specific weapon/tool required for extraction (Any = no requirement)"
+        },
+        {
+          "name": "NODE_RESPAWN_TIME",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Minutes before node respawns (0 = destroyed after depletion)"
+        },
+        {
+          "name": "NODE_RESPAWNS",
+          "type": "number",
+          "range": "1-20",
+          "default": 1,
+          "description": "Number of times the node can respawn"
+        },
+        {
+          "name": "NODE_RESOURCE_QUANTITY",
+          "type": "number",
+          "range": "1-10",
+          "default": 3,
+          "description": "Number of resources the node can spawn"
+        },
+        {
+          "name": "RESOURCE_SPAWN_TIME",
+          "type": "number",
+          "range": "0-100",
+          "default": 1,
+          "description": "Minutes between resource spawns (0 = instant respawn)"
+        },
+        {
+          "name": "RESOURCE_SPAWN_SPREAD",
+          "type": "number",
+          "range": "0-100",
+          "default": 20,
+          "description": "Distance spread for resource spawning"
+        },
+        {
+          "name": "RESOURCE_ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the resource entity to spawn"
+        },
+        {
+          "name": "NODE_USE_RANGE",
+          "type": "number",
+          "range": "0-200",
+          "default": 100,
+          "description": "Distance at which the player can interact with the node"
+        },
+        {
+          "name": "NODE_USE_PROMPT",
+          "type": "string",
+          "default": "Extract Resources",
+          "description": "Text displayed when the player can extract resources"
+        },
+        {
+          "name": "NODE_TOOL_PROMPT",
+          "type": "string",
+          "default": "Tool required to extract Resources",
+          "description": "Text displayed when the player needs a specific tool"
+        },
+        {
+          "name": "NODE_SCALER",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the node scales down as resources are extracted"
+        },
+        {
+          "name": "HIDE_NODE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to hide the node object during operation"
+        }
+      ],
+      "features": [
+        "Dual node types (growth and extraction)",
+        "Automatic resource spawning system",
+        "Tool/weapon requirement system",
+        "Configurable respawn mechanics",
+        "Resource quantity management",
+        "Spawn timing control",
+        "Resource spread positioning",
+        "Node scaling mechanics",
+        "Health-based extraction system",
+        "Sound effect integration",
+        "Visual feedback system",
+        "Logic connection support",
+        "Renewable resource system",
+        "Sustainable resource gathering",
+        "Mining and harvesting mechanics"
+      ],
+      "keywords": ["resource", "node", "spawn", "growth", "extraction", "mining", "harvesting", "renewable", "sustainable", "tool", "weapon", "rpg"],
+      "tutorial": {
+        "videoId": "hriSRCQpHUo",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a resource node object",
+          "Set AlwaysActive to ON",
+          "Attach the resource_node behavior",
+          "Configure node type (growth or extraction)",
+          "Set up tool requirements if needed",
+          "Configure respawn time and quantity",
+          "Set up resource spawn timing and spread",
+          "Configure resource entity name",
+          "Set up interaction range and prompts",
+          "Configure node scaling and hiding",
+          "Add extraction sound to Sound0",
+          "Test resource node functionality",
+          "Verify resource spawning mechanics",
+          "Check respawn and depletion systems"
+        ]
+      },
+      "relatedBehaviors": ["rpg_system", "resource_system", "spawning_system", "mining_system", "harvesting_system", "resource"]
     }
   }
 } 
