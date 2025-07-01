@@ -7,7 +7,12 @@
       "date": "2024-12-01",
       "author": "Blood Moon Interactive",
       "category": "Tutorials",
-      "tags": ["beginner", "tutorial", "behaviors", "gameguru"],
+      "tags": [
+        "beginner",
+        "tutorial",
+        "behaviors",
+        "gameguru"
+      ],
       "featured": true,
       "content": {
         "lead": "GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this comprehensive guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems.",
@@ -74,6 +79,42 @@
           }
         ]
       }
+    },
+    {
+      "id": "food",
+      "title": "Food",
+      "preview": "A food consumption system that provides health effects when consumed. Features automatic and manual pickup styles, global variable integration, and multiple sound effects. Perfect for creating food it...",
+      "date": "2025-07-01",
+      "author": "Blood Moon Interactive",
+      "category": "RPG",
+      "tags": [
+        "food",
+        "consumable",
+        "health",
+        "rpg",
+        "behavior",
+        "gameguru"
+      ],
+      "featured": false,
+      "filename": "food.html"
+    },
+    {
+      "id": "adaptive_crosshair",
+      "title": "Adaptive Crosshair",
+      "preview": "An adaptive crosshair and hitmarker system that changes color based on target allegiance and provides visual feedback when firing. Features configurable view range, weapon activation, and highlighting...",
+      "date": "2025-07-01",
+      "author": "Blood Moon Interactive",
+      "category": "HUDs",
+      "tags": [
+        "crosshair",
+        "hitmarker",
+        "hud",
+        "huds",
+        "behavior",
+        "gameguru"
+      ],
+      "featured": false,
+      "filename": "adaptive_crosshair.html"
     }
   ],
   "config": {
@@ -81,4 +122,4 @@
     "defaultCategory": "Tutorials",
     "sortBy": "date"
   }
-} 
+}

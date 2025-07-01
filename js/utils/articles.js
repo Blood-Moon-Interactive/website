@@ -6,8 +6,15 @@ export async function fetchArticles() {
     console.log('Current pathname:', window.location.pathname);
     console.log('Current origin:', window.location.origin);
     
-    // Try the most likely path first
-    const path = 'articles/articles.json';
+    // Determine the correct path based on current location
+    let path;
+    if (window.location.pathname.includes('/articles/')) {
+        // If we're already in the articles directory, use relative path
+        path = 'articles.json';
+    } else {
+        // If we're in the root directory, use the full path
+        path = 'articles/articles.json';
+    }
     
     try {
         console.log(`Trying to fetch articles from: ${path}`);
@@ -36,7 +43,15 @@ export async function fetchArticles() {
 }
 
 export function getFeaturedArticle(articles) {
-    return articles.find(article => article.featured) || articles[0];
+    // Sort by date (newest first), and if dates are equal, use array order (newest inserted first)
+    const sortedArticles = [...articles].sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        if (dateB - dateA !== 0) return dateB - dateA;
+        // If dates are equal, keep the later-in-array (newer) first
+        return articles.indexOf(b) - articles.indexOf(a);
+    });
+    return sortedArticles[0] || null;
 }
 
 export function getArticlesByCategory(articles, category) {
@@ -56,10 +71,22 @@ export function sortArticlesByDate(articles, ascending = false) {
 }
 
 export function renderArticlePreview(article) {
-    const date = new Date(article.date).toLocaleDateString('en-US', {
+    console.log('Rendering article preview for:', article.title);
+    console.log('Article date:', article.date);
+    console.log('Article date type:', typeof article.date);
+    
+    // Ensure proper date parsing by using a more explicit format
+    const dateParts = article.date.split('-');
+    const year = parseInt(dateParts[0]);
+    const month = parseInt(dateParts[1]) - 1; // JavaScript months are 0-indexed
+    const day = parseInt(dateParts[2]);
+    
+    const date = new Date(year, month, day).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long'
     });
+    
+    console.log('Formatted date:', date);
     
     return `
         <div class="article-card card">
