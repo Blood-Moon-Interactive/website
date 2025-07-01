@@ -423,6 +423,258 @@
         ]
       },
       "relatedBehaviors": ["global_activator", "global_modifier", "global_indicator", "switch"]
+    },
+    "global_affected_object": {
+      "name": "Global Affected Object",
+      "file": "objects/global_affected_object.lua",
+      "description": "A proximity-based object that affects player globals and health based on distance. Features distance-based effects, configurable ranges, timed intervals, health manipulation, and global variable integration. Perfect for creating healing zones, damage areas, buff/debuff zones, and environmental effects in games.",
+      "properties": [
+        {
+          "name": "IN_RANGE_TEXT",
+          "type": "string",
+          "default": "In range of Affecting Object",
+          "description": "Text displayed when player is within the effect range"
+        },
+        {
+          "name": "EFFECT_RANGE",
+          "type": "number",
+          "range": "1-3000",
+          "default": 500,
+          "description": "Distance at which the object affects the player"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": ["Add", "Deduct"],
+          "description": "Whether to add or deduct from the global variable and health"
+        },
+        {
+          "name": "EFFECT_MULTIPLIER",
+          "type": "number",
+          "range": "1-10",
+          "default": 1,
+          "description": "Multiplier for the effect amount"
+        },
+        {
+          "name": "SECONDS",
+          "type": "number",
+          "range": "1-60",
+          "default": 1,
+          "description": "Time interval in seconds between effect applications"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to affect (e.g., 'MyGlobal')"
+        },
+        {
+          "name": "HEALTH_AFFECTED",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Add", "Deduct"],
+          "description": "Whether to affect player health in addition to global variable"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether the object spawns at game start or requires manual activation"
+        }
+      ],
+      "features": [
+        "Proximity-based effect system",
+        "Distance-based effect scaling",
+        "Timed interval effects",
+        "Global variable manipulation",
+        "Player health integration",
+        "Add or deduct effects",
+        "Configurable effect ranges",
+        "Effect multiplier system",
+        "Loop sound integration",
+        "Health cap management",
+        "Global variable cap protection",
+        "Environmental zone effects",
+        "Buff/debuff mechanics"
+      ],
+      "keywords": ["global", "affected", "object", "proximity", "distance", "effect", "health", "variable", "zone", "buff", "debuff", "environmental"],
+      "tutorial": {
+        "videoId": "TVGuKSh-hyE",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a global affected object",
+          "Set AlwaysActive to ON",
+          "Attach the global_affected_object behavior",
+          "Configure effect range and text prompt",
+          "Set up effect type (add or deduct)",
+          "Configure effect multiplier and time interval",
+          "Set up global variable to affect",
+          "Configure health effects if needed",
+          "Set spawn at start preference",
+          "Add loop sound to Sound0",
+          "Test proximity-based effects",
+          "Verify global variable changes",
+          "Check health manipulation",
+          "Test distance-based scaling"
+        ]
+      },
+      "relatedBehaviors": ["global_variable", "health_system", "proximity_effects", "environmental_system", "buff_system"]
+    },
+    "global_set_string": {
+      "name": "Global Set String",
+      "file": "objects/global_set_string.lua",
+      "description": "A simple behavior that sets a global variable to a specific string value when activated. Features one-time string assignment, global variable integration, and automatic initialization. Perfect for setting text values, messages, labels, and string-based game state in games.",
+      "properties": [
+        {
+          "name": "USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to set (e.g., 'MyRewardText', 'MyMessage')"
+        },
+        {
+          "name": "NEW_STRING",
+          "type": "string",
+          "default": "",
+          "description": "String value to assign to the global variable"
+        }
+      ],
+      "features": [
+        "One-time string assignment",
+        "Global variable integration",
+        "Automatic initialization",
+        "Simple text value setting",
+        "Message system integration",
+        "Label and text management",
+        "Game state text updates",
+        "String-based variable control"
+      ],
+      "keywords": ["global", "set", "string", "text", "variable", "message", "label", "assignment", "initialization"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a global set string object",
+          "Set AlwaysActive to ON",
+          "Attach the global_set_string behavior",
+          "Configure global variable name to set",
+          "Set the new string value to assign",
+          "Test string assignment functionality",
+          "Verify global variable contains the new string",
+          "Check one-time initialization behavior"
+        ]
+      },
+      "relatedBehaviors": ["global_variable", "text_system", "message_system", "string_management", "initialization_system"]
+    },
+    "global_transfer": {
+      "name": "Global Transfer",
+      "file": "objects/global_transfer.lua",
+      "description": "A value transfer system that moves amounts between global variables or from globals to player health. Features automatic and manual activation, visual icon feedback, configurable transfer amounts, and health cap management. Perfect for creating resource conversion systems, health restoration mechanics, and value transfer between different game systems.",
+      "properties": [
+        {
+          "name": "ACTIVATION",
+          "type": "dropdown",
+          "default": "Automatic",
+          "options": ["Automatic", "Key Press"],
+          "description": "Whether transfer happens automatically or requires key press"
+        },
+        {
+          "name": "ACTIVATION_KEY",
+          "type": "string",
+          "default": "Z",
+          "description": "Key to press for manual activation (only used when ACTIVATION is set to Key Press)"
+        },
+        {
+          "name": "TRANSFER_FROM",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to transfer from (e.g., 'MyStamina', 'MyMoney')"
+        },
+        {
+          "name": "TRANSFER_AMOUNT",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Amount to transfer from source to destination"
+        },
+        {
+          "name": "TRANSFER_TO",
+          "type": "dropdown",
+          "default": "User Global",
+          "options": ["Player Health", "User Global"],
+          "description": "Destination for the transferred amount"
+        },
+        {
+          "name": "USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to transfer to (only used when TRANSFER_TO is User Global)"
+        },
+        {
+          "name": "ICON_IMAGEFILE",
+          "type": "string",
+          "default": "",
+          "description": "Path to icon image file for visual feedback"
+        },
+        {
+          "name": "SCREEN_POSITION_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 2,
+          "description": "X position of the icon on screen"
+        },
+        {
+          "name": "SCREEN_POSITION_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 10,
+          "description": "Y position of the icon on screen"
+        },
+        {
+          "name": "SCREEN_SCALE",
+          "type": "number",
+          "range": "1-100",
+          "default": 10,
+          "description": "Scale of the icon on screen"
+        }
+      ],
+      "features": [
+        "Value transfer between global variables",
+        "Global to player health transfer",
+        "Automatic and manual activation modes",
+        "Visual icon feedback system",
+        "Configurable transfer amounts",
+        "Health cap management",
+        "Key press activation support",
+        "Sound effect integration",
+        "Icon positioning and scaling",
+        "Transfer amount validation",
+        "Resource conversion mechanics",
+        "Health restoration system"
+      ],
+      "keywords": ["global", "transfer", "value", "health", "variable", "conversion", "resource", "icon", "visual", "feedback", "activation"],
+      "tutorial": {
+        "videoId": "mw3qplrO_fY",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a global transfer object",
+          "Set AlwaysActive to ON",
+          "Attach the global_transfer behavior",
+          "Configure activation mode (automatic or key press)",
+          "Set up transfer source global variable",
+          "Configure transfer amount",
+          "Set transfer destination (health or global)",
+          "Configure destination global if needed",
+          "Set up icon image and positioning",
+          "Add activation sound to Sound0",
+          "Test transfer functionality",
+          "Verify value movement between variables",
+          "Check health transfer and cap management",
+          "Test visual icon feedback"
+        ]
+      },
+      "relatedBehaviors": ["global_variable", "health_system", "resource_system", "conversion_system", "icon_system"]
     }
   }
 } 

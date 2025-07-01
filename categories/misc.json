@@ -2718,6 +2718,580 @@
         ]
       },
       "relatedBehaviors": ["inventory_system", "hud_interface", "container_system", "economy_system", "merchant_system"]
+    },
+    "ammo": {
+      "name": "Ammo",
+      "file": "ammo.lua",
+      "description": "An ammunition pickup system that gives the player ammunition when collected. Features configurable pickup styles (ranged and accurate), visual highlighting options, logic connections, and sound effects. Perfect for creating ammunition pickups, weapon supplies, and collectible ammo items in games.",
+      "properties": [
+        {
+          "name": "PROMPTTEXT",
+          "type": "string",
+          "default": "E to use",
+          "description": "Text displayed when the player can collect the ammunition"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-100",
+          "default": 0,
+          "description": "Amount of ammunition to give to the player"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the player can collect the ammunition"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Ranged",
+          "options": ["Ranged", "Accurate"],
+          "description": "Pickup style: Ranged = automatic pickup, Accurate = requires targeting and key press"
+        },
+        {
+          "name": "COLLECTION_TEXT",
+          "type": "string",
+          "default": "Ammunition collected",
+          "description": "Text displayed when ammunition is successfully collected"
+        },
+        {
+          "name": "PLAY_PICKUP",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to play pickup sound when collecting ammunition"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to activate logic connections when collecting ammunition"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline", "Icon"],
+          "description": "Visual highlighting method for the ammunition object"
+        },
+        {
+          "name": "HIGHLIGHT_ICON_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\icons\\pickup.png",
+          "description": "Path to icon image file for icon highlighting"
+        }
+      ],
+      "features": [
+        "Ammunition pickup system",
+        "Configurable pickup styles (ranged and accurate)",
+        "Visual highlighting options",
+        "Logic connection integration",
+        "Sound effect integration",
+        "Player ammo management",
+        "Automatic pickup functionality",
+        "Targeted pickup system",
+        "Icon highlighting system",
+        "Collection feedback system",
+        "Range-based interaction",
+        "Weapon supply management"
+      ],
+      "keywords": ["ammo", "ammunition", "pickup", "weapon", "supply", "collect", "highlight", "range", "target", "icon"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an ammo object",
+          "Set AlwaysActive to ON",
+          "Attach the ammo behavior",
+          "Configure prompt text and pickup range",
+          "Set up ammunition quantity",
+          "Choose pickup style (ranged or accurate)",
+          "Configure collection text",
+          "Set up sound and logic preferences",
+          "Configure visual highlighting options",
+          "Set up icon image file if using icon highlighting",
+          "Test pickup functionality",
+          "Verify ammunition addition to player",
+          "Check logic connections and sound effects",
+          "Test different pickup styles"
+        ]
+      },
+            "relatedBehaviors": ["pickup_system", "weapon_system", "ammunition_system", "highlight_system", "logic_connections", "sound_system"]
+    },
+    "face_object": {
+      "name": "Face Object",
+      "file": "objects/face_object.lua",
+      "description": "An object rotation system that makes an object automatically rotate to face the nearest other object within a specified range. Features configurable detection range, nearest entity detection, automatic rotation calculation, and Y-axis rotation only. Perfect for creating turrets, security cameras, tracking objects, and directional entities in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "60-3000",
+          "default": 300,
+          "description": "Detection range within which the object will look for other entities to face"
+        }
+      ],
+      "features": [
+        "Automatic object rotation system",
+        "Nearest entity detection",
+        "Configurable detection range",
+        "Y-axis rotation only",
+        "Distance-based targeting",
+        "Active entity filtering",
+        "Health-based entity filtering",
+        "Real-time rotation calculation",
+        "Automatic angle computation",
+        "Entity proximity detection",
+        "Tracking system functionality",
+        "Directional object behavior"
+      ],
+      "keywords": ["face", "object", "rotation", "tracking", "nearest", "entity", "range", "detection", "turret", "camera", "direction"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a face object entity",
+          "Set AlwaysActive to ON",
+          "Attach the face_object behavior",
+          "Configure detection range for entity targeting",
+          "Position the object in your game world",
+          "Add other entities within the detection range",
+          "Test object rotation functionality",
+          "Verify nearest entity detection",
+          "Check rotation to face nearest entity",
+          "Test range-based detection limits",
+          "Verify Y-axis rotation only",
+          "Test with multiple entities in range"
+        ]
+      },
+      "relatedBehaviors": ["rotation_system", "tracking_system", "entity_detection", "proximity_system", "direction_system", "turret_system"]
+    },
+    "save_point": {
+      "name": "Save Point",
+      "file": "effects/save_point.lua",
+      "description": "A comprehensive save point system that allows players to save their game progress with configurable activation methods, prompts, and save functionality. Features automatic save slot creation, player state preservation, animation support, and logic connections. Perfect for creating save stations, progress checkpoints, and game state preservation in games.",
+      "properties": [
+        {
+          "name": "ACTIVATION",
+          "type": "dropdown",
+          "default": "By This Object",
+          "options": ["By This Object", "By External Zone/Switch"],
+          "description": "How the save point is activated: direct object interaction or external trigger"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 80,
+          "description": "Distance at which the player can interact with the save point"
+        },
+        {
+          "name": "PROMPT_MESSAGE",
+          "type": "string",
+          "default": "Press E to save",
+          "description": "Text displayed when the player can interact with the save point"
+        },
+        {
+          "name": "SAVE_MESSAGE",
+          "type": "string",
+          "default": "Saving..",
+          "description": "Text displayed when the save point is activated"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt messages"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline"],
+          "description": "Visual highlighting method for the save point object"
+        }
+      ],
+      "features": [
+        "Save point system",
+        "Configurable activation methods",
+        "Automatic save slot creation",
+        "Player state preservation",
+        "Animation support (on/off states)",
+        "Sound effect integration",
+        "Logic connection support",
+        "Prompt display customization",
+        "Visual highlighting options",
+        "Game data management",
+        "Player attribute saving",
+        "Save slot naming system",
+        "Cooldown timer system"
+      ],
+      "keywords": ["save", "point", "checkpoint", "progress", "game", "data", "slot", "state", "preservation", "activation", "prompt"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a save point object",
+          "Set AlwaysActive to ON",
+          "Attach the save_point behavior",
+          "Configure activation method (object or external)",
+          "Set up use range and prompt messages",
+          "Configure prompt display location",
+          "Set up visual highlighting if needed",
+          "Add save sound to Sound0",
+          "Set up ON/OFF animations if desired",
+          "Test save point interaction",
+          "Verify save slot creation",
+          "Check player state preservation",
+          "Test logic connections",
+          "Verify cooldown timer functionality"
+        ]
+      },
+      "relatedBehaviors": ["save_system", "checkpoint_system", "game_data_system", "animation_system", "logic_connections", "prompt_system"]
+    },
+    "play_animation": {
+      "name": "Play Animation",
+      "file": "people/play_animation.lua",
+      "description": "A proximity-based animation system that plays different animations based on player distance. Features action and idle animation states, configurable ranges, sound effects, and optional melee weapon integration. Perfect for creating responsive NPCs, animated characters, and dynamic behavior systems in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "1-1000",
+          "default": 400,
+          "description": "Distance at which the entity switches from idle to action animations"
+        },
+        {
+          "name": "ActionPlay",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play when player is within range (action state)"
+        },
+        {
+          "name": "ActionLoop",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to loop when player is within range (action state)"
+        },
+        {
+          "name": "IdlePlay",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play when player is outside range (idle state)"
+        },
+        {
+          "name": "IdleLoop",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to loop when player is outside range (idle state)"
+        }
+      ],
+      "features": [
+        "Proximity-based animation system",
+        "Action and idle animation states",
+        "Configurable detection range",
+        "Sound effect integration",
+        "Optional melee weapon support",
+        "Master interpreter integration",
+        "Animation state management",
+        "Player distance detection",
+        "Dynamic behavior switching",
+        "Character responsiveness",
+        "NPC animation system",
+        "Behavior state transitions"
+      ],
+      "keywords": ["play", "animation", "proximity", "range", "action", "idle", "npc", "character", "behavior", "state", "transition"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the play_animation behavior",
+          "Configure detection range for animation switching",
+          "Set up action animations (play and loop)",
+          "Configure idle animations (play and loop)",
+          "Add trigger sound to Sound0",
+          "Set up melee weapon if desired",
+          "Position the character in your game world",
+          "Test player proximity to the character",
+          "Verify animation state transitions",
+          "Check action and idle animation playback",
+          "Test sound effect integration",
+          "Verify range-based behavior switching"
+        ]
+      },
+      "relatedBehaviors": ["animation_system", "proximity_system", "npc_system", "character_system", "behavior_system", "state_management"]
+    },
+    "remover": {
+      "name": "Remover",
+      "file": "effects/remover.lua",
+      "description": "A global entity removal system that destroys all entities with a specified name when activated by a switch or zone. Features case-insensitive name matching, effect stopping, sound integration, and logic connections. Perfect for creating cleanup systems, entity removal triggers, and dynamic object management in games.",
+      "properties": [
+        {
+          "name": "ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of entities to remove (case-insensitive, removes all entities with this name)"
+        }
+      ],
+      "features": [
+        "Global entity removal system",
+        "Case-insensitive name matching",
+        "Effect stopping before removal",
+        "Sound effect integration",
+        "Logic connection support",
+        "Switch/zone activation",
+        "Bulk entity cleanup",
+        "Dynamic object management",
+        "Entity destruction system",
+        "Cleanup trigger functionality",
+        "Mass removal capability"
+      ],
+      "keywords": ["remover", "entity", "destroy", "cleanup", "name", "global", "removal", "trigger", "switch", "zone"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a remover object",
+          "Set AlwaysActive to ON",
+          "Attach the remover behavior",
+          "Configure entity name to remove",
+          "Add removal sound to Sound0",
+          "Link to a switch or zone for activation",
+          "Position entities with the target name in your game world",
+          "Test activation via switch or zone",
+          "Verify entity removal functionality",
+          "Check sound effect playback",
+          "Test logic connections",
+          "Verify case-insensitive name matching"
+        ]
+      },
+      "relatedBehaviors": ["effects_system", "entity_management", "cleanup_system", "trigger_system", "sound_system", "logic_connections"]
+    },
+    "vendor": {
+      "name": "Vendor",
+      "file": "objects/vendor.lua",
+      "description": "A comprehensive vending machine system that dispenses items to players with configurable costs, quantities, lifespans, and empty state behaviors. Features global variable payment integration, entity spawning, animation support, and multiple empty state options. Perfect for creating vending machines, item dispensers, and automated shops in games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to dispense item",
+          "description": "Text displayed when the player can interact with the vendor"
+        },
+        {
+          "name": "PROMPT_RANGE",
+          "type": "number",
+          "range": "0-100",
+          "default": 80,
+          "description": "Distance at which the player can interact with the vendor"
+        },
+        {
+          "name": "NOISE_RANGE",
+          "type": "number",
+          "range": "0-5000",
+          "default": 500,
+          "description": "Range at which AI can hear the vendor being used"
+        },
+        {
+          "name": "VENDOR_ANIMATION",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play when vending (0 = AnimSetList)"
+        },
+        {
+          "name": "VENDORED_MAX_QUANTITY",
+          "type": "number",
+          "range": "1-50",
+          "default": 1,
+          "description": "Maximum number of items the vendor can dispense"
+        },
+        {
+          "name": "VENDORED_ENTITY_COST",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Cost of each item in the specified global variable"
+        },
+        {
+          "name": "VENDORED_ENTITY_LIFESPAN",
+          "type": "number",
+          "range": "0-100",
+          "default": 1,
+          "description": "Lifespan of dispensed items in minutes (0 = eternal)"
+        },
+        {
+          "name": "VENDORED_ENTITY_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the entity to dispense (case-insensitive)"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable for payment (e.g., 'MyMoney')"
+        },
+        {
+          "name": "WHEN_EMPTY",
+          "type": "dropdown",
+          "default": "Nothing",
+          "options": ["Nothing", "Destroy Vendor", "Event Triggers", "Lose Game", "Win Game"],
+          "description": "What happens when vendor is empty"
+        },
+        {
+          "name": "VENDING_DELAY",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Delay in seconds before dispensing item"
+        },
+        {
+          "name": "VENDING_FORCE",
+          "type": "number",
+          "range": "0-100",
+          "default": 20,
+          "description": "Force applied to dispensed items in the direction of the vendor"
+        }
+      ],
+      "features": [
+        "Vending machine system",
+        "Configurable item costs",
+        "Global variable payment integration",
+        "Entity spawning and management",
+        "Item lifespan control",
+        "Multiple empty state behaviors",
+        "Animation support",
+        "Sound effect integration",
+        "AI noise generation",
+        "Vending delay system",
+        "Item force application",
+        "Quantity tracking",
+        "Payment validation",
+        "Entity cloning system"
+      ],
+      "keywords": ["vendor", "vending", "machine", "dispense", "item", "cost", "payment", "global", "variable", "lifespan", "quantity", "spawn"],
+      "tutorial": {
+        "videoId": "6cFGFb_98fc",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a vendor object",
+          "Set AlwaysActive to ON",
+          "Attach the vendor behavior",
+          "Configure prompt text and range",
+          "Set up item name to dispense",
+          "Configure item cost and global variable",
+          "Set maximum quantity and lifespan",
+          "Choose empty state behavior",
+          "Configure vending delay and force",
+          "Add activation sound to Sound0",
+          "Add vending sound to Sound1",
+          "Add empty sound to Sound2",
+          "Set up vendor animation if desired",
+          "Test vendor interaction",
+          "Verify payment and item dispensing",
+          "Check empty state functionality"
+        ]
+      },
+      "relatedBehaviors": ["vending_system", "payment_system", "entity_spawning", "global_variable", "animation_system", "sound_system"]
+    },
+    "weapon": {
+      "name": "Weapon",
+      "file": "weapon.lua",
+      "description": "A comprehensive weapon pickup system that allows players to collect weapons with advanced inventory management. Features two pickup styles (ranged and accurate), weapon slot management, preferred slot assignment, inventory integration, and automatic ammo collection. Perfect for creating weapon pickups, weapon management, and inventory systems in games.",
+      "properties": [
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 75,
+          "description": "Distance at which the player can pick up the weapon"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Ranged",
+          "options": ["Ranged", "Accurate"],
+          "description": "Pickup style: Ranged = look at weapon, Accurate = pinpoint selection"
+        },
+        {
+          "name": "PLAY_PICKUP",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to play pickup sound when weapon is collected"
+        },
+        {
+          "name": "ACTIVATE_LOGIC",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to activate logic connections when weapon is collected"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline", "Icon"],
+          "description": "Visual highlighting method for the weapon object"
+        },
+        {
+          "name": "HIGHLIGHT_ICON_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\icons\\pickup.png",
+          "description": "Path to the highlight icon image file (used when ITEM_HIGHLIGHT is set to Icon)"
+        }
+      ],
+      "features": [
+        "Advanced weapon pickup system",
+        "Two pickup styles (ranged and accurate)",
+        "Weapon slot management (up to 9 slots)",
+        "Preferred slot assignment system",
+        "Inventory integration",
+        "Automatic ammo collection",
+        "Weapon replacement mechanics",
+        "Visual highlighting options",
+        "Sound effect integration",
+        "Logic connection support",
+        "Controller and keyboard support",
+        "Head tracker compatibility",
+        "Weapon slot preference system",
+        "Collection feedback system",
+        "Slot availability checking",
+        "Inventory fallback system"
+      ],
+      "keywords": ["weapon", "pickup", "inventory", "slot", "ammo", "collection", "replacement", "preferred", "ranged", "accurate", "highlight"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a weapon object",
+          "Set AlwaysActive to ON",
+          "Attach the weapon behavior",
+          "Configure pickup range and style",
+          "Set up visual highlighting options",
+          "Configure highlight icon if using icon mode",
+          "Set up sound effects (Sound0 for pickup)",
+          "Configure logic connections if needed",
+          "Test weapon pickup functionality",
+          "Verify weapon slot assignment",
+          "Check preferred slot system",
+          "Test inventory integration",
+          "Verify ammo collection mechanics"
+        ]
+      },
+      "relatedBehaviors": ["inventory_system", "pickup_system", "ammo_system", "weapon_system", "slot_management"]
     }
   }
 } 

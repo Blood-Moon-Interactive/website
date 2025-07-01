@@ -2487,6 +2487,54 @@
         ]
       },
       "relatedBehaviors": ["cutscene", "tutorial_system", "image_display", "animation_controller", "interactive_display"]
+    },
+    "checkpoint": {
+      "name": "Checkpoint",
+      "file": "markers/checkpoint.lua",
+      "description": "A checkpoint system that saves the player's position when they enter the zone and restores them to this location when they die. Features configurable zone height, sound effects, automatic zone removal, and logic connections. Perfect for creating save points, respawn locations, and progress markers in games.",
+      "properties": [
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height above the zone at which the player can trigger the checkpoint"
+        }
+      ],
+      "features": [
+        "Checkpoint save system",
+        "Player position restoration",
+        "Configurable zone height",
+        "Automatic zone removal",
+        "Sound effect integration",
+        "Logic connection support",
+        "Player death respawn",
+        "Zone height triggering",
+        "Progress saving",
+        "Respawn point creation",
+        "Save point functionality"
+      ],
+      "keywords": ["checkpoint", "save", "respawn", "zone", "height", "death", "restoration", "progress", "marker"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a checkpoint zone object",
+          "Set AlwaysActive to ON",
+          "Attach the checkpoint behavior",
+          "Configure zone height for checkpoint triggering",
+          "Add checkpoint sound to Sound0",
+          "Position the zone in your game world",
+          "Test player entry into the checkpoint zone",
+          "Verify checkpoint sound playback",
+          "Check automatic zone removal",
+          "Test player death and respawn",
+          "Verify respawn at checkpoint location",
+          "Test logic connections",
+          "Check zone height functionality"
+        ]
+      },
+      "relatedBehaviors": ["zone_system", "save_system", "respawn_system", "sound_system", "logic_connections", "progress_system"]
     }
   }
 } 

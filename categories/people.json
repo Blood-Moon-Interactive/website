@@ -1195,6 +1195,1311 @@
         ]
       },
       "relatedBehaviors": ["npc_system", "item_system", "loot_system", "death_system", "physics_system"]
-    }
+    },
+    "character_attack": {
+      "name": "Character Attack",
+      "file": "people/character_attack.lua",
+      "description": "A sophisticated AI combat system that controls characters using soldier animations to engage enemies within view. Features path following, retreat mechanics, flanking tactics, sound detection, and advanced combat behaviors. Perfect for creating intelligent NPCs, enemy AI, and combat characters in games.",
+      "properties": [
+        {
+          "name": "FollowAPath",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character follows a path at the start"
+        },
+        {
+          "name": "CanRetreat",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can retreat when hurt"
+        },
+        {
+          "name": "RetreatRange",
+          "type": "number",
+          "range": "200-1000",
+          "default": 500,
+          "description": "Distance the character retreats when hurt"
+        },
+        {
+          "name": "StandGround",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the character defends their position instead of moving"
+        },
+        {
+          "name": "RandomFlankMode",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character uses random flanking behavior"
+        },
+        {
+          "name": "FlankTarget",
+          "type": "dropdown",
+          "default": "Stay Back",
+          "options": ["Stay Back", "Get Close", "Wide Flank", "Use Cover"],
+          "description": "Flanking strategy when not using random mode"
+        },
+        {
+          "name": "Alerted",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the character starts in an alerted state"
+        },
+        {
+          "name": "AllowHeadshot",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can perform headshots"
+        },
+        {
+          "name": "CombatTime",
+          "type": "number",
+          "range": "1000-30000",
+          "default": 15000,
+          "description": "Time in milliseconds for combat engagement"
+        },
+        {
+          "name": "CanHearSound",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can hear and respond to sounds"
+        },
+        {
+          "name": "HearingRange",
+          "type": "number",
+          "range": "100-2000",
+          "default": 1250,
+          "description": "Range at which the character can hear sounds"
+        },
+        {
+          "name": "StarterAnimation",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to play a starter animation"
+        },
+        {
+          "name": "StartAnimation",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play at start (when StarterAnimation is enabled)"
+        }
+      ],
+      "features": [
+        "Advanced AI combat system",
+        "Soldier animation integration",
+        "Path following mechanics",
+        "Retreat and defensive behaviors",
+        "Flanking tactics and strategies",
+        "Sound detection and response",
+        "Combat time management",
+        "Headshot capability",
+        "Alert state management",
+        "Cover utilization",
+        "Enemy engagement system",
+        "Tactical positioning",
+        "Rapid damage processing",
+        "Master interpreter integration",
+        "Multiple sound effect integration",
+        "Combat behavior state machine"
+      ],
+      "keywords": ["character", "attack", "ai", "combat", "soldier", "animation", "retreat", "flank", "sound", "detection", "tactical", "enemy", "engagement"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the character_attack behavior",
+          "Configure path following and retreat settings",
+          "Set up flanking behavior and strategies",
+          "Configure sound detection and hearing range",
+          "Set combat time and headshot settings",
+          "Configure alert state and starter animation",
+          "Add sound effects (Sound0=alerted, Sound1=seen target, Sound2=lost target, Sound3=killed target)",
+          "Set up soldier animations for the character",
+          "Configure shooting weapon for the character",
+          "Test AI combat behavior",
+          "Verify enemy engagement and tactical responses",
+          "Check sound detection and flanking mechanics"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "combat_system", "animation_system", "sound_system", "path_system", "tactical_system"]
+    },
+    "run_away_if_hurt": {
+      "name": "Run Away If Hurt",
+      "file": "people/run_away_if_hurt.lua",
+      "description": "A defensive behavior system that makes characters run away when they are hurt and stop at a specified distance. Features automatic flee mechanics, configurable stop distance, and sound effect integration. Perfect for creating cowardly NPCs, defensive characters, and survival-oriented AI in games.",
+      "properties": [
+        {
+          "name": "STOPDISTANCE",
+          "type": "number",
+          "range": "100-2000",
+          "default": 800,
+          "description": "Distance the character runs away before stopping"
+        }
+      ],
+      "features": [
+        "Automatic flee behavior when hurt",
+        "Configurable stop distance",
+        "Sound effect integration",
+        "Master interpreter integration",
+        "Defensive AI system",
+        "Survival-oriented behavior",
+        "Automatic movement control",
+        "Distance-based stopping",
+        "Hurt response system",
+        "Character safety mechanics"
+      ],
+      "keywords": ["run", "away", "hurt", "flee", "defensive", "survival", "distance", "stop", "ai", "character", "safety"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the run_away_if_hurt behavior",
+          "Configure stop distance for fleeing",
+          "Add hurt sound to Sound0",
+          "Test character damage response",
+          "Verify flee behavior when hurt",
+          "Check stopping at specified distance",
+          "Test sound effect integration"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "defensive_system", "survival_system", "sound_system", "movement_system", "character_system"]
+    },
+    "zombie_attack": {
+      "name": "Zombie Attack",
+      "file": "people/zombie_attack.lua",
+      "description": "A specialized zombie AI system that controls attacking zombies with unique movement patterns and behaviors. Features zombie animations, melee weapon integration, multiple chase modes, feeding states, and realistic zombie characteristics. Perfect for creating horror game enemies, zombie hordes, and undead AI in games.",
+      "properties": [
+        {
+          "name": "range",
+          "type": "number",
+          "range": "100-500",
+          "default": 300,
+          "description": "Engagement range for the zombie attack"
+        },
+        {
+          "name": "maximumrange",
+          "type": "number",
+          "range": "500-1500",
+          "default": 900,
+          "description": "Maximum pursuit range before zombie stops chasing"
+        },
+        {
+          "name": "minspeed",
+          "type": "number",
+          "range": "30-100",
+          "default": 60,
+          "description": "Minimum movement speed for the zombie"
+        },
+        {
+          "name": "maxspeed",
+          "type": "number",
+          "range": "30-100",
+          "default": 65,
+          "description": "Maximum movement speed for the zombie"
+        },
+        {
+          "name": "Feeding",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the zombie starts in a feeding state"
+        },
+        {
+          "name": "ChaseModes",
+          "type": "dropdown",
+          "default": "Arms Out",
+          "options": ["Arms Out", "Gammy Hand", "Bad Back", "Dash", "Hunchback"],
+          "description": "Movement style for the zombie chase"
+        },
+        {
+          "name": "RecoveryTime",
+          "type": "number",
+          "range": "1000-10000",
+          "default": 3000,
+          "description": "Recovery time in milliseconds when lunging"
+        },
+        {
+          "name": "CanHearSound",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the zombie can hear and respond to sounds"
+        },
+        {
+          "name": "HearingRange",
+          "type": "number",
+          "range": "100-1500",
+          "default": 750,
+          "description": "Range at which the zombie can hear sounds"
+        },
+        {
+          "name": "GetWinded",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the zombie can get winded during pursuit"
+        },
+        {
+          "name": "AllowHeadshot",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the zombie can be killed with headshots"
+        },
+        {
+          "name": "AllowBrainFeed",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the zombie can feed on brains"
+        }
+      ],
+      "features": [
+        "Specialized zombie AI system",
+        "Zombie animation integration",
+        "Melee weapon combat system",
+        "Multiple chase movement modes",
+        "Feeding state behavior",
+        "Random speed variation",
+        "Sound detection and response",
+        "Recovery time mechanics",
+        "Winded state system",
+        "Headshot vulnerability",
+        "Brain feeding mechanics",
+        "Pursuit range limitations",
+        "Rapid damage processing",
+        "Master interpreter integration",
+        "Multiple sound effect integration",
+        "Realistic zombie characteristics"
+      ],
+      "keywords": ["zombie", "attack", "undead", "horror", "melee", "chase", "feeding", "movement", "ai", "animation", "sound", "pursuit"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a zombie character entity",
+          "Set AlwaysActive to ON",
+          "Attach the zombie_attack behavior",
+          "Configure engagement and pursuit ranges",
+          "Set up speed variation (min/max)",
+          "Choose chase mode movement style",
+          "Configure feeding state and brain feeding",
+          "Set recovery time and winded mechanics",
+          "Configure sound detection and hearing range",
+          "Set up headshot vulnerability",
+          "Add sound effects (Sound0=eating, Sound1=alerted, Sound2=attacking, Sound3=dying)",
+          "Set up zombie animations for the character",
+          "Configure melee weapon for the zombie",
+          "Test zombie AI behavior",
+          "Verify chase mechanics and pursuit limits",
+          "Check feeding and sound detection systems"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "zombie_system", "melee_system", "horror_system", "animation_system", "sound_system", "movement_system"]
+    },
+    "get_close_and_speak": {
+      "name": "Get Close and Speak",
+      "file": "people/get_close_and_speak.lua",
+      "description": "A social AI system that makes characters approach the player when they are within view range and speak when they get close enough. Features automatic movement towards the player, configurable speaking distance, and customizable speech content. Perfect for creating friendly NPCs, quest givers, and interactive characters in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "50-500",
+          "default": 300,
+          "description": "Distance at which the character will speak to the player"
+        },
+        {
+          "name": "SPEECH1",
+          "type": "string",
+          "default": "",
+          "description": "Text that the character will speak when close to the player"
+        }
+      ],
+      "features": [
+        "Automatic player approach system",
+        "Configurable speaking distance",
+        "Customizable speech content",
+        "View range detection",
+        "Movement towards player",
+        "Proximity-based interaction",
+        "Social AI behavior",
+        "Master interpreter integration",
+        "Character-player interaction",
+        "Dynamic speech system",
+        "NPC communication mechanics",
+        "Quest giver functionality"
+      ],
+      "keywords": ["get", "close", "speak", "npc", "social", "interaction", "speech", "approach", "player", "communication", "quest"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the get_close_and_speak behavior",
+          "Configure speaking range distance",
+          "Set up speech text content",
+          "Position the character in your game world",
+          "Test player proximity to the character",
+          "Verify automatic approach behavior",
+          "Check speech delivery at close range",
+          "Test view range detection"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "npc_system", "social_system", "speech_system", "movement_system", "interaction_system"]
+    },
+    "hostage_runs_away": {
+      "name": "Hostage Runs Away",
+      "file": "people/hostage_runs_away.lua",
+      "description": "A hostage rescue system where an unarmed, bound character can be freed by the player and then runs away to safety. Features rescue mechanics, automatic escape behavior, configurable stop distance, and injury states. Perfect for creating hostage rescue missions, rescue scenarios, and dramatic escape sequences in games.",
+      "properties": [
+        {
+          "name": "StopDistance",
+          "type": "number",
+          "range": "200-2000",
+          "default": 800,
+          "description": "Distance the hostage runs before stopping at safety"
+        },
+        {
+          "name": "Injured",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the hostage starts in an injured state"
+        }
+      ],
+      "features": [
+        "Hostage rescue mechanics",
+        "Automatic escape behavior",
+        "Configurable stop distance",
+        "Injury state system",
+        "Unarmed character integration",
+        "Bound hostage state",
+        "Rescue interaction system",
+        "Escape sequence mechanics",
+        "Sound effect integration",
+        "Master interpreter integration",
+        "Safety zone mechanics",
+        "Dramatic rescue scenarios",
+        "Mission objective system"
+      ],
+      "keywords": ["hostage", "rescue", "escape", "bound", "unarmed", "injury", "safety", "mission", "dramatic", "sequence"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a hostage character entity",
+          "Set character as Unarmed",
+          "Set AlwaysActive to ON",
+          "Attach the hostage_runs_away behavior",
+          "Configure stop distance for escape",
+          "Set up injury state if needed",
+          "Add hurt sound to Sound0",
+          "Add freedom sound to Sound1",
+          "Position the hostage in your game world",
+          "Test rescue interaction with the player",
+          "Verify automatic escape behavior",
+          "Check stopping at safety distance",
+          "Test sound effect integration"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "rescue_system", "escape_system", "mission_system", "sound_system", "interaction_system"]
+    },
+    "melee_attack": {
+      "name": "Melee Attack",
+      "file": "people/melee_attack.lua",
+      "description": "A comprehensive melee combat system that allows characters to attack targets within range using melee weapons or fists. Features melee animations, configurable attack range, defensive abilities, patrol behavior, and multiple sound effects. Perfect for creating melee combatants, brawlers, and close-quarters fighters in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "100-1000",
+          "default": 500,
+          "description": "Distance at which the character will attack the target"
+        },
+        {
+          "name": "RunAway",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the character will run away when hurt"
+        },
+        {
+          "name": "InstantlyKillable",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can be killed instantly"
+        },
+        {
+          "name": "StarterAnimation",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to play a starter animation"
+        },
+        {
+          "name": "StartAnimation",
+          "type": "dropdown",
+          "default": "AnimSetList",
+          "options": ["AnimSetList"],
+          "description": "Animation to play at start (when StarterAnimation is enabled)"
+        },
+        {
+          "name": "PatrolAtStart",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether the character patrols at the start"
+        },
+        {
+          "name": "Block",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can block attacks"
+        },
+        {
+          "name": "Counter",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can counter-attack"
+        }
+      ],
+      "features": [
+        "Melee combat system",
+        "Melee weapon and fist combat",
+        "Melee animation integration",
+        "Configurable attack range",
+        "Defensive blocking system",
+        "Counter-attack mechanics",
+        "Patrol behavior at start",
+        "Starter animation support",
+        "Run away when hurt option",
+        "Instant kill vulnerability",
+        "Multiple sound effect integration",
+        "Rapid damage processing",
+        "Master interpreter integration",
+        "Target engagement system",
+        "Close-quarters combat mechanics"
+      ],
+      "keywords": ["melee", "attack", "combat", "weapon", "fist", "block", "counter", "patrol", "animation", "range", "close", "quarters"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the melee_attack behavior",
+          "Configure attack range distance",
+          "Set up defensive abilities (block/counter)",
+          "Configure patrol behavior if needed",
+          "Set up starter animation if desired",
+          "Configure run away and instant kill options",
+          "Add attack sounds (Sound0 and Sound1)",
+          "Add hurt sounds (Sound2 and Sound3)",
+          "Set up melee animations for the character",
+          "Configure melee weapon or fists",
+          "Test melee combat behavior",
+          "Verify attack range and engagement",
+          "Check defensive mechanics and patrol behavior"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "melee_system", "combat_system", "animation_system", "sound_system", "defensive_system"]
+    },
+    "patrol": {
+      "name": "Patrol",
+      "file": "people/patrol.lua",
+      "description": "A patrol system that makes characters move between flags using nearest or connected flag navigation. Features automatic pathfinding between patrol points, headshot vulnerability options, and rapid damage processing. Perfect for creating guards, sentries, and patrolling NPCs in games.",
+      "properties": [
+        {
+          "name": "AllowHeadshot",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether the character can be killed with headshots"
+        }
+      ],
+      "features": [
+        "Automatic patrol system",
+        "Flag-based navigation",
+        "Nearest flag pathfinding",
+        "Connected flag routing",
+        "Headshot vulnerability control",
+        "Rapid damage processing",
+        "Master interpreter integration",
+        "Patrol point management",
+        "Guard and sentry behavior",
+        "Automatic movement system",
+        "Path optimization",
+        "Patrol route management"
+      ],
+      "keywords": ["patrol", "flag", "navigation", "pathfinding", "guard", "sentry", "headshot", "movement", "route", "ai"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the patrol behavior",
+          "Configure headshot vulnerability",
+          "Place flags in your game world for patrol points",
+          "Position the character near a flag",
+          "Test patrol behavior between flags",
+          "Verify automatic pathfinding",
+          "Check headshot mechanics",
+          "Test rapid damage processing"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "movement_system", "navigation_system", "flag_system", "guard_system", "pathfinding_system"]
+    },
+    "patrol_and_speak": {
+      "name": "Patrol and Speak",
+      "file": "people/patrol_and_speak.lua",
+      "description": "A patrol system combined with speech functionality that makes characters patrol between flags and deliver speech content. Features automatic flag-based navigation, customizable speech content, and patrol route management. Perfect for creating talking guards, NPCs with patrol routes, and characters that speak while moving in games.",
+      "properties": [
+        {
+          "name": "SPEECH1",
+          "type": "string",
+          "default": "",
+          "description": "Text that the character will speak while patrolling"
+        }
+      ],
+      "features": [
+        "Patrol system with flag navigation",
+        "Speech delivery during patrol",
+        "Flag-based movement system",
+        "Customizable speech content",
+        "Automatic patrol routing",
+        "Nearest flag pathfinding",
+        "Connected flag navigation",
+        "Patrol point management",
+        "Speech integration",
+        "Guard and NPC behavior",
+        "Automatic movement system",
+        "Patrol route optimization"
+      ],
+      "keywords": ["patrol", "speak", "flag", "navigation", "speech", "guard", "npc", "movement", "route", "ai", "communication"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the patrol_and_speak behavior",
+          "Configure speech text content",
+          "Place flags in your game world for patrol points",
+          "Position the character near a flag",
+          "Test patrol behavior between flags",
+          "Verify speech delivery during patrol",
+          "Check automatic pathfinding",
+          "Test patrol route functionality"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "patrol_system", "speech_system", "navigation_system", "flag_system", "npc_system"]
+    },
+    "stand_and_speak": {
+      "name": "Stand and Speak",
+      "file": "people/stand_and_speak.lua",
+      "description": "A stationary speech system that makes characters face the player and speak when they are within range. Features proximity-based speech activation, automatic player-facing behavior, and customizable speech content. Perfect for creating stationary NPCs, information givers, and characters that speak when approached in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "50-500",
+          "default": 300,
+          "description": "Distance at which the character will face the player and speak"
+        },
+        {
+          "name": "SPEECH1",
+          "type": "string",
+          "default": "",
+          "description": "Text that the character will speak when the player is within range"
+        }
+      ],
+      "features": [
+        "Proximity-based speech activation",
+        "Automatic player-facing behavior",
+        "Configurable speech range",
+        "Customizable speech content",
+        "Stationary character behavior",
+        "Player detection system",
+        "Speech delivery mechanics",
+        "Character orientation control",
+        "NPC interaction system",
+        "Information delivery system",
+        "Static character positioning",
+        "Proximity-triggered communication"
+      ],
+      "keywords": ["stand", "speak", "proximity", "range", "speech", "npc", "stationary", "face", "player", "communication", "information"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the stand_and_speak behavior",
+          "Configure speech range distance",
+          "Set up speech text content",
+          "Position the character in your game world",
+          "Test player proximity to the character",
+          "Verify automatic player-facing behavior",
+          "Check speech delivery at close range",
+          "Test range-based activation"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "speech_system", "npc_system", "interaction_system", "proximity_system", "communication_system"]
+    },
+    "stand_and_speak_more": {
+      "name": "Stand and Speak More",
+      "file": "people/stand_and_speak_more.lua",
+      "description": "An advanced stationary speech system with multiple speech sequences, lip-sync support, and configurable speech parameters. Features multiple speech files, volume control, delay timing, E-key activation, and sequential speech delivery. Perfect for creating detailed NPC conversations, story sequences, and characters with multiple dialogue options in games.",
+      "properties": [
+        {
+          "name": "UseEKey",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to require E key press to advance speech sequence"
+        },
+        {
+          "name": "Volume",
+          "type": "number",
+          "range": "0-100",
+          "default": 80,
+          "description": "Volume level for speech playback (0-100)"
+        },
+        {
+          "name": "Delay",
+          "type": "number",
+          "range": "0-10",
+          "default": 1,
+          "description": "Delay in seconds between speech sequences"
+        },
+        {
+          "name": "NumberOfSpeaks",
+          "type": "number",
+          "range": "1-4",
+          "default": 1,
+          "description": "Number of speech sequences to play (1-4)"
+        },
+        {
+          "name": "SPEECH0",
+          "type": "string",
+          "default": "",
+          "description": "First speech file (.wav) for lip-sync"
+        },
+        {
+          "name": "SPEECH1",
+          "type": "string",
+          "default": "",
+          "description": "Second speech file (.wav) for lip-sync"
+        },
+        {
+          "name": "SPEECH2",
+          "type": "string",
+          "default": "",
+          "description": "Third speech file (.wav) for lip-sync"
+        },
+        {
+          "name": "SPEECH3",
+          "type": "string",
+          "default": "",
+          "description": "Fourth speech file (.wav) for lip-sync"
+        }
+      ],
+      "features": [
+        "Multiple speech sequence system",
+        "Lip-sync support with .wav files",
+        "Volume control for speech playback",
+        "Configurable delay between speeches",
+        "E-key activation for manual progression",
+        "Sequential speech delivery",
+        "Player proximity detection",
+        "Automatic speech advancement",
+        "Character orientation control",
+        "Speech state management",
+        "Manual and automatic progression modes",
+        "Advanced NPC conversation system"
+      ],
+      "keywords": ["stand", "speak", "multiple", "speech", "lip-sync", "volume", "delay", "sequence", "conversation", "npc", "dialogue"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the stand_and_speak_more behavior",
+          "Configure E-key activation if needed",
+          "Set up volume and delay parameters",
+          "Configure number of speech sequences",
+          "Add speech files (.wav) for lip-sync",
+          "Position the character in your game world",
+          "Test player proximity detection",
+          "Verify speech sequence progression",
+          "Check lip-sync and volume settings",
+          "Test E-key activation functionality"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "speech_system", "conversation_system", "npc_system", "interaction_system", "lip_sync_system"]
+    },
+    "stand_idle": {
+      "name": "Stand Idle",
+      "file": "people/stand_idle.lua",
+      "description": "A simple idle behavior system that makes characters remain stationary and idle in their position. Features basic idle state management and master interpreter integration. Perfect for creating stationary NPCs, background characters, and characters that simply stand in place in games.",
+      "properties": [],
+      "features": [
+        "Stationary idle behavior",
+        "Character positioning control",
+        "Idle state management",
+        "Master interpreter integration",
+        "Static character placement",
+        "Background character support",
+        "Simple behavior system",
+        "No movement mechanics",
+        "Basic AI integration",
+        "Character stability system"
+      ],
+      "keywords": ["stand", "idle", "stationary", "static", "npc", "background", "character", "position", "behavior"],
+      "tutorial": {
+        "videoId": "cuuovEcjf3s",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a character entity",
+          "Set AlwaysActive to ON",
+          "Attach the stand_idle behavior",
+          "Position the character in your game world",
+          "Test character remains stationary",
+          "Verify idle behavior functionality",
+          "Check character positioning stability"
+        ]
+      },
+      "relatedBehaviors": ["ai_system", "idle_system", "character_system", "background_system", "stationary_system"]
+    },
+    "walk_away": {
+       "name": "Walk Away",
+       "file": "people/walk_away.lua",
+       "description": "A simple avoidance behavior that makes characters walk away from the player when they get too close. Features configurable detection range and stop distance, automatic movement away from player, and master interpreter integration. Perfect for creating shy NPCs, frightened characters, and entities that avoid player contact in games.",
+       "properties": [
+         {
+           "name": "RANGE",
+           "type": "number",
+           "range": "50-1000",
+           "default": 400,
+           "description": "Distance at which the character will start walking away from the player"
+         },
+         {
+           "name": "STOPDISTANCE",
+           "type": "number",
+           "range": "100-2000",
+           "default": 800,
+           "description": "Distance from player at which the character will stop walking away"
+         }
+       ],
+       "features": [
+         "Player proximity detection",
+         "Automatic avoidance behavior",
+         "Configurable detection range",
+         "Configurable stop distance",
+         "Movement away from player",
+         "Master interpreter integration",
+         "Simple avoidance mechanics",
+         "Character positioning control",
+         "Player distance monitoring",
+         "Automatic movement system",
+         "Avoidance state management",
+         "Proximity-based behavior"
+       ],
+       "keywords": ["walk", "away", "avoid", "proximity", "range", "distance", "player", "movement", "avoidance", "shy", "frightened"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a character entity",
+           "Set AlwaysActive to ON",
+           "Attach the walk_away behavior",
+           "Configure detection range distance",
+           "Set up stop distance for avoidance behavior",
+           "Position the character in your game world",
+           "Test player proximity to the character",
+           "Verify character walks away when player gets close",
+           "Check character stops moving when far enough away",
+           "Test avoidance behavior functionality"
+         ]
+       },
+               "relatedBehaviors": ["ai_system", "movement_system", "avoidance_system", "proximity_system", "character_system", "player_interaction"]
+     },
+     "wander_around": {
+       "name": "Wander Around",
+       "file": "people/wander_around.lua",
+       "description": "A wandering behavior that makes characters move around randomly when the player is within range. Features configurable activation range, automatic wandering movement, and the ability to start wandering immediately or only when player is nearby. Perfect for creating curious NPCs, exploring characters, and entities that become active when the player approaches in games.",
+       "properties": [
+         {
+           "name": "RANGE",
+           "type": "number",
+           "range": "0-1000",
+           "default": 300,
+           "description": "Distance at which the character will start wandering (0 = wander immediately from game start)"
+         }
+       ],
+       "features": [
+         "Player proximity detection",
+         "Automatic wandering behavior",
+         "Configurable activation range",
+         "Immediate start option (range = 0)",
+         "Random movement patterns",
+         "Master interpreter integration",
+         "Character positioning control",
+         "Player distance monitoring",
+         "Automatic movement system",
+         "Wandering state management",
+         "Proximity-based activation",
+         "Exploration behavior"
+       ],
+       "keywords": ["wander", "around", "random", "movement", "proximity", "range", "exploration", "curious", "npc", "roaming", "patrol"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a character entity",
+           "Set AlwaysActive to ON",
+           "Attach the wander_around behavior",
+           "Configure activation range distance",
+           "Set range to 0 for immediate wandering",
+           "Set range to higher value for proximity-based wandering",
+           "Position the character in your game world",
+           "Test player proximity to the character",
+           "Verify character starts wandering when player is close",
+           "Check wandering behavior with different range settings",
+           "Test immediate wandering with range set to 0"
+         ]
+       },
+               "relatedBehaviors": ["ai_system", "movement_system", "wandering_system", "proximity_system", "character_system", "exploration_system"]
+     },
+     "cover_attack": {
+       "name": "Cover Attack",
+       "file": "people/cover_attack.lua",
+       "description": "An advanced tactical combat system that controls characters using Soldier Animations to engage enemies from cover positions. Features cover-based combat mechanics, shooting weapon integration, dynamic cover zone movement, and rapid damage processing. Perfect for creating tactical soldiers, cover-based combatants, and characters that use strategic positioning in combat scenarios.",
+       "properties": [
+         {
+           "name": "BreakCoverDistance",
+           "type": "number",
+           "range": "100-1000",
+           "default": 300,
+           "description": "Distance at which the character will break cover and move to better cover zones"
+         },
+         {
+           "name": "AwareOfTarget",
+           "type": "number",
+           "range": "0-1",
+           "default": 0,
+           "description": "Initial awareness state (0 = quicker response, 1 = normal response)"
+         }
+       ],
+       "features": [
+         "Tactical cover-based combat",
+         "Soldier animation integration",
+         "Shooting weapon support",
+         "Dynamic cover zone movement",
+         "Enemy engagement system",
+         "Cover position optimization",
+         "Rapid damage processing",
+         "Master interpreter integration",
+         "Tactical positioning system",
+         "Combat state management",
+         "Cover break distance control",
+         "Target awareness system",
+         "Strategic combat mechanics",
+         "Cover zone evaluation"
+       ],
+       "keywords": ["cover", "attack", "tactical", "soldier", "combat", "shooting", "weapon", "positioning", "strategy", "engagement", "cover zone"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a character entity",
+           "Set AlwaysActive to ON",
+           "Attach the cover_attack behavior",
+           "Configure break cover distance",
+           "Set up target awareness level",
+           "Add Soldier Animations to the character",
+           "Equip character with shooting weapon",
+           "Place cover zones in your game world",
+           "Position the character near cover",
+           "Test tactical combat behavior",
+           "Verify cover-based engagement",
+           "Check dynamic cover movement",
+           "Test shooting weapon integration",
+           "Verify rapid damage processing"
+         ]
+       },
+               "relatedBehaviors": ["ai_system", "combat_system", "cover_system", "tactical_system", "soldier_system", "weapon_system", "animation_system"]
+     },
+     "prone_attack": {
+       "name": "Prone Attack",
+       "file": "people/prone_attack.lua",
+       "description": "A tactical prone combat system that controls characters using Soldier Animations to engage enemies while lying prone. Features prone position combat, shooting weapon integration, repositioning when in danger, and configurable engagement distances. Perfect for creating sniper characters, prone combatants, and tactical soldiers that fight from lying positions.",
+       "properties": [
+         {
+           "name": "CanReposition",
+           "type": "number",
+           "range": "0-1",
+           "default": 1,
+           "description": "Whether the character can reposition when in danger (1 = yes, 0 = no)"
+         },
+         {
+           "name": "AdvanceToDistance",
+           "type": "number",
+           "range": "100-1000",
+           "default": 600,
+           "description": "Distance at which the character will advance to get closer to the target"
+         },
+         {
+           "name": "ShootAtDistance",
+           "type": "number",
+           "range": "50-800",
+           "default": 400,
+           "description": "Distance at which the character will take shots at the target"
+         }
+       ],
+       "features": [
+         "Prone position combat",
+         "Soldier animation integration",
+         "Shooting weapon support",
+         "Tactical repositioning system",
+         "Configurable engagement distances",
+         "Advance and shoot mechanics",
+         "Danger-based repositioning",
+         "Rapid damage processing",
+         "Master interpreter integration",
+         "Prone combat mechanics",
+         "Distance-based tactics",
+         "Tactical movement system",
+         "Combat state management",
+         "Prone positioning control"
+       ],
+       "keywords": ["prone", "attack", "tactical", "soldier", "combat", "shooting", "weapon", "sniper", "positioning", "reposition", "distance", "advance"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a character entity",
+           "Set AlwaysActive to ON",
+           "Attach the prone_attack behavior",
+           "Configure repositioning ability",
+           "Set up advance distance for tactical movement",
+           "Configure shoot distance for engagement",
+           "Add Soldier Animations to the character",
+           "Equip character with shooting weapon",
+           "Position the character in prone position",
+           "Test prone combat behavior",
+           "Verify shooting from prone position",
+           "Check tactical repositioning when in danger",
+           "Test advance and shoot mechanics",
+           "Verify rapid damage processing"
+         ]
+       },
+               "relatedBehaviors": ["ai_system", "combat_system", "tactical_system", "soldier_system", "weapon_system", "animation_system", "sniper_system"]
+     },
+     "coverzone": {
+       "name": "Cover Zone",
+       "file": "markers/coverzone.lua",
+       "description": "A sophisticated cover zone system that creates tactical cover positions for NPCs to find and use. Features automatic cover position generation, multiple cover types (standing, crouched, prone), spawn control options, and intelligent defender position mapping. Perfect for creating tactical combat environments, cover-based AI systems, and strategic positioning zones in games.",
+       "properties": [
+         {
+           "name": "SpawnAtStart",
+           "type": "number",
+           "range": "0-1",
+           "default": 1,
+           "description": "Whether the cover zone spawns at start (1 = yes, 0 = no, use switch/trigger to spawn)"
+         },
+         {
+           "name": "CoverType",
+           "type": "number",
+           "range": "1-3",
+           "default": 1,
+           "description": "Type of cover position (1 = Standing, 2 = Crouched, 3 = Prone)"
+         }
+       ],
+       "features": [
+         "Automatic cover position generation",
+         "Multiple cover types (standing, crouched, prone)",
+         "Intelligent defender position mapping",
+         "Spawn control system",
+         "Switch/trigger activation support",
+         "Cover position optimization",
+         "Terrain intersection detection",
+         "Navmesh integration",
+         "Cover angle calculation",
+         "Defender map generation",
+         "Cover zone activation/deactivation",
+         "Tactical positioning system",
+         "Cover position validation",
+         "Automatic token placement"
+       ],
+       "keywords": ["cover", "zone", "tactical", "position", "defender", "combat", "ai", "spawn", "standing", "crouched", "prone", "mapping"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a cover zone object",
+           "Set AlwaysActive to ON",
+           "Attach the coverzone behavior",
+           "Configure spawn at start option",
+           "Set up cover type (standing, crouched, or prone)",
+           "Position the cover zone in your game world",
+           "Test automatic cover position generation",
+           "Verify defender position mapping",
+           "Check cover zone activation/deactivation",
+           "Test switch/trigger activation if needed",
+           "Verify terrain intersection detection",
+           "Check navmesh integration",
+           "Test cover position optimization"
+         ]
+       },
+               "relatedBehaviors": ["marker_system", "cover_system", "tactical_system", "ai_system", "positioning_system", "combat_system", "cover_attack", "prone_attack"]
+     },
+     "follow_cover": {
+       "name": "Follow Cover",
+       "file": "people/follow_cover.lua",
+       "description": "A tactical following behavior that makes characters move towards the player when within view range, then play speech when close enough. Features player detection, movement towards player, proximity-based speech activation, and configurable interaction ranges. Perfect for creating escort NPCs, following companions, and characters that approach and communicate with the player in games.",
+       "properties": [
+         {
+           "name": "RANGE",
+           "type": "number",
+           "range": "50-500",
+           "default": 300,
+           "description": "Distance at which the character will play speech when close to the player"
+         },
+         {
+           "name": "SPEECH1",
+           "type": "string",
+           "default": "",
+           "description": "Text that the character will speak when within range of the player"
+         }
+       ],
+       "features": [
+         "Player detection system",
+         "Movement towards player",
+         "Proximity-based speech activation",
+         "Configurable interaction range",
+         "Customizable speech content",
+         "View range detection",
+         "Automatic movement system",
+         "Speech delivery mechanics",
+         "Player following behavior",
+         "Escort companion system",
+         "Proximity communication",
+         "Character approach behavior"
+       ],
+       "keywords": ["follow", "cover", "player", "movement", "speech", "proximity", "range", "escort", "companion", "approach", "communication"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a character entity",
+           "Set AlwaysActive to ON",
+           "Attach the follow_cover behavior",
+           "Configure interaction range distance",
+           "Set up speech text content",
+           "Position the character in your game world",
+           "Test player detection and following",
+           "Verify character moves towards player",
+           "Check speech activation at close range",
+           "Test different range settings",
+           "Verify proximity-based communication"
+         ]
+       },
+               "relatedBehaviors": ["ai_system", "movement_system", "speech_system", "proximity_system", "character_system", "escort_system", "companion_system"]
+     },
+     "loopwaypoint": {
+       "name": "Loop Waypoint",
+       "file": "objects/loopwaypoint.lua",
+       "description": "A waypoint looping system that makes objects follow the nearest waypoint path in a continuous loop while playing sound effects. Features automatic waypoint detection, path following mechanics, dynamic sound volume based on player distance, and configurable audio parameters. Perfect for creating patrolling objects, moving sound sources, and entities that follow predefined paths in games.",
+       "properties": [
+         {
+           "name": "RANGE",
+           "type": "number",
+           "range": "100-3000",
+           "default": 1000,
+           "description": "Maximum distance for sound volume calculation based on player distance"
+         },
+         {
+           "name": "MinVolume",
+           "type": "number",
+           "range": "0-99",
+           "default": 50,
+           "description": "Minimum volume level for the looping sound effect"
+         },
+         {
+           "name": "MaxVolume",
+           "type": "number",
+           "range": "1-100",
+           "default": 100,
+           "description": "Maximum volume level for the looping sound effect"
+         }
+       ],
+       "features": [
+         "Automatic waypoint detection",
+         "Path following mechanics",
+         "Continuous loop movement",
+         "Dynamic sound volume system",
+         "Player distance-based audio",
+         "Configurable volume range",
+         "Waypoint path integration",
+         "Movement speed control",
+         "Sound looping system",
+         "Path point navigation",
+         "Automatic path completion",
+         "Collision-free movement",
+         "Rotation-based movement",
+         "Distance-based volume scaling"
+       ],
+       "keywords": ["loop", "waypoint", "path", "movement", "sound", "volume", "patrol", "follow", "audio", "distance", "navigation"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create a waypoint object",
+           "Set AlwaysActive to ON",
+           "Attach the loopwaypoint behavior",
+           "Configure sound range distance",
+           "Set up minimum and maximum volume levels",
+           "Add looping sound to Sound0",
+           "Place waypoint paths in your game world",
+           "Position the object near a waypoint path",
+           "Test automatic waypoint detection",
+           "Verify path following and looping",
+           "Check dynamic sound volume based on player distance",
+           "Test different volume range settings",
+           "Verify continuous loop movement"
+         ]
+       },
+               "relatedBehaviors": ["marker_system", "waypoint_system", "movement_system", "sound_system", "patrol_system", "path_system", "audio_system"]
+     },
+     "npc_incover": {
+       "name": "NPC In Cover",
+       "file": "people/npc_incover.lua",
+       "description": "An advanced cover-based combat system that allows NPCs to pop in and out of cover to fire at the player. Features multiple cover styles (up/down, left, right), configurable timing, weapon integration, animation support, and tactical combat mechanics. Perfect for creating tactical enemies, cover-based combatants, and NPCs that use strategic positioning in combat scenarios.",
+       "properties": [
+         {
+           "name": "COVER_STYLE",
+           "type": "number",
+           "range": "1-3",
+           "default": 1,
+           "description": "Cover style (1 = Up/Down, 2 = Left, 3 = Right)"
+         },
+         {
+           "name": "ALERT_DISTANCE",
+           "type": "number",
+           "range": "500-5000",
+           "default": 2200,
+           "description": "Distance at which the NPC becomes alert and starts combat behavior"
+         },
+         {
+           "name": "EXPOSURE_TIME",
+           "type": "number",
+           "range": "500-3000",
+           "default": 1450,
+           "description": "Time in milliseconds the NPC stays exposed to fire"
+         },
+         {
+           "name": "COVER_TIME",
+           "type": "number",
+           "range": "500-3000",
+           "default": 2000,
+           "description": "Time in milliseconds the NPC stays in cover"
+         },
+         {
+           "name": "STAND_ANIMATION",
+           "type": "number",
+           "range": "-1-100",
+           "default": -1,
+           "description": "Animation to play when standing (0 = AnimSetList, -1 = default)"
+         },
+         {
+           "name": "DUCK_ANIMATION",
+           "type": "number",
+           "range": "-1-100",
+           "default": -1,
+           "description": "Animation to play when ducking (0 = AnimSetList, -1 = default)"
+         },
+         {
+           "name": "LEFT_ANIMATION",
+           "type": "number",
+           "range": "-1-100",
+           "default": -1,
+           "description": "Animation to play when leaning left (0 = AnimSetList, -1 = default)"
+         },
+         {
+           "name": "RIGHT_ANIMATION",
+           "type": "number",
+           "range": "-1-100",
+           "default": -1,
+           "description": "Animation to play when leaning right (0 = AnimSetList, -1 = default)"
+         },
+         {
+           "name": "SHOOT_ANIMATION",
+           "type": "number",
+           "range": "-1-100",
+           "default": -1,
+           "description": "Animation to play when shooting (0 = AnimSetList, -1 = default)"
+         }
+       ],
+       "features": [
+         "Multiple cover styles (up/down, left, right)",
+         "Tactical cover-based combat",
+         "Configurable timing system",
+         "Weapon integration and firing",
+         "Animation support for all states",
+         "Player distance detection",
+         "Automatic cover cycling",
+         "Ammo management system",
+         "Fire rate control",
+         "Cover exposure timing",
+         "Tactical positioning system",
+         "Combat state management",
+         "Sound effect integration",
+         "Weapon reload mechanics",
+         "Cover style switching"
+       ],
+       "keywords": ["npc", "cover", "combat", "tactical", "shooting", "weapon", "animation", "timing", "exposure", "duck", "lean", "fire"],
+       "tutorial": {
+         "videoId": "coming-soon",
+         "timestamp": "0:00",
+         "steps": [
+           "Create an NPC character",
+           "Set AlwaysActive to ON",
+           "Attach the npc_incover behavior",
+           "Configure cover style (up/down, left, or right)",
+           "Set up alert distance for combat activation",
+           "Configure exposure and cover timing",
+           "Set up animations for different states",
+           "Equip character with weapon",
+           "Position the character near cover",
+           "Test cover-based combat behavior",
+           "Verify pop-up and pop-down mechanics",
+           "Check weapon firing and ammo management",
+           "Test different cover styles",
+           "Verify timing and animation transitions"
+         ]
+       },
+       "relatedBehaviors": ["ai_system", "combat_system", "cover_system", "tactical_system", "weapon_system", "animation_system", "coverzone"]
+     }
   }
 } 

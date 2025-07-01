@@ -3597,6 +3597,819 @@
         ]
       },
       "relatedBehaviors": ["light_control", "ambient_lighting", "time_system", "event_trigger", "sun_control"]
+    },
+    "activation_sounder": {
+      "name": "Activation Sounder",
+      "file": "objects/activation_sounder.lua",
+      "description": "A simple sound activation system that plays or loops sounds when an object is activated. Features play and loop modes, volume control, automatic sound management, and entity health-based termination. Perfect for creating sound effects, ambient audio, and audio feedback for object interactions.",
+      "properties": [
+        {
+          "name": "SOUND_STYLE",
+          "type": "dropdown",
+          "default": "Play",
+          "options": ["Play", "Loop"],
+          "description": "Whether to play the sound once or loop it continuously"
+        },
+        {
+          "name": "SOUND_VOLUME",
+          "type": "number",
+          "range": "1-100",
+          "default": 100,
+          "description": "Volume level of the sound (1-100)"
+        }
+      ],
+      "features": [
+        "Sound activation on object activation",
+        "Play and loop sound modes",
+        "Configurable volume control",
+        "Automatic sound management",
+        "Entity health-based termination",
+        "One-time play functionality",
+        "Continuous loop support",
+        "Sound volume adjustment",
+        "Activation state detection",
+        "Automatic cleanup system"
+      ],
+      "keywords": ["activation", "sounder", "sound", "audio", "play", "loop", "volume", "feedback", "ambient", "effect"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an activation sounder object",
+          "Set AlwaysActive to ON",
+          "Attach the activation_sounder behavior",
+          "Configure sound style (play or loop)",
+          "Set up sound volume level",
+          "Add sound file to Sound0",
+          "Test object activation",
+          "Verify sound playback",
+          "Check loop functionality if enabled",
+          "Test volume adjustment",
+          "Verify automatic termination"
+        ]
+      },
+      "relatedBehaviors": ["sound_system", "audio_system", "activation_system", "feedback_system", "ambient_audio"]
+    },
+    "ambienceonceinzone": {
+      "name": "Ambience Once In Zone",
+      "file": "markers/ambienceonceinzone.lua",
+      "description": "A zone-based ambient sound system that plays background music/sounds when the player enters the zone and stops other ambience zones. Features zone height control, automatic sound switching, music mode integration, and logic connections. Perfect for creating dynamic ambient audio zones, background music areas, and environmental sound transitions in games.",
+      "properties": [
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height above the zone at which the player can trigger the ambience (controls vertical trigger range)"
+        }
+      ],
+      "features": [
+        "Zone-based ambient sound system",
+        "Automatic sound switching between zones",
+        "Zone height control for vertical triggering",
+        "Music mode integration",
+        "Non-3D sound playback",
+        "Logic connection support",
+        "Global sound management",
+        "Player position detection",
+        "Automatic sound stopping",
+        "Environmental audio transitions",
+        "Background music zones",
+        "Ambient sound areas"
+      ],
+      "keywords": ["ambience", "zone", "background", "music", "sound", "environmental", "audio", "transition", "height", "trigger"],
+      "tutorial": {
+        "videoId": "0bgmxAApp-8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an ambience zone object",
+          "Set AlwaysActive to ON",
+          "Attach the ambienceonceinzone behavior",
+          "Configure zone height for vertical triggering",
+          "Add ambient sound/music to Sound0",
+          "Position the zone in your game world",
+          "Test player entry into the zone",
+          "Verify ambient sound playback",
+          "Check automatic sound switching",
+          "Test zone height functionality",
+          "Verify logic connections",
+          "Test multiple ambience zones"
+        ]
+      },
+      "relatedBehaviors": ["ambience_system", "zone_system", "audio_system", "background_music", "environmental_audio"]
+    },
+    "imageinzone": {
+      "name": "Image In Zone",
+      "file": "markers/imageinzone.lua",
+      "description": "A zone-based image display system that shows images on screen when the player enters the zone. Features configurable display duration, click-to-exit functionality, fullscreen and 3D display modes, zone height control, and sound integration. Perfect for creating image overlays, tutorials, story elements, and visual feedback zones in games.",
+      "properties": [
+        {
+          "name": "IMAGEFILE",
+          "type": "string",
+          "default": "",
+          "description": "Path to the image file to display (e.g., 'imagebank\\tutorials\\help.png')"
+        },
+        {
+          "name": "Duration",
+          "type": "number",
+          "range": "100-60000",
+          "default": 4000,
+          "description": "Duration in milliseconds to display the image"
+        },
+        {
+          "name": "ClickToExit",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether clicking the mouse will stop displaying the image"
+        },
+        {
+          "name": "Fullscreen",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to display the image fullscreen or in 3D space"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height above the zone at which the player can trigger the image (controls vertical trigger range)"
+        }
+      ],
+      "features": [
+        "Zone-based image display system",
+        "Configurable display duration",
+        "Click-to-exit functionality",
+        "Fullscreen and 3D display modes",
+        "Zone height control for vertical triggering",
+        "Sound effect integration",
+        "Automatic image loading and management",
+        "Aspect ratio preservation",
+        "Sprite-based fullscreen display",
+        "Logic connection support",
+        "Player position detection",
+        "Automatic cleanup system"
+      ],
+      "keywords": ["image", "zone", "display", "overlay", "tutorial", "story", "visual", "feedback", "fullscreen", "3d", "duration"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an image zone object",
+          "Set AlwaysActive to ON",
+          "Attach the imageinzone behavior",
+          "Configure image file path",
+          "Set up display duration",
+          "Configure click-to-exit if needed",
+          "Set display mode (fullscreen or 3D)",
+          "Configure zone height for vertical triggering",
+          "Add entry sound to Sound0",
+          "Position the zone in your game world",
+          "Test player entry into the zone",
+          "Verify image display functionality",
+          "Check click-to-exit behavior",
+          "Test different display modes"
+        ]
+      },
+      "relatedBehaviors": ["zone_system", "image_system", "overlay_system", "tutorial_system", "visual_feedback"]
+    },
+    "invisibleprompt": {
+      "name": "Invisible Prompt",
+      "file": "objects/invisibleprompt.lua",
+      "description": "A simple invisible object that displays text prompts when the player is within range. Features automatic invisibility, configurable range, and text prompts taken from the entity's name field. Perfect for creating hidden interaction points, invisible triggers, and text-based guidance systems in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "60-3000",
+          "default": 100,
+          "description": "Distance at which the prompt text is displayed to the player"
+        }
+      ],
+      "features": [
+        "Automatic object invisibility",
+        "Configurable prompt range",
+        "Text prompts from entity name",
+        "Player proximity detection",
+        "Local prompt display",
+        "Health-based activation",
+        "Simple interaction system",
+        "Hidden trigger functionality",
+        "Text-based guidance",
+        "Invisible interaction points"
+      ],
+      "keywords": ["invisible", "prompt", "text", "range", "proximity", "trigger", "hidden", "interaction", "guidance"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an invisible prompt object",
+          "Set AlwaysActive to ON",
+          "Attach the invisibleprompt behavior",
+          "Configure prompt range",
+          "Set the entity name to the desired prompt text",
+          "Position the object in your game world",
+          "Test player proximity to the object",
+          "Verify prompt text display",
+          "Check range functionality",
+          "Test with different entity names"
+        ]
+      },
+      "relatedBehaviors": ["prompt_system", "proximity_system", "text_system", "interaction_system", "guidance_system"]
+    },
+    "loop3dsound_multiple": {
+      "name": "Loop 3D Sound Multiple",
+      "file": "effects/loop3dsound_multiple.lua",
+      "description": "A multiple 3D sound looping system that plays up to 4 sounds simultaneously with distance-based volume control. Features configurable range, volume limits, automatic activation, and module-based control. Perfect for creating ambient soundscapes, environmental audio, and multi-layered sound effects in games.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "100-3000",
+          "default": 1000,
+          "description": "Distance at which the sounds are audible (volume decreases with distance)"
+        },
+        {
+          "name": "MinVolume",
+          "type": "number",
+          "range": "0-99",
+          "default": 0,
+          "description": "Minimum volume level when player is at maximum range"
+        },
+        {
+          "name": "MaxVolume",
+          "type": "number",
+          "range": "1-100",
+          "default": 100,
+          "description": "Maximum volume level when player is closest to the object"
+        },
+        {
+          "name": "ActivateAtStart",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["Yes", "No"],
+          "description": "Whether to activate automatically at start or require manual activation"
+        }
+      ],
+      "features": [
+        "Multiple sound looping (up to 4 sounds)",
+        "3D positional audio",
+        "Distance-based volume control",
+        "Configurable volume limits",
+        "Automatic activation system",
+        "Module-based control integration",
+        "Proximity-based sound management",
+        "Simultaneous sound playback",
+        "Volume fade with distance",
+        "Automatic sound stopping",
+        "Environmental audio system",
+        "Ambient soundscape creation"
+      ],
+      "keywords": ["loop", "3d", "sound", "multiple", "audio", "ambient", "environmental", "volume", "distance", "proximity", "soundscape"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a loop 3D sound multiple object",
+          "Set AlwaysActive to ON",
+          "Attach the loop3dsound_multiple behavior",
+          "Configure sound range and volume limits",
+          "Set up activation preference",
+          "Add sound files to Sound0, Sound1, Sound2, and Sound3",
+          "Position the object in your game world",
+          "Test player proximity to the object",
+          "Verify multiple sound playback",
+          "Check distance-based volume control",
+          "Test volume limits functionality",
+          "Verify automatic sound stopping"
+        ]
+      },
+      "relatedBehaviors": ["sound_system", "3d_audio", "ambient_system", "environmental_audio", "volume_control"]
+    },
+    "named_sounder": {
+      "name": "Named Sounder",
+      "file": "objects/named_sounder.lua",
+      "description": "A sound system that plays or loops sounds when a specific named object is activated. Features object name detection, activation text display, play/loop modes, volume control, and 3D sound positioning. Perfect for creating sound responses to object interactions, audio feedback systems, and named object event triggers.",
+      "properties": [
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the object to monitor for activation (case-insensitive)"
+        },
+        {
+          "name": "ACTIVATION_TEXT",
+          "type": "string",
+          "default": "",
+          "description": "Text to display when the named object is activated"
+        },
+        {
+          "name": "SOUND_STYLE",
+          "type": "dropdown",
+          "default": "Play",
+          "options": ["Play", "Loop"],
+          "description": "Whether to play the sound once or loop it continuously"
+        },
+        {
+          "name": "SOUND_VOLUME",
+          "type": "number",
+          "range": "1-100",
+          "default": 100,
+          "description": "Volume level of the sound (1-100)"
+        }
+      ],
+      "features": [
+        "Named object monitoring system",
+        "Object activation detection",
+        "Play and loop sound modes",
+        "Configurable volume control",
+        "3D sound positioning",
+        "Activation text display",
+        "Automatic object finding",
+        "Health-based termination",
+        "Single-use functionality",
+        "Sound positioning at object location",
+        "Event-driven audio system",
+        "Object interaction feedback"
+      ],
+      "keywords": ["named", "sounder", "object", "activation", "sound", "audio", "play", "loop", "volume", "3d", "positioning", "feedback"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a named sounder object",
+          "Set AlwaysActive to ON",
+          "Attach the named_sounder behavior",
+          "Configure object name to monitor",
+          "Set up activation text if needed",
+          "Configure sound style (play or loop)",
+          "Set up sound volume level",
+          "Add sound file to Sound0",
+          "Ensure the target object has the specified name",
+          "Test target object activation",
+          "Verify sound playback and positioning",
+          "Check activation text display",
+          "Test loop functionality if enabled"
+        ]
+      },
+      "relatedBehaviors": ["sound_system", "object_monitoring", "activation_system", "3d_audio", "feedback_system"]
+    },
+    "sendpulse": {
+      "name": "Send Pulse",
+      "file": "markers/sendpulse.lua",
+      "description": "A marker behavior that sets a global variable 'g_sendpulse_live' to 1 when an object animates past frame 51. Features automatic animation looping, frame detection, and global variable management. Perfect for creating animation-based triggers, frame-dependent events, and animation synchronization systems in games.",
+      "properties": [
+        {
+          "name": "g_sendpulse_live",
+          "type": "number",
+          "default": -1,
+          "description": "Global variable that tracks the pulse state (-1 = initial, 0 = animating, 1 = past frame 51)"
+        }
+      ],
+      "features": [
+        "Animation frame detection system",
+        "Global variable state management",
+        "Automatic animation looping",
+        "Frame 51 threshold detection",
+        "Pulse state tracking",
+        "Animation synchronization",
+        "Global variable integration",
+        "Automatic initialization",
+        "Frame-based triggering",
+        "Animation state monitoring"
+      ],
+      "keywords": ["send", "pulse", "animation", "frame", "trigger", "global", "variable", "marker", "synchronization", "threshold"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a send pulse marker object",
+          "Set AlwaysActive to ON",
+          "Attach the sendpulse behavior",
+          "Ensure the object has an animation with more than 51 frames",
+          "Set up animation frames in the object properties",
+          "Test object animation",
+          "Monitor the g_sendpulse_live global variable",
+          "Verify pulse state changes at frame 51",
+          "Check animation looping functionality",
+          "Test frame threshold detection"
+        ]
+      },
+      "relatedBehaviors": ["animation_system", "global_variable", "marker_system", "frame_detection", "trigger_system"]
+    },
+    "skyflash": {
+      "name": "Sky Flash",
+      "file": "effects/skyflash.lua",
+      "description": "A lightning flash effect system that creates realistic sky sheet lightning with configurable flash thresholds, intervals, and delays. Features exposure manipulation, randomized sound effects, flash counting, and automatic timing. Perfect for creating atmospheric lightning effects, storm environments, and dramatic sky lighting in games.",
+      "properties": [
+        {
+          "name": "FLASH_THRESHOLD",
+          "type": "number",
+          "range": "1-100",
+          "default": 30,
+          "description": "Flash level threshold that determines when lightning occurs"
+        },
+        {
+          "name": "FLASH_INTERVAL",
+          "type": "number",
+          "range": "1-60",
+          "default": 3,
+          "description": "Randomized interval in seconds added to flash delay"
+        },
+        {
+          "name": "FLASH_DELAY",
+          "type": "number",
+          "range": "1-60",
+          "default": 4,
+          "description": "Seconds between flash sets"
+        }
+      ],
+      "features": [
+        "Lightning flash effect system",
+        "Sky sheet exposure manipulation",
+        "Configurable flash thresholds",
+        "Randomized flash intervals",
+        "Flash delay timing control",
+        "Dual sound effect system",
+        "Randomized sound selection",
+        "Flash counting mechanics",
+        "Automatic exposure restoration",
+        "Activation-based triggering",
+        "Realistic lightning timing",
+        "Atmospheric effect creation",
+        "Storm environment simulation",
+        "Exposure value management"
+      ],
+      "keywords": ["sky", "flash", "lightning", "storm", "atmospheric", "effect", "exposure", "threshold", "interval", "delay", "sound", "random"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a sky flash object",
+          "Set AlwaysActive to ON",
+          "Attach the skyflash behavior",
+          "Configure flash threshold level",
+          "Set up flash interval timing",
+          "Configure flash delay between sets",
+          "Add lightning sound 1 to Sound0",
+          "Add lightning sound 2 to Sound1",
+          "Activate the object via switch or zone",
+          "Test lightning flash effects",
+          "Verify exposure manipulation",
+          "Check randomized sound effects",
+          "Test flash timing and intervals",
+          "Verify atmospheric effect creation"
+        ]
+      },
+      "relatedBehaviors": ["effects_system", "lighting_system", "atmospheric_system", "sound_system", "exposure_system", "storm_system"]
+    },
+    "skysphere": {
+      "name": "Skysphere",
+      "file": "objects/skysphere.lua",
+      "description": "A rotating skysphere system that creates dynamic sky environments with configurable rotation axes, speeds, and day/night cycle integration. Features automatic scaling, fade in/out effects, collision disabling, and multi-axis rotation control. Perfect for creating dynamic sky backgrounds, rotating celestial objects, and atmospheric sky environments in games.",
+      "properties": [
+        {
+          "name": "SPINSPEED",
+          "type": "number",
+          "range": "0.1-500.0",
+          "default": 1.0,
+          "description": "Speed of rotation for the skysphere"
+        },
+        {
+          "name": "ANTICLOCKWISE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to rotate counter-clockwise instead of clockwise"
+        },
+        {
+          "name": "X_AXIS",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to rotate around the X axis"
+        },
+        {
+          "name": "Y_AXIS",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to rotate around the Y axis"
+        },
+        {
+          "name": "Z_AXIS",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to rotate around the Z axis"
+        },
+        {
+          "name": "SCALE_MULTIPLIER",
+          "type": "number",
+          "range": "1-1000",
+          "default": 1,
+          "description": "Scale multiplier for the skysphere size"
+        },
+        {
+          "name": "DAYNIGHT_CYCLE",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to integrate with day/night cycle (use with day night behavior)"
+        },
+        {
+          "name": "FADE_SPEED",
+          "type": "number",
+          "range": "0.00-50.00",
+          "default": 2.50,
+          "description": "Fade in/out rate of the skysphere at day/night transitions"
+        }
+      ],
+      "features": [
+        "Rotating skysphere system",
+        "Multi-axis rotation control",
+        "Configurable rotation speed",
+        "Clockwise/counter-clockwise rotation",
+        "Automatic scaling system",
+        "Day/night cycle integration",
+        "Fade in/out effects",
+        "Collision disabling",
+        "Position reset system",
+        "Animation speed integration",
+        "Global sun position tracking",
+        "Atmospheric sky creation",
+        "Dynamic sky backgrounds",
+        "Celestial object simulation"
+      ],
+      "keywords": ["skysphere", "sky", "rotation", "axis", "spin", "day", "night", "cycle", "fade", "atmospheric", "celestial", "background", "scale"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a skysphere object",
+          "Set AlwaysActive to ON",
+          "Attach the skysphere behavior",
+          "Configure rotation speed and direction",
+          "Set up rotation axes (X, Y, Z)",
+          "Configure scale multiplier for size",
+          "Set up day/night cycle integration if needed",
+          "Configure fade speed for transitions",
+          "Position the skysphere at origin (0,0,0)",
+          "Test rotation functionality",
+          "Verify multi-axis rotation",
+          "Check day/night cycle integration",
+          "Test fade in/out effects",
+          "Verify scaling and positioning"
+        ]
+      },
+      "relatedBehaviors": ["sky_system", "rotation_system", "day_night_system", "fade_system", "atmospheric_system", "scaling_system"]
+    },
+    "soundrepeatinzone": {
+      "name": "Sound Repeat In Zone",
+      "file": "markers/soundrepeatinzone.lua",
+      "description": "A zone-based audio system that loops sound when the player enters the zone and stops other zone audio from playing. Features repeat functionality with key/button prompts, global audio management, and logic connections. Perfect for creating ambient audio zones, background music areas, and interactive sound environments in games.",
+      "properties": [
+        {
+          "name": "g_soundrepeatinzone_currentlyplayinge",
+          "type": "number",
+          "default": 0,
+          "description": "Global variable tracking which zone is currently playing audio"
+        },
+        {
+          "name": "g_soundrepeatinzone_played",
+          "type": "array",
+          "default": [],
+          "description": "Array tracking which zones have played their audio"
+        }
+      ],
+      "features": [
+        "Zone-based audio looping system",
+        "Global audio management",
+        "Repeat functionality with prompts",
+        "Multi-platform input support (Xbox, VR, PC)",
+        "Automatic audio switching between zones",
+        "Logic connection integration",
+        "Player proximity detection",
+        "Audio state tracking",
+        "Interactive repeat prompts",
+        "Zone audio prioritization",
+        "Background music zones",
+        "Ambient audio management"
+      ],
+      "keywords": ["sound", "repeat", "zone", "audio", "loop", "ambient", "background", "music", "prompt", "interactive", "management"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a sound repeat zone object",
+          "Set AlwaysActive to ON",
+          "Attach the soundrepeatinzone behavior",
+          "Add audio file to Sound0",
+          "Position the zone in your game world",
+          "Test player entry into the zone",
+          "Verify audio looping functionality",
+          "Check repeat prompt display",
+          "Test repeat functionality with E key/Y button/VR trigger",
+          "Verify audio switching between zones",
+          "Test logic connections",
+          "Check multi-platform input support"
+        ]
+      },
+      "relatedBehaviors": ["zone_system", "audio_system", "ambient_system", "background_music", "interactive_audio", "logic_connections"]
+    },
+    "water_zone": {
+      "name": "Water Zone",
+      "file": "markers/water_zone.lua",
+      "description": "A water zone system that creates underwater environments with configurable water height, prompt text, and entity underwater mode management. Features automatic water height adjustment, entity allegiance detection, underwater sound control, and gravity restoration. Perfect for creating underwater areas, swimming zones, and aquatic environments in games.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "Underwater",
+          "description": "Text displayed when entering the water zone"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "range": "1-1000",
+          "default": 100,
+          "description": "Height above the zone at which water effects are applied"
+        },
+        {
+          "name": "SpawnAtStart",
+          "type": "dropdown",
+          "default": "Yes",
+          "options": ["No", "Yes"],
+          "description": "Whether to activate the water zone at start or require manual activation"
+        }
+      ],
+      "features": [
+        "Water zone system",
+        "Configurable water height",
+        "Underwater mode for all entities",
+        "Entity allegiance detection",
+        "Automatic water height adjustment",
+        "Underwater sound control",
+        "Gravity restoration system",
+        "Player underwater state management",
+        "Zone height triggering",
+        "Prompt text display",
+        "Aquatic environment creation",
+        "Swimming zone functionality",
+        "Underwater physics simulation"
+      ],
+      "keywords": ["water", "zone", "underwater", "swimming", "aquatic", "height", "physics", "gravity", "sound", "entity", "allegiance"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a water zone object",
+          "Set AlwaysActive to ON",
+          "Attach the water_zone behavior",
+          "Configure prompt text for water entry",
+          "Set up zone height for water effects",
+          "Configure spawn at start preference",
+          "Add entry sound to Sound0",
+          "Position the zone in your game world",
+          "Test player entry into the water zone",
+          "Verify underwater mode activation",
+          "Check water height adjustment",
+          "Test entity underwater mode changes",
+          "Verify gravity and sound restoration",
+          "Test zone exit functionality"
+        ]
+      },
+      "relatedBehaviors": ["zone_system", "water_system", "underwater_system", "physics_system", "entity_system", "aquatic_system"]
+    },
+    "weather_event": {
+      "name": "Weather Event",
+      "file": "effects/weather_event.lua",
+      "description": "A comprehensive weather event system that gradually changes weather conditions over time with configurable pace, cloud properties, wind speed, sun exposure, and trigger stages. Features weather warnings, global variable integration, logic connections, and diagnostic display. Perfect for creating dynamic weather systems, storm events, and atmospheric changes in games.",
+      "properties": [
+        {
+          "name": "EVENT_PACE",
+          "type": "number",
+          "range": "0.01-60.0",
+          "default": 1.0,
+          "description": "Speed of weather changes (higher = slower)"
+        },
+        {
+          "name": "CLOUD_DENSITY",
+          "type": "number",
+          "range": "1-400",
+          "default": 0,
+          "description": "Density of clouds in the sky"
+        },
+        {
+          "name": "CLOUD_COVERAGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 0,
+          "description": "Percentage of sky covered by clouds"
+        },
+        {
+          "name": "CLOUD_HEIGHT",
+          "type": "number",
+          "range": "-100-3500",
+          "default": 0,
+          "description": "Height of clouds in meters"
+        },
+        {
+          "name": "CLOUD_THICKNESS",
+          "type": "number",
+          "range": "1-400",
+          "default": 0,
+          "description": "Thickness of clouds in meters"
+        },
+        {
+          "name": "CLOUD_SPEED",
+          "type": "number",
+          "range": "1-50",
+          "default": 0,
+          "description": "Speed of cloud movement"
+        },
+        {
+          "name": "WIND_SPEED",
+          "type": "number",
+          "range": "0.0-0.3",
+          "default": 0.0,
+          "description": "Wind speed affecting trees and vegetation"
+        },
+        {
+          "name": "SUN_EXPOSURE",
+          "type": "number",
+          "range": "1-400",
+          "default": 0,
+          "description": "Brightness of sun exposure"
+        },
+        {
+          "name": "TRIGGER_STAGE",
+          "type": "number",
+          "range": "1-7",
+          "default": 7,
+          "description": "Stage at which to trigger external entity activation"
+        },
+        {
+          "name": "WEATHER_WARNING",
+          "type": "string",
+          "default": "",
+          "description": "Weather warning text sent to user global variable"
+        },
+        {
+          "name": "WARNING_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable to receive weather warnings"
+        },
+        {
+          "name": "DIAGNOSTIC",
+          "type": "dropdown",
+          "default": "No",
+          "options": ["No", "Yes"],
+          "description": "Whether to display diagnostic information on screen"
+        }
+      ],
+      "features": [
+        "Gradual weather change system",
+        "Configurable weather parameters",
+        "7-stage weather progression",
+        "Weather warning system",
+        "Global variable integration",
+        "Logic connection support",
+        "Diagnostic display system",
+        "Automatic weather pacing",
+        "Cloud property management",
+        "Wind speed control",
+        "Sun exposure adjustment",
+        "Trigger stage activation",
+        "Weather event completion",
+        "Atmospheric simulation"
+      ],
+      "keywords": ["weather", "event", "cloud", "wind", "sun", "exposure", "atmospheric", "storm", "trigger", "warning", "diagnostic", "progression"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a weather event object",
+          "Set AlwaysActive to ON",
+          "Attach the weather_event behavior",
+          "Configure event pace for weather changes",
+          "Set up cloud properties (density, coverage, height, thickness, speed)",
+          "Configure wind speed and sun exposure",
+          "Set trigger stage for entity activation",
+          "Configure weather warning text and global variable",
+          "Set up diagnostic display if needed",
+          "Activate the weather event via switch or zone",
+          "Test weather progression through 7 stages",
+          "Verify weather parameter changes",
+          "Check trigger stage activation",
+          "Test weather warning system",
+          "Verify diagnostic display functionality"
+        ]
+      },
+      "relatedBehaviors": ["effects_system", "weather_system", "atmospheric_system", "cloud_system", "wind_system", "trigger_system"]
     }  
   }
 } 

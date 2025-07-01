@@ -1016,6 +1016,131 @@
         ]
       },
       "relatedBehaviors": ["switch", "physics_system", "pressure_plate", "weight_detection", "movement_system"]
+    },
+    "quest_switch": {
+      "name": "Quest Switch",
+      "file": "rpg/quest_switch.lua",
+      "description": "A quest-activated switch system that only becomes interactive when a specific quest is active. Features quest activation requirements, entity manipulation, animation support, visual highlighting, and logic connections. Perfect for creating quest-gated switches, story progression elements, and conditional interactive objects in RPG games.",
+      "properties": [
+        {
+          "name": "QUEST_ACTIVATION",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Quest number that must be active for the switch to function (0 = QuestList)"
+        },
+        {
+          "name": "USE_RANGE",
+          "type": "number",
+          "range": "1-200",
+          "default": 90,
+          "description": "Distance at which the player can interact with the switch"
+        },
+        {
+          "name": "ENABLED_TEXT",
+          "type": "string",
+          "default": "E To Turn Switch ON",
+          "description": "Text displayed when the switch can be activated"
+        },
+        {
+          "name": "DISABLED_TEXT",
+          "type": "string",
+          "default": "Disabled",
+          "description": "Text displayed when the switch is disabled (quest not active)"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Shape", "Outline", "Icon"],
+          "description": "Visual highlighting method for the switch object"
+        },
+        {
+          "name": "HIGHLIGHT_ICON_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\icons\\hand.png",
+          "description": "Path to icon image file for icon highlighting"
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": ["Local", "Screen"],
+          "description": "Where to display prompt text"
+        },
+        {
+          "name": "ON_ANIMATION",
+          "type": "dropdown",
+          "default": "ON",
+          "options": ["AnimSetList"],
+          "description": "Animation to play when switch is activated"
+        },
+        {
+          "name": "OFF_ANIMATION",
+          "type": "dropdown",
+          "default": "OFF",
+          "options": ["AnimSetList"],
+          "description": "Animation to play when switch is deactivated"
+        },
+        {
+          "name": "SWITCH_STATE",
+          "type": "dropdown",
+          "default": "OFF",
+          "options": ["OFF", "ON"],
+          "description": "Initial state of the switch"
+        },
+        {
+          "name": "AFFECT_ENTITY",
+          "type": "string",
+          "default": "",
+          "description": "Name of entity to affect when switch is activated"
+        },
+        {
+          "name": "AFFECT_MODE",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Hide", "Show", "Destroy"],
+          "description": "Action to perform on the affected entity"
+        }
+      ],
+      "features": [
+        "Quest activation requirement system",
+        "Conditional switch functionality",
+        "Entity manipulation (hide, show, destroy)",
+        "Animation support (ON/OFF animations)",
+        "Visual highlighting options",
+        "Sound effect integration",
+        "Logic connection support",
+        "Quest progression integration",
+        "Player proximity detection",
+        "Prompt display customization",
+        "Icon highlighting system",
+        "Story progression mechanics",
+        "Conditional interaction system"
+      ],
+      "keywords": ["quest", "switch", "activation", "conditional", "rpg", "story", "progression", "entity", "manipulation", "animation", "highlight"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a quest switch object",
+          "Set AlwaysActive to ON",
+          "Attach the quest_switch behavior",
+          "Configure quest activation requirement",
+          "Set up use range and text prompts",
+          "Configure visual highlighting options",
+          "Set up prompt display location",
+          "Configure ON/OFF animations",
+          "Set initial switch state",
+          "Configure entity to affect and action",
+          "Add activation sound to Sound0",
+          "Add deactivation sound to Sound1",
+          "Test quest activation requirement",
+          "Verify switch functionality when quest is active",
+          "Check entity manipulation effects"
+        ]
+      },
+      "relatedBehaviors": ["quest_system", "switch_system", "entity_manipulation", "story_progression", "conditional_interaction"]
     }
   }
 } 

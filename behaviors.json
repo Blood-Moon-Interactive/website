@@ -64,6 +64,10 @@
     "People": {
       "file": "categories/people.json",
       "description": "Behaviors for controlling and managing human characters and NPCs"
+    },
+    "Lights": {
+      "file": "categories/lights.json",
+      "description": "Behaviors for creating and managing lighting systems, light sources, and illumination effects in the game world"
     }
   },
   "config": {

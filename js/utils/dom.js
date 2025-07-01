@@ -112,7 +112,8 @@ function getCategoryIcon(category) {
         'Horror': 'bi-emoji-dizzy',
         'HUDs': 'bi-display',
         'People': 'bi-person',
-        'Markers': 'bi-geo-alt'
+        'Markers': 'bi-geo-alt',
+        'Lights': 'bi-lightbulb'
     };
     return iconMap[category] || 'bi-circle';
 }

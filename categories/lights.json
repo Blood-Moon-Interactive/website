@@ -1,0 +1,385 @@
+{
+  "category": "Lights",
+  "description": "Behaviors for creating and managing lighting systems, light sources, and illumination effects in the game world",
+  "behaviors": {
+    "constantlight": {
+      "name": "Constant Light",
+      "file": "markers/ConstantLight.lua",
+      "description": "A simple lighting behavior that keeps a light source on continuously. Features persistent illumination, no activation requirements, and basic light management. Perfect for creating ambient lighting, permanent light sources, and environmental illumination in games.",
+      "properties": [],
+      "features": [
+        "Persistent lighting system",
+        "Continuous illumination",
+        "No activation requirements",
+        "Basic light management",
+        "Ambient lighting support",
+        "Environmental illumination",
+        "Simple light behavior",
+        "Always-on light source"
+      ],
+      "keywords": ["constant", "light", "illumination", "ambient", "persistent", "environmental", "lighting"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a light object",
+          "Set AlwaysActive to ON",
+          "Attach the constantlight behavior",
+          "Configure light properties in GameGuru MAX",
+          "Position the light in your game world",
+          "Test persistent illumination",
+          "Verify light remains on continuously",
+          "Adjust light intensity and color as needed"
+        ]
+      },
+              "relatedBehaviors": ["lighting_system", "ambient_lighting", "environmental_lighting", "light_source"]
+      },
+      "flamelight": {
+        "name": "Flame Light",
+        "file": "markers/FlameLight.lua",
+        "description": "A realistic flame lighting system that simulates candle or campfire illumination with natural flickering and movement. Features intensity variance control, light movement simulation, glow interval adjustment, and realistic flame behavior. Perfect for creating atmospheric lighting, fire effects, and realistic flame illumination in games.",
+        "properties": [
+          {
+            "name": "Intensity",
+            "type": "number",
+            "range": "1-100",
+            "default": 50,
+            "description": "Intensity variance of the flame light (higher = more dramatic flickering)"
+          },
+          {
+            "name": "LightOn",
+            "type": "number",
+            "range": "0-1",
+            "default": 1,
+            "description": "Whether the light starts on or off (1 = on, 0 = off)"
+          },
+          {
+            "name": "LightMove",
+            "type": "number",
+            "range": "0-1",
+            "default": 1,
+            "description": "Whether the light position moves to simulate flame movement (1 = move, 0 = static)"
+          },
+          {
+            "name": "MoveAmount",
+            "type": "number",
+            "range": "1-100",
+            "default": 1,
+            "description": "Amount of movement for the light position (higher = more movement)"
+          },
+          {
+            "name": "GlowInterval",
+            "type": "number",
+            "range": "1-100",
+            "default": 10,
+            "description": "Interval between glow updates in milliseconds (lower = faster flickering)"
+          }
+        ],
+        "features": [
+          "Realistic flame simulation",
+          "Intensity variance control",
+          "Light movement simulation",
+          "Configurable glow intervals",
+          "Color variation system",
+          "Range fluctuation",
+          "Natural flickering effects",
+          "Flame-like movement patterns",
+          "Atmospheric lighting",
+          "Fire effect integration",
+          "Dynamic color changes",
+          "Realistic flame behavior",
+          "Candle and campfire simulation"
+        ],
+        "keywords": ["flame", "light", "fire", "candle", "campfire", "flickering", "movement", "atmospheric", "realistic", "intensity", "glow"],
+        "tutorial": {
+          "videoId": "coming-soon",
+          "timestamp": "0:00",
+          "steps": [
+            "Create a light object",
+            "Set AlwaysActive to ON",
+            "Attach the flamelight behavior",
+            "Configure intensity variance for flickering effect",
+            "Set up light movement for flame simulation",
+            "Adjust move amount for realistic movement",
+            "Configure glow interval for flickering speed",
+            "Set initial light state (on/off)",
+            "Test flame light behavior",
+            "Verify realistic flickering and movement",
+            "Adjust settings for desired flame effect",
+            "Check atmospheric lighting quality"
+          ]
+        },
+        "relatedBehaviors": ["lighting_system", "flame_system", "atmospheric_lighting", "fire_effects", "realistic_lighting"]
+      },
+      "flickerlight": {
+        "name": "Flicker Light",
+        "file": "markers/FlickerLight.lua",
+        "description": "A flickering light system that simulates faulty electrical connections with configurable fault levels. Features electrical fault simulation, random flickering patterns, and realistic electrical lighting behavior. Perfect for creating horror atmospheres, broken electrical systems, and unstable lighting effects in games.",
+        "properties": [
+          {
+            "name": "Faults",
+            "type": "number",
+            "range": "1-100",
+            "default": 50,
+            "description": "Level of electrical faults in the supply (higher = more frequent flickering)"
+          },
+          {
+            "name": "LightOn",
+            "type": "number",
+            "range": "0-1",
+            "default": 1,
+            "description": "Whether the light starts on or off (1 = on, 0 = off)"
+          }
+        ],
+        "features": [
+          "Electrical fault simulation",
+          "Random flickering patterns",
+          "Configurable fault levels",
+          "Realistic electrical behavior",
+          "Light range fluctuation",
+          "Faulty connection simulation",
+          "Unstable lighting effects",
+          "Horror atmosphere creation",
+          "Electrical system simulation",
+          "Random light interruptions",
+          "Fault tolerance simulation",
+          "Electrical supply issues"
+        ],
+        "keywords": ["flicker", "light", "electrical", "fault", "horror", "unstable", "faulty", "connection", "random", "atmosphere"],
+        "tutorial": {
+          "videoId": "coming-soon",
+          "timestamp": "0:00",
+          "steps": [
+            "Create a light object",
+            "Set AlwaysActive to ON",
+            "Attach the flickerlight behavior",
+            "Configure fault level for flickering intensity",
+            "Set initial light state (on/off)",
+            "Test electrical fault simulation",
+            "Verify random flickering patterns",
+            "Adjust fault level for desired effect",
+            "Check realistic electrical behavior",
+            "Test horror atmosphere creation"
+          ]
+        },
+        "relatedBehaviors": ["lighting_system", "electrical_system", "horror_lighting", "faulty_lighting", "unstable_lighting"]
+      },
+      "rotatelight": {
+        "name": "Rotate Light",
+        "file": "markers/RotateLight.lua",
+        "description": "A rotating light system that spins the light around the Y axis at configurable speeds and directions. Features continuous rotation, clockwise and counterclockwise options, speed control, and automatic angle management. Perfect for creating rotating spotlights, lighthouse effects, searchlights, and dynamic rotating illumination in games.",
+        "properties": [
+          {
+            "name": "Speed",
+            "type": "number",
+            "range": "1-200",
+            "default": 50,
+            "description": "Rotation speed of the light (higher = faster rotation)"
+          },
+          {
+            "name": "AntiClockwise",
+            "type": "number",
+            "range": "0-1",
+            "default": 0,
+            "description": "Rotation direction (0 = clockwise, 1 = counterclockwise)"
+          },
+          {
+            "name": "LightOn",
+            "type": "number",
+            "range": "0-1",
+            "default": 1,
+            "description": "Whether the light starts on or off (1 = on, 0 = off)"
+          }
+        ],
+        "features": [
+          "Continuous light rotation",
+          "Configurable rotation speed",
+          "Clockwise and counterclockwise rotation",
+          "Y-axis rotation system",
+          "Automatic angle management",
+          "360-degree rotation cycle",
+          "Dynamic light positioning",
+          "Spotlight rotation effects",
+          "Lighthouse simulation",
+          "Searchlight functionality",
+          "Rotating illumination",
+          "Angle normalization system"
+        ],
+        "keywords": ["rotate", "light", "rotation", "spotlight", "lighthouse", "searchlight", "dynamic", "spinning", "angle", "direction"],
+        "tutorial": {
+          "videoId": "coming-soon",
+          "timestamp": "0:00",
+          "steps": [
+            "Create a light object",
+            "Set AlwaysActive to ON",
+            "Attach the rotatelight behavior",
+            "Configure rotation speed",
+            "Set rotation direction (clockwise or counterclockwise)",
+            "Set initial light state (on/off)",
+            "Test continuous rotation",
+            "Verify rotation direction and speed",
+            "Check 360-degree rotation cycle",
+            "Adjust speed for desired effect",
+            "Test spotlight rotation effects"
+          ]
+        },
+        "relatedBehaviors": ["lighting_system", "rotating_lighting", "spotlight_system", "dynamic_lighting", "lighthouse_effects"]
+      },
+      "strobelight": {
+        "name": "Strobe Light",
+        "file": "markers/StrobeLight.lua",
+        "description": "A strobe light system that creates pulsing illumination by bouncing light range between minimum and maximum values at configurable speeds. Features range oscillation, speed control, and automatic direction reversal. Perfect for creating strobe effects, pulsing lights, emergency lighting, and rhythmic illumination patterns in games.",
+        "properties": [
+          {
+            "name": "MinRange",
+            "type": "number",
+            "range": "1-500",
+            "default": 1,
+            "description": "Minimum light range during strobe cycle (lower = dimmer at minimum)"
+          },
+          {
+            "name": "MaxRange",
+            "type": "number",
+            "range": "50-1000",
+            "default": 200,
+            "description": "Maximum light range during strobe cycle (higher = brighter at maximum)"
+          },
+          {
+            "name": "Speed",
+            "type": "number",
+            "range": "10-500",
+            "default": 100,
+            "description": "Speed of strobe oscillation (higher = faster pulsing)"
+          },
+          {
+            "name": "LightOn",
+            "type": "number",
+            "range": "0-1",
+            "default": 1,
+            "description": "Whether the light starts on or off (1 = on, 0 = off)"
+          }
+        ],
+        "features": [
+          "Range oscillation system",
+          "Configurable min/max ranges",
+          "Speed control for strobe timing",
+          "Automatic direction reversal",
+          "Pulsing light effects",
+          "Strobe light simulation",
+          "Emergency lighting effects",
+          "Rhythmic illumination patterns",
+          "Light intensity cycling",
+          "Dynamic range control",
+          "Smooth range transitions",
+          "Continuous strobe cycling"
+        ],
+        "keywords": ["strobe", "light", "pulse", "oscillation", "emergency", "rhythmic", "range", "intensity", "cycling", "pulsing"],
+        "tutorial": {
+          "videoId": "coming-soon",
+          "timestamp": "0:00",
+          "steps": [
+            "Create a light object",
+            "Set AlwaysActive to ON",
+            "Attach the strobelight behavior",
+            "Configure minimum and maximum light ranges",
+            "Set strobe speed for pulsing frequency",
+            "Set initial light state (on/off)",
+            "Test strobe light oscillation",
+            "Verify range cycling between min and max",
+            "Adjust speed for desired strobe effect",
+            "Check pulsing light patterns",
+            "Test emergency lighting simulation"
+          ]
+        },
+        "relatedBehaviors": ["lighting_system", "strobe_effects", "emergency_lighting", "pulsing_lighting", "rhythmic_lighting"]
+      },
+      "togglelight": {
+        "name": "Toggle Light",
+        "file": "markers/ToggleLight.lua",
+        "description": "A simple light toggle system that switches a light on and off when activated by another object or game element. Features external activation, initial state control, and simple on/off switching. Perfect for creating switchable lights, interactive lighting, and light control systems in games.",
+        "properties": [
+          {
+            "name": "LightOn",
+            "type": "number",
+            "range": "0-1",
+            "default": 1,
+            "description": "Whether the light starts on or off (1 = on, 0 = off)"
+          }
+        ],
+        "features": [
+          "External activation system",
+          "Simple on/off toggle",
+          "Initial state control",
+          "Interactive lighting",
+          "Switchable light system",
+          "Light control integration",
+          "External trigger support",
+          "State management",
+          "Light activation/deactivation",
+          "Simple light switching"
+        ],
+        "keywords": ["toggle", "light", "switch", "on", "off", "interactive", "activation", "control", "simple"],
+        "tutorial": {
+          "videoId": "coming-soon",
+          "timestamp": "0:00",
+          "steps": [
+            "Create a light object",
+            "Set AlwaysActive to ON",
+            "Attach the togglelight behavior",
+            "Set initial light state (on/off)",
+            "Connect to activating object or trigger",
+            "Test light toggle functionality",
+            "Verify on/off switching",
+            "Check external activation",
+            "Test initial state behavior"
+          ]
+        },
+        "relatedBehaviors": ["lighting_system", "interactive_lighting", "switch_system", "light_control", "activation_system"]
+      },
+      "variable_light": {
+        "name": "Variable Light",
+        "file": "effects/variable_light.lua",
+        "description": "A dynamic light system that adjusts light range based on a global variable value. Features variable switch integration, real-time light range adjustment, and global variable monitoring. Perfect for creating dimmable lights, variable intensity lighting, and light systems that respond to game state changes.",
+        "properties": [
+          {
+            "name": "VARIABLE_SWITCH_USER_GLOBAL",
+            "type": "string",
+            "default": "",
+            "description": "Name of the global variable to monitor for light range changes (e.g., 'Variable_Switch1')"
+          }
+        ],
+        "features": [
+          "Global variable integration",
+          "Real-time light range adjustment",
+          "Variable switch compatibility",
+          "Dynamic light intensity",
+          "Automatic range updates",
+          "Light control system",
+          "Variable monitoring",
+          "Dimmable light functionality",
+          "State-responsive lighting",
+          "Continuous light adjustment",
+          "Global variable tracking",
+          "Light range synchronization"
+        ],
+        "keywords": ["variable", "light", "dimmable", "intensity", "range", "global", "switch", "dynamic", "adjustment", "monitoring"],
+        "tutorial": {
+          "videoId": "AtjQu77PZxA",
+          "timestamp": "0:00",
+          "steps": [
+            "Create a light object",
+            "Set AlwaysActive to ON",
+            "Attach the variable_light behavior",
+            "Set up global variable name to monitor",
+            "Configure variable switch system",
+            "Test light range adjustment",
+            "Verify global variable integration",
+            "Check real-time light changes",
+            "Test variable switch functionality",
+            "Verify light intensity control"
+          ]
+        },
+        "relatedBehaviors": ["lighting_system", "variable_switch", "global_variable", "dimmable_lighting", "dynamic_lighting"]
+      }    
+    }
+} 

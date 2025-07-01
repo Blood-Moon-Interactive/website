@@ -1570,6 +1570,113 @@
         ]
       },
       "relatedBehaviors": ["navbar", "objective_system", "proximity_detection", "entity_tracking", "navigation_system"]
-    } 
+    },
+    "hidehuds": {
+      "name": "Hide HUDs",
+      "file": "hidehuds.lua",
+      "description": "A zone behavior that automatically hides all HUDs when the player enters the zone. Features automatic HUD hiding, zone-based activation, and self-destruction after activation. Perfect for creating immersive gameplay areas, cutscenes, and HUD-free zones in games.",
+      "properties": [],
+      "features": [
+        "Automatic HUD hiding on zone entry",
+        "Zone-based activation system",
+        "Self-destruction after activation",
+        "Immersive gameplay integration",
+        "Cutscene support",
+        "HUD-free zone creation",
+        "Player proximity detection",
+        "Automatic cleanup system"
+      ],
+      "keywords": ["hide", "hud", "huds", "zone", "immersion", "cutscene", "ui", "interface", "display"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a zone object",
+          "Set AlwaysActive to ON",
+          "Attach the hidehuds behavior",
+          "Position the zone where HUDs should be hidden",
+          "Test player entry into the zone",
+          "Verify HUD hiding functionality",
+          "Check zone destruction after activation"
+        ]
+      },
+      "relatedBehaviors": ["zone_behavior", "hud_control", "immersion_system", "cutscene_system"]
+    },
+    "stop_watch": {
+      "name": "Stop Watch",
+      "file": "objects/stop_watch.lua",
+      "description": "A comprehensive stopwatch system with multiple time formats and end actions. Features start/stop functionality, global variable display, multiple time formats, launch warnings, and configurable end actions. Perfect for creating timed challenges, speed runs, countdown timers, and time-based gameplay mechanics.",
+      "properties": [
+        {
+          "name": "DISPLAY_USER_GLOBAL",
+          "type": "string",
+          "default": "",
+          "description": "Name of the global variable to display the time (e.g., 'MyTime')"
+        },
+        {
+          "name": "END_ACTION",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Terminate Player", "Hurt Player", "Activate Entities", "Lose Game", "Win Game", "Display Hud Screen"],
+          "description": "Action to perform when the stopwatch is stopped"
+        },
+        {
+          "name": "LAUNCH_WARNING",
+          "type": "dropdown",
+          "default": "Off",
+          "options": ["Off", "On"],
+          "description": "Whether to show a countdown warning before starting the timer"
+        },
+        {
+          "name": "END_SCREEN",
+          "type": "string",
+          "default": "",
+          "description": "Name of the HUD screen to display when END_ACTION is set to 'Display Hud Screen'"
+        },
+        {
+          "name": "READOUT",
+          "type": "dropdown",
+          "default": "Mins:Secs:MilliSecs",
+          "options": ["Mins:Secs:MilliSecs", "Mins:Secs:Tenths", "Hrs:Mins:Secs:MilliSecs", "Hrs:Min:Sec:Tenths:MilliSecs"],
+          "description": "Time format to display in the global variable"
+        }
+      ],
+      "features": [
+        "Start/stop timer functionality",
+        "Global variable time display",
+        "Multiple time format options",
+        "Launch warning countdown system",
+        "Configurable end actions",
+        "Player termination and damage options",
+        "Entity activation on completion",
+        "Game win/lose integration",
+        "HUD screen display support",
+        "Sound effect integration",
+        "Logic connection support",
+        "Precise millisecond timing",
+        "Hours, minutes, seconds tracking",
+        "Automatic timer reset system"
+      ],
+      "keywords": ["stopwatch", "timer", "time", "countdown", "speed run", "challenge", "timed", "milliseconds", "seconds", "minutes", "hours", "global variable"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00",
+        "steps": [
+          "Create a stopwatch object",
+          "Set AlwaysActive to ON",
+          "Attach the stop_watch behavior",
+          "Configure global variable for time display",
+          "Set up time format preference",
+          "Configure end action if needed",
+          "Set up launch warning if desired",
+          "Add commence sound to Sound0",
+          "Add end sound to Sound1",
+          "Test start/stop functionality",
+          "Verify time display in global variable",
+          "Check end action execution"
+        ]
+      },
+      "relatedBehaviors": ["timer_system", "global_variable", "game_state", "hud_system", "logic_connections"]
+    }   
   }
 } 
