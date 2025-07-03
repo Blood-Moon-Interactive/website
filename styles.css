@@ -451,49 +451,52 @@ footer {
 }
 
 .quick-links {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    /* Remove height: 100% to let it size naturally */
 }
 
 .quick-links .card-header {
     background-color: var(--light-bg);
     border-bottom: 2px solid var(--accent-color);
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
 }
 
 .quick-links h4 {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .quick-links .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
 }
 
 .quick-links ul {
     margin-bottom: 0;
+    padding: 0;
+    align-self: flex-start;
+    width: 100%;
 }
 
 .quick-link {
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     color: var(--accent-color);
     text-decoration: none;
     border-bottom: 1px solid var(--light-bg);
     transition: all 0.2s ease;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .quick-link:hover {
     color: var(--primary-color);
     padding-left: 0.25rem;
     background-color: var(--light-bg);
+    border-radius: 4px;
 }
 
 /* Dropdown options styles */
