@@ -8,9 +8,8 @@ This guide explains how to use the `article-template.html` file to create new ar
 ### Ad Integration
 The template includes multiple ad spaces for monetization:
 - **Top Content Ad**: Above the article content
-- **Sidebar Ad**: In the right sidebar
 - **Inline Ad**: Between content sections
-- **Bottom Sidebar Ad**: At the bottom of the sidebar
+- **Bottom Sidebar Ad**: At the bottom of the sidebar (sticky positioning)
 
 All ad spaces use the `ad-container` and `ad-placeholder` CSS classes for consistent styling.
 

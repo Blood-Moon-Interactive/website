@@ -1029,12 +1029,13 @@ footer {
 
 /* Sidebar ad space that extends to footer */
 .ad-sidebar {
-    height: calc(50vh - 150px);
-    min-height: 200px;
+    min-height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
+    position: sticky;
+    top: 100px;
 }
 
 .ad-sidebar .ad-placeholder {
