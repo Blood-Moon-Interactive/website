@@ -458,7 +458,15 @@ function returnToHomePage() {
                 <div class="col-md-3">
                     <!-- Bottom Right Ad Space - aligned with article and extending to footer -->
                     <div class="ad-container ad-sidebar text-center">
-                        <div class="ad-placeholder">Ad Space</div>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-7908718257772872"
+                             data-ad-slot="5812492004"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                 </div>
             </div>

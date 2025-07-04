@@ -1036,13 +1036,21 @@ footer {
     margin-bottom: 0;
     position: sticky;
     top: 100px;
+    background-color: #f8f9fa;
+    border: 1px dashed #dee2e6;
+    border-radius: 4px;
+    padding: 0.75rem;
 }
 
-.ad-sidebar .ad-placeholder {
-    min-height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6c757d;
-    font-size: 0.9rem;
+.ad-sidebar .adsbygoogle {
+    min-height: 250px;
+    display: block;
+    width: 100%;
+}
+
+/* Ensure Google AdSense ads display properly in sidebar */
+.ad-sidebar .adsbygoogle {
+    min-height: 250px;
+    display: block;
+    width: 100%;
 } 
