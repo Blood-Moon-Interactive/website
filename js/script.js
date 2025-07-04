@@ -27,6 +27,9 @@ let isInitialized = false;
 
 document.addEventListener('DOMContentLoaded', async function() {
     try {
+        // Update copyright year automatically
+        updateCopyrightYear();
+        
         // Initialize EmailJS
         emailjs.init("9iWDbIq3IAJUhZP-l");
         
@@ -501,4 +504,12 @@ async function loadFeaturedArticle() {
     } catch (error) {
         console.error('Error loading featured article:', error);
     }
+}
+
+function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    const yearElements = document.querySelectorAll('#currentYear');
+    yearElements.forEach(element => {
+        element.textContent = currentYear;
+    });
 } 
