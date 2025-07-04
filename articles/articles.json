@@ -115,6 +115,125 @@
       ],
       "featured": false,
       "filename": "adaptive_crosshair.html"
+    },
+    {
+      "id": "game-design-principles",
+      "title": "Game Design Principles",
+      "preview": "Essential game design principles and techniques for indie game developers. Learn core concepts that apply across all game development platforms, from Unity and Unreal Engine to GameGuru MAX and beyond.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "indie",
+        "principles",
+        "tutorial",
+        "cross-platform"
+      ],
+      "featured": true,
+      "filename": "game-design-principles.html"
+    },
+    {
+      "id": "core-gameplay-loops",
+      "title": "Core Gameplay Loops",
+      "preview": "Master the fundamental concept of core gameplay loops. Learn how to design engaging, repeatable actions that keep players coming back to your game.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "core-loops",
+        "player-engagement",
+        "gameplay",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "core-gameplay-loops.html"
+    },
+    {
+      "id": "player-motivation",
+      "title": "Player Motivation",
+      "preview": "Understand what drives players to continue playing your game. Learn about intrinsic and extrinsic motivation, player types, and how to design for different motivational needs.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "player-motivation",
+        "bartle-taxonomy",
+        "player-types",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "player-motivation.html"
+    },
+    {
+      "id": "feedback-systems",
+      "title": "Feedback Systems",
+      "preview": "Learn how to design effective feedback systems that keep players engaged and informed. Master visual, audio, and haptic feedback to create responsive and satisfying game experiences.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "feedback-systems",
+        "player-engagement",
+        "gameplay",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "feedback-systems.html"
+    },
+    {
+      "id": "difficulty-balancing",
+      "title": "Difficulty Balancing",
+      "preview": "Master the art of difficulty balancing to create engaging, accessible games. Learn how to design challenges that are neither too easy nor too hard, keeping players in the optimal flow state.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "difficulty-balancing",
+        "player-engagement",
+        "flow-state",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "difficulty-balancing.html"
+    },
+    {
+      "id": "player-agency",
+      "title": "Player Agency",
+      "preview": "Master the art of player agency to create games where players feel truly in control. Learn how to design meaningful choices that create investment, engagement, and memorable experiences.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "player-agency",
+        "player-engagement",
+        "meaningful-choices",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "player-agency.html"
+    },
+    {
+      "id": "emergent-gameplay",
+      "title": "Emergent Gameplay",
+      "preview": "Discover how to design emergent gameplay systems that create unexpected but enjoyable player experiences. Learn to build games where simple rules combine to create complex, engaging interactions.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "emergent-gameplay",
+        "system-design",
+        "player-creativity",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "emergent-gameplay.html"
     }
   ],
   "config": {
