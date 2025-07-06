@@ -234,6 +234,317 @@
       ],
       "featured": false,
       "filename": "emergent-gameplay.html"
+    },
+    {
+      "id": "flow-theory",
+      "title": "Flow Theory in Game Design",
+      "preview": "Master Flow Theory to create games that keep players in the optimal engagement zone. Learn how to balance challenge and skill to create immersive, satisfying gameplay experiences.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "flow-theory",
+        "player-engagement",
+        "challenge-balance",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "flow-theory.html"
+    },
+    {
+      "id": "feedback-loops",
+      "title": "Feedback Loops in Game Design",
+      "preview": "Master feedback loops to create engaging game systems that guide player behavior and create compelling gameplay experiences. Learn how to design positive and negative feedback systems.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "feedback-loops",
+        "player-behavior",
+        "game-systems",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "feedback-loops.html"
+    },
+    {
+      "id": "risk-vs-reward",
+      "title": "Risk vs. Reward in Game Design",
+      "preview": "Master risk vs. reward systems to create compelling decision-making experiences. Learn how to balance consequences and rewards to create tension and meaningful player choices.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "risk-reward",
+        "decision-making",
+        "player-choices",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "risk-vs-reward.html"
+    },
+    {
+      "id": "reward-systems",
+      "title": "Reward Systems in Game Design",
+      "preview": "Master reward systems to create compelling progression experiences. Learn how to design XP, loot, and unlock systems that motivate players and create satisfying advancement.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "reward-systems",
+        "player-progression",
+        "motivation",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "reward-systems.html"
+    },
+    {
+      "id": "game-genres-mechanics",
+      "title": "Game Genres & Mechanics",
+      "preview": "Understand how different game genres use specific mechanics to create unique player experiences. Learn to design mechanics that align with genre expectations and player motivations.",
+      "date": "2024-12-01",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "genres",
+        "mechanics",
+        "player-expectations",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "game-genres-mechanics.html"
+    },
+    {
+      "id": "juice",
+      "title": "Juice in Game Design",
+      "preview": "Learn how to add juice to your games with visual feedback, audio cues, and satisfying effects. Discover how GameGuru MAX's gibs and particle systems can transform your gameplay experience.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "juice",
+        "visual-feedback",
+        "audio-feedback",
+        "particle-effects",
+        "gibs",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "juice.html"
+    },
+    {
+      "id": "rule-clarity-constraints",
+      "title": "Rule Clarity and Constraints",
+      "preview": "Learn how clear rules and strategic constraints create better gameplay experiences. Discover how to design games with understandable boundaries that enhance player creativity and engagement.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "rules",
+        "constraints",
+        "clarity",
+        "boundaries",
+        "player-creativity",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "rule-clarity-constraints.html"
+    },
+    {
+      "id": "accessibility-design",
+      "title": "Accessibility Design",
+      "preview": "Learn how to design accessible games that can be enjoyed by players with disabilities. Discover practical techniques for creating inclusive gaming experiences.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "accessibility",
+        "inclusive-design",
+        "disability",
+        "visual-accessibility",
+        "audio-accessibility",
+        "motor-accessibility",
+        "cognitive-accessibility",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "accessibility-design.html"
+    },
+    {
+      "id": "performance-optimization",
+      "title": "Performance Optimization",
+      "preview": "Learn how to optimize your games for smooth performance across different hardware. Discover practical techniques for balancing visual quality with performance.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "performance",
+        "optimization",
+        "frame-rate",
+        "memory-management",
+        "rendering-optimization",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "performance-optimization.html"
+    },
+    {
+      "id": "prototyping-strategies",
+      "title": "Prototyping Strategies",
+      "preview": "Learn effective prototyping strategies for game development. Discover how to quickly test and validate your game ideas using GameGuru MAX's rapid prototyping capabilities.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "prototyping",
+        "rapid-development",
+        "game-validation",
+        "iterative-design",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "prototyping-strategies.html"
+    },
+    {
+      "id": "pacing-and-progression",
+      "title": "Pacing and Progression",
+      "preview": "Learn how to design effective pacing and progression systems for your games. Discover techniques for maintaining player engagement and creating satisfying advancement experiences.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "pacing",
+        "progression",
+        "player-engagement",
+        "rhythm",
+        "advancement",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "pacing-and-progression.html"
+    },
+    {
+      "id": "emergent-vs-scripted",
+      "title": "Emergent vs Scripted",
+      "preview": "Learn the differences between emergent and scripted gameplay approaches. Discover when to use systems-driven vs narrative-driven design for your games.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "emergent-gameplay",
+        "scripted-gameplay",
+        "systems-design",
+        "narrative-design",
+        "player-agency",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "emergent-vs-scripted.html"
+    },
+    {
+      "id": "replayability",
+      "title": "Replayability",
+      "preview": "Learn how to design games with high replayability. Discover techniques for creating experiences that players want to enjoy multiple times with different outcomes.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "replayability",
+        "player-engagement",
+        "variety",
+        "mastery",
+        "discovery",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "replayability.html"
+    },
+    {
+      "id": "playtesting-and-iteration",
+      "title": "Playtesting and Iteration",
+      "preview": "Master the art of playtesting and iteration to create better games. Learn systematic approaches to gathering feedback, analyzing data, and implementing improvements that enhance player experience.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "playtesting",
+        "iteration",
+        "feedback",
+        "player-testing",
+        "game-improvement",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "playtesting-and-iteration.html"
+    },
+    {
+      "id": "target-audience-analysis",
+      "title": "Target Audience Analysis in Game Design",
+      "preview": "Learn how to analyze and understand your target audience for better game design decisions. Discover techniques for identifying player needs, preferences, and behaviors to create more engaging games.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "target-audience",
+        "player-research",
+        "market-analysis",
+        "audience-segmentation",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "target-audience-analysis.html"
+    },
+    {
+      "id": "market-positioning",
+      "title": "Market Positioning in Game Design",
+      "preview": "Learn how to position your game in the market for maximum impact. Discover strategies for identifying your unique value, analyzing competitors, and communicating your game's strengths to your target audience.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "market-positioning",
+        "business",
+        "indie",
+        "strategy",
+        "competitive-analysis"
+      ],
+      "featured": false,
+      "filename": "market-positioning.html"
+    },
+    {
+      "id": "launch-planning",
+      "title": "Launch Planning in Game Design",
+      "preview": "Learn how to plan and execute a successful game launch. Discover strategies for building anticipation, coordinating marketing efforts, and maximizing your game's impact on release day.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "launch-planning",
+        "marketing",
+        "indie",
+        "release-strategy",
+        "business"
+      ],
+      "featured": false,
+      "filename": "launch-planning.html"
     }
   ],
   "config": {
