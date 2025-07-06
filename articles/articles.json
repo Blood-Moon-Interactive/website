@@ -252,23 +252,7 @@
       "featured": false,
       "filename": "flow-theory.html"
     },
-    {
-      "id": "feedback-loops",
-      "title": "Feedback Loops in Game Design",
-      "preview": "Master feedback loops to create engaging game systems that guide player behavior and create compelling gameplay experiences. Learn how to design positive and negative feedback systems.",
-      "date": "2024-12-01",
-      "author": "Blood Moon Interactive",
-      "category": "Game Design",
-      "tags": [
-        "game-design",
-        "feedback-loops",
-        "player-behavior",
-        "game-systems",
-        "indie"
-      ],
-      "featured": false,
-      "filename": "feedback-loops.html"
-    },
+
     {
       "id": "risk-vs-reward",
       "title": "Risk vs. Reward in Game Design",
@@ -545,6 +529,24 @@
       ],
       "featured": false,
       "filename": "launch-planning.html"
+    },
+    {
+      "id": "onboarding-and-first-time-user-experience",
+      "title": "Onboarding and First-Time User Experience (FTUE)",
+      "preview": "Learn how to design effective onboarding experiences that guide new players through your game's systems and mechanics without overwhelming them.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "onboarding",
+        "ftue",
+        "tutorials",
+        "player-engagement",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "onboarding-and-first-time-user-experience.html"
     }
   ],
   "config": {

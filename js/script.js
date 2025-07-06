@@ -4,6 +4,7 @@ import { renderCategoryView } from './templates/categoryView.js';
 import { fetchBehaviors, findBehaviorById, searchBehaviors, getBehaviorsByCategory } from './utils/api.js';
 import { setupCategoryToggles, showContent, setInnerHTML, addClickHandlers, generateCategorySidebar } from './utils/dom.js';
 import { fetchArticles, getFeaturedArticle, renderArticlePreview } from './utils/articles.js';
+import './utils/affiliateLinks.js';
 
 // Fallback article data in case fetch fails
 const fallbackArticleData = {

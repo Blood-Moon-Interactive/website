@@ -140,9 +140,7 @@ This guide explains how to create new game design principle articles for the Blo
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
 
-                <!-- Concept-Specific Section (if needed) -->
-                <h2>Your Concept Section</h2>
-                <p>Your detailed breakdown here...</p>
+
 
                 <!-- Practical Applications -->
                 <h2>Practical Applications</h2>
@@ -259,6 +257,7 @@ This guide explains how to create new game design principle articles for the Blo
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/affiliateLinksStandalone.js"></script>
     <script>
         // Update copyright year automatically
         document.addEventListener('DOMContentLoaded', function() {
@@ -281,11 +280,10 @@ This guide explains how to create new game design principle articles for the Blo
 4. **Why This Matters for Indie Developers** - Practical benefits and business impact
 5. **Core Principles** - 5 key principles as a bulleted list
 6. **Inline Ad Space** - After Core Principles section
-7. **Concept-Specific Section** - Detailed breakdown (optional, only if needed)
-8. **Practical Applications** - 6 game genres with specific examples
-9. **Common Mistakes to Avoid** - 5 pitfalls as bulleted list
-10. **Implementation Tips** - 5-step process with explanations
-11. **Pro Tip** - Actionable advice in success alert
+7. **Practical Applications** - 6 game genres with specific examples
+8. **Common Mistakes to Avoid** - 5 pitfalls as bulleted list
+9. **Implementation Tips** - 5-step process with explanations
+10. **Pro Tip** - Actionable advice in success alert
 
 ## CSS Styling Guidelines
 
@@ -334,6 +332,7 @@ This guide explains how to create new game design principle articles for the Blo
 7. **Include proper breadcrumb navigation**
 8. **Use standard ad slot numbers** (1234567890)
 9. **Include proper footer with copyright script**
+10. **Include affiliate links script** (`../js/affiliateLinksStandalone.js`)
 
 ### ❌ **MUST NOT DO:**
 1. **Don't use fixed-top navbar**
@@ -381,6 +380,7 @@ After creating the HTML file, add an entry to `articles.json`:
 - [ ] Practical applications use `game-example` class
 - [ ] No visual checklists or wheels
 - [ ] Footer includes copyright script
+- [ ] **Affiliate links script is included** (`../js/affiliateLinksStandalone.js`)
 - [ ] **CRITICAL: Update "Coming Soon" buttons in game-design-principles.html**
 
 ## Common Implementation Issues
