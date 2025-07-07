@@ -97,7 +97,12 @@
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
+                 try {
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                     console.log('AdSense script executed for top ad');
+                 } catch (error) {
+                     console.error('AdSense error:', error);
+                 }
             </script>
         </div>
         
@@ -344,7 +349,7 @@
                 </div>
                 
                 <!-- Bottom Sidebar Ad Space -->
-                <div class="ad-container text-center" style="min-height: 250px; background-color: #f8f9fa; border: 1px dashed #dee2e6; border-radius: 4px; padding: 0.75rem;">
+                <div class="ad-container ad-sidebar text-center">
                     <ins class="adsbygoogle"
                          style="display:block"
                          data-ad-client="ca-pub-7908718257772872"
