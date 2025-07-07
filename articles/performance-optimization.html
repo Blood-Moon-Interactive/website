@@ -1,26 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance Optimization in Game Development | Blood Moon Interactive</title>
-    <meta name="description" content="Learn how to optimize your games for smooth performance across different hardware. Discover practical techniques for balancing visual quality with performance.">
-    <meta name="keywords" content="game performance, optimization, frame rate, memory management, rendering optimization, GameGuru MAX, indie development">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="../styles.css" rel="stylesheet">
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Performance Optimization in Game Development | Blood Moon Interactive</title>
+<meta content="Learn how to optimize your games for smooth performance across different hardware. Discover practical techniques for balancing visual quality with performance." name="description"/>
+<meta content="game performance, optimization, frame rate, memory management, rendering optimization, GameGuru MAX, indie development" name="keywords"/>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','G-LX742FRW91');</script>
-    
-    <!-- Custom CSS for Performance Optimization article -->
-    <style>
+<!-- Custom CSS for Performance Optimization article -->
+<style>
         .performance-diagram {
             background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             border-radius: 15px;
@@ -123,333 +121,208 @@
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-LX742FRW91"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../bm_logo.png" alt="Blood Moon Interactive" height="30">
-                Blood Moon Interactive
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html#behaviors">Behaviors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="game-design-principles.html">Game Design</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="past-articles.html">Articles</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Main Content -->
-            <div class="col-lg-8">
-                <!-- Breadcrumb -->
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="game-design-principles.html">Game Design</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Performance Optimization</li>
-                    </ol>
-                </nav>
-
-                <!-- Article Header -->
-                <header class="mb-4">
-                    <h1>Performance Optimization in Game Development</h1>
-                    <p class="text-muted">Published on <time datetime="2024-12-19">December 19, 2024</time> by Blood Moon Interactive</p>
-                </header>
-
-                <!-- Top Content Ad -->
-                <div class="ad-container text-center my-4">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872" crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7908718257772872" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-
-                <!-- Lead Paragraph -->
-                <p class="lead">Performance optimization is the art of making your games run smoothly while maintaining visual quality and gameplay experience. It's about finding the right balance between impressive visuals and smooth frame rates, ensuring your game can reach the widest possible audience across different hardware capabilities.</p>
-
-                <!-- Key Takeaway Alert -->
-                <div class="alert alert-info">
-                    <h5><i class="bi bi-lightbulb me-2"></i>Key Takeaway</h5>
-                    <p class="mb-0">Performance optimization isn't about making your game look worse—it's about making it run better. Good optimization often improves both performance and visual quality by eliminating wasteful processes and focusing resources where they matter most.</p>
-                </div>
-
-                <!-- Understanding the Concept -->
-                <h2>Understanding Performance Optimization</h2>
-                <p>Performance optimization involves identifying and eliminating bottlenecks that slow down your game. These bottlenecks typically fall into three categories: rendering (GPU), processing (CPU), and memory usage. The goal is to ensure your game maintains a consistent frame rate while delivering the intended visual and gameplay experience.</p>
-
-                <div class="performance-diagram">
-                    <h4><i class="bi bi-speedometer2 me-2"></i>The Performance Triangle</h4>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <i class="bi bi-gpu-card fs-1"></i>
-                            <p><strong>Rendering (GPU)</strong></p>
-                            <p class="small">Graphics processing, shaders, textures</p>
-                        </div>
-                        <div class="col-md-4">
-                            <i class="bi bi-cpu fs-1"></i>
-                            <p><strong>Processing (CPU)</strong></p>
-                            <p class="small">Game logic, physics, AI calculations</p>
-                        </div>
-                        <div class="col-md-4">
-                            <i class="bi bi-memory fs-1"></i>
-                            <p><strong>Memory</strong></p>
-                            <p class="small">RAM usage, asset loading, caching</p>
-                        </div>
-                    </div>
-                    <p class="mt-3"><em>All three areas must be optimized for smooth performance</em></p>
-                </div>
-
-                <!-- Why This Matters for Indie Developers -->
-                <h2>Why This Matters for Indie Developers</h2>
-                <p>As an indie developer, performance optimization is crucial for several reasons:</p>
-                
-                <ul>
-                    <li><strong>Broader Market Reach:</strong> Optimized games can run on lower-end hardware, expanding your potential audience</li>
-                    <li><strong>Better User Experience:</strong> Smooth performance keeps players engaged and reduces negative reviews</li>
-                    <li><strong>Competitive Advantage:</strong> Well-optimized games stand out in crowded marketplaces</li>
-                    <li><strong>Development Efficiency:</strong> Good optimization practices save time during development and testing</li>
-                    <li><strong>Platform Compatibility:</strong> Optimized games are more likely to work across different devices and platforms</li>
-                </ul>
-
-                <!-- Core Principles -->
-                <h2>Core Principles</h2>
-                <ul>
-                    <li><strong>Profile First:</strong> Always measure performance before and after optimization attempts</li>
-                    <li><strong>Optimize the Bottleneck:</strong> Focus on the area causing the most performance issues</li>
-                    <li><strong>Maintain Quality:</strong> Don't sacrifice gameplay or visual quality unnecessarily</li>
-                    <li><strong>Test on Target Hardware:</strong> Optimize for the minimum specifications you want to support</li>
-                    <li><strong>Iterate Incrementally:</strong> Make small changes and test frequently</li>
-                </ul>
-
-                <!-- Inline Ad Space -->
-                <div class="ad-container text-center my-4">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872" crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7908718257772872" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-
-                <!-- The Three Optimization Areas -->
-                <h2>The Three Optimization Areas</h2>
-                <p>Performance optimization focuses on three main areas, each requiring different techniques and considerations:</p>
-
-                <div class="performance-card">
-                    <h4><i class="bi bi-gpu-card me-2"></i>Rendering Optimization (GPU)</h4>
-                    <div class="optimization-type rendering">
-                        <p><strong>Performance Presets:</strong> Use "Low" preset for best performance or "Custom" for fine-tuned control</p>
-                        <p><strong>Occlusion Culling:</strong> Enable to hide objects behind other objects, reducing draw calls</p>
-                        <p><strong>Object Culling:</strong> Automatically hides objects too far from the player to be seen</p>
-                        <p><strong>Animation Culling:</strong> Disables animations for distant objects to improve performance</p>
-                        <p><strong>Post-Processing:</strong> Disable effects like Bloom, SSR, and SSAO for better performance</p>
-                    </div>
-                </div>
-
-                <div class="performance-card">
-                    <h4><i class="bi bi-cpu me-2"></i>Processing Optimization (CPU)</h4>
-                    <div class="optimization-type cpu">
-                        <p><strong>LUA & Animation Speed:</strong> Lower to 30 FPS when using many animations</p>
-                        <p><strong>Delayed Shadows:</strong> Reduces cascading shadow updates to increase FPS</p>
-                        <p><strong>Laptop Mode:</strong> Makes even fewer shadow updates (not available in Highest preset)</p>
-                        <p><strong>Script Performance:</strong> Optimize your Lua scripts and avoid expensive operations</p>
-                    </div>
-                </div>
-
-                <div class="performance-card">
-                    <h4><i class="bi bi-memory me-2"></i>Shadow & Lighting Optimization</h4>
-                    <div class="optimization-type memory">
-                        <p><strong>Shadow Resolution:</strong> Lower Sun, Spot Light, and Point Light shadow quality</p>
-                        <p><strong>Shadow Quality:</strong> Reduce the number of lights that can cast shadows (max 16 each)</p>
-                        <p><strong>Point/Spot Shadow Culling:</strong> Automatically culls shadows that wouldn't be visible</p>
-                        <p><strong>Transparent Shadows:</strong> Disable for transparent objects to improve performance</p>
-                    </div>
-                </div>
-
-                <!-- Common Performance Bottlenecks -->
-                <div class="bottleneck-indicator">
-                    <h5><i class="bi bi-exclamation-triangle me-2"></i>Common Performance Bottlenecks</h5>
-                    <p><strong>Rendering:</strong> Too many post-processing effects, high shadow resolution, disabled culling, excessive lighting</p>
-                    <p><strong>Processing:</strong> High LUA & Animation speed with many animations, too many shadow-casting lights, inefficient scripts</p>
-                    <p><strong>Shadows:</strong> High shadow resolution, too many lights casting shadows, transparent shadows enabled</p>
-                    <p><em>Use the Performance tab settings to control these bottlenecks: enable culling, lower shadow quality, disable post-processing effects.</em></p>
-                </div>
-
-                <!-- Practical Applications -->
-                <h2>Practical Applications</h2>
-                
-                <div class="example-game">
-                    <h5><i class="bi bi-controller me-2"></i>Action Games</h5>
-                    <p><strong>Fast-Paced Optimization:</strong> Enable occlusion culling, disable post-processing, lower shadow resolution</p>
-                    <p><strong>Examples:</strong> Doom, Devil May Cry, God of War</p>
-                    <p><strong>Implementation:</strong> Lower LUA & Animation speed, enable delayed shadows, optimize weapon scripts</p>
-                </div>
-
-                <div class="example-game">
-                    <h5><i class="bi bi-globe me-2"></i>Open World Games</h5>
-                    <p><strong>Large-Scale Optimization:</strong> Enable object and animation culling, disable bloom and SSR</p>
-                    <p><strong>Examples:</strong> Skyrim, The Witcher 3, Red Dead Redemption 2</p>
-                    <p><strong>Implementation:</strong> Use laptop mode for shadows, lower LUA speed, optimize AI scripts</p>
-                </div>
-
-                <div class="example-game">
-                    <h5><i class="bi bi-people me-2"></i>Strategy Games</h5>
-                    <p><strong>Unit-Heavy Optimization:</strong> Enable occlusion culling, disable post-processing, optimize UI</p>
-                    <p><strong>Examples:</strong> Civilization VI, XCOM 2, Total War</p>
-                    <p><strong>Implementation:</strong> Lower LUA speed for unit animations, enable delayed shadows</p>
-                </div>
-
-                <div class="example-game">
-                    <h5><i class="bi bi-puzzle me-2"></i>Puzzle Games</h5>
-                    <p><strong>Minimal Resource Usage:</strong> Disable all post-processing effects, enable culling, minimal lighting</p>
-                    <p><strong>Examples:</strong> Portal, The Witness, Baba Is You</p>
-                    <p><strong>Implementation:</strong> Lower LUA speed, enable delayed shadows, optimize puzzle scripts</p>
-                </div>
-
-                <div class="example-game">
-                    <h5><i class="bi bi-speedometer me-2"></i>Racing Games</h5>
-                    <p><strong>Speed-Focused Optimization:</strong> Enable object culling, disable bloom and lens flare</p>
-                    <p><strong>Examples:</strong> Need for Speed, Forza, Mario Kart</p>
-                    <p><strong>Implementation:</strong> Lower LUA speed, enable delayed shadows, optimize physics scripts</p>
-                </div>
-
-                <div class="example-game">
-                    <h5><i class="bi bi-graph-up-arrow me-2"></i>RPGs</h5>
-                    <p><strong>Character-Heavy Optimization:</strong> Enable animation culling, disable post-processing</p>
-                    <p><strong>Examples:</strong> Final Fantasy, Dragon Age, Mass Effect</p>
-                    <p><strong>Implementation:</strong> Lower LUA speed for character animations, enable delayed shadows</p>
-                </div>
-
-                <!-- Common Mistakes to Avoid -->
-                <h2>Common Mistakes to Avoid</h2>
-                <ul>
-                    <li><strong>Premature Optimization:</strong> Optimizing before identifying actual bottlenecks</li>
-                    <li><strong>Ignoring Target Hardware:</strong> Not testing on the minimum specifications you want to support</li>
-                    <li><strong>Over-Optimization:</strong> Sacrificing too much quality for minimal performance gains</li>
-                    <li><strong>Not Profiling:</strong> Making optimization decisions without measuring performance</li>
-                    <li><strong>Platform Assumptions:</strong> Assuming optimization techniques work the same across all platforms</li>
-                </ul>
-
-                <!-- Implementation Tips -->
-                <h2>Implementation Tips</h2>
-                <ol>
-                    <li><strong>Start with Performance Presets:</strong> Use "Low" preset for best performance, then customize as needed</li>
-                    <li><strong>Enable Culling Systems:</strong> Turn on occlusion culling, object culling, and animation culling</li>
-                    <li><strong>Optimize Shadows:</strong> Lower shadow resolution and limit the number of shadow-casting lights</li>
-                    <li><strong>Disable Post-Processing:</strong> Turn off effects like Bloom, SSR, and SSAO for better performance</li>
-                    <li><strong>Lower LUA Speed:</strong> Reduce LUA & Animation speed to 30 FPS when using many animations</li>
-                    <li><strong>Use Laptop Mode:</strong> Enable for even better performance (not available in Highest preset)</li>
-                </ol>
-
-                <!-- GameGuru MAX Considerations -->
-                <div class="note-box">
-                    <h5><i class="bi bi-gear me-2"></i>GameGuru MAX Performance Considerations</h5>
-                    <p><strong>Built-in Optimization:</strong> GameGuru MAX includes some automatic optimization features like LOD systems and occlusion culling. Use these features effectively.</p>
-                    <p><strong>Asset Management:</strong> Be mindful of texture sizes and model complexity. Use appropriate asset formats and compression.</p>
-                    <p><strong>Scripting Efficiency:</strong> Optimize your Lua scripts by reducing unnecessary calculations and using efficient data structures.</p>
-                    <p><strong>Testing:</strong> Test your game on different hardware configurations to ensure it runs smoothly across your target audience.</p>
-                </div>
-
-
-
-                <!-- Pro Tip -->
-                <div class="alert alert-success">
-                    <h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
-                    <p class="mb-0">Remember that performance optimization is an iterative process. Start by profiling your game to identify the biggest bottlenecks, then focus your efforts there. Often, a few key optimizations can have a dramatic impact on performance. Don't optimize everything—optimize what matters most for your specific game and target hardware.</p>
-                </div>
-
-                <!-- Footer -->
-                <footer class="article-footer mt-5 pt-4 border-top">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Related Articles</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="difficulty-balancing.html" class="text-decoration-none">Difficulty Balancing</a></li>
-                                <li><a href="feedback-systems.html" class="text-decoration-none">Feedback Systems</a></li>
-                                <li><a href="juice.html" class="text-decoration-none">Juice in Game Design</a></li>
-                                <li><a href="rule-clarity-constraints.html" class="text-decoration-none">Rule Clarity and Constraints</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="game-design-principles.html" class="btn btn-outline-primary">
-                                <i class="bi bi-arrow-left me-2"></i>Back to Game Design
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=G-LX742FRW91" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<div class="ms-auto"><div class="input-group"><input class="form-control" id="searchBehaviors" placeholder="Search behaviors..." type="text"/><button class="btn btn-outline-light" id="searchButton" type="button"><i class="bi bi-search"></i></button></div></div></div>
+</div>
+</nav>
+<div class="container mt-4">
+<div class="ad-container text-center my-4">
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="1234567890" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div><div class="row">
+<!-- Main Content -->
+<div class="col-lg-8"><article class="article-content"><header class="article-header mb-4"><nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="game-design-principles.html">Game Design</a></li>
+<li aria-current="page" class="breadcrumb-item active">Performance Optimization</li>
+</ol>
+</nav><h1 class="article-title">Performance Optimization in Game Development</h1><div class="article-meta text-muted"><i class="bi bi-person me-2"></i>Blood Moon Interactive<i class="bi bi-tag me-2 ms-3"></i>Game Design</div></header><div class="article-body"><p class="lead">Performance optimization is the art of making your games run smoothly while maintaining visual quality and gameplay experience. It's about finding the right balance between impressive visuals and smooth frame rates, ensuring your game can reach the widest possible audience across different hardware capabilities.</p><div class="alert alert-info">
+<h5><i class="bi bi-lightbulb me-2"></i>Key Takeaway</h5>
+<p class="mb-0">Performance optimization isn't about making your game look worse—it's about making it run better. Good optimization often improves both performance and visual quality by eliminating wasteful processes and focusing resources where they matter most.</p>
+</div><h2>Understanding Performance Optimization</h2><p>Performance optimization involves identifying and eliminating bottlenecks that slow down your game. These bottlenecks typically fall into three categories: rendering (GPU), processing (CPU), and memory usage. The goal is to ensure your game maintains a consistent frame rate while delivering the intended visual and gameplay experience.</p><div class="performance-diagram">
+<h4><i class="bi bi-speedometer2 me-2"></i>The Performance Triangle</h4>
+<div class="row">
+<div class="col-md-4">
+<i class="bi bi-gpu-card fs-1"></i>
+<p><strong>Rendering (GPU)</strong></p>
+<p class="small">Graphics processing, shaders, textures</p>
+</div>
+<div class="col-md-4">
+<i class="bi bi-cpu fs-1"></i>
+<p><strong>Processing (CPU)</strong></p>
+<p class="small">Game logic, physics, AI calculations</p>
+</div>
+<div class="col-md-4">
+<i class="bi bi-memory fs-1"></i>
+<p><strong>Memory</strong></p>
+<p class="small">RAM usage, asset loading, caching</p>
+</div>
+</div>
+<p class="mt-3"><em>All three areas must be optimized for smooth performance</em></p>
+</div><h2>Why This Matters for Indie Developers</h2><p>As an indie developer, performance optimization is crucial for several reasons:</p><ul>
+<li><strong>Broader Market Reach:</strong> Optimized games can run on lower-end hardware, expanding your potential audience</li>
+<li><strong>Better User Experience:</strong> Smooth performance keeps players engaged and reduces negative reviews</li>
+<li><strong>Competitive Advantage:</strong> Well-optimized games stand out in crowded marketplaces</li>
+<li><strong>Development Efficiency:</strong> Good optimization practices save time during development and testing</li>
+<li><strong>Platform Compatibility:</strong> Optimized games are more likely to work across different devices and platforms</li>
+</ul><h2>Core Principles</h2><ul>
+<li><strong>Profile First:</strong> Always measure performance before and after optimization attempts</li>
+<li><strong>Optimize the Bottleneck:</strong> Focus on the area causing the most performance issues</li>
+<li><strong>Maintain Quality:</strong> Don't sacrifice gameplay or visual quality unnecessarily</li>
+<li><strong>Test on Target Hardware:</strong> Optimize for the minimum specifications you want to support</li>
+<li><strong>Iterate Incrementally:</strong> Make small changes and test frequently</li>
+</ul><div class="ad-container text-center my-4">
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="1234567890" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div><h2>The Three Optimization Areas</h2><p>Performance optimization focuses on three main areas, each requiring different techniques and considerations:</p><div class="performance-card">
+<h4><i class="bi bi-gpu-card me-2"></i>Rendering Optimization (GPU)</h4>
+<div class="optimization-type rendering">
+<p><strong>Performance Presets:</strong> Use "Low" preset for best performance or "Custom" for fine-tuned control</p>
+<p><strong>Occlusion Culling:</strong> Enable to hide objects behind other objects, reducing draw calls</p>
+<p><strong>Object Culling:</strong> Automatically hides objects too far from the player to be seen</p>
+<p><strong>Animation Culling:</strong> Disables animations for distant objects to improve performance</p>
+<p><strong>Post-Processing:</strong> Disable effects like Bloom, SSR, and SSAO for better performance</p>
+</div>
+</div><div class="performance-card">
+<h4><i class="bi bi-cpu me-2"></i>Processing Optimization (CPU)</h4>
+<div class="optimization-type cpu">
+<p><strong>LUA &amp; Animation Speed:</strong> Lower to 30 FPS when using many animations</p>
+<p><strong>Delayed Shadows:</strong> Reduces cascading shadow updates to increase FPS</p>
+<p><strong>Laptop Mode:</strong> Makes even fewer shadow updates (not available in Highest preset)</p>
+<p><strong>Script Performance:</strong> Optimize your Lua scripts and avoid expensive operations</p>
+</div>
+</div><div class="performance-card">
+<h4><i class="bi bi-memory me-2"></i>Shadow &amp; Lighting Optimization</h4>
+<div class="optimization-type memory">
+<p><strong>Shadow Resolution:</strong> Lower Sun, Spot Light, and Point Light shadow quality</p>
+<p><strong>Shadow Quality:</strong> Reduce the number of lights that can cast shadows (max 16 each)</p>
+<p><strong>Point/Spot Shadow Culling:</strong> Automatically culls shadows that wouldn't be visible</p>
+<p><strong>Transparent Shadows:</strong> Disable for transparent objects to improve performance</p>
+</div>
+</div><div class="bottleneck-indicator">
+<h5><i class="bi bi-exclamation-triangle me-2"></i>Common Performance Bottlenecks</h5>
+<p><strong>Rendering:</strong> Too many post-processing effects, high shadow resolution, disabled culling, excessive lighting</p>
+<p><strong>Processing:</strong> High LUA &amp; Animation speed with many animations, too many shadow-casting lights, inefficient scripts</p>
+<p><strong>Shadows:</strong> High shadow resolution, too many lights casting shadows, transparent shadows enabled</p>
+<p><em>Use the Performance tab settings to control these bottlenecks: enable culling, lower shadow quality, disable post-processing effects.</em></p>
+</div><h2>Practical Applications</h2><div class="example-game">
+<h5><i class="bi bi-controller me-2"></i>Action Games</h5>
+<p><strong>Fast-Paced Optimization:</strong> Enable occlusion culling, disable post-processing, lower shadow resolution</p>
+<p><strong>Examples:</strong> Doom, Devil May Cry, God of War</p>
+<p><strong>Implementation:</strong> Lower LUA &amp; Animation speed, enable delayed shadows, optimize weapon scripts</p>
+</div><div class="example-game">
+<h5><i class="bi bi-globe me-2"></i>Open World Games</h5>
+<p><strong>Large-Scale Optimization:</strong> Enable object and animation culling, disable bloom and SSR</p>
+<p><strong>Examples:</strong> Skyrim, The Witcher 3, Red Dead Redemption 2</p>
+<p><strong>Implementation:</strong> Use laptop mode for shadows, lower LUA speed, optimize AI scripts</p>
+</div><div class="example-game">
+<h5><i class="bi bi-people me-2"></i>Strategy Games</h5>
+<p><strong>Unit-Heavy Optimization:</strong> Enable occlusion culling, disable post-processing, optimize UI</p>
+<p><strong>Examples:</strong> Civilization VI, XCOM 2, Total War</p>
+<p><strong>Implementation:</strong> Lower LUA speed for unit animations, enable delayed shadows</p>
+</div><div class="example-game">
+<h5><i class="bi bi-puzzle me-2"></i>Puzzle Games</h5>
+<p><strong>Minimal Resource Usage:</strong> Disable all post-processing effects, enable culling, minimal lighting</p>
+<p><strong>Examples:</strong> Portal, The Witness, Baba Is You</p>
+<p><strong>Implementation:</strong> Lower LUA speed, enable delayed shadows, optimize puzzle scripts</p>
+</div><div class="example-game">
+<h5><i class="bi bi-graph-up-arrow me-2"></i>RPGs</h5>
+<p><strong>Character-Heavy Optimization:</strong> Enable animation culling, disable post-processing</p>
+<p><strong>Examples:</strong> Final Fantasy, Dragon Age, Mass Effect</p>
+<p><strong>Implementation:</strong> Lower LUA speed for character animations, enable delayed shadows</p>
+</div><h2>Common Mistakes to Avoid</h2><ul>
+<li><strong>Premature Optimization:</strong> Optimizing before identifying actual bottlenecks</li>
+<li><strong>Ignoring Target Hardware:</strong> Not testing on the minimum specifications you want to support</li>
+<li><strong>Over-Optimization:</strong> Sacrificing too much quality for minimal performance gains</li>
+<li><strong>Not Profiling:</strong> Making optimization decisions without measuring performance</li>
+<li><strong>Platform Assumptions:</strong> Assuming optimization techniques work the same across all platforms</li>
+</ul><h2>Implementation Tips</h2><ol>
+<li><strong>Start with Performance Presets:</strong> Use "Low" preset for best performance, then customize as needed</li>
+<li><strong>Enable Culling Systems:</strong> Turn on occlusion culling, object culling, and animation culling</li>
+<li><strong>Optimize Shadows:</strong> Lower shadow resolution and limit the number of shadow-casting lights</li>
+<li><strong>Disable Post-Processing:</strong> Turn off effects like Bloom, SSR, and SSAO for better performance</li>
+<li><strong>Lower LUA Speed:</strong> Reduce LUA &amp; Animation speed to 30 FPS when using many animations</li>
+<li><strong>Use Laptop Mode:</strong> Enable for even better performance (not available in Highest preset)</li>
+</ol><div class="note-box">
+<h5><i class="bi bi-gear me-2"></i>GameGuru MAX Performance Considerations</h5>
+<p><strong>Built-in Optimization:</strong> GameGuru MAX includes some automatic optimization features like LOD systems and occlusion culling. Use these features effectively.</p>
+<p><strong>Asset Management:</strong> Be mindful of texture sizes and model complexity. Use appropriate asset formats and compression.</p>
+<p><strong>Scripting Efficiency:</strong> Optimize your Lua scripts by reducing unnecessary calculations and using efficient data structures.</p>
+<p><strong>Testing:</strong> Test your game on different hardware configurations to ensure it runs smoothly across your target audience.</p>
+</div><div class="alert alert-success">
+<h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
+<p class="mb-0">Remember that performance optimization is an iterative process. Start by profiling your game to identify the biggest bottlenecks, then focus your efforts there. Often, a few key optimizations can have a dramatic impact on performance. Don't optimize everything—optimize what matters most for your specific game and target hardware.</p>
+</div><footer class="article-footer mt-5 pt-4 border-top">
+<div class="row">
+<div class="col-md-6">
+<h5>Related Articles</h5>
+<ul class="list-unstyled">
+<li><a class="text-decoration-none" href="difficulty-balancing.html">Difficulty Balancing</a></li>
+<li><a class="text-decoration-none" href="feedback-systems.html">Feedback Systems</a></li>
+<li><a class="text-decoration-none" href="juice.html">Juice in Game Design</a></li>
+<li><a class="text-decoration-none" href="rule-clarity-constraints.html">Rule Clarity and Constraints</a></li>
+</ul>
+</div>
+<div class="col-md-6 text-md-end">
+<a class="btn btn-outline-primary" href="game-design-principles.html">
+<i class="bi bi-arrow-left me-2"></i>Back to Game Design
                             </a>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="col-lg-4">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5><i class="bi bi-book me-2"></i>Game Design Articles</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li><a href="player-motivation.html">Player Motivation</a></li>
-                            <li><a href="flow-theory.html">Flow Theory</a></li>
-                            <li><a href="feedback-systems.html">Feedback Systems</a></li>
-                            <li><a href="difficulty-balancing.html">Difficulty Balancing</a></li>
-                            <li><a href="reward-systems.html">Reward Systems</a></li>
-                            <li><a href="game-genres-mechanics.html">Game Genres & Mechanics</a></li>
-                            <li><a href="juice.html">Juice in Game Design</a></li>
-                            <li><a href="rule-clarity-constraints.html">Rule Clarity and Constraints</a></li>
-                            <li><a href="accessibility-design.html">Accessibility Design</a></li>
-                            <li><strong><a href="performance-optimization.html">Performance Optimization</a></strong></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5><i class="bi bi-speedometer2 me-2"></i>Performance Quick Reference</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="optimization-wheel">
-                            <div class="optimization-segment">Rendering</div>
-                            <div class="optimization-segment">Processing</div>
-                            <div class="optimization-segment">Memory</div>
-                            <div class="optimization-segment">Profile</div>
-                            <div class="optimization-segment">Optimize</div>
-                            <div class="optimization-segment">Test</div>
-                        </div>
-                        <p class="small text-muted mt-2">Key performance optimization areas and workflow steps for smooth game development.</p>
-                    </div>
-                </div>
-
-                <!-- Bottom Sidebar Ad -->
-                <div class="ad-container text-center my-4">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872" crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7908718257772872" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/affiliateLinksStandalone.js"></script>
-    
-    <!-- Cache Control -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+</div>
+</div>
+</footer></div></article></div>
+<div class="col-lg-4">
+<!-- Additional Sidebar Content -->
+<div class="card mb-4">
+<div class="card-header">
+<h5><i class="bi bi-lightbulb me-2"></i>Quick Reference</h5>
+</div>
+<div class="card-body">
+<h6>Key Concepts:</h6>
+<ul class="list-unstyled small">
+<li><i class="bi bi-check-circle-fill text-success me-2"></i>Core Principles</li>
+<li><i class="bi bi-check-circle-fill text-success me-2"></i>Best Practices</li>
+<li><i class="bi bi-check-circle-fill text-success me-2"></i>Implementation Tips</li>
+<li><i class="bi bi-check-circle-fill text-success me-2"></i>Common Mistakes</li>
+</ul>
+<hr/>
+<h6>Related Topics:</h6>
+<ul class="list-unstyled small">
+<li><i class="bi bi-controller me-2"></i>Game Design</li>
+<li><i class="bi bi-puzzle me-2"></i>Development</li>
+<li><i class="bi bi-building me-2"></i>Strategy</li>
+<li><i class="bi bi-person-running me-2"></i>Planning</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Sidebar Ad Space -->
+<div class="ad-container ad-sidebar text-center">
+<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+</div>
+<!-- Sidebar -->
+</div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/affiliateLinksStandalone.js"></script>
+<!-- Cache Control -->
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
 </body>
 </html> 
