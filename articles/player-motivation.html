@@ -101,8 +101,15 @@
 <ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
 <script>
                  setTimeout(function() {
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                 }, 100);
+                     if (typeof adsbygoogle !== 'undefined') {
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                     } else {
+                         // If adsbygoogle is not available yet, try again after a longer delay
+                         setTimeout(function() {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         }, 1000);
+                     }
+                 }, 500);
             </script>
 </div>
 <div class="row">
@@ -187,8 +194,15 @@
 <ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
 <script>
                                  setTimeout(function() {
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                 }, 100);
+                                     if (typeof adsbygoogle !== 'undefined') {
+                                         (adsbygoogle = window.adsbygoogle || []).push({});
+                                     } else {
+                                         // If adsbygoogle is not available yet, try again after a longer delay
+                                         setTimeout(function() {
+                                             (adsbygoogle = window.adsbygoogle || []).push({});
+                                         }, 1000);
+                                     }
+                                 }, 300);
                             </script>
 </div>
 <h2>Bartle's Player Types</h2>
@@ -349,8 +363,15 @@
 <ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
 <script>
                          setTimeout(function() {
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                         }, 100);
+                             if (typeof adsbygoogle !== 'undefined') {
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                             } else {
+                                 // If adsbygoogle is not available yet, try again after a longer delay
+                                 setTimeout(function() {
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                 }, 1000);
+                             }
+                         }, 200);
                     </script>
 </div>
 </div>
@@ -373,12 +394,18 @@
                 element.textContent = currentYear;
             });
             
-            // Ensure ads are loaded after DOM is ready
-            setTimeout(function() {
+            // Ensure ads are loaded after DOM is ready with multiple retry attempts
+            function loadAds() {
                 if (typeof adsbygoogle !== 'undefined') {
                     (adsbygoogle = window.adsbygoogle || []).push({});
+                } else {
+                    // Retry after 1 second
+                    setTimeout(loadAds, 1000);
                 }
-            }, 500);
+            }
+            
+            // Start loading ads after a short delay
+            setTimeout(loadAds, 500);
         });
     </script>
 </body>
