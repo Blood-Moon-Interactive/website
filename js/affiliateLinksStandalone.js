@@ -137,7 +137,19 @@ function autoAddAffiliateLinks() {
         path.includes('emergent-vs-scripted') ||
         path.includes('replayability') ||
         path.includes('playtesting-and-iteration') ||
-        path.includes('onboarding-and-first-time-user-experience')) {
+        path.includes('onboarding-and-first-time-user-experience') ||
+        path.includes('importance-of-devlogs') ||
+        path.includes('target-audience-analysis') ||
+        path.includes('market-positioning') ||
+        path.includes('launch-planning') ||
+        path.includes('copyright-and-fair-use') ||
+        path.includes('creating-game-studio-name-and-brand') ||
+        path.includes('when-and-why-to-form-llc') ||
+        path.includes('pricing-psychology') ||
+        path.includes('how-to-build-email-list-before-launch') ||
+        path.includes('networking-for-introverted-developers') ||
+        path.includes('understanding-indie-game-press-landscape') ||
+        path.includes('planning-steam-next-fest-demo')) {
         addAffiliateLinksToSidebar('gameDesign');
     }
 }

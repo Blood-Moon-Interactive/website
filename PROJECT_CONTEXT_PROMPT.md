@@ -1,7 +1,7 @@
 # Blood Moon Interactive - Project Context & Instructions
 
 ## Project Overview
-Blood Moon Interactive is a comprehensive documentation and tutorial website for GameGuru MAX behaviors. The site serves as a centralized resource for game developers using the GameGuru MAX engine, providing detailed documentation, tutorials, and examples for various game behaviors.
+Blood Moon Interactive is a comprehensive documentation and tutorial website for GameGuru MAX behaviors. The site serves as a centralized resource for game developers using the GameGuru MAX engine, providing detailed documentation, tutorials, and examples for various game behaviors. The project has evolved to include content generation tools, a game idea generator, and an extensive article system with template-based creation.
 
 ## GameGuru MAX Software Overview
 
@@ -64,8 +64,21 @@ While GameGuru MAX has a strong FPS foundation, it supports multiple genres:
 - `categories/` - JSON files for each behavior category (Effects, Doors, Mechanical, etc.)
 - `js/utils/` - API functions, DOM utilities, and article management
 - `js/templates/` - Rendering templates for behaviors, categories, and search results
-- `articles/` - Tutorial and guide content
-- `effects/`, `objects/`, `markers/`, `puzzle/`, `rpg/` - Lua behavior files with corresponding images
+- `articles/` - Tutorial and guide content with template system
+- `game-idea-generator/` - Interactive tool for generating game concepts
+- `scriptbank/` - Lua behavior files with corresponding images
+
+### Content Generation Tools
+- `generate_article.py` - Python script for automated article generation
+- `generate-article.js` - JavaScript version of article generation
+- `ARTICLE_INTEGRATION_GUIDE.md` - Guide for integrating new articles
+- `GAME_DESIGN_TEMPLATE_GUIDE.md` - Template system for game design articles
+
+### Utility Scripts
+- `scan_scriptbank.py` - Scans scriptbank for behavior files
+- `extract_behaviors_from_json.py` - Extracts behavior data from JSON files
+- `compare_behaviors.py` - Compares behavior files for consistency
+- `list_lua_files.py` - Lists all Lua files in the project
 
 ## JSON Data Structure
 
@@ -148,23 +161,52 @@ While GameGuru MAX has a strong FPS foundation, it supports multiple genres:
 3. **Responsive Design**: Mobile-friendly layout with collapsible sidebar
 4. **Contact System**: EmailJS integration for contact form processing
 5. **Ad Integration**: Multiple ad placement areas throughout the site
-6. **Article System**: Featured articles and tutorial content
+6. **Article System**: Featured articles and tutorial content with template system
 7. **Category Navigation**: Collapsible accordion with behavior counts
+8. **Game Idea Generator**: Interactive tool for generating game concepts
+9. **Content Generation**: Automated tools for creating articles and documentation
+10. **Behavior Management**: Utility scripts for maintaining behavior consistency
 
-## Categories (More may be added)
-1. Effects - Visual, audio, and gameplay effects
-2. Doors - Door and portal behaviors
-3. Mechanical - Machinery and mechanical systems
-4. Object Interaction - Interactive object behaviors
-5. Misc - Miscellaneous and utility behaviors
-6. Movement - Movement and locomotion behaviors
-7. Proximity - Distance-based behaviors
-8. UI - User interface and menu behaviors
-9. Global - Global game state management
-10. Animals - Animal and creature AI behaviors
-11. Horror - Horror and supernatural elements
-12. HUDs - Heads-up displays and UI elements
-13. People - Human characters and NPCs
+## Categories (17 Total)
+1. **Effects** - Visual, audio, and gameplay effects
+2. **Mechanical** - Machinery and mechanical systems
+3. **Markers** - Zone-based behaviors for interactive areas, triggers, and environmental effects
+4. **Misc** - Miscellaneous and utility behaviors
+5. **Movement** - Movement and locomotion behaviors
+6. **Object Interaction** - Interactive object behaviors
+7. **Proximity** - Distance-based behaviors
+8. **RPG** - Role-playing game mechanics, character progression, and RPG systems
+9. **Switches** - Interactive switches, buttons, and trigger mechanisms
+10. **Traps** - Various types of traps, hazards, and defensive mechanisms
+11. **Global** - Global game state and management behaviors
+12. **Animals** - Animal and creature AI behaviors
+13. **Doors** - Door and portal behaviors
+14. **Horror** - Horror and supernatural game elements
+15. **HUDs** - Heads-up displays and user interface elements
+16. **People** - Human characters and NPCs
+17. **Lights** - Lighting systems, light sources, and illumination effects
+
+## Content Management
+
+### Article System
+- Template-based article creation using `GAME_DESIGN_TEMPLATE_GUIDE.md`
+- Automated article generation with Python and JavaScript tools
+- Integration with main site navigation and search
+- SEO-optimized structure with meta descriptions and tags
+- Featured articles system with categorization
+
+### Game Idea Generator
+- Interactive tool for generating game concepts
+- Multiple difficulty levels (beginner, intermediate, advanced)
+- JSON-based idea database with categorized concepts
+- User-friendly interface for concept exploration
+
+### Behavior Documentation
+- JSON-based behavior catalog with 17 categories
+- Automated property extraction from Lua files
+- Tutorial video integration with YouTube timestamps
+- Related behavior cross-referencing system
+- Comprehensive search functionality
 
 ## Working Instructions
 
@@ -199,6 +241,19 @@ While GameGuru MAX has a strong FPS foundation, it supports multiple genres:
 3. Behavior counts are displayed for each category
 4. Tutorial availability is indicated with play icons
 
+### When Creating Articles
+1. Use the `GAME_DESIGN_TEMPLATE_GUIDE.md` for structure and formatting
+2. Follow the template's 13 required content sections
+3. Include custom CSS styling for concept-specific visual elements
+4. Add entry to `articles.json` for proper integration
+5. Test the page after creation for functionality and responsiveness
+
+### When Using Content Generation Tools
+1. Use `generate_article.py` for Python-based article generation
+2. Use `generate-article.js` for JavaScript-based generation
+3. Follow the `ARTICLE_INTEGRATION_GUIDE.md` for proper integration
+4. Ensure generated content follows the established template structure
+
 ## Common Tasks
 - Adding new behaviors to categories
 - Updating behavior documentation
@@ -209,6 +264,9 @@ While GameGuru MAX has a strong FPS foundation, it supports multiple genres:
 - Debugging search functionality
 - Styling adjustments
 - Contact form modifications
+- Creating new articles using templates
+- Generating content with automated tools
+- Managing the game idea generator database
 
 ## File Dependencies
 - `behaviors.json` references all category files
@@ -216,5 +274,7 @@ While GameGuru MAX has a strong FPS foundation, it supports multiple genres:
 - JavaScript modules import from each other
 - CSS classes are used across multiple components
 - Images are referenced in behavior documentation
+- Article templates depend on the main site structure
+- Content generation tools reference article templates
 
 This context should provide all necessary information to work effectively with the Blood Moon Interactive website project without needing to re-examine the codebase structure each time. 

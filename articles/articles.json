@@ -547,6 +547,288 @@
       ],
       "featured": false,
       "filename": "onboarding-and-first-time-user-experience.html"
+    },
+    {
+      "id": "designing-around-player-failure",
+      "title": "Designing around Player Failure",
+      "preview": "Learn how to design games that embrace player failure as a learning opportunity. Discover techniques for creating satisfying failure experiences that encourage growth and persistence.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "player-failure",
+        "learning",
+        "motivation",
+        "feedback",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "designing-around-player-failure.html"
+    },
+    {
+      "id": "the-art-of-surprise",
+      "title": "The Art of Surprise: Unexpected Rewards and Events",
+      "preview": "Learn how to inject delight into gameplay through unexpected rewards and surprising events. Discover techniques for creating memorable moments that keep players engaged and excited.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "surprise",
+        "rewards",
+        "events",
+        "delight",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "the-art-of-surprise.html"
+    },
+    {
+      "id": "how-to-scope-a-project",
+      "title": "How to Scope a Project You Can Finish",
+      "preview": "Learn how to avoid feature creep and burnout. Discover practical strategies for defining realistic project boundaries and maintaining focus throughout development.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "project-scoping",
+        "feature-creep",
+        "mvp",
+        "project-management",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "how-to-scope-a-project.html"
+    },
+    {
+      "id": "time-management-for-solo-devs",
+      "title": "Time Management for Solo Devs",
+      "preview": "Master time management as a solo game developer. Learn practical strategies for balancing development, life, and productivity to finish your projects efficiently.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "time-management",
+        "productivity",
+        "solo-development",
+        "work-life-balance",
+        "project-management",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "time-management-for-solo-devs.html"
+    },
+    {
+      "id": "ludonarrative-dissonance-and-harmony",
+      "title": "Ludonarrative Dissonance and Harmony",
+      "preview": "Master ludonarrative design to create cohesive game experiences. Learn how to align gameplay mechanics with narrative elements for immersive storytelling.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "ludonarrative",
+        "storytelling",
+        "narrative-design",
+        "game-mechanics",
+        "immersion",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "ludonarrative-dissonance-and-harmony.html"
+    },
+    {
+      "id": "cognitive-load-in-game-design",
+      "title": "Cognitive Load in Game Design",
+      "preview": "Master cognitive load management to create accessible and engaging games. Learn how to balance complexity with player capacity for optimal learning and enjoyment.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "cognitive-load",
+        "accessibility",
+        "player-engagement",
+        "learning-curve",
+        "complexity-management",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "cognitive-load-in-game-design.html"
+    },
+    {
+      "id": "importance-of-devlogs",
+      "title": "Importance of Devlogs",
+      "preview": "Master the art of devlog creation to build community, track progress, and improve your game development process. Learn how to document your journey effectively.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "devlogs",
+        "community-building",
+        "marketing",
+        "development-process",
+        "content-creation",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "importance-of-devlogs.html"
+    },
+    {
+      "id": "copyright-and-fair-use",
+      "title": "Understanding Copyright and Fair Use in Games",
+      "preview": "Learn about copyright law and fair use principles in game development. Understand how to protect your work and avoid legal issues when creating games.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "copyright",
+        "fair-use",
+        "legal",
+        "intellectual-property",
+        "indie",
+        "business"
+      ],
+      "featured": false,
+      "filename": "copyright-and-fair-use.html"
+    },
+    {
+      "id": "when-and-why-to-form-llc",
+      "title": "When and Why to Form an LLC for Game Development",
+      "preview": "Learn when and why to form an LLC for your game development business. Understand the benefits, risks, and practical considerations for protecting yourself and your assets.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "llc",
+        "business",
+        "legal",
+        "tax",
+        "indie",
+        "business-structure"
+      ],
+      "featured": false,
+      "filename": "when-and-why-to-form-llc.html"
+    },
+    {
+      "id": "pricing-psychology",
+      "title": "Pricing Psychology for Indie Games",
+      "preview": "Learn how to price your indie game effectively using psychological principles. Understand consumer behavior and market positioning to maximize revenue and player satisfaction.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "pricing",
+        "psychology",
+        "business",
+        "monetization",
+        "indie",
+        "consumer-behavior"
+      ],
+      "featured": false,
+      "filename": "pricing-psychology.html"
+    },
+    {
+      "id": "creating-game-studio-name-and-brand",
+      "title": "Creating a Game Studio Name and Brand",
+      "preview": "Learn how to create a compelling game studio name and brand identity. Build trust and recognition in the gaming community with effective branding strategies.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "branding",
+        "marketing",
+        "studio-identity",
+        "business",
+        "indie",
+        "professional-development"
+      ],
+      "featured": false,
+      "filename": "creating-game-studio-name-and-brand.html"
+    },
+    {
+      "id": "how-to-build-email-list-before-launch",
+      "title": "How to Build an Email List Before Launch",
+      "preview": "Learn how to build an engaged email list before your game launches. Discover strategies for growing an audience that will support your game from day one.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "email-marketing",
+        "community-building",
+        "marketing",
+        "launch-strategy",
+        "indie",
+        "audience-development"
+      ],
+      "featured": false,
+      "filename": "how-to-build-email-list-before-launch.html"
+    },
+    {
+      "id": "networking-for-introverted-developers",
+      "title": "Networking for Introverted Developers",
+      "preview": "Learn how to network effectively as an introverted game developer. Discover strategies for building meaningful connections without social burnout.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "networking",
+        "social-skills",
+        "professional-development",
+        "community-building",
+        "indie",
+        "introvert-friendly"
+      ],
+      "featured": false,
+      "filename": "networking-for-introverted-developers.html"
+    },
+    {
+      "id": "understanding-indie-game-press-landscape",
+      "title": "Understanding the Indie Game Press Landscape",
+      "preview": "Learn how to navigate the indie game press landscape effectively. Discover strategies for getting media coverage and building relationships with journalists.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "press",
+        "media-relations",
+        "marketing",
+        "publicity",
+        "indie",
+        "journalism"
+      ],
+      "featured": false,
+      "filename": "understanding-indie-game-press-landscape.html"
+    },
+    {
+      "id": "planning-steam-next-fest-demo",
+      "title": "Planning a Steam Next Fest Demo",
+      "preview": "Learn how to create an effective Steam Next Fest demo that maximizes your game's exposure. Discover strategies for demo development and event participation.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "steam-next-fest",
+        "demo-development",
+        "marketing",
+        "launch-strategy",
+        "indie",
+        "steam"
+      ],
+      "featured": false,
+      "filename": "planning-steam-next-fest-demo.html"
     }
   ],
   "config": {
