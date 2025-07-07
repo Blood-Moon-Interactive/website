@@ -98,11 +98,13 @@
 <div class="container mt-5 pt-4">
 <!-- Top Content Ad Space -->
 <div class="ad-container text-center mb-4">
-    <ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
-    <script>
+<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                 setTimeout(function() {
                      (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-    </div>
+                 }, 100);
+            </script>
+</div>
 <div class="row">
 <div class="col-lg-8">
 <article class="article-content">
@@ -184,7 +186,9 @@
 <div class="ad-container text-center my-4">
 <ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
 <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                                 setTimeout(function() {
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                 }, 100);
                             </script>
 </div>
 <h2>Bartle's Player Types</h2>
@@ -344,8 +348,10 @@
 <div class="ad-container ad-sidebar text-center">
 <ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
 <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+                         setTimeout(function() {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         }, 100);
+                    </script>
 </div>
 </div>
 </div>
@@ -366,6 +372,13 @@
             yearElements.forEach(element => {
                 element.textContent = currentYear;
             });
+            
+            // Ensure ads are loaded after DOM is ready
+            setTimeout(function() {
+                if (typeof adsbygoogle !== 'undefined') {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            }, 500);
         });
     </script>
 </body>
