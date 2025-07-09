@@ -35,32 +35,54 @@ async function loadGameIdeas() {
 
 // Filter and generate game ideas
 function generateGameIdea() {
-    const genreFilter = document.getElementById('genreFilter').value;
-    const complexityFilter = document.getElementById('complexityFilter').value;
+    const generateButton = document.getElementById('generateIdea');
+    const ideaDisplay = document.getElementById('ideaDisplay');
     
-    // Filter ideas based on user preferences
-    let filteredIdeas = gameIdeas;
+    // Show loading state
+    generateButton.disabled = true;
+    generateButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Generating Idea...';
     
-    if (genreFilter) {
-        filteredIdeas = filteredIdeas.filter(idea => idea.genre === genreFilter);
-    }
+    // Hide previous results
+    ideaDisplay.style.display = 'none';
     
-    if (complexityFilter) {
-        filteredIdeas = filteredIdeas.filter(idea => idea.complexity === complexityFilter);
-    }
+    // Generate random delay between 2-4 seconds
+    const delay = Math.random() * 2000 + 2000; // 2000-4000ms
     
-    // If no ideas match filters, show helpful message and suggest alternatives
-    if (filteredIdeas.length === 0) {
-        showNoMatchesMessage(genreFilter, complexityFilter);
-        return;
-    }
-    
-    // Select random idea
-    const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
-    const selectedIdea = filteredIdeas[randomIndex];
-    
-    // Display the idea
-    displayGameIdea(selectedIdea);
+    setTimeout(() => {
+        const genreFilter = document.getElementById('genreFilter').value;
+        const complexityFilter = document.getElementById('complexityFilter').value;
+        
+        // Filter ideas based on user preferences
+        let filteredIdeas = gameIdeas;
+        
+        if (genreFilter) {
+            filteredIdeas = filteredIdeas.filter(idea => idea.genre === genreFilter);
+        }
+        
+        if (complexityFilter) {
+            filteredIdeas = filteredIdeas.filter(idea => idea.complexity === complexityFilter);
+        }
+        
+        // If no ideas match filters, show helpful message and suggest alternatives
+        if (filteredIdeas.length === 0) {
+            showNoMatchesMessage(genreFilter, complexityFilter);
+            // Reset button state
+            generateButton.disabled = false;
+            generateButton.innerHTML = '<i class="bi bi-dice-6 me-2"></i>Generate New Idea';
+            return;
+        }
+        
+        // Select random idea
+        const randomIndex = Math.floor(Math.random() * filteredIdeas.length);
+        const selectedIdea = filteredIdeas[randomIndex];
+        
+        // Display the idea
+        displayGameIdea(selectedIdea);
+        
+        // Reset button state
+        generateButton.disabled = false;
+        generateButton.innerHTML = '<i class="bi bi-dice-6 me-2"></i>Generate New Idea';
+    }, delay);
 }
 
 // Show message when no ideas match the filters
