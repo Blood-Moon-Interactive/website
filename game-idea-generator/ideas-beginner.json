@@ -1,0 +1,2023 @@
+{
+  "complexity": "beginner",
+  "ideas": [
+    {
+      "title": "The Puzzle Box",
+      "genre": "puzzle",
+      "description": "A single-room puzzle game where players must solve increasingly complex logic puzzles to escape. Each puzzle builds upon the previous one, teaching players new mechanics as they progress.",
+      "coreMechanics": [
+        "Logic-based puzzle solving",
+        "Progressive difficulty",
+        "Single-room exploration",
+        "Environmental interaction",
+        "Tutorial-style learning"
+      ],
+      "suggestedMechanics": [
+        "Switch behaviors",
+        "Door behaviors",
+        "Proximity triggers",
+        "Light control",
+        "Sound effect triggers",
+        "Simple inventory system"
+      ],
+      "developmentTips": "Start with simple on/off switches and gradually introduce more complex logic. Use clear visual feedback for puzzle states. Keep the scope small but make each puzzle satisfying to solve."
+    },
+    {
+      "title": "The Detective's Office",
+      "genre": "mystery",
+      "description": "A mystery game where players investigate cases from a detective's office. Players examine evidence, interview witnesses, and piece together clues to solve crimes. Each case teaches new investigation techniques.",
+      "coreMechanics": [
+        "Evidence examination",
+        "Case file management",
+        "Witness interviews",
+        "Logic-based deduction",
+        "Multiple case scenarios"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Dialog systems",
+        "Evidence collection zones",
+        "Case file inventory",
+        "Progress tracking",
+        "Scene transition effects"
+      ],
+      "developmentTips": "Focus on creating compelling mysteries with multiple possible solutions. Use clear visual feedback for evidence examination. Keep the interface simple but informative."
+    },
+    {
+      "title": "The Arcade Defender",
+      "genre": "action",
+      "description": "A retro-style arcade game where players defend a base from waves of enemies. Players can upgrade their defenses between waves and must manage resources to survive increasingly difficult attacks.",
+      "coreMechanics": [
+        "Wave-based combat",
+        "Defense placement",
+        "Resource management",
+        "Upgrade systems",
+        "Score tracking"
+      ],
+      "suggestedMechanics": [
+        "Enemy AI behaviors",
+        "Weapon and damage systems",
+        "Resource collection zones",
+        "Upgrade interface",
+        "Wave progression system",
+        "Score display"
+      ],
+      "developmentTips": "Keep the action fast-paced but manageable. Use clear visual feedback for damage and upgrades. Balance difficulty progression to maintain engagement."
+    },
+    {
+      "title": "The Haunted House",
+      "genre": "horror",
+      "description": "A simple horror experience where players explore a haunted house to find a missing item. Players must navigate through dark rooms, avoid jump scares, and solve basic puzzles to escape. Perfect for learning horror game basics.",
+      "coreMechanics": [
+        "Simple exploration",
+        "Basic jump scares",
+        "Light/dark mechanics",
+        "Simple puzzle solving",
+        "Linear progression"
+      ],
+      "suggestedMechanics": [
+        "Proximity triggers for jump scares",
+        "Light control systems",
+        "Simple door behaviors",
+        "Sound effect triggers",
+        "Basic inventory system",
+        "Scene transition effects"
+      ],
+      "developmentTips": "Start with a small, linear layout. Use lighting to create atmosphere and guide players. Keep puzzles simple and focus on creating tension through sound and lighting."
+    },
+    {
+      "title": "The Dark Corridor",
+      "genre": "horror",
+      "description": "A minimalist horror game where players must navigate through a series of dark corridors to reach the exit. Players have limited visibility and must rely on sound cues to avoid danger and find their way.",
+      "coreMechanics": [
+        "Limited visibility gameplay",
+        "Sound-based navigation",
+        "Simple avoidance mechanics",
+        "Linear progression",
+        "Atmospheric tension"
+      ],
+      "suggestedMechanics": [
+        "Light control systems",
+        "Proximity sound triggers",
+        "Simple movement controls",
+        "Ambient sound systems",
+        "Basic collision detection",
+        "Scene transition effects"
+      ],
+      "developmentTips": "Focus on creating atmosphere through sound design. Use lighting to create safe zones and guide players. Keep the scope small but impactful."
+    },
+    {
+      "title": "The Escape Room",
+      "genre": "puzzle",
+      "description": "A classic escape room experience where players must solve a series of interconnected puzzles to escape from a locked room. Each puzzle reveals clues for the next, creating a satisfying progression.",
+      "coreMechanics": [
+        "Logic puzzle solving",
+        "Environmental interaction",
+        "Clue discovery",
+        "Progressive difficulty",
+        "Single-room exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Door and lock systems",
+        "Inventory management",
+        "Puzzle state tracking",
+        "Visual feedback systems",
+        "Progress indicators"
+      ],
+      "developmentTips": "Create clear visual feedback for all interactions. Use color coding and symbols to help players understand puzzle connections. Test the difficulty curve carefully."
+    },
+    {
+      "title": "The Treasure Hunt",
+      "genre": "adventure",
+      "description": "A simple adventure where players explore an environment to find hidden treasures. Players must solve basic puzzles, avoid simple obstacles, and collect items to complete their quest.",
+      "coreMechanics": [
+        "Exploration gameplay",
+        "Item collection",
+        "Simple obstacle avoidance",
+        "Basic puzzle solving",
+        "Progress tracking"
+      ],
+      "suggestedMechanics": [
+        "Collectible zone behaviors",
+        "Simple door systems",
+        "Obstacle avoidance",
+        "Inventory management",
+        "Progress tracking",
+        "Visual feedback systems"
+      ],
+      "developmentTips": "Use clear visual cues to guide players to objectives. Create satisfying feedback for successful collections. Keep the environment manageable in size."
+    },
+    {
+      "title": "The Light Switch",
+      "genre": "puzzle",
+      "description": "A simple puzzle game where players must turn on all the lights in a building by solving logic puzzles. Each room presents a different challenge that teaches basic puzzle-solving concepts.",
+      "coreMechanics": [
+        "Logic-based puzzles",
+        "Light control mechanics",
+        "Progressive learning",
+        "Simple interaction",
+        "Clear objectives"
+      ],
+      "suggestedMechanics": [
+        "Light control systems",
+        "Switch behaviors",
+        "Puzzle state management",
+        "Visual feedback",
+        "Progress tracking",
+        "Simple door systems"
+      ],
+      "developmentTips": "Start with very simple puzzles and gradually increase complexity. Use clear visual feedback to show puzzle states. Focus on teaching one concept at a time."
+    },
+    {
+      "title": "The Color Matching Game",
+      "genre": "puzzle",
+      "description": "A simple puzzle game where players must match colored objects to solve challenges. Players learn basic color theory and pattern recognition while solving increasingly complex matching puzzles.",
+      "coreMechanics": [
+        "Color matching",
+        "Pattern recognition",
+        "Simple object interaction",
+        "Progressive difficulty",
+        "Visual feedback"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Color change systems",
+        "Matching zone behaviors",
+        "Visual feedback systems",
+        "Progress tracking",
+        "Simple scoring system"
+      ],
+      "developmentTips": "Use bright, distinct colors that are easy to distinguish. Create clear visual feedback for successful matches. Start with simple 2-color matches and gradually increase complexity."
+    },
+    {
+      "title": "The Sound Explorer",
+      "genre": "adventure",
+      "description": "A gentle exploration game where players navigate by following different sounds. Players must identify and follow audio cues to discover hidden areas and collect peaceful ambient sounds.",
+      "coreMechanics": [
+        "Sound-based navigation",
+        "Audio exploration",
+        "Gentle discovery",
+        "Relaxing gameplay",
+        "Simple movement"
+      ],
+      "suggestedMechanics": [
+        "Ambient sound systems",
+        "Proximity sound triggers",
+        "Simple movement controls",
+        "Sound collection zones",
+        "Visual indicators for sounds",
+        "Peaceful atmosphere effects"
+      ],
+      "developmentTips": "Focus on creating a calming, non-threatening atmosphere. Use gentle sounds and soft lighting. Make the experience relaxing rather than challenging."
+    },
+    {
+      "title": "The Button Factory",
+      "genre": "puzzle",
+      "description": "A simple factory simulation where players press buttons in the correct sequence to create products. Each level introduces new button combinations and timing challenges.",
+      "coreMechanics": [
+        "Button pressing sequences",
+        "Timing challenges",
+        "Simple factory simulation",
+        "Progressive learning",
+        "Visual feedback"
+      ],
+      "suggestedMechanics": [
+        "Button behaviors",
+        "Sequence tracking",
+        "Timer systems",
+        "Visual feedback",
+        "Progress indicators",
+        "Simple scoring"
+      ],
+      "developmentTips": "Use clear visual cues to show button states. Create satisfying feedback for correct sequences. Keep timing windows generous for beginners."
+    },
+    {
+      "title": "The Friendly Garden",
+      "genre": "adventure",
+      "description": "A peaceful gardening game where players explore a small garden, water plants, and watch them grow. Players learn about simple plant care and enjoy a relaxing outdoor experience.",
+      "coreMechanics": [
+        "Plant interaction",
+        "Simple gardening",
+        "Peaceful exploration",
+        "Growth simulation",
+        "Relaxing gameplay"
+      ],
+      "suggestedMechanics": [
+        "Plant growth systems",
+        "Watering mechanics",
+        "Simple interaction zones",
+        "Growth timers",
+        "Visual feedback",
+        "Peaceful ambient sounds"
+      ],
+      "developmentTips": "Create a warm, inviting atmosphere with soft lighting and gentle colors. Make plant growth satisfying to watch. Focus on relaxation over challenge."
+    },
+    {
+      "title": "The Shape Sorter",
+      "genre": "puzzle",
+      "description": "A classic shape-matching game where players must fit different shaped objects into corresponding holes. Players develop spatial awareness and problem-solving skills.",
+      "coreMechanics": [
+        "Shape recognition",
+        "Spatial matching",
+        "Object manipulation",
+        "Visual problem solving",
+        "Progressive difficulty"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Shape detection systems",
+        "Matching zone behaviors",
+        "Visual feedback",
+        "Progress tracking",
+        "Simple physics"
+      ],
+      "developmentTips": "Use clear, distinct shapes that are easy to identify. Provide immediate visual feedback for correct matches. Start with simple shapes and gradually introduce more complex ones."
+    },
+    {
+      "title": "The Night Watchman",
+      "genre": "horror",
+      "description": "A very gentle horror game where players patrol a small building at night, turning on lights to keep the darkness at bay. Players learn about light mechanics in a non-threatening environment.",
+      "coreMechanics": [
+        "Light management",
+        "Simple patrol mechanics",
+        "Gentle tension building",
+        "Environmental interaction",
+        "Atmospheric exploration"
+      ],
+      "suggestedMechanics": [
+        "Light control systems",
+        "Simple movement controls",
+        "Patrol zone behaviors",
+        "Atmospheric lighting",
+        "Gentle sound effects",
+        "Progress tracking"
+      ],
+      "developmentTips": "Keep the horror elements very mild - focus on atmosphere rather than scares. Use lighting to create safe zones. Make the experience more cozy than frightening."
+    },
+    {
+      "title": "The Memory Game",
+      "genre": "puzzle",
+      "description": "A classic memory matching game where players must remember the locations of hidden objects. Players develop memory skills while enjoying simple, satisfying gameplay.",
+      "coreMechanics": [
+        "Memory challenges",
+        "Object matching",
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Memory tracking systems",
+        "Visual feedback",
+        "Timer systems",
+        "Score tracking",
+        "Simple animations"
+      ],
+      "developmentTips": "Use clear, distinct objects that are easy to remember. Provide satisfying feedback for matches. Start with small grids and gradually increase size."
+    },
+    {
+      "title": "The Weather Station",
+      "genre": "adventure",
+      "description": "A simple weather observation game where players monitor and record different weather conditions. Players learn about weather patterns while enjoying a peaceful outdoor setting.",
+      "coreMechanics": [
+        "Weather observation",
+        "Simple data recording",
+        "Environmental exploration",
+        "Peaceful gameplay",
+        "Educational elements"
+      ],
+      "suggestedMechanics": [
+        "Weather effect systems",
+        "Data recording zones",
+        "Simple interaction",
+        "Visual feedback",
+        "Progress tracking",
+        "Educational displays"
+      ],
+      "developmentTips": "Create a peaceful, educational atmosphere. Use gentle weather effects that aren't overwhelming. Focus on learning and observation rather than challenge."
+    },
+    {
+      "title": "The Music Box",
+      "genre": "puzzle",
+      "description": "A musical puzzle game where players must recreate simple melodies by pressing buttons in the correct order. Players develop musical memory and pattern recognition skills.",
+      "coreMechanics": [
+        "Musical pattern matching",
+        "Button sequences",
+        "Audio feedback",
+        "Memory challenges",
+        "Progressive learning"
+      ],
+      "suggestedMechanics": [
+        "Button behaviors",
+        "Audio playback systems",
+        "Sequence tracking",
+        "Visual feedback",
+        "Progress indicators",
+        "Simple scoring"
+      ],
+      "developmentTips": "Use simple, memorable melodies. Provide clear visual and audio feedback. Start with short sequences and gradually increase length."
+    },
+    {
+      "title": "The Pet Care Simulator",
+      "genre": "adventure",
+      "description": "A gentle pet care game where players look after a virtual pet by feeding, playing, and caring for it. Players learn responsibility and empathy through simple care mechanics.",
+      "coreMechanics": [
+        "Pet care activities",
+        "Simple interaction",
+        "Time-based care",
+        "Gentle gameplay",
+        "Emotional connection"
+      ],
+      "suggestedMechanics": [
+        "Pet AI behaviors",
+        "Care interaction zones",
+        "Timer systems",
+        "Visual feedback",
+        "Progress tracking",
+        "Simple animations"
+      ],
+      "developmentTips": "Create a warm, caring atmosphere. Make the pet responsive and lovable. Focus on positive reinforcement and gentle care activities."
+    },
+    {
+      "title": "The Code Cracker",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Maze Runner",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Trash Sorter",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Balloon Popper",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Hidden Numbers",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Bubble Maze",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Rocket Assembly",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Treasure Island",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Clock Puzzle",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Shadow Sneaker",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Memory Match",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Sound Safari",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Echo Puzzle",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Pet Playground",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Weather Watch",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Bug Catcher",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Space Hopper",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Color Coder",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Light Maze",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Ghost Tag",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Time Traveler",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Book Sorter",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Alien Visitor",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Digital Farm",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Puzzle Paint",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Shape Shuffle",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Island Hopper",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Magnet Madness",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Mirror Room",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Plant Rescue",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Firefly Chase",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Path Finder",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Cave Explorer",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Music Trail",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Animal Tracks",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Candy Lab",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Dream Jumper",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Wind Walker",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Jungle Climb",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Crystal Collector",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Robo Builder",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Moon Miner",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Letter Quest",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Bubble Blaster",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Rainbow Bridge",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Light Up Grid",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Signal Tracker",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Color Stack",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Safe Cracker",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Toy Sorter",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Magic Orchard",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Potion Mixer",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Star Mapper",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Dino Daycare",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Clockmaker\u2019s Apprentice",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Tunnel Traveler",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Number Tower",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Circuit Snap",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Puzzle Pyramid",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Dream Cartographer",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Mushroom Grove",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Echo Navigator",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Path Puzzle",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Sleepy Forest",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Button Beat",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Fire Drill",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Water Quest",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Memory Train",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Shape Trail",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Garden Hop",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Harmony Hills",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Balance Beam",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The The Art Museum",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Windmill Builder",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Cozy Camper",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Bug Bounce",
+      "genre": "educational",
+      "description": "A beginner-friendly educational game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Bubble Math",
+      "genre": "horror",
+      "description": "A beginner-friendly horror game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Potion Puzzle",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Color Fall",
+      "genre": "action",
+      "description": "A beginner-friendly action game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Chime Game",
+      "genre": "puzzle",
+      "description": "A beginner-friendly puzzle game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Floating Farm",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    },
+    {
+      "title": "The Music Meadow",
+      "genre": "adventure",
+      "description": "A beginner-friendly adventure game where players interact with simple systems to develop basic gameplay skills. Focus is on learning, fun, and accessibility.",
+      "coreMechanics": [
+        "Simple interaction",
+        "Progressive difficulty",
+        "Visual feedback",
+        "Basic game logic",
+        "Accessible gameplay"
+      ],
+      "suggestedMechanics": [
+        "Interactive object behaviors",
+        "Progress tracking",
+        "Visual indicators",
+        "Sound triggers",
+        "Basic inventory or scoring"
+      ],
+      "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
+    }
+  ]
+}

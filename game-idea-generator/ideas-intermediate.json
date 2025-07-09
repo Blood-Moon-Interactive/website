@@ -1,0 +1,2020 @@
+{
+  "complexity": "intermediate",
+  "ideas": [
+    {
+      "title": "The Abandoned Laboratory",
+      "genre": "horror",
+      "description": "A first-person horror experience where players explore a deserted research facility. Strange sounds echo through the halls, and something is watching from the shadows. Players must solve environmental puzzles while avoiding detection by the facility's remaining inhabitants.",
+      "coreMechanics": [
+        "Stealth-based exploration",
+        "Environmental puzzle solving",
+        "Atmospheric horror elements",
+        "Resource management (limited flashlight battery)",
+        "Story-driven progression"
+      ],
+      "suggestedMechanics": [
+        "Proximity triggers for jump scares",
+        "Light control systems",
+        "Door behaviors with key requirements",
+        "Sound effect triggers",
+        "Character AI for enemies",
+        "Inventory system for collectibles"
+      ],
+      "developmentTips": "Focus on creating tension through sound design and lighting. Use proximity triggers to create jump scares, and implement a simple inventory system for key items. The horror comes from atmosphere rather than complex mechanics."
+    },
+    {
+      "title": "The Ancient Temple",
+      "genre": "adventure",
+      "description": "An archaeological adventure where players explore a mysterious temple filled with ancient traps and puzzles. Players must collect artifacts, solve environmental puzzles, and uncover the temple's secrets while avoiding deadly traps.",
+      "coreMechanics": [
+        "Exploration-based gameplay",
+        "Trap avoidance",
+        "Artifact collection",
+        "Environmental storytelling",
+        "Progressive difficulty"
+      ],
+      "suggestedMechanics": [
+        "Trap behaviors (arrow traps, pressure plates)",
+        "Collectible zone behaviors",
+        "Door and key systems",
+        "Light and shadow effects",
+        "Ambient sound systems",
+        "Character movement controls"
+      ],
+      "developmentTips": "Use lighting and sound to create atmosphere. Implement a simple scoring system for collected artifacts. Make traps visible but challenging to avoid, creating tension without frustration."
+    },
+    {
+      "title": "The Alchemist's Workshop",
+      "genre": "puzzle",
+      "description": "A puzzle game where players experiment with alchemical ingredients to create potions and solve magical problems. Players must learn ingredient properties through experimentation and use logic to combine them correctly.",
+      "coreMechanics": [
+        "Ingredient combination",
+        "Experimental learning",
+        "Recipe discovery",
+        "Magical problem solving",
+        "Progressive complexity"
+      ],
+      "suggestedMechanics": [
+        "Inventory system for ingredients",
+        "Combination zone behaviors",
+        "Effect trigger systems",
+        "Visual feedback for reactions",
+        "Recipe book interface",
+        "Progress tracking"
+      ],
+      "developmentTips": "Create clear visual feedback for successful and failed combinations. Use color coding and symbols to help players remember ingredient properties. Start with simple recipes and gradually increase complexity."
+    },
+    {
+      "title": "The Memory Palace",
+      "genre": "puzzle",
+      "description": "A psychological puzzle game where players navigate through a surreal memory palace. Players must solve memory-based puzzles, reconstruct forgotten events, and unlock hidden memories through environmental interaction.",
+      "coreMechanics": [
+        "Memory-based puzzles",
+        "Surreal environment navigation",
+        "Symbol recognition",
+        "Progressive memory unlocking",
+        "Psychological storytelling"
+      ],
+      "suggestedMechanics": [
+        "Symbol recognition systems",
+        "Memory trigger zones",
+        "Environmental transformation",
+        "Puzzle state management",
+        "Narrative progression",
+        "Visual effect systems"
+      ],
+      "developmentTips": "Use symbolism and metaphor to create meaningful puzzles. Create a dreamlike atmosphere through lighting and sound. Focus on emotional impact rather than complex mechanics."
+    },
+    {
+      "title": "The Underground Network",
+      "genre": "adventure",
+      "description": "A complex adventure game where players navigate an underground network of tunnels and chambers. Players must solve interconnected puzzles, manage multiple objectives, and uncover the network's mysterious purpose.",
+      "coreMechanics": [
+        "Complex puzzle networks",
+        "Multiple objective management",
+        "Exploration and mapping",
+        "Resource conservation",
+        "Story-driven progression"
+      ],
+      "suggestedMechanics": [
+        "Complex door and key systems",
+        "Multi-objective tracking",
+        "Environmental state management",
+        "Resource monitoring",
+        "Story trigger systems",
+        "Map and navigation aids"
+      ],
+      "developmentTips": "Create a clear navigation system to prevent player confusion. Use environmental storytelling to guide players. Balance complexity with accessibility."
+    },
+    {
+      "title": "The Stealth Infiltration",
+      "genre": "action",
+      "description": "A stealth-based action game where players must infiltrate a facility without being detected. Players use shadows, sound management, and careful timing to avoid guards and security systems.",
+      "coreMechanics": [
+        "Stealth-based movement",
+        "Guard AI avoidance",
+        "Sound management",
+        "Shadow utilization",
+        "Strategic planning"
+      ],
+      "suggestedMechanics": [
+        "Guard AI behaviors",
+        "Light and shadow systems",
+        "Sound detection mechanics",
+        "Stealth zone behaviors",
+        "Alert systems",
+        "Movement controls"
+      ],
+      "developmentTips": "Create clear visual indicators for guard sight lines and sound ranges. Use lighting to create safe zones and danger areas. Balance challenge with fair gameplay."
+    },
+    {
+      "title": "The Elemental Laboratory",
+      "genre": "puzzle",
+      "description": "A scientific puzzle game where players combine different elements to create new compounds and solve complex chemical puzzles. Players learn about element properties through experimentation.",
+      "coreMechanics": [
+        "Element combination",
+        "Chemical reactions",
+        "Scientific experimentation",
+        "Complex puzzle solving",
+        "Educational learning"
+      ],
+      "suggestedMechanics": [
+        "Element combination systems",
+        "Reaction effect behaviors",
+        "Laboratory equipment",
+        "Visual feedback systems",
+        "Progress tracking",
+        "Educational displays"
+      ],
+      "developmentTips": "Create satisfying visual and audio feedback for successful reactions. Use color coding and symbols to represent different elements. Include educational information about real chemistry."
+    },
+    {
+      "title": "The Time Loop Mystery",
+      "genre": "mystery",
+      "description": "A mystery game where players are trapped in a time loop and must solve a crime by gathering information across multiple time periods. Players must remember details from previous loops to progress.",
+      "coreMechanics": [
+        "Time loop mechanics",
+        "Information gathering",
+        "Memory-based progression",
+        "Multiple timeline exploration",
+        "Mystery solving"
+      ],
+      "suggestedMechanics": [
+        "Time loop systems",
+        "Information tracking",
+        "Memory persistence",
+        "Timeline management",
+        "Mystery progression",
+        "Visual timeline indicators"
+      ],
+      "developmentTips": "Create clear ways for players to track information across loops. Use visual cues to show what has changed between time periods. Make the mystery solvable through logical deduction."
+    },
+    {
+      "title": "The Resource Management Colony",
+      "genre": "adventure",
+      "description": "A colony management game where players must balance resources, expand their settlement, and solve problems that arise. Players learn about resource economics and community management.",
+      "coreMechanics": [
+        "Resource management",
+        "Colony expansion",
+        "Problem solving",
+        "Economic decision making",
+        "Community building"
+      ],
+      "suggestedMechanics": [
+        "Resource tracking systems",
+        "Building placement behaviors",
+        "Economic simulation",
+        "Problem generation",
+        "Progress tracking",
+        "Visual feedback systems"
+      ],
+      "developmentTips": "Create clear visual indicators for resource levels and colony status. Balance resource scarcity with achievable goals. Make expansion feel rewarding and meaningful."
+    },
+    {
+      "title": "The Psychological Horror",
+      "genre": "horror",
+      "description": "A psychological horror game where players explore a seemingly normal environment that gradually becomes more unsettling. Players must solve puzzles while dealing with increasing psychological pressure.",
+      "coreMechanics": [
+        "Psychological tension",
+        "Environmental transformation",
+        "Mood-based gameplay",
+        "Atmospheric horror",
+        "Mental state management"
+      ],
+      "suggestedMechanics": [
+        "Atmospheric effect systems",
+        "Environmental transformation",
+        "Psychological state tracking",
+        "Mood-based sound systems",
+        "Visual distortion effects",
+        "Tension building mechanics"
+      ],
+      "developmentTips": "Focus on building psychological tension rather than jump scares. Use subtle environmental changes to create unease. Make the horror cerebral rather than visceral."
+    },
+    {
+      "title": "The Multi-Path Story",
+      "genre": "adventure",
+      "description": "A branching narrative adventure where player choices significantly impact the story and lead to different outcomes. Players must make meaningful decisions that affect character relationships and plot development.",
+      "coreMechanics": [
+        "Branching narratives",
+        "Choice-based progression",
+        "Character relationship management",
+        "Multiple story paths",
+        "Consequence tracking"
+      ],
+      "suggestedMechanics": [
+        "Story branching systems",
+        "Choice tracking",
+        "Character relationship tracking",
+        "Narrative progression",
+        "Consequence systems",
+        "Story state management"
+      ],
+      "developmentTips": "Create meaningful choices with clear consequences. Use visual indicators to show relationship changes. Make each story path feel unique and worthwhile."
+    },
+    {
+      "title": "The Advanced Puzzle Box",
+      "genre": "puzzle",
+      "description": "A complex puzzle game where players must solve interconnected puzzles that span multiple rooms and require understanding of complex mechanical systems. Players learn advanced problem-solving techniques.",
+      "coreMechanics": [
+        "Complex puzzle networks",
+        "Multi-room problem solving",
+        "Mechanical understanding",
+        "Systematic thinking",
+        "Progressive complexity"
+      ],
+      "suggestedMechanics": [
+        "Complex puzzle systems",
+        "Multi-room state management",
+        "Mechanical simulation",
+        "Visual feedback systems",
+        "Progress tracking",
+        "Hint systems"
+      ],
+      "developmentTips": "Create clear connections between different puzzle elements. Use visual cues to help players understand complex systems. Provide optional hints for difficult sections."
+    },
+    {
+      "title": "The Survival Challenge",
+      "genre": "action",
+      "description": "A survival action game where players must manage health, resources, and combat while exploring a dangerous environment. Players learn about survival mechanics and tactical combat.",
+      "coreMechanics": [
+        "Health and resource management",
+        "Combat mechanics",
+        "Environmental hazards",
+        "Tactical decision making",
+        "Survival planning"
+      ],
+      "suggestedMechanics": [
+        "Health and damage systems",
+        "Resource management",
+        "Combat mechanics",
+        "Environmental hazards",
+        "Tactical AI",
+        "Survival tracking"
+      ],
+      "developmentTips": "Balance resource scarcity with achievable goals. Create clear visual indicators for health and resource status. Make combat tactical rather than button-mashing."
+    },
+    {
+      "title": "The Environmental Detective",
+      "genre": "mystery",
+      "description": "A mystery game where players investigate environmental crimes by analyzing evidence, interviewing witnesses, and piecing together clues from multiple sources. Players learn about environmental science and investigation techniques.",
+      "coreMechanics": [
+        "Environmental investigation",
+        "Evidence analysis",
+        "Witness interviews",
+        "Scientific deduction",
+        "Case building"
+      ],
+      "suggestedMechanics": [
+        "Evidence collection systems",
+        "Analysis tools",
+        "Interview mechanics",
+        "Case file management",
+        "Scientific displays",
+        "Progress tracking"
+      ],
+      "developmentTips": "Create realistic investigation mechanics. Use scientific accuracy to make the mystery educational. Provide multiple paths to solving each case."
+    },
+    {
+      "title": "The Emotional Journey",
+      "genre": "adventure",
+      "description": "A narrative adventure that explores complex emotions and relationships. Players make choices that affect character development and emotional outcomes, creating a deeply personal storytelling experience.",
+      "coreMechanics": [
+        "Emotional storytelling",
+        "Character development",
+        "Relationship building",
+        "Emotional choice making",
+        "Personal narrative"
+      ],
+      "suggestedMechanics": [
+        "Character development systems",
+        "Relationship tracking",
+        "Emotional state management",
+        "Narrative progression",
+        "Choice consequences",
+        "Emotional feedback"
+      ],
+      "developmentTips": "Focus on creating authentic emotional moments. Use subtle visual and audio cues to convey emotions. Make choices feel meaningful and impactful."
+    },
+    {
+      "title": "The Quantum Vault",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Fractured Mind",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Silent Frequency",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Gravity Wells",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Neural Decay",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Signal Lost",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Temporal Rift",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Echo Chamber",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Crystal Nexus",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Circuit Heist",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Toxic Divide",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Digital Mirage",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Shadow Protocol",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Mind Hacker",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Vortex Descent",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The AI Rebellion",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Solar Exodus",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Zero Hour",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Infected Zone",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Chrono Labyrinth",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Fractured Timeline",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Obsidian Core",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Pulse Reactor",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Dream Encoder",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Red Sky Alert",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Signal Watcher",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Deep Sleep",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Replica Effect",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Static Field",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Mirror Experiment",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Hostile Frequency",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Encrypted Realm",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Dark Zone 7",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Phase Shift",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Gravity Echo",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Memory Glitch",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Neuro Dive",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The System Breach",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Echo Protocol",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Biohackers",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Hollow Simulation",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Mind Fortress",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Crystal Network",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Subterranean Vault",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The AI Shepherd",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Feedback Loop",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Mental Drift",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Encrypted Order",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Breach Point",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Signal Cascade",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Quantum Vault 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Fractured Mind 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Silent Frequency 2",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Gravity Wells 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Neural Decay 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Signal Lost 2",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Temporal Rift 2",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Echo Chamber 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Crystal Nexus 2",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Circuit Heist 2",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Toxic Divide 2",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Digital Mirage 2",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Shadow Protocol 2",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Mind Hacker 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Vortex Descent 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The AI Rebellion 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Solar Exodus 2",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Zero Hour 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Infected Zone 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Chrono Labyrinth 2",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Fractured Timeline 2",
+      "genre": "sci-fi",
+      "description": "An intermediate-level sci-fi game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Obsidian Core 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Pulse Reactor 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Dream Encoder 2",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Red Sky Alert 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Signal Watcher 2",
+      "genre": "psychological",
+      "description": "An intermediate-level psychological game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Deep Sleep 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Replica Effect 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Static Field 2",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The The Mirror Experiment 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Hostile Frequency 2",
+      "genre": "action",
+      "description": "An intermediate-level action game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Encrypted Realm 2",
+      "genre": "puzzle",
+      "description": "An intermediate-level puzzle game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Dark Zone 7 2",
+      "genre": "adventure",
+      "description": "An intermediate-level adventure game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Phase Shift 2",
+      "genre": "mystery",
+      "description": "An intermediate-level mystery game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    },
+    {
+      "title": "The Gravity Echo 2",
+      "genre": "horror",
+      "description": "An intermediate-level horror game featuring deeper mechanics, layered interactions, and complex systems for players to explore and master.",
+      "coreMechanics": [
+        "Layered gameplay systems",
+        "Strategic decision making",
+        "Environmental interaction",
+        "Progressive difficulty",
+        "Player-driven discovery"
+      ],
+      "suggestedMechanics": [
+        "Complex inventory systems",
+        "Puzzle or AI behaviors",
+        "Narrative triggers",
+        "Visual feedback loops",
+        "Multi-state logic systems"
+      ],
+      "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
+    }
+  ]
+}
