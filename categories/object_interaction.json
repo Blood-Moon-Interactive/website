@@ -441,7 +441,7 @@
       ],
       "keywords": ["weapon", "reload", "automatic", "ammo", "clip", "gun", "prompt", "preference"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "igImalZotEE",
         "timestamp": "0:00",
         "steps": [
           "Attach the autoreload behavior to an object",
