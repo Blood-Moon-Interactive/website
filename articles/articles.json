@@ -829,6 +829,102 @@
       ],
       "featured": false,
       "filename": "planning-steam-next-fest-demo.html"
+    },
+    {
+      "id": "lighting-in-game-design",
+      "title": "Lighting in Game Design",
+      "preview": "Master the art of lighting in game design. Learn how lighting affects mood, gameplay, and player experience across different genres and platforms.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "lighting",
+        "atmosphere",
+        "visual-design",
+        "mood",
+        "immersion",
+        "indie",
+        "technical-design"
+      ],
+      "featured": false,
+      "filename": "lighting-in-game-design.html"
+    },
+    {
+      "id": "sound-effects-in-game-design",
+      "title": "Sound Effects in Game Design",
+      "preview": "Master the art of sound effects in game design. Learn how sound effects enhance gameplay, provide feedback, and create immersive experiences across different genres.",
+      "date": "2024-12-19",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "sound-effects",
+        "audio",
+        "feedback",
+        "immersion",
+        "indie",
+        "technical-design"
+      ],
+      "featured": false,
+      "filename": "sound-effects-in-game-design.html"
+    },
+    {
+      "id": "game-music-in-game-design",
+      "title": "Game Music in Game Design",
+      "preview": "Master the art of game music composition and integration. Learn how music enhances emotional impact, creates memorable moments, and supports gameplay mechanics across different genres.",
+      "date": "2025-01-15",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "music",
+        "audio",
+        "composition",
+        "emotional-impact",
+        "gameplay-integration",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "game-music-in-game-design.html"
+    },
+    {
+      "id": "ui-ux-design-in-games",
+      "title": "UI/UX Design in Games",
+      "preview": "Master UI/UX design principles for games. Learn how to create intuitive interfaces, effective HUDs, and user-friendly experiences that enhance player engagement.",
+      "date": "2025-01-15",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "ui-ux",
+        "interface-design",
+        "hud-design",
+        "user-experience",
+        "accessibility",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "ui-ux-design-in-games.html"
+    },
+    {
+      "id": "level-design-fundamentals",
+      "title": "Level Design Fundamentals",
+      "preview": "Master the fundamentals of level design. Learn how to create compelling spaces that guide players, support gameplay mechanics, and create memorable experiences.",
+      "date": "2025-01-15",
+      "author": "Blood Moon Interactive",
+      "category": "Game Design",
+      "tags": [
+        "game-design",
+        "level-design",
+        "environmental-design",
+        "player-guidance",
+        "atmosphere",
+        "pacing",
+        "indie"
+      ],
+      "featured": false,
+      "filename": "level-design-fundamentals.html"
     }
   ],
   "config": {
