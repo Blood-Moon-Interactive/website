@@ -81,24 +81,6 @@
       }
     },
     {
-      "id": "food",
-      "title": "Food",
-      "preview": "A food consumption system that provides health effects when consumed. Features automatic and manual pickup styles, global variable integration, and multiple sound effects. Perfect for creating food it...",
-      "date": "2025-07-01",
-      "author": "Blood Moon Interactive",
-      "category": "RPG",
-      "tags": [
-        "food",
-        "consumable",
-        "health",
-        "rpg",
-        "behavior",
-        "gameguru"
-      ],
-      "featured": false,
-      "filename": "food.html"
-    },
-    {
       "id": "adaptive_crosshair",
       "title": "Adaptive Crosshair",
       "preview": "An adaptive crosshair and hitmarker system that changes color based on target allegiance and provides visual feedback when firing. Features configurable view range, weapon activation, and highlighting...",
@@ -252,7 +234,6 @@
       "featured": false,
       "filename": "flow-theory.html"
     },
-
     {
       "id": "risk-vs-reward",
       "title": "Risk vs. Reward in Game Design",
@@ -925,6 +906,24 @@
       ],
       "featured": false,
       "filename": "level-design-fundamentals.html"
+    },
+    {
+      "id": "glow",
+      "title": "Glow",
+      "preview": "Creates a pulsing glow effect by varying the emissive strength of an object between minimum and maximum values at a configurable speed....",
+      "date": "2025-08-02",
+      "author": "Blood Moon Interactive",
+      "category": "Effects",
+      "tags": [
+        "glow",
+        "emissive",
+        "pulse",
+        "effects",
+        "behavior",
+        "gameguru"
+      ],
+      "featured": false,
+      "filename": "glow.html"
     }
   ],
   "config": {
