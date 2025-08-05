@@ -480,7 +480,7 @@
       ],
       "keywords": ["misc", "force", "wall", "barrier", "shield", "protection", "defense", "block", "repel", "damage"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "FdK9PFR1QqY",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["trigger_system", "damage_system", "force_field"]
