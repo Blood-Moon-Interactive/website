@@ -218,7 +218,7 @@
       ],
       "keywords": ["game", "monitor", "global", "variable", "trigger", "win", "lose", "level", "transition"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "j_FK66SNgPg",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["global_monitor", "global_activator", "event_manager", "game_clock"]

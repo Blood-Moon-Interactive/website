@@ -924,6 +924,24 @@
       ],
       "featured": false,
       "filename": "glow.html"
+    },
+    {
+      "id": "text_in_zone",
+      "title": "Text in Zone",
+      "preview": "Creates a zone that displays text messages while the player is within the zone. Features configurable text content, display timing, positioning, and multiple display modes....",
+      "date": "2025-09-01",
+      "author": "Blood Moon Interactive",
+      "category": "Markers",
+      "tags": [
+        "text",
+        "zone",
+        "display",
+        "markers",
+        "behavior",
+        "gameguru"
+      ],
+      "featured": false,
+      "filename": "text_in_zone.html"
     }
   ],
   "config": {

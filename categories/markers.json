@@ -895,7 +895,7 @@
       ],
       "keywords": ["hud", "zone", "ui", "display", "screen", "trigger", "destroy"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "OVh5EsaHlQw",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["textinzone", "videoinzone", "trigger_zone", "hud_interface"]
