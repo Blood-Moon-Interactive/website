@@ -2019,5 +2019,2108 @@
       ],
       "developmentTips": "Keep the concept focused and manageable. Use clear feedback to guide the player. Design each level to teach one new thing."
     }
+  ],
+  "complexity": "beginner",
+  "ideas": [
+    {
+      "title": "The Garden Keeper",
+      "genre": "simulation",
+      "description": "A peaceful gardening game where players plant, water, and harvest various crops. Players must manage their garden space efficiently and learn about different plant growth cycles.",
+      "coreMechanics": [
+        "Planting and harvesting",
+        "Water management",
+        "Growth cycle simulation",
+        "Space management",
+        "Weather effects"
+      ],
+      "suggestedMechanics": [
+        "Zone-based planting areas",
+        "Timer-based growth systems",
+        "Weather effect zones",
+        "Inventory management",
+        "Progress tracking",
+        "Visual feedback systems"
+      ],
+      "developmentTips": "Start with 3-4 basic plant types. Use clear visual indicators for growth stages. Keep the interface simple and intuitive."
+    },
+    {
+      "title": "The Treasure Hunter",
+      "genre": "adventure",
+      "description": "A simple treasure hunting game where players explore different areas to find hidden treasures. Players use a basic metal detector and must dig in the right spots to uncover valuable items.",
+      "coreMechanics": [
+        "Exploration",
+        "Treasure detection",
+        "Digging mechanics",
+        "Collection tracking",
+        "Area progression"
+      ],
+      "suggestedMechanics": [
+        "Proximity sensors for treasure detection",
+        "Interactive digging zones",
+        "Inventory collection system",
+        "Area transition effects",
+        "Progress indicators",
+        "Sound effect triggers"
+      ],
+      "developmentTips": "Use clear visual cues for treasure locations. Keep the exploration areas small but interesting. Focus on satisfying discovery moments."
+    },
+    {
+      "title": "The Pet Caretaker",
+      "genre": "simulation",
+      "description": "A virtual pet care game where players look after various animals. Players must feed, clean, and play with their pets to keep them happy and healthy.",
+      "coreMechanics": [
+        "Pet care routines",
+        "Happiness management",
+        "Health monitoring",
+        "Feeding systems",
+        "Cleaning mechanics"
+      ],
+      "suggestedMechanics": [
+        "Timer-based pet needs",
+        "Interactive feeding zones",
+        "Happiness tracking systems",
+        "Visual feedback for pet states",
+        "Simple inventory management",
+        "Progress indicators"
+      ],
+      "developmentTips": "Start with one pet type. Use clear visual feedback for pet needs. Keep the care routines simple but engaging."
+    },
+    {
+      "title": "The Color Matcher",
+      "genre": "puzzle",
+      "description": "A color-matching puzzle game where players must arrange colored blocks to create specific patterns. Players learn about color theory while solving increasingly complex arrangements.",
+      "coreMechanics": [
+        "Color matching",
+        "Pattern recognition",
+        "Block arrangement",
+        "Level progression",
+        "Score tracking"
+      ],
+      "suggestedMechanics": [
+        "Interactive block behaviors",
+        "Pattern validation systems",
+        "Score tracking",
+        "Level progression",
+        "Visual feedback",
+        "Sound effects"
+      ],
+      "developmentTips": "Start with simple 2x2 patterns. Use clear color coding. Gradually increase pattern complexity."
+    },
+    {
+      "title": "The Sound Explorer",
+      "genre": "educational",
+      "description": "An educational game where players learn about different sounds and music. Players explore various environments and must identify different sounds, learning about acoustics and audio recognition.",
+      "coreMechanics": [
+        "Sound identification",
+        "Audio exploration",
+        "Learning progression",
+        "Quiz mechanics",
+        "Environmental interaction"
+      ],
+      "suggestedMechanics": [
+        "Zone-based sound triggers",
+        "Audio playback systems",
+        "Quiz interface",
+        "Progress tracking",
+        "Visual feedback",
+        "Environmental effects"
+      ],
+      "developmentTips": "Use clear, distinct sounds. Provide immediate feedback for correct answers. Keep the learning curve gentle."
+    },
+    {
+      "title": "The Shape Builder",
+      "genre": "puzzle",
+      "description": "A geometric puzzle game where players must construct specific shapes using basic building blocks. Players learn about geometry while creating increasingly complex structures.",
+      "coreMechanics": [
+        "Shape construction",
+        "Geometric recognition",
+        "Block placement",
+        "Pattern matching",
+        "Spatial reasoning"
+      ],
+      "suggestedMechanics": [
+        "Interactive block placement",
+        "Shape validation systems",
+        "Visual guides",
+        "Progress tracking",
+        "Undo/redo functionality",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple shapes like squares and triangles. Use clear visual guides. Provide helpful hints for complex shapes."
+    },
+    {
+      "title": "The Weather Watcher",
+      "genre": "simulation",
+      "description": "A weather observation game where players learn about different weather patterns. Players must predict weather changes and prepare for different conditions.",
+      "coreMechanics": [
+        "Weather observation",
+        "Prediction mechanics",
+        "Preparation systems",
+        "Learning progression",
+        "Environmental changes"
+      ],
+      "suggestedMechanics": [
+        "Weather effect zones",
+        "Timer-based weather changes",
+        "Prediction interface",
+        "Preparation systems",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Use realistic weather patterns. Provide clear visual indicators. Include educational information about weather."
+    },
+    {
+      "title": "The Memory Keeper",
+      "genre": "puzzle",
+      "description": "A memory training game where players must remember and match pairs of cards. Players improve their memory skills while playing through increasingly difficult levels.",
+      "coreMechanics": [
+        "Memory matching",
+        "Card flipping",
+        "Pattern recognition",
+        "Difficulty progression",
+        "Score tracking"
+      ],
+      "suggestedMechanics": [
+        "Interactive card behaviors",
+        "Timer systems",
+        "Score tracking",
+        "Level progression",
+        "Visual feedback",
+        "Sound effects"
+      ],
+      "developmentTips": "Start with simple 4x4 grids. Use clear, distinct card designs. Provide helpful feedback for matches."
+    },
+    {
+      "title": "The Time Traveler",
+      "genre": "adventure",
+      "description": "A simple time travel adventure where players visit different time periods to collect historical artifacts. Players learn about history while solving basic puzzles.",
+      "coreMechanics": [
+        "Time period exploration",
+        "Artifact collection",
+        "Historical learning",
+        "Simple puzzle solving",
+        "Progressive discovery"
+      ],
+      "suggestedMechanics": [
+        "Zone-based time transitions",
+        "Artifact collection systems",
+        "Historical information display",
+        "Progress tracking",
+        "Visual effects",
+        "Educational content"
+      ],
+      "developmentTips": "Focus on 3-4 distinct time periods. Include interesting historical facts. Keep puzzles simple but educational."
+    },
+    {
+      "title": "The Light Chaser",
+      "genre": "puzzle",
+      "description": "A light-based puzzle game where players must redirect light beams to reach specific targets. Players learn about reflection and optics while solving increasingly complex light puzzles.",
+      "coreMechanics": [
+        "Light redirection",
+        "Mirror placement",
+        "Target achievement",
+        "Puzzle solving",
+        "Progressive difficulty"
+      ],
+      "suggestedMechanics": [
+        "Light beam systems",
+        "Interactive mirror behaviors",
+        "Target validation",
+        "Visual feedback",
+        "Puzzle reset functionality",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple straight-line puzzles. Use clear visual indicators for light paths. Provide helpful hints for complex arrangements."
+    },
+    {
+      "title": "The Recipe Master",
+      "genre": "simulation",
+      "description": "A cooking game where players follow recipes to create various dishes. Players learn about ingredients, cooking techniques, and timing while preparing meals.",
+      "coreMechanics": [
+        "Recipe following",
+        "Ingredient selection",
+        "Cooking timing",
+        "Quality assessment",
+        "Progressive learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive cooking stations",
+        "Timer-based cooking",
+        "Ingredient inventory",
+        "Recipe display systems",
+        "Quality feedback",
+        "Progress tracking"
+      ],
+      "developmentTips": "Start with simple 3-ingredient recipes. Use clear visual feedback for cooking states. Include helpful cooking tips."
+    },
+    {
+      "title": "The Plant Doctor",
+      "genre": "simulation",
+      "description": "A plant care game where players diagnose and treat sick plants. Players learn about plant diseases, treatments, and proper care techniques.",
+      "coreMechanics": [
+        "Plant diagnosis",
+        "Treatment application",
+        "Care monitoring",
+        "Disease identification",
+        "Recovery tracking"
+      ],
+      "suggestedMechanics": [
+        "Interactive plant behaviors",
+        "Diagnosis interface",
+        "Treatment application zones",
+        "Health monitoring systems",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with 3-4 common plant problems. Use clear visual indicators for plant health. Include educational information about plant care."
+    },
+    {
+      "title": "The Pattern Weaver",
+      "genre": "puzzle",
+      "description": "A pattern creation game where players weave different colored threads to create specific patterns. Players learn about symmetry and design while creating beautiful textile patterns.",
+      "coreMechanics": [
+        "Pattern weaving",
+        "Color coordination",
+        "Symmetry creation",
+        "Design replication",
+        "Creative expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive weaving interface",
+        "Pattern validation",
+        "Color selection systems",
+        "Design templates",
+        "Visual feedback",
+        "Undo functionality"
+      ],
+      "developmentTips": "Start with simple geometric patterns. Use clear color coding. Provide pattern templates for guidance."
+    },
+    {
+      "title": "The Animal Tracker",
+      "genre": "educational",
+      "description": "A wildlife observation game where players track and identify different animals in their natural habitats. Players learn about animal behavior and ecology.",
+      "coreMechanics": [
+        "Animal identification",
+        "Habitat exploration",
+        "Behavior observation",
+        "Tracking mechanics",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Animal AI behaviors",
+        "Habitat zones",
+        "Identification interface",
+        "Observation tracking",
+        "Educational content",
+        "Progress indicators"
+      ],
+      "developmentTips": "Focus on 5-6 common animals. Include interesting facts about each animal. Keep the tracking mechanics simple."
+    },
+    {
+      "title": "The Music Composer",
+      "genre": "creative",
+      "description": "A simple music creation game where players arrange musical notes to create melodies. Players learn about rhythm, pitch, and musical composition.",
+      "coreMechanics": [
+        "Note placement",
+        "Melody creation",
+        "Rhythm composition",
+        "Musical playback",
+        "Creative expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive note placement",
+        "Musical playback systems",
+        "Rhythm indicators",
+        "Melody validation",
+        "Visual feedback",
+        "Sound effects"
+      ],
+      "developmentTips": "Start with simple 4-note melodies. Use clear visual indicators for notes. Provide helpful musical guidance."
+    },
+    {
+      "title": "The Shadow Puppeteer",
+      "genre": "creative",
+      "description": "A shadow puppet game where players create stories using hand shadows and light. Players learn about storytelling and creative expression.",
+      "coreMechanics": [
+        "Shadow creation",
+        "Storytelling",
+        "Character interaction",
+        "Creative expression",
+        "Narrative building"
+      ],
+      "suggestedMechanics": [
+        "Light control systems",
+        "Shadow projection",
+        "Character animation",
+        "Story progression",
+        "Visual effects",
+        "Narrative elements"
+      ],
+      "developmentTips": "Start with simple animal shadows. Use clear visual guides for hand positions. Encourage creative storytelling."
+    },
+    {
+      "title": "The Bubble Artist",
+      "genre": "creative",
+      "description": "A bubble-blowing game where players create beautiful bubble art. Players learn about physics and artistic expression while creating colorful bubble displays.",
+      "coreMechanics": [
+        "Bubble creation",
+        "Color mixing",
+        "Physics simulation",
+        "Artistic expression",
+        "Visual effects"
+      ],
+      "suggestedMechanics": [
+        "Bubble physics systems",
+        "Color mixing mechanics",
+        "Visual effects",
+        "Art creation tools",
+        "Physics simulation",
+        "Creative interface"
+      ],
+      "developmentTips": "Focus on satisfying bubble physics. Use vibrant colors. Keep the interface simple and intuitive."
+    },
+    {
+      "title": "The Word Builder",
+      "genre": "educational",
+      "description": "A word formation game where players create words from given letters. Players improve vocabulary and spelling while solving word puzzles.",
+      "coreMechanics": [
+        "Word formation",
+        "Letter arrangement",
+        "Vocabulary building",
+        "Spelling practice",
+        "Puzzle solving"
+      ],
+      "suggestedMechanics": [
+        "Interactive letter placement",
+        "Word validation systems",
+        "Vocabulary database",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple 3-letter words. Use clear letter designs. Provide helpful hints for difficult words."
+    },
+    {
+      "title": "The Number Navigator",
+      "genre": "educational",
+      "description": "A number-based puzzle game where players navigate through numerical mazes. Players practice math skills while solving increasingly complex numerical challenges.",
+      "coreMechanics": [
+        "Number navigation",
+        "Mathematical operations",
+        "Maze solving",
+        "Problem solving",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive number grids",
+        "Mathematical validation",
+        "Maze generation",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple addition/subtraction. Use clear number displays. Provide helpful mathematical hints."
+    },
+    {
+      "title": "The Story Collector",
+      "genre": "adventure",
+      "description": "A story collection game where players gather stories from different characters. Players learn about narrative structure and character development.",
+      "coreMechanics": [
+        "Story collection",
+        "Character interaction",
+        "Narrative building",
+        "Exploration",
+        "Story progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive character behaviors",
+        "Dialog systems",
+        "Story collection tracking",
+        "Narrative progression",
+        "Visual feedback",
+        "Story elements"
+      ],
+      "developmentTips": "Focus on 3-4 interesting characters. Write engaging dialogue. Keep the story progression clear."
+    },
+    {
+      "title": "The Dream Architect",
+      "genre": "creative",
+      "description": "A dream-building game where players create fantastical dreamscapes. Players learn about surrealism and creative expression while building imaginative worlds.",
+      "coreMechanics": [
+        "Dream world creation",
+        "Surreal design",
+        "Creative expression",
+        "World building",
+        "Imaginative exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive world building",
+        "Surreal object placement",
+        "Dream atmosphere effects",
+        "Creative tools",
+        "Visual effects",
+        "Imagination interface"
+      ],
+      "developmentTips": "Encourage creative freedom. Use dreamlike visual effects. Keep the interface intuitive and inspiring."
+    },
+    {
+      "title": "The Emotion Explorer",
+      "genre": "educational",
+      "description": "An emotional intelligence game where players learn to recognize and understand different emotions. Players practice empathy and emotional awareness.",
+      "coreMechanics": [
+        "Emotion recognition",
+        "Empathy practice",
+        "Social interaction",
+        "Emotional learning",
+        "Character understanding"
+      ],
+      "suggestedMechanics": [
+        "Interactive character behaviors",
+        "Emotion expression systems",
+        "Social interaction mechanics",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Use clear, recognizable emotions. Include helpful explanations. Focus on positive emotional learning."
+    },
+    {
+      "title": "The Space Navigator",
+      "genre": "educational",
+      "description": "A space exploration game where players learn about planets, stars, and space phenomena. Players navigate through the solar system while learning astronomy.",
+      "coreMechanics": [
+        "Space navigation",
+        "Planetary exploration",
+        "Astronomical learning",
+        "Discovery mechanics",
+        "Educational progression"
+      ],
+      "suggestedMechanics": [
+        "Space environment zones",
+        "Planetary information systems",
+        "Navigation mechanics",
+        "Educational content",
+        "Visual effects",
+        "Progress tracking"
+      ],
+      "developmentTips": "Focus on 5-6 major planets. Include interesting space facts. Keep navigation simple and intuitive."
+    },
+    {
+      "title": "The Language Learner",
+      "genre": "educational",
+      "description": "A language learning game where players practice basic vocabulary and phrases. Players learn new languages through interactive lessons and practice.",
+      "coreMechanics": [
+        "Vocabulary learning",
+        "Phrase practice",
+        "Language progression",
+        "Interactive lessons",
+        "Skill building"
+      ],
+      "suggestedMechanics": [
+        "Interactive lesson systems",
+        "Vocabulary practice zones",
+        "Language progression tracking",
+        "Audio pronunciation",
+        "Visual feedback",
+        "Learning assessment"
+      ],
+      "developmentTips": "Start with basic greetings and numbers. Include audio pronunciation. Provide clear visual feedback."
+    },
+    {
+      "title": "The Art Restorer",
+      "genre": "creative",
+      "description": "An art restoration game where players clean and repair damaged artwork. Players learn about art history and restoration techniques.",
+      "coreMechanics": [
+        "Art restoration",
+        "Cleaning mechanics",
+        "Repair techniques",
+        "Historical learning",
+        "Art appreciation"
+      ],
+      "suggestedMechanics": [
+        "Interactive restoration tools",
+        "Cleaning mechanics",
+        "Art information systems",
+        "Progress tracking",
+        "Visual feedback",
+        "Historical content"
+      ],
+      "developmentTips": "Start with simple cleaning tasks. Include interesting art history facts. Use satisfying restoration mechanics."
+    },
+    {
+      "title": "The Weather Painter",
+      "genre": "creative",
+      "description": "A weather art game where players create paintings based on different weather conditions. Players learn about weather patterns and artistic expression.",
+      "coreMechanics": [
+        "Weather observation",
+        "Artistic creation",
+        "Weather learning",
+        "Creative expression",
+        "Pattern recognition"
+      ],
+      "suggestedMechanics": [
+        "Weather effect systems",
+        "Art creation tools",
+        "Weather information",
+        "Creative interface",
+        "Visual effects",
+        "Educational content"
+      ],
+      "developmentTips": "Use realistic weather effects. Provide creative art tools. Include weather education."
+    },
+    {
+      "title": "The Sound Sculptor",
+      "genre": "creative",
+      "description": "A sound sculpture game where players create 3D sound environments. Players learn about acoustics and spatial audio while creating immersive soundscapes.",
+      "coreMechanics": [
+        "Sound placement",
+        "3D audio creation",
+        "Acoustic learning",
+        "Creative expression",
+        "Spatial awareness"
+      ],
+      "suggestedMechanics": [
+        "3D sound placement",
+        "Audio environment creation",
+        "Spatial audio systems",
+        "Creative tools",
+        "Visual feedback",
+        "Audio effects"
+      ],
+      "developmentTips": "Use clear 3D positioning. Provide satisfying audio feedback. Keep the interface intuitive."
+    },
+    {
+      "title": "The Time Keeper",
+      "genre": "educational",
+      "description": "A time management game where players learn about telling time and scheduling. Players practice time-related skills through interactive lessons.",
+      "coreMechanics": [
+        "Time telling",
+        "Schedule management",
+        "Time learning",
+        "Planning skills",
+        "Time awareness"
+      ],
+      "suggestedMechanics": [
+        "Interactive clock systems",
+        "Schedule creation tools",
+        "Time progression",
+        "Learning assessment",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple clock reading. Include helpful time concepts. Provide clear visual feedback."
+    },
+    {
+      "title": "The Map Maker",
+      "genre": "creative",
+      "description": "A map creation game where players design and navigate through custom maps. Players learn about cartography and spatial reasoning.",
+      "coreMechanics": [
+        "Map creation",
+        "Spatial design",
+        "Navigation practice",
+        "Creative expression",
+        "Geographic learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive map creation",
+        "Navigation systems",
+        "Design tools",
+        "Spatial feedback",
+        "Visual effects",
+        "Creative interface"
+      ],
+      "developmentTips": "Start with simple grid-based maps. Use clear visual indicators. Provide helpful design tools."
+    },
+    {
+      "title": "The Color Scientist",
+      "genre": "educational",
+      "description": "A color science game where players learn about color mixing, light, and color theory. Players experiment with colors through interactive experiments.",
+      "coreMechanics": [
+        "Color mixing",
+        "Light experimentation",
+        "Color theory learning",
+        "Scientific discovery",
+        "Creative experimentation"
+      ],
+      "suggestedMechanics": [
+        "Interactive color mixing",
+        "Light effect systems",
+        "Color theory lessons",
+        "Experimental tools",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Use realistic color mixing. Include interesting color facts. Provide satisfying experimental feedback."
+    },
+    {
+      "title": "The Rhythm Master",
+      "genre": "music",
+      "description": "A rhythm game where players learn to keep time and follow musical patterns. Players develop musical timing and coordination skills.",
+      "coreMechanics": [
+        "Rhythm matching",
+        "Timing practice",
+        "Musical coordination",
+        "Pattern following",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive rhythm systems",
+        "Timing feedback",
+        "Musical pattern display",
+        "Progress tracking",
+        "Visual feedback",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple 4/4 time signatures. Use clear visual indicators. Provide helpful timing feedback."
+    },
+    {
+      "title": "The Texture Explorer",
+      "genre": "educational",
+      "description": "A tactile learning game where players learn about different textures and materials. Players develop sensory awareness and material recognition.",
+      "coreMechanics": [
+        "Texture identification",
+        "Material learning",
+        "Sensory exploration",
+        "Pattern recognition",
+        "Sensory development"
+      ],
+      "suggestedMechanics": [
+        "Interactive texture zones",
+        "Material information systems",
+        "Sensory feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Use clear, distinct textures. Include helpful material facts. Provide satisfying sensory feedback."
+    },
+    {
+      "title": "The Balance Keeper",
+      "genre": "puzzle",
+      "description": "A balance puzzle game where players must keep objects balanced on various platforms. Players learn about physics and equilibrium.",
+      "coreMechanics": [
+        "Balance mechanics",
+        "Physics simulation",
+        "Equilibrium solving",
+        "Object placement",
+        "Problem solving"
+      ],
+      "suggestedMechanics": [
+        "Physics-based balance systems",
+        "Interactive object placement",
+        "Balance feedback",
+        "Visual guides",
+        "Progress tracking",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple 2-object balances. Use clear visual feedback. Provide helpful physics hints."
+    },
+    {
+      "title": "The Scent Detective",
+      "genre": "educational",
+      "description": "A scent identification game where players learn about different smells and their sources. Players develop olfactory awareness and recognition.",
+      "coreMechanics": [
+        "Scent identification",
+        "Olfactory learning",
+        "Source recognition",
+        "Memory training",
+        "Sensory development"
+      ],
+      "suggestedMechanics": [
+        "Interactive scent zones",
+        "Identification systems",
+        "Memory training mechanics",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Use familiar, recognizable scents. Include helpful scent facts. Provide clear identification feedback."
+    },
+    {
+      "title": "The Mirror Master",
+      "genre": "puzzle",
+      "description": "A mirror puzzle game where players must arrange mirrors to reflect light to specific targets. Players learn about reflection and optics.",
+      "coreMechanics": [
+        "Mirror placement",
+        "Light reflection",
+        "Optical problem solving",
+        "Target achievement",
+        "Spatial reasoning"
+      ],
+      "suggestedMechanics": [
+        "Interactive mirror systems",
+        "Light reflection mechanics",
+        "Target validation",
+        "Visual feedback",
+        "Puzzle reset",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple straight reflections. Use clear visual indicators. Provide helpful optical hints."
+    },
+    {
+      "title": "The Temperature Tracker",
+      "genre": "educational",
+      "description": "A temperature learning game where players learn about different temperatures and their effects. Players develop temperature awareness.",
+      "coreMechanics": [
+        "Temperature measurement",
+        "Temperature learning",
+        "Effect observation",
+        "Comparative analysis",
+        "Scientific discovery"
+      ],
+      "suggestedMechanics": [
+        "Interactive temperature systems",
+        "Measurement tools",
+        "Effect observation zones",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Use familiar temperature ranges. Include interesting temperature facts. Provide clear measurement feedback."
+    },
+    {
+      "title": "The Weight Watcher",
+      "genre": "educational",
+      "description": "A weight comparison game where players learn about different weights and measurements. Players develop weight awareness and comparison skills.",
+      "coreMechanics": [
+        "Weight comparison",
+        "Measurement learning",
+        "Balance mechanics",
+        "Comparative analysis",
+        "Mathematical thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive balance systems",
+        "Weight comparison tools",
+        "Measurement feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple weight comparisons. Use clear visual indicators. Provide helpful measurement hints."
+    },
+    {
+      "title": "The Speed Racer",
+      "genre": "racing",
+      "description": "A simple racing game where players learn about speed, distance, and time. Players develop spatial awareness and timing skills.",
+      "coreMechanics": [
+        "Speed control",
+        "Distance measurement",
+        "Timing mechanics",
+        "Spatial navigation",
+        "Competitive racing"
+      ],
+      "suggestedMechanics": [
+        "Speed control systems",
+        "Distance tracking",
+        "Timing mechanics",
+        "Racing progression",
+        "Visual feedback",
+        "Competition elements"
+      ],
+      "developmentTips": "Start with simple straight tracks. Use clear speed indicators. Provide helpful racing feedback."
+    },
+    {
+      "title": "The Distance Explorer",
+      "genre": "educational",
+      "description": "A distance measurement game where players learn about different distances and measurements. Players develop spatial awareness and measurement skills.",
+      "coreMechanics": [
+        "Distance measurement",
+        "Spatial awareness",
+        "Measurement learning",
+        "Comparative analysis",
+        "Mathematical thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive measurement tools",
+        "Distance comparison systems",
+        "Spatial feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple distance comparisons. Use clear visual indicators. Provide helpful measurement hints."
+    },
+    {
+      "title": "The Volume Master",
+      "genre": "educational",
+      "description": "A volume measurement game where players learn about different volumes and capacities. Players develop volume awareness and measurement skills.",
+      "coreMechanics": [
+        "Volume measurement",
+        "Capacity learning",
+        "Liquid mechanics",
+        "Comparative analysis",
+        "Mathematical thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive volume systems",
+        "Liquid simulation",
+        "Measurement tools",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple volume comparisons. Use clear visual indicators. Provide helpful measurement hints."
+    },
+    {
+      "title": "The Angle Finder",
+      "genre": "educational",
+      "description": "A geometry game where players learn about angles and their measurements. Players develop spatial reasoning and mathematical skills.",
+      "coreMechanics": [
+        "Angle measurement",
+        "Geometric learning",
+        "Spatial reasoning",
+        "Mathematical thinking",
+        "Problem solving"
+      ],
+      "suggestedMechanics": [
+        "Interactive angle tools",
+        "Measurement systems",
+        "Geometric feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple 90-degree angles. Use clear visual indicators. Provide helpful geometric hints."
+    },
+    {
+      "title": "The Symmetry Artist",
+      "genre": "creative",
+      "description": "A symmetry art game where players create symmetrical designs and patterns. Players learn about symmetry and artistic expression.",
+      "coreMechanics": [
+        "Symmetry creation",
+        "Pattern design",
+        "Artistic expression",
+        "Geometric learning",
+        "Creative exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive symmetry tools",
+        "Pattern creation systems",
+        "Symmetry guides",
+        "Creative interface",
+        "Visual feedback",
+        "Artistic tools"
+      ],
+      "developmentTips": "Start with simple line symmetry. Use clear symmetry guides. Provide helpful artistic hints."
+    },
+    {
+      "title": "The Fraction Master",
+      "genre": "educational",
+      "description": "A fraction learning game where players learn about fractions through interactive visual representations. Players develop mathematical understanding.",
+      "coreMechanics": [
+        "Fraction visualization",
+        "Mathematical learning",
+        "Visual representation",
+        "Problem solving",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive fraction tools",
+        "Visual representation systems",
+        "Mathematical feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple 1/2 and 1/4 fractions. Use clear visual representations. Provide helpful mathematical hints."
+    },
+    {
+      "title": "The Probability Player",
+      "genre": "educational",
+      "description": "A probability game where players learn about chance and probability through interactive experiments. Players develop mathematical thinking.",
+      "coreMechanics": [
+        "Probability experiments",
+        "Chance learning",
+        "Mathematical thinking",
+        "Data collection",
+        "Scientific discovery"
+      ],
+      "suggestedMechanics": [
+        "Interactive probability tools",
+        "Data collection systems",
+        "Statistical feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple coin flips. Use clear visual feedback. Provide helpful probability hints."
+    },
+    {
+      "title": "The Pattern Predictor",
+      "genre": "puzzle",
+      "description": "A pattern recognition game where players must predict the next item in a sequence. Players develop logical thinking and pattern recognition skills.",
+      "coreMechanics": [
+        "Pattern recognition",
+        "Sequence prediction",
+        "Logical thinking",
+        "Problem solving",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive pattern systems",
+        "Sequence generation",
+        "Prediction validation",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple repeating patterns. Use clear visual indicators. Provide helpful logical hints."
+    },
+    {
+      "title": "The Logic Builder",
+      "genre": "puzzle",
+      "description": "A logic puzzle game where players must solve problems using logical reasoning. Players develop critical thinking and problem-solving skills.",
+      "coreMechanics": [
+        "Logical reasoning",
+        "Problem solving",
+        "Critical thinking",
+        "Puzzle completion",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive logic tools",
+        "Puzzle generation systems",
+        "Reasoning feedback",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple true/false puzzles. Use clear logical indicators. Provide helpful reasoning hints."
+    },
+    {
+      "title": "The Sequence Sorter",
+      "genre": "puzzle",
+      "description": "A sequence sorting game where players must arrange items in the correct order. Players develop organizational and sequencing skills.",
+      "coreMechanics": [
+        "Sequence sorting",
+        "Organizational skills",
+        "Order recognition",
+        "Problem solving",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive sorting tools",
+        "Sequence validation",
+        "Order feedback",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple 3-item sequences. Use clear visual indicators. Provide helpful sorting hints."
+    },
+    {
+      "title": "The Category Creator",
+      "genre": "educational",
+      "description": "A categorization game where players must group items into appropriate categories. Players develop classification and organizational skills.",
+      "coreMechanics": [
+        "Item categorization",
+        "Classification skills",
+        "Organizational thinking",
+        "Problem solving",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive categorization tools",
+        "Category validation",
+        "Classification feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple 2-category systems. Use clear visual indicators. Provide helpful classification hints."
+    },
+    {
+      "title": "The Comparison Master",
+      "genre": "educational",
+      "description": "A comparison game where players must compare different items and identify similarities and differences. Players develop analytical thinking.",
+      "coreMechanics": [
+        "Item comparison",
+        "Analytical thinking",
+        "Similarity recognition",
+        "Difference identification",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive comparison tools",
+        "Comparison validation",
+        "Analytical feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple 2-item comparisons. Use clear visual indicators. Provide helpful comparison hints."
+    },
+    {
+      "title": "The Observation Expert",
+      "genre": "educational",
+      "description": "An observation game where players must carefully observe details and identify changes. Players develop attention to detail and observation skills.",
+      "coreMechanics": [
+        "Detail observation",
+        "Change identification",
+        "Attention training",
+        "Memory skills",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive observation tools",
+        "Change detection systems",
+        "Observation feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple before/after comparisons. Use clear visual indicators. Provide helpful observation hints."
+    },
+    {
+      "title": "The Memory Palace",
+      "genre": "educational",
+      "description": "A memory training game where players create mental palaces to remember information. Players develop memory techniques and spatial memory skills.",
+      "coreMechanics": [
+        "Memory palace creation",
+        "Spatial memory training",
+        "Information association",
+        "Memory techniques",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive palace creation",
+        "Memory association systems",
+        "Spatial feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple 3-room palaces. Use clear visual associations. Provide helpful memory technique hints."
+    },
+    {
+      "title": "The Mind Reader",
+      "genre": "puzzle",
+      "description": "A logic puzzle game where players must deduce information from given clues. Players develop deductive reasoning and logical thinking.",
+      "coreMechanics": [
+        "Information deduction",
+        "Logical reasoning",
+        "Clue analysis",
+        "Problem solving",
+        "Critical thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive clue systems",
+        "Deduction validation",
+        "Logical feedback",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple 2-clue puzzles. Use clear logical indicators. Provide helpful deduction hints."
+    },
+    {
+      "title": "The Code Breaker",
+      "genre": "puzzle",
+      "description": "A code-breaking game where players must decipher patterns and codes. Players develop pattern recognition and analytical thinking.",
+      "coreMechanics": [
+        "Code deciphering",
+        "Pattern recognition",
+        "Analytical thinking",
+        "Problem solving",
+        "Skill progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive code systems",
+        "Pattern validation",
+        "Deciphering feedback",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple 3-digit codes. Use clear pattern indicators. Provide helpful deciphering hints."
+    },
+    {
+      "title": "The Word Wizard",
+      "genre": "educational",
+      "description": "A word creation game where players build words from given letters and learn about language structure. Players develop vocabulary and linguistic skills.",
+      "coreMechanics": [
+        "Word creation",
+        "Vocabulary building",
+        "Language learning",
+        "Letter arrangement",
+        "Linguistic development"
+      ],
+      "suggestedMechanics": [
+        "Interactive letter systems",
+        "Word validation",
+        "Vocabulary feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple 3-letter words. Use clear letter designs. Provide helpful vocabulary hints."
+    },
+    {
+      "title": "The Number Ninja",
+      "genre": "educational",
+      "description": "A number manipulation game where players perform mathematical operations and learn number relationships. Players develop mathematical thinking.",
+      "coreMechanics": [
+        "Number manipulation",
+        "Mathematical operations",
+        "Number relationships",
+        "Problem solving",
+        "Mathematical thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive number systems",
+        "Mathematical validation",
+        "Operation feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple addition/subtraction. Use clear number displays. Provide helpful mathematical hints."
+    },
+    {
+      "title": "The Shape Shifter",
+      "genre": "puzzle",
+      "description": "A shape transformation game where players must change shapes to solve puzzles. Players develop spatial reasoning and geometric thinking.",
+      "coreMechanics": [
+        "Shape transformation",
+        "Spatial reasoning",
+        "Geometric thinking",
+        "Puzzle solving",
+        "Visual manipulation"
+      ],
+      "suggestedMechanics": [
+        "Interactive shape systems",
+        "Transformation mechanics",
+        "Spatial feedback",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple square transformations. Use clear visual indicators. Provide helpful transformation hints."
+    },
+    {
+      "title": "The Color Chemist",
+      "genre": "educational",
+      "description": "A color mixing game where players learn about color chemistry and create new colors. Players develop color theory and scientific thinking.",
+      "coreMechanics": [
+        "Color mixing",
+        "Color chemistry",
+        "Scientific experimentation",
+        "Color theory",
+        "Creative expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive color mixing",
+        "Chemistry simulation",
+        "Color feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with primary color mixing. Use realistic color chemistry. Provide helpful color theory hints."
+    },
+    {
+      "title": "The Sound Scientist",
+      "genre": "educational",
+      "description": "A sound science game where players experiment with sound waves and learn about acoustics. Players develop scientific thinking and audio awareness.",
+      "coreMechanics": [
+        "Sound experimentation",
+        "Wave manipulation",
+        "Acoustic learning",
+        "Scientific discovery",
+        "Audio awareness"
+      ],
+      "suggestedMechanics": [
+        "Interactive sound systems",
+        "Wave visualization",
+        "Acoustic feedback",
+        "Learning progression",
+        "Visual feedback",
+        "Educational content"
+      ],
+      "developmentTips": "Start with simple wave visualization. Use clear audio feedback. Provide helpful acoustic hints."
+    },
+    {
+      "title": "The Light Engineer",
+      "genre": "educational",
+      "description": "A light engineering game where players design lighting systems and learn about optics. Players develop engineering thinking and spatial reasoning.",
+      "coreMechanics": [
+        "Light system design",
+        "Optical engineering",
+        "Spatial reasoning",
+        "Problem solving",
+        "Engineering thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive lighting systems",
+        "Optical simulation",
+        "Engineering feedback",
+        "Progress tracking",
+        "Visual feedback",
+        "Hint systems"
+      ],
+      "developmentTips": "Start with simple light placement. Use clear optical indicators. Provide helpful engineering hints."
+    },
+    {
+      "title": "The Time Traveler's Journal",
+      "genre": "adventure",
+      "description": "A time travel adventure where players document their journey through different time periods. Players learn about history while creating a personal journal.",
+      "coreMechanics": [
+        "Time period exploration",
+        "Journal creation",
+        "Historical learning",
+        "Documentation",
+        "Creative expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive journal systems",
+        "Time period zones",
+        "Historical information",
+        "Documentation tools",
+        "Creative interface",
+        "Educational content"
+      ],
+      "developmentTips": "Focus on 3-4 distinct time periods. Include interesting historical facts. Encourage creative journaling."
+    },
+    {
+      "title": "The Dream Catcher",
+      "genre": "creative",
+      "description": "A dream collection game where players capture and interpret dreams. Players learn about dream symbolism and creative expression.",
+      "coreMechanics": [
+        "Dream capture",
+        "Symbol interpretation",
+        "Creative expression",
+        "Dream analysis",
+        "Imaginative exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive dream systems",
+        "Symbol interpretation tools",
+        "Creative expression interface",
+        "Dream analysis feedback",
+        "Visual effects",
+        "Creative tools"
+      ],
+      "developmentTips": "Encourage creative dream expression. Use dreamlike visual effects. Provide helpful interpretation hints."
+    },
+    {
+      "title": "The Emotion Painter",
+      "genre": "creative",
+      "description": "An emotion-based art game where players create paintings based on different emotions. Players learn about emotional expression and art therapy.",
+      "coreMechanics": [
+        "Emotional expression",
+        "Art creation",
+        "Color psychology",
+        "Creative expression",
+        "Emotional learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive art tools",
+        "Emotion-based color systems",
+        "Creative expression interface",
+        "Emotional feedback",
+        "Visual effects",
+        "Artistic tools"
+      ],
+      "developmentTips": "Use color psychology principles. Encourage emotional expression. Provide helpful artistic guidance."
+    },
+    {
+      "title": "The Mind Mapper",
+      "genre": "educational",
+      "description": "A mind mapping game where players create visual representations of ideas and concepts. Players develop organizational and creative thinking skills.",
+      "coreMechanics": [
+        "Mind map creation",
+        "Concept organization",
+        "Visual thinking",
+        "Creative expression",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive mind mapping tools",
+        "Concept organization systems",
+        "Visual thinking interface",
+        "Creative expression tools",
+        "Learning progression",
+        "Visual feedback"
+      ],
+      "developmentTips": "Start with simple 3-concept maps. Use clear visual connections. Provide helpful organizational hints."
+    },
+    {
+      "title": "The Story Weaver",
+      "genre": "creative",
+      "description": "A story creation game where players weave together different story elements to create narratives. Players develop storytelling and creative writing skills.",
+      "coreMechanics": [
+        "Story creation",
+        "Narrative building",
+        "Creative writing",
+        "Story elements",
+        "Imaginative expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive story creation tools",
+        "Narrative building systems",
+        "Creative writing interface",
+        "Story element selection",
+        "Imaginative expression tools",
+        "Story feedback"
+      ],
+      "developmentTips": "Start with simple 3-element stories. Use clear story structure. Provide helpful writing hints."
+    },
+    {
+      "title": "The Pattern Detective",
+      "genre": "puzzle",
+      "description": "A pattern investigation game where players must find hidden patterns in various scenarios. Players develop observation and analytical thinking skills.",
+      "coreMechanics": [
+        "Pattern investigation",
+        "Observation skills",
+        "Analytical thinking",
+        "Hidden pattern discovery",
+        "Problem solving"
+      ],
+      "suggestedMechanics": [
+        "Interactive investigation tools",
+        "Pattern detection systems",
+        "Observation feedback",
+        "Analytical thinking interface",
+        "Hidden pattern mechanics",
+        "Problem solving feedback"
+      ],
+      "developmentTips": "Start with simple visual patterns. Use clear observation indicators. Provide helpful investigation hints."
+    },
+    {
+      "title": "The Logic Explorer",
+      "genre": "puzzle",
+      "description": "A logic exploration game where players discover logical relationships and solve reasoning puzzles. Players develop critical thinking and logical reasoning skills.",
+      "coreMechanics": [
+        "Logical exploration",
+        "Reasoning puzzles",
+        "Critical thinking",
+        "Relationship discovery",
+        "Problem solving"
+      ],
+      "suggestedMechanics": [
+        "Interactive logic tools",
+        "Reasoning puzzle systems",
+        "Critical thinking interface",
+        "Relationship discovery mechanics",
+        "Problem solving feedback",
+        "Logical progression"
+      ],
+      "developmentTips": "Start with simple true/false relationships. Use clear logical indicators. Provide helpful reasoning hints."
+    },
+    {
+      "title": "The Memory Architect",
+      "genre": "educational",
+      "description": "A memory building game where players construct memory structures to remember information. Players develop memory techniques and organizational skills.",
+      "coreMechanics": [
+        "Memory structure building",
+        "Information organization",
+        "Memory techniques",
+        "Spatial memory",
+        "Learning progression"
+      ],
+      "suggestedMechanics": [
+        "Interactive memory building tools",
+        "Information organization systems",
+        "Memory technique interface",
+        "Spatial memory mechanics",
+        "Learning progression",
+        "Memory feedback"
+      ],
+      "developmentTips": "Start with simple 3-item structures. Use clear memory associations. Provide helpful memory technique hints."
+    },
+    {
+      "title": "The Creative Catalyst",
+      "genre": "creative",
+      "description": "A creative inspiration game where players generate ideas and creative solutions. Players develop creative thinking and problem-solving skills.",
+      "coreMechanics": [
+        "Creative idea generation",
+        "Problem solving",
+        "Creative thinking",
+        "Inspiration mechanics",
+        "Innovative expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive idea generation tools",
+        "Problem solving systems",
+        "Creative thinking interface",
+        "Inspiration mechanics",
+        "Innovative expression tools",
+        "Creative feedback"
+      ],
+      "developmentTips": "Encourage creative freedom. Use inspiring visual elements. Provide helpful creative thinking hints."
+    },
+    {
+      "title": "The Harmony Creator",
+      "genre": "music",
+      "description": "A harmony creation game where players learn to create musical harmonies and chord progressions. Players develop musical understanding and creative expression.",
+      "coreMechanics": [
+        "Harmony creation",
+        "Chord progression",
+        "Musical understanding",
+        "Creative expression",
+        "Musical learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive harmony tools",
+        "Chord progression systems",
+        "Musical feedback",
+        "Creative expression interface",
+        "Musical learning progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple 2-note harmonies. Use clear musical indicators. Provide helpful harmony hints."
+    },
+    {
+      "title": "The Rhythm Creator",
+      "genre": "music",
+      "description": "A rhythm creation game where players compose rhythmic patterns and beats. Players develop musical timing and creative expression.",
+      "coreMechanics": [
+        "Rhythm composition",
+        "Beat creation",
+        "Musical timing",
+        "Creative expression",
+        "Musical learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive rhythm tools",
+        "Beat creation systems",
+        "Musical timing feedback",
+        "Creative expression interface",
+        "Musical learning progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple 4-beat patterns. Use clear rhythm indicators. Provide helpful timing hints."
+    },
+    {
+      "title": "The Melody Maker",
+      "genre": "music",
+      "description": "A melody creation game where players compose original melodies and musical phrases. Players develop musical creativity and understanding.",
+      "coreMechanics": [
+        "Melody composition",
+        "Musical creativity",
+        "Phrase creation",
+        "Creative expression",
+        "Musical learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive melody tools",
+        "Musical creativity systems",
+        "Phrase creation interface",
+        "Creative expression tools",
+        "Musical learning progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple 4-note melodies. Use clear musical indicators. Provide helpful melody hints."
+    },
+    {
+      "title": "The Tempo Tracker",
+      "genre": "music",
+      "description": "A tempo learning game where players learn about musical tempo and timing. Players develop musical awareness and timing skills.",
+      "coreMechanics": [
+        "Tempo learning",
+        "Musical timing",
+        "Tempo recognition",
+        "Musical awareness",
+        "Skill development"
+      ],
+      "suggestedMechanics": [
+        "Interactive tempo tools",
+        "Musical timing systems",
+        "Tempo recognition feedback",
+        "Musical awareness interface",
+        "Skill development progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple slow/fast tempos. Use clear tempo indicators. Provide helpful timing hints."
+    },
+    {
+      "title": "The Pitch Perfect",
+      "genre": "music",
+      "description": "A pitch recognition game where players learn to identify and match musical pitches. Players develop musical ear training and pitch awareness.",
+      "coreMechanics": [
+        "Pitch recognition",
+        "Ear training",
+        "Pitch matching",
+        "Musical awareness",
+        "Skill development"
+      ],
+      "suggestedMechanics": [
+        "Interactive pitch tools",
+        "Ear training systems",
+        "Pitch matching feedback",
+        "Musical awareness interface",
+        "Skill development progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple high/low pitches. Use clear pitch indicators. Provide helpful ear training hints."
+    },
+    {
+      "title": "The Dynamic Director",
+      "genre": "music",
+      "description": "A musical dynamics game where players learn about volume and expression in music. Players develop musical expression and dynamic awareness.",
+      "coreMechanics": [
+        "Dynamic learning",
+        "Musical expression",
+        "Volume control",
+        "Expression awareness",
+        "Musical learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive dynamic tools",
+        "Musical expression systems",
+        "Volume control interface",
+        "Expression awareness feedback",
+        "Musical learning progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple loud/soft dynamics. Use clear dynamic indicators. Provide helpful expression hints."
+    },
+    {
+      "title": "The Scale Explorer",
+      "genre": "music",
+      "description": "A musical scale learning game where players explore different musical scales and their patterns. Players develop musical theory understanding.",
+      "coreMechanics": [
+        "Scale exploration",
+        "Musical theory",
+        "Pattern recognition",
+        "Musical learning",
+        "Theory understanding"
+      ],
+      "suggestedMechanics": [
+        "Interactive scale tools",
+        "Musical theory systems",
+        "Pattern recognition feedback",
+        "Musical learning progression",
+        "Theory understanding interface",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple major scales. Use clear scale indicators. Provide helpful theory hints."
+    },
+    {
+      "title": "The Interval Investigator",
+      "genre": "music",
+      "description": "A musical interval learning game where players learn about the distances between musical notes. Players develop musical theory and ear training.",
+      "coreMechanics": [
+        "Interval learning",
+        "Musical theory",
+        "Ear training",
+        "Distance recognition",
+        "Musical learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive interval tools",
+        "Musical theory systems",
+        "Ear training feedback",
+        "Distance recognition interface",
+        "Musical learning progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple octave intervals. Use clear interval indicators. Provide helpful theory hints."
+    },
+    {
+      "title": "The Chord Constructor",
+      "genre": "music",
+      "description": "A chord building game where players learn to construct different types of musical chords. Players develop musical theory and harmonic understanding.",
+      "coreMechanics": [
+        "Chord construction",
+        "Musical theory",
+        "Harmonic understanding",
+        "Chord recognition",
+        "Musical learning"
+      ],
+      "suggestedMechanics": [
+        "Interactive chord tools",
+        "Musical theory systems",
+        "Harmonic understanding feedback",
+        "Chord recognition interface",
+        "Musical learning progression",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple major chords. Use clear chord indicators. Provide helpful theory hints."
+    },
+    {
+      "title": "The Musical Storyteller",
+      "genre": "music",
+      "description": "A musical storytelling game where players create stories through music and sound. Players develop musical creativity and narrative expression.",
+      "coreMechanics": [
+        "Musical storytelling",
+        "Creative expression",
+        "Narrative building",
+        "Sound creation",
+        "Musical creativity"
+      ],
+      "suggestedMechanics": [
+        "Interactive storytelling tools",
+        "Creative expression systems",
+        "Narrative building interface",
+        "Sound creation tools",
+        "Musical creativity feedback",
+        "Audio effects"
+      ],
+      "developmentTips": "Start with simple 3-scene stories. Use clear musical indicators. Provide helpful storytelling hints."
+    },
+    {
+      "title": "The Visual Poet",
+      "genre": "creative",
+      "description": "A visual poetry game where players create poems using visual elements and imagery. Players develop creative expression and poetic thinking.",
+      "coreMechanics": [
+        "Visual poetry creation",
+        "Creative expression",
+        "Poetic thinking",
+        "Imagery creation",
+        "Artistic expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive poetry tools",
+        "Creative expression systems",
+        "Poetic thinking interface",
+        "Imagery creation tools",
+        "Artistic expression feedback",
+        "Visual effects"
+      ],
+      "developmentTips": "Start with simple 3-line poems. Use inspiring visual elements. Provide helpful poetic hints."
+    },
+    {
+      "title": "The Digital Painter",
+      "genre": "creative",
+      "description": "A digital painting game where players create artwork using digital tools and techniques. Players develop artistic skills and creative expression.",
+      "coreMechanics": [
+        "Digital painting",
+        "Artistic skills",
+        "Creative expression",
+        "Tool mastery",
+        "Artistic development"
+      ],
+      "suggestedMechanics": [
+        "Interactive painting tools",
+        "Artistic skill systems",
+        "Creative expression interface",
+        "Tool mastery feedback",
+        "Artistic development progression",
+        "Visual effects"
+      ],
+      "developmentTips": "Start with simple brush tools. Use clear visual feedback. Provide helpful artistic guidance."
+    },
+    {
+      "title": "The Animation Creator",
+      "genre": "creative",
+      "description": "A simple animation game where players create basic animations and motion. Players develop animation skills and creative expression.",
+      "coreMechanics": [
+        "Animation creation",
+        "Motion design",
+        "Creative expression",
+        "Timeline management",
+        "Visual storytelling"
+      ],
+      "suggestedMechanics": [
+        "Interactive animation tools",
+        "Motion design systems",
+        "Creative expression interface",
+        "Timeline management tools",
+        "Visual storytelling feedback",
+        "Animation effects"
+      ],
+      "developmentTips": "Start with simple 3-frame animations. Use clear timeline indicators. Provide helpful animation hints."
+    },
+    {
+      "title": "The Sculpture Artist",
+      "genre": "creative",
+      "description": "A 3D sculpture game where players create three-dimensional artwork. Players develop spatial thinking and artistic expression.",
+      "coreMechanics": [
+        "3D sculpture creation",
+        "Spatial thinking",
+        "Artistic expression",
+        "Form manipulation",
+        "Creative exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive 3D tools",
+        "Spatial thinking systems",
+        "Artistic expression interface",
+        "Form manipulation tools",
+        "Creative exploration feedback",
+        "3D effects"
+      ],
+      "developmentTips": "Start with simple geometric forms. Use clear 3D indicators. Provide helpful sculpting hints."
+    },
+    {
+      "title": "The Collage Creator",
+      "genre": "creative",
+      "description": "A collage creation game where players combine different elements to create artwork. Players develop composition skills and creative expression.",
+      "coreMechanics": [
+        "Collage creation",
+        "Composition skills",
+        "Creative expression",
+        "Element combination",
+        "Artistic composition"
+      ],
+      "suggestedMechanics": [
+        "Interactive collage tools",
+        "Composition skill systems",
+        "Creative expression interface",
+        "Element combination tools",
+        "Artistic composition feedback",
+        "Visual effects"
+      ],
+      "developmentTips": "Start with simple 3-element collages. Use clear composition guides. Provide helpful artistic hints."
+    },
+    {
+      "title": "The Typography Designer",
+      "genre": "creative",
+      "description": "A typography design game where players create text-based artwork and designs. Players develop design skills and creative expression.",
+      "coreMechanics": [
+        "Typography design",
+        "Design skills",
+        "Creative expression",
+        "Text manipulation",
+        "Visual design"
+      ],
+      "suggestedMechanics": [
+        "Interactive typography tools",
+        "Design skill systems",
+        "Creative expression interface",
+        "Text manipulation tools",
+        "Visual design feedback",
+        "Typography effects"
+      ],
+      "developmentTips": "Start with simple text layouts. Use clear design indicators. Provide helpful typography hints."
+    },
+    {
+      "title": "The Color Harmony",
+      "genre": "creative",
+      "description": "A color harmony game where players create beautiful color combinations and palettes. Players develop color theory and artistic expression.",
+      "coreMechanics": [
+        "Color harmony creation",
+        "Color theory",
+        "Artistic expression",
+        "Palette creation",
+        "Color relationships"
+      ],
+      "suggestedMechanics": [
+        "Interactive color tools",
+        "Color theory systems",
+        "Artistic expression interface",
+        "Palette creation tools",
+        "Color relationship feedback",
+        "Visual effects"
+      ],
+      "developmentTips": "Start with simple 3-color palettes. Use clear color indicators. Provide helpful harmony hints."
+    },
+    {
+      "title": "The Pattern Designer",
+      "genre": "creative",
+      "description": "A pattern design game where players create repeating patterns and designs. Players develop design skills and creative expression.",
+      "coreMechanics": [
+        "Pattern design",
+        "Design skills",
+        "Creative expression",
+        "Repetition creation",
+        "Visual design"
+      ],
+      "suggestedMechanics": [
+        "Interactive pattern tools",
+        "Design skill systems",
+        "Creative expression interface",
+        "Repetition creation tools",
+        "Visual design feedback",
+        "Pattern effects"
+      ],
+      "developmentTips": "Start with simple geometric patterns. Use clear design indicators. Provide helpful pattern hints."
+    },
+    {
+      "title": "The Texture Artist",
+      "genre": "creative",
+      "description": "A texture creation game where players design different textures and surfaces. Players develop artistic skills and creative expression.",
+      "coreMechanics": [
+        "Texture creation",
+        "Artistic skills",
+        "Creative expression",
+        "Surface design",
+        "Material simulation"
+      ],
+      "suggestedMechanics": [
+        "Interactive texture tools",
+        "Artistic skill systems",
+        "Creative expression interface",
+        "Surface design tools",
+        "Material simulation feedback",
+        "Texture effects"
+      ],
+      "developmentTips": "Start with simple geometric textures. Use clear texture indicators. Provide helpful artistic hints."
+    },
+    {
+      "title": "The Light Artist",
+      "genre": "creative",
+      "description": "A light art game where players create artwork using light and shadow. Players develop lighting skills and creative expression.",
+      "coreMechanics": [
+        "Light art creation",
+        "Lighting skills",
+        "Creative expression",
+        "Shadow manipulation",
+        "Light effects"
+      ],
+      "suggestedMechanics": [
+        "Interactive light tools",
+        "Lighting skill systems",
+        "Creative expression interface",
+        "Shadow manipulation tools",
+        "Light effects feedback",
+        "Visual effects"
+      ],
+      "developmentTips": "Start with simple light placement. Use clear lighting indicators. Provide helpful light art hints."
+    },
+    {
+      "title": "The Shadow Master",
+      "genre": "creative",
+      "description": "A shadow art game where players create artwork using shadows and silhouettes. Players develop spatial thinking and creative expression.",
+      "coreMechanics": [
+        "Shadow art creation",
+        "Spatial thinking",
+        "Creative expression",
+        "Silhouette design",
+        "Light manipulation"
+      ],
+      "suggestedMechanics": [
+        "Interactive shadow tools",
+        "Spatial thinking systems",
+        "Creative expression interface",
+        "Silhouette design tools",
+        "Light manipulation feedback",
+        "Shadow effects"
+      ],
+      "developmentTips": "Start with simple hand shadows. Use clear shadow indicators. Provide helpful shadow art hints."
+    },
+    {
+      "title": "The Perspective Painter",
+      "genre": "creative",
+      "description": "A perspective drawing game where players learn about depth and spatial relationships. Players develop spatial reasoning and artistic skills.",
+      "coreMechanics": [
+        "Perspective drawing",
+        "Spatial reasoning",
+        "Artistic skills",
+        "Depth perception",
+        "Spatial relationships"
+      ],
+      "suggestedMechanics": [
+        "Interactive perspective tools",
+        "Spatial reasoning systems",
+        "Artistic skill interface",
+        "Depth perception tools",
+        "Spatial relationship feedback",
+        "Perspective effects"
+      ],
+      "developmentTips": "Start with simple one-point perspective. Use clear perspective guides. Provide helpful drawing hints."
+    },
+    {
+      "title": "The Composition Creator",
+      "genre": "creative",
+      "description": "A composition design game where players learn about visual balance and arrangement. Players develop design skills and artistic expression.",
+      "coreMechanics": [
+        "Composition design",
+        "Design skills",
+        "Artistic expression",
+        "Visual balance",
+        "Element arrangement"
+      ],
+      "suggestedMechanics": [
+        "Interactive composition tools",
+        "Design skill systems",
+        "Artistic expression interface",
+        "Visual balance tools",
+        "Element arrangement feedback",
+        "Composition effects"
+      ],
+      "developmentTips": "Start with simple 3-element compositions. Use clear balance indicators. Provide helpful design hints."
+    },
+    {
+      "title": "The Form Finder",
+      "genre": "creative",
+      "description": "A form recognition game where players identify and create different geometric forms. Players develop spatial thinking and artistic skills.",
+      "coreMechanics": [
+        "Form recognition",
+        "Spatial thinking",
+        "Artistic skills",
+        "Geometric identification",
+        "Form creation"
+      ],
+      "suggestedMechanics": [
+        "Interactive form tools",
+        "Spatial thinking systems",
+        "Artistic skill interface",
+        "Geometric identification tools",
+        "Form creation feedback",
+        "Visual effects"
+      ],
+      "developmentTips": "Start with simple basic shapes. Use clear form indicators. Provide helpful geometric hints."
+    },
+    {
+      "title": "The Line Artist",
+      "genre": "creative",
+      "description": "A line art game where players create artwork using different types of lines. Players develop drawing skills and creative expression.",
+      "coreMechanics": [
+        "Line art creation",
+        "Drawing skills",
+        "Creative expression",
+        "Line variety",
+        "Artistic technique"
+      ],
+      "suggestedMechanics": [
+        "Interactive line tools",
+        "Drawing skill systems",
+        "Creative expression interface",
+        "Line variety tools",
+        "Artistic technique feedback",
+        "Line effects"
+      ],
+      "developmentTips": "Start with simple straight lines. Use clear line indicators. Provide helpful drawing hints."
+    },
+    {
+      "title": "The Space Designer",
+      "genre": "creative",
+      "description": "A space design game where players create and arrange elements in three-dimensional space. Players develop spatial thinking and design skills.",
+      "coreMechanics": [
+        "Space design",
+        "Spatial thinking",
+        "Design skills",
+        "3D arrangement",
+        "Space manipulation"
+      ],
+      "suggestedMechanics": [
+        "Interactive space tools",
+        "Spatial thinking systems",
+        "Design skill interface",
+        "3D arrangement tools",
+        "Space manipulation feedback",
+        "3D effects"
+      ],
+      "developmentTips": "Start with simple 3D placement. Use clear space indicators. Provide helpful design hints."
+    },
+    {
+      "title": "The Movement Artist",
+      "genre": "creative",
+      "description": "A movement art game where players create artwork that suggests motion and energy. Players develop artistic skills and creative expression.",
+      "coreMechanics": [
+        "Movement art creation",
+        "Artistic skills",
+        "Creative expression",
+        "Motion suggestion",
+        "Energy expression"
+      ],
+      "suggestedMechanics": [
+        "Interactive movement tools",
+        "Artistic skill systems",
+        "Creative expression interface",
+        "Motion suggestion tools",
+        "Energy expression feedback",
+        "Movement effects"
+      ],
+      "developmentTips": "Start with simple motion lines. Use clear movement indicators. Provide helpful artistic hints."
+    },
+    {
+      "title": "The Contrast Creator",
+      "genre": "creative",
+      "description": "A contrast design game where players create artwork using different contrasts and comparisons. Players develop design skills and visual awareness.",
+      "coreMechanics": [
+        "Contrast creation",
+        "Design skills",
+        "Visual awareness",
+        "Comparison design",
+        "Visual impact"
+      ],
+      "suggestedMechanics": [
+        "Interactive contrast tools",
+        "Design skill systems",
+        "Visual awareness interface",
+        "Comparison design tools",
+        "Visual impact feedback",
+        "Contrast effects"
+      ],
+      "developmentTips": "Start with simple light/dark contrasts. Use clear contrast indicators. Provide helpful design hints."
+    },
+    {
+      "title": "The Unity Designer",
+      "genre": "creative",
+      "description": "A unity design game where players create artwork with cohesive and harmonious elements. Players develop design skills and artistic expression.",
+      "coreMechanics": [
+        "Unity design creation",
+        "Design skills",
+        "Artistic expression",
+        "Harmony creation",
+        "Cohesive design"
+      ],
+      "suggestedMechanics": [
+        "Interactive unity tools",
+        "Design skill systems",
+        "Artistic expression interface",
+        "Harmony creation tools",
+        "Cohesive design feedback",
+        "Unity effects"
+      ],
+      "developmentTips": "Start with simple color unity. Use clear harmony indicators. Provide helpful design hints."
+    },
+    {
+      "title": "The Emphasis Artist",
+      "genre": "creative",
+      "description": "An emphasis design game where players create artwork with focal points and visual hierarchy. Players develop design skills and artistic expression.",
+      "coreMechanics": [
+        "Emphasis design creation",
+        "Design skills",
+        "Artistic expression",
+        "Focal point creation",
+        "Visual hierarchy"
+      ],
+      "suggestedMechanics": [
+        "Interactive emphasis tools",
+        "Design skill systems",
+        "Artistic expression interface",
+        "Focal point creation tools",
+        "Visual hierarchy feedback",
+        "Emphasis effects"
+      ],
+      "developmentTips": "Start with simple size emphasis. Use clear focal point indicators. Provide helpful design hints."
+    },
+    {
+      "title": "The Rhythm Designer",
+      "genre": "creative",
+      "description": "A rhythm design game where players create artwork with visual rhythm and repetition. Players develop design skills and artistic expression.",
+      "coreMechanics": [
+        "Rhythm design creation",
+        "Design skills",
+        "Artistic expression",
+        "Visual rhythm",
+        "Repetition design"
+      ],
+      "suggestedMechanics": [
+        "Interactive rhythm tools",
+        "Design skill systems",
+        "Artistic expression interface",
+        "Visual rhythm tools",
+        "Repetition design feedback",
+        "Rhythm effects"
+      ],
+      "developmentTips": "Start with simple repeating elements. Use clear rhythm indicators. Provide helpful design hints."
+    },
+    {
+      "title": "The Balance Master",
+      "genre": "creative",
+      "description": "A balance design game where players create artwork with perfect visual balance and harmony. Players develop design skills and artistic expression.",
+      "coreMechanics": [
+        "Balance design creation",
+        "Design skills",
+        "Artistic expression",
+        "Visual balance",
+        "Harmony creation"
+      ],
+      "suggestedMechanics": [
+        "Interactive balance tools",
+        "Design skill systems",
+        "Artistic expression interface",
+        "Visual balance tools",
+        "Harmony creation feedback",
+        "Balance effects"
+      ],
+      "developmentTips": "Start with simple symmetrical balance. Use clear balance indicators. Provide helpful design hints."
+    }
   ]
 }

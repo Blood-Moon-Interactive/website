@@ -2016,5 +2016,1667 @@
       ],
       "developmentTips": "Balance complexity with player guidance. Introduce new systems gradually. Use storytelling or environmental cues to help players understand new mechanics without tutorials."
     }
+  ],
+  "complexity": "intermediate",
+  "ideas": [
+    {
+      "title": "The Quantum Architect",
+      "genre": "puzzle",
+      "description": "A quantum physics puzzle game where players manipulate quantum states and particles to solve complex problems. Players learn about quantum mechanics through interactive experiments.",
+      "coreMechanics": [
+        "Quantum state manipulation",
+        "Particle interaction",
+        "Superposition mechanics",
+        "Quantum entanglement",
+        "Wave function collapse"
+      ],
+      "suggestedMechanics": [
+        "Interactive quantum simulation",
+        "Particle behavior systems",
+        "Quantum measurement tools",
+        "Entanglement mechanics",
+        "Visual quantum effects",
+        "Educational physics content"
+      ],
+      "developmentTips": "Start with simple superposition states. Use clear visual representations of quantum concepts. Include helpful explanations of quantum phenomena."
+    },
+    {
+      "title": "The Neural Network Designer",
+      "genre": "simulation",
+      "description": "An AI development game where players design and train neural networks to solve various problems. Players learn about machine learning and artificial intelligence.",
+      "coreMechanics": [
+        "Neural network design",
+        "Training algorithms",
+        "Data processing",
+        "Model optimization",
+        "Performance evaluation"
+      ],
+      "suggestedMechanics": [
+        "Interactive network builder",
+        "Training simulation systems",
+        "Data visualization tools",
+        "Performance metrics",
+        "Model comparison interface",
+        "Educational AI content"
+      ],
+      "developmentTips": "Start with simple perceptron networks. Use clear visual representations of neural connections. Include helpful explanations of AI concepts."
+    },
+    {
+      "title": "The Genetic Engineer",
+      "genre": "simulation",
+      "description": "A genetic engineering game where players modify organisms and study genetic inheritance. Players learn about genetics, evolution, and bioengineering.",
+      "coreMechanics": [
+        "Genetic modification",
+        "Trait inheritance",
+        "Evolution simulation",
+        "Organism breeding",
+        "Genetic analysis"
+      ],
+      "suggestedMechanics": [
+        "Interactive gene editing",
+        "Inheritance simulation",
+        "Evolution tracking systems",
+        "Breeding mechanics",
+        "Genetic analysis tools",
+        "Educational biology content"
+      ],
+      "developmentTips": "Start with simple dominant/recessive traits. Use clear visual representations of genetic concepts. Include helpful explanations of genetic principles."
+    },
+    {
+      "title": "The Ecosystem Manager",
+      "genre": "simulation",
+      "description": "A complex ecosystem simulation where players manage multiple species and environmental factors. Players learn about ecology and environmental science.",
+      "coreMechanics": [
+        "Species management",
+        "Environmental factors",
+        "Food web dynamics",
+        "Population control",
+        "Habitat management"
+      ],
+      "suggestedMechanics": [
+        "Interactive ecosystem simulation",
+        "Species behavior systems",
+        "Environmental effect mechanics",
+        "Population tracking",
+        "Habitat modification tools",
+        "Educational ecology content"
+      ],
+      "developmentTips": "Start with 3-4 interconnected species. Use clear visual indicators for population changes. Include helpful explanations of ecological relationships."
+    },
+    {
+      "title": "The Economic Strategist",
+      "genre": "strategy",
+      "description": "A complex economic simulation where players manage resources, trade, and economic policies. Players learn about economics and resource management.",
+      "coreMechanics": [
+        "Resource management",
+        "Trade systems",
+        "Economic policies",
+        "Market dynamics",
+        "Strategic planning"
+      ],
+      "suggestedMechanics": [
+        "Interactive economic simulation",
+        "Resource tracking systems",
+        "Trade interface mechanics",
+        "Policy implementation tools",
+        "Market analysis systems",
+        "Educational economics content"
+      ],
+      "developmentTips": "Start with 3-4 basic resources. Use clear visual indicators for economic trends. Include helpful explanations of economic principles."
+    },
+    {
+      "title": "The Political Campaigner",
+      "genre": "strategy",
+      "description": "A political campaign simulation where players manage campaigns, policies, and voter relationships. Players learn about political science and campaign strategy.",
+      "coreMechanics": [
+        "Campaign management",
+        "Policy development",
+        "Voter targeting",
+        "Media relations",
+        "Strategic planning"
+      ],
+      "suggestedMechanics": [
+        "Interactive campaign simulation",
+        "Policy development systems",
+        "Voter analysis tools",
+        "Media interaction mechanics",
+        "Campaign strategy interface",
+        "Educational political content"
+      ],
+      "developmentTips": "Start with simple policy positions. Use clear visual indicators for voter support. Include helpful explanations of political concepts."
+    },
+    {
+      "title": "The Urban Planner",
+      "genre": "simulation",
+      "description": "A city planning simulation where players design and manage urban environments. Players learn about urban planning and sustainable development.",
+      "coreMechanics": [
+        "City design",
+        "Infrastructure management",
+        "Population growth",
+        "Resource planning",
+        "Sustainability goals"
+      ],
+      "suggestedMechanics": [
+        "Interactive city builder",
+        "Infrastructure systems",
+        "Population simulation",
+        "Resource management tools",
+        "Sustainability tracking",
+        "Educational planning content"
+      ],
+      "developmentTips": "Start with small city districts. Use clear visual indicators for population needs. Include helpful explanations of urban planning concepts."
+    },
+    {
+      "title": "The Climate Scientist",
+      "genre": "simulation",
+      "description": "A climate science simulation where players study and predict climate patterns. Players learn about meteorology and climate change.",
+      "coreMechanics": [
+        "Climate modeling",
+        "Weather prediction",
+        "Data analysis",
+        "Pattern recognition",
+        "Scientific research"
+      ],
+      "suggestedMechanics": [
+        "Interactive climate simulation",
+        "Weather modeling systems",
+        "Data analysis tools",
+        "Pattern recognition mechanics",
+        "Research interface",
+        "Educational climate content"
+      ],
+      "developmentTips": "Start with simple weather patterns. Use clear visual indicators for climate data. Include helpful explanations of meteorological concepts."
+    },
+    {
+      "title": "The Archaeological Explorer",
+      "genre": "adventure",
+      "description": "An archaeological adventure where players excavate sites and piece together ancient civilizations. Players learn about archaeology and ancient history.",
+      "coreMechanics": [
+        "Site excavation",
+        "Artifact analysis",
+        "Historical research",
+        "Civilization reconstruction",
+        "Scientific dating"
+      ],
+      "suggestedMechanics": [
+        "Interactive excavation tools",
+        "Artifact analysis systems",
+        "Historical research interface",
+        "Civilization reconstruction mechanics",
+        "Dating simulation tools",
+        "Educational archaeology content"
+      ],
+      "developmentTips": "Start with simple excavation sites. Use clear visual indicators for artifact importance. Include helpful explanations of archaeological methods."
+    },
+    {
+      "title": "The Forensic Investigator",
+      "genre": "mystery",
+      "description": "A forensic science game where players solve crimes using scientific evidence and analysis. Players learn about forensic science and criminal investigation.",
+      "coreMechanics": [
+        "Evidence collection",
+        "Scientific analysis",
+        "Crime scene investigation",
+        "Laboratory testing",
+        "Case solving"
+      ],
+      "suggestedMechanics": [
+        "Interactive evidence collection",
+        "Scientific analysis tools",
+        "Crime scene investigation mechanics",
+        "Laboratory simulation",
+        "Case solving interface",
+        "Educational forensic content"
+      ],
+      "developmentTips": "Start with simple evidence types. Use clear visual indicators for evidence importance. Include helpful explanations of forensic methods."
+    },
+    {
+      "title": "The Cryptography Master",
+      "genre": "puzzle",
+      "description": "A cryptography game where players solve complex codes and learn about encryption methods. Players develop logical thinking and mathematical skills.",
+      "coreMechanics": [
+        "Code breaking",
+        "Encryption methods",
+        "Mathematical analysis",
+        "Pattern recognition",
+        "Logical deduction"
+      ],
+      "suggestedMechanics": [
+        "Interactive code breaking tools",
+        "Encryption simulation systems",
+        "Mathematical analysis interface",
+        "Pattern recognition mechanics",
+        "Logical deduction tools",
+        "Educational cryptography content"
+      ],
+      "developmentTips": "Start with simple substitution ciphers. Use clear visual indicators for code patterns. Include helpful explanations of encryption methods."
+    },
+    {
+      "title": "The Algorithm Designer",
+      "genre": "puzzle",
+      "description": "A programming puzzle game where players design algorithms to solve complex problems. Players learn about computer science and algorithmic thinking.",
+      "coreMechanics": [
+        "Algorithm design",
+        "Problem solving",
+        "Code optimization",
+        "Performance analysis",
+        "Logical thinking"
+      ],
+      "suggestedMechanics": [
+        "Interactive algorithm builder",
+        "Problem solving interface",
+        "Code optimization tools",
+        "Performance analysis systems",
+        "Logical thinking mechanics",
+        "Educational programming content"
+      ],
+      "developmentTips": "Start with simple sorting algorithms. Use clear visual representations of code flow. Include helpful explanations of programming concepts."
+    },
+    {
+      "title": "The Data Scientist",
+      "genre": "simulation",
+      "description": "A data science game where players analyze datasets and discover patterns. Players learn about statistics and data analysis.",
+      "coreMechanics": [
+        "Data analysis",
+        "Statistical modeling",
+        "Pattern discovery",
+        "Visualization creation",
+        "Hypothesis testing"
+      ],
+      "suggestedMechanics": [
+        "Interactive data analysis tools",
+        "Statistical modeling systems",
+        "Pattern discovery mechanics",
+        "Visualization creation tools",
+        "Hypothesis testing interface",
+        "Educational statistics content"
+      ],
+      "developmentTips": "Start with simple datasets. Use clear visual indicators for data patterns. Include helpful explanations of statistical concepts."
+    },
+    {
+      "title": "The Network Architect",
+      "genre": "simulation",
+      "description": "A network design game where players build and optimize computer networks. Players learn about networking and system architecture.",
+      "coreMechanics": [
+        "Network design",
+        "System optimization",
+        "Traffic management",
+        "Security implementation",
+        "Performance monitoring"
+      ],
+      "suggestedMechanics": [
+        "Interactive network builder",
+        "System optimization tools",
+        "Traffic management systems",
+        "Security implementation mechanics",
+        "Performance monitoring interface",
+        "Educational networking content"
+      ],
+      "developmentTips": "Start with simple network topologies. Use clear visual indicators for network performance. Include helpful explanations of networking concepts."
+    },
+    {
+      "title": "The Game Theory Strategist",
+      "genre": "strategy",
+      "description": "A game theory simulation where players explore strategic decision-making and competitive scenarios. Players learn about economics and strategic thinking.",
+      "coreMechanics": [
+        "Strategic decision-making",
+        "Competitive scenarios",
+        "Payoff analysis",
+        "Nash equilibrium",
+        "Strategic planning"
+      ],
+      "suggestedMechanics": [
+        "Interactive strategy simulation",
+        "Competitive scenario systems",
+        "Payoff analysis tools",
+        "Equilibrium calculation mechanics",
+        "Strategic planning interface",
+        "Educational game theory content"
+      ],
+      "developmentTips": "Start with simple prisoner's dilemma scenarios. Use clear visual indicators for strategic outcomes. Include helpful explanations of game theory concepts."
+    },
+    {
+      "title": "The Behavioral Economist",
+      "genre": "simulation",
+      "description": "A behavioral economics game where players study human decision-making patterns and cognitive biases. Players learn about psychology and economic behavior.",
+      "coreMechanics": [
+        "Decision-making analysis",
+        "Cognitive bias study",
+        "Behavioral patterns",
+        "Experimental design",
+        "Statistical analysis"
+      ],
+      "suggestedMechanics": [
+        "Interactive decision simulation",
+        "Bias identification systems",
+        "Behavioral pattern analysis",
+        "Experimental design tools",
+        "Statistical analysis interface",
+        "Educational psychology content"
+      ],
+      "developmentTips": "Start with simple choice scenarios. Use clear visual indicators for decision patterns. Include helpful explanations of behavioral concepts."
+    },
+    {
+      "title": "The Social Network Analyst",
+      "genre": "simulation",
+      "description": "A social network analysis game where players study relationships and influence patterns in social systems. Players learn about sociology and network theory.",
+      "coreMechanics": [
+        "Network analysis",
+        "Relationship mapping",
+        "Influence tracking",
+        "Community detection",
+        "Social dynamics"
+      ],
+      "suggestedMechanics": [
+        "Interactive network visualization",
+        "Relationship mapping tools",
+        "Influence tracking systems",
+        "Community detection algorithms",
+        "Social dynamics simulation",
+        "Educational sociology content"
+      ],
+      "developmentTips": "Start with simple 10-person networks. Use clear visual indicators for relationship strength. Include helpful explanations of social network concepts."
+    },
+    {
+      "title": "The Cognitive Psychologist",
+      "genre": "simulation",
+      "description": "A cognitive psychology game where players study mental processes and cognitive functions. Players learn about psychology and brain function.",
+      "coreMechanics": [
+        "Cognitive testing",
+        "Memory experiments",
+        "Attention studies",
+        "Problem solving",
+        "Mental processing"
+      ],
+      "suggestedMechanics": [
+        "Interactive cognitive tests",
+        "Memory experiment systems",
+        "Attention study mechanics",
+        "Problem solving interface",
+        "Mental processing simulation",
+        "Educational psychology content"
+      ],
+      "developmentTips": "Start with simple memory tests. Use clear visual indicators for cognitive performance. Include helpful explanations of psychological concepts."
+    },
+    {
+      "title": "The Linguistics Researcher",
+      "genre": "educational",
+      "description": "A linguistics game where players study language patterns and linguistic structures. Players learn about language science and communication.",
+      "coreMechanics": [
+        "Language analysis",
+        "Pattern recognition",
+        "Grammar study",
+        "Phonetics exploration",
+        "Semantic analysis"
+      ],
+      "suggestedMechanics": [
+        "Interactive language analysis",
+        "Pattern recognition systems",
+        "Grammar study tools",
+        "Phonetics exploration interface",
+        "Semantic analysis mechanics",
+        "Educational linguistics content"
+      ],
+      "developmentTips": "Start with simple sentence structures. Use clear visual indicators for linguistic patterns. Include helpful explanations of language concepts."
+    },
+    {
+      "title": "The Philosophy Explorer",
+      "genre": "educational",
+      "description": "A philosophy game where players explore ethical dilemmas and philosophical concepts. Players develop critical thinking and moral reasoning.",
+      "coreMechanics": [
+        "Ethical reasoning",
+        "Philosophical debate",
+        "Critical thinking",
+        "Moral decision-making",
+        "Concept exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive ethical scenarios",
+        "Philosophical debate systems",
+        "Critical thinking tools",
+        "Moral decision interface",
+        "Concept exploration mechanics",
+        "Educational philosophy content"
+      ],
+      "developmentTips": "Start with simple ethical dilemmas. Use clear visual indicators for reasoning paths. Include helpful explanations of philosophical concepts."
+    },
+    {
+      "title": "The Quantum Cryptographer",
+      "genre": "puzzle",
+      "description": "A quantum cryptography game where players use quantum mechanics to create unbreakable encryption. Players learn about quantum computing and cryptography.",
+      "coreMechanics": [
+        "Quantum encryption",
+        "Key distribution",
+        "Quantum measurement",
+        "Security analysis",
+        "Quantum protocols"
+      ],
+      "suggestedMechanics": [
+        "Interactive quantum encryption",
+        "Key distribution simulation",
+        "Quantum measurement tools",
+        "Security analysis systems",
+        "Quantum protocol mechanics",
+        "Educational quantum content"
+      ],
+      "developmentTips": "Start with simple quantum key distribution. Use clear visual representations of quantum states. Include helpful explanations of quantum concepts."
+    },
+    {
+      "title": "The Blockchain Architect",
+      "genre": "simulation",
+      "description": "A blockchain development game where players build and manage decentralized systems. Players learn about cryptocurrency and distributed systems.",
+      "coreMechanics": [
+        "Blockchain creation",
+        "Smart contract development",
+        "Consensus mechanisms",
+        "Transaction validation",
+        "System security"
+      ],
+      "suggestedMechanics": [
+        "Interactive blockchain builder",
+        "Smart contract development tools",
+        "Consensus mechanism simulation",
+        "Transaction validation systems",
+        "Security analysis interface",
+        "Educational blockchain content"
+      ],
+      "developmentTips": "Start with simple proof-of-work systems. Use clear visual indicators for blockchain structure. Include helpful explanations of blockchain concepts."
+    },
+    {
+      "title": "The Cybersecurity Analyst",
+      "genre": "strategy",
+      "description": "A cybersecurity game where players defend systems against various cyber threats. Players learn about network security and threat analysis.",
+      "coreMechanics": [
+        "Threat detection",
+        "Vulnerability assessment",
+        "Security implementation",
+        "Incident response",
+        "Risk management"
+      ],
+      "suggestedMechanics": [
+        "Interactive threat detection",
+        "Vulnerability assessment tools",
+        "Security implementation systems",
+        "Incident response mechanics",
+        "Risk management interface",
+        "Educational security content"
+      ],
+      "developmentTips": "Start with simple malware detection. Use clear visual indicators for security threats. Include helpful explanations of cybersecurity concepts."
+    },
+    {
+      "title": "The Machine Learning Engineer",
+      "genre": "simulation",
+      "description": "A machine learning game where players train and optimize AI models for various tasks. Players learn about AI development and model training.",
+      "coreMechanics": [
+        "Model training",
+        "Feature engineering",
+        "Hyperparameter tuning",
+        "Performance evaluation",
+        "Model deployment"
+      ],
+      "suggestedMechanics": [
+        "Interactive model training",
+        "Feature engineering tools",
+        "Hyperparameter tuning systems",
+        "Performance evaluation interface",
+        "Model deployment mechanics",
+        "Educational AI content"
+      ],
+      "developmentTips": "Start with simple linear regression models. Use clear visual indicators for model performance. Include helpful explanations of ML concepts."
+    },
+    {
+      "title": "The Robotics Engineer",
+      "genre": "simulation",
+      "description": "A robotics game where players design and program robots for various tasks. Players learn about robotics and automation.",
+      "coreMechanics": [
+        "Robot design",
+        "Programming logic",
+        "Sensor integration",
+        "Task automation",
+        "System optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive robot designer",
+        "Programming interface",
+        "Sensor integration tools",
+        "Task automation systems",
+        "System optimization mechanics",
+        "Educational robotics content"
+      ],
+      "developmentTips": "Start with simple wheeled robots. Use clear visual indicators for robot behavior. Include helpful explanations of robotics concepts."
+    },
+    {
+      "title": "The Nanotechnology Researcher",
+      "genre": "simulation",
+      "description": "A nanotechnology game where players manipulate matter at the molecular level. Players learn about nanoscience and molecular engineering.",
+      "coreMechanics": [
+        "Molecular manipulation",
+        "Nanostructure design",
+        "Material properties",
+        "Quantum effects",
+        "Precision engineering"
+      ],
+      "suggestedMechanics": [
+        "Interactive molecular manipulation",
+        "Nanostructure design tools",
+        "Material property analysis",
+        "Quantum effect simulation",
+        "Precision engineering interface",
+        "Educational nanoscience content"
+      ],
+      "developmentTips": "Start with simple molecular structures. Use clear visual representations of nanoscale objects. Include helpful explanations of nanoscience concepts."
+    },
+    {
+      "title": "The Astrophysics Explorer",
+      "genre": "simulation",
+      "description": "An astrophysics game where players study celestial objects and cosmic phenomena. Players learn about astronomy and space science.",
+      "coreMechanics": [
+        "Celestial observation",
+        "Data analysis",
+        "Cosmic modeling",
+        "Telescope operation",
+        "Space exploration"
+      ],
+      "suggestedMechanics": [
+        "Interactive telescope simulation",
+        "Data analysis tools",
+        "Cosmic modeling systems",
+        "Telescope operation interface",
+        "Space exploration mechanics",
+        "Educational astronomy content"
+      ],
+      "developmentTips": "Start with simple planetary observations. Use clear visual indicators for celestial objects. Include helpful explanations of astronomical concepts."
+    },
+    {
+      "title": "The Biotech Innovator",
+      "genre": "simulation",
+      "description": "A biotechnology game where players develop new medical treatments and biological solutions. Players learn about biotechnology and medical research.",
+      "coreMechanics": [
+        "Drug development",
+        "Genetic therapy",
+        "Clinical trials",
+        "Regulatory compliance",
+        "Innovation management"
+      ],
+      "suggestedMechanics": [
+        "Interactive drug development",
+        "Genetic therapy tools",
+        "Clinical trial simulation",
+        "Regulatory compliance systems",
+        "Innovation management interface",
+        "Educational biotech content"
+      ],
+      "developmentTips": "Start with simple drug discovery processes. Use clear visual indicators for molecular interactions. Include helpful explanations of biotech concepts."
+    },
+    {
+      "title": "The Environmental Engineer",
+      "genre": "simulation",
+      "description": "An environmental engineering game where players solve environmental challenges and develop sustainable solutions. Players learn about environmental science and engineering.",
+      "coreMechanics": [
+        "Environmental assessment",
+        "Solution design",
+        "Impact analysis",
+        "Sustainability planning",
+        "Resource optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive environmental assessment",
+        "Solution design tools",
+        "Impact analysis systems",
+        "Sustainability planning interface",
+        "Resource optimization mechanics",
+        "Educational environmental content"
+      ],
+      "developmentTips": "Start with simple pollution reduction scenarios. Use clear visual indicators for environmental impact. Include helpful explanations of environmental concepts."
+    },
+    {
+      "title": "The Materials Scientist",
+      "genre": "simulation",
+      "description": "A materials science game where players develop new materials with specific properties. Players learn about material science and engineering.",
+      "coreMechanics": [
+        "Material synthesis",
+        "Property testing",
+        "Structure analysis",
+        "Performance optimization",
+        "Innovation development"
+      ],
+      "suggestedMechanics": [
+        "Interactive material synthesis",
+        "Property testing tools",
+        "Structure analysis systems",
+        "Performance optimization interface",
+        "Innovation development mechanics",
+        "Educational materials content"
+      ],
+      "developmentTips": "Start with simple composite materials. Use clear visual indicators for material properties. Include helpful explanations of materials science concepts."
+    },
+    {
+      "title": "The Virtual Reality Architect",
+      "genre": "simulation",
+      "description": "A VR development game where players design and build immersive virtual environments. Players learn about VR technology and spatial design.",
+      "coreMechanics": [
+        "VR environment design",
+        "Spatial planning",
+        "Interactive elements",
+        "User experience design",
+        "Immersion creation"
+      ],
+      "suggestedMechanics": [
+        "Interactive VR builder",
+        "Spatial design tools",
+        "Interactive element systems",
+        "UX design interface",
+        "Immersion mechanics",
+        "Educational VR content"
+      ],
+      "developmentTips": "Start with simple room-scale environments. Use clear visual indicators for spatial relationships. Include helpful explanations of VR concepts."
+    },
+    {
+      "title": "The Augmented Reality Designer",
+      "genre": "simulation",
+      "description": "An AR development game where players create augmented reality experiences and overlays. Players learn about AR technology and digital overlay design.",
+      "coreMechanics": [
+        "AR overlay design",
+        "Digital content creation",
+        "Real-world integration",
+        "Interactive elements",
+        "Spatial anchoring"
+      ],
+      "suggestedMechanics": [
+        "Interactive AR designer",
+        "Digital content tools",
+        "Real-world integration systems",
+        "Interactive element mechanics",
+        "Spatial anchoring interface",
+        "Educational AR content"
+      ],
+      "developmentTips": "Start with simple object overlays. Use clear visual indicators for AR elements. Include helpful explanations of AR concepts."
+    },
+    {
+      "title": "The Internet of Things Engineer",
+      "genre": "simulation",
+      "description": "An IoT development game where players design and connect smart devices and systems. Players learn about IoT technology and device networking.",
+      "coreMechanics": [
+        "Device design",
+        "Network connectivity",
+        "Data collection",
+        "Automation systems",
+        "Security implementation"
+      ],
+      "suggestedMechanics": [
+        "Interactive device designer",
+        "Network connectivity tools",
+        "Data collection systems",
+        "Automation mechanics",
+        "Security implementation interface",
+        "Educational IoT content"
+      ],
+      "developmentTips": "Start with simple sensor devices. Use clear visual indicators for network connections. Include helpful explanations of IoT concepts."
+    },
+    {
+      "title": "The Cloud Computing Architect",
+      "genre": "simulation",
+      "description": "A cloud computing game where players design and manage cloud infrastructure and services. Players learn about cloud technology and distributed systems.",
+      "coreMechanics": [
+        "Infrastructure design",
+        "Service management",
+        "Scalability planning",
+        "Security implementation",
+        "Performance optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive infrastructure designer",
+        "Service management tools",
+        "Scalability planning systems",
+        "Security implementation interface",
+        "Performance optimization mechanics",
+        "Educational cloud content"
+      ],
+      "developmentTips": "Start with simple single-server deployments. Use clear visual indicators for service connections. Include helpful explanations of cloud concepts."
+    },
+    {
+      "title": "The Edge Computing Specialist",
+      "genre": "simulation",
+      "description": "An edge computing game where players optimize data processing at the network edge. Players learn about edge computing and distributed processing.",
+      "coreMechanics": [
+        "Edge node deployment",
+        "Data processing optimization",
+        "Latency management",
+        "Resource allocation",
+        "Network optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive edge node deployment",
+        "Data processing optimization tools",
+        "Latency management systems",
+        "Resource allocation interface",
+        "Network optimization mechanics",
+        "Educational edge computing content"
+      ],
+      "developmentTips": "Start with simple single-edge-node scenarios. Use clear visual indicators for processing locations. Include helpful explanations of edge computing concepts."
+    },
+    {
+      "title": "The Digital Twin Engineer",
+      "genre": "simulation",
+      "description": "A digital twin development game where players create virtual replicas of physical systems. Players learn about digital twin technology and system modeling.",
+      "coreMechanics": [
+        "System modeling",
+        "Real-time synchronization",
+        "Predictive analytics",
+        "Performance monitoring",
+        "Optimization simulation"
+      ],
+      "suggestedMechanics": [
+        "Interactive system modeler",
+        "Real-time sync tools",
+        "Predictive analytics systems",
+        "Performance monitoring interface",
+        "Optimization simulation mechanics",
+        "Educational digital twin content"
+      ],
+      "developmentTips": "Start with simple mechanical systems. Use clear visual indicators for system states. Include helpful explanations of digital twin concepts."
+    },
+    {
+      "title": "The 5G Network Designer",
+      "genre": "simulation",
+      "description": "A 5G network design game where players plan and optimize next-generation wireless networks. Players learn about 5G technology and network infrastructure.",
+      "coreMechanics": [
+        "Network planning",
+        "Infrastructure deployment",
+        "Spectrum management",
+        "Performance optimization",
+        "Coverage analysis"
+      ],
+      "suggestedMechanics": [
+        "Interactive network planner",
+        "Infrastructure deployment tools",
+        "Spectrum management systems",
+        "Performance optimization interface",
+        "Coverage analysis mechanics",
+        "Educational 5G content"
+      ],
+      "developmentTips": "Start with simple single-cell deployments. Use clear visual indicators for signal strength. Include helpful explanations of 5G concepts."
+    },
+    {
+      "title": "The Autonomous Vehicle Engineer",
+      "genre": "simulation",
+      "description": "An autonomous vehicle development game where players design and program self-driving systems. Players learn about autonomous technology and vehicle control.",
+      "coreMechanics": [
+        "Sensor integration",
+        "Path planning",
+        "Decision making",
+        "Safety systems",
+        "Performance optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive sensor integration",
+        "Path planning tools",
+        "Decision making systems",
+        "Safety system interface",
+        "Performance optimization mechanics",
+        "Educational autonomous vehicle content"
+      ],
+      "developmentTips": "Start with simple obstacle avoidance. Use clear visual indicators for sensor data. Include helpful explanations of autonomous vehicle concepts."
+    },
+    {
+      "title": "The Drone Fleet Manager",
+      "genre": "simulation",
+      "description": "A drone fleet management game where players coordinate multiple autonomous drones. Players learn about drone technology and fleet coordination.",
+      "coreMechanics": [
+        "Fleet coordination",
+        "Mission planning",
+        "Autonomous navigation",
+        "Payload management",
+        "Safety protocols"
+      ],
+      "suggestedMechanics": [
+        "Interactive fleet coordinator",
+        "Mission planning tools",
+        "Autonomous navigation systems",
+        "Payload management interface",
+        "Safety protocol mechanics",
+        "Educational drone content"
+      ],
+      "developmentTips": "Start with simple 2-3 drone fleets. Use clear visual indicators for drone positions. Include helpful explanations of drone technology concepts."
+    },
+    {
+      "title": "The Smart City Planner",
+      "genre": "simulation",
+      "description": "A smart city development game where players integrate technology into urban infrastructure. Players learn about smart city technology and urban innovation.",
+      "coreMechanics": [
+        "Infrastructure integration",
+        "Technology deployment",
+        "Data management",
+        "Service optimization",
+        "Sustainability planning"
+      ],
+      "suggestedMechanics": [
+        "Interactive infrastructure integrator",
+        "Technology deployment tools",
+        "Data management systems",
+        "Service optimization interface",
+        "Sustainability planning mechanics",
+        "Educational smart city content"
+      ],
+      "developmentTips": "Start with simple traffic management systems. Use clear visual indicators for technology integration. Include helpful explanations of smart city concepts."
+    },
+    {
+      "title": "The Quantum Computing Developer",
+      "genre": "simulation",
+      "description": "A quantum computing game where players program quantum algorithms and solve complex problems. Players learn about quantum computing and quantum algorithms.",
+      "coreMechanics": [
+        "Quantum algorithm design",
+        "Qubit manipulation",
+        "Quantum circuit design",
+        "Error correction",
+        "Quantum optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive quantum algorithm designer",
+        "Qubit manipulation tools",
+        "Quantum circuit builder",
+        "Error correction systems",
+        "Quantum optimization interface",
+        "Educational quantum computing content"
+      ],
+      "developmentTips": "Start with simple single-qubit operations. Use clear visual representations of quantum states. Include helpful explanations of quantum computing concepts."
+    },
+    {
+      "title": "The Bioinformatics Analyst",
+      "genre": "simulation",
+      "description": "A bioinformatics game where players analyze biological data and discover genetic patterns. Players learn about bioinformatics and computational biology.",
+      "coreMechanics": [
+        "Sequence analysis",
+        "Pattern recognition",
+        "Data visualization",
+        "Statistical analysis",
+        "Database searching"
+      ],
+      "suggestedMechanics": [
+        "Interactive sequence analyzer",
+        "Pattern recognition tools",
+        "Data visualization systems",
+        "Statistical analysis interface",
+        "Database search mechanics",
+        "Educational bioinformatics content"
+      ],
+      "developmentTips": "Start with simple DNA sequence analysis. Use clear visual indicators for genetic patterns. Include helpful explanations of bioinformatics concepts."
+    },
+    {
+      "title": "The Computational Chemist",
+      "genre": "simulation",
+      "description": "A computational chemistry game where players simulate molecular interactions and chemical reactions. Players learn about computational chemistry and molecular modeling.",
+      "coreMechanics": [
+        "Molecular modeling",
+        "Chemical simulation",
+        "Reaction prediction",
+        "Energy calculation",
+        "Structure optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive molecular modeler",
+        "Chemical simulation tools",
+        "Reaction prediction systems",
+        "Energy calculation interface",
+        "Structure optimization mechanics",
+        "Educational computational chemistry content"
+      ],
+      "developmentTips": "Start with simple molecular structures. Use clear visual representations of molecules. Include helpful explanations of computational chemistry concepts."
+    },
+    {
+      "title": "The Computational Physicist",
+      "genre": "simulation",
+      "description": "A computational physics game where players simulate physical systems and phenomena. Players learn about computational physics and numerical methods.",
+      "coreMechanics": [
+        "Physical simulation",
+        "Numerical methods",
+        "System modeling",
+        "Data analysis",
+        "Visualization creation"
+      ],
+      "suggestedMechanics": [
+        "Interactive physical simulator",
+        "Numerical method tools",
+        "System modeling interface",
+        "Data analysis systems",
+        "Visualization creation mechanics",
+        "Educational computational physics content"
+      ],
+      "developmentTips": "Start with simple particle systems. Use clear visual indicators for physical properties. Include helpful explanations of computational physics concepts."
+    },
+    {
+      "title": "The Computational Mathematician",
+      "genre": "simulation",
+      "description": "A computational mathematics game where players solve complex mathematical problems using computational methods. Players learn about numerical analysis and mathematical computation.",
+      "coreMechanics": [
+        "Numerical analysis",
+        "Algorithm implementation",
+        "Problem solving",
+        "Error analysis",
+        "Optimization techniques"
+      ],
+      "suggestedMechanics": [
+        "Interactive numerical analyzer",
+        "Algorithm implementation tools",
+        "Problem solving interface",
+        "Error analysis systems",
+        "Optimization technique mechanics",
+        "Educational computational mathematics content"
+      ],
+      "developmentTips": "Start with simple numerical integration. Use clear visual indicators for mathematical results. Include helpful explanations of computational mathematics concepts."
+    },
+    {
+      "title": "The Digital Signal Processor",
+      "genre": "simulation",
+      "description": "A digital signal processing game where players design and implement signal processing algorithms. Players learn about DSP and signal analysis.",
+      "coreMechanics": [
+        "Signal analysis",
+        "Filter design",
+        "Algorithm implementation",
+        "Frequency analysis",
+        "Noise reduction"
+      ],
+      "suggestedMechanics": [
+        "Interactive signal analyzer",
+        "Filter design tools",
+        "Algorithm implementation interface",
+        "Frequency analysis systems",
+        "Noise reduction mechanics",
+        "Educational DSP content"
+      ],
+      "developmentTips": "Start with simple audio signals. Use clear visual indicators for signal properties. Include helpful explanations of DSP concepts."
+    },
+    {
+      "title": "The Computer Vision Engineer",
+      "genre": "simulation",
+      "description": "A computer vision game where players develop image processing and object recognition systems. Players learn about computer vision and image analysis.",
+      "coreMechanics": [
+        "Image processing",
+        "Feature extraction",
+        "Object recognition",
+        "Pattern matching",
+        "Algorithm optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive image processor",
+        "Feature extraction tools",
+        "Object recognition systems",
+        "Pattern matching interface",
+        "Algorithm optimization mechanics",
+        "Educational computer vision content"
+      ],
+      "developmentTips": "Start with simple edge detection. Use clear visual indicators for image features. Include helpful explanations of computer vision concepts."
+    },
+    {
+      "title": "The Natural Language Processor",
+      "genre": "simulation",
+      "description": "A natural language processing game where players develop text analysis and language understanding systems. Players learn about NLP and computational linguistics.",
+      "coreMechanics": [
+        "Text analysis",
+        "Language modeling",
+        "Sentiment analysis",
+        "Entity recognition",
+        "Machine translation"
+      ],
+      "suggestedMechanics": [
+        "Interactive text analyzer",
+        "Language modeling tools",
+        "Sentiment analysis systems",
+        "Entity recognition interface",
+        "Machine translation mechanics",
+        "Educational NLP content"
+      ],
+      "developmentTips": "Start with simple text classification. Use clear visual indicators for language patterns. Include helpful explanations of NLP concepts."
+    },
+    {
+      "title": "The Speech Recognition Engineer",
+      "genre": "simulation",
+      "description": "A speech recognition game where players develop systems that understand and process human speech. Players learn about speech technology and audio processing.",
+      "coreMechanics": [
+        "Audio processing",
+        "Feature extraction",
+        "Pattern recognition",
+        "Language modeling",
+        "Accuracy optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive audio processor",
+        "Feature extraction tools",
+        "Pattern recognition systems",
+        "Language modeling interface",
+        "Accuracy optimization mechanics",
+        "Educational speech recognition content"
+      ],
+      "developmentTips": "Start with simple word recognition. Use clear visual indicators for audio features. Include helpful explanations of speech recognition concepts."
+    },
+    {
+      "title": "The Recommendation System Designer",
+      "genre": "simulation",
+      "description": "A recommendation system game where players design algorithms that suggest relevant content to users. Players learn about recommendation algorithms and user behavior analysis.",
+      "coreMechanics": [
+        "User behavior analysis",
+        "Content analysis",
+        "Algorithm design",
+        "Performance evaluation",
+        "Personalization optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive behavior analyzer",
+        "Content analysis tools",
+        "Algorithm design interface",
+        "Performance evaluation systems",
+        "Personalization optimization mechanics",
+        "Educational recommendation system content"
+      ],
+      "developmentTips": "Start with simple collaborative filtering. Use clear visual indicators for user preferences. Include helpful explanations of recommendation system concepts."
+    },
+    {
+      "title": "The Search Engine Optimizer",
+      "genre": "simulation",
+      "description": "A search engine optimization game where players optimize content for better search engine rankings. Players learn about SEO and digital marketing.",
+      "coreMechanics": [
+        "Content optimization",
+        "Keyword analysis",
+        "Ranking factors",
+        "Performance tracking",
+        "Strategy development"
+      ],
+      "suggestedMechanics": [
+        "Interactive content optimizer",
+        "Keyword analysis tools",
+        "Ranking factor systems",
+        "Performance tracking interface",
+        "Strategy development mechanics",
+        "Educational SEO content"
+      ],
+      "developmentTips": "Start with simple keyword optimization. Use clear visual indicators for ranking factors. Include helpful explanations of SEO concepts."
+    },
+    {
+      "title": "The Digital Marketing Strategist",
+      "genre": "strategy",
+      "description": "A digital marketing game where players develop comprehensive marketing campaigns across multiple channels. Players learn about digital marketing and campaign management.",
+      "coreMechanics": [
+        "Campaign planning",
+        "Channel management",
+        "Audience targeting",
+        "Performance analysis",
+        "Budget optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive campaign planner",
+        "Channel management tools",
+        "Audience targeting systems",
+        "Performance analysis interface",
+        "Budget optimization mechanics",
+        "Educational digital marketing content"
+      ],
+      "developmentTips": "Start with simple single-channel campaigns. Use clear visual indicators for campaign performance. Include helpful explanations of digital marketing concepts."
+    },
+    {
+      "title": "The Social Media Manager",
+      "genre": "simulation",
+      "description": "A social media management game where players manage social media presence and engagement. Players learn about social media strategy and community management.",
+      "coreMechanics": [
+        "Content creation",
+        "Community management",
+        "Engagement tracking",
+        "Platform optimization",
+        "Strategy development"
+      ],
+      "suggestedMechanics": [
+        "Interactive content creator",
+        "Community management tools",
+        "Engagement tracking systems",
+        "Platform optimization interface",
+        "Strategy development mechanics",
+        "Educational social media content"
+      ],
+      "developmentTips": "Start with simple content scheduling. Use clear visual indicators for engagement metrics. Include helpful explanations of social media concepts."
+    },
+    {
+      "title": "The E-commerce Optimizer",
+      "genre": "simulation",
+      "description": "An e-commerce optimization game where players improve online store performance and user experience. Players learn about e-commerce and conversion optimization.",
+      "coreMechanics": [
+        "Store optimization",
+        "User experience design",
+        "Conversion tracking",
+        "Performance analysis",
+        "A/B testing"
+      ],
+      "suggestedMechanics": [
+        "Interactive store optimizer",
+        "UX design tools",
+        "Conversion tracking systems",
+        "Performance analysis interface",
+        "A/B testing mechanics",
+        "Educational e-commerce content"
+      ],
+      "developmentTips": "Start with simple product page optimization. Use clear visual indicators for conversion rates. Include helpful explanations of e-commerce concepts."
+    },
+    {
+      "title": "The Content Strategy Manager",
+      "genre": "strategy",
+      "description": "A content strategy game where players develop and manage content marketing campaigns. Players learn about content marketing and editorial planning.",
+      "coreMechanics": [
+        "Content planning",
+        "Editorial calendar",
+        "Audience research",
+        "Performance measurement",
+        "Strategy optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive content planner",
+        "Editorial calendar tools",
+        "Audience research systems",
+        "Performance measurement interface",
+        "Strategy optimization mechanics",
+        "Educational content strategy content"
+      ],
+      "developmentTips": "Start with simple blog content planning. Use clear visual indicators for content performance. Include helpful explanations of content strategy concepts."
+    },
+    {
+      "title": "The User Experience Designer",
+      "genre": "simulation",
+      "description": "A UX design game where players create user-centered design solutions and improve user experiences. Players learn about UX design and human-computer interaction.",
+      "coreMechanics": [
+        "User research",
+        "Interface design",
+        "Usability testing",
+        "User journey mapping",
+        "Design iteration"
+      ],
+      "suggestedMechanics": [
+        "Interactive user researcher",
+        "Interface design tools",
+        "Usability testing systems",
+        "User journey mapping interface",
+        "Design iteration mechanics",
+        "Educational UX content"
+      ],
+      "developmentTips": "Start with simple wireframe creation. Use clear visual indicators for user flows. Include helpful explanations of UX design concepts."
+    },
+    {
+      "title": "The Information Architect",
+      "genre": "simulation",
+      "description": "An information architecture game where players organize and structure information for optimal user navigation. Players learn about information architecture and content organization.",
+      "coreMechanics": [
+        "Content organization",
+        "Navigation design",
+        "Information hierarchy",
+        "User flow optimization",
+        "Structure testing"
+      ],
+      "suggestedMechanics": [
+        "Interactive content organizer",
+        "Navigation design tools",
+        "Information hierarchy systems",
+        "User flow optimization interface",
+        "Structure testing mechanics",
+        "Educational information architecture content"
+      ],
+      "developmentTips": "Start with simple site map creation. Use clear visual indicators for information hierarchy. Include helpful explanations of information architecture concepts."
+    },
+    {
+      "title": "The Accessibility Specialist",
+      "genre": "simulation",
+      "description": "An accessibility game where players design inclusive digital experiences for users with disabilities. Players learn about accessibility standards and inclusive design.",
+      "coreMechanics": [
+        "Accessibility testing",
+        "Inclusive design",
+        "Compliance checking",
+        "User simulation",
+        "Improvement implementation"
+      ],
+      "suggestedMechanics": [
+        "Interactive accessibility tester",
+        "Inclusive design tools",
+        "Compliance checking systems",
+        "User simulation interface",
+        "Improvement implementation mechanics",
+        "Educational accessibility content"
+      ],
+      "developmentTips": "Start with simple screen reader compatibility. Use clear visual indicators for accessibility features. Include helpful explanations of accessibility concepts."
+    },
+    {
+      "title": "The Performance Optimizer",
+      "genre": "simulation",
+      "description": "A performance optimization game where players improve system and application performance. Players learn about performance engineering and optimization techniques.",
+      "coreMechanics": [
+        "Performance monitoring",
+        "Bottleneck identification",
+        "Optimization implementation",
+        "Testing and validation",
+        "Performance tracking"
+      ],
+      "suggestedMechanics": [
+        "Interactive performance monitor",
+        "Bottleneck identification tools",
+        "Optimization implementation systems",
+        "Testing and validation interface",
+        "Performance tracking mechanics",
+        "Educational performance optimization content"
+      ],
+      "developmentTips": "Start with simple load time optimization. Use clear visual indicators for performance metrics. Include helpful explanations of performance optimization concepts."
+    },
+    {
+      "title": "The Security Architect",
+      "genre": "strategy",
+      "description": "A security architecture game where players design secure systems and implement security measures. Players learn about cybersecurity and secure system design.",
+      "coreMechanics": [
+        "Threat modeling",
+        "Security design",
+        "Vulnerability assessment",
+        "Security implementation",
+        "Risk management"
+      ],
+      "suggestedMechanics": [
+        "Interactive threat modeler",
+        "Security design tools",
+        "Vulnerability assessment systems",
+        "Security implementation interface",
+        "Risk management mechanics",
+        "Educational security architecture content"
+      ],
+      "developmentTips": "Start with simple authentication systems. Use clear visual indicators for security threats. Include helpful explanations of security architecture concepts."
+    },
+    {
+      "title": "The DevOps Engineer",
+      "genre": "simulation",
+      "description": "A DevOps game where players automate software development and deployment processes. Players learn about DevOps practices and automation.",
+      "coreMechanics": [
+        "Automation design",
+        "Pipeline creation",
+        "Deployment management",
+        "Monitoring implementation",
+        "Process optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive automation designer",
+        "Pipeline creation tools",
+        "Deployment management systems",
+        "Monitoring implementation interface",
+        "Process optimization mechanics",
+        "Educational DevOps content"
+      ],
+      "developmentTips": "Start with simple CI/CD pipelines. Use clear visual indicators for deployment stages. Include helpful explanations of DevOps concepts."
+    },
+    {
+      "title": "The Site Reliability Engineer",
+      "genre": "simulation",
+      "description": "A site reliability engineering game where players ensure system reliability and performance. Players learn about SRE practices and system monitoring.",
+      "coreMechanics": [
+        "System monitoring",
+        "Incident response",
+        "Reliability engineering",
+        "Performance optimization",
+        "Automation implementation"
+      ],
+      "suggestedMechanics": [
+        "Interactive system monitor",
+        "Incident response tools",
+        "Reliability engineering systems",
+        "Performance optimization interface",
+        "Automation implementation mechanics",
+        "Educational SRE content"
+      ],
+      "developmentTips": "Start with simple system monitoring. Use clear visual indicators for system health. Include helpful explanations of SRE concepts."
+    },
+    {
+      "title": "The Data Engineer",
+      "genre": "simulation",
+      "description": "A data engineering game where players design and build data pipelines and infrastructure. Players learn about data engineering and ETL processes.",
+      "coreMechanics": [
+        "Data pipeline design",
+        "ETL process development",
+        "Data warehouse design",
+        "Data quality management",
+        "Performance optimization"
+      ],
+      "suggestedMechanics": [
+        "Interactive pipeline designer",
+        "ETL process development tools",
+        "Data warehouse design systems",
+        "Data quality management interface",
+        "Performance optimization mechanics",
+        "Educational data engineering content"
+      ],
+      "developmentTips": "Start with simple data extraction processes. Use clear visual indicators for data flow. Include helpful explanations of data engineering concepts."
+    },
+    {
+      "title": "The Database Administrator",
+      "genre": "simulation",
+      "description": "A database administration game where players manage and optimize database systems. Players learn about database management and optimization.",
+      "coreMechanics": [
+        "Database design",
+        "Performance tuning",
+        "Backup and recovery",
+        "Security management",
+        "Monitoring and maintenance"
+      ],
+      "suggestedMechanics": [
+        "Interactive database designer",
+        "Performance tuning tools",
+        "Backup and recovery systems",
+        "Security management interface",
+        "Monitoring and maintenance mechanics",
+        "Educational database administration content"
+      ],
+      "developmentTips": "Start with simple database queries. Use clear visual indicators for database performance. Include helpful explanations of database administration concepts."
+    },
+    {
+      "title": "The System Administrator",
+      "genre": "simulation",
+      "description": "A system administration game where players manage and maintain computer systems and networks. Players learn about system administration and IT infrastructure.",
+      "coreMechanics": [
+        "System management",
+        "Network administration",
+        "Security implementation",
+        "Backup and recovery",
+        "Performance monitoring"
+      ],
+      "suggestedMechanics": [
+        "Interactive system manager",
+        "Network administration tools",
+        "Security implementation systems",
+        "Backup and recovery interface",
+        "Performance monitoring mechanics",
+        "Educational system administration content"
+      ],
+      "developmentTips": "Start with simple user management. Use clear visual indicators for system status. Include helpful explanations of system administration concepts."
+    },
+    {
+      "title": "The Network Security Specialist",
+      "genre": "strategy",
+      "description": "A network security game where players protect networks from cyber threats and implement security measures. Players learn about network security and threat prevention.",
+      "coreMechanics": [
+        "Threat detection",
+        "Security implementation",
+        "Network monitoring",
+        "Incident response",
+        "Security policy management"
+      ],
+      "suggestedMechanics": [
+        "Interactive threat detector",
+        "Security implementation tools",
+        "Network monitoring systems",
+        "Incident response interface",
+        "Security policy management mechanics",
+        "Educational network security content"
+      ],
+      "developmentTips": "Start with simple firewall configuration. Use clear visual indicators for security threats. Include helpful explanations of network security concepts."
+    },
+    {
+      "title": "The Application Security Tester",
+      "genre": "simulation",
+      "description": "An application security testing game where players identify and fix security vulnerabilities in software applications. Players learn about application security and penetration testing.",
+      "coreMechanics": [
+        "Vulnerability scanning",
+        "Penetration testing",
+        "Security assessment",
+        "Vulnerability remediation",
+        "Security reporting"
+      ],
+      "suggestedMechanics": [
+        "Interactive vulnerability scanner",
+        "Penetration testing tools",
+        "Security assessment systems",
+        "Vulnerability remediation interface",
+        "Security reporting mechanics",
+        "Educational application security content"
+      ],
+      "developmentTips": "Start with simple SQL injection testing. Use clear visual indicators for vulnerabilities. Include helpful explanations of application security concepts."
+    },
+    {
+      "title": "The Cloud Security Architect",
+      "genre": "strategy",
+      "description": "A cloud security game where players design and implement security measures for cloud environments. Players learn about cloud security and secure cloud architecture.",
+      "coreMechanics": [
+        "Cloud security design",
+        "Identity management",
+        "Data protection",
+        "Compliance implementation",
+        "Security monitoring"
+      ],
+      "suggestedMechanics": [
+        "Interactive cloud security designer",
+        "Identity management tools",
+        "Data protection systems",
+        "Compliance implementation interface",
+        "Security monitoring mechanics",
+        "Educational cloud security content"
+      ],
+      "developmentTips": "Start with simple access control implementation. Use clear visual indicators for security policies. Include helpful explanations of cloud security concepts."
+    },
+    {
+      "title": "The Incident Response Manager",
+      "genre": "strategy",
+      "description": "An incident response game where players manage and respond to cybersecurity incidents. Players learn about incident response and crisis management.",
+      "coreMechanics": [
+        "Incident detection",
+        "Response coordination",
+        "Evidence collection",
+        "Recovery planning",
+        "Lessons learned analysis"
+      ],
+      "suggestedMechanics": [
+        "Interactive incident detector",
+        "Response coordination tools",
+        "Evidence collection systems",
+        "Recovery planning interface",
+        "Lessons learned analysis mechanics",
+        "Educational incident response content"
+      ],
+      "developmentTips": "Start with simple malware incident response. Use clear visual indicators for incident severity. Include helpful explanations of incident response concepts."
+    },
+    {
+      "title": "The Compliance Specialist",
+      "genre": "strategy",
+      "description": "A compliance management game where players ensure systems meet regulatory and industry standards. Players learn about compliance and regulatory requirements.",
+      "coreMechanics": [
+        "Compliance assessment",
+        "Policy implementation",
+        "Audit preparation",
+        "Risk management",
+        "Compliance monitoring"
+      ],
+      "suggestedMechanics": [
+        "Interactive compliance assessor",
+        "Policy implementation tools",
+        "Audit preparation systems",
+        "Risk management interface",
+        "Compliance monitoring mechanics",
+        "Educational compliance content"
+      ],
+      "developmentTips": "Start with simple GDPR compliance. Use clear visual indicators for compliance status. Include helpful explanations of compliance concepts."
+    },
+    {
+      "title": "The Risk Management Specialist",
+      "genre": "strategy",
+      "description": "A risk management game where players identify, assess, and mitigate various types of risks. Players learn about risk management and decision-making under uncertainty.",
+      "coreMechanics": [
+        "Risk identification",
+        "Risk assessment",
+        "Risk mitigation",
+        "Decision analysis",
+        "Risk monitoring"
+      ],
+      "suggestedMechanics": [
+        "Interactive risk identifier",
+        "Risk assessment tools",
+        "Risk mitigation systems",
+        "Decision analysis interface",
+        "Risk monitoring mechanics",
+        "Educational risk management content"
+      ],
+      "developmentTips": "Start with simple financial risk assessment. Use clear visual indicators for risk levels. Include helpful explanations of risk management concepts."
+    },
+    {
+      "title": "The Business Intelligence Analyst",
+      "genre": "simulation",
+      "description": "A business intelligence game where players analyze business data and create insights for decision-making. Players learn about BI and data-driven decision making.",
+      "coreMechanics": [
+        "Data analysis",
+        "Report creation",
+        "Dashboard design",
+        "KPI tracking",
+        "Insight generation"
+      ],
+      "suggestedMechanics": [
+        "Interactive data analyzer",
+        "Report creation tools",
+        "Dashboard design systems",
+        "KPI tracking interface",
+        "Insight generation mechanics",
+        "Educational BI content"
+      ],
+      "developmentTips": "Start with simple sales data analysis. Use clear visual indicators for business metrics. Include helpful explanations of BI concepts."
+    },
+    {
+      "title": "The Product Manager",
+      "genre": "strategy",
+      "description": "A product management game where players develop and manage product strategies and roadmaps. Players learn about product management and strategic planning.",
+      "coreMechanics": [
+        "Product strategy",
+        "Roadmap planning",
+        "Feature prioritization",
+        "Market analysis",
+        "Product lifecycle management"
+      ],
+      "suggestedMechanics": [
+        "Interactive product strategist",
+        "Roadmap planning tools",
+        "Feature prioritization systems",
+        "Market analysis interface",
+        "Product lifecycle management mechanics",
+        "Educational product management content"
+      ],
+      "developmentTips": "Start with simple feature prioritization. Use clear visual indicators for product priorities. Include helpful explanations of product management concepts."
+    },
+    {
+      "title": "The Project Manager",
+      "genre": "strategy",
+      "description": "A project management game where players plan, execute, and monitor complex projects. Players learn about project management and team coordination.",
+      "coreMechanics": [
+        "Project planning",
+        "Resource allocation",
+        "Timeline management",
+        "Risk management",
+        "Team coordination"
+      ],
+      "suggestedMechanics": [
+        "Interactive project planner",
+        "Resource allocation tools",
+        "Timeline management systems",
+        "Risk management interface",
+        "Team coordination mechanics",
+        "Educational project management content"
+      ],
+      "developmentTips": "Start with simple task scheduling. Use clear visual indicators for project progress. Include helpful explanations of project management concepts."
+    },
+    {
+      "title": "The Agile Coach",
+      "genre": "simulation",
+      "description": "An agile methodology game where players implement and optimize agile practices in software development. Players learn about agile methodologies and team dynamics.",
+      "coreMechanics": [
+        "Sprint planning",
+        "Scrum ceremonies",
+        "Team dynamics",
+        "Continuous improvement",
+        "Agile metrics"
+      ],
+      "suggestedMechanics": [
+        "Interactive sprint planner",
+        "Scrum ceremony tools",
+        "Team dynamics systems",
+        "Continuous improvement interface",
+        "Agile metrics mechanics",
+        "Educational agile content"
+      ],
+      "developmentTips": "Start with simple sprint planning. Use clear visual indicators for team velocity. Include helpful explanations of agile concepts."
+    },
+    {
+      "title": "The Quality Assurance Engineer",
+      "genre": "simulation",
+      "description": "A quality assurance game where players design and execute testing strategies to ensure software quality. Players learn about QA processes and testing methodologies.",
+      "coreMechanics": [
+        "Test planning",
+        "Test case design",
+        "Automated testing",
+        "Bug tracking",
+        "Quality metrics"
+      ],
+      "suggestedMechanics": [
+        "Interactive test planner",
+        "Test case design tools",
+        "Automated testing systems",
+        "Bug tracking interface",
+        "Quality metrics mechanics",
+        "Educational QA content"
+      ],
+      "developmentTips": "Start with simple functional testing. Use clear visual indicators for test results. Include helpful explanations of QA concepts."
+    },
+    {
+      "title": "The Technical Writer",
+      "genre": "simulation",
+      "description": "A technical writing game where players create clear and effective technical documentation. Players learn about technical communication and documentation best practices.",
+      "coreMechanics": [
+        "Documentation planning",
+        "Content creation",
+        "User experience writing",
+        "Information architecture",
+        "Documentation maintenance"
+      ],
+      "suggestedMechanics": [
+        "Interactive documentation planner",
+        "Content creation tools",
+        "UX writing systems",
+        "Information architecture interface",
+        "Documentation maintenance mechanics",
+        "Educational technical writing content"
+      ],
+      "developmentTips": "Start with simple user manual creation. Use clear visual indicators for documentation structure. Include helpful explanations of technical writing concepts."
+    },
+    {
+      "title": "The Technical Support Specialist",
+      "genre": "simulation",
+      "description": "A technical support game where players solve technical problems and provide customer support. Players learn about troubleshooting and customer service.",
+      "coreMechanics": [
+        "Problem diagnosis",
+        "Troubleshooting",
+        "Customer communication",
+        "Solution implementation",
+        "Knowledge management"
+      ],
+      "suggestedMechanics": [
+        "Interactive problem diagnoser",
+        "Troubleshooting tools",
+        "Customer communication systems",
+        "Solution implementation interface",
+        "Knowledge management mechanics",
+        "Educational technical support content"
+      ],
+      "developmentTips": "Start with simple software troubleshooting. Use clear visual indicators for problem severity. Include helpful explanations of technical support concepts."
+    },
+    {
+      "title": "The Innovation Manager",
+      "genre": "strategy",
+      "description": "An innovation management game where players foster creativity and manage innovation processes within organizations. Players learn about innovation management and creative problem-solving.",
+      "coreMechanics": [
+        "Innovation strategy",
+        "Creative process management",
+        "Idea evaluation",
+        "Innovation pipeline",
+        "Culture building"
+      ],
+      "suggestedMechanics": [
+        "Interactive innovation strategist",
+        "Creative process management tools",
+        "Idea evaluation systems",
+        "Innovation pipeline interface",
+        "Culture building mechanics",
+        "Educational innovation management content"
+      ],
+      "developmentTips": "Start with simple brainstorming sessions. Use clear visual indicators for idea potential. Include helpful explanations of innovation management concepts."
+    }
   ]
 }
