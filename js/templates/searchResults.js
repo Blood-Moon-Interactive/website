@@ -6,7 +6,7 @@ export function renderSearchResults(results) {
     return `
         <h3 class="mb-4">Search Results</h3>
         <div class="row">
-            ${results.map(behavior => renderBehaviorCard(behavior)).join('')}
+            ${results.map((behavior, index) => renderBehaviorCard(behavior, index)).join('')}
         </div>
     `;
 }
@@ -28,7 +28,7 @@ function renderBehaviorCard(behavior) {
                     </div>
                 </div>
                 <div class="card-footer bg-transparent">
-                    <a href="#${behavior.name.toLowerCase().replace(/ /g, '_')}" 
+                    <a href="#${behavior.id}" 
                        class="btn btn-sm btn-primary w-100">
                         View Details
                     </a>

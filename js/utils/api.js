@@ -75,7 +75,10 @@ export function searchBehaviors(behaviors, query) {
         ].join(' ').toLowerCase();
         
         if (searchableText.includes(searchQuery)) {
-            results.push(behavior);
+            results.push({
+                ...behavior,
+                id: id
+            });
         }
     });
     
