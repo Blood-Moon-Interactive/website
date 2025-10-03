@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lurker - Blood Moon Interactive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchBehaviors" placeholder="Search behaviors...">
+                        <button class="btn btn-outline-light" type="button" id="searchButton">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <article class="article-content">
+                    <header class="article-header mb-4">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Articles</li>
+                            </ol>
+                        </nav>
+                        <h1 class="article-title">Lurker</h1>
+                        <div class="article-meta text-muted">
+                            <i class="bi bi-calendar3 me-2"></i>October 2025
+                            <i class="bi bi-person me-2 ms-3"></i>Blood Moon Interactive
+                            <i class="bi bi-tag me-2 ms-3"></i>Horror
+                        </div>
+                    </header>
+
+                    <div class="article-body">
+                        <p class="lead">Creates an entity that watches, follows, or attacks the player when not being looked at. Perfect for creating tension and psychological horror elements with configurable detection angles, behavior modes, and attack systems.</p>
+                        
+                        <h2>Understanding the Lurker Behavior</h2>
+                        <p>The Lurker behavior is one of the most psychologically effective horror mechanics in GameGuru MAX. It creates an entity that can only act when the player isn't looking directly at it, implementing the classic "don't look away" horror trope that has terrified players for decades.</p>
+                        
+                        <h2>Key Features</h2>
+                        <ul>
+                            <li><strong>Player Detection System:</strong> Configurable range and angle detection to determine when the player is looking</li>
+                            <li><strong>Multiple Behavior Modes:</strong> Follow, Attack, Watch, Move then Hide, and more</li>
+                            <li><strong>Attack System:</strong> Configurable damage, range, and attack delays</li>
+                            <li><strong>Visual Customization:</strong> Transparency and glow effects for supernatural appearance</li>
+                            <li><strong>Animation Support:</strong> Idle and attack animations for enhanced immersion</li>
+                            <li><strong>Sound Integration:</strong> Audio cues for movement, lurking, attacking, and disappearing</li>
+                        </ul>
+                        
+                        <h2>Behavior Modes Explained</h2>
+                        <p>The Lurker offers six distinct behavior modes, each perfect for different horror scenarios:</p>
+                        
+                        <h3>Follow Only</h3>
+                        <p>Creates a persistent stalker that follows the player when not being watched. Perfect for building tension without direct threat.</p>
+                        
+                        <h3>Attack in Range</h3>
+                        <p>Adds combat mechanics to the lurking behavior. The entity will attack when close enough and not being observed.</p>
+                        
+                        <h3>Watch Only</h3>
+                        <p>A passive observer that simply watches the player. Great for creating paranoia and atmosphere.</p>
+                        
+                        <h3>Move then Disappear</h3>
+                        <p>Creates a one-time scare where the entity moves once before vanishing completely.</p>
+                        
+                        <h3>Move then Hide</h3>
+                        <p>Similar to disappear mode, but the entity hides and can reappear after a set time.</p>
+                        
+                        <h3>Watch + Proximity Hide</h3>
+                        <p>Combines watching behavior with proximity-based hiding mechanics.</p>
+                        
+                        <h2>Configuration Tips</h2>
+                        <ul>
+                            <li><strong>Sense Range:</strong> Start with 500 units for indoor environments, increase for outdoor areas</li>
+                            <li><strong>Sense Angle:</strong> 70 degrees provides good balance between challenge and fairness</li>
+                            <li><strong>Approach Speed:</strong> Lower speeds (100-200) create more tension, higher speeds (300-500) for jump scares</li>
+                            <li><strong>Transparency:</strong> Use 50-80 for subtle presence, 100 for full visibility</li>
+                            <li><strong>Emissiveness:</strong> Add glow effects (100-500) for supernatural entities</li>
+                        </ul>
+                        
+                        <h2>Implementation Best Practices</h2>
+                        <p>To create the most effective Lurker experience:</p>
+                        <ol>
+                            <li><strong>Start Subtle:</strong> Begin with "Watch Only" mode to establish the entity's presence</li>
+                            <li><strong>Build Tension:</strong> Use "Follow Only" to create mounting pressure</li>
+                            <li><strong>Add Threat:</strong> Switch to "Attack in Range" when ready to escalate</li>
+                            <li><strong>Control Visibility:</strong> Use transparency and glow to control when the entity is visible</li>
+                            <li><strong>Audio Design:</strong> Implement subtle sound cues that hint at the entity's presence</li>
+                        </ol>
+                        
+                        <h2>Advanced Techniques</h2>
+                        <p>For experienced developers, the Lurker behavior offers several advanced techniques:</p>
+                        <ul>
+                            <li><strong>Multiple Lurkers:</strong> Use several entities with different modes for complex horror scenarios</li>
+                            <li><strong>Environmental Integration:</strong> Combine with lighting and sound systems for enhanced atmosphere</li>
+                            <li><strong>Progressive Difficulty:</strong> Start with passive modes and gradually increase aggression</li>
+                            <li><strong>Narrative Integration:</strong> Use the entity as a storytelling device that responds to player actions</li>
+                        </ul>
+                        
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
+                            <p class="mb-0">The Lurker behavior works best when combined with atmospheric lighting, subtle audio cues, and environmental storytelling. The key to effective horror is not just the entity itself, but how it interacts with the player's expectations and the game world around it.</p>
+                        </div>
+                        
+                        <h2>Related Behaviors</h2>
+                        <p>The Lurker works excellently with other horror behaviors:</p>
+                        <ul>
+                            <li><strong>Phantom:</strong> For ghostly appearances and disappearances</li>
+                            <li><strong>Crawler:</strong> For entities that can climb and navigate complex environments</li>
+                            <li><strong>Jump Scare:</strong> For sudden, startling moments</li>
+                            <li><strong>Rise and Fall:</strong> For supernatural object manipulation</li>
+                        </ul>
+                    </div>
+
+                    <footer class="article-footer mt-5 pt-4 border-top">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Related Articles</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="phantom.html" class="text-decoration-none">Phantom Behavior</a></li>
+                                    <li><a href="crawler.html" class="text-decoration-none">Crawler Behavior</a></li>
+                                    <li><a href="jumpscare.html" class="text-decoration-none">Jump Scare Behavior</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <a href="../index.html" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-2"></i>Back to Home
+                                </a>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <p class="text-light mb-0">Created by Blood Moon Interactive</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

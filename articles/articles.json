@@ -942,6 +942,25 @@
       ],
       "featured": false,
       "filename": "text_in_zone.html"
+    },
+    {
+      "id": "lurker",
+      "title": "Lurker",
+      "preview": "Creates an entity that watches, follows, or attacks the player when not being looked at. Perfect for creating tension and psychological horror elements with configurable detection angles, behavior modes, and attack systems.",
+      "date": "2025-10-01",
+      "author": "Blood Moon Interactive",
+      "category": "Horror",
+      "tags": [
+        "horror",
+        "lurker",
+        "stalker",
+        "psychological",
+        "tension",
+        "behavior",
+        "gameguru"
+      ],
+      "featured": true,
+      "filename": "lurker.html"
     }
   ],
   "config": {
