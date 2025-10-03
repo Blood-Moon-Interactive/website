@@ -184,8 +184,8 @@ function setupEventListeners() {
         console.log('Click detected on:', e.target);
         console.log('Click target classes:', e.target.className);
         
-        // Check if the clicked element is a navigation link, navbar brand, or logo link
-        const link = e.target.closest('.nav-link, .navbar-brand, .sidebar-brand a');
+        // Check if the clicked element is a navigation link, navbar brand, logo link, or button with href
+        const link = e.target.closest('.nav-link, .navbar-brand, .sidebar-brand a, a[href^="#"]');
         
         console.log('Closest link found:', link);
         
