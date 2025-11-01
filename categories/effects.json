@@ -1148,6 +1148,118 @@
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["timed_event", "trigger_zone", "switch", "global_monitor"]
+    },
+    "change_texture": {
+      "name": "Change Texture",
+      "file": "misc/change_texture.lua",
+      "description": "Changes the object texture when activated by another object. Supports texture switching, UV scaling, offset, scrolling, atlas animation, and PBR texture integration. Features configurable emissive strength and variance for dynamic lighting effects.",
+      "properties": [
+        {
+          "name": "IMAGEFILE1",
+          "type": "string",
+          "default": "",
+          "description": "Path to the default texture image file"
+        },
+        {
+          "name": "IMAGEFILE2",
+          "type": "string",
+          "default": "",
+          "description": "Path to the alternative texture image file (applied when activated)"
+        },
+        {
+          "name": "TEXTURE_SCALE_U",
+          "type": "number",
+          "default": 1.0,
+          "description": "UV scale in U direction for texture tiling"
+        },
+        {
+          "name": "TEXTURE_SCALE_V",
+          "type": "number",
+          "default": 1.0,
+          "description": "UV scale in V direction for texture tiling"
+        },
+        {
+          "name": "TEXTURE_OFFSET_U",
+          "type": "number",
+          "default": 0.0,
+          "description": "UV offset in U direction for texture positioning"
+        },
+        {
+          "name": "TEXTURE_OFFSET_V",
+          "type": "number",
+          "default": 0.0,
+          "description": "UV offset in V direction for texture positioning"
+        },
+        {
+          "name": "SCROLL_DIRECTION_U",
+          "type": "number",
+          "default": 0.0,
+          "description": "Scroll direction in U axis for animated texture scrolling"
+        },
+        {
+          "name": "SCROLL_DIRECTION_V",
+          "type": "number",
+          "default": 0.0,
+          "description": "Scroll direction in V axis for animated texture scrolling"
+        },
+        {
+          "name": "TEXTURE_SPEED",
+          "type": "number",
+          "default": 0.0,
+          "description": "Speed of texture scrolling or atlas animation (0 = disabled)"
+        },
+        {
+          "name": "ATLAS_TEXTURE_ROWS",
+          "type": "number",
+          "default": 0,
+          "description": "Number of rows in texture atlas for frame animation (0 = disabled)"
+        },
+        {
+          "name": "ATLAS_TEXTURE_COLUMNS",
+          "type": "number",
+          "default": 0,
+          "description": "Number of columns in texture atlas for frame animation (0 = disabled)"
+        },
+        {
+          "name": "MATERIAL1_EMISSIVE_STRENGTH",
+          "type": "number",
+          "default": 300.0,
+          "description": "Emissive strength for the default texture material"
+        },
+        {
+          "name": "MATERIAL2_EMISSIVE_STRENGTH",
+          "type": "number",
+          "default": 300.0,
+          "description": "Emissive strength for the alternative texture material"
+        },
+        {
+          "name": "EMISSIVE_STRENGTH_VARIANCE",
+          "type": "number",
+          "range": "0-100",
+          "default": 0,
+          "description": "Random variance range for emissive strength to create flickering/pulsing effects"
+        }
+      ],
+      "features": [
+        "Texture switching on activation",
+        "Two texture states (default and alternative)",
+        "UV scale control for texture tiling",
+        "UV offset control for texture positioning",
+        "Animated texture scrolling",
+        "Atlas texture frame animation",
+        "PBR texture support (automatically applied if present)",
+        "Emissive strength control per texture",
+        "Emissive variance for dynamic lighting effects",
+        "Logic connection activation support",
+        "Real-time texture manipulation",
+        "Frame-based atlas animation"
+      ],
+      "keywords": ["texture", "material", "visual", "change", "uv", "scroll", "animation", "atlas", "emissive", "pbr", "glow"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": []
     }
   }
 }

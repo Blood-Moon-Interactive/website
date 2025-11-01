@@ -1,0 +1,213 @@
+{
+  "category": "Particles",
+  "description": "Behaviors for creating particle effects and visual effects systems",
+  "behaviors": {
+    "wpe_area": {
+      "name": "WPE Area",
+      "file": "particles/wpe_area.lua",
+      "description": "Displays particle effects at and around the object's area. Can be activated by a linked switch or zone, or set to active automatically. Supports looped sound effects and configurable vertical offset.",
+      "properties": [
+        {
+          "name": "WPEFILE",
+          "type": "string",
+          "default": "particlesbank//wpe//firearea.pe",
+          "description": "Path to the particle effect file (.pe format)"
+        },
+        {
+          "name": "IsActive",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the particle effect starts active automatically"
+        },
+        {
+          "name": "OffsetY",
+          "type": "number",
+          "default": 0,
+          "description": "Vertical offset controlling how far above the object the effect is displayed"
+        }
+      ],
+      "features": [
+        "Area-based particle effects",
+        "Switch and zone activation support",
+        "Automatic activation option",
+        "Looped sound effect integration",
+        "Configurable vertical positioning",
+        "Distance-based sound volume",
+        "Particle effect visibility control",
+        "Particle effect action states"
+      ],
+      "keywords": ["particle", "effect", "area", "emitter", "wpe", "wicked", "visual"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": []
+    },
+    "wpe_blast": {
+      "name": "WPE Blast",
+      "file": "particles/wpe_blast.lua",
+      "description": "Creates explosive particle effects that trigger at random intervals near the player. Can be activated by a linked switch or zone, or set to active automatically. Includes explosion sound effects and can damage the player if they're too close to the blast.",
+      "properties": [
+        {
+          "name": "WPEFILE",
+          "type": "string",
+          "default": "particlesbank//wpe//dirt-splash4.pe",
+          "description": "Path to the particle effect file (.pe format)"
+        },
+        {
+          "name": "IsActive",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the blast effect starts active automatically. If unticked, must be activated by switch or zone."
+        }
+      ],
+      "features": [
+        "Random interval particle blasts",
+        "Random positioning near player location",
+        "Explosion/impact sound effects",
+        "Player damage when close to blast",
+        "Terrain-aware positioning",
+        "Switch and zone activation support",
+        "Automatic activation option",
+        "Randomized blast timing",
+        "Particle effect action control",
+        "Object health-based deactivation"
+      ],
+      "keywords": ["particle", "effect", "blast", "explosion", "impact", "wpe", "wicked", "damage", "random"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["wpe_area"]
+    },
+    "wpe_impact": {
+      "name": "WPE Impact",
+      "file": "particles/wpe_impact.lua",
+      "description": "Creates impact particle effects that trigger at random intervals near the player. Can be activated by a linked switch or zone, or set to active automatically. Includes impact/explosion sound effects and can damage the player if they're too close to the impact.",
+      "properties": [
+        {
+          "name": "WPEFILE",
+          "type": "string",
+          "default": "particlesbank//wpe//dirt-splash4.pe",
+          "description": "Path to the particle effect file (.pe format)"
+        },
+        {
+          "name": "IsActive",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the impact effect starts active automatically. If unticked, must be activated by switch or zone."
+        }
+      ],
+      "features": [
+        "Random interval impact particle effects",
+        "Random positioning near player location",
+        "Impact/explosion sound effects",
+        "Player damage when close to impact",
+        "Terrain-aware positioning",
+        "Switch and zone activation support",
+        "Automatic activation option",
+        "Randomized impact timing",
+        "Particle effect visibility control",
+        "Particle effect action control",
+        "Sound stopping on deactivation",
+        "Object health-based deactivation"
+      ],
+      "keywords": ["particle", "effect", "impact", "explosion", "wpe", "wicked", "damage", "random", "splash"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["wpe_area", "wpe_blast"]
+    },
+    "wpe_rain": {
+      "name": "WPE Rain",
+      "file": "particles/wpe_rain.lua",
+      "description": "Creates a rain particle effect with automatic indoor/outdoor detection. Can be activated by a linked switch or zone, or set to active automatically. Includes looped rain sound effects and sets a global variable for external behaviors to detect when rain is active.",
+      "properties": [
+        {
+          "name": "WPEFILE",
+          "type": "string",
+          "default": "particlesbank//wpe//heavy-rain3.pe",
+          "description": "Path to the particle effect file (.pe format)"
+        },
+        {
+          "name": "IsActive",
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the rain effect starts active automatically. If unticked, must be activated by switch or zone."
+        }
+      ],
+      "features": [
+        "Rain particle effects",
+        "Automatic indoor/outdoor detection",
+        "Particle visibility control based on player location",
+        "Looped rain sound effects",
+        "Gradually increasing sound volume on activation",
+        "Switch and zone activation support",
+        "Automatic activation option",
+        "Global variable (g_raining) for external behavior detection",
+        "Sound stopping on deactivation",
+        "Particle effect visibility control",
+        "Particle effect action control",
+        "Object health-based deactivation"
+      ],
+      "keywords": ["particle", "effect", "rain", "weather", "wpe", "wicked", "atmospheric", "sound", "indoor", "outdoor"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["wpe_area", "wpe_blast", "wpe_impact"]
+    },
+    "wpe_zone": {
+      "name": "WPE Zone",
+      "file": "particles/wpe_zone.lua",
+      "description": "Displays particle effects while the player is within the zone area. Features automatic indoor/outdoor detection and configurable height-based zone detection. Includes looped sound effects and options to disable particles when player exits or goes indoors.",
+      "properties": [
+        {
+          "name": "WPEFILE",
+          "type": "string",
+          "default": "particlesbank//wpe//heavy-rain3.pe",
+          "description": "Path to the particle effect file (.pe format)"
+        },
+        {
+          "name": "ZONEHEIGHT",
+          "type": "number",
+          "default": 100,
+          "description": "Maximum height above the zone that the player can be for the zone to trigger"
+        },
+        {
+          "name": "DisableOutside",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to stop particles when player exits the zone"
+        },
+        {
+          "name": "DisableIndoors",
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to stop particles when player is indoors"
+        }
+      ],
+      "features": [
+        "Zone-based particle effects",
+        "Player height detection within zone",
+        "Automatic indoor/outdoor detection",
+        "Particle positioning follows zone location",
+        "Looped sound effects",
+        "Gradually increasing sound volume on activation",
+        "Configurable disable options for outside and indoors",
+        "Particle effect visibility control",
+        "Particle effect action control",
+        "Sound stopping when player exits zone",
+        "Automatic particle effect positioning"
+      ],
+      "keywords": ["particle", "effect", "zone", "wpe", "wicked", "atmospheric", "sound", "indoor", "outdoor", "height"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": ["wpe_area", "wpe_blast", "wpe_impact", "wpe_rain"]
+    }
+  }
+}
+

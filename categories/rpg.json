@@ -3103,6 +3103,139 @@
         ]
       },
       "relatedBehaviors": ["rpg_system", "resource_system", "spawning_system", "mining_system", "harvesting_system", "resource"]
+    },
+    "booster": {
+      "name": "Booster",
+      "file": "misc/booster.lua",
+      "description": "Gives the player a booster or deduction when used. Supports multiple boost types including health, stamina, jumping, speed, and custom user globals. Features configurable pickup styles, effect duration, and visual highlighting options.",
+      "properties": [
+        {
+          "name": "PROMPT_TEXT",
+          "type": "string",
+          "default": "E to consume",
+          "description": "Text prompt shown when player can use the item"
+        },
+        {
+          "name": "PROMPT_IF_COLLECTABLE",
+          "type": "string",
+          "default": "E to collect",
+          "description": "Text prompt shown when item is collectable"
+        },
+        {
+          "name": "USEAGE_TEXT",
+          "type": "string",
+          "default": "Boost consumed",
+          "description": "Text displayed when the booster is consumed"
+        },
+        {
+          "name": "QUANTITY",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Amount of boost or deduction to apply"
+        },
+        {
+          "name": "PICKUP_RANGE",
+          "type": "number",
+          "range": "1-100",
+          "default": 80,
+          "description": "Distance at which the item can be picked up"
+        },
+        {
+          "name": "PICKUP_STYLE",
+          "type": "dropdown",
+          "default": "Ranged",
+          "options": [
+            "Ranged",
+            "Accurate"
+          ],
+          "description": "Pickup detection style - Ranged activates when within range, Accurate requires precise aiming"
+        },
+        {
+          "name": "EFFECT",
+          "type": "dropdown",
+          "default": "Add",
+          "options": [
+            "Add",
+            "Deduct"
+          ],
+          "description": "Whether to add or deduct the quantity value"
+        },
+        {
+          "name": "BOOST_STYLE",
+          "type": "dropdown",
+          "default": "Health Applied",
+          "options": [
+            "Health Applied",
+            "Stamina Timed",
+            "Jumping Timed",
+            "Speed Timed",
+            "User Global Timed"
+          ],
+          "description": "Type of boost to apply to the player"
+        },
+        {
+          "name": "BOOST_TIME",
+          "type": "number",
+          "range": "0-60",
+          "default": 5,
+          "description": "Duration in seconds for timed boosts"
+        },
+        {
+          "name": "USER_GLOBAL_AFFECTED",
+          "type": "string",
+          "default": "",
+          "description": "Name of user global variable to affect (e.g. MyMana). Required for User Global Timed boost style."
+        },
+        {
+          "name": "PROMPT_DISPLAY",
+          "type": "dropdown",
+          "default": "Local",
+          "options": [
+            "Local",
+            "Screen"
+          ],
+          "description": "Where to display the prompt text - Local shows at object location, Screen shows on HUD"
+        },
+        {
+          "name": "ITEM_HIGHLIGHT",
+          "type": "dropdown",
+          "default": "None",
+          "options": [
+            "None",
+            "Shape",
+            "Outline",
+            "Icon"
+          ],
+          "description": "Visual highlighting style for the item when player is nearby"
+        },
+        {
+          "name": "HIGHLIGHT_ICON_IMAGEFILE",
+          "type": "string",
+          "default": "imagebank\\icons\\pickup.png",
+          "description": "Path to icon image file used when Item Highlight is set to Icon"
+        }
+      ],
+      "features": [
+        "Multiple boost types (health, stamina, jumping, speed, user globals)",
+        "Add or deduct effects",
+        "Timed boosts with configurable duration",
+        "Instant health boosts",
+        "Two pickup styles (ranged and accurate)",
+        "Visual highlighting options",
+        "Custom prompt text",
+        "Collectable item support",
+        "Sound effects for usage and collection",
+        "Resource depletion system",
+        "Logic connection support",
+        "Global variable integration"
+      ],
+      "keywords": ["booster", "item", "pickup", "collectable", "health", "stamina", "jump", "speed", "effect", "buff", "debuff"],
+      "tutorial": {
+        "videoId": "coming-soon",
+        "timestamp": "0:00"
+      },
+      "relatedBehaviors": []
     }
   }
 } 
