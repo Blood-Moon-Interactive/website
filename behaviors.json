@@ -68,6 +68,10 @@
     "Lights": {
       "file": "categories/lights.json",
       "description": "Behaviors for creating and managing lighting systems, light sources, and illumination effects in the game world"
+    },
+    "Particles": {
+      "file": "categories/particles.json",
+      "description": "Behaviors for creating particle effects and visual effects systems"
     }
   },
   "config": {
