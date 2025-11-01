@@ -959,8 +959,28 @@
         "behavior",
         "gameguru"
       ],
-      "featured": true,
+      "featured": false,
       "filename": "lurker.html"
+    },
+    {
+      "id": "global_indicator",
+      "title": "Global Indicator",
+      "preview": "Displays and updates a screen image indicator based on a global value or player health. Supports up to five different indicator images with customizable thresholds, perfect for creating dynamic HUD elements and visual feedback systems.",
+      "date": "2025-11-01",
+      "author": "Blood Moon Interactive",
+      "category": "Global",
+      "tags": [
+        "global",
+        "indicator",
+        "monitor",
+        "health",
+        "screen",
+        "hud",
+        "behavior",
+        "gameguru"
+      ],
+      "featured": true,
+      "filename": "global_indicator.html"
     }
   ],
   "config": {

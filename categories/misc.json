@@ -2133,7 +2133,7 @@
       ],
       "keywords": ["mouse", "control", "interaction", "click", "cursor", "pointer", "targeting", "object", "detection", "allegiance"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "h4mBqYIlLKM",
         "timestamp": "0:00",
         "steps": [
           "Create an object to attach the mousecontrol behavior to",

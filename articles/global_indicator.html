@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Indicator - Blood Moon Interactive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchBehaviors" placeholder="Search behaviors...">
+                        <button class="btn btn-outline-light" type="button" id="searchButton">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <article class="article-content">
+                    <header class="article-header mb-4">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Articles</li>
+                            </ol>
+                        </nav>
+                        <h1 class="article-title">Global Indicator</h1>
+                        <div class="article-meta text-muted">
+                            <i class="bi bi-calendar3 me-2"></i>November 2025
+                            <i class="bi bi-person me-2 ms-3"></i>Blood Moon Interactive
+                            <i class="bi bi-tag me-2 ms-3"></i>Global
+                        </div>
+                    </header>
+
+                    <div class="article-body">
+                        <p class="lead">Displays and updates a screen image indicator based on a global value or player health. Supports up to five different indicator images with customizable thresholds, perfect for creating dynamic HUD elements and visual feedback systems.</p>
+                        
+                        <!-- Video Tutorial Section -->
+                        <div class="mb-4">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/cv2lXzcdHZY" title="Global Indicator Behavior Tutorial" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                        <h2>Understanding the Global Indicator Behavior</h2>
+                        <p>The Global Indicator behavior is an essential tool for creating dynamic, responsive user interfaces in GameGuru MAX. It allows you to display visual indicators on screen that automatically update based on player health or custom global variables, providing immediate visual feedback that keeps players informed about game state changes.</p>
+                        
+                        <h2>Key Features</h2>
+                        <ul>
+                            <li><strong>Dual Monitoring Systems:</strong> Monitor either player health or custom user global variables</li>
+                            <li><strong>Multi-State Indicators:</strong> Support for up to five different indicator images with unique thresholds</li>
+                            <li><strong>Flexible Positioning:</strong> Fully customizable screen position (X and Y coordinates)</li>
+                            <li><strong>Adjustable Size:</strong> Control indicator scale from 1-100 for perfect sizing</li>
+                            <li><strong>Custom Images:</strong> Use your own indicator images for complete visual control</li>
+                            <li><strong>Real-Time Updates:</strong> Automatically updates as values change without player intervention</li>
+                            <li><strong>Aspect Ratio Handling:</strong> Automatically maintains correct image proportions</li>
+                            <li><strong>Always Active:</strong> Continuously monitors values for instant feedback</li>
+                        </ul>
+                        
+                        <h2>Monitoring Options</h2>
+                        <p>The Global Indicator offers two distinct monitoring modes, each perfect for different game design needs:</p>
+                        
+                        <h3>Health Monitoring</h3>
+                        <p>When set to monitor player health, the indicator automatically displays different images based on the player's current health percentage. This is perfect for health bars, status icons, or visual health warnings that respond to damage and healing.</p>
+                        
+                        <h3>Global Variable Monitoring</h3>
+                        <p>When monitoring a user global variable, the indicator tracks any custom game state you define. This opens up endless possibilities: track player score, inventory items, quest progress, environmental conditions, or any other numeric value in your game.</p>
+                        
+                        <h2>Indicator System Explained</h2>
+                        <p>The behavior supports up to five indicator states, each with its own image and threshold value. The system displays the appropriate image based on where the current value falls within your defined thresholds:</p>
+                        
+                        <ul>
+                            <li><strong>First Indicator:</strong> Displays when value is at or below the first threshold (default: 0)</li>
+                            <li><strong>Second Indicator:</strong> Displays when value is between first and second thresholds (default: 1-25)</li>
+                            <li><strong>Third Indicator:</strong> Displays when value is between second and third thresholds (default: 26-50)</li>
+                            <li><strong>Fourth Indicator:</strong> Displays when value is between third and fourth thresholds (default: 51-75)</li>
+                            <li><strong>Fifth Indicator:</strong> Displays when value is above the fourth threshold (default: 76-100)</li>
+                        </ul>
+                        
+                        <h2>Configuration Tips</h2>
+                        <ul>
+                            <li><strong>Screen Position:</strong> Use X=0-2 for left alignment, X=50 for center, X=98-100 for right. Y=0-10 for top, Y=50 for middle, Y=90-100 for bottom</li>
+                            <li><strong>Screen Scale:</strong> Start with 50 for medium-sized indicators, adjust to 25-35 for smaller HUD elements or 65-80 for prominent displays</li>
+                            <li><strong>Threshold Values:</strong> Plan your thresholds to create meaningful visual transitions (e.g., 0, 25, 50, 75, 100 for five equal states)</li>
+                            <li><strong>Image Design:</strong> Create indicator images with clear visual progression (e.g., empty to full, dim to bright, red to green)</li>
+                            <li><strong>Global Variables:</strong> Ensure your monitored global variable is properly initialized and updated by other behaviors</li>
+                            <li><strong>Always Active:</strong> Remember to set the object to AlwaysActive for continuous monitoring</li>
+                        </ul>
+                        
+                        <h2>Implementation Best Practices</h2>
+                        <p>To create the most effective Global Indicator setup:</p>
+                        <ol>
+                            <li><strong>Plan Your Visual States:</strong> Design indicator images that clearly communicate the current state to players</li>
+                            <li><strong>Set Meaningful Thresholds:</strong> Choose threshold values that align with important gameplay milestones</li>
+                            <li><strong>Position Strategically:</strong> Place indicators where they won't obstruct gameplay but remain easily visible</li>
+                            <li><strong>Test Across Resolutions:</strong> Verify indicator positioning and sizing work on different screen resolutions</li>
+                            <li><strong>Coordinate with Other Systems:</strong> Use Global Indicator alongside global_monitor, global_activator, and global_modifier for complex systems</li>
+                            <li><strong>Create Visual Hierarchy:</strong> Use different scales to emphasize primary vs. secondary indicators</li>
+                        </ol>
+                        
+                        <h2>Advanced Techniques</h2>
+                        <p>For experienced developers, the Global Indicator offers several advanced techniques:</p>
+                        <ul>
+                            <li><strong>Multiple Indicators:</strong> Use multiple Global Indicator objects to track different values simultaneously</li>
+                            <li><strong>Combined Monitoring:</strong> Create indicator systems that show both health and custom stats on different screen areas</li>
+                            <li><strong>Progressive Systems:</strong> Design thresholds that create progressive difficulty or progression feedback</li>
+                            <li><strong>Visual Storytelling:</strong> Use indicator changes to tell a story (e.g., item condition, environmental danger, character state)</li>
+                            <li><strong>Integration with Game Mechanics:</strong> Link indicators to quest systems, inventory management, or character progression</li>
+                            <li><strong>Custom Image Sequences:</strong> Create image sequences that tell a visual story as values change</li>
+                        </ul>
+                        
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
+                            <p class="mb-0">The Global Indicator is most effective when used as part of a comprehensive feedback system. Combine it with sound effects, particle systems, and other visual cues to create rich, informative player feedback. Remember that good HUD design balances information with unobtrusiveness—players should feel informed without feeling overwhelmed.</p>
+                        </div>
+                        
+                        <h2>Common Use Cases</h2>
+                        <p>The Global Indicator excels in various game scenarios:</p>
+                        <ul>
+                            <li><strong>Health Systems:</strong> Visual health bars, heart meters, or status icons that respond to damage</li>
+                            <li><strong>Resource Management:</strong> Display ammo count, energy levels, or inventory status</li>
+                            <li><strong>Progress Tracking:</strong> Show quest completion, level progress, or objective status</li>
+                            <li><strong>Environmental Feedback:</strong> Indicate temperature, toxicity, or atmospheric conditions</li>
+                            <li><strong>Status Effects:</strong> Display buffs, debuffs, or temporary condition indicators</li>
+                            <li><strong>Difficulty Scaling:</strong> Visual representation of dynamic difficulty adjustments</li>
+                        </ul>
+                        
+                        <h2>Related Behaviors</h2>
+                        <p>The Global Indicator works excellently with other global management behaviors:</p>
+                        <ul>
+                            <li><strong>Global Monitor:</strong> Modify global variables that the indicator can then display</li>
+                            <li><strong>Global Activator:</strong> Trigger events when indicator thresholds are reached</li>
+                            <li><strong>Global Modifier:</strong> Adjust global values that indicators track</li>
+                            <li><strong>Health Indicator:</strong> For dedicated health display systems</li>
+                        </ul>
+                    </div>
+
+                    <footer class="article-footer mt-5 pt-4 border-top">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Related Articles</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="lurker.html" class="text-decoration-none">Lurker Behavior</a></li>
+                                    <li><a href="adaptive_crosshair.html" class="text-decoration-none">Adaptive Crosshair Behavior</a></li>
+                                    <li><a href="text_in_zone.html" class="text-decoration-none">Text in Zone Behavior</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <a href="../index.html" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-2"></i>Back to Home
+                                </a>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <p class="text-light mb-0">Created by Blood Moon Interactive</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+

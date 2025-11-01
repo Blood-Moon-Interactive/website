@@ -1922,7 +1922,7 @@
       ],
       "keywords": ["npc", "zone", "detect", "allegiance", "enemy", "ally", "neutral"],
       "tutorial": {
-        "videoId": "2cxnLwxbfIo",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["npc_monitor", "npc_alerter", "npc_remove", "trigger_zone"]
