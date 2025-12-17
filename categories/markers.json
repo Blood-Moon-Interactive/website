@@ -241,7 +241,7 @@
       ],
       "keywords": ["collect", "zone", "entity", "global", "value", "weight", "destroy", "notification"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "SL6aGRDrQlE",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["drop_zone", "remover_zone", "global_affected_zone", "trigger_zone"]
@@ -1542,7 +1542,7 @@
       ],
       "keywords": ["global", "update", "variable", "zone", "text", "numeric", "value"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "SL6aGRDrQlE",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["global_affected_zone", "global_monitor", "global_activator"]

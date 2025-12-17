@@ -981,6 +981,17 @@
       ],
       "featured": true,
       "filename": "global_indicator.html"
+    },
+    {
+      "id": "stop_watch",
+      "title": "Stop Watch — Timed Challenges & Displays",
+      "preview": "Use the Stop Watch behavior to add precise timers to your levels: speedruns, countdowns, and time-based events.",
+      "date": "2025-12-17",
+      "author": "Blood Moon Interactive",
+      "category": "HUDs",
+      "tags": ["stopwatch", "timer", "hud", "behavior", "gameguru"],
+      "featured": false,
+      "filename": "stop_watch.html"
     }
   ],
   "config": {
