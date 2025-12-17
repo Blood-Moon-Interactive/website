@@ -13,7 +13,7 @@
         "behaviors",
         "gameguru"
       ],
-      "featured": true,
+      "featured": false,
       "content": {
         "lead": "GameGuru MAX offers a powerful behavior system that allows you to create complex interactions without writing code. In this comprehensive guide, we'll explore the fundamentals of behavior implementation, from basic object interactions to advanced AI systems.",
         "sections": [
@@ -112,7 +112,7 @@
         "tutorial",
         "cross-platform"
       ],
-      "featured": true,
+      "featured": false,
       "filename": "game-design-principles.html"
     },
     {
@@ -979,7 +979,7 @@
         "behavior",
         "gameguru"
       ],
-      "featured": true,
+      "featured": false,
       "filename": "global_indicator.html"
     },
     {
@@ -990,7 +990,7 @@
       "author": "Blood Moon Interactive",
       "category": "HUDs",
       "tags": ["stopwatch", "timer", "hud", "behavior", "gameguru"],
-      "featured": false,
+      "featured": true,
       "filename": "stop_watch.html"
     }
   ],
