@@ -241,7 +241,7 @@
       ],
       "keywords": ["collect", "zone", "entity", "global", "value", "weight", "destroy", "notification"],
       "tutorial": {
-        "videoId": "SL6aGRDrQlE",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["drop_zone", "remover_zone", "global_affected_zone", "trigger_zone"]
@@ -895,7 +895,7 @@
       ],
       "keywords": ["hud", "zone", "ui", "display", "screen", "trigger", "destroy"],
       "tutorial": {
-        "videoId": "OVh5EsaHlQw",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["textinzone", "videoinzone", "trigger_zone", "hud_interface"]
@@ -1542,7 +1542,7 @@
       ],
       "keywords": ["global", "update", "variable", "zone", "text", "numeric", "value"],
       "tutorial": {
-        "videoId": "SL6aGRDrQlE",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["global_affected_zone", "global_monitor", "global_activator"]

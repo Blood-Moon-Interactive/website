@@ -480,7 +480,7 @@
       ],
       "keywords": ["misc", "force", "wall", "barrier", "shield", "protection", "defense", "block", "repel", "damage"],
       "tutorial": {
-        "videoId": "FdK9PFR1QqY",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["trigger_system", "damage_system", "force_field"]
@@ -1662,142 +1662,6 @@
       },
       "relatedBehaviors": ["spawn_system", "entity_manager", "respawn_system", "formation_controller", "entity_generator"]
     },
-    "global_clone_entity": {
-      "name": "Global Clone Entity",
-      "file": "rpg/global_clone_entity.lua",
-      "description": "A powerful entity cloning system that triggers when a user global reaches a specified value. Creates multiple copies of a named entity at the player's position with configurable positioning, lifespan, health, and respawn cycles. Automatically resets the global to 0 after cloning.",
-      "properties": [
-        {
-          "name": "CLONE_QUANTITY",
-          "type": "number",
-          "range": "1-100",
-          "default": 1,
-          "description": "Number of entities to clone (1 to 100)"
-        },
-        {
-          "name": "CLONE_RANGE",
-          "type": "number",
-          "range": "25-1000",
-          "default": 100,
-          "description": "Range around the player position for entity positioning"
-        },
-        {
-          "name": "CLONE_LIFESPAN",
-          "type": "number",
-          "range": "1-1000",
-          "default": 3,
-          "description": "Lifespan of cloned entities in minutes (1000 = eternal)"
-        },
-        {
-          "name": "CLONE_HEALTH",
-          "type": "dropdown",
-          "default": "Cloned",
-          "options": ["Cloned", "Random"],
-          "description": "Health setting for cloned entities. Cloned = same as original, Random = random health"
-        },
-        {
-          "name": "RESPAWN_CYCLE",
-          "type": "dropdown",
-          "default": "Off",
-          "options": ["Off", "On"],
-          "description": "Whether to respawn entities after they die or expire"
-        },
-        {
-          "name": "RESPAWN_EVENTS",
-          "type": "number",
-          "range": "1-10",
-          "default": 1,
-          "description": "Number of respawn cycles allowed (1 to 10)"
-        },
-        {
-          "name": "RESPAWN_INTERVAL",
-          "type": "number",
-          "range": "5-100",
-          "default": 10,
-          "description": "Time between respawns in seconds (5 to 100)"
-        },
-        {
-          "name": "ENTITY_NAME",
-          "type": "string",
-          "default": "Rabbit",
-          "description": "Name of the entity to clone (must match entity name exactly)"
-        },
-        {
-          "name": "FORMATION",
-          "type": "dropdown",
-          "default": "Random",
-          "options": ["Random", "Rows"],
-          "description": "Positioning formation for cloned entities"
-        },
-        {
-          "name": "NUMBER_PER_ROW",
-          "type": "number",
-          "range": "1-100",
-          "default": 1,
-          "description": "Number of entities per row when using row formation"
-        },
-        {
-          "name": "GLOBAL_NAME",
-          "type": "string",
-          "default": "MyGlobal",
-          "description": "Name of the user global to monitor (case-insensitive)"
-        },
-        {
-          "name": "TARGET_VALUE",
-          "type": "number",
-          "range": "1-1000",
-          "default": 10,
-          "description": "Value the global must reach to trigger cloning"
-        }
-      ],
-      "features": [
-        "User global monitoring and triggering",
-        "Automatic global reset to 0 after cloning",
-        "Entity cloning with configurable quantity",
-        "Player-centered positioning system",
-        "Random and row-based positioning around player",
-        "Configurable entity lifespan and health",
-        "Respawn cycle system with event limits",
-        "Automatic entity discovery by name",
-        "Surface height detection for proper positioning",
-        "Gravity and collision management",
-        "Logic connection triggers on completion",
-        "Memory efficient entity tracking",
-        "Player proximity activation",
-        "Automatic cleanup of expired entities",
-        "Formation-based positioning options",
-        "Health randomization system",
-        "Respawn interval control",
-        "Entity rotation preservation",
-        "One-time trigger per global threshold"
-      ],
-      "keywords": ["clone", "entity", "spawn", "duplicate", "respawn", "formation", "lifespan", "health", "positioning", "generation", "global", "trigger", "threshold", "user global"],
-      "tutorial": {
-        "videoId": "coming-soon",
-        "timestamp": "0:00",
-        "steps": [
-          "Create an entity to serve as the template for cloning",
-          "Give the template entity a specific name",
-          "Create an object to attach the global_clone_entity behavior to",
-          "Set AlwaysActive to ON for the cloning object",
-          "Attach the global_clone_entity behavior to the object",
-          "Configure ENTITY_NAME to match the template entity name",
-          "Set GLOBAL_NAME to the user global you want to monitor",
-          "Set TARGET_VALUE to the threshold that triggers cloning",
-          "Set CLONE_QUANTITY for desired number of copies",
-          "Configure CLONE_RANGE for positioning area",
-          "Set CLONE_LIFESPAN for entity duration",
-          "Choose CLONE_HEALTH setting (Cloned or Random)",
-          "Configure FORMATION for positioning style",
-          "Set RESPAWN_CYCLE and related respawn options",
-          "Test by setting the user global to the target value",
-          "Verify that the global resets to 0 after cloning",
-          "Test respawn functionality if enabled",
-          "Adjust settings for optimal gameplay"
-        ]
-      },
-      "relatedBehaviors": ["clone_entity", "spawn_system", "entity_manager", "respawn_system", "formation_controller", "entity_generator", "user_global"]
-    },
     "stealthshield": {
       "name": "Stealth Shield",
       "file": "rpg/stealthshield.lua",
@@ -2133,7 +1997,7 @@
       ],
       "keywords": ["mouse", "control", "interaction", "click", "cursor", "pointer", "targeting", "object", "detection", "allegiance"],
       "tutorial": {
-        "videoId": "h4mBqYIlLKM",
+        "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
           "Create an object to attach the mousecontrol behavior to",
@@ -2740,7 +2604,7 @@
       ],
       "keywords": ["oxygen", "health", "supply", "pickup", "survival", "drowning", "underwater", "restoration", "breathing"],
       "tutorial": {
-        "videoId": "pOrcsK5npaw",
+        "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
           "Create an object to represent the oxygen supply",

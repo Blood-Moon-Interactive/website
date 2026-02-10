@@ -395,7 +395,7 @@
       ],
       "keywords": ["animation", "speed", "control", "variable", "sound", "modulate", "dynamic"],
       "tutorial": {
-        "videoId": "MPHGC9Hgzu4",
+        "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
           "Attach the animated_object behavior to an object with animations",
@@ -661,7 +661,7 @@
       ],
       "keywords": ["destructible", "break", "fragment", "navmesh", "collision", "animation", "destroy", "interactive"],
       "tutorial": {
-        "videoId": "hKoTPcsP8Wk",
+        "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
           "Create or select an object with destruction fragments",
@@ -3719,4 +3719,4 @@
       "relatedBehaviors": ["examine", "evidence_system", "narration_system", "presentation_system", "interaction_system", "camera_control"]
     }
   }
-}
+} 

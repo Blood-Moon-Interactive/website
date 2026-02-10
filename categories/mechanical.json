@@ -367,7 +367,7 @@
       ],
       "keywords": ["mechanical", "searchlight", "light", "beam", "spotlight", "security", "lighting", "dynamic", "effect"],
       "tutorial": {
-        "videoId": "Hgh-BnaW_Zw",
+        "videoId": "coming-soon",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["light_control", "dynamic_light", "spotlight"]
@@ -443,7 +443,7 @@
       ],
       "keywords": ["searchlight", "security", "detection", "alarm", "scanning", "rotation", "stealth", "ai", "surveillance", "mechanical"],
       "tutorial": {
-        "videoId": "Hgh-BnaW_Zw",
+        "videoId": "coming-soon",
         "timestamp": "0:00",
         "steps": [
           "Create a searchlight object with rotation capability",

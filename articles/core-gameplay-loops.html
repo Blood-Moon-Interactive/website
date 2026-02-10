@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LX742FRW91"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LX742FRW91"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,19 +10,20 @@
 
   gtag('config', 'G-LX742FRW91');
 </script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
-<meta content="no-cache" http-equiv="Pragma"/>
-<meta content="0" http-equiv="Expires"/>
-<title>Core Gameplay Loops - Blood Moon Interactive</title>
-<meta content="Master the fundamental concept of core gameplay loops. Learn how to design engaging, repeatable actions that keep players coming back to your game." name="description"/>
-<link href="../bm_logo.png" rel="icon" type="image/x-icon"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
-<link href="../styles.css" rel="stylesheet"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Core Gameplay Loops - Blood Moon Interactive</title>
+    <meta name="description" content="Master the fundamental concept of core gameplay loops. Learn how to design engaging, repeatable actions that keep players coming back to your game.">
+    <link rel="icon" type="image/x-icon" href="../bm_logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"
+     crossorigin="anonymous"></script>
+    <style>
         .loop-diagram {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 15px;
@@ -68,247 +68,306 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-<div class="container">
-<a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
-<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<div class="ms-auto">
-<div class="input-group">
-<input class="form-control" id="searchBehaviors" placeholder="Search behaviors..." type="text"/>
-<button class="btn btn-outline-light" id="searchButton" type="button">
-<i class="bi bi-search"></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<div class="container mt-5 pt-4">
-<!-- Top Content Ad Space -->
-<div class="ad-container text-center mb-4">
-<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
-<script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchBehaviors" placeholder="Search behaviors...">
+                        <button class="btn btn-outline-light" type="button" id="searchButton">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+        <!-- Top Content Ad Space -->
+        <div class="ad-container text-center mb-4">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7908718257772872"
+                 data-ad-slot="5812492004"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-</div>
-<div class="row">
-<div class="col-lg-8">
-<article class="article-content">
-<header class="article-header mb-4">
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-<li class="breadcrumb-item"><a href="game-design-principles.html">Game Design Principles</a></li>
-<li class="breadcrumb-item active">Core Gameplay Loops</li>
-</ol>
-</nav>
-<h1 class="article-title">Core Gameplay Loops</h1>
-<div class="article-meta text-muted">
-<i class="bi bi-person me-2"></i>Blood Moon Interactive
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <article class="article-content">
+                    <header class="article-header mb-4">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="game-design-principles.html">Game Design Principles</a></li>
+                                <li class="breadcrumb-item active">Core Gameplay Loops</li>
+                            </ol>
+                        </nav>
+                        <h1 class="article-title">Core Gameplay Loops</h1>
+                        <div class="article-meta text-muted">
+                            <i class="bi bi-person me-2"></i>Blood Moon Interactive
                             <i class="bi bi-tag me-2 ms-3"></i>Game Design
                         </div>
-</header>
-<div class="article-body">
-<p class="lead">
+                    </header>
+
+                    <div class="article-body">
+                        <p class="lead">
                             The core gameplay loop is the heart of your game - the fundamental actions players repeat throughout their experience. Understanding and designing effective loops is crucial for player engagement and retention, regardless of your chosen game engine or development platform.
                         </p>
-<div class="alert alert-info">
-<h5><i class="bi bi-lightbulb me-2"></i>Key Takeaway</h5>
-<p class="mb-0">A strong core loop should be satisfying to repeat, provide clear feedback, and offer meaningful progression. It's the foundation that everything else in your game builds upon.</p>
-</div>
-<h2>Understanding the Concept</h2>
-<p>
+
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-lightbulb me-2"></i>Key Takeaway</h5>
+                            <p class="mb-0">A strong core loop should be satisfying to repeat, provide clear feedback, and offer meaningful progression. It's the foundation that everything else in your game builds upon.</p>
+                        </div>
+
+                        <h2>Understanding the Concept</h2>
+                        <p>
                             A core gameplay loop is a series of actions that players perform repeatedly throughout your game. Think of it as the "main activity" that defines your game's essence. In a well-designed loop, each repetition should feel rewarding and contribute to the player's sense of progress.
                         </p>
-<p>
+                        <p>
                             This principle is fundamental to creating engaging gameplay experiences because it creates the foundation for player engagement and retention. Whether you're working in Unity, Unreal Engine, GameGuru MAX, or any other game development platform, understanding this concept will help you create more compelling games.
                         </p>
-<div class="loop-diagram">
-<h4 class="text-center mb-3"><i class="bi bi-arrow-repeat me-2"></i>The Core Loop Cycle</h4>
-<div class="loop-step">
-<strong>1. Action</strong> - Player performs the main activity
+
+                        <div class="loop-diagram">
+                            <h4 class="text-center mb-3"><i class="bi bi-arrow-repeat me-2"></i>The Core Loop Cycle</h4>
+                            <div class="loop-step">
+                                <strong>1. Action</strong> - Player performs the main activity
                             </div>
-<div class="text-center">
-<i class="bi bi-arrow-down flow-arrow"></i>
-</div>
-<div class="loop-step">
-<strong>2. Feedback</strong> - Game responds with immediate response
+                            <div class="text-center">
+                                <i class="bi bi-arrow-down flow-arrow"></i>
                             </div>
-<div class="text-center">
-<i class="bi bi-arrow-down flow-arrow"></i>
-</div>
-<div class="loop-step">
-<strong>3. Reward</strong> - Player receives meaningful progression
+                            <div class="loop-step">
+                                <strong>2. Feedback</strong> - Game responds with immediate response
                             </div>
-<div class="text-center">
-<i class="bi bi-arrow-down flow-arrow"></i>
-</div>
-<div class="loop-step">
-<strong>4. Motivation</strong> - Player is driven to repeat the cycle
+                            <div class="text-center">
+                                <i class="bi bi-arrow-down flow-arrow"></i>
                             </div>
-<div class="text-center">
-<i class="bi bi-arrow-up flow-arrow"></i>
-</div>
-</div>
-<h2>Why This Matters for Indie Developers</h2>
-<p>
+                            <div class="loop-step">
+                                <strong>3. Reward</strong> - Player receives meaningful progression
+                            </div>
+                            <div class="text-center">
+                                <i class="bi bi-arrow-down flow-arrow"></i>
+                            </div>
+                            <div class="loop-step">
+                                <strong>4. Motivation</strong> - Player is driven to repeat the cycle
+                            </div>
+                            <div class="text-center">
+                                <i class="bi bi-arrow-up flow-arrow"></i>
+                            </div>
+                        </div>
+
+                        <h2>Why This Matters for Indie Developers</h2>
+                        <p>
                             As an indie developer, you face unique challenges and opportunities. This principle is particularly important because:
                         </p>
-<ul>
-<li><strong>Limited Resources:</strong> You need to maximize impact with minimal development time</li>
-<li><strong>Player Engagement:</strong> Every element must contribute to the overall experience</li>
-<li><strong>Market Competition:</strong> Your game needs to stand out in a crowded marketplace</li>
-<li><strong>Technical Constraints:</strong> You must work within your engine's capabilities</li>
-</ul>
-<p>
+                        <ul>
+                            <li><strong>Limited Resources:</strong> You need to maximize impact with minimal development time</li>
+                            <li><strong>Player Engagement:</strong> Every element must contribute to the overall experience</li>
+                            <li><strong>Market Competition:</strong> Your game needs to stand out in a crowded marketplace</li>
+                            <li><strong>Technical Constraints:</strong> You must work within your engine's capabilities</li>
+                        </ul>
+                        <p>
                             By mastering this concept, you can create games that feel polished and professional despite limited resources.
                         </p>
-<h2>Core Principles</h2>
-<ul>
-<li><strong>Simplicity:</strong> The loop should be easy to understand and execute, even for new players</li>
-<li><strong>Immediate Feedback:</strong> Players should see the results of their actions right away</li>
-<li><strong>Meaningful Progression:</strong> Each iteration should advance the player toward their goals</li>
-<li><strong>Variety Within Constraints:</strong> The loop should feel fresh even after many repetitions</li>
-<li><strong>Scalable Complexity:</strong> The loop should support increasing difficulty and depth</li>
-</ul>
-<!-- Inline Ad Space -->
-<div class="ad-container text-center my-4">
-<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
-<script>
+
+                        <h2>Core Principles</h2>
+                        <ul>
+                            <li><strong>Simplicity:</strong> The loop should be easy to understand and execute, even for new players</li>
+                            <li><strong>Immediate Feedback:</strong> Players should see the results of their actions right away</li>
+                            <li><strong>Meaningful Progression:</strong> Each iteration should advance the player toward their goals</li>
+                            <li><strong>Variety Within Constraints:</strong> The loop should feel fresh even after many repetitions</li>
+                            <li><strong>Scalable Complexity:</strong> The loop should support increasing difficulty and depth</li>
+                        </ul>
+
+                        <!-- Inline Ad Space -->
+                        <div class="ad-container text-center my-4">
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-7908718257772872"
+                                 data-ad-slot="5812492004"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
                                  (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
-</div>
-<h2>Practical Applications</h2>
-<div class="example-game">
-<h5><i class="bi bi-controller me-2"></i>Action Games</h5>
-<p><strong>Loop:</strong> Combat → Victory → Loot/XP → Upgrade → Stronger Combat</p>
-<p><strong>Example:</strong> In a hack-and-slash game, players fight enemies, collect experience points, unlock new abilities, and face tougher challenges.</p>
-</div>
-<div class="example-game">
-<h5><i class="bi bi-puzzle me-2"></i>Puzzle Games</h5>
-<p><strong>Loop:</strong> Solve Puzzle → Success → New Puzzle → Increased Difficulty</p>
-<p><strong>Example:</strong> In Tetris, players clear lines, earn points, advance levels, and face faster falling pieces.</p>
-</div>
-<div class="example-game">
-<h5><i class="bi bi-building me-2"></i>Management Games</h5>
-<p><strong>Loop:</strong> Manage Resources → Generate Income → Expand → More Complex Management</p>
-<p><strong>Example:</strong> In a city builder, players build structures, collect taxes, expand their city, and manage more complex systems.</p>
-</div>
-<div class="example-game">
-<h5><i class="bi bi-person-running me-2"></i>RPGs</h5>
-<p><strong>Loop:</strong> Explore → Combat → Quest Completion → Character Growth → New Areas</p>
-<p><strong>Example:</strong> Players explore the world, fight enemies, complete quests, level up, and unlock new areas to explore.</p>
-</div>
-<div class="example-game">
-<h5><i class="bi bi-people me-2"></i>Social Games</h5>
-<p><strong>Loop:</strong> Interact → Build Relationships → Unlock Content → Deeper Interactions</p>
-<p><strong>Example:</strong> Players interact with characters, build relationships, unlock new dialogue options, and experience deeper story content.</p>
-</div>
-<h2>Common Mistakes to Avoid</h2>
-<ul>
-<li><strong>Overcomplicating the Loop:</strong> Adding too many steps or mechanics can confuse players and break engagement</li>
-<li><strong>Lack of Feedback:</strong> Players need immediate, clear responses to their actions to stay engaged</li>
-<li><strong>No Progression:</strong> If the loop doesn't advance the player's goals, it feels pointless</li>
-<li><strong>Repetitive Without Variety:</strong> The loop should evolve and introduce new elements over time</li>
-<li><strong>Ignoring Player Motivation:</strong> The loop must align with what drives players to continue playing</li>
-</ul>
-<h2>Implementation Tips</h2>
-<p>
+                        </div>
+
+                        <h2>Practical Applications</h2>
+                        
+                        <div class="example-game">
+                            <h5><i class="bi bi-controller me-2"></i>Action Games</h5>
+                            <p><strong>Loop:</strong> Combat → Victory → Loot/XP → Upgrade → Stronger Combat</p>
+                            <p><strong>Example:</strong> In a hack-and-slash game, players fight enemies, collect experience points, unlock new abilities, and face tougher challenges.</p>
+                        </div>
+
+                        <div class="example-game">
+                            <h5><i class="bi bi-puzzle me-2"></i>Puzzle Games</h5>
+                            <p><strong>Loop:</strong> Solve Puzzle → Success → New Puzzle → Increased Difficulty</p>
+                            <p><strong>Example:</strong> In Tetris, players clear lines, earn points, advance levels, and face faster falling pieces.</p>
+                        </div>
+
+                        <div class="example-game">
+                            <h5><i class="bi bi-building me-2"></i>Management Games</h5>
+                            <p><strong>Loop:</strong> Manage Resources → Generate Income → Expand → More Complex Management</p>
+                            <p><strong>Example:</strong> In a city builder, players build structures, collect taxes, expand their city, and manage more complex systems.</p>
+                        </div>
+
+                        <div class="example-game">
+                            <h5><i class="bi bi-person-running me-2"></i>RPGs</h5>
+                            <p><strong>Loop:</strong> Explore → Combat → Quest Completion → Character Growth → New Areas</p>
+                            <p><strong>Example:</strong> Players explore the world, fight enemies, complete quests, level up, and unlock new areas to explore.</p>
+                        </div>
+
+                        <div class="example-game">
+                            <h5><i class="bi bi-speedometer2 me-2"></i>Racing Games</h5>
+                            <p><strong>Loop:</strong> Race → Finish → Earn Currency → Upgrade Vehicle → Faster Racing</p>
+                            <p><strong>Example:</strong> Players complete races, earn money, upgrade their cars, and compete in faster, more challenging events.</p>
+                        </div>
+
+                        <div class="example-game">
+                            <h5><i class="bi bi-people me-2"></i>Social Games</h5>
+                            <p><strong>Loop:</strong> Interact → Build Relationships → Unlock Content → Deeper Interactions</p>
+                            <p><strong>Example:</strong> Players interact with characters, build relationships, unlock new dialogue options, and experience deeper story content.</p>
+                        </div>
+
+                        <h2>Common Mistakes to Avoid</h2>
+                        <ul>
+                            <li><strong>Overcomplicating the Loop:</strong> Adding too many steps or mechanics can confuse players and break engagement</li>
+                            <li><strong>Lack of Feedback:</strong> Players need immediate, clear responses to their actions to stay engaged</li>
+                            <li><strong>No Progression:</strong> If the loop doesn't advance the player's goals, it feels pointless</li>
+                            <li><strong>Repetitive Without Variety:</strong> The loop should evolve and introduce new elements over time</li>
+                            <li><strong>Ignoring Player Motivation:</strong> The loop must align with what drives players to continue playing</li>
+                        </ul>
+
+                        <h2>Implementation Tips</h2>
+                        <p>
                             To effectively implement this principle in your game development workflow:
                         </p>
-<ol>
-<li>Start with a clear understanding of your game's core loop</li>
-<li>Prototype the concept early in development</li>
-<li>Test with real players and gather feedback</li>
-<li>Iterate based on player responses</li>
-<li>Polish and refine until the concept feels natural</li>
-</ol>
-<p>
+                        <ol>
+                            <li>Start with a clear understanding of your game's core loop</li>
+                            <li>Prototype the concept early in development</li>
+                            <li>Test with real players and gather feedback</li>
+                            <li>Iterate based on player responses</li>
+                            <li>Polish and refine until the concept feels natural</li>
+                        </ol>
+                        <p>
                             Remember that game design is an iterative process. Don't be afraid to experiment and make changes based on what you learn from testing.
                         </p>
-<div class="flow-chart">
-<h5 class="text-center mb-3">Design Process Flow</h5>
-<div class="text-center">
-<span class="flow-step">Identify Core Action</span>
-<i class="bi bi-arrow-right flow-arrow"></i>
-<span class="flow-step">Add Feedback</span>
-<i class="bi bi-arrow-right flow-arrow"></i>
-<span class="flow-step">Create Reward</span>
-<i class="bi bi-arrow-right flow-arrow"></i>
-<span class="flow-step">Test &amp; Iterate</span>
-</div>
-</div>
-<div class="alert alert-success">
-<h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
-<p class="mb-0">Start by identifying the single most satisfying action in your game. Build your core loop around that action, ensuring each repetition feels rewarding. Remember: it's better to have one excellent loop than multiple mediocre ones.</p>
-</div>
-</div>
-<footer class="article-footer mt-5 pt-4 border-top">
-<div class="row">
-<div class="col-md-6">
-<h5>Related Articles</h5>
-<ul class="list-unstyled">
-<li><a class="text-decoration-none" href="game-design-principles.html">Game Design Principles</a></li>
-<li><a class="text-decoration-none" href="#">Player Motivation (Coming Soon)</a></li>
-<li><a class="text-decoration-none" href="#">Feedback Systems (Coming Soon)</a></li>
-<li><a class="text-decoration-none" href="../index.html">Behavior Library</a></li>
-</ul>
-</div>
-<div class="col-md-6 text-md-end">
-<a class="btn btn-outline-primary" href="game-design-principles.html">
-<i class="bi bi-arrow-left me-2"></i>Back to Game Design
+
+                        <div class="flow-chart">
+                            <h5 class="text-center mb-3">Design Process Flow</h5>
+                            <div class="text-center">
+                                <span class="flow-step">Identify Core Action</span>
+                                <i class="bi bi-arrow-right flow-arrow"></i>
+                                <span class="flow-step">Add Feedback</span>
+                                <i class="bi bi-arrow-right flow-arrow"></i>
+                                <span class="flow-step">Create Reward</span>
+                                <i class="bi bi-arrow-right flow-arrow"></i>
+                                <span class="flow-step">Test & Iterate</span>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success">
+                            <h5><i class="bi bi-lightbulb me-2"></i>Pro Tip</h5>
+                            <p class="mb-0">Start by identifying the single most satisfying action in your game. Build your core loop around that action, ensuring each repetition feels rewarding. Remember: it's better to have one excellent loop than multiple mediocre ones.</p>
+                        </div>
+                    </div>
+
+                    <footer class="article-footer mt-5 pt-4 border-top">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Related Articles</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="game-design-principles.html" class="text-decoration-none">Game Design Principles</a></li>
+                                    <li><a href="#" class="text-decoration-none">Player Motivation (Coming Soon)</a></li>
+                                    <li><a href="#" class="text-decoration-none">Feedback Systems (Coming Soon)</a></li>
+                                    <li><a href="../index.html" class="text-decoration-none">Behavior Library</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <a href="game-design-principles.html" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-2"></i>Back to Game Design
                                 </a>
-</div>
-</div>
-</footer>
-</article>
-</div>
-<div class="col-lg-4">
-<!-- Additional Sidebar Content -->
-<div class="card mb-4">
-<div class="card-header">
-<h5><i class="bi bi-lightbulb me-2"></i>Quick Reference</h5>
-</div>
-<div class="card-body">
-<h6>Core Loop Elements:</h6>
-<ul class="list-unstyled small">
-<li><i class="bi bi-check-circle-fill text-success me-2"></i>Clear Action</li>
-<li><i class="bi bi-check-circle-fill text-success me-2"></i>Immediate Feedback</li>
-<li><i class="bi bi-check-circle-fill text-success me-2"></i>Meaningful Reward</li>
-<li><i class="bi bi-check-circle-fill text-success me-2"></i>Progression</li>
-</ul>
-<hr/>
-<h6>Common Genres:</h6>
-<ul class="list-unstyled small">
-<li><i class="bi bi-controller me-2"></i>Action</li>
-<li><i class="bi bi-puzzle me-2"></i>Puzzle</li>
-<li><i class="bi bi-building me-2"></i>Management</li>
-<li><i class="bi bi-person-running me-2"></i>RPG</li>
-</ul>
-</div>
-</div>
-<!-- Bottom Sidebar Ad Space -->
-<div class="ad-container ad-sidebar text-center">
-<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
-<script>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+            <div class="col-lg-4">
+
+                
+                <!-- Additional Sidebar Content -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="bi bi-book me-2"></i>Game Design Articles</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li><a href="game-design-principles.html" class="text-decoration-none">All Game Design Articles</a></li>
+                            <li><a href="#" class="text-decoration-none">Player Motivation (Coming Soon)</a></li>
+                            <li><a href="#" class="text-decoration-none">Feedback Systems (Coming Soon)</a></li>
+                            <li><a href="../index.html" class="text-decoration-none">Behavior Library</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="bi bi-lightbulb me-2"></i>Quick Reference</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6>Core Loop Elements:</h6>
+                        <ul class="list-unstyled small">
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Clear Action</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Immediate Feedback</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Meaningful Reward</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Progression</li>
+                        </ul>
+                        <hr>
+                        <h6>Common Genres:</h6>
+                        <ul class="list-unstyled small">
+                            <li><i class="bi bi-controller me-2"></i>Action</li>
+                            <li><i class="bi bi-puzzle me-2"></i>Puzzle</li>
+                            <li><i class="bi bi-building me-2"></i>Management</li>
+                            <li><i class="bi bi-person-running me-2"></i>RPG</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bottom Sidebar Ad Space -->
+                <div class="ad-container text-center">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7908718257772872"
+                         data-ad-slot="5812492004"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
                          (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-</div>
-</div>
-</div>
-</div>
-<footer class="footer mt-auto py-3 bg-dark">
-<div class="container text-center">
-<p class="text-light mb-0">Created by Blood Moon Interactive</p>
-<p class="text-light mb-0 small">© <span id="currentYear">2025</span> Blood Moon Interactive. All rights reserved.</p>
-</div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/affiliateLinksStandalone.js"></script>
-<script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <p class="text-light mb-0">Created by Blood Moon Interactive</p>
+            <p class="text-light mb-0 small">&copy; <span id="currentYear">2025</span> Blood Moon Interactive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
         // Update copyright year automatically
         document.addEventListener('DOMContentLoaded', function() {
             const currentYear = new Date().getFullYear();
