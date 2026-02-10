@@ -395,7 +395,7 @@
       ],
       "keywords": ["animation", "speed", "control", "variable", "sound", "modulate", "dynamic"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "MPHGC9Hgzu4",
         "timestamp": "0:00",
         "steps": [
           "Attach the animated_object behavior to an object with animations",
@@ -661,7 +661,7 @@
       ],
       "keywords": ["destructible", "break", "fragment", "navmesh", "collision", "animation", "destroy", "interactive"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "hKoTPcsP8Wk",
         "timestamp": "0:00",
         "steps": [
           "Create or select an object with destruction fragments",
@@ -1375,7 +1375,7 @@
       ],
       "keywords": ["move", "proximity", "trigger", "follow", "avoid", "return", "circle", "movement"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "trA9iWv9ol8",
         "timestamp": "0:00",
         "steps": [
           "Create or select target object",
@@ -1391,6 +1391,46 @@
         ]
       },
       "relatedBehaviors": ["follow_path", "object_mover", "trigger_zone", "proximity_trigger"]
+    },
+    "move_away": {
+      "name": "Move Away",
+      "file": "objects/move_away.lua",
+      "description": "Creates an object that moves away from the player when they come within range. Features configurable detection range and automatic repulsion from the player position.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "60-3000",
+          "default": 300,
+          "description": "Distance at which object starts moving away from the player"
+        }
+      ],
+      "features": [
+        "Proximity-based activation",
+        "Repulsion from player",
+        "Configurable detection range",
+        "Automatic movement away",
+        "Distance-based triggering",
+        "Collision handling",
+        "Position tracking",
+        "Ground height detection"
+      ],
+      "keywords": ["move", "away", "proximity", "repel", "trigger", "range", "avoidance", "movement"],
+      "tutorial": {
+        "videoId": "trA9iWv9ol8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create or select target object",
+          "Set Physics to ON",
+          "Set Always Active to ON",
+          "Attach the move_away behavior",
+          "Configure detection range",
+          "Test proximity activation",
+          "Verify object moves away when player approaches",
+          "Check movement direction and speed"
+        ]
+      },
+      "relatedBehaviors": ["move_near", "object_mover", "trigger_zone", "proximity_trigger"]
     },
     "object_collider": {
       "name": "Object Collider",
@@ -3717,6 +3757,46 @@
         ]
       },
       "relatedBehaviors": ["examine", "evidence_system", "narration_system", "presentation_system", "interaction_system", "camera_control"]
+    },
+    "invisible_prompt": {
+      "name": "Invisible Prompt",
+      "file": "objects/invisibleprompt.lua",
+      "description": "Creates an invisible trigger that displays a prompt to the player when they enter its range. The prompt text uses the object's Name field. Perfect for creating invisible waypoints, hidden interactions, and location-based guidance without visible objects.",
+      "properties": [
+        {
+          "name": "RANGE",
+          "type": "number",
+          "range": "60-3000",
+          "default": 100,
+          "description": "Distance at which the prompt is shown to the player"
+        }
+      ],
+      "features": [
+        "Invisible object rendering",
+        "Proximity-based prompt display",
+        "Range-configurable detection",
+        "Name-based prompt text",
+        "Player-only activation",
+        "Smooth proximity detection",
+        "Health-aware triggering",
+        "Automatic hiding"
+      ],
+      "keywords": ["invisible", "prompt", "trigger", "interaction", "guidance", "waypoint", "hidden", "text"],
+      "tutorial": {
+        "videoId": "trA9iWv9ol8",
+        "timestamp": "0:00",
+        "steps": [
+          "Create an object to serve as the invisible prompt",
+          "Set the object's Name field to the prompt text you want displayed",
+          "Attach the invisible_prompt behavior",
+          "Configure the detection range",
+          "Position the object where the prompt should appear",
+          "Test the prompt display when entering the range",
+          "Verify the object is not visible",
+          "Check prompt disappears when leaving the range"
+        ]
+      },
+      "relatedBehaviors": ["trigger_zone", "proximity_trigger", "examine", "interaction_system"]
     }
   }
-} 
+}

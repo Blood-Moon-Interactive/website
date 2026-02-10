@@ -1291,7 +1291,7 @@
       ],
       "keywords": ["gasmask", "protection", "toxic", "survival", "pickup", "wearable", "overlay", "health", "breathing", "environment"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "iBJyqTVc-wM",
         "timestamp": "0:00",
         "steps": [
           "Create an object to represent the gas mask",
@@ -1659,7 +1659,7 @@
       ],
       "keywords": ["stopwatch", "timer", "time", "countdown", "speed run", "challenge", "timed", "milliseconds", "seconds", "minutes", "hours", "global variable"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "MT5tqRR3fbk",
         "timestamp": "0:00",
         "steps": [
           "Create a stopwatch object",

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chest — RPG Loot & Storage System | Blood Moon Interactive</title>
+<meta content="Master the Chest behavior in GameGuru MAX: create interactive loot containers, storage systems, and inventory management for RPG games." name="description"/>
+<meta content="chest, loot, storage, inventory, rpg, container, hud, behavior, GameGuru MAX, tutorial" name="keywords"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<div class="ms-auto"><div class="input-group"><input class="form-control" id="searchBehaviors" placeholder="Search behaviors..." type="text"/><button class="btn btn-outline-light" id="searchButton" type="button"><i class="bi bi-search"></i></button></div></div>
+</div>
+</div>
+</nav>
+
+<div class="container mt-4">
+<div class="ad-container text-center my-4">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7908718257772872" data-ad-slot="5812492004" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="row">
+<div class="col-lg-8">
+<article class="article-content">
+<header class="article-header mb-4">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../articles.html">Articles</a></li>
+<li aria-current="page" class="breadcrumb-item active">Chest — Loot & Storage</li>
+</ol>
+</nav>
+<h1 class="article-title">Chest — RPG Loot & Storage System</h1>
+<div class="article-meta text-muted"><i class="bi bi-person me-2"></i>Blood Moon Interactive<i class="bi bi-tag me-2 ms-3"></i>RPG Systems</div>
+</header>
+
+<div class="article-body">
+<p class="lead">The Chest behavior is a powerful storage system in GameGuru MAX that brings classic RPG inventory management to your games. Whether you're creating treasure chests, supply caches, or merchant containers, this behavior handles all the complexity of persistent storage and HUD integration.</p>
+
+<div class="alert alert-info">
+<h5><i class="bi bi-lightbulb me-2"></i>Key Feature</h5>
+<p class="mb-0">Persistent storage containers with HUD screen integration and customizable interaction ranges make it easy to create authentic RPG experiences where players can collect, organize, and manage their inventory through intuitive container interactions.</p>
+</div>
+
+<h2>Video Tutorial</h2>
+<div class="ratio ratio-16x9 mb-4">
+  <iframe src="https://www.youtube.com/embed/IYvxLMYM8aA" title="Chest Tutorial" allowfullscreen></iframe>
+</div>
+
+<h2>Why Chests Matter in RPG Design</h2>
+<p>Chests and storage containers are fundamental to RPG gameplay. They serve multiple purposes:</p>
+<ul>
+  <li><strong>Inventory Management:</strong> Provide safe storage for players to organize their items</li>
+  <li><strong>Loot Rewards:</strong> Create satisfying moments when players discover treasure</li>
+  <li><strong>World Building:</strong> Chests tell stories about dungeons, merchants, and civilizations</li>
+  <li><strong>Game Progression:</strong> Control what items are available at specific story points</li>
+  <li><strong>Player Agency:</strong> Let players decide what to carry and what to store</li>
+</ul>
+
+<h2>Setup & Configuration</h2>
+<ol>
+  <li>Create a 3D object in your scene to represent the chest (model or placeholder).</li>
+  <li>Set the object's <code>AlwaysActive</code> property to ON.</li>
+  <li>Attach the <code>chest</code> behavior from the RPG behaviors category.</li>
+  <li>Configure the <code>USE_RANGE</code> to control how far players can interact with the chest.</li>
+  <li>Set <code>USE_PROMPT</code> to the text players will see ("Press E to open", etc.).</li>
+  <li>Choose or create a HUD screen for the container interface with <code>CHEST_SCREEN</code>.</li>
+  <li>Name your container uniquely with <code>CHEST_CONTAINER</code> (use "chestunique" for per-chest storage).</li>
+  <li>Configure prompt display location and visual highlighting as desired.</li>
+  <li>Add sound effects to Sound0 and Sound1 for opening/closing audio feedback.</li>
+</ol>
+
+<h2>Core Properties</h2>
+
+<h3>Interaction Settings</h3>
+<ul>
+  <li><strong>USE_RANGE (50-200 units, default 100):</strong> How close the player must be to interact. Longer ranges make chests more discoverable, shorter ranges encourage exploration.</li>
+  <li><strong>USE_PROMPT:</strong> The text displayed when a player can interact ("Press E to open", "Loot this chest", etc.)</li>
+  <li><strong>PROMPT_DISPLAY:</strong> Choose between Local (near the chest) or Screen (center of HUD)</li>
+</ul>
+
+<h3>Storage Configuration</h3>
+<ul>
+  <li><strong>CHEST_SCREEN:</strong> The HUD screen that opens when the chest is accessed. Create custom HUD screens for different container types.</li>
+  <li><strong>CHEST_CONTAINER:</strong> The internal name for this chest's inventory. Use unique names to give each chest its own storage, or use shared names for linked containers.</li>
+</ul>
+
+<h3>Visual Enhancement</h3>
+<ul>
+  <li><strong>ITEM_HIGHLIGHT:</strong> Visual feedback options — None, Shape (highlight the object), or Outline (glow effect) — help players spot interactive chests.</li>
+</ul>
+
+<h2>Practical Implementation Examples</h2>
+
+<h3>Treasure Chest in a Dungeon</h3>
+<p>Create an iconic dungeon treasure chest with:</p>
+<ul>
+  <li>USE_RANGE: 80 (players must approach closely)</li>
+  <li>USE_PROMPT: "E to loot treasure"</li>
+  <li>ITEM_HIGHLIGHT: Shape (make it obviously interactive)</li>
+  <li>CHEST_CONTAINER: "treasureChest_Level3" (unique per level)</li>
+  <li>Sound0: Wood creak effect for opening</li>
+</ul>
+
+<h3>Merchant Supply Crate</h3>
+<p>Set up a merchant's storage area:</p>
+<ul>
+  <li>USE_RANGE: 120 (more accessible)</li>
+  <li>USE_PROMPT: "Browse supplies"</li>
+  <li>CHEST_SCREEN: Custom merchant HUD</li>
+  <li>CHEST_CONTAINER: "merchantSupplies" (shared inventory across all crates)</li>
+  <li>PROMPT_DISPLAY: Screen (better for shop experience)</li>
+</ul>
+
+<h3>Player Home Storage</h3>
+<p>Multiple chests in a player's base or home:</p>
+<ul>
+  <li>USE_RANGE: 100</li>
+  <li>USE_PROMPT: "Organize items"</li>
+  <li>Create separate containers for each room: "homeChest_Bedroom", "homeChest_Storage", etc.</li>
+  <li>Allows players to organize their inventory across multiple locations</li>
+</ul>
+
+<h2>Advanced Techniques</h2>
+
+<h3>Shared vs. Unique Storage</h3>
+<p>The <code>CHEST_CONTAINER</code> name determines whether chests share inventory:</p>
+<ul>
+  <li><strong>Unique Names:</strong> Each chest has its own storage ("chest_01", "chest_02")</li>
+  <li><strong>Shared Names:</strong> Multiple chests link to the same inventory ("armory" links all weapon caches)</li>
+</ul>
+
+<h3>Conditional Chest Contents</h3>
+<p>Populate chests dynamically based on story progression:</p>
+<ul>
+  <li>Use logic connections to activate/deactivate items based on player level</li>
+  <li>Create boss-specific loot chests that only contain rewards after defeating enemies</li>
+  <li>Reference global variables to determine what items should be available</li>
+</ul>
+
+<h3>Chest Highlighting for Discovery</h3>
+<p>Make hidden chests more discoverable with visual feedback:</p>
+<ul>
+  <li>Use the Shape or Outline highlight option to gently guide players</li>
+  <li>Combine with proximity-based lighting effects for atmospheric discovery</li>
+</ul>
+
+<h2>Common Pitfalls & Solutions</h2>
+
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>Problem</th>
+      <th>Solution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chest won't open</td>
+      <td>Verify the HUD screen name exists and is created in your project</td>
+    </tr>
+    <tr>
+      <td>Items disappear after collection</td>
+      <td>Ensure each chest has a unique CHEST_CONTAINER name if you want persistent storage</td>
+    </tr>
+    <tr>
+      <td>Player can't interact from far away</td>
+      <td>Increase USE_RANGE value (try 150-200 for more accessible chests)</td>
+    </tr>
+    <tr>
+      <td>Multiple chests share same contents</td>
+      <td>This is intended if using the same CHEST_CONTAINER name — change to unique names for independent storage</td>
+    </tr>
+    <tr>
+      <td>Prompt not visible</td>
+      <td>Change PROMPT_DISPLAY to "Screen" for better visibility, or increase ITEM_HIGHLIGHT</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Design Best Practices</h2>
+
+<h3>Feedback and Polish</h3>
+<ul>
+  <li><strong>Always add sound effects:</strong> Creaking wood, metal latches, or magical chimes make interactions feel substantial</li>
+  <li><strong>Visual highlighting:</strong> Even subtle outlines help players recognize interactive objects</li>
+  <li><strong>Clear prompts:</strong> Write prompts that match your game's tone ("Loot", "Open", "Search")</li>
+</ul>
+
+<h3>Inventory Flow</h3>
+<ul>
+  <li>Keep USE_RANGE reasonable — too far feels unrealistic, too close feels restrictive</li>
+  <li>Create multiple small chests rather than one huge container for better pacing</li>
+  <li>Use consistent HUD screens across similar chest types for familiarity</li>
+</ul>
+
+<h3>Narrative Integration</h3>
+<ul>
+  <li>Place chests intentionally — they should reward exploration and curiosity</li>
+  <li>Consider what a chest contains and why — treasure feels more rewarding when it's appropriate to the location</li>
+  <li>Use chests to tell environmental stories (a ransacked chest suggests previous adventurers, etc.)</li>
+</ul>
+
+<h2>Related Behaviors</h2>
+<p>The Chest behavior works excellently with these other systems:</p>
+<ul>
+  <li><strong>Inventory System:</strong> Container integration for item management</li>
+  <li><strong>HUD System:</strong> Screen display and interface management</li>
+  <li><strong>Loot System:</strong> Populate chests with random or predetermined rewards</li>
+  <li><strong>Global Variables:</strong> Track which chests have been opened</li>
+  <li><strong>Object Interaction:</strong> Combine with other interactive objects for complex scenarios</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>The Chest behavior is a cornerstone of RPG design in GameGuru MAX. It provides the foundational storage system that players expect, while remaining flexible enough to support creative implementations — from treasure hunting adventures to player housing systems. By understanding its properties and following best practices, you can create storage interactions that feel natural and rewarding.</p>
+
+<p>Start with a simple treasure chest in a dungeon, then expand your skills to create complex storage networks across your game world.</p>
+
+</div>
+</article>
+</div>
+
+<div class="col-lg-4">
+<!-- Right Sidebar Ad Space -->
+<div class="ad-container ad-sidebar text-center">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7908718257772872"
+     data-ad-slot="5812492004"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<!-- Related Articles Box -->
+<div class="card mt-4">
+<div class="card-header bg-dark text-white">
+<h5 class="mb-0">Related Concepts</h5>
+</div>
+<div class="card-body">
+<ul class="list-unstyled">
+<li><a href="#" class="text-decoration-none">Inventory Management</a></li>
+<li><a href="#" class="text-decoration-none">HUD System Design</a></li>
+<li><a href="#" class="text-decoration-none">Item Collection</a></li>
+<li><a href="#" class="text-decoration-none">Player Progression</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-5 py-4 bg-dark text-white text-center">
+<p class="mb-0">&copy; <span id="yearPlaceholder">2024</span> Blood Moon Interactive. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js" type="module"></script>
+<script>
+    function updateCopyrightYear() {
+        document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
+    }
+    updateCopyrightYear();
+</script>
+</body>
+</html>

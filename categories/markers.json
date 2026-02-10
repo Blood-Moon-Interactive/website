@@ -241,7 +241,7 @@
       ],
       "keywords": ["collect", "zone", "entity", "global", "value", "weight", "destroy", "notification"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "SL6aGRDrQlE",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["drop_zone", "remover_zone", "global_affected_zone", "trigger_zone"]
@@ -555,7 +555,7 @@
       ],
       "keywords": ["level", "zone", "transition", "launch", "mode", "image", "video", "keystroke", "spawn", "marker"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "trA9iWv9ol8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["teleport", "winzone", "spawn_locator", "trigger_zone"]
@@ -895,7 +895,7 @@
       ],
       "keywords": ["hud", "zone", "ui", "display", "screen", "trigger", "destroy"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "OVh5EsaHlQw",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["textinzone", "videoinzone", "trigger_zone", "hud_interface"]
@@ -978,7 +978,7 @@
       ],
       "keywords": ["disarm", "weapon", "remove", "zone", "security", "checkpoint", "inventory", "clear"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "trA9iWv9ol8",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["collect_zone", "drop_zone", "get_weapon_zone", "inactive_zone"]
@@ -1542,7 +1542,7 @@
       ],
       "keywords": ["global", "update", "variable", "zone", "text", "numeric", "value"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "SL6aGRDrQlE",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["global_affected_zone", "global_monitor", "global_activator"]
