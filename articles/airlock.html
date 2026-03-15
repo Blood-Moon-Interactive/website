@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Airlock — Pressurization & Water Lock System | Blood Moon Interactive</title>
+<meta content="Create realistic airlocks and water locks in GameGuru MAX with pressurization cycles, timed doors, and environmental hazards. Includes configuration tips and safety considerations." name="description"/>
+<meta content="airlock, pressure, water, doors, behavior, GameGuru MAX, tutorial" name="keywords"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<div class="ms-auto"><div class="input-group"><input class="form-control" id="searchBehaviors" placeholder="Search behaviors..." type="text"/><button class="btn btn-outline-light" id="searchButton" type="button"><i class="bi bi-search"></i></button></div></div>
+</div>
+</div>
+</nav>
+
+<div class="container mt-4">
+<div class="ad-container text-center my-4">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7908718257772872" data-ad-slot="5812492004" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="row">
+<div class="col-lg-8">
+<article class="article-content">
+<header class="article-header mb-4">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../articles.html">Articles</a></li>
+<li aria-current="page" class="breadcrumb-item active">Airlock — Pressurization &amp; Water Lock System</li>
+</ol>
+</nav>
+<h1 class="article-title">Airlock — Pressurization &amp; Water Lock System</h1>
+<div class="article-meta text-muted"><i class="bi bi-person me-2"></i>Blood Moon Interactive<i class="bi bi-tag me-2 ms-3"></i>Doors</div>
+</header>
+
+<div class="article-body">
+<p class="lead">The Airlock behavior lets you build believable, mechanical pressure systems in GameGuru MAX. Whether you're creating a space station airlock, an underwater flood chamber, or a timed security gate, this behavior handles the door sequencing, pressure cycles, and environmental hazards behind the scenes.</p>
+
+<div class="alert alert-info">
+<h5><i class="bi bi-lightbulb me-2"></i>Key Feature</h5>
+<p class="mb-0">Supports both <strong>air pressure cycling</strong> and <strong>water flood locking</strong> with automatic door sequencing, configurable timers, and optional NPC drowning mechanics.</p>
+</div>
+
+<h2>Video Tutorial</h2>
+<div class="ratio ratio-16x9 mb-4">
+  <iframe src="https://www.youtube.com/embed/qay7w2h_KUk" title="Airlock Tutorial" allowfullscreen></iframe>
+</div>
+
+<h2>Why Airlocks Matter</h2>
+<p>Airlocks are an excellent way to add depth and immersion to your levels. They can:</p>
+<ul>
+  <li><strong>Create tension:</strong> Players must wait through timing cycles or manage resources while a door system cycles.</li>
+  <li><strong>Enforce safety rules:</strong> Prevent players from entering hazardous environments without proper preparation.</li>
+  <li><strong>Add environmental puzzles:</strong> Use pressure states and water levels to block or unlock paths.</li>
+  <li><strong>Build atmosphere:</strong> A properly designed airlock heightens the feeling of realism in sci-fi and underwater settings.</li>
+</ul>
+
+<h2>Setup &amp; Configuration</h2>
+<ol>
+  <li>Create two door objects in your scene to represent the inner and outer doors.</li>
+  <li>Name them (default expected names are <code>Inner Door</code> and <code>Outer Door</code>).</li>
+  <li>Create a switch object for the airlock and set <code>AlwaysActive</code> to ON.</li>
+  <li>Attach the <code>airlock</code> behavior to the switch.</li>
+  <li>Configure <code>AIRLOCK_TYPE</code> for an air or water lock.</li>
+  <li>Set door names in <code>DOOR1_NAME</code> and <code>DOOR2_NAME</code> to match your objects.</li>
+  <li>Adjust <code>DELAY</code> to control how long pressurization/depressurization takes.</li>
+  <li>For water locks, configure <code>WATER_LEVEL</code> and enable <code>NPC_DROWNING</code> if desired.</li>
+  <li>Add sound effects to Sound0 (activation) and Sound1 (processing) for a polished feel.</li>
+  <li>Playtest the sequence to ensure doors and timers behave as expected.</li>
+</ol>
+
+<h2>Core Properties</h2>
+<ul>
+  <li><strong>AIRLOCK_TYPE:</strong> Choose between <strong>Air</strong> (pressure cycles) and <strong>Water</strong> (flooding lock).</li>
+  <li><strong>AIR_LEVEL:</strong> Sets the air pressure level; players take damage if it drops during depressurization.</li>
+  <li><strong>WATER_LEVEL:</strong> Controls the height of water in a water lock, determining how deep the chamber floods.</li>
+  <li><strong>PROMPT_TEXT:</strong> The interaction prompt shown when the player is in range.</li>
+  <li><strong>USE_RANGE:</strong> Maximum distance at which the player can trigger the airlock switch.</li>
+  <li><strong>DEPRESSURISE_TEXT / PRESSURISE_TEXT:</strong> Countdown messages shown during the cycle.</li>
+  <li><strong>DOOR1_NAME / DOOR2_NAME:</strong> The names of the two door entities controlled by the airlock.</li>
+  <li><strong>DELAY:</strong> Time in seconds for pressurization/depressurization to complete.</li>
+  <li><strong>NPC_DROWNING:</strong> Enables NPC drowning in water lock mode to increase the threat level.</li>
+</ul>
+
+<!-- Inline Ad Space -->
+<div class="ad-container text-center my-4">
+<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+</div>
+
+<h2>Practical Implementation Examples</h2>
+
+<h3>Space Station Airlock</h3>
+<p>Use the airlock to transition between safe interior rooms and the vacuum of space.</p>
+<ul>
+  <li>Set <code>AIRLOCK_TYPE</code> to <strong>Air</strong> and configure <code>AIR_LEVEL</code> to 100.</li>
+  <li>Set a long <code>DELAY</code> to make cycling feel deliberate.</li>
+  <li>Use <code>PRESSURISE_TEXT</code> and <code>DEPRESSURISE_TEXT</code> to communicate progress to the player.</li>
+  <li>Add sound effects for doors and cycling to reinforce the sci‑fi atmosphere.</li>
+</ul>
+
+<h3>Underwater Flood Chamber</h3>
+<p>Create a water‑filled airlock that floods and drains on a timer, forcing players to plan their movements.</p>
+<ul>
+  <li>Set <code>AIRLOCK_TYPE</code> to <strong>Water</strong> and adjust <code>WATER_LEVEL</code> to the desired flood height.</li>
+  <li>Enable <code>NPC_DROWNING</code> to add danger for enemies caught in the chamber.</li>
+  <li>Use doors and logic connections to create puzzles where cycling the airlock is required to reach new areas.</li>
+</ul>
+
+<h2>Advanced Techniques</h2>
+<ul>
+  <li><strong>Combine with logic triggers:</strong> Use GameGuru MAX logic connections to trigger environmental events when the airlock completes its cycle.</li>
+  <li><strong>Create timed challenges:</strong> Force players to move quickly by adding hazards that activate when the airlock starts cycling.</li>
+  <li><strong>Use shared door names:</strong> Control multiple airlocks by reusing door names across objects for synchronized sequences.</li>
+  <li><strong>Mix air and water modes:</strong> Use two airlocks in sequence—one air and one water—for a multi‑stage puzzle or escape sequence.</li>
+</ul>
+
+<h2>Common Pitfalls &amp; Solutions</h2>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>Problem</th>
+      <th>Solution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Doors never open</td>
+      <td>Verify <code>DOOR1_NAME</code> and <code>DOOR2_NAME</code> exactly match the entity names in your scene.</td>
+    </tr>
+    <tr>
+      <td>Airlock doesn't cycle</td>
+      <td>Make sure <code>AlwaysActive</code> is ON and that the switch object is not disabled by other logic.</td>
+    </tr>
+    <tr>
+      <td>Water lock doesn’t flood</td>
+      <td>Check <code>WATER_LEVEL</code> and ensure <code>AIRLOCK_TYPE</code> is set to <strong>Water</strong>.</td>
+    </tr>
+    <tr>
+      <td>Player takes damage unexpectedly</td>
+      <td>For air locks, adjust <code>AIR_LEVEL</code> or disable player damage behavior if you want a non‑lethal sequence.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Design Best Practices</h2>
+
+<h3>Make Timing Feel Natural</h3>
+<ul>
+  <li>Set <code>DELAY</code> so players have time to react but still feel urgency.</li>
+  <li>Use audio cues to signal when a cycle starts and ends.</li>
+</ul>
+
+<h3>Use Visual Feedback</h3>
+<ul>
+  <li>Label your doors clearly (e.g., <em>Inner</em> and <em>Outer</em>) so players understand which door is safe to pass through.</li>
+  <li>Use lighting or particle effects to show when the chamber is pressurized or flooded.</li>
+</ul>
+
+<h2>Related Behaviors</h2>
+<ul>
+  <li>Door / Door Rotate / Door Sliding</li>
+  <li>Water Control</li>
+  <li>Switch</li>
+  <li>Global Variables (for tracking state)</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>The Airlock behavior is a powerful tool for adding mechanical depth and environmental storytelling to your levels. Whether you’re building a sci‑fi station, an underwater base, or a puzzle room, airlocks provide a consistent, reliable system that players can interact with and rely on.</p>
+
+<p>Start by building a basic two‑door airlock, then experiment with pressure, water, and logic triggers to create more advanced sequences and puzzles.</p>
+
+</div>
+</article>
+</div>
+
+<div class="col-lg-4">
+<!-- Right Sidebar Ad Space -->
+<div class="ad-container ad-sidebar text-center">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7908718257772872"
+     data-ad-slot="5812492004"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<!-- Related Articles Box -->
+<div class="card mt-4">
+<div class="card-header bg-dark text-white">
+<h5 class="mb-0">Related Concepts</h5>
+</div>
+<div class="card-body">
+<ul class="list-unstyled">
+<li><a href="#" class="text-decoration-none">Airlock Timing</a></li>
+<li><a href="#" class="text-decoration-none">Pressure-based Gameplay</a></li>
+<li><a href="#" class="text-decoration-none">Environmental Hazards</a></li>
+<li><a href="#" class="text-decoration-none">Door Logic Systems</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-5 py-4 bg-dark text-white text-center">
+<p class="mb-0">&copy; <span id="yearPlaceholder">2024</span> Blood Moon Interactive. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js" type="module"></script>
+<script>
+    function updateCopyrightYear() {
+        document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
+    }
+    updateCopyrightYear();
+</script>
+</body>
+</html>

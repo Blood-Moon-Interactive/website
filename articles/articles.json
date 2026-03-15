@@ -994,6 +994,17 @@
       "filename": "stop_watch.html"
     },
     {
+      "id": "airlock",
+      "title": "Airlock — Pressurization & Water Lock System",
+      "preview": "Build realistic airlocks with pressurization cycles, water level control, and timed door sequencing for sci-fi and underwater scenarios.",
+      "date": "2026-03-15",
+      "author": "Blood Moon Interactive",
+      "category": "Doors",
+      "tags": ["airlock", "door", "pressure", "water", "behavior", "gameguru"],
+      "featured": false,
+      "filename": "airlock.html"
+    },
+    {
       "id": "chest-loot-system",
       "title": "Chest — RPG Loot & Storage System",
       "preview": "Master the Chest behavior in GameGuru MAX: create interactive loot containers, storage systems, and inventory management for RPG games with persistent storage and HUD integration.",

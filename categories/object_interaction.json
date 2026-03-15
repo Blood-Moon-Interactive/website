@@ -3797,6 +3797,156 @@
         ]
       },
       "relatedBehaviors": ["trigger_zone", "proximity_trigger", "examine", "interaction_system"]
+    },
+    "freefall_object": {
+      "name": "Freefall Object",
+      "file": "objects/freefall_object.lua",
+      "description": "Damages players and NPCs when the object falls and hits them; uses physics and a configurable damage radius.",
+      "properties": [
+        {
+          "name": "HIT_DAMAGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 10,
+          "description": "Damage applied to players and NPCs on impact."
+        },
+        {
+          "name": "HIT_RADIUS",
+          "type": "number",
+          "range": "1-500",
+          "default": 50,
+          "description": "Radius around the object where entities take damage on impact."
+        },
+        {
+          "name": "SOUND0",
+          "type": "string",
+          "default": "",
+          "description": "Impact sound file assigned to Sound0"
+        }
+      ],
+      "features": [
+        "Physics-based fall detection",
+        "Damage on impact to players and NPCs",
+        "Configurable hit radius and damage",
+        "Sound effect on hit via Sound0",
+        "Auto-deactivates after event duration"
+      ],
+      "keywords": ["fall", "damage", "hazard", "trap", "physics", "impact", "area", "npc"],
+      "tutorial": {
+        "videoId": "awWsiZuHR-4",
+        "timestamp": "0:00",
+        "steps": [
+          "Place an object in the level",
+          "Attach the freefall_object behavior",
+          "Set AlwaysActive to ON, Physics=ON, Gravity=ON",
+          "Configure HIT_DAMAGE and HIT_RADIUS",
+          "Add an impact sound to Sound0",
+          "Test by dropping the object onto the player or NPC",
+          "Adjust damage and radius as needed"
+        ]
+      },
+      "relatedBehaviors": ["spike_trap", "falling_platform", "damage_zone"]
+    },
+    "mesh_sensor": {
+      "name": "Mesh Sensor",
+      "file": "objects/mesh_sensor.lua",
+      "description": "Detects and interacts with meshes inside a multi-mesh object. Supports actions like activating IfUsed or displaying HUD screens when specific meshes are targeted.",
+      "properties": [
+        {
+          "name": "OBJECT_NAME",
+          "type": "string",
+          "default": "",
+          "description": "Name of the multi-mesh object to sense."
+        },
+        {
+          "name": "OBJECT_RANGE",
+          "type": "number",
+          "range": "1-500",
+          "default": 100,
+          "description": "Distance at which the sensor can detect the object."
+        },
+        {
+          "name": "SENSOR_RANGE",
+          "type": "number",
+          "range": "1-250",
+          "default": 80,
+          "description": "Raycast distance used to detect meshes within the object."
+        },
+        {
+          "name": "RAYCAST_X",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Screen X coordinate for the raycast origin (0-100)."
+        },
+        {
+          "name": "RAYCAST_Y",
+          "type": "number",
+          "range": "0-100",
+          "default": 50,
+          "description": "Screen Y coordinate for the raycast origin (0-100)."
+        },
+        {
+          "name": "MESH_NAME1",
+          "type": "string",
+          "default": "",
+          "description": "Name of the first mesh to detect."
+        },
+        {
+          "name": "MESH_TEXT1",
+          "type": "string",
+          "default": "E to use",
+          "description": "Prompt displayed when the first mesh is targeted."
+        },
+        {
+          "name": "MESH_ACTION1",
+          "type": "dropdown",
+          "default": "None",
+          "options": ["None", "Activate IfUsed", "Display Hud"],
+          "description": "Action to perform when the first mesh is activated."
+        },
+        {
+          "name": "MESH_IFUSED1",
+          "type": "string",
+          "default": "",
+          "description": "Entity name to trigger with IfUsed for mesh 1."
+        },
+        {
+          "name": "MESH_HUD1",
+          "type": "string",
+          "default": "",
+          "description": "HUD screen name to toggle for mesh 1."
+        },
+        {
+          "name": "DIAGNOSTIC",
+          "type": "number",
+          "range": "0-1",
+          "default": 0,
+          "description": "Show mesh names on-screen for debugging (0=off, 1=on)."
+        }
+      ],
+      "features": [
+        "Detects and targets specific meshes inside a multi-mesh object",
+        "Displays interaction prompts for targeted meshes",
+        "Supports IfUsed activation and HUD screen toggling",
+        "Configurable detection range and raycast origin",
+        "Supports up to 5 mesh targets"
+      ],
+      "keywords": ["mesh", "sensor", "raycast", "interaction", "hud", "ifused", "multi-mesh"],
+      "tutorial": {
+        "videoId": "8venyOL2GtI",
+        "timestamp": "0:00",
+        "steps": [
+          "Place a multi-mesh object in the level",
+          "Attach the mesh_sensor behavior",
+          "Set OBJECT_NAME to the target object name",
+          "Adjust OBJECT_RANGE and SENSOR_RANGE",
+          "Set RAYCAST_X and RAYCAST_Y for the interaction pointer",
+          "Configure mesh names and actions (IfUsed/HUD)",
+          "Playtest by aiming at meshes and pressing E"
+        ]
+      },
+      "relatedBehaviors": ["hud interface", "active hud"]
     }
   }
 }

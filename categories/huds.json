@@ -129,7 +129,7 @@
       ],
       "keywords": ["hud", "hotkey", "icon", "resource", "potion", "powerup", "collectable", "activation", "screen", "display"],
       "tutorial": {
-        "videoId": "coming-soon",
+        "videoId": "OMtbIhublmk",
         "timestamp": "0:00"
       },
       "relatedBehaviors": ["resource_counter", "health_bar", "mana_bar"]
