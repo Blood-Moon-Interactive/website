@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Area Damage Spell — AOE Magic System | Blood Moon Interactive</title>
+<meta content="Master the Area Damage Spell behavior in GameGuru MAX: create collectible magic spells with area-of-effect damage, mana costs, level requirements, and particle effects for RPG games." name="description"/>
+<meta content="area damage spell, aoe, magic, rpg, mana, particle effects, behavior, GameGuru MAX, tutorial" name="keywords"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="../index.html">Blood Moon Interactive</a>
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<div class="ms-auto"><div class="input-group"><input class="form-control" id="searchBehaviors" placeholder="Search behaviors..." type="text"/><button class="btn btn-outline-light" id="searchButton" type="button"><i class="bi bi-search"></i></button></div></div>
+</div>
+</div>
+</nav>
+
+<div class="container mt-4">
+<div class="ad-container text-center my-4">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7908718257772872" data-ad-slot="5812492004" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="row">
+<div class="col-lg-8">
+<article class="article-content">
+<header class="article-header mb-4">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../articles.html">Articles</a></li>
+<li aria-current="page" class="breadcrumb-item active">Area Damage Spell — AOE Magic</li>
+</ol>
+</nav>
+<h1 class="article-title">Area Damage Spell — AOE Magic System</h1>
+<div class="article-meta text-muted"><i class="bi bi-person me-2"></i>Blood Moon Interactive<i class="bi bi-tag me-2 ms-3"></i>RPG Systems</div>
+</header>
+
+<div class="article-body">
+<p class="lead">The Area Damage Spell behavior brings powerful area-of-effect (AOE) magic to your RPG. Cast collectible spells that damage all enemies within a radius, with mana costs, level requirements, and dazzling particle effects. Perfect for creating offensive magic abilities that feel impactful and satisfying.</p>
+
+<div class="alert alert-info">
+<h5><i class="bi bi-lightbulb me-2"></i>Key Feature</h5>
+<p class="mb-0">Combines collectible items, mana consumption, and area damage effects to create complete magic spell systems with scaling difficulty and visual particle feedback.</p>
+</div>
+
+<h2>Video Tutorial</h2>
+<div class="ratio ratio-16x9 mb-4">
+  <iframe src="https://www.youtube.com/embed/dQi6ixaXlSE" title="Area Damage Spell Tutorial" allowfullscreen></iframe>
+</div>
+
+<h2>Why AOE Magic Matters in RPGs</h2>
+<p>Area-of-effect spells are a cornerstone of RPG combat. They serve several critical purposes:</p>
+<ul>
+  <li><strong>Combat Satisfaction:</strong> Watching enemies get hit by a blast radius creates immediate, visceral feedback.</li>
+  <li><strong>Tactical Depth:</strong> AOE spells encourage positioning and crowd control strategy.</li>
+  <li><strong>Resource Management:</strong> Mana costs and cooldowns create meaningful choices about when to cast.</li>
+  <li><strong>Player Progression:</strong> Unlocking new spells and upgrading their power drives advancement.</li>
+  <li><strong>Visual Spectacle:</strong> Particle effects and animations make magic feel powerful and real.</li>
+</ul>
+
+<h2>Setup & Configuration</h2>
+<ol>
+  <li>Create a spell object or pickup item in your scene.</li>
+  <li>Set <code>AlwaysActive</code> to ON.</li>
+  <li>Attach the <code>area_damage_spell</code> behavior.</li>
+  <li>Configure <code>PROMPT_TEXT</code> for the collection prompt.</li>
+  <li>Set up a mana global variable (e.g., <code>MyMana</code>) using <code>USER_GLOBAL_AFFECTED</code>.</li>
+  <li>Configure <code>MANA_COST</code>, <code>CAST_DAMAGE</code>, and <code>CAST_RADIUS</code>.</li>
+  <li>Set <code>PLAYER_LEVEL</code> requirement if you want to gate higher-tier spells.</li>
+  <li>Optional: Add particle effect objects and reference them in <code>PARTICLE1_NAME</code> and <code>PARTICLE2_NAME</code>.</li>
+  <li>Configure item highlighting to make spells discoverable.</li>
+  <li>Add sound effects to Sound0 (success) and Sound1 (failure/insufficient mana).</li>
+</ol>
+
+<h2>Core Properties</h2>
+<ul>
+  <li><strong>PROMPT_TEXT:</strong> The message shown when the player can collect the spell.</li>
+  <li><strong>USEAGE_TEXT:</strong> Message displayed when the spell is successfully cast.</li>
+  <li><strong>PICKUP_RANGE (1-100, default 80):</strong> How close the player must be to collect the spell.</li>
+  <li><strong>USER_GLOBAL_AFFECTED:</strong> The name of your mana global variable (e.g., <code>MyMana</code>).</li>
+  <li><strong>MANA_COST (1-100, default 10):</strong> How much mana the spell consumes when cast.</li>
+  <li><strong>CAST_DAMAGE (1-100, default 500):</strong> Damage dealt to all enemies in the radius.</li>
+  <li><strong>CAST_RADIUS (1-100, default 50):</strong> The size of the effect area.</li>
+  <li><strong>PLAYER_LEVEL (0-100, default 0):</strong> Minimum level required to use the spell.</li>
+  <li><strong>PARTICLE1_NAME / PARTICLE2_NAME:</strong> Optional particle effect objects for visual feedback.</li>
+  <li><strong>ITEM_HIGHLIGHT:</strong> Visual feedback (None, Shape, or Outline) to make spells stand out.</li>
+</ul>
+
+<!-- Inline Ad Space -->
+<div class="ad-container text-center my-4">
+<ins class="adsbygoogle" data-ad-client="ca-pub-7908718257772872" data-ad-format="auto" data-ad-slot="5812492004" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+</div>
+
+<h2>Practical Implementation Examples</h2>
+
+<h3>Fireball Spell — Early Game Offensive Magic</h3>
+<p>Create a classic fireball ability:</p>
+<ul>
+  <li>MANA_COST: 15</li>
+  <li>CAST_DAMAGE: 50</li>
+  <li>CAST_RADIUS: 40</li>
+  <li>PLAYER_LEVEL: 1 (available immediately)</li>
+  <li>PARTICLE1_NAME: ExplosionParticles</li>
+  <li>Sound0: Fire explosion sound</li>
+</ul>
+
+<h3>Meteor Storm — High-Level Spell</h3>
+<p>Design an end-game AOE spell:</p>
+<ul>
+  <li>MANA_COST: 50</li>
+  <li>CAST_DAMAGE: 300</li>
+  <li>CAST_RADIUS: 75</li>
+  <li>PLAYER_LEVEL: 50 (late-game unlock)</li>
+  <li>PARTICLE1_NAME: MeteorImpact</li>
+  <li>PARTICLE2_NAME: FireRing</li>
+  <li>Sound0: Thunderous impact</li>
+</ul>
+
+<h3>Healing Circle — Support Magic</h3>
+<p>Create a defensive area spell:</p>
+<ul>
+  <li>MANA_COST: 20</li>
+  <li>CAST_DAMAGE: -25 (negative damage heals)</li>
+  <li>CAST_RADIUS: 60</li>
+  <li>PLAYER_LEVEL: 20</li>
+  <li>PARTICLE1_NAME: HealingAura</li>
+  <li>Sound0: Healing chime</li>
+</ul>
+
+<h2>Advanced Techniques</h2>
+
+<h3>Scaling Spells by Player Level</h3>
+<p>Use the <code>PLAYER_LEVEL</code> property to gate spells and reward progression:</p>
+<ul>
+  <li>Low-level spells (level 1): Basic offensive and defensive options.</li>
+  <li>Mid-level spells (level 25): Specialized effects and crowd control.</li>
+  <li>High-level spells (level 50+): Powerful AOE with large radii and high damage.</li>
+</ul>
+
+<h3>Balancing Mana and Damage</h3>
+<p>Create a balanced magic system where higher damage costs more mana:</p>
+<ul>
+  <li>Low-cost spells: 10 mana, 25 damage (spam-friendly)</li>
+  <li>Medium spells: 25 mana, 100 damage (primary attacks)</li>
+  <li>Expensive spells: 50 mana, 300 damage (tactical options)</li>
+</ul>
+
+<h3>Combining Spells</h3>
+<p>Create spell loadouts by placing multiple spell objects:</p>
+<ul>
+  <li>Players collect different spells throughout the level.</li>
+  <li>Each spell has unique mana costs and damage profiles.</li>
+  <li>Players develop strategies based on available spells and mana pools.</li>
+</ul>
+
+<h2>Common Pitfalls &amp; Solutions</h2>
+
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>Problem</th>
+      <th>Solution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spell won't cast</td>
+      <td>Verify the mana global variable exists and is named correctly in <code>USER_GLOBAL_AFFECTED</code>.</td>
+    </tr>
+    <tr>
+      <td>Spell consumes too much mana</td>
+      <td>Adjust <code>MANA_COST</code> to balance with your mana regeneration rate.</td>
+    </tr>
+    <tr>
+      <td>Damage doesn't affect enemies</td>
+      <td>Ensure enemies are within <code>CAST_RADIUS</code> and have the correct allegiance setting.</td>
+    </tr>
+    <tr>
+      <td>Particle effects don't show</td>
+      <td>Verify particle object names match exactly in <code>PARTICLE1_NAME</code> and <code>PARTICLE2_NAME</code>.</td>
+    </tr>
+    <tr>
+      <td>Level requirement doesn't work</td>
+      <td>Ensure you have a player level tracking system in place (use a global variable like <code>PlayerLevel</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Design Best Practices</h2>
+
+<h3>Spell Variety</h3>
+<ul>
+  <li>Create different spells with varying mana costs, damage, and radii.</li>
+  <li>Offer both offensive and support options to different playstyles.</li>
+  <li>Use level requirements to create a sense of progression and achievement.</li>
+</ul>
+
+<h3>Visual Feedback</h3>
+<ul>
+  <li>Always pair spells with particle effects to show impact.</li>
+  <li>Use sound effects to make casting feel impactful and satisfying.</li>
+  <li>Vary visual effects between spell types (fire, ice, healing, etc.).</li>
+</ul>
+
+<h3>Balancing Magic Systems</h3>
+<ul>
+  <li>Ensure mana costs are significant enough to require strategy but not so high players feel helpless.</li>
+  <li>Test damage values to ensure spells feel powerful without being overpowered.</li>
+  <li>Balance high-damage spells with long cooldowns or high mana costs.</li>
+</ul>
+
+<h2>Related Behaviors</h2>
+<ul>
+  <li><strong>Direct Damage Spell:</strong> Single-target magic with targeting system.</li>
+  <li><strong>Mana System:</strong> Track and manage mana pools.</li>
+  <li><strong>Spell System:</strong> General spell framework and progression.</li>
+  <li><strong>Damage System:</strong> Handle enemy health and damage calculations.</li>
+  <li><strong>Particle System:</strong> Create visual effects and explosions.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>The Area Damage Spell behavior is your gateway to creating satisfying, powerful magic systems in GameGuru MAX. By balancing mana costs, damage output, and visual effects, you can build a spell system that feels both fair and spectacularly rewarding.</p>
+
+<p>Start with a simple fireball spell, then expand your spell library with variety and challenge. The magic is in the details — particle effects, sound design, and carefully tuned numbers all contribute to spells that feel impactful and fun.</p>
+
+</div>
+</article>
+</div>
+
+<div class="col-lg-4">
+<!-- Right Sidebar Ad Space -->
+<div class="ad-container ad-sidebar text-center">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7908718257772872"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7908718257772872"
+     data-ad-slot="5812492004"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<!-- Related Articles Box -->
+<div class="card mt-4">
+<div class="card-header bg-dark text-white">
+<h5 class="mb-0">Related Concepts</h5>
+</div>
+<div class="card-body">
+<ul class="list-unstyled">
+<li><a href="#" class="text-decoration-none">RPG Combat Design</a></li>
+<li><a href="#" class="text-decoration-none">Mana &amp; Resource Systems</a></li>
+<li><a href="#" class="text-decoration-none">Particle Effects</a></li>
+<li><a href="#" class="text-decoration-none">Spell Progression</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-5 py-4 bg-dark text-white text-center">
+<p class="mb-0">&copy; <span id="yearPlaceholder">2024</span> Blood Moon Interactive. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js" type="module"></script>
+<script>
+    function updateCopyrightYear() {
+        document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
+    }
+    updateCopyrightYear();
+</script>
+</body>
+</html>

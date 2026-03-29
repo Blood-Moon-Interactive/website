@@ -1005,6 +1005,17 @@
       "filename": "airlock.html"
     },
     {
+      "id": "area_damage_spell",
+      "title": "Area Damage Spell — AOE Magic System",
+      "preview": "Create powerful area-of-effect magic spells with mana costs, level requirements, and particle effects for immersive RPG combat.",
+      "date": "2026-03-29",
+      "author": "Blood Moon Interactive",
+      "category": "RPG Systems",
+      "tags": ["spell", "aoe", "magic", "mana", "rpg", "combat", "behavior", "gameguru"],
+      "featured": true,
+      "filename": "area-damage-spell.html"
+    },
+    {
       "id": "chest-loot-system",
       "title": "Chest — RPG Loot & Storage System",
       "preview": "Master the Chest behavior in GameGuru MAX: create interactive loot containers, storage systems, and inventory management for RPG games with persistent storage and HUD integration.",
@@ -1012,7 +1023,7 @@
       "author": "Blood Moon Interactive",
       "category": "RPG Systems",
       "tags": ["chest", "loot", "storage", "inventory", "rpg", "container", "behavior", "gameguru"],
-      "featured": true,
+      "featured": false,
       "filename": "chest-loot-system.html"
     }
   ],
