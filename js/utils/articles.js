@@ -18,11 +18,13 @@ export async function fetchArticles() {
     
     try {
         console.log(`Trying to fetch articles from: ${path}`);
-        const response = await fetch(path, {
+        const cachebust = `?v=${Date.now()}`;
+        const response = await fetch(path + cachebust, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Cache-Control': 'no-cache, no-store, must-revalidate'
             }
         });
         
@@ -43,12 +45,19 @@ export async function fetchArticles() {
 }
 
 export function getFeaturedArticle(articles) {
-    // Sort by date (newest first), and if dates are equal, use array order (newest inserted first)
+    // First, collect articles explicitly marked as featured
+    const featured = articles.filter(article => article.featured === true);
+    if (featured.length > 0) {
+        // If multiple are featured, return the most recent by date
+        return featured.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+    }
+
+    // If no article is explicitly featured, fall back to newest article
     const sortedArticles = [...articles].sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
         if (dateB - dateA !== 0) return dateB - dateA;
-        // If dates are equal, keep the later-in-array (newer) first
+        // If dates are equal, use array order (later entries considered newer)
         return articles.indexOf(b) - articles.indexOf(a);
     });
     return sortedArticles[0] || null;
@@ -102,7 +111,7 @@ export function renderArticlePreview(article) {
                 <div class="article-tags mb-3">
                     ${article.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
                 </div>
-                <a href="articles/${article.id}.html" class="btn btn-primary">Read More</a>
+                <a href="articles/${article.filename || article.id + '.html'}" class="btn btn-primary">Read More</a>
             </div>
         </div>
     `;

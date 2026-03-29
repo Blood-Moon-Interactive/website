@@ -113,7 +113,8 @@ function getCategoryIcon(category) {
         'HUDs': 'bi-display',
         'People': 'bi-person',
         'Markers': 'bi-geo-alt',
-        'Lights': 'bi-lightbulb'
+        'Lights': 'bi-lightbulb',
+        'Particles': 'bi-three-dots'
     };
     return iconMap[category] || 'bi-circle';
 }
